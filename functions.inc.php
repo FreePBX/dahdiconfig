@@ -442,18 +442,6 @@ class dahdi_cards {
 	}
 
 	/**
-	 * Install Chan DAHDi
-	 * 
-	 * copy the old chan_dahdi.conf and replace it with ours
-	 * 
-	 * @access public
-	 */
-	public function install_chan_dahdi() {
-		`mv /etc/asterisk/chan_dahdi.conf /etc/asterisk/chan_dahdi.conf.old`;
-		`cp modules/dahdiconfig/etc/chan_dahdi.conf /etc/asterisk/chan_dahdi.conf`;
-	}
-
-	/**
 	 * Load
 	 *
 	 * Load all the information the various locations (database, system.conf, chan_dahdi.conf)
@@ -669,7 +657,7 @@ class dahdi_cards {
 	 public function read_chan_dahdi_conf() {
 	 	global $db;
 
-		$sql = 'SELECT * FROM zap WHERE id = -1 AND keyword != "account" AND flags != 1';
+		$sql = 'SELECT * FROM dahdi WHERE id = -1 AND keyword != "account" AND flags != 1';
 		$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
 		if (DB::IsError($results)) {
 			return($results->getMessage());
@@ -683,7 +671,7 @@ class dahdi_cards {
 		unset($results);
 		unset($result);
 
-		$sql = 'SELECT * FROM zap WHERE keyword != "account" and flags != 1';
+		$sql = 'SELECT * FROM dahdi WHERE keyword != "account" and flags != 1';
 		$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
 		if (DB::IsError($results)) {
 			return($results->getMessage());
@@ -1387,4 +1375,285 @@ function dahdi_array2chans($arr) {
 	return implode(',',$chans);
 }
 
+// list unused DAHDI fxs channels that can be configured for extensions
+//
+function dahdiconfig_get_unused_fxs_channels($current_device='') {
+  $all_channels = sql('SELECT * FROM dahdi_analog WHERE type = "fxs"','getAll',DB_FETCHMODE_ASSOC); 
+  $used_channels = sql('SELECT id device, data port FROM dahdi WHERE keyword = "channel"','getAll',DB_FETCHMODE_ASSOC); 
+  $used_channels_hash = array();
+  foreach ($used_channels as $chan) {
+    $used_channels_hash[$chan['port']] = $chan['device'];
+  }
+
+  $avail_channels = array();
+  foreach ($all_channels as $chan) {
+    if (isset($used_channels_hash[$chan['port']])) {
+      if ($current_device == $used_channels_hash[$chan['port']]) {
+        $selected = true;
+      } else {
+        continue;
+      }
+    } else {
+      $selected = false;
+    }
+    $avail_channels[] = array('channel' => $chan['port'], 'signalling' => 'fxo_'.$chan['signalling'], 'selected' => $selected);
+  }
+  return $avail_channels;
+}
+
+function _dahdiconfig_gsort($a, $b) {
+  $gn_a = substr($a,1);
+  $gn_b = substr($b,1);
+  if ($gn_a == $gn_b) {
+    return ($b > $a);
+  } else {
+    return ($gn_a > $gn_b);
+  }
+}
+
+function dahdiconfig_get_unused_trunk_options($current_identifier='') {
+  global $amp_conf;
+  $avail_group = array();
+  $analog_chan = array();
+  $digital_chan = array();
+
+  if (isset($amp_conf['DAHDISHOWDIGITALCHANS'])) {
+    $chan_setting = strtolower($amp_conf['DAHDISHOWDIGITALCHANS']);
+    switch ($chan_setting) {
+    case 'true':
+    case 'yes':
+    case 'on':
+    case '1':
+      $show_digital_chans = true;
+    break;
+    default:
+      $show_digital_chans = false;
+    break;
+    }
+  } else {
+    $show_digital_chans = false;
+  }
+
+  $dahdi_cards = new dahdi_cards();
+  $analog_ports = $dahdi_cards->get_fxo_ports();
+
+  // Get Analog Groups and Channels for FXO
+  //
+  foreach ($analog_ports as $port) {
+    $port_details = $dahdi_cards->get_port($port);
+    $grp = $port_details['group'];
+    $chan = (string) $port_details['port'];
+    $avail_group["g$grp"] = array('identifier' => "g$grp", 'name' => "Group $grp Ascending",'selected'  => ($current_identifier == "g$grp"));
+    $avail_group["G$grp"] = array('identifier' => "G$grp", 'name' => "Group $grp Descending",'selected' => ($current_identifier == "G$grp"));
+    $analog_chan[$chan] = array('identifier' => $chan, 'name' => "Analog Channel $chan",'selected' => ($current_identifier == $chan));
+  }
+  // Get Digital Groups and Channels. Channels are not that useful
+  // but can be helpful when testing bad channels
+  //
+  $digital_spans = $dahdi_cards->get_spans();
+  foreach ($digital_spans as $span) {
+    if (!$span['active']) {
+      continue;
+    }
+    $grp = $span['group'];
+    $avail_group["g$grp"] = array('identifier' => "g$grp", 'name' => "Group $grp Ascending",'selected'  => ($current_identifier == "g$grp"));
+    $avail_group["G$grp"] = array('identifier' => "G$grp", 'name' => "Group $grp Descending",'selected' => ($current_identifier == "G$grp"));
+    if ($show_digital_chans) {
+      $basechan = $span['basechan'];
+      $definedchans = $span['definedchans'];
+      $topchan = $basechan + $definedchans;
+      for ($port = $basechan; $port < $topchan; $port++) {
+        $digital_chan["$port"] = array('identifier' => "$port", 'name' => "Digital Channel $port",'selected' => ($current_identifier == "$port"));
+      }
+    }
+  }
+  uksort($avail_group,'_dahdiconfig_gsort');
+  ksort($analog_chan);
+  if ($show_digital_chans) {
+    ksort($digital_chan);
+    $avail_identifiers = $avail_group + $analog_chan + $digital_chan;
+  } else {
+    $avail_identifiers = $avail_group + $analog_chan;
+  }
+  $trunk_list = core_trunks_listbyid();
+  foreach ($trunk_list as $trunk) {
+    if ($trunk['tech'] != 'dahdi' || $trunk['channelid'] == $current_identifier) {
+      continue;
+    }
+    unset($avail_identifiers[$trunk['channelid']]);
+  }
+  return ($avail_identifiers);
+}
+
+function dahdiconfig_configpageinit($dispnum) {
+global $currentcomponent;
+switch ($dispnum) {
+  case 'devices':
+  case 'extensions':
+    // if tech_hardware set, this is an initial extension/device creation
+    // otherwise, determine if the target extension/device is DAHDI
+    //
+    if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic') {
+      $extdisplay = '';
+    } else {
+      if (isset($_REQUEST['extdisplay']) && $_REQUEST['extdisplay'] == '') {
+        return true;
+      }
+      $extdisplay = $_REQUEST['extdisplay'];
+      $device_info = core_devices_get($extdisplay);
+      if (empty($device_info) || $device_info['tech'] != 'dahdi') {
+        return true;
+      }
+    }
+  
+	  $channel_select  = dahdiconfig_get_unused_fxs_channels($extdisplay);
+	  foreach ($channel_select as $val) {
+		  $currentcomponent->addoptlistitem('dahdi_channel_select', $val['channel'].':'.$val['signalling'], $val['channel']);
+	  }
+	  $currentcomponent->setoptlistopts('dahdi_channel_select', 'sort', false);
+  break;
+  case 'trunks':
+    if (isset($_REQUEST['tech']) && strtolower($_REQUEST['tech']) == 'dahdi') {
+      $extdisplay = '';
+      $_REQUEST['dahdi_current_channel'] = '';
+    } else {
+      if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
+        return true;
+      }
+      $extdisplay = $_REQUEST['extdisplay'];
+      $trunknum = ltrim($extdisplay,'OUT_');
+      $trunk_details = core_trunks_getDetails($trunknum);
+      $tech = $trunk_details['tech'];
+      if ($tech != 'dahdi') {
+        return true;
+      }
+      $_REQUEST['dahdi_current_channel'] = $trunk_details['channelid'];
+    }
+    // dahdiconfig_hook_core will see this and create the needed selelect structure
+    //
+    $_REQUEST['display_dahdi_select'] = 'true';
+  break;
+  default;
+    return true;
+  break;
+  }
+  $currentcomponent->addguifunc("dahdiconfig_{$dispnum}_configpageload");
+}
+
+function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
+  global $tabindex;
+  $html = '';
+  if ($target_menuid == 'trunks' && isset($_REQUEST['display_dahdi_select']) && $_REQUEST['display_dahdi_select'] == 'true') {
+
+    // TODO: If list is exhausted, write message that no options left
+    //
+    $avail_trunks = dahdiconfig_get_unused_trunk_options($_REQUEST['dahdi_current_channel']);
+    if (!empty($avail_trunks)) {
+      $html = '
+				<tr>
+					<td>
+						<a href=# class="info">' . _("DAHDI Trunks") . '<span>' . _("Available DAHDI Groups and Channels configued in the DAHDI Configuration Module") . '</span></a>: 
+          </td>
+          <td>
+            <select name="dahdi_trunks" id="dahdi_trunks" tabindex="' . ++$tabindex . '">
+      ';
+      foreach ($avail_trunks as $ident) {
+        $selected = $ident['selected'] ? ' SELECTED' : '';
+        $html .= "
+            <option value='{$ident['identifier']}'$selected>{$ident['name']}
+        ";
+      }
+      $html .= "
+            </select>
+					</td>
+        </tr>
+      ";
+    } else {
+      $html .= '
+				<tr>
+					<td colspan="2">
+						<a href=# class="info">' . _("No Available Groups or Channels") . '<span>' . _("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards") . '</span></a> 
+          </td>
+				</tr>
+      ';
+    }
+
+	  $URL = $_SERVER['PHP_SELF'].'?'.'display=dahdi';
+    $html .= '
+				<tr><td colspan="2"><input type="hidden" id="dahdi_trunks" value=""></td></tr>
+				<tr>
+					<td colspan="2">
+						<a href="'.$URL.'" class="info">' . _("Configure/Edit DAHDI Cards") . '<span>' . _("Configure/Edit DAHDI Card settings in DAHDi Module") . '</span></a> 
+          </td>
+				</tr>
+    ';
+  }
+  return $html;
+}
+
+//hook gui function
+//
+function dahdiconfig_devices_configpageload() {
+  dahdiconfig_configpageload('device');
+}
+function dahdiconfig_extensions_configpageload() {
+  dahdiconfig_configpageload('extension');
+}
+function dahdiconfig_configpageload($mode) {
+  global $currentcomponent;
+
+	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
+
+  $dahdi_channel_select = $currentcomponent->getoptlist('dahdi_channel_select');
+  if (!empty($dahdi_channel_select)) {
+    // Generate Channel Select, on submit populuate device channel, dial and signalling fields
+    $currentcomponent->addguielem('Device Options', new gui_selectbox(
+      'dahdi_channel', 
+      $dahdi_channel_select,
+      '',
+      _('Channel'), 
+      sprintf(_('Choose the FXS channel for this %s'),$mode),
+    false, 
+      "javascript:if (document.frm_{$mode}s.dahdi_channel.value) {parts = document.frm_{$mode}s.dahdi_channel.value.split(':');document.frm_{$mode}s.devinfo_channel.value = parts[0];document.frm_{$mode}s.devinfo_dial.value = 'DAHDI/'+parts[0];document.frm_{$mode}s.devinfo_signalling.value = parts[1]; } else { document.frm_{$mode}s.devinfo_channel.value = ''}"
+    ));
+
+    // On pageload hide channel, signalling and dial fields and select dahdi_channel based on channel field's contents
+    $js = '<script type="text/javascript">
+      $(document).ready(function(){
+        $("#dahdi_channel").val($("#devinfo_channel").val()+":"+$("#devinfo_signalling").val());
+        $("#devinfo_channel").parent().parent().hide();
+        $("#devinfo_signalling").parent().parent().hide();
+        $("#devinfo_dial").parent().parent().hide();
+      });
+    </script>';
+    $currentcomponent->addguielem('Device Options', new guielement('dahdi-chan-html', $js, ''));
+  } else {
+    // No available channels so display that and hide channel, signalling and dial fields
+	  $currentcomponent->addguielem('Device Options', new gui_label('no_dahdi_channel', _('No Unused DAHDi Channels Available')));
+    $js = '<script type="text/javascript">
+      $(document).ready(function(){
+        $("#devinfo_channel").parent().parent().hide();
+        $("#devinfo_signalling").parent().parent().hide();
+        $("#devinfo_dial").parent().parent().hide();
+      });
+    </script>';
+    $currentcomponent->addguielem('Device Options', new guielement('dahdi-chan-html', $js, ''));
+  }
+}
+
+function dahdiconfig_trunks_configpageload() {
+  global $currentcomponent;
+	$extdisplay = isset($_REQUEST['extdisplay'])?$_REQUEST['extdisplay']:null;
+
+  $js = '
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("input[name=\'channelid\']").attr("id","channelid").val($("#dahdi_trunks").val()).parent().parent().hide();
+      $("#dahdi_trunks").change(function(){
+        $("#channelid").val(this.value);
+      });
+    });
+  </script>';
+  $currentcomponent->addguielem('_top', new guielement('dahdi-chan-html', $js, ''));
+}
 // End of File

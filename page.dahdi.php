@@ -97,9 +97,6 @@ if ($_POST['advanced_submit']) {
 
 	$page = '';
 
-} else if (isset($_GET['install_chan_dahdi'])) {
-	$dahdi_cards->install_chan_dahdi();
-	$page = '';
 } else if (isset($_POST['advanced_cancel']) || isset($_POST['editanalog_cancel']) || isset($_POST['editspan_cancel'])) {
 	$page = '';
 }
@@ -156,7 +153,6 @@ default:
 	if ($dahdi_cards->hdwr_changes()): ?>
 		<div class="alert">You have new hardware! Please configure your new hardware using the Edit button(s).</div>
 	<? endif; ?>
-	<a href="/admin/config.php?type=setup&display=dahdi&install_chan_dahdi=yes"><span>Install chan_dahdi.conf</span></a>
 	<div id="digital_hardware">
 	<?php require 'modules/dahdiconfig/views/dahdi_digital_hardware.php'; ?>
 	</div>

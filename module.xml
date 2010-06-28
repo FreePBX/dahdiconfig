@@ -1,0 +1,27 @@
+<module>
+	<rawname>dahdiconfig</rawname>
+	<type>setup</type>
+	<category>Basic</category>
+	<name>DAHDi Config</name>
+	<version>2.7.0</version>
+	<publisher>Digium</publisher>
+	<license>GPLv2</license>
+	<candisable>yes</candisable>
+	<canuninstall>yes</canuninstall>
+	<changelog>
+		*0.1* initial commit
+	</changelog>
+	<depends>
+		<phpversion>5.1.0</phpversion>
+		<version>2.7.0</version>
+	</depends>
+	<requirements>
+		<file>/usr/sbin/astersk</file>
+		<file>/usr/sbin/dahdi_scan</file>
+		<file>/usr/sbin/dahdi_genconf</file>
+		<file>/usr/sbin/dahdi_cfg</file>
+	</requirements>
+	<menuitems>
+		<dahdi needsenginedb="yes" sort="-4">DAHDi</dahdi>
+	</menuitems>
+</module>

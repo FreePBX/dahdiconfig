@@ -1443,9 +1443,9 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
     $port_details = $dahdi_cards->get_port($port);
     $grp = $port_details['group'];
     $chan = (string) $port_details['port'];
-    $avail_group["g$grp"] = array('identifier' => "g$grp", 'name' => "Group $grp Ascending",'selected'  => ($current_identifier == "g$grp"));
-    $avail_group["G$grp"] = array('identifier' => "G$grp", 'name' => "Group $grp Descending",'selected' => ($current_identifier == "G$grp"));
-    $analog_chan[$chan] = array('identifier' => $chan, 'name' => "Analog Channel $chan",'selected' => ($current_identifier == $chan));
+    $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => '','selected'  => ($current_identifier == "g$grp"));
+    $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => '','selected' => ($current_identifier == "G$grp"));
+    $analog_chan[$chan] = array('identifier' => $chan, 'name' => "Analog Channel $chan",'alarms' => '','selected' => ($current_identifier == $chan));
   }
   // Get Digital Groups and Channels. Channels are not that useful
   // but can be helpful when testing bad channels
@@ -1456,14 +1456,24 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
       continue;
     }
     $grp = $span['group'];
-    $avail_group["g$grp"] = array('identifier' => "g$grp", 'name' => "Group $grp Ascending",'selected'  => ($current_identifier == "g$grp"));
-    $avail_group["G$grp"] = array('identifier' => "G$grp", 'name' => "Group $grp Descending",'selected' => ($current_identifier == "G$grp"));
+    $alarms = $span['alarms'];
+    if (!isset($avail_group["g$grp"])) {
+      $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));
+      $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => $alarms,'selected' => ($current_identifier == "G$grp"));
+    } else {
+      //TODO: figure out the possible alarms and the create proper hiearchy of what to report
+      //
+      if ($alarms == 'RED' || $avail_group["g$grp"]['alarms'] == '') {
+        $avail_group["g$grp"]['alarms'] = $alarms;
+        $avail_group["G$grp"]['alarms'] = $alarms;
+      }
+    }
     if ($show_digital_chans) {
       $basechan = $span['basechan'];
       $definedchans = $span['definedchans'];
       $topchan = $basechan + $definedchans;
       for ($port = $basechan; $port < $topchan; $port++) {
-        $digital_chan["$port"] = array('identifier' => "$port", 'name' => "Digital Channel $port",'selected' => ($current_identifier == "$port"));
+        $digital_chan["$port"] = array('identifier' => "$port", 'name' => "Digital Channel $port",'alarms' => $alarms,'selected' => ($current_identifier == "$port"));
       }
     }
   }

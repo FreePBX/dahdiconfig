@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 /**
  * FreePBX DAHDi Config Module
@@ -587,13 +588,13 @@ class dahdi_cards {
 			$lines = explode("\n", $this->system_conf);
 
 			$hasaline = false;
-			for($i=0;$i<sizeof($lines);$i++) {
+      foreach ($lines as $line) {
 				// its a comment, like this line
-				if (substr($line,0,1) == '#') {
+				if (substr($line,0,1) == '#' || trim($line) == '') {
 					continue;
 				}
-
 				$hasaline = true;
+        break;
 			}
 
 			if ( ! $hasaline) {
@@ -764,7 +765,7 @@ class dahdi_cards {
 		}
 
 		/* If there is a DAHDI_Dummy then there is no hardware to parse */
-		foreach ($cxts as $cxt) {
+		if (isset($cxts)) foreach ($cxts as $cxt) {
 			if (strpos($cxt['description'],'DAHDI_DUMMY') === false) {
 				continue;
 			}
@@ -1417,23 +1418,6 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
   $analog_chan = array();
   $digital_chan = array();
 
-  if (isset($amp_conf['DAHDISHOWDIGITALCHANS'])) {
-    $chan_setting = strtolower($amp_conf['DAHDISHOWDIGITALCHANS']);
-    switch ($chan_setting) {
-    case 'true':
-    case 'yes':
-    case 'on':
-    case '1':
-      $show_digital_chans = true;
-    break;
-    default:
-      $show_digital_chans = false;
-    break;
-    }
-  } else {
-    $show_digital_chans = false;
-  }
-
   $dahdi_cards = new dahdi_cards();
   $analog_ports = $dahdi_cards->get_fxo_ports();
 
@@ -1468,7 +1452,7 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
         $avail_group["G$grp"]['alarms'] = $alarms;
       }
     }
-    if ($show_digital_chans) {
+    if ($amp_conf['DAHDISHOWDIGITALCHANS']) {
       $basechan = $span['basechan'];
       $definedchans = $span['definedchans'];
       $topchan = $basechan + $definedchans;
@@ -1479,7 +1463,7 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
   }
   uksort($avail_group,'_dahdiconfig_gsort');
   ksort($analog_chan);
-  if ($show_digital_chans) {
+  if ($amp_conf['DAHDISHOWDIGITALCHANS']) {
     ksort($digital_chan);
     $avail_identifiers = $avail_group + $analog_chan + $digital_chan;
   } else {
@@ -1506,7 +1490,7 @@ switch ($dispnum) {
     if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic') {
       $extdisplay = '';
     } else {
-      if (isset($_REQUEST['extdisplay']) && $_REQUEST['extdisplay'] == '') {
+      if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
         return true;
       }
       $extdisplay = $_REQUEST['extdisplay'];
@@ -1517,6 +1501,7 @@ switch ($dispnum) {
     }
   
 	  $channel_select  = dahdiconfig_get_unused_fxs_channels($extdisplay);
+    $currentcomponent->addoptlistitem('dahdi_channel_select', '', _('==Choose=='));
 	  foreach ($channel_select as $val) {
 		  $currentcomponent->addoptlistitem('dahdi_channel_select', $val['channel'].':'.$val['signalling'], $val['channel']);
 	  }
@@ -1631,6 +1616,9 @@ function dahdiconfig_configpageload($mode) {
     $js = '<script type="text/javascript">
       $(document).ready(function(){
         $("#dahdi_channel").val($("#devinfo_channel").val()+":"+$("#devinfo_signalling").val());
+        if ($("#dahdi_channel").val() == null) {
+          $("#dahdi_channel").val("");
+        }
         $("#devinfo_channel").parent().parent().hide();
         $("#devinfo_signalling").parent().parent().hide();
         $("#devinfo_dial").parent().parent().hide();

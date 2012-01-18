@@ -1,0 +1,86 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language template for dahdiconfig
+# Copyright (C) 2008, 2009, 2010 Bandwith.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "DAHDi Config"
+msgstr ""
+
+msgid "Connectivity"
+msgstr ""
+
+msgid "DAHDi"
+msgstr ""
+
+msgid "Allow PRI Discrete Channels"
+msgstr ""
+
+msgid "DAHDi Configuration Module"
+msgstr ""
+
+msgid ""
+"DAHDi trunk configuration is normally done using groups for PRI "
+"configuration. If there is a need to configure trunks to specific channels, "
+"setting this to true will allow each channel to be configured. This can be "
+"useful when troubleshooting a PRI and trying to isolate a bad B Channel."
+msgstr ""
+
+msgid "==Choose=="
+msgstr ""
+
+msgid "DAHDI Trunks"
+msgstr ""
+
+msgid ""
+"Available DAHDI Groups and Channels configued in the DAHDI Configuration "
+"Module"
+msgstr ""
+
+msgid "No Available Groups or Channels"
+msgstr ""
+
+msgid ""
+"There are no DAHDI Groups or Channels available to be configured. Check the "
+"DAHDI module (linked below) to configure any un-used cards"
+msgstr ""
+
+msgid "Configure/Edit DAHDI Cards"
+msgstr ""
+
+msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
+msgstr ""
+
+msgid "Channel"
+msgstr ""
+
+#, php-format
+msgid "Choose the FXS channel for this %s"
+msgstr ""
+
+msgid "No Unused DAHDi Channels Available"
+msgstr ""

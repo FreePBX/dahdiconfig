@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 /**
  * FreePBX DAHDi Config Module
@@ -152,5 +153,22 @@ if (DB::IsError($result)) {
 	die_freepbx($result->getDebugInfo());
 }
 unset($result);
+
+$freepbx_conf =& freepbx_conf::create();
+
+// DAHDISHOWDIGITALCHANS
+//
+$set['value'] = false;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig';
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Allow PRI Discrete Channels';
+$set['description'] = 'DAHDi trunk configuration is normally done using groups for PRI configuration. If there is a need to configure trunks to specific channels, setting this to true will allow each channel to be configured. This can be useful when troubleshooting a PRI and trying to isolate a bad B Channel.';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('DAHDISHOWDIGITALCHANS',$set,true);
 
 //end of file

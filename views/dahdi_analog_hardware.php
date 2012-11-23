@@ -6,22 +6,41 @@
                 <th>Type</th>
                 <th>Ports</th>
                 <th>Action</th>
+				<th>Status/Monitor</th>
         </tr>
         </thead>
         <tbody>
-	<?
+	<?php
 		$fxo = $dahdi_cards->get_fxo_ports();
 		$fxs = $dahdi_cards->get_fxs_ports();
 	?>
 	<tr class="odd">
 		<td>FXO Ports</td>
-		<td><?=((count($fxo))?implode(',', $fxo):'--')?></td>
-		<td><?=((count($fxo))?'<a href="/admin/config.php?type=setup&display=dahdi&dahdi_form=analog_signalling&ports=fxo">Edit</a>':'')?></td>
+		<td><?php 
+		//echo ((count($fxo)) ? '<a href="#" class="info">'.implode(',', $fxo).'<span>f</span></a>' : '--')
+		$c = count($fxo);
+		if($c) {
+    		$i = 1;
+    		foreach($fxo as $chan) {
+    		    $o = $astman->send_request('Command', array('Command' => 'dahdi show channel '.$chan));
+                $chan_info = explode("\n",htmlspecialchars($o['data']));
+                unset($chan_info[0]);
+    		    echo '<a href="#" class="info">'.$chan.'<span>'.implode("<br/>",$chan_info).'</span></a>';
+    		    echo ($c != $i) ? "," : "";
+    		    $i++;
+    		}
+	    } else {
+	        echo "--";
+	    }
+		?></td>
+		<td><?php echo ((count($fxo))?'<a href="config.php?type=setup&display=dahdi&dahdi_form=analog_signalling&ports=fxo">Edit</a>':'')?></td>
+		<td>View</td>
 	</tr>
 	<tr>
 		<td>FXS Ports</td>
-		<td><?=((count($fxs))?implode(',', $fxs):'--')?></td>
-		<td><?=((count($fxs))?'<a href="'.$_SERVER['REQUEST_URI'].'&dahdi_form=analog_signalling&ports=fxs">Edit</a>':'')?></td>
+		<td><?php echo ((count($fxs))?implode(',', $fxs):'--')?></td>
+		<td><?php echo ((count($fxs))?'<a href="'.$_SERVER['REQUEST_URI'].'&dahdi_form=analog_signalling&ports=fxs">Edit</a>':'')?></td>
+		<td>View</td>
 	</tr>
         </tbody>
 </table>

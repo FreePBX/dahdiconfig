@@ -21,6 +21,12 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
  *
  */
 
+if(is_link('/etc/asterisk/chan_dahdi.conf') && (readlink('/etc/asterisk/chan_dahdi.conf') == dirname(__FILE__).'/etc/chan_dahdi.conf')) {
+    if(!unlink('/etc/asterisk/chan_dahdi.conf')) {
+	    echo '<br /><br /><div style="background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center"><b>Please Delete the System Generated /etc/asterisk/chan_dahdi.conf</b></div>';
+    }
+}
+
 $dahdi_cards = new dahdi_cards();
 
 $page = $_GET['dahdi_form'];
@@ -39,33 +45,38 @@ $error = array();
  */
 if ($_POST['advanced_submit']) {
 
-	$adv = array();
-	foreach ($dahdi_cards->get_all_advanced() as $k=>$v) {
+	$modprobe = array();
+	foreach ($dahdi_cards->get_all_modprobe() as $k=>$v) {
 		if ( ! isset($_POST[$k])) {
 			if (strpos($k, 'checkbox')) {
-				$adv[$k] = 0;
+				$modprobe[$k] = FALSE;
 			} else {
-				$adv[$k] = $v;
+				$modprobe[$k] = TRUE;
 			}
 			continue;
 		}
-
-		$adv[$k] = $_POST[$k];
+		$modprobe[$k] = $_POST[$k];
 	}
-
-	$g2g = true;
-	if (preg_match('/\w\w*/', $adv['module_name']) == 0) {
-		$error['module_name'] = "Module name is invalid.";
-		$g2g = false;
+	$dahdi_cards->update_dahdi_modprobe($modprobe);
+	
+	
+	foreach ($dahdi_cards->get_all_globalsettings() as $k=>$v) {
+	    if ( ! isset($_POST[$k])) {
+			if (strpos($k, 'checkbox')) {
+				$gs[$k] = FALSE;
+			} else {
+				$gs[$k] = TRUE;
+			}
+			continue;
+		}
+		$gs[$k] = $_POST[$k];
 	}
+	$dahdi_cards->update_dahdi_globalsettings($gs);
+	
 
-	if ($g2g) {
-		$dahdi_cards->update_dahdi_advanced($adv);
-		$dahdi_cards->read_dahdi_advanced();
-		$dahdi_cards->write_modprobe();
-		$dahdi_cards->write_system_conf();
-		$page = '';
-	}
+	$dahdi_cards->read_dahdi_modprobe();
+	$dahdi_cards->read_dahdi_globalsettings();
+	$page = '';
 
 } else if ($_POST['editanalog_submit']) {
 	$type = $_POST['type'];
@@ -100,6 +111,10 @@ if ($_POST['advanced_submit']) {
 
 } else if (isset($_POST['advanced_cancel']) || isset($_POST['editanalog_cancel']) || isset($_POST['editspan_cancel'])) {
 	$page = '';
+} elseif (isset($_POST['restartdahdi'])) {
+    //dahdi restart
+    global $astman;
+    $astman->send_request('Command', array('Command' => 'dahdi restart'));
 }
 ?>
 
@@ -109,11 +124,11 @@ if ($_POST['advanced_submit']) {
 	tr.odd td { background: #fde9d1; } 
 	.alert { background: #fde9d1; border: 2px dashed red; margin: 5px; padding: 5px; }
 
-	<? if ($reboot): ?>
+	<?php if ($reboot): ?>
 	#reboot { background: #fde9d1; border: 2px dashed red; margin: 5px; padding: 5px; }
-	<? else: ?>
+	<?php else: ?>
 	#reboot { display: none; }
-	<? endif; ?>
+	<?php endif; ?>
 
 </style>
 <script>
@@ -134,7 +149,7 @@ function ChangeSelectByValue(dom_id, value, change) {
 
 <div id="reboot">For your hardware changes to take effect, you need to reboot your system!</div>
 
-<?
+<?php
 /**
  * The following switch statement determines what to render. This
  * determination is dependent on the dahdi_form variable.
@@ -143,26 +158,40 @@ switch($page) {
 case 'digital_span':
 	if ( ! isset($_GET['span'])) { ?>
 		<h1>No Span specified</h1>
-	<? }
+	<?php }
 	$span = $dahdi_cards->get_span($_GET['span']);
-	require 'modules/dahdiconfig/views/dahdi_digital_span_form.php';
+	require dirname(__FILE__).'/views/dahdi_digital_settings.php';
 	break;
 case 'analog_signalling':
-	require 'modules/dahdiconfig/views/dahdi_analog_signalling_form.php';
+	require dirname(__FILE__).'/views/dahdi_analog_settings.php';
 	break;
 default:
-	if ($dahdi_cards->hdwr_changes()): ?>
+	if ($dahdi_cards->hdwr_changes()) { ?>
 		<div class="alert">You have new hardware! Please configure your new hardware using the Edit button(s).</div>
-	<? endif; ?>
+	<?php } ?>
 	<div id="digital_hardware">
-	<?php require 'modules/dahdiconfig/views/dahdi_digital_hardware.php'; ?>
+	<?php require dirname(__FILE__).'/views/dahdi_digital_hardware.php'; ?>
 	</div>
 	<div id="analog_hardware">
-	<?php require 'modules/dahdiconfig/views/dahdi_analog_hardware.php'; ?>
+	<?php require dirname(__FILE__).'/views/dahdi_analog_hardware.php'; ?>
 	</div>
 	<div id="dahdi_advanced_settings">
-	<?php require 'modules/dahdiconfig/views/dahdi_advanced_settings.php'; ?>
+	<?php require dirname(__FILE__).'/views/dahdi_settings.php'; ?>
 	</div>
 <?php 	break;
 }
 
+global $astman;
+$o = $astman->send_request('Command', array('Command' => 'dahdi show version'));
+$dahdi_info = explode("\n",$o['data']);
+?>
+<h5><?php echo $dahdi_info[1];?></h5>
+<?php
+//Easy Form Setting method
+function set_default($default,$option=NULL,$true='selected') {
+	if(isset($option)) {
+		return $option == $default ? $true : '';
+	} else {
+		return isset($default) ? $default : '';
+	}
+}

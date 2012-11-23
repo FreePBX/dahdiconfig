@@ -24,7 +24,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $db;
 global $asterisk_conf;
 
-$tables = array('dahdi_advanced', 'dahdi_configured_locations', 'dahdi_spans', 'dahdi_scans', 'dahdi_analog');
+$tables = array('dahdi_advanced', 'dahdi_configured_locations', 'dahdi_spans', 'dahdi_scans', 'dahdi_analog', 'dahdi_advanced_modules');
 foreach ($tables as $table) {
 	$sql = "DROP TABLE IF EXISTS {$table}";
 	$result = $db->query($sql);

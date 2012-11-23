@@ -171,4 +171,62 @@ $set['description'] = 'DAHDi trunk configuration is normally done using groups f
 $set['type'] = CONF_TYPE_BOOL;
 $freepbx_conf->define_conf_setting('DAHDISHOWDIGITALCHANS',$set,true);
 
+$sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
+    `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+	`module_name` VARCHAR(100) UNIQUE,
+	`settings` BLOB
+);";
+$result = $db->query($sql);
+if (DB::IsError($result)) {
+	die_freepbx($result->getDebugInfo());
+}
+
+$sql = 'SELECT * FROM dahdi_advanced';
+
+$oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
+
+$settings = array();
+foreach($oldadv as $data) {
+    $settings[$data['keyword']] = isset($data['val']) ? $data['val'] : $data['default_val'];
+}
+
+$module_name = $settings['module_name'];
+unset($settings['module_name']);
+unset($settings[$module_name]);
+
+$sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($module_name)."', '".mysql_real_escape_string(serialize($settings))."')";
+sql($sql);
+
+$globalsettings = array(		// global array of values
+	'tone_region'=>'us',
+    'language'=>'en', 
+    'busydetect'=>'yes',
+    'busycount'=>'10',
+    'usecallerid'=>'yes',
+    'callwaiting'=>'yes',
+    'usecallingpres'=>'yes',
+    'threewaycalling'=>'yes',
+    'transfer'=>'yes',
+    'cancallforward'=>'yes',
+    'callreturn'=>'yes',
+    'echocancel'=>'yes',
+    'echocancelwhenbridged'=>'no',
+    'echotraining'=>'no',
+    'immediate'=>'no',
+    'faxdetect'=>'no',
+    'rxgain'=>'0.0',
+    'txgain'=>'0.0' 
+    );
+    
+foreach($globalsettings as $k => $v) {
+    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
+    sql($sql);
+}
+
+foreach ($entries as $entry=>$default_val) {
+    $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
+    sql($sql);
+}
+
+
 //end of file

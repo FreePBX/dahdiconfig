@@ -24,6 +24,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $db;
 global $asterisk_conf;
 
+out('Remove all dahdi tables');
 $tables = array('dahdi_advanced', 'dahdi_configured_locations', 'dahdi_spans', 'dahdi_scans', 'dahdi_analog', 'dahdi_advanced_modules');
 foreach ($tables as $table) {
 	$sql = "DROP TABLE IF EXISTS {$table}";
@@ -34,9 +35,7 @@ foreach ($tables as $table) {
 	unset($result);
 }
 
-// TODO: make this use $asterisk_conf
-`rm -rf /etc/asterisk/chan_dahdi.conf`;
-`rm -rf /etc/asterisk/chan_dahdi_groups.conf`;
-`rm -rf /etc/asterisk/chan_dahdi_general.conf`;
-
-// end of file
+out('Remove FreePBX Advanced Setting');
+//Remove FreePBX Advanced Setting
+$freepbx_conf =& freepbx_conf::create();
+$freepbx_conf->remove_conf_settings('DAHDISHOWDIGITALCHANS');

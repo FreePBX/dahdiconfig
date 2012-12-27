@@ -7,7 +7,8 @@
                 <th>Alarms</th>
                 <th>Framing/Coding</th>
                 <th>Channels Used/Total</th>
-                <th>Signalling</th>
+                <th>D-Channel</th>
+                <th>Signaling</th>
                 <th>Action</th>
         </tr>
         </thead>
@@ -16,15 +17,16 @@
 	foreach($dahdi_cards->get_spans() as $key=>$span) {
 		$name_split = explode('/', $span['name']);
 		$devicetype = $span['devicetype'];
-		$name = "{$devicetype}, Card ".($name_split[1]+1)." - Port {$name_split[2]} (span_{$key})";
+		$name = "{$span['manufacturer']} - {$span['description']} [{$span['dsid']}]";
 	?>
 	<tr class="<?php echo ((($ctr % 2) != 0)?"odd":"")?>">
 		<td><?php echo $name?></td>
-		<td><?php echo $span['alarms']?></td>
-		<td><?php echo $span['framing']."/".$span['coding']?></td>
-		<td><?php echo $span['totchans']."/".$span['totchans']?></td>
-		<td><?php echo ((isset($span['signalling']))?$span['signalling']:"Not Yet Defined")?></td>
-		<td><a href="config.php?type=setup&display=dahdi&dahdi_form=digital_span&span=<?php echo $key?>">Edit</a></td>
+		<td id="digital_alarms_<?php echo $key; ?>_label"><?php echo $span['alarms']?></td>
+		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo $span['framing']."/".$span['coding']?></td>
+		<td id="digital_totchans_<?php echo $key; ?>_label"><?php echo $span['totchans']."/".$span['totchans']?></td>
+		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:"Not Yet Defined")?></td>
+		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:"Not Yet Defined")?></td>
+		<td><a href="#" onclick="dahdi_modal_settings('digital','<?php echo $key?>');">Edit</a></td>
 	</tr>
 	<?php $ctr++;
 	} ?>

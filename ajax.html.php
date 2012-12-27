@@ -1,8 +1,2 @@
 <?PHP
-/**
- *
- * @author Andrew Nagy
- * @license MPL / GPLv2 / LGPL
- * @package Endpoint Manager
- */
-include('includes/ajax.inc');
+require_once('includes/ajax.inc.php');

@@ -6,7 +6,6 @@
                 <th>Type</th>
                 <th>Ports</th>
                 <th>Action</th>
-				<th>Status/Monitor</th>
         </tr>
         </thead>
         <tbody>
@@ -33,14 +32,12 @@
 	        echo "--";
 	    }
 		?></td>
-		<td><?php echo ((count($fxo))?'<a href="config.php?type=setup&display=dahdi&dahdi_form=analog_signalling&ports=fxo">Edit</a>':'')?></td>
-		<td>View</td>
+		<td><?php echo ((count($fxo))?'<a href="#" onclick="dahdi_modal_settings(\'analog\',\'fxo\');">Edit</a>':'')?></td>
 	</tr>
 	<tr>
 		<td>FXS Ports</td>
 		<td><?php echo ((count($fxs))?implode(',', $fxs):'--')?></td>
-		<td><?php echo ((count($fxs))?'<a href="'.$_SERVER['REQUEST_URI'].'&dahdi_form=analog_signalling&ports=fxs">Edit</a>':'')?></td>
-		<td>View</td>
+		<td><?php echo ((count($fxs))?'<a href="#" onclick="dahdi_modal_settings(\'analog\',\'fxs\');">Edit</a>':'')?></td>
 	</tr>
         </tbody>
 </table>

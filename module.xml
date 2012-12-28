@@ -32,6 +32,6 @@
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi</dahdi>
 	</menuitems>
-	<location>release/2.11/dahdiconfig-2.11.1.10.tgz</location>
-	<md5sum>bd46ccbaa07090590e1cc42e8588d6c2</md5sum>
+	<location>release/2.11/dahdiconfig-2.11.2.tgz</location>
+	<md5sum>4529fd22908b3974bb5530a6d08d5f51</md5sum>
 </module>

@@ -264,22 +264,51 @@
             		</select>
                 </td>
         </table>
+        <?php
+        $mp = $dahdi_cards->get_all_modprobe($dahdi_cards->get_modprobe('module_name'));
+        dbug($mp);
+        foreach($mp['additionals'] as $key => $value) {
+            $mp_key = $key;
+            $mp_val = $value;
+            unset($mp['additionals'][$key]);
+            break;
+        }
+        ?>
         <table width="100%" style="text-align:left;">
-            <tr id="modprobe_additional_0">
+            <tr id="mp_additional_0">
                 <td style="width:10px;vertical-align:top;">
                     <label>Other Modprobe Settings: </label>
                 </td>
                 <td style="vertical-align:bottom;">
-                    <input type="checkbox" id="mp_setting_checkbox_0" name="mp_setting_checkbox_0" />
-                    <input id="mp_setting_key_0" name="mp_setting_key_0" value="" /> =
-                    <input id="mp_setting_value_0" name="mp_setting_value_0" value="" /> <br />
+                    <a href="#" onclick="mp_delete_field(0,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                    <input type="hidden" name="mp_setting_add[]" value="0" />
+                    <input type="hidden" id="mp_setting_origsetting_key_0" name="mp_setting_origsetting_key_0" value="<?php echo $mp_key?>" />
+                    <input id="mp_setting_key_0" name="mp_setting_key_0" value="<?php echo $mp_key?>" /> =
+                    <input id="mp_setting_value_0" name="mp_setting_value_0" value="<?php echo $mp_val?>" /> <br />
                 </td>
             </tr>
-            <tr>
+            <?php 
+            $a = 1;
+            foreach($mp['additionals'] as $key => $value) {?>
+                <tr class="mp_js_additionals" id="mp_additional_<?php echo $a?>">
+                    <td style="width:10px;vertical-align:top;">
+                    </td>
+                    <td style="vertical-align:bottom;">
+                        <a href="#" onclick="mp_delete_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                        <input type="hidden" name="mp_setting_add[]" value="<?php echo $a?>" />
+                        <input type="hidden" id="mp_setting_origsetting_key_<?php echo $a?>" name="mp_setting_origsetting_key_<?php echo $a?>" value="<?php echo $key?>" />
+                        <input id="mp_setting_key_<?php echo $a?>" name="mp_setting_key_<?php echo $a?>" value="<?php echo $key?>" /> =
+                        <input id="mp_setting_value_<?php echo $a?>" name="mp_setting_value_<?php echo $a?>" value="<?php echo $value?>" /> <br />
+                    </td>
+                </tr>
+            <?php 
+                $a++;
+            } ?>
+            <tr id="mp_add">
                 <td> 
                 </td>
                 <td>
-                    <input type="button" value="Add Field" onclick="mp_add_field()">
+                    <input id="mp_add_button" type="button" value="Add Field" onclick="mp_add_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')">
                 </td>
             </tr>
         </table>

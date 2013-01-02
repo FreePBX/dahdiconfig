@@ -336,25 +336,28 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
     if (!$span['active']) {
       continue;
     }
-    $grp = $span['group'];
     $alarms = $span['alarms'];
-    if (!isset($avail_group["g$grp"])) {
-      $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));
-      $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => $alarms,'selected' => ($current_identifier == "G$grp"));
-    } else {
-      //TODO: figure out the possible alarms and the create proper hiearchy of what to report
-      //
-      if ($alarms == 'RED' || $avail_group["g$grp"]['alarms'] == '') {
-        $avail_group["g$grp"]['alarms'] = $alarms;
-        $avail_group["G$grp"]['alarms'] = $alarms;
-      }
+    foreach(json_decode($span['additional_groups'],TRUE) as $groups) {
+        $grp = $groups['group'];
+        if (!isset($avail_group["g$grp"])) {
+          $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));
+          $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => $alarms,'selected' => ($current_identifier == "G$grp"));
+        } else {
+          //TODO: figure out the possible alarms and the create proper hiearchy of what to report
+          //
+          if ($alarms == 'RED' || $avail_group["g$grp"]['alarms'] == '') {
+            $avail_group["g$grp"]['alarms'] = $alarms;
+            $avail_group["G$grp"]['alarms'] = $alarms;
+          }
+        }
     }
     if ($amp_conf['DAHDISHOWDIGITALCHANS']) {
       $basechan = $span['basechan'];
       $definedchans = $span['definedchans'];
       $topchan = $basechan + $definedchans;
       for ($port = $basechan; $port < $topchan; $port++) {
-        $digital_chan["$port"] = array('identifier' => "$port", 'name' => "Digital Channel $port",'alarms' => $alarms,'selected' => ($current_identifier == "$port"));
+          if($port != $span['reserved_ch'])
+              $digital_chan["$port"] = array('identifier' => "$port", 'name' => "Digital Channel $port",'alarms' => $alarms,'selected' => ($current_identifier == "$port"));
       }
     }
   }
@@ -549,6 +552,7 @@ function dahdiconfig_trunks_configpageload() {
       });
     });
   </script>';
+  //Hide Dahdi Identifier original setting
   $currentcomponent->addguielem('_top', new guielement('dahdi-chan-html', $js, ''));
 }
 // End of File

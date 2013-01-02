@@ -92,7 +92,8 @@ class dahdi_cards {
 		$check[] = '/etc/dahdi/modules';
 		$check[] = '/etc/dahdi/system.conf';
 		$check[] = '/etc/modprobe.d/dahdi.conf';
-		$nt =& notifications::create();
+		global $db;
+		$nt =& notifications::create($db);
 		foreach($check as $list) {
 		    $o = posix_getpwuid(fileowner($list));
 		    if($me != $o['name']) {
@@ -129,6 +130,9 @@ class dahdi_cards {
         $this->header[] = "";
         
         $this->header = implode("\n", $this->header);
+
+        $this->original_global = array_keys($this->globalsettings);
+        $this->original_modprobe = array_keys($this->modprobe);
 
 		$this->load();
 	}
@@ -658,7 +662,9 @@ class dahdi_cards {
 				break;
 			case 'span=':
 				$info = explode('=', $line);
-				list($num, $timing, $lbo, $framing, $coding, $yellow) = explode(',', $info[1]);
+				list($num, $timing, $lbo, $framing, $coding) = explode(',', $info[1]);
+				$spaninfo = explode(',', $info[1]);
+				$yellow = isset($spaninfo[5]) ? $spaninfo[5] : '';
 				$this->spans[$num]['timing'] = $timing;
 				$this->spans[$num]['lbo'] = $lbo;
 				$this->spans[$num]['framing'] = $framing;
@@ -788,10 +794,9 @@ class dahdi_cards {
 
 		/* If there is a DAHDI_Dummy then there is no hardware to parse */
 		if (isset($cxts)) foreach ($cxts as $cxt) {
-			if (strpos($cxt['description'],'DAHDI_DUMMY') === false) {
+			if ((!array_key_exists('description', $cxt)) || (strpos($cxt['description'],'DAHDI_DUMMY') === false)) {
 				continue;
 			}
-
 			return;
 		}
 
@@ -950,7 +955,7 @@ class dahdi_cards {
 	    global $db;
 	    foreach($params as $k => $v) {
 	        if(!empty($v)) {
-	            $sql = "UPDATE dahdi_advanced SET val = '".mysql_real_escape_string($v)."' WHERE keyword ='".mysql_real_escape_string($k)."'";
+	            $sql = "REPLACE INTO dahdi_advanced (val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
                 sql($sql);
                 needreload();
             }
@@ -962,8 +967,7 @@ class dahdi_cards {
 	 *
 	 * Update the span info and write it to the appropriate files
 	 */
-	public function update_span($editspan) {
-	    
+	public function update_span($editspan) {	    
 		$num = $editspan['span'];
 
 		if ($editspan['fac'] == 'CCS/HDB3/CRC4') {
@@ -978,14 +982,12 @@ class dahdi_cards {
 		$this->spans[$num]['fac'] = $editspan['fac'];
 		$this->spans[$num]['signalling'] = $editspan['signalling'];
 		$this->spans[$num]['syncsrc'] = $editspan['syncsrc'];
-		$this->spans[$num]['channels'] = $editspan['channels'];
 		$this->spans[$num]['switchtype'] = $editspan['switchtype'];
 		$this->spans[$num]['lbo'] = $editspan['lbo'];
 		$this->spans[$num]['pridialplan'] = $editspan['pridialplan'];
 		$this->spans[$num]['prilocaldialplan'] = $editspan['prilocaldialplan'];
 		$this->spans[$num]['group'] = $editspan['group'];
 		$this->spans[$num]['context'] = $editspan['context'];
-		$this->spans[$num]['definedchans'] = $editspan['definedchans'];
 		$this->spans[$num]['reserved_ch'] = $editspan['reserved_ch'];
         $this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
         $this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
@@ -1281,7 +1283,6 @@ class dahdi_cards {
 
         foreach($options as $data) {
             $settings = json_decode($data['settings'],TRUE);
-
             $options = "";
             
             $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode');
@@ -1310,6 +1311,12 @@ class dahdi_cards {
     			if ($settings[$adv]) {
     				$options .= " {$opt}={$settings[$adv]}";
     			}
+    		}
+    		
+    		if(isset($settings['additionals'])) {
+    		    foreach($settings['additionals'] as $key=>$val) {
+    		        $options .= " {$key}={$val}";
+    		    }
     		}
     
             $content .= !empty($options) ? "options ".$data['module_name'] .$options."\n" : '';    

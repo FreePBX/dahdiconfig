@@ -55,28 +55,21 @@ switch($_REQUEST['type']) {
     case "modprobesubmit":
         $modprobe = array();
         
-        dbug($_REQUEST);
         if(isset($_REQUEST['settings'])) {
             $settings = json_decode($_REQUEST['settings'], TRUE);
             foreach ($dahdi_cards->get_all_modprobe($settings['module_name']) as $k=>$v) {
-        		$modprobe[$k] = $settings[$k];
+                if($k != 'additionals')
+        		    $modprobe[$k] = $settings[$k];
+            }
+            
+            foreach($settings['mp_setting_add'] as $i) {
+                if(!empty($settings['mp_setting_key_'.$i]) && !in_array($settings['mp_setting_key_'.$i],$dahdi_cards->original_modprobe)) {
+                    $k = $settings['mp_setting_key_'.$i];
+                    $modprobe['additionals'][$k] = isset($settings['mp_setting_value_'.$i]) ? $settings['mp_setting_value_'.$i] : '';
+                }
             }
             $dahdi_cards->update_dahdi_modprobe($modprobe);
         }
-        /*
-    	foreach ($dahdi_cards->get_all_modprobe($_REQUEST['module_name']) as $k=>$v) {	    
-    		if ( ! isset($_REQUEST[$k])) {	
-    			if (strpos($k, 'checkbox')) {
-    				$modprobe[$k] = FALSE;
-    			} else {
-    				$modprobe[$k] = TRUE;
-    			}
-    			continue;
-    		}  
-    		$modprobe[$k] = $_POST[$k];  	        
-    	}
-    	$dahdi_cards->update_dahdi_modprobe($modprobe);
-    	*/	
     	needreload();
     	
 	    $json = array("status" => true);
@@ -93,35 +86,44 @@ switch($_REQUEST['type']) {
     		}
     		$gs[$k] = $_POST[$k]; 
     	}
-    	
-        $i = 0;
-        while(TRUE) {
-            if(!empty($_POST['dh_global_setting_key_'.$i])) {
+        foreach($_POST['dh_global_add'] as $i) {
+            if(!empty($_POST['dh_global_setting_key_'.$i]) && !in_array($_POST['dh_global_setting_key_'.$i],$dahdi_cards->original_global)) {
                 $k = $_POST['dh_global_setting_key_'.$i];
                 $gs[$k] = isset($_POST['dh_global_setting_value_'.$i]) ? $_POST['dh_global_setting_value_'.$i] : '';
-                if(isset($_POST['dh_global_setting_checkbox_'.$i])) {
-                    $gs[$k.'_checkbox'] = TRUE;
-                } else {
-                    $gs[$k.'_checkbox'] = FALSE;
-                }
-            } else {
-                break;
             }
-            $i++;
         }
     	$dahdi_cards->update_dahdi_globalsettings($gs);
     	needreload();
         $json = array("status" => true);
         break;
+    case "globalsettingsremove":
+        if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global)) {
+            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."'";
+            sql($sql);
+            $json = array("status" => true);
+        } else {
+            $json = array("status" => false);
+        }
+        needreload();
+        break;
+    case "mpsettingsremove":
+        $mp = $dahdi_cards->get_all_modprobe($_REQUEST['mod']);
+        if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global) && in_array($_REQUEST['origkeyword'],$mp['additionals'])) {
+            unset($mp['additionals'][$_REQUEST['origkeyword']]);
+            $dahdi_cards->update_dahdi_modprobe($mp);
+            $json = array("status" => true);
+        } else {
+            $json = array("status" => false);
+        }
+        needreload();
+        break;
     case "digital":
         $editspan = array();
-        
-        
-
-	    $vars = array('fac', 'channels', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'reserved_ch', 'priexclusive');
+	    $vars = array('fac', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'reserved_ch', 'priexclusive');
 	    $id = isset($_GET['id']) ? $_GET['id'] : '';
 	    foreach ($vars as $var) {
-		    $editspan[$var] = $_POST['editspan_'.$id.'_'.$var];
+	        if(isset($_POST['editspan_'.$id.'_'.$var])) 
+		        $editspan[$var] = $_POST['editspan_'.$id.'_'.$var];
 	    }
 	    $editspan['span'] = $id;
 	    
@@ -137,6 +139,7 @@ switch($_REQUEST['type']) {
 	    }
 	    
 	    $editspan['additional_groups'] = json_encode($editspan['groupdata']);
+	    	    
 	    $dahdi_cards->update_span($editspan);
 	    	    
 	    $json = $dahdi_cards->get_span($id);
@@ -182,6 +185,7 @@ switch($_REQUEST['type']) {
         break;
     case "digitaladd":
         $groupc = $_REQUEST['groupc'];
+        $group_num = isset($_REQUEST['group_num']) ? $_REQUEST['group_num'] : '';
         $context = 'from-digital';
         $opts = '';
         
@@ -202,7 +206,7 @@ switch($_REQUEST['type']) {
                     <label>Group: </label>
                 </td>
                 <td>
-            	    <input type="text" id="editspan_{$span['id']}_group_${groupc}" name="editspan_{$span['id']}_group_${groupc}" size="2" value="{$groupc}" />            	    
+            	    <input type="text" id="editspan_{$span['id']}_group_${groupc}" name="editspan_{$span['id']}_group_${groupc}" size="2" value="{$group_num}" />            	    
                 </td>
             </tr>
             <tr>

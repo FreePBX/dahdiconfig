@@ -16,7 +16,6 @@
 	<tr class="odd">
 		<td>FXO Ports</td>
 		<td><?php 
-		//echo ((count($fxo)) ? '<a href="#" class="info">'.implode(',', $fxo).'<span>f</span></a>' : '--')
 		$c = count($fxo);
 		if($c) {
     		$i = 1;

@@ -1,6 +1,6 @@
 <h2>Digital Hardware</h2>
 <hr />
-<table class="taglist" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
+<table class="alt_table" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
         <thead>
         <tr>
                 <th>Span</th>
@@ -19,7 +19,7 @@
 		$devicetype = $span['devicetype'];
 		$name = "{$span['manufacturer']} - {$span['description']} [{$span['dsid']}]";
 	?>
-	<tr class="<?php echo ((($ctr % 2) != 0)?"odd":"")?>">
+	<tr>
 		<td><?php echo $name?></td>
 		<td id="digital_alarms_<?php echo $key; ?>_label"><?php echo $span['alarms']?></td>
 		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo $span['framing']."/".$span['coding']?></td>

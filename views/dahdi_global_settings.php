@@ -264,7 +264,7 @@
                 <label>Other Global Dahdi Settings: </label>
             </td>
             <td style="vertical-align:middle;">
-                <a href="#" onclick="dh_global_delete_field(0)"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                <a href="#" onclick="dh_global_delete_field(0)"><img height="10px" src="images/trash.png"></a>
                 <input type="hidden" name="dh_global_add[]" value="0" />
                 <input type="hidden" id="dh_global_origsetting_key_0" name="dh_global_origsetting_key_0" value="<?php echo $dh_key?>" />
                 <input id="dh_global_setting_key_0" name="dh_global_setting_key_0" value="<?php echo $dh_key?>" /> =
@@ -280,7 +280,7 @@
                     <td style="width:10px;vertical-align:top;">
                     </td>
                     <td style="vertical-align:middle;">
-                        <a href="#" onclick="dh_global_delete_field(<?php echo $a?>)"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                        <a href="#" onclick="dh_global_delete_field(<?php echo $a?>)"><img height="10px" src="images/trash.png"></a>
                         <input type="hidden" name="dh_global_add[]" value="<?php echo $a?>" />
                         <input type="hidden" id="dh_global_origsetting_key_<?php echo $a?>"name="dh_global_origsetting_key_<?php echo $a?>" value="<?php echo $key?>" />
                         <input id="dh_global_setting_key_<?php echo $a?>" name="dh_global_setting_key_<?php echo $a?>" value="<?php echo $key?>" /> =
@@ -296,7 +296,7 @@
             <td> 
             </td>
             <td>
-                <input type="button" value="Add Field" onclick="dh_global_add_field(<?php echo $a?>)">
+                <a style="cursor: pointer;" onclick="dh_global_add_field(<?php echo $a?>)"><img src="assets/dahdiconfig/images/add.png"></a>
             </td>
         </tr>
     </table>

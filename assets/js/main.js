@@ -125,7 +125,7 @@ var max_dh_global = 0;
 //var dh_global_additional_key = 0;
 function dh_global_add_field(start) {
     var i = (start < max_dh_global) ? max_dh_global : start;
-    $("#dh_global_add").before('<tr id="dh_global_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="dh_global_delete_field('+i+')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a> <input type="hidden" name="dh_global_add[]" value="'+i+'" /><input id="dh_global_setting_key_'+i+'" name="dh_global_setting_key_'+i+'" value="" /> =<input id="dh_global_setting_value_'+i+'" name="dh_global_setting_value_'+i+'" value="" /> <br /></td></tr>');
+    $("#dh_global_add").before('<tr id="dh_global_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="dh_global_delete_field('+i+')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="dh_global_add[]" value="'+i+'" /><input id="dh_global_setting_key_'+i+'" name="dh_global_setting_key_'+i+'" value="" /> = <input id="dh_global_setting_value_'+i+'" name="dh_global_setting_value_'+i+'" value="" /> <br /></td></tr>');
     max_dh_global = i+1;
 }
 /* End Add Custom Setting */
@@ -134,7 +134,7 @@ function dh_global_add_field(start) {
 var max_mp = 0;
 function mp_add_field(start,module) {
     var i = (start < max_mp) ? max_mp : start;
-    $("#mp_add").before('<tr class="mp_js_additionals" id="mp_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="mp_delete_field('+i+',\''+module+'\')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a> <input type="hidden" name="mp_setting_add[]" value="'+i+'" /> <input id="mp_setting_key_'+i+'" name="mp_setting_key_'+i+'" value="" /> =<input id="mp_setting_value_'+i+'" name="mp_setting_value_'+i+'" value="" /> <br /></td></tr>');
+    $("#mp_add").before('<tr class="mp_js_additionals" id="mp_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="mp_delete_field('+i+',\''+module+'\')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="mp_setting_add[]" value="'+i+'" /> <input id="mp_setting_key_'+i+'" name="mp_setting_key_'+i+'" value="" /> = <input id="mp_setting_value_'+i+'" name="mp_setting_value_'+i+'" value="" /> <br /></td></tr>');
     max_mp = i+1;
 }
 

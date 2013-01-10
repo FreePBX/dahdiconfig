@@ -280,7 +280,7 @@
                     <label>Other Modprobe Settings: </label>
                 </td>
                 <td style="vertical-align:bottom;">
-                    <a href="#" onclick="mp_delete_field(0,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                    <a href="#" onclick="mp_delete_field(0,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="images/trash.png"></a>
                     <input type="hidden" name="mp_setting_add[]" value="0" />
                     <input type="hidden" id="mp_setting_origsetting_key_0" name="mp_setting_origsetting_key_0" value="<?php echo $mp_key?>" />
                     <input id="mp_setting_key_0" name="mp_setting_key_0" value="<?php echo $mp_key?>" /> =
@@ -294,7 +294,7 @@
                     <td style="width:10px;vertical-align:top;">
                     </td>
                     <td style="vertical-align:bottom;">
-                        <a href="#" onclick="mp_delete_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="assets/dahdiconfig/images/delete.png"></a>
+                        <a href="#" onclick="mp_delete_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img height="10px" src="images/trash.png"></a>
                         <input type="hidden" name="mp_setting_add[]" value="<?php echo $a?>" />
                         <input type="hidden" id="mp_setting_origsetting_key_<?php echo $a?>" name="mp_setting_origsetting_key_<?php echo $a?>" value="<?php echo $key?>" />
                         <input id="mp_setting_key_<?php echo $a?>" name="mp_setting_key_<?php echo $a?>" value="<?php echo $key?>" /> =
@@ -308,7 +308,7 @@
                 <td> 
                 </td>
                 <td>
-                    <input id="mp_add_button" type="button" value="Add Field" onclick="mp_add_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')">
+                    <a id="mp_add_button" style="cursor: pointer;" onclick="mp_add_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img src="assets/dahdiconfig/images/add.png"></a>
                 </td>
             </tr>
         </table>

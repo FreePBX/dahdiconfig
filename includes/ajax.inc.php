@@ -54,12 +54,12 @@ switch($_REQUEST['type']) {
         break;
     case "modprobesubmit":
         $modprobe = array();
-        
         if(isset($_REQUEST['settings'])) {
             $settings = json_decode($_REQUEST['settings'], TRUE);
-            foreach ($dahdi_cards->get_all_modprobe($settings['module_name']) as $k=>$v) {
-                if($k != 'additionals')
-        		    $modprobe[$k] = $settings[$k];
+            
+            foreach ($dahdi_cards->original_modprobe as $key) {
+                if(isset($settings[$key]))
+        		    $modprobe[$key] = $settings[$key];
             }
             
             foreach($settings['mp_setting_add'] as $i) {

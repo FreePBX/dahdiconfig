@@ -1,6 +1,6 @@
 <h2>Analog Hardware</h2>
 <hr />
-<table class="taglist" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
+<table class="alt_table" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
         <thead>
         <tr>
                 <th>Type</th>
@@ -13,7 +13,7 @@
 		$fxo = $dahdi_cards->get_fxo_ports();
 		$fxs = $dahdi_cards->get_fxs_ports();
 	?>
-	<tr class="odd">
+	<tr>
 		<td>FXO Ports</td>
 		<td><?php 
 		$c = count($fxo);

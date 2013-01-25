@@ -79,11 +79,20 @@ class dahdi_cards {
 	private $spans = array();		// The current spans
 	private $system_conf;			// /etc/dahdi/system.conf
 	private $header;    //config file header
+    public $modules = array();
 
 	/**
 	 * Constructor
 	 */
 	public function __construct () {
+        foreach (glob(dirname(dirname(__FILE__))."/modules/*.module") as $filename) {
+            require_once($filename);
+            $name = basename($filename,'.module');
+            if (class_exists('dahdi_'.$name)) {
+                $class = 'dahdi_'.$name;
+                $this->modules[$name] = new $class();
+            }
+        }
 		if (!is_file('/etc/dahdi/system.conf')) {
 			$this->dahdi_genconf();
 		}
@@ -1257,6 +1266,27 @@ class dahdi_cards {
 		$output = implode("\n", $output);
 		file_put_contents($file,$this->header.$output);
 	}
+    
+    public function write_modules() {
+        foreach($this->modules as $mod_name => $module) {
+            if(method_exists($module,'get_filename')) {
+                foreach($module->get_filename() as $file) {
+                    if(!file_exists($file)) {
+                        file_put_contents($file,'');
+                    }
+                    if(is_writable($file)) {
+                        if(method_exists($module,'generateConf')) {
+                            $module->generateConf($file);
+                        }
+                    } else {
+                        global $db;
+                        $nt =& notifications::create($db);
+            			$nt->add_error('dahdiconfig', strtoupper($mod_name), _('Unable to write to '.$file), "Please change permissions on ".$file, "", false, true);
+                    }
+                }
+            }
+        }
+    }
 
 	/**
 	 * Write Modprobe
@@ -1265,8 +1295,9 @@ class dahdi_cards {
 	 */
 	public function write_modprobe() {
 		$file = "/etc/modprobe.d/dahdi.conf";
-
-        $nt =& notifications::create();
+        
+        global $db;
+        $nt =& notifications::create($db);
 		if ( ! is_writable($file)) {
 			$nt->add_error('dahdiconfig', 'MODPROBECONF', _('Unable to write to '.$file), "Please change permissions on ".$file, "", false, true);
 			return false;

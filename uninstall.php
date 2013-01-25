@@ -39,3 +39,4 @@ out('Remove FreePBX Advanced Setting');
 //Remove FreePBX Advanced Setting
 $freepbx_conf =& freepbx_conf::create();
 $freepbx_conf->remove_conf_settings('DAHDISHOWDIGITALCHANS');
+$freepbx_conf->remove_conf_settings('DAHDIDISABLEWRITE');

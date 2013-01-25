@@ -4,28 +4,37 @@ $dahdi_cards = new dahdi_cards();
 
 
 switch($_REQUEST['type']) {
+    case "write":
+        if(isset($_REQUEST['mode'])) {
+            $freepbx_conf =& freepbx_conf::create();
+            $array = array();
+            $array['DAHDIDISABLEWRITE'] = ($_REQUEST['mode'] == 'enable') ? false : true;
+            $freepbx_conf->set_conf_values($array,true);
+            $json = array("status" => true);
+        }
+        break;
     case "modprobe":
         $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".mysql_real_escape_string($_REQUEST['dcmodule'])."'";
         $settings = sql($sql, 'getOne');
         if($settings) {
             $json = array(
-                "status" => true, 
+                "status" => true,
                 "module" => $_REQUEST['dcmodule']
-                );                    
-            
+                );
+
             $settings = json_decode($settings,TRUE);
             $json = array_merge($settings,$json);
         } else {
             if($_REQUEST['dcmodule'] == 'wctc4xxp') {
                 $json = array(
-                    "status" => true, 
+                    "status" => true,
                     "module" => $_REQUEST['dcmodule'],
                     "mode_checkbox" => false,
                     "mode" => "any"
                 );
             } else {
                 $json = array(
-                    "status" => true, 
+                    "status" => true,
                     "module" => $_REQUEST['dcmodule'],
             		'opermode_checkbox'=>FALSE,
             		'opermode'=>'USA',
@@ -47,7 +56,7 @@ switch($_REQUEST['type']) {
             		'neon_offlimit'=>'',
             		'echocan_nlp_type'=>0,
             		'echocan_nlp_threshold'=>'',
-            		'echocan_nlp_max_supp'=>'' 
+            		'echocan_nlp_max_supp'=>''
             		);
     		}
         }
@@ -56,12 +65,12 @@ switch($_REQUEST['type']) {
         $modprobe = array();
         if(isset($_REQUEST['settings'])) {
             $settings = json_decode($_REQUEST['settings'], TRUE);
-            
+
             foreach ($dahdi_cards->original_modprobe as $key) {
                 if(isset($settings[$key]))
         		    $modprobe[$key] = $settings[$key];
             }
-            
+
             foreach($settings['mp_setting_add'] as $i) {
                 if(!empty($settings['mp_setting_key_'.$i]) && !in_array($settings['mp_setting_key_'.$i],$dahdi_cards->original_modprobe)) {
                     $k = $settings['mp_setting_key_'.$i];
@@ -71,7 +80,7 @@ switch($_REQUEST['type']) {
             $dahdi_cards->update_dahdi_modprobe($modprobe);
         }
     	needreload();
-    	
+
 	    $json = array("status" => true);
         break;
     case "globalsettingssubmit":
@@ -84,7 +93,7 @@ switch($_REQUEST['type']) {
     			}
     			continue;
     		}
-    		$gs[$k] = $_POST[$k]; 
+    		$gs[$k] = $_POST[$k];
     	}
         foreach($_POST['dh_global_add'] as $i) {
             if(!empty($_POST['dh_global_setting_key_'.$i]) && !in_array($_POST['dh_global_setting_key_'.$i],$dahdi_cards->original_global)) {
@@ -122,13 +131,13 @@ switch($_REQUEST['type']) {
 	    $vars = array('fac', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'reserved_ch', 'priexclusive');
 	    $id = isset($_GET['id']) ? $_GET['id'] : '';
 	    foreach ($vars as $var) {
-	        if(isset($_POST['editspan_'.$id.'_'.$var])) 
+	        if(isset($_POST['editspan_'.$id.'_'.$var]))
 		        $editspan[$var] = $_POST['editspan_'.$id.'_'.$var];
 	    }
 	    $editspan['span'] = $id;
-	    
+
 	    $editspan['groupdata'] = json_decode($_REQUEST['groupdata'],TRUE);
-	    
+
 	    foreach($editspan['groupdata'] as $key=> $gd) {
 	        if(!empty($_REQUEST['editspan_'.$id.'_context_'.$key])) {
 	            $editspan['groupdata'][$key]['group'] = $_REQUEST['editspan_'.$id.'_group_'.$key];
@@ -137,17 +146,17 @@ switch($_REQUEST['type']) {
                 unset($editspan['groupdata'][$key]);
             }
 	    }
-	    
+
 	    $editspan['additional_groups'] = json_encode($editspan['groupdata']);
-	    	    
+
 	    $dahdi_cards->update_span($editspan);
-	    	    
+
 	    $json = $dahdi_cards->get_span($id);
 	    $json['totchans'] = $json['totchans']."/".$json['totchans'];
 	    $json['framingcoding'] = $json['framing']."/".$json['coding'];
 
 	    $json['status'] = TRUE;
-        
+
         needreload();
         break;
     case "analog":
@@ -188,7 +197,7 @@ switch($_REQUEST['type']) {
         $group_num = isset($_REQUEST['group_num']) ? $_REQUEST['group_num'] : '';
         $context = 'from-digital';
         $opts = '';
-        
+
         $span = $dahdi_cards->get_span($_REQUEST['span']);
         $c = (int)$_REQUEST['usedchans'];
         $s = (int)$_REQUEST['startchan'];
@@ -197,7 +206,7 @@ switch($_REQUEST['type']) {
             $selected = ($i == $c) ? 'selected' : '';
     	    $opts .= '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
         }
-        
+
         $o = $dahdi_cards->calc_bchan_fxx($_REQUEST['span'],NULL,$s,$c);
         $html = <<<EOF
         <table width="100%" id="editspan_{$span['id']}_group_settings_${groupc}" style="text-align:left;" border="0" cellspacing="0">
@@ -206,7 +215,7 @@ switch($_REQUEST['type']) {
                     <label>Group: </label>
                 </td>
                 <td>
-            	    <input type="text" id="editspan_{$span['id']}_group_${groupc}" name="editspan_{$span['id']}_group_${groupc}" size="2" value="{$group_num}" />            	    
+            	    <input type="text" id="editspan_{$span['id']}_group_${groupc}" name="editspan_{$span['id']}_group_${groupc}" size="2" value="{$group_num}" />
                 </td>
             </tr>
             <tr>
@@ -214,7 +223,7 @@ switch($_REQUEST['type']) {
                     <label>Context: </label>
                 </td>
                 <td>
-            	    <input type="text" id="editspan_{$span['id']}_context_${groupc}" name="editspan_{$span['id']}_context_${groupc}" value="$context" />            	    
+            	    <input type="text" id="editspan_{$span['id']}_context_${groupc}" name="editspan_{$span['id']}_context_${groupc}" value="$context" />
                 </td>
             </tr>
             <tr>
@@ -236,6 +245,15 @@ EOF;
     default:
         $json = array("status" => false);
         break;
+}
+
+foreach($dahdi_cards->modules as $mod_name => $module) {
+    if(method_exists($module,'settings_process')) {
+        $o = $module->settings_process($_REQUEST['type'],$_POST);
+        if(isset($o) && $o['status']) {
+            $json = $o;
+        }
+    }
 }
 
 echo json_encode($json);

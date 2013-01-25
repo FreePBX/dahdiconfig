@@ -20,10 +20,7 @@
 		if($c) {
     		$i = 1;
     		foreach($fxo as $chan) {
-    		    $o = $astman->send_request('Command', array('Command' => 'dahdi show channel '.$chan));
-                $chan_info = explode("\n",htmlspecialchars($o['data']));
-                unset($chan_info[0]);
-    		    echo '<a href="#" class="info">'.$chan.'<span>'.implode("<br/>",$chan_info).'</span></a>';
+    		    echo $chan;
     		    echo ($c != $i) ? "," : "";
     		    $i++;
     		}

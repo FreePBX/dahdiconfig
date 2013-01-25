@@ -47,13 +47,18 @@ global $db;
  	public function dahdiconfig_conf() {
 		$this->cards = new dahdi_cards();
 
-		$this->cards->dahdi_cfg();
-		$this->cards->write_modprobe();
-		$this->cards->write_system_conf();		
+        $this->cards->dahdi_cfg();
+        global $amp_conf;
+        if (!$amp_conf['DAHDIDISABLEWRITE']) {
+    		$this->cards->write_modprobe();
+    		$this->cards->write_system_conf();
+            $this->cards->write_modules();
+        }
 	}
 
 	public function get_filename() {
-		return array('chan_dahdi_general.conf', 'chan_dahdi_groups.conf', 'chan_dahdi.conf');
+        global $amp_conf;
+		return !$amp_conf['DAHDIDISABLEWRITE'] ? array('chan_dahdi_general.conf', 'chan_dahdi_groups.conf', 'chan_dahdi.conf') : array();
 	}
 
 	public function generateConf($file) {

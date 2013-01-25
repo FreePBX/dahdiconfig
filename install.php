@@ -76,7 +76,6 @@ $entries = array(
 	'echocan_nlp_max_supp'=>''
 );
 
-out('Inserting Advanced Settings');
 foreach ($entries as $entry=>$default_val) {
 	$sql = "INSERT INTO dahdi_advanced (keyword, default_val) VALUES ('{$entry}', '{$default_val}')";
 
@@ -89,7 +88,6 @@ foreach ($entries as $entry=>$default_val) {
 	unset($result);
 }
 
-out('Creating Spans table');
 $sql = "CREATE TABLE IF NOT EXISTS dahdi_spans (
 	`id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
 	`span` INT UNSIGNED NOT NULL,
@@ -130,7 +128,6 @@ if (DB::IsError($result)) {
 }
 unset($result);
 
-out('Create Analog Table');
 $sql = "CREATE TABLE IF NOT EXISTS dahdi_analog (
 	`port` INT UNIQUE,
 	`type` ENUM ('fxo', 'fxs'),
@@ -161,14 +158,13 @@ unset($result);
 
 $freepbx_conf =& freepbx_conf::create();
 
-out('Creating the DAHDISHOWDIGITALCHANS in Advanced Settings of FreePBX');
 // DAHDISHOWDIGITALCHANS in Advanced Settings of FreePBX
 //
 $set['value'] = false;
 $set['defaultval'] =& $set['value'];
 $set['readonly'] = 0;
 $set['hidden'] = 0;
-$set['level'] = 0;
+$set['level'] = 1;
 $set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
 $set['category'] = 'DAHDi Configuration Module';
 $set['emptyok'] = 0;
@@ -176,6 +172,19 @@ $set['name'] = 'Allow PRI Discrete Channels';
 $set['description'] = 'DAHDi trunk configuration is normally done using groups for PRI configuration. If there is a need to configure trunks to specific channels, setting this to true will allow each channel to be configured. This can be useful when troubleshooting a PRI and trying to isolate a bad B Channel.';
 $set['type'] = CONF_TYPE_BOOL;
 $freepbx_conf->define_conf_setting('DAHDISHOWDIGITALCHANS',$set,true);
+
+$set['value'] = true;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Disable DAHDi Configuration Writes';
+$set['description'] = 'By default the DAHDi configuration module will NOT write out any data to protect any current configuration settings';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('DAHDIDISABLEWRITE',$set,true);
 
 $sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
     `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
@@ -187,7 +196,6 @@ if (DB::IsError($result)) {
 	die_freepbx($result->getDebugInfo());
 }
 
-out('Moving Settings');
 $sql = 'SELECT * FROM dahdi_advanced';
 $oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 
@@ -257,4 +265,8 @@ foreach($old as $list) {
     sql($sql);
 }
 
-//end of file
+$sql = "CREATE TABLE IF NOT EXISTS dahdi_modules (
+	`module_name` VARCHAR(100) UNIQUE,
+	`settings` BLOB
+);";
+sql($sql);

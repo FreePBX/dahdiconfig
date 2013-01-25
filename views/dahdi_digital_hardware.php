@@ -1,5 +1,5 @@
 <h2>Digital Hardware</h2>
-<hr />
+<hr width="90%" style="text-align:left;margin-left:0"/>
 <table class="alt_table" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
         <thead>
         <tr>

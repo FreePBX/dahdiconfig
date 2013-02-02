@@ -1,25 +1,74 @@
 #!/bin/bash
 # This script is called when the user executes amportal
-#
-# Check to make sure we are in the chown mode
-if [ "$1" == "chown" ]
+
+#function to start our drivers
+function dahdiconfig_start_it_up() {
+    if which wanpipe > /dev/null 2>&1
+        then
+            echo STARTING WANPIPE
+            exe=$(which wanpipe)
+            $exe start
+            echo Wanpipe Started
+    else
+        if which dahdi > /dev/null 2>&1
+            then
+                echo STARTING DAHDI
+                exe=$(which dahdi)
+                $exe start
+                echo Dahdi Started
+        else
+            echo DAHDI NOT FOUND!
+        fi
+    fi
+}
+
+#This happens AFTER asterisk has been stopped
+function stop_asterisk_hook_*() {
+    if which wanpipe > /dev/null 2>&1
+        then
+            echo STOPPING WANPIPE
+            exe=$(which wanpipe)
+            $exe stop
+            echo Wanpipe Stopped
+    else
+        if which dahdi > /dev/null 2>&1
+            then
+                echo STOPPING DAHDI
+                exe=$(which dahdi)
+                $exe stop
+                echo Dahdi Stopped
+        fi
+    fi
+    if [ "$1" == "restart" ]
+        then
+            dahdiconfig_start_it_up
+    fi
+}
+
+#This is a hack so we can start BEFORE asterisk starts
+if [ "$1" == "start" ]
     then
-        #Check for System.conf
-        if [ -f /etc/dahdi/system.conf ]
-            then
-                #Change permissions regardless
-                chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/system.conf
-        fi
-        #Check for Dahdi.conf (modprobe)
-        if [ -f /etc/modprobe.d/dahdi.conf ]
-            then
-                #Change permissions regardless
-                chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/modprobe.d/dahdi.conf
-        fi
-        #Change module permissions
-        if [ -f /etc/dahdi/modules ]
-            then
-                #Change permissions regardless
-                chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/modules
-        fi
+        dahdiconfig_start_it_up
 fi
+
+#chown our files to....us
+function chown_asterisk_hook_*() {
+    #Check for System.conf
+    if [ -f /etc/dahdi/system.conf ]
+        then
+            #Change permissions regardless
+            chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/system.conf
+    fi
+    #Check for Dahdi.conf (modprobe)
+    if [ -f /etc/modprobe.d/dahdi.conf ]
+        then
+            #Change permissions regardless
+            chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/modprobe.d/dahdi.conf
+    fi
+    #Change module permissions
+    if [ -f /etc/dahdi/modules ]
+        then
+            #Change permissions regardless
+            chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/modules
+    fi
+}

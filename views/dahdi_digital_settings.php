@@ -65,6 +65,11 @@
             		<option value="featd" <?php echo set_default($span['signalling'],'featd'); ?>>E &amp; M -- fead(DTMF)</option>
             		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>>FXOKS</option>
             		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>>FXOLS</option>
+                    <option value="--" disabled>--BRI--</option>
+                    <option value="bri_net" <?php echo set_default($span['signalling'],'bri_net'); ?>>BRI PTP - Net</option>
+                    <option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>>BRI PTP - CPE</option>
+                    <option value="bri_net_ptmp" <?php echo set_default($span['signalling'],'bri_net_ptmp'); ?>>BRI PTMP - Net</option>
+                    <option value="bri_cpe_ptmp" <?php echo set_default($span['signalling'],'bri_cpe_ptmp'); ?>>BRI PTMP - CPE</option>
             	</select>
             </td>
         </tr>

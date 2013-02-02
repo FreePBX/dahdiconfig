@@ -35,7 +35,7 @@ if(!preg_match('/\d/i',$dahdi_info[1])) {
 }
 
 //Check to make sure we aren't symlinking chan_dahdi.conf like we were in the past as we don't do that anymore.
-if(is_link('/etc/asterisk/chan_dahdi.conf') && (readlink('/etc/asterisk/chan_dahdi.conf') == dirname(__FILE__).'/etc/chan_dahdi.conf')) {
+if(!$amp_conf['DAHDIDISABLEWRITE'] && is_link('/etc/asterisk/chan_dahdi.conf') && (readlink('/etc/asterisk/chan_dahdi.conf') == dirname(__FILE__).'/etc/chan_dahdi.conf')) {
     if(!unlink('/etc/asterisk/chan_dahdi.conf')) {
         //If unlink fails then alert the user
         $dahdi_message = 'Please Delete the System Generated /etc/asterisk/chan_dahdi.conf';

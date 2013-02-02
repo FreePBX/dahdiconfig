@@ -280,10 +280,16 @@ $(function(){
                     
                     if(j.module == "wctc4xxp") { 
                         $('#normal_mp_settings').hide();
+                        $('#wct4xxp_wcte12xp_settings').hide();
                         $('#wctc4xxp_settings').show();
                         $("#mode_checkbox").attr('checked',j.mode_checkbox);
                         $('#mode').val(j.mode);
                     } else {
+                        if((j.module == "wct4xxp") || (j.module == "wcte12xp")) {
+                            $('#wct4xxp_wcte12xp_settings').show();
+                        } else {
+                            $('#wct4xxp_wcte12xp_settings').hide();
+                        }
                         $('#normal_mp_settings').show();
                         $('#wctc4xxp_settings').hide();
                         $("#opermode_checkbox").attr('checked',j.opermode_checkbox);

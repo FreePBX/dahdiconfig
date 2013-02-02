@@ -264,6 +264,21 @@
             		</select>
                 </td>
         </table>
+        <table width="100%" id="wct4xxp_wcte12xp_settings" style="text-align:left;display: none;">
+            <tr>
+                <td style="width:10px;">
+                    <label><a href="#" class="info">Default Line Mode:<span>The recommended way to set line mode on your Digium 1-, 2-, and 4-port (span) digital telephony cards is to set the jumper(s) on the card for either T1 or E1 mode for each span on the card. With the jumper off, the span is ready for T1 mode; with the jumper on, the span is ready for E1 mode. For more details about the jumpers, see the user manual for the single, dual, or quad span digital cards.<br/>However, sometimes a card will have been installed in a server without first setting the jumper(s) correctly, and it may be inconvenient to remove the card from the server to access its jumper(s).  In this case, the "default_linemode" option can be passed when the card's device driver is loaded.</span></a></label>
+                </td>
+                <td>
+                  	<input type="checkbox" id="defaultlinemode_checkbox" name="defaultlinemode_checkbox" <?php echo ($dahdi_cards->get_modprobe('defaultlinemode_checkbox'))?'checked':''?> />
+                	<select id="default_linemode" name="default_linemode">
+                		<option value="t1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'t1'); ?>>T1</option>
+                		<option value="e1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'e1'); ?>>E1</option>
+                		<option value="auto" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'auto'); ?>>Auto</option>
+                	</select>
+                </td>  
+            </tr>
+        </table>
         <?php
         $mp = $dahdi_cards->get_all_modprobe($dahdi_cards->get_modprobe('module_name'));
         if(isset($mp['additionals'])) {

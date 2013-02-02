@@ -20,7 +20,7 @@
                	<select id="editspan_<?php echo $key?>_fac" name="editspan_<?php echo $key?>_fac">
             	<?php switch($span['totchans']) {
             	   case 3: ?>
-            		<option value="CCS/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/AMI'); ?>></option>
+            		<option value="CCS/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/AMI'); ?>>CCS/AMI</option>
             	<?php 	break;
             	   case 24: ?>
             		<option value="ESF/B8ZS" <?php echo set_default($span['framing']."/".$span['coding'],'ESF/B8ZS'); ?>>ESF/B8ZS</option>
@@ -73,7 +73,7 @@
             	</select>
             </td>
         </tr>
-        <?php if ($span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') { ?>
+        <?php if (substr($span['signalling'],0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') { ?>
             <tr>
                 <td style="width:10px;">
                 	<label for="editspan_<?php echo $key?>_switchtype">Switchtype:</label>

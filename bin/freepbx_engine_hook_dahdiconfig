@@ -1,45 +1,69 @@
 #!/bin/bash
-# This script is called when the user executes amportal
+# This script is called when the user executes 'amportal start/stop/chown'
 
 #function to start our drivers
 function dahdiconfig_start_it_up() {
-    if which wanpipe > /dev/null 2>&1
+    if which wanrouter > /dev/null 2>&1
         then
-            echo STARTING WANPIPE
-            exe=$(which wanpipe)
-            $exe start
-            echo Wanpipe Started
+            echo STARTING WANROUTER FOR SANGOMA CARDS
+            exe=$(which wanrouter)
+            #Start Wanrouter but echo output to a temporary file so that we don't get useless information if wanrouter exits other than 0
+            $exe start > wanrouter_tmp 2>&1
+            #get exit status of command above
+            status=$?
+            #read our temporary file into variable
+            msg="`cat wanrouter_tmp`"
+            #remove our temporary file
+            rm wanrouter_tmp
+            #if exits status was anything but 0 then we don't have wanpipe cards installed, don't display output
+            if [ $status -ne 0 ]; then
+                echo No Wanrouter Cards Installed
+            else
+                #Display output of the wanrouter
+                echo "$msg"
+                echo Wanrouter Started
+                #wanrouter starts dahdi for us so we dont need to continue
+                return 0
+            fi
+    fi
+    
+    if [ -f /etc/init.d/dahdi ]
+        then
+            echo -e '\n'
+            echo STARTING DAHDI FOR DIGIUM CARDS
+            /etc/init.d/dahdi start
+            echo Dahdi Started
+            echo -e '\n'
     else
-        if which dahdi > /dev/null 2>&1
-            then
-                echo STARTING DAHDI
-                exe=$(which dahdi)
-                $exe start
-                echo Dahdi Started
-        else
-            echo DAHDI NOT FOUND!
-        fi
+        echo -e '\n'
+        echo DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!
+        echo -e '\n'
     fi
 }
 
+#Store the command variable outside of the function context
+f_command=$1
+
 #This happens AFTER asterisk has been stopped
 function stop_asterisk_hook_*() {
-    if which wanpipe > /dev/null 2>&1
+    #look for wanrouter. Echo output to null
+    if which wanrouter > /dev/null 2>&1
         then
-            echo STOPPING WANPIPE
-            exe=$(which wanpipe)
+            echo STOPPING WANROUTER FOR SANGOMA CARDS
+            exe=$(which wanrouter)
             $exe stop
-            echo Wanpipe Stopped
-    else
-        if which dahdi > /dev/null 2>&1
-            then
-                echo STOPPING DAHDI
-                exe=$(which dahdi)
-                $exe stop
-                echo Dahdi Stopped
-        fi
     fi
-    if [ "$1" == "restart" ]
+    
+    if [ -f /etc/init.d/dahdi ]
+        then
+            echo -e '\n'
+            echo STOPPING DAHDI FOR DIGIUM CARDS
+            /etc/init.d/dahdi stop
+            echo Dahdi Stopped
+            echo -e '\n'
+    fi
+    
+    if [ "$f_command" == "restart" ]
         then
             dahdiconfig_start_it_up
     fi

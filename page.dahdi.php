@@ -127,7 +127,7 @@ if ($dahdi_cards->hdwr_changes()) {
 	</div>
 	<div class="btn_container">
 	    <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-    	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="Reload Dahdi" />
+    	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="Reload Asterisk Dahdi Module" />
             <?php if(file_exists('/var/spool/asterisk/sysadmin/dahdi_restart')) {?>
             <input type="submit" id="restartdahdi" name="restartdahdi" value="Restart Dahdi" />
             <?php }
@@ -189,9 +189,9 @@ spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
 
 $('#editspan_<?php echo $key?>_signalling').change(function() {
     if(($(this).val() == 'pri_net') || ($(this).val() == 'pri_cpe')) {
-        $('#editspan_<?php echo $key?>_reserved_ch').fadeIn('slow');
+        //$('#editspan_<?php echo $key?>_reserved_ch').fadeIn('slow');
     } else {
-        $('#editspan_<?php echo $key?>_reserved_ch').fadeOut('slow');
+        //$('#editspan_<?php echo $key?>_reserved_ch').fadeOut('slow');
     }
 });
 
@@ -287,8 +287,12 @@ $(function(){
                     } else {
                         if((j.module == "wct4xxp") || (j.module == "wcte12xp")) {
                             $('#wct4xxp_wcte12xp_settings').show();
+                            $('#defaultlinemode_checkbox').attr('checked',j.defaultlinemode_checkbox);
+                            $('#defaultlinemode').val(j.defaultlinemode);
                         } else {
                             $('#wct4xxp_wcte12xp_settings').hide();
+                            $('#defaultlinemode_checkbox').attr('checked',false);
+                            $('#defaultlinemode').val('t1');
                         }
                         $('#normal_mp_settings').show();
                         $('#wctc4xxp_settings').hide();
@@ -334,6 +338,12 @@ $(function(){
                 }
             })
         } else {
+            if(($(this).val() == "wct4xxp") || ($(this).val() == "wcte12xp")) {
+                $('#wct4xxp_wcte12xp_settings').show();
+            } else {
+                $('#wct4xxp_wcte12xp_settings').hide();
+            }
+            
             //Hide neon settings
             $('.neon').hide();
             //Remove all extra additionals
@@ -444,6 +454,14 @@ $(function(){
         close: function() {
         }
     });
+    $("#editspan_<?php echo $key?>_signalling").change(function() {
+        if($( this ).val().substring(0,3) == 'bri' || <?php echo $span['totchans']?> != 3 || $( this ).val().substring(0,3) == 'pri') {
+            $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow')
+            $("#editspan_<?php echo $key?>_switchtype").val('euroisdn')
+        } else {
+            $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow')
+        }
+    })
     <?php } ?>
     <?php
     foreach($dahdi_cards->modules as $mod_name => $module) {

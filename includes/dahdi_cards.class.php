@@ -30,7 +30,9 @@ class dahdi_cards {
 		'echocan_nlp_threshold'=>'',
 		'echocan_nlp_max_supp'=>'',
 		'mode_checkbox' => FALSE,
-		'mode'=>'any' );
+		'mode'=>'any',
+        'defaultlinemode_checkbox' => FALSE,
+        'defaultlinemode' => 'T1');
 	private $globalsettings = array(		// global array of values
 		'tone_region'=>'us',
         'language'=>'en', 
@@ -153,7 +155,7 @@ class dahdi_cards {
 	 */
 	 public function calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
 	 	$span = $this->spans[$num];
-	 	
+	 	        
 		$y = !empty($startchan) ? $startchan : $span['min_ch'];
 		$x = !empty($usedchans) ? ($y + $usedchans) -1 : ($y + $span['totchans'])-1;
 		$r = $span['reserved_ch'];
@@ -165,7 +167,7 @@ class dahdi_cards {
 		
 		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
 		$sig = !empty($signalling) ? $signalling : $span['signalling'];
-        if(($sig == 'pri_net') || ($sig == 'pri_cpe')) {
+        if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
     		$o = "";
     		for($i=$y;$i<=$x;$i++) {
                 switch($i) {
@@ -1316,7 +1318,7 @@ class dahdi_cards {
             $settings = json_decode($data['settings'],TRUE);
             $options = "";
             
-            $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode');
+            $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode', 'defaultlinemode'=>'defaultline_mode');
     		foreach ($opts as $opt=>$name) {
         		if ($settings["{$opt}_checkbox"]) {
         			$options .= " {$name}={$settings[$opt]}";

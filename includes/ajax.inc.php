@@ -58,6 +58,10 @@ switch($_REQUEST['type']) {
             		'echocan_nlp_threshold'=>'',
             		'echocan_nlp_max_supp'=>''
             		);
+                if($_REQUEST['dcmodule'] == 'wct4xxp' || $_REQUEST['dcmodule'] == 'wcte12xp') {
+                    $json['defaultlinemode_checkbox'] = FALSE;
+                    $json['defaultlinemode'] = 't1';
+                }
     		}
         }
         break;

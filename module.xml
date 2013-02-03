@@ -9,7 +9,7 @@
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-        *2.11.12* With help from [sr] Fixes #6244
+        *2.11.12* With help from [sr] Fixes #6244 and also fixes #6247
         *2.11.11* Fix #6281, #6269. Work on BRI re #6244
         *2.11.9* Protect End Users Configuration Files
         *2.11.8* Sangoma Support

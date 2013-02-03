@@ -44,7 +44,7 @@
                 <span id="editspan_<?php echo $key?>_channels"><?php echo "{$span['definedchans']}/{$span['totchans']} ({$span['spantype']})"?></span>
             </td>
         </tr>
-        <tr id="editspan_<?php echo $key?>_reserved_ch" style="<?php if(isset($span['signalling']) && (($span['signalling'] != 'pri_net') || ($span['signalling'] != 'pri_cpe'))) { ?>display:none;<?php } ?>">
+        <!--<tr id="editspan_<?php echo $key?>_reserved_ch" style="<?php if(isset($span['signalling']) && (($span['signalling'] != 'pri_net') || ($span['signalling'] != 'pri_cpe'))) { ?>display:none;<?php } ?>">
             <td style="width:10px;">
                 <label>DChannel:</label>    	
             </td>
@@ -52,17 +52,21 @@
                 <?php echo $span['reserved_ch'];?>
             </td>
         </tr>
+        -->
         <tr>
             <td style="width:10px;">
                 <label for="editspan_<?php echo $key?>_signalling">Signalling:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
+                    <option value="--" disabled>--PRI--</option>
             		<option value="pri_net" <?php echo set_default($span['signalling'],'pri_net'); ?>>PRI - Net</option>
             		<option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>>PRI - CPE</option>
+                    <option value="--" disabled>--E &amp; M--</option>
             		<option value="em" <?php echo set_default($span['signalling'],'em'); ?>>E &amp; M</option>
             		<option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>>E &amp; M -- Wink</option>
             		<option value="featd" <?php echo set_default($span['signalling'],'featd'); ?>>E &amp; M -- fead(DTMF)</option>
+                    <option value="--" disabled>--ANALOG--</option>
             		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>>FXOKS</option>
             		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>>FXOLS</option>
                     <option value="--" disabled>--BRI--</option>
@@ -73,8 +77,8 @@
             	</select>
             </td>
         </tr>
-        <?php if (substr($span['signalling'],0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') { ?>
-            <tr>
+        <?php $display = (substr($span['signalling'],0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') ? 'show' : 'none'; ?>
+            <tr id="editspan_<?php echo $key?>_switchtype_tr" style="display:<?php echo $display?>;">
                 <td style="width:10px;">
                 	<label for="editspan_<?php echo $key?>_switchtype">Switchtype:</label>
                 </td>
@@ -90,7 +94,6 @@
                 	</select>   
                 </td>
             </tr>
-        <?php } ?>
         <tr>
             <td style="width:10px;">
                 <label for="editspan_<?php echo $key?>_syncsrc">Sync/Clock Source:</label>

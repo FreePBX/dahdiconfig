@@ -271,7 +271,7 @@
                 </td>
                 <td>
                   	<input type="checkbox" id="defaultlinemode_checkbox" name="defaultlinemode_checkbox" <?php echo ($dahdi_cards->get_modprobe('defaultlinemode_checkbox'))?'checked':''?> />
-                	<select id="default_linemode" name="default_linemode">
+                	<select id="defaultlinemode" name="defaultlinemode">
                 		<option value="t1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'t1'); ?>>T1</option>
                 		<option value="e1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'e1'); ?>>E1</option>
                 		<option value="auto" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'auto'); ?>>Auto</option>

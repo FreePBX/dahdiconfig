@@ -8,15 +8,9 @@ if (isset($_POST['reloaddahdi'])) {
     $astman->send_request('Command', array('Command' => 'dahdi restart'));
 }
 
-if (isset($_POST['restartdahdi'])) {
-    if(file_exists('/var/spool/asterisk/sysadmin/dahdi_restart')) {
-        file_put_contents('/var/spool/asterisk/sysadmin/dahdi_restart',time());
-    }
-}
-
-if (isset($_POST['restartwanpipe'])) {
-    if(file_exists('/var/spool/asterisk/sysadmin/wanrouter_restart')) {
-        file_put_contents('/var/spool/asterisk/sysadmin/wanrouter_restart',time());
+if (isset($_POST['restartamportal'])) {
+    if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {
+        file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
     }
 }
 
@@ -28,10 +22,6 @@ if(!preg_match('/\d/i',$dahdi_info[1])) {
     $dahdi_message = 'DAHDi Doesn\'t appear to be running. Click the \'Restart/Reload Dahdi Button\' Below';
     include('views/dahdi_message_box.php');
     $dahdi_info[1] = '';
-} elseif(!preg_match('/\d/i',$dahdi_info[1]) && isset($_POST['restartdahdi'])) {
-    exec('asterisk -rx "module unload chan_dahdi.so"');
-    exec('asterisk -rx "module load chan_dahdi.so"');
-    $astman->send_request('Command', array('Command' => 'dahdi restart'));
 }
 
 //Check to make sure we aren't symlinking chan_dahdi.conf like we were in the past as we don't do that anymore.
@@ -128,11 +118,8 @@ if ($dahdi_cards->hdwr_changes()) {
 	<div class="btn_container">
 	    <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
     	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="Reload Asterisk Dahdi Module" />
-            <?php if(file_exists('/var/spool/asterisk/sysadmin/dahdi_restart')) {?>
-            <input type="submit" id="restartdahdi" name="restartdahdi" value="Restart Dahdi" />
-            <?php }
-            if(file_exists('/var/spool/asterisk/sysadmin/wanrouter_restart')) { ?>
-            <input type="submit" id="restartwanpipe" name="restartwanpipe" value="Restart Wanpipe" />
+            <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
+            <input type="submit" id="restartamportal" name="restartamportal" value="Restart Dahdi &amp; Asterisk" />
             <?php } ?>
     	</form>
     </div>

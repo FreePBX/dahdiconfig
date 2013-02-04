@@ -3,13 +3,13 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.12</version>
+	<version>2.11.14</version>
 	<publisher>Schmoozecom</publisher>
 	<license>GPLv2</license>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-        *2.11.12* With help from [sr] Fixes #6244 and also fixes #6247
+        *2.11.14* With help from [sr] Fixes #6244 and also fixes #6247
         *2.11.11* Fix #6281, #6269. Work on BRI re #6244
         *2.11.9* Protect End Users Configuration Files
         *2.11.8* Sangoma Support
@@ -41,6 +41,6 @@
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi</dahdi>
 	</menuitems>
-	<location>release/2.11/dahdiconfig-2.11.12.tgz</location>
-	<md5sum>72172323d3c952317097764108257bf8</md5sum>
+	<location>release/2.11/dahdiconfig-2.11.4.tgz</location>
+	<md5sum>56ce8666e2a491b75334156cb25a3986</md5sum>
 </module>

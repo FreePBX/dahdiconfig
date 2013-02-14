@@ -1,6 +1,7 @@
 <form id="form-modprobe" action="config.php?quietmode=1&amp;handler=file&amp;module=dahdiconfig&amp;file=ajax.html.php&amp;type=modprobesubmit">
     <div id="modprobe">
         <h2>Modprobe Settings</h2>
+        <h3>This edits all settings in /etc/modprobe.d/dahdi.conf</h3>
         <hr />
         <table width="100%" style="text-align:left;">
             <tr>
@@ -272,15 +273,17 @@
                 <td>
                   	<input type="checkbox" id="defaultlinemode_checkbox" name="defaultlinemode_checkbox" <?php echo ($dahdi_cards->get_modprobe('defaultlinemode_checkbox'))?'checked':''?> />
                 	<select id="defaultlinemode" name="defaultlinemode">
-                		<option value="t1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'t1'); ?>>T1</option>
-                		<option value="e1" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'e1'); ?>>E1</option>
-                		<option value="auto" <?php echo set_default($dahdi_cards->get_modprobe('default_linemode'),'auto'); ?>>Auto</option>
+                		<option value="t1" <?php echo set_default($dahdi_cards->get_modprobe('defaultlinemode'),'t1'); ?>>T1</option>
+                		<option value="e1" <?php echo set_default($dahdi_cards->get_modprobe('defaultlinemode'),'e1'); ?>>E1</option>
+                		<option value="auto" <?php echo set_default($dahdi_cards->get_modprobe('defaultlinemode'),'auto'); ?>>Auto</option>
                 	</select>
                 </td>  
             </tr>
         </table>
         <?php
         $mp = $dahdi_cards->get_all_modprobe($dahdi_cards->get_modprobe('module_name'));
+        $mp_key = '';
+        $mp_val = '';
         if(isset($mp['additionals'])) {
             foreach($mp['additionals'] as $key => $value) {
                 $mp_key = $key;

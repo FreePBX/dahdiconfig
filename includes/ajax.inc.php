@@ -87,6 +87,28 @@ switch($_REQUEST['type']) {
 
 	    $json = array("status" => true);
         break;
+    case "systemsettingssubmit":
+        foreach ($dahdi_cards->get_all_systemsettings() as $k=>$v) {
+    	    if ( ! isset($_POST[$k])) {
+    			if (strpos($k, 'checkbox')) {
+    				$ss[$k] = FALSE;
+    			} else {
+    				$ss[$k] = TRUE;
+    			}
+    			continue;
+    		}
+    		$ss[$k] = $_POST[$k];
+    	}
+        foreach($_POST['dh_system_add'] as $i) {
+            if(!empty($_POST['dh_system_setting_key_'.$i]) && !in_array($_POST['dh_system_setting_key_'.$i],$dahdi_cards->original_system)) {
+                $k = $_POST['dh_system_setting_key_'.$i];
+                $ss[$k] = isset($_POST['dh_system_setting_value_'.$i]) ? $_POST['dh_system_setting_value_'.$i] : '';
+            }
+        }
+    	$dahdi_cards->update_dahdi_systemsettings($ss);
+    	needreload();
+        $json = array("status" => true);
+        break;
     case "globalsettingssubmit":
         foreach ($dahdi_cards->get_all_globalsettings() as $k=>$v) {
     	    if ( ! isset($_POST[$k])) {
@@ -109,9 +131,19 @@ switch($_REQUEST['type']) {
     	needreload();
         $json = array("status" => true);
         break;
+    case "systemsettingsremove":
+        if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_system)) {
+            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."' AND type='system'";
+            sql($sql);
+            $json = array("status" => true);
+        } else {
+            $json = array("status" => false);
+        }
+        needreload();
+        break;
     case "globalsettingsremove":
         if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global)) {
-            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."'";
+            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."' AND type='chandahdi'";
             sql($sql);
             $json = array("status" => true);
         } else {

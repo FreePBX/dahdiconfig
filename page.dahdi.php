@@ -58,6 +58,7 @@ if ($dahdi_cards->hdwr_changes()) {
        		<ul>
        			<a style="text-decoration:underline"><strong>Settings</strong></a><br />
        			<a href="#" onclick="dahdi_modal_settings('global');">Global Settings</a><br />
+                <a href="#" onclick="dahdi_modal_settings('system');">System Settings</a><br />
        			<a href="#" onclick="dahdi_modal_settings('modprobe');">Modprobe Settings</a><br />
                 <?php
                 foreach($dahdi_cards->modules as $mod_name => $module) {
@@ -74,6 +75,9 @@ if ($dahdi_cards->hdwr_changes()) {
        	
        	<div id="global-settings" title="Global Settings" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_global_settings.php'; ?>
+        </div>
+       	<div id="system-settings" title="System Settings" style="display: none;">
+            <?php require dirname(__FILE__).'/views/dahdi_system_settings.php'; ?>
         </div>
        	<div id="modprobe-settings" title="Modprobe Settings" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_modprobe_settings.php'; ?>
@@ -131,8 +135,8 @@ if ($dahdi_cards->hdwr_changes()) {
             <li><?php echo $amp_conf['ASTETCDIR']?>/chan_dahdi_general.conf</li>
             <li><?php echo $amp_conf['ASTETCDIR']?>/chan_dahdi_groups.conf</li>
             <li><?php echo $amp_conf['ASTETCDIR']?>/chan_dahdi.conf</li>
-            <li>/etc/dahdi/system.conf</li>
-            <li>/etc/modprobe.d/dahdi.conf</li>
+            <li><?php echo $amp_conf['DAHDISYSTEMLOC']?></li>
+            <li><?php echo $amp_conf['DAHDIMODPROBELOC']?></li>
         </ul>
         It is <strong>YOUR</strong> responsibility to backup all relevant files on your system! 
         We can <strong>NOT</strong> be held responsible if you enable this module and your trunks/cards suddenly 
@@ -487,6 +491,25 @@ $(function(){
         buttons: {
             "Save": function() {
                 $("#form-globalsettings").ajaxSubmit(options);
+                toggle_reload_button('show');
+                $("#reboot").fadeIn(3000).show();
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+        }
+    });
+    $( "#system-settings" ).dialog({
+        autoOpen: false,
+        height: 400,
+        width: 500,
+        modal: true,
+        buttons: {
+            "Save": function() {
+                $('#form-systemsettings').ajaxSubmit(options);
                 toggle_reload_button('show');
                 $("#reboot").fadeIn(3000).show();
                 $( this ).dialog( "close" );

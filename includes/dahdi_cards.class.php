@@ -6,6 +6,9 @@
  */
 class dahdi_cards {
 	private $analog_ports = array();	// stores all analog port info
+    private $systemsettings = array(
+        'tone_region' => 'us' 
+    );
 	private $modprobe = array(		// modprobe array of values
 		'module_name'=>'wctdm24xxp',
 		'opermode_checkbox'=>FALSE,
@@ -34,7 +37,6 @@ class dahdi_cards {
         'defaultlinemode_checkbox' => FALSE,
         'defaultlinemode' => 'T1');
 	private $globalsettings = array(		// global array of values
-		'tone_region'=>'us',
         'language'=>'en', 
         'busydetect'=>'yes',
         'busycount'=>'10',
@@ -95,14 +97,16 @@ class dahdi_cards {
                 $this->modules[$name] = new $class();
             }
         }
-		if (!is_file('/etc/dahdi/system.conf')) {
+        
+        global $amp_conf;
+		if (!is_file($amp_conf['DAHDISYSTEMLOC'])) {
 			$this->dahdi_genconf();
 		}
 		$me = exec('whoami');
-		
-		$check[] = '/etc/dahdi/modules';
-		$check[] = '/etc/dahdi/system.conf';
-		$check[] = '/etc/modprobe.d/dahdi.conf';
+        
+		$check[] = $amp_conf['DAHDIMODULESLOC'];
+		$check[] = $amp_conf['DAHDISYSTEMLOC'];
+		$check[] = $amp_conf['DAHDIMODPROBELOC'];
 		global $db;
 		$nt =& notifications::create($db);
 		foreach($check as $list) {
@@ -117,8 +121,8 @@ class dahdi_cards {
 		}
 		
 		//Read Avalible modules
-		if(file_exists("/etc/dahdi/modules")) {
-		    $handle = fopen("/etc/dahdi/modules", "r");
+		if(file_exists($amp_conf['DAHDIMODULESLOC'])) {
+		    $handle = fopen($amp_conf['DAHDIMODULESLOC'], "r");
             while (($buffer = fgets($handle, 4096)) !== false) {
                 if(!preg_match('/#/',$buffer)) {
                     $buffer = trim($buffer);
@@ -144,6 +148,7 @@ class dahdi_cards {
 
         $this->original_global = array_keys($this->globalsettings);
         $this->original_modprobe = array_keys($this->modprobe);
+        $this->original_system = array_keys($this->systemsettings);
 
 		$this->load();
 	}
@@ -277,11 +282,15 @@ class dahdi_cards {
 	 */
 	 
 	 public function get_globalsettings($param) {
-		return $this->globalsettings[$param];
+		return isset($this->globalsettings[$param]) ? $this->globalsettings[$param] : '';
 	 }
 	 
+	 public function get_systemsettings($param) {
+ 		return isset($this->systemsettings[$param]) ? $this->systemsettings[$param] : '';
+ 	 }
+     
 	 public function get_modprobe($param) {
- 		return $this->modprobe[$param];
+ 		return isset($this->modprobe[$param]) ? $this->modprobe[$param] : '';
  	 }
 
 	/**
@@ -292,6 +301,10 @@ class dahdi_cards {
 	 
 	 public function get_all_globalsettings() {
 		return $this->globalsettings;
+	 }
+     
+	 public function get_all_systemsettings() {
+		return $this->systemsettings;
 	 }
 	 
 	 public function get_all_modprobe($module=NULL) {
@@ -463,10 +476,12 @@ class dahdi_cards {
 			$this->write_analog_signalling();
 		}
 
+        
 		$this->read_system_conf();
 		$this->read_chan_dahdi_conf();
 		$this->read_dahdi_modprobe();
 		$this->read_dahdi_globalsettings();
+        $this->read_dahdi_systemsettings();
 		$this->read_dahdi_analog();
 		$this->read_dahdi_spans();
 	}
@@ -531,12 +546,23 @@ class dahdi_cards {
 	}
 	
 	public function read_dahdi_globalsettings() {
-        $tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced";
+        $tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='chandahdi'";
         $settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
         if($settings) {
             foreach($settings as $set) {
                 $key = $set['keyword'];
                 $this->globalsettings[$key] = !empty($set['val']) ? $set['val'] : $set['default_val'];
+            }
+        }
+	}
+    
+	public function read_dahdi_systemsettings() {
+        $tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='system'";
+        $settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
+        if($settings) {
+            foreach($settings as $set) {
+                $key = $set['keyword'];
+                $this->systemsettings[$key] = !empty($set['val']) ? $set['val'] : $set['default_val'];
             }
         }
 	}
@@ -612,29 +638,34 @@ class dahdi_cards {
 	 * Load all the configuration information in /etc/dahdi/system.conf
 	 */
 	public function read_system_conf() {
-		
+		//return false;
+        
+        //TODO: neverending loop
 		$nomore = false;
 		$ctr = 0;
 		do {
-			$this->system_conf = file_get_contents('/etc/dahdi/system.conf');
-			if (! $this->system_conf) {
+			$this->systemsettings_conf = file_get_contents('/etc/dahdi/system.conf');
+			if (! $this->systemsettings_conf) {
 				return FALSE;
 			}
 
-			$lines = explode("\n", $this->system_conf);
+			$lines = explode("\n", $this->systemsettings_conf);
 
 			$hasaline = false;
-      foreach ($lines as $line) {
+            foreach ($lines as $line) {
 				// its a comment, like this line
 				if (substr($line,0,1) == '#' || trim($line) == '') {
 					continue;
 				}
 				$hasaline = true;
-        break;
+                break;
 			}
 
 			if ( ! $hasaline) {
-				$this->dahdi_genconf();
+				if(!$this->dahdi_genconf()) {
+                    //If genconf returns an error then we should abort otherwise we will be in a neverending loop
+                    break;
+				}
 			}
 
 			$ctr++;
@@ -966,7 +997,22 @@ class dahdi_cards {
 	    global $db;
 	    foreach($params as $k => $v) {
 	        if(!empty($v)) {
-	            $sql = "REPLACE INTO dahdi_advanced (val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
+                $additional = array_key_exists($k,$this->globalsettings) ? 0 : 1;
+	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'chandahdi')";
+                sql($sql);
+                needreload();
+            }
+        }
+    }
+    
+	public function update_dahdi_systemsettings($params) {
+	    global $db;
+        //dbug($params);
+	    foreach($params as $k => $v) {
+	        if(!empty($v)) {
+                $additional = array_key_exists($k,$this->systemsettings) ? 0 : 1;
+	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'system')";
+                //dbug($sql);
                 sql($sql);
                 needreload();
             }
@@ -1160,7 +1206,8 @@ class dahdi_cards {
 		$dchan = '';
 		$hardhdlc = '';
 		
-		$file = "/etc/dahdi/system.conf";
+        global $amp_conf;
+		$file = $amp_conf['DAHDISYSTEMLOC'];
 
         global $db;
         $nt =& notifications::create($db);
@@ -1262,8 +1309,13 @@ class dahdi_cards {
 			$output[] = "fxoks=".dahdi_array2chans($fxsks);
 		}
 
-		$output[] = "loadzone={$this->globalsettings['tone_region']}";
-		$output[] = "defaultzone={$this->globalsettings['tone_region']}";
+		$output[] = "loadzone={$this->systemsettings['tone_region']}";
+		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
+        
+        foreach($this->get_all_systemsettings() as $k => $v) {
+            if(!in_array($k,$this->original_system))
+                $output[] = $k."=".$v;
+        }
 
 		$output = implode("\n", $output);
 		file_put_contents($file,$this->header.$output);
@@ -1296,7 +1348,8 @@ class dahdi_cards {
 	 * Write all the modprob options to modprobe.conf
 	 */
 	public function write_modprobe() {
-		$file = "/etc/modprobe.d/dahdi.conf";
+        global $amp_conf;
+		$file = $amp_conf['DAHDIMODPROBELOC'];
         
         global $db;
         $nt =& notifications::create($db);

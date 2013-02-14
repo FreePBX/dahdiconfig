@@ -131,6 +131,44 @@ function dh_global_add_field(start) {
 /* End Add Custom Setting */
 /* End Custom settings for Global Settings */
 
+/* Start Custom settings for System Settings */
+/* Delete Custom Setting */
+function dh_system_delete_field(id) {
+    var origkey = $("#dh_system_origsetting_key_"+id).val();
+    var key = $("#dh_system_setting_key_"+id).val();
+    var val = $("#dh_system_setting_val_"+id).val();
+    if(typeof origkey === 'undefined') {
+        if(id > 0) {
+            $('#dh_system_additional_'+ id).remove();
+        } else {
+            $('#dh_system_setting_key_0').val('');
+            $('#dh_system_setting_value_0').val('');
+        }
+    } else {
+        if(id > 0) {
+            $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'systemsettingsremove', keyword: key, origkeyword: origkey, value: val}, function(z){
+                $('#dh_system_additional_'+ id).remove();
+            });
+        } else {
+            $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'systemsettingsremove', keyword: key, origkeyword: origkey, value: val}, function(z){
+                $('#dh_system_setting_key_0').val('');
+                $('#dh_system_setting_value_0').val('');
+            });
+        }
+    }
+}
+/* End Delete Custom Setting */
+/* Add Custom Setting */
+var max_dh_system = 0;
+//var dh_global_additional_key = 0;
+function dh_system_add_field(start) {
+    var i = (start < max_dh_system) ? max_dh_system : start;
+    $("#dh_system_add").before('<tr id="dh_system_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="dh_system_delete_field('+i+')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="dh_system_add[]" value="'+i+'" /><input id="dh_system_setting_key_'+i+'" name="dh_system_setting_key_'+i+'" value="" /> = <input id="dh_system_setting_value_'+i+'" name="dh_system_setting_value_'+i+'" value="" /> <br /></td></tr>');
+    max_dh_system = i+1;
+}
+/* End Add Custom Setting */
+/* End Custom settings for System Settings */
+
 var max_mp = 0;
 function mp_add_field(start,module) {
     var i = (start < max_mp) ? max_mp : start;

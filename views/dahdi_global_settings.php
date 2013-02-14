@@ -1,59 +1,9 @@
 <form id="form-globalsettings" action="config.php?quietmode=1&amp;handler=file&amp;module=dahdiconfig&amp;file=ajax.html.php&amp;type=globalsettingssubmit">
 <div id="global">
     <h2>Global Settings</h2>
+    <h3>This edits all settings in chan_dahdi.conf</h3>
     <hr />
     <table width="100%" style="text-align:left;">
-        <tr>
-            <td style="width:10px;">
-                <label for="tone_region"><a href="#" class="info">Tone Region:<span>Please choose your country or your nearest neighboring country for default Tones (Ex: dialtone, busy tone, ring tone etc.)</span></a></label>
-                
-            </td>
-            <td>
-                <select id="tone_region" name="tone_region">
-            		<option value="us" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'us'); ?>>United States/North America</option>
-            		<option value="au" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'au'); ?>>Australia</option>
-            		<option value="fr" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'fr'); ?>>France</option>
-            		<option value="nl" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'nl'); ?>>Netherlands</option>
-            		<option value="uk" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'uk'); ?>>United Kingdom</option>
-            		<option value="fi" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'fi'); ?>>Finland</option>
-            		<option value="es" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'es'); ?>>Spain</option>
-            		<option value="jp" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'jp'); ?>>Japan</option>
-            		<option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'no'); ?>>Norway</option>
-            		<option value="at" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'at'); ?>>Austria</option>
-            		<option value="nz" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'nz'); ?>>New Zealand</option>
-            		<option value="it" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'it'); ?>>Italy</option>
-            		<option value="us-old" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'us-old'); ?>>United States Circa 1950 / North America</option>
-            		<option value="gr" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'gr'); ?>>Greece</option>
-            		<option value="tw" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'tw'); ?>>Taiwan</option>
-            		<option value="cl" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'cl'); ?>>Chile</option>
-            		<option value="se" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'se'); ?>>Sweden</option>
-            		<option value="be" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'be'); ?>>Belgium</option>
-            		<option value="sg" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'sg'); ?>>Singapore</option>
-            		<option value="il" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'il'); ?>>Israel</option>
-            		<option value="br" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'br'); ?>>Brazil</option>
-            		<option value="hu" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'hu'); ?>>Hungary</option>
-            		<option value="lt" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'lt'); ?>>Lithuania</option>
-            		<option value="pl" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'pl'); ?>>Poland</option>
-            		<option value="za" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'za'); ?>>South Africa</option>
-            		<option value="pt" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'pt'); ?>>Portugal</option>
-            		<option value="ee" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ee'); ?>>Estonia</option>
-            		<option value="mx" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'mx'); ?>>Mexico</option>
-            		<option value="in" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'in'); ?>>India</option>
-            		<option value="de" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'de'); ?>>Germany</option>
-            		<option value="ch" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ch'); ?>>Switzerland</option>
-            		<option value="dk" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'dk'); ?>>Denmark</option>
-            		<option value="cz" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'cz'); ?>>Czech Republic</option>
-            		<option value="cn" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'cn'); ?>>China</option>
-            		<option value="ar" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ar'); ?>>Argentina</option>
-            		<option value="my" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'my'); ?>>Malaysia</option>
-            		<option value="th" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'th'); ?>>Thailand</option>
-            		<option value="bg" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'bg'); ?>>Bulgaria</option>
-            		<option value="ve" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ve'); ?>>Venezuela</option>
-            		<option value="ph" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ph'); ?>>Philippines</option>
-            		<option value="ru" <?php echo set_default($dahdi_cards->get_globalsettings('tone_region'),'ru'); ?>>Russian Federation</option>
-            	</select>
-            </td>
-        </tr>
         <tr>
             <td style="width:10px;">
                 <label for="language"><a href="#" class="info">Select Language:<span>Specify the language.</span></a></label>
@@ -249,6 +199,8 @@
     </table>
     <?php
     $gs = $dahdi_cards->get_all_globalsettings();
+    $dh_key = '';
+    $dh_val = '';
     foreach($gs as $key => $value) {
         if(!in_array($key,$dahdi_cards->original_global) && !strpos($key, 'checkbox')) {
             $dh_key = $key;

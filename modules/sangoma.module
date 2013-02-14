@@ -25,6 +25,7 @@ class dahdi_sangoma {
         $output['dialog']['width'] = 500;
         $output['html'] = <<< EOF
             <h2>Sangoma Settings</h2>
+            <h3>This edits all settings in /etc/wanpipe/global.conf</h3>
             <hr />
             <table width="100%" style="text-align:left;">
                 <tr>

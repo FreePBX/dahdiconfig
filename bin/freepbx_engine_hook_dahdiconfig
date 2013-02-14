@@ -27,11 +27,11 @@ function dahdiconfig_start_it_up() {
             fi
     fi
     
-    if [ -f /etc/init.d/dahdi ]
+    if [ -f $DAHDIEXEC ]
         then
             echo -e '\n'
             echo STARTING DAHDI FOR DIGIUM CARDS
-            /etc/init.d/dahdi start
+            $DAHDIEXEC start
             echo Dahdi Started
             echo -e '\n'
     else
@@ -54,11 +54,11 @@ function stop_asterisk_hook_*() {
             $exe stop
     fi
     
-    if [ -f /etc/init.d/dahdi ]
+    if [ -f $DAHDIEXEC ]
         then
             echo -e '\n'
             echo STOPPING DAHDI FOR DIGIUM CARDS
-            /etc/init.d/dahdi stop
+            $DAHDIEXEC stop
             echo Dahdi Stopped
             echo -e '\n'
     fi
@@ -78,19 +78,19 @@ fi
 #chown our files to....us
 function chown_asterisk_hook_*() {
     #Check for System.conf
-    if [ -f /etc/dahdi/system.conf ]
+    if [ -f $DAHDISYSTEMLOC ]
         then
             #Change permissions regardless
             chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/system.conf
     fi
     #Check for Dahdi.conf (modprobe)
-    if [ -f /etc/modprobe.d/dahdi.conf ]
+    if [ -f $DAHDIMODPROBELOC ]
         then
             #Change permissions regardless
             chown $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/modprobe.d/dahdi.conf
     fi
     #Change module permissions
-    if [ -f /etc/dahdi/modules ]
+    if [ -f $DAHDIMODULESLOC ]
         then
             #Change permissions regardless
             chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/modules

@@ -177,7 +177,7 @@ $set['value'] = true;
 $set['defaultval'] =& $set['value'];
 $set['readonly'] = 0;
 $set['hidden'] = 0;
-$set['level'] = 0;
+$set['level'] = 1;
 $set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
 $set['category'] = 'DAHDi Configuration Module';
 $set['emptyok'] = 0;
@@ -185,6 +185,58 @@ $set['name'] = 'Disable DAHDi Configuration Writes';
 $set['description'] = 'By default the DAHDi configuration module will NOT write out any data to protect any current configuration settings';
 $set['type'] = CONF_TYPE_BOOL;
 $freepbx_conf->define_conf_setting('DAHDIDISABLEWRITE',$set,true);
+
+$set['value'] = '/etc/init.d/dahdi';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'DAHDi Executable Location';
+$set['description'] = 'Location of the DAHDi Executable';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDIEXEC',$set,true);
+
+$set['value'] = '/etc/modprobe.d/dahdi.conf';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'ModProbe.d Configuration File Location';
+$set['description'] = 'DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDIMODPROBELOC',$set,true);
+
+$set['value'] = '/etc/dahdi/system.conf';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'System Configuration File Location';
+$set['description'] = 'DAHDi System Configuration File Location (dahdi/system.conf)';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDISYSTEMLOC',$set,true);
+
+$set['value'] = '/etc/dahdi/modules';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'DAHDi Modules Location';
+$set['description'] = 'DAHDi Modules Location (/etc/dahdi/modules)';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDIMODULESLOC',$set,true);
 
 $sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
     `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
@@ -241,8 +293,10 @@ foreach($globalsettings as $k => $v) {
 }
 
 foreach ($entries as $entry=>$default_val) {
-    $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
-    sql($sql);
+    if($entry != 'tone_region') {
+        $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
+        sql($sql);
+    }
 }
 
 $sql = "ALTER IGNORE TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
@@ -270,3 +324,17 @@ $sql = "CREATE TABLE IF NOT EXISTS dahdi_modules (
 	`settings` BLOB
 );";
 sql($sql);
+
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "type"')) {
+	sql('ALTER TABLE dahdi_advanced ADD type varchar(50) default "chandahdi"');
+}
+
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"')) {
+	sql('ALTER TABLE dahdi_advanced ADD additional bool default 1');
+}
+
+foreach($globalsettings as $ksettings => $settings) {
+    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
+}
+
+sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');

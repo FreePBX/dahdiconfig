@@ -80,7 +80,6 @@ global $db;
 		        $output[] = "[channels]";
 		        
 		        foreach($this->cards->get_all_globalsettings() as $k => $v) {
-                    if($k != 'tone_region')
                         $output[] = $k."=".$v;
                 }
                 
@@ -118,7 +117,7 @@ global $db;
     			$output = array();
 
     			foreach ($this->cards->get_spans() as $key=>$span) {
-    				if ($span['signalling'] == '') {
+    				if (!isset($span['signalling']) || $span['signalling'] == '') {
     					continue;
     				}
 

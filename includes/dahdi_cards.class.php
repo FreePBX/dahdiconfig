@@ -551,7 +551,7 @@ class dahdi_cards {
         if($settings) {
             foreach($settings as $set) {
                 $key = $set['keyword'];
-                $this->globalsettings[$key] = !empty($set['val']) ? $set['val'] : $set['default_val'];
+                $this->globalsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
             }
         }
 	}
@@ -562,7 +562,7 @@ class dahdi_cards {
         if($settings) {
             foreach($settings as $set) {
                 $key = $set['keyword'];
-                $this->systemsettings[$key] = !empty($set['val']) ? $set['val'] : $set['default_val'];
+                $this->systemsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
             }
         }
 	}
@@ -996,7 +996,7 @@ class dahdi_cards {
 	public function update_dahdi_globalsettings($params) {
 	    global $db;
 	    foreach($params as $k => $v) {
-	        if(!empty($v)) {
+	        if(isset($v) && ($v != "")) {
                 $additional = array_key_exists($k,$this->globalsettings) ? 0 : 1;
 	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'chandahdi')";
                 sql($sql);
@@ -1007,12 +1007,10 @@ class dahdi_cards {
     
 	public function update_dahdi_systemsettings($params) {
 	    global $db;
-        //dbug($params);
 	    foreach($params as $k => $v) {
-	        if(!empty($v)) {
+	        if(isset($v) && ($v != "")) {
                 $additional = array_key_exists($k,$this->systemsettings) ? 0 : 1;
 	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'system')";
-                //dbug($sql);
                 sql($sql);
                 needreload();
             }
@@ -1189,7 +1187,7 @@ class dahdi_cards {
 
 		$result = $db->query($sql);
 		if (DB::IsError($result)) {
-			die_freepbx($result->getDebugInfo());
+			//die_freepbx($result->getDebugInfo());
 		}
 		unset($result);
 	}

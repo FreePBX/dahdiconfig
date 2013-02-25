@@ -94,13 +94,17 @@ EOF;
     }
     
 	public function get_filename() {
-		return array('/etc/wanpipe/global.conf');
+        global $amp_conf;
+        $settings = $this->get_sangoma_settings();
+        if(!$amp_conf['DAHDIDISABLEWRITE'] && $settings['dahdimode'] == 'yes') {
+		    return array('/etc/wanpipe/global.conf');
+        }
 	}
     
 	public function generateConf($file) {
         global $amp_conf;
         $settings = $this->get_sangoma_settings();
-        if(!$amp_conf['DAHDIDISABLEWRITE']) {
+        if(!$amp_conf['DAHDIDISABLEWRITE'] && $settings['dahdimode'] == 'yes') {
     		switch($file) {
                 case '/etc/wanpipe/global.conf':
                     if($settings['dahdimode'] == 'yes') {

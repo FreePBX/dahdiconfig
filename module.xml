@@ -3,12 +3,13 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.16</version>
+	<version>2.11.17</version>
 	<publisher>Schmoozecom</publisher>
 	<license>GPLv2</license>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+        *2.11.17* Fixes #6346, dont try to write to sangoma config if we set the option to no (default)
         *2.11.16* Fixes #6329 and random Insert fatal
         *2.11.15* Fixes #6289, also allows users to define the location of dahdi and dahdi configuration files
         *2.11.14* With help from [sr] Fixes #6244 and also fixes #6247

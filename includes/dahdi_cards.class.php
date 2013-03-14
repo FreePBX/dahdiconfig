@@ -192,11 +192,15 @@ class dahdi_cards {
                 }
     		}
 	    } else {
-	        $o = $y . "-" . $x;
+			if($x == $r) {
+				$o = $y;
+			} else {
+				$o = $y . "-" . $x;
+			}
 	    }
 		return array(
 		  'fxx' => $o,
-		  'endchan' => $x,
+		  'endchan' => ($x == $r) ? $y : $x,
 		  'startchan' => $y
 		);
 	 }
@@ -1234,8 +1238,11 @@ class dahdi_cards {
 		}
 
 		foreach ($this->spans as $num=>$span) {
-			if (empty($span['signalling']) || $span['devicetype'] == 'W400') {
+			if (empty($span['signalling'])) {
 				continue;
+			}
+			if ($span['type'] == 'gsm') {
+				//continue;
 			}
 
 			$span['fac'] = str_replace('/',',',$span['framing']).','.$span['coding'];
@@ -1244,12 +1251,13 @@ class dahdi_cards {
 
 			$spanline = "{$num},{$span['syncsrc']},{$span['lbo']},{$span['fac']}";
 
-			$output[] = "span={$spanline}";
+			if ($span['type'] != 'gsm') {
+				$output[] = "span={$spanline}";
+			}
 
 			$ofxx = $this->calc_bchan_fxx($num);
 			$chan = $ofxx['fxx'];
-
-			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri') {
+			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri' && substr($span['signalling'],0,3) != 'gsm') {
 				if (substr($span['signalling'],0,2) == 'fx') {
 					$fx = str_replace('_','',$span['signalling']);
 				} else {

@@ -12,6 +12,7 @@
                 <span id="editspan_<?php echo $key?>_alarms" name="editspan_<?php echo $key?>_alarms"><?php echo $span['alarms']?></span>
             </td>
         </tr>
+		<?php if(empty($span['type']) || $span['type'] != 'gsm') {?>
         <tr>
             <td style="width:10px;">
                 <label for="editspan_<?php echo $key?>_framing">Framing/Coding:</label>
@@ -41,7 +42,7 @@
                 <label for="editspan_<?php echo $key?>_channels">Channels:</label>
             </td>
             <td>
-                <span id="editspan_<?php echo $key?>_channels"><?php echo "{$span['definedchans']}/{$span['totchans']} ({$span['spantype']})"?></span>
+                <span id="editspan_<?php echo $key?>_channels"><?php echo "{$span['definedchans']}/{$span['totchans']}"?> <?php echo !empty($span['spantype']) ? "({$span['spantype']})" : "" ?></span>
             </td>
         </tr>
         <!--<tr id="editspan_<?php echo $key?>_reserved_ch" style="<?php if(isset($span['signalling']) && (($span['signalling'] != 'pri_net') || ($span['signalling'] != 'pri_cpe'))) { ?>display:none;<?php } ?>">
@@ -165,6 +166,18 @@
                 </select>
             </td>
         </tr>
+		<?php } else { ?>
+	        <tr>
+	            <td style="width:10px;">
+	                <label for="editspan_<?php echo $key?>_signalling">Signalling:</label>
+	            </td>
+	            <td>
+	                <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
+	            		<option value="gsm" <?php echo set_default($span['signalling'],'gsm'); ?>>gsm</option>
+	            	</select>
+	            </td>
+	        </tr>
+		<?php } ?>
     </table>
     <br />
     <h2>Group Settings</h2>

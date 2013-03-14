@@ -122,11 +122,18 @@ global $db;
     				}
 
     				$output[] = "";
-    				$output[] = "; [span_{$key}]";	
-    				$output[] = "signalling={$span['signalling']}";
-    				$output[] = "switchtype={$span['switchtype']}";
-    				$output[] = "pridialplan={$span['pridialplan']}";
-    				$output[] = "prilocaldialplan={$span['prilocaldialplan']}";
+    				$output[] = "; [span_{$key}]";
+					if($span['devicetype'] == 'W400') {
+						$output[] = "echocancel=no";
+						$output[] = "echocancelwhenbridged=no";
+						$output[] = "signalling=gsm";
+						$output[] = "wat_moduletype=telit";
+					} else {
+	    				$output[] = "signalling={$span['signalling']}";
+	    				$output[] = "switchtype={$span['switchtype']}";
+	    				$output[] = "pridialplan={$span['pridialplan']}";
+	    				$output[] = "prilocaldialplan={$span['prilocaldialplan']}";	
+					}
     				
     				$groups = json_decode($span['additional_groups'],TRUE); 
                     foreach($groups as $gkey => $data) {

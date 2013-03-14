@@ -430,7 +430,8 @@ $(function(){
                 $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) { 
                         if(j.status) {
                             $.each(j, function(index, value) {
-                                $("#digital_"+index+"_"+j.span+"_label").html(value);
+								if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
+                                	$("#digital_"+index+"_"+j.span+"_label").html(value);
                             });
                             toggle_reload_button('show');
                             $("#reboot").show();

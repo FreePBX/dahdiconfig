@@ -22,7 +22,7 @@
 	<tr>
 		<td><?php echo $name?></td>
 		<td id="digital_alarms_<?php echo $key; ?>_label"><?php echo $span['alarms']?></td>
-		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo $span['framing']."/".$span['coding']?></td>
+		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo !empty($span['framing']) ? $span['framing'] : 'N/A'?><?php echo !empty($span['coding']) ? "/".$span['coding'] : ''?></td>
 		<td id="digital_totchans_<?php echo $key; ?>_label"><?php echo $span['totchans']."/".$span['totchans']?></td>
 		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:"Not Yet Defined")?></td>
 		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:"Not Yet Defined")?></td>

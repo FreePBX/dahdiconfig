@@ -74,6 +74,7 @@ class dahdi_cards {
 	private $has_analog_hdwr = FALSE;	// If the sys has analog hardware
 	private $has_vpm = FALSE;		// If the sys has echo can
 	private $has_digital_hdwr = FALSE;	// If the sys has digital hardware
+	private $has_gsm_hdwr = FALSE;	// If the sys has digital hardware
 	private $hdwr_changes = FALSE;		// If hardware has changed since last configure
 	private $module_name = 'wctdm24xxp';	// The module used
 	private $ports_signalling = array(	// The ports signalling
@@ -150,7 +151,7 @@ class dahdi_cards {
         $this->original_modprobe = array_keys($this->modprobe);
         $this->original_system = array_keys($this->systemsettings);
 
-		$this->load();
+		$this->load();		
 	}
 
 	/**
@@ -827,10 +828,14 @@ class dahdi_cards {
 				$this->fxs_ports[] = $num;
 			}
 
-			if ($var == 'type' && strpos($val,'analog')) {
+			if ($var == 'type' && strpos($val,'analog') !== FALSE) {
 				$this->has_analog_hdwr = TRUE;
-			} else if ($var == 'type' && strpos($val, 'digital')) {
+			} else if ($var == 'type' && strpos($val, 'digital') !== FALSE) {
 				$this->has_digital_hdwr = TRUE;
+			}
+			
+			if($var == 'devicetype' && strpos($val,'W400') !== FALSE) {
+				$this->has_gsm_hdwr = TRUE;
 			}
 		}
 
@@ -843,9 +848,11 @@ class dahdi_cards {
 		}
 
 		$spans = dahdi_config2array($this->dahdi_scan);
+		
 		if (count($spans) == 0) {
 			$this->has_digital_hdwr = FALSE;
 			$this->has_analog_hdwr = FALSE;
+			$this->has_gsm_hdwr = FALSE;
 			return;
 		}
 
@@ -854,15 +861,16 @@ class dahdi_cards {
 				$this->has_vpm = true;
 			}
 
-			if ($span['type'] == 'analog') {
+			if ($span['type'] == 'analog' && strpos($span['devicetype'],'W400') === FALSE) {
 				$this->hardware[$span['location']] = array();
 				$this->hardware[$span['location']]['device'] = $span['devicetype'];
 				$this->hardware[$span['location']]['basechan'] = $span['basechan'];
 				$this->hardware[$span['location']]['type'] = $span['type'];
-
 				$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
 				continue;
 			}
+			
+			
 
 			if (strpos($span['description'], 'ztdummy') !== false) {
 				continue;
@@ -872,6 +880,7 @@ class dahdi_cards {
 			foreach ($span as $attr=>$val) {
 			    $this->spans[$key]['dsid'] = $key;
 				$this->spans[$key][$attr] = $span[$attr];
+				$this->spans[$key]['type'] = ($this->spans[$key]['devicetype'] == 'W400') ? 'gsm' : $this->spans[$key]['type'];
 				switch($attr) {
 				case 'location':
 					if ( ! isset($this->spancount[$val]) ) {
@@ -894,6 +903,10 @@ class dahdi_cards {
 					$this->spans[$key]['max_ch'] = $span['basechan'] + $span['totchans'] - 1;
 
 					switch ($span['totchans']) {
+					case 2:
+						$this->spans[$key]['definedchans'] = 1;
+						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 1;
+						break;
 					case 3:
 						$this->spans[$key]['definedchans'] = 2;
 						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 2;
@@ -1164,14 +1177,16 @@ class dahdi_cards {
 		}
 		unset($result);
 
- 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups');
+ 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type');
 
 		$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 		
 		$inserts = array();
 		foreach ($this->spans as $key=>$span) {
 			$values = array();
-
+			if(preg_match('/(.*)\-.*/i',$span['type'],$matches)) {
+				$span['type'] = $matches[1];
+			}
 			foreach ($flds as $fld) {
 				if ($fld == 'span') {
 					$values[] = "'$key'";
@@ -1219,7 +1234,7 @@ class dahdi_cards {
 		}
 
 		foreach ($this->spans as $num=>$span) {
-			if (empty($span['signalling'])) {
+			if (empty($span['signalling']) || $span['devicetype'] == 'W400') {
 				continue;
 			}
 

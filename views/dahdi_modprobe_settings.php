@@ -176,6 +176,7 @@
             	    </select>
             	</td>
             </tr>
+			<?php if(!$dahdi_ge_260) {?>
             <tr>
                 <td style="width:10px;">
                     <label for="ringdetect_checkbox"><a href="#" class="info">Ring Detect:<span>Specify whether to apply normal ring detection, or a full wave detection to prevent false ring detection for lines where CallerID is sent before the first ring and proceeded by a polarity reversal (as in the United Kingdom). If you are experiencing trouble with detecting CallerID from analog service providers, or have lines which exhibit a polarity reversal before CallerID is transmitted from the provider, then select Full Wave. If no choice is specified, the default is standard.</span></a></label>
@@ -188,6 +189,7 @@
                 	</select>
                 </td>
             </tr>
+			<?php } ?>
             <tr>
                 <td style="width:10px;">
                     <label for="mwi_checkbox"><a href="#" class="info">MWI Mode:<span>Specify the type of Message Waiting Indicator detection to be done on FXO ports. If no choice is specified, the default is none. The following options are available:

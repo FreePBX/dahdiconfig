@@ -1,7 +1,6 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-global $astman;
-$o = $astman->send_request('Command', array('Command' => 'dahdi show version'));
+
 if (isset($_POST['reloaddahdi'])) {
     exec('asterisk -rx "module unload chan_dahdi.so"');
     exec('asterisk -rx "module load chan_dahdi.so"');
@@ -13,9 +12,6 @@ if (isset($_POST['restartamportal'])) {
         file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
     }
 }
-
-//Get dahdi version
-$dahdi_info = explode("\n",$o['data']);
 
 //Check to make sure dahdi is running. Display an error if it's not
 if(!preg_match('/\d/i',$dahdi_info[1])) {

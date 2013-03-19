@@ -1370,6 +1370,7 @@ class dahdi_cards {
 	 */
 	public function write_modprobe() {
         global $amp_conf;
+		global $dahdi_ge_260;
 		$file = $amp_conf['DAHDIMODPROBELOC'];
         
         global $db;
@@ -1393,7 +1394,10 @@ class dahdi_cards {
             $options = "";
             
             $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode', 'defaultlinemode'=>'defaultline_mode');
-    		foreach ($opts as $opt=>$name) {
+    		if($dahdi_ge_260) {
+    			unset($opts['ringdetect']);
+    		}
+			foreach ($opts as $opt=>$name) {
         		if ($settings["{$opt}_checkbox"]) {
         			$options .= " {$name}={$settings[$opt]}";
         		}

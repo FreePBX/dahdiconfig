@@ -3,12 +3,13 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.20</version>
+	<version>2.11.21</version>
 	<publisher>Schmoozecom</publisher>
 	<license>GPLv2</license>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*2.11.21* Fixes #6434,#6436 (only show fwringer of module is wctdm) added italian re #6361
 		*2.11.20* Fixes #6420 dont allow usage of fwringdetect in 2.6.0 and greater
 		*2.11.19* Add sangoma GSM card control and setup
         *2.11.18* Fixes #6329 and random Insert fatal

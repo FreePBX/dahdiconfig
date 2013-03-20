@@ -884,7 +884,7 @@ class dahdi_cards {
 			foreach ($span as $attr=>$val) {
 			    $this->spans[$key]['dsid'] = $key;
 				$this->spans[$key][$attr] = $span[$attr];
-				$this->spans[$key]['type'] = ($this->spans[$key]['devicetype'] == 'W400') ? 'gsm' : $this->spans[$key]['type'];
+				$this->spans[$key]['type'] = (isset($this->spans[$key]['devicetype']) && ($this->spans[$key]['devicetype'] == 'W400')) ? 'gsm' : (isset($this->spans[$key]['type']) ? $this->spans[$key]['type'] : '');
 				switch($attr) {
 				case 'location':
 					if ( ! isset($this->spancount[$val]) ) {
@@ -1370,7 +1370,8 @@ class dahdi_cards {
 	 */
 	public function write_modprobe() {
         global $amp_conf;
-		global $dahdi_ge_260;
+		
+		$dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
 		$file = $amp_conf['DAHDIMODPROBELOC'];
         
         global $db;
@@ -1394,7 +1395,7 @@ class dahdi_cards {
             $options = "";
             
             $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode', 'defaultlinemode'=>'defaultline_mode');
-    		if($dahdi_ge_260) {
+    		if($dahdi_ge_260 && $data['module_name'] != 'wctdm') {
     			unset($opts['ringdetect']);
     		}
 			foreach ($opts as $opt=>$name) {

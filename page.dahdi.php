@@ -13,6 +13,9 @@ if (isset($_POST['restartamportal'])) {
     }
 }
 
+$dahdi_info = dahdiconfig_getinfo();
+$dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
+
 //Check to make sure dahdi is running. Display an error if it's not
 if(!preg_match('/\d/i',$dahdi_info[1])) {
     $dahdi_message = 'DAHDi Doesn\'t appear to be running. Click the \'Restart/Reload Dahdi Button\' Below';
@@ -265,6 +268,12 @@ $(function(){
                     $('#mp_setting_value_0').val('')
                     $('#mp_setting_origsetting_key_0').val('')
                     
+					if(j.module == "wctdm") {
+						$('#tr_ringdetect').show();
+					} else {
+						$('#tr_ringdetect').hide();
+					}
+					
                     if(j.module == "wctc4xxp") { 
                         $('#normal_mp_settings').hide();
                         $('#wct4xxp_wcte12xp_settings').hide();
@@ -325,10 +334,18 @@ $(function(){
                 }
             })
         } else {
+			if($(this).val() == "wctdm") {
+				$('#tr_ringdetect').show();
+			} else {
+				$('#tr_ringdetect').hide();
+			}
+			
             if(($(this).val() == "wct4xxp") || ($(this).val() == "wcte12xp")) {
                 $('#wct4xxp_wcte12xp_settings').show();
+				$('#normal_mp_settings').hide();
             } else {
                 $('#wct4xxp_wcte12xp_settings').hide();
+				$('#normal_mp_settings').show();
             }
             
             //Hide neon settings

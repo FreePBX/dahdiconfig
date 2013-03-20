@@ -11,6 +11,7 @@
             <td>
                 <select id="language" name="language">
             	    <option value="en">English</option>
+					<option value="it">Italian</option>
             	</select>
             </td>
         </tr>

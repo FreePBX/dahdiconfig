@@ -32,18 +32,6 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
  }
  */
  
-//Get dahdi version
-global $astman;
-$o = $astman->send_request('Command', array('Command' => 'dahdi show version'));
-
-$dahdi_info = explode("\n",$o['data']);
-if(preg_match('/DAHDI Version:(.*)Echo Canceller:/i',$o['data'],$matches)) {
-	$dahdi_version = trim($matches[1]);
-} else {
-	$dahdi_version = 9999;
-}
-$dahdi_ge_260 = version_compare($dahdi_version,'2.6.0','ge');
- 
 require_once('includes/dahdi_cards.class.php');
 
 
@@ -579,4 +567,29 @@ function dahdiconfig_trunks_configpageload() {
   //Hide Dahdi Identifier original setting
   $currentcomponent->addguielem('_top', new guielement('dahdi-chan-html', $js, ''));
 }
-// End of File
+
+function dahdiconfig_getinfo($info=null) {
+	global $astman;
+	
+	if($astman && $astman->connected()) {
+		$o = $astman->send_request('Command', array('Command' => 'dahdi show version'));
+
+		switch ($info) {
+			case "version":
+				if(preg_match('/DAHDI Version:(.*)Echo Canceller:/i',$o['data'],$matches)) {
+					$dahdi_version = trim($matches[1]);
+				} else {
+					$dahdi_version = 9999;
+				}
+				return $dahdi_version;
+				break;
+			default:
+				$dahdi_info = explode("\n",$o['data']);
+				return $dahdi_info;
+				break;
+		}
+	} else {
+		return false;
+	}
+
+}

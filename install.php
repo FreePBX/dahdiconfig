@@ -37,124 +37,134 @@ if (! function_exists('outn')) {
 	}
 }
 
-out('Creating Dahdi Advanced Settings Table');
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced (
-	`keyword` VARCHAR(50) NOT NULL PRIMARY KEY,
-	`val` VARCHAR(255),
-	`default_val` VARCHAR(255)
-);";
-
-$result = $db->query($sql);
-if (DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
-}
-unset($result);
-
-$entries = array(
-	'module_name'=>'wctdm24xxp',
-	'tone_region'=>'us',
-	'opermode_checkbox'=>0,
-	'opermode'=>'USA',
-	'alawoverride_checkbox'=>0,
-	'alawoverride'=>0,
-	'fxs_honor_mode_checkbox'=>0,
-	'fxs_honor_mode'=>0,
-	'boostringer_checkbox'=>0,
-	'boostringer'=>0,
-	'lowpower_checkbox'=>0,
-	'lowpower'=>0,
-	'fastringer_checkbox'=>0,
-	'fastringer'=>0,
-	'ringdetect_checkbox'=>0,
-	'ringdetect'=>0,
-	'mwi_checkbox'=>0,
-	'mwi'=>'none',
-	'neon_voltage'=>'',
-	'neon_offlimit'=>'',
-	'echocan_nlp_type'=>0,
-	'echocan_nlp_threshold'=>'',
-	'echocan_nlp_max_supp'=>''
-);
-
-foreach ($entries as $entry=>$default_val) {
-	$sql = "INSERT INTO dahdi_advanced (keyword, default_val) VALUES ('{$entry}', '{$default_val}')";
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced"')) {
+	out('Creating Dahdi Advanced Settings Table');
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced (
+		`keyword` VARCHAR(50) NOT NULL PRIMARY KEY,
+		`val` VARCHAR(255),
+		`default_val` VARCHAR(255)
+	);";
 
 	$result = $db->query($sql);
 	if (DB::IsError($result)) {
-		unset($result);
-		continue;
+		die_freepbx($result->getDebugInfo());
 	}
+	unset($result);
 
+	$entries = array(
+		'module_name'=>'wctdm24xxp',
+		'tone_region'=>'us',
+		'opermode_checkbox'=>0,
+		'opermode'=>'USA',
+		'alawoverride_checkbox'=>0,
+		'alawoverride'=>0,
+		'fxs_honor_mode_checkbox'=>0,
+		'fxs_honor_mode'=>0,
+		'boostringer_checkbox'=>0,
+		'boostringer'=>0,
+		'lowpower_checkbox'=>0,
+		'lowpower'=>0,
+		'fastringer_checkbox'=>0,
+		'fastringer'=>0,
+		'ringdetect_checkbox'=>0,
+		'ringdetect'=>0,
+		'mwi_checkbox'=>0,
+		'mwi'=>'none',
+		'neon_voltage'=>'',
+		'neon_offlimit'=>'',
+		'echocan_nlp_type'=>0,
+		'echocan_nlp_threshold'=>'',
+		'echocan_nlp_max_supp'=>''
+	);
+
+	foreach ($entries as $entry=>$default_val) {
+		$sql = "INSERT INTO dahdi_advanced (keyword, default_val) VALUES ('{$entry}', '{$default_val}')";
+
+		$result = $db->query($sql);
+		if (DB::IsError($result)) {
+			unset($result);
+			continue;
+		}
+
+		unset($result);
+	}
+}
+
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_spans"')) {
+	out('Creating Dahdi Spans Table');
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_spans (
+		`id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+		`span` INT UNSIGNED NOT NULL,
+		`active` BOOL DEFAULT 1,
+		`alarms` VARCHAR(15),
+		`basechan` INT UNSIGNED,
+		`coding` VARCHAR(10),
+		`coding_opts` VARCHAR(255),
+		`context` VARCHAR(255),
+		`definedchans` INT UNSIGNED,
+		`description` VARCHAR (255),
+		`devicetype` VARCHAR(255),
+		`framing` VARCHAR(10),
+		`framing_opts` VARCHAR(255),
+		`group` INT UNSIGNED,
+		`irq` VARCHAR(10),
+		`lbo` INT UNSIGNED,
+		`location` VARCHAR(255),
+		`name` VARCHAR(25),
+		`manufacturer` VARCHAR (25) DEFAULT 'Digium',
+		`max_ch` INT UNSIGNED,
+		`min_ch` INT UNSIGNED,
+		`pridialplan` VARCHAR(25),
+		`prilocaldialplan` VARCHAR(25),
+		`reserved_ch` INT UNSIGNED,
+		`signalling` VARCHAR(50),
+		`spantype` VARCHAR(10),
+		`switchtype` VARCHAR(50),
+		`syncsrc` INT UNSIGNED,
+		`timing` INT UNSIGNED,
+		`totchans` INT UNSIGNED,
+		`type` VARCHAR(25)
+	);";
+
+	$result = $db->query($sql);
+	if (DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
 	unset($result);
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_spans (
-	`id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
-	`span` INT UNSIGNED NOT NULL,
-	`active` BOOL DEFAULT 1,
-	`alarms` VARCHAR(15),
-	`basechan` INT UNSIGNED,
-	`coding` VARCHAR(10),
-	`coding_opts` VARCHAR(255),
-	`context` VARCHAR(255),
-	`definedchans` INT UNSIGNED,
-	`description` VARCHAR (255),
-	`devicetype` VARCHAR(255),
-	`framing` VARCHAR(10),
-	`framing_opts` VARCHAR(255),
-	`group` INT UNSIGNED,
-	`irq` VARCHAR(10),
-	`lbo` INT UNSIGNED,
-	`location` VARCHAR(255),
-	`name` VARCHAR(25),
-	`manufacturer` VARCHAR (25) DEFAULT 'Digium',
-	`max_ch` INT UNSIGNED,
-	`min_ch` INT UNSIGNED,
-	`pridialplan` VARCHAR(25),
-	`prilocaldialplan` VARCHAR(25),
-	`reserved_ch` INT UNSIGNED,
-	`signalling` VARCHAR(50),
-	`spantype` VARCHAR(10),
-	`switchtype` VARCHAR(50),
-	`syncsrc` INT UNSIGNED,
-	`timing` INT UNSIGNED,
-	`totchans` INT UNSIGNED,
-	`type` VARCHAR(25)
-);";
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
+	out('Creating Dahdi Analog Table');
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_analog (
+		`port` INT UNIQUE,
+		`type` ENUM ('fxo', 'fxs'),
+		`signalling` ENUM ('ks', 'ls'),
+		`group` INT UNSIGNED,
+		`context` VARCHAR(255)
+	);";
 
-$result = $db->query($sql);
-if (DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
+	$result = $db->query($sql);
+	if (DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	unset($result);
 }
-unset($result);
 
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_analog (
-	`port` INT UNIQUE,
-	`type` ENUM ('fxo', 'fxs'),
-	`signalling` ENUM ('ks', 'ls'),
-	`group` INT UNSIGNED,
-	`context` VARCHAR(255)
-);";
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
+	out('Create Configured Locations Table');
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (
+		`location` VARCHAR(50),
+		`device` VARCHAR(50),
+		`basechan` INT,
+		`type` VARCHAR(25)
+	);";
 
-$result = $db->query($sql);
-if (DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
+	$result = $db->query($sql);
+	if (DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	unset($result);
 }
-unset($result);
-
-out('Create Configured Locations Table');
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (
-	`location` VARCHAR(50),
-	`device` VARCHAR(50),
-	`basechan` INT,
-	`type` VARCHAR(25)
-);";
-
-$result = $db->query($sql);
-if (DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
-}
-unset($result);
 
 $freepbx_conf =& freepbx_conf::create();
 
@@ -238,103 +248,132 @@ $set['description'] = 'DAHDi Modules Location (/etc/dahdi/modules)';
 $set['type'] = CONF_TYPE_TEXT;
 $freepbx_conf->define_conf_setting('DAHDIMODULESLOC',$set,true);
 
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
-    `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
-	`module_name` VARCHAR(100) UNIQUE,
-	`settings` BLOB
-);";
-$result = $db->query($sql);
-if (DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
-}
 
-$sql = 'SELECT * FROM dahdi_advanced';
-$oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
-
-$settings = array();
-foreach($oldadv as $data) {
-    $settings[$data['keyword']] = isset($data['val']) ? $data['val'] : $data['default_val'];
-    if (strpos($data['keyword'], 'checkbox')) {
-        $settings[$data['keyword']] = $settings[$data['keyword']] == 1 ? TRUE : FALSE;
-	}
-}
-
-$module_name = $settings['module_name'];
-unset($settings['module_name']);
-unset($settings[$module_name]);
-
-$sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($module_name)."', '".mysql_real_escape_string(serialize($settings))."')";
-sql($sql);
-
-$globalsettings = array(		// global array of values
-	'tone_region'=>'us',
-    'language'=>'en', 
-    'busydetect'=>'yes',
-    'busycount'=>'10',
-    'usecallerid'=>'yes',
-    'callwaiting'=>'yes',
-    'usecallingpres'=>'yes',
-    'threewaycalling'=>'yes',
-    'transfer'=>'yes',
-    'cancallforward'=>'yes',
-    'callreturn'=>'yes',
-    'echocancel'=>'yes',
-    'echocancelwhenbridged'=>'no',
-    'echotraining'=>'no',
-    'immediate'=>'no',
-    'faxdetect'=>'no',
-    'rxgain'=>'0.0',
-    'txgain'=>'0.0' 
-    );
-    
-foreach($globalsettings as $k => $v) {
-    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
-    sql($sql);
-}
-
-foreach ($entries as $entry=>$default_val) {
-    if($entry != 'tone_region') {
-        $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
-        sql($sql);
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
+	out("Creating Dahdi Advanced Modules Table");
+    $sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
+        `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
+    	`module_name` VARCHAR(100) UNIQUE,
+    	`settings` BLOB
+    );";
+    $result = $db->query($sql);
+    if (DB::IsError($result)) {
+    	die_freepbx($result->getDebugInfo());
     }
+
+	out("Migrating Old Data from Dahdi Advanced Table");
+    $sql = 'SELECT * FROM dahdi_advanced';
+    $oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
+
+    $settings = array();
+    foreach($oldadv as $data) {
+        $settings[$data['keyword']] = isset($data['val']) ? $data['val'] : $data['default_val'];
+        if (strpos($data['keyword'], 'checkbox')) {
+            $settings[$data['keyword']] = $settings[$data['keyword']] == 1 ? TRUE : FALSE;
+    	}
+    }
+
+    $module_name = $settings['module_name'];
+    unset($settings['module_name']);
+    unset($settings[$module_name]);
+
+	out("Inserting Old Data from Dahdi Advanced Table");
+    $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($module_name)."', '".mysql_real_escape_string(serialize($settings))."')";
+    sql($sql);
+	
+	out("Deleting old dahdi module data from database (its been migrated)");
+	foreach ($entries as $entry=>$default_val) {
+	    if($entry != 'tone_region') {
+	        $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
+	        sql($sql);
+	    }
+	}
+	
+	$globalsettings = array(		// global array of values
+		'tone_region'=>'us',
+	    'language'=>'en', 
+	    'busydetect'=>'yes',
+	    'busycount'=>'10',
+	    'usecallerid'=>'yes',
+	    'callwaiting'=>'yes',
+	    'usecallingpres'=>'yes',
+	    'threewaycalling'=>'yes',
+	    'transfer'=>'yes',
+	    'cancallforward'=>'yes',
+	    'callreturn'=>'yes',
+	    'echocancel'=>'yes',
+	    'echocancelwhenbridged'=>'no',
+	    'echotraining'=>'no',
+	    'immediate'=>'no',
+	    'faxdetect'=>'no',
+	    'rxgain'=>'0.0',
+	    'txgain'=>'0.0' 
+	    );
+
+	outn('Replacing..');
+	foreach($globalsettings as $k => $v) {
+		outn('..'.$k.'..');
+	    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
+	    sql($sql);
+	}
+	out('..Done');
 }
 
-$sql = "ALTER IGNORE TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
-$result = $db->query($sql);
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "priexclusive"')) {
+	out("Adding priexclusive column");
+    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `priexclusive` varchar (3) NOT NULL DEFAULT ''";
+    $result = $db->query($sql);
+}
 
-$sql = "ALTER IGNORE TABLE `dahdi_spans` ADD COlUMN `priexclusive` varchar (3) NOT NULL DEFAULT ''";
-$result = $db->query($sql);
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
+    if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "dchannel"')) {
+		out("Moving/Adding dchannel column");
+        $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
+        $result = $db->query($sql);
+    }
+    
+    $sql = "ALTER TABLE `dahdi_spans` change `dchannel` `reserved_ch`  int (5) NOT NULL DEFAULT '0";
+    $result = $db->query($sql);
+}
 
-$sql = "ALTER IGNORE TABLE `dahdi_spans` change `dchannel` `reserved_ch`  int (5) NOT NULL DEFAULT '0";
-$result = $db->query($sql);
-
-$sql = "ALTER IGNORE TABLE `dahdi_spans` ADD COlUMN `additional_groups` blob";
-$result = $db->query($sql);
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "additional_groups"')) {
+	out("Adding Additional_groups column");
+    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `additional_groups` blob";
+    $result = $db->query($sql);
+}
 
 $sql = "SELECT module_name, settings FROM dahdi_advanced_modules";
 $old = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 foreach($old as $list) {
-    $o = json_encode(unserialize($list['settings']));
-    $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($list['module_name'])."', '".mysql_real_escape_string($o)."')";
-    sql($sql);
+	if(unserialize($list['settings']) !== FALSE) {
+		out("Migrating module ".$list['module_name']." from serialized data to json");
+	    $o = json_encode(unserialize($list['settings']));
+	    $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($list['module_name'])."', '".mysql_real_escape_string($o)."')";
+	    sql($sql);
+	}
 }
 
-$sql = "CREATE TABLE IF NOT EXISTS dahdi_modules (
-	`module_name` VARCHAR(100) UNIQUE,
-	`settings` BLOB
-);";
-sql($sql);
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_modules"')) {
+	out('Creating dahdi modules Table');
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_modules (
+		`module_name` VARCHAR(100) UNIQUE,
+		`settings` BLOB
+	);";
+	sql($sql);
+}
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "type"')) {
+	out("Add type column");
 	sql('ALTER TABLE dahdi_advanced ADD type varchar(50) default "chandahdi"');
+	
+	sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"')) {
+	out("add additional column");
 	sql('ALTER TABLE dahdi_advanced ADD additional bool default 1');
+	
+	foreach($globalsettings as $ksettings => $settings) {
+	    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
+	}
 }
-
-foreach($globalsettings as $ksettings => $settings) {
-    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
-}
-
-sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');

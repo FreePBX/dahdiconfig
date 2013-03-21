@@ -10,8 +10,30 @@
             </td>
             <td>
                 <select id="language" name="language">
-            	    <option value="en">English</option>
-					<option value="it">Italian</option>
+            	    <option value="en" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'en'); ?>>English</option>
+            		<option value="au" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'au'); ?>>Australian</option>
+            		<option value="fr" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'fr'); ?>>French</option>
+            		<option value="nl" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'de'); ?>>Dutch</option>
+            		<option value="fi" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'fi'); ?>>Finnish</option>
+            		<option value="es" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'es'); ?>>Spainish</option>
+            		<option value="jp" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'jp'); ?>>Japanese</option>
+            		<option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'no'); ?>>Norwegian</option>
+            		<option value="it" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'it'); ?>>Italian</option>
+            		<option value="gr" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'gr'); ?>>Greece</option>
+            		<option value="tw" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'tw'); ?>>Taiwanese</option>
+            		<option value="se" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'se'); ?>>Swedish</option>
+            		<option value="il" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'il'); ?>>Israelian</option>
+            		<option value="br" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'br'); ?>>Brazilian</option>
+            		<option value="hu" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'hu'); ?>>Hungarian</option>
+            		<option value="lt" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'lt'); ?>>Lithuanian</option>
+            		<option value="pl" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'pl'); ?>>Polish</option>
+            		<option value="za" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'za'); ?>>South Africaan</option>
+            		<option value="pt" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'pt'); ?>>Portuguese</option>
+            		<option value="ee" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'ee'); ?>>Estonian</option>
+            		<option value="in" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'in'); ?>>Hindi</option>
+            		<option value="cn" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'cn'); ?>>Chinese</option>
+            		<option value="ar" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'ar'); ?>>Argentinan</option>
+            		<option value="ru" <?php echo set_default($dahdi_cards->get_globalsettings('language'),'ru'); ?>>Russian</option>
             	</select>
             </td>
         </tr>

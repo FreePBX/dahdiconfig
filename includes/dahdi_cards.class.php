@@ -103,8 +103,8 @@ class dahdi_cards {
 		if (!is_file($amp_conf['DAHDISYSTEMLOC'])) {
 			$this->dahdi_genconf();
 		}
-		$me = exec('whoami');
-        
+		$me = $amp_conf['AMPASTERISKUSER'];
+		
 		$check[] = $amp_conf['DAHDIMODULESLOC'];
 		$check[] = $amp_conf['DAHDISYSTEMLOC'];
 		$check[] = $amp_conf['DAHDIMODPROBELOC'];

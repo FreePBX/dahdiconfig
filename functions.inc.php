@@ -133,7 +133,11 @@ global $db;
 	    				$output[] = "signalling={$span['signalling']}";
 	    				$output[] = "switchtype={$span['switchtype']}";
 	    				$output[] = "pridialplan={$span['pridialplan']}";
-	    				$output[] = "prilocaldialplan={$span['prilocaldialplan']}";	
+	    				$output[] = "prilocaldialplan={$span['prilocaldialplan']}";
+						if(!empty($span['txgain']) && $span['txgain'] != '0.0')
+							$output[] = "txgain={$span['txgain']}";
+						if(!empty($span['rxgain']) && $span['rxgain'] != '0.0')
+							$output[] = "rxgain={$span['rxgain']}";
 					}
     				
     				$groups = json_decode($span['additional_groups'],TRUE); 
@@ -154,6 +158,10 @@ global $db;
     				$output[] = "";
     				$output[] = "signalling=".(($port['type']=='fxo')?'fxs':'fxo')."_{$port['signalling']}";
     				$output[] = "context={$port['context']}";
+					if(!empty($port['txgain']) && $port['txgain'] != '0.0')
+						$output[] = "txgain={$port['txgain']}";
+					if(!empty($port['rxgain']) && $port['rxgain'] != '0.0')
+						$output[] = "rxgain={$port['rxgain']}";
     				$output[] = isset($port['group']) ? "group={$port['group']}" : "group=0";
     				$output[] = "channel=>{$num}";
     			}

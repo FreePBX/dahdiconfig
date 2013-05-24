@@ -377,3 +377,19 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"'))
 	    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
 	}
 }
+
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "txgain"')) {
+	out("Adding txgain and rxgain column to digital table");
+    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `txgain` varchar (10) NOT NULL DEFAULT '0.0'";
+    $result = $db->query($sql);
+    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
+    $result = $db->query($sql);
+}
+
+if (!$db->getAll('SHOW COLUMNS FROM dahdi_analog WHERE FIELD = "txgain"')) {
+	out("Adding txgain and rxgain column to analog table");
+    $sql = "ALTER TABLE `dahdi_analog` ADD COlUMN `txgain` varchar (10) NOT NULL DEFAULT '0.0'";
+    $result = $db->query($sql);
+    $sql = "ALTER TABLE `dahdi_analog` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
+    $result = $db->query($sql);
+}

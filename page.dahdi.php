@@ -101,6 +101,8 @@ if ($dahdi_cards->hdwr_changes()) {
             $span['pridialplan'] = !empty($span['pridialplan']) ? $span['pridialplan'] : '';
             $span['prilocaldialplan'] = !empty($span['prilocaldialplan']) ? $span['prilocaldialplan'] : '';
             $span['priexclusive'] = !empty($span['priexclusive']) ? $span['priexclusive'] : '';
+			$span['txgain'] = !empty($span['txgain']) ? $span['txgain'] : '0.0';
+			$span['rxgain'] = !empty($span['rxgain']) ? $span['rxgain'] : '0.0';
             ?>
         <div id="digital-settings-<?php echo $key;?>" title="Span: <?php echo $span['description']?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_digital_settings.php'; ?>

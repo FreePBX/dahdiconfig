@@ -1062,6 +1062,8 @@ class dahdi_cards {
 		$this->spans[$num]['context'] = $editspan['context'];
 		$this->spans[$num]['reserved_ch'] = $editspan['reserved_ch'];
         $this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
+		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
+		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
         $this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
                 
 		$this->write_spans(); 
@@ -1181,7 +1183,7 @@ class dahdi_cards {
 		}
 		unset($result);
 
- 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type');
+ 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain');
 
 		$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 		

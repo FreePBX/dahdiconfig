@@ -346,6 +346,8 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
     $chan = (string) $port_details['port'];
     $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => '','selected'  => ($current_identifier == "g$grp"));
     $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => '','selected' => ($current_identifier == "G$grp"));
+    $avail_group["r$grp"] = array('identifier' => "r$grp",'name' => "Group $grp Round Robin Ascending",'alarms' => '','selected'  => ($current_identifier == "r$grp"));
+    $avail_group["R$grp"] = array('identifier' => "R$grp",'name' => "Group $grp Round Robin Descending",'alarms' => '','selected' => ($current_identifier == "R$grp"));
     $analog_chan[$chan] = array('identifier' => $chan, 'name' => "Analog Channel $chan",'alarms' => '','selected' => ($current_identifier == $chan));
   }
   // Get Digital Groups and Channels. Channels are not that useful
@@ -362,6 +364,8 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
         if (!isset($avail_group["g$grp"])) {
           $avail_group["g$grp"] = array('identifier' => "g$grp",'name' => "Group $grp Ascending",'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));
           $avail_group["G$grp"] = array('identifier' => "G$grp",'name' => "Group $grp Descending",'alarms' => $alarms,'selected' => ($current_identifier == "G$grp"));
+	      $avail_group["r$grp"] = array('identifier' => "r$grp",'name' => "Group $grp Round Robin Ascending",'alarms' => '','selected'  => ($current_identifier == "r$grp"));
+	      $avail_group["R$grp"] = array('identifier' => "R$grp",'name' => "Group $grp Round Robin Descending",'alarms' => '','selected' => ($current_identifier == "R$grp"));
         } else {
           //TODO: figure out the possible alarms and the create proper hiearchy of what to report
           //

@@ -4,6 +4,16 @@ $dahdi_cards = new dahdi_cards();
 
 
 switch($_REQUEST['type']) {
+	case "modulessubmit":
+		$json = array("status" => false);
+		if(!empty($_REQUEST['reset'])) {
+			$dahdi_cards->update_dahdi_modules(array('reset' => $_REQUEST['reset']));
+			$json = array("status" => true);
+		} elseif(!empty($_REQUEST['order'])) {
+			$dahdi_cards->update_dahdi_modules(array('order' => $_REQUEST['order']));
+			$json = array("status" => true);
+		}
+		break;
     case "write":
         if(isset($_REQUEST['mode'])) {
             $freepbx_conf =& freepbx_conf::create();

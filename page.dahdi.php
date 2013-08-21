@@ -48,6 +48,7 @@ if ($dahdi_cards->hdwr_changes()) {
     }
 }
 ?>
+<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After pressing the Red Apply Changes Bar.</div>
 <div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your hardware changes to take effect, you need to reboot your system!</div>
 <div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below</div>
 
@@ -59,6 +60,7 @@ if ($dahdi_cards->hdwr_changes()) {
        			<a href="#" onclick="dahdi_modal_settings('global');">Global Settings</a><br />
                 <a href="#" onclick="dahdi_modal_settings('system');">System Settings</a><br />
        			<a href="#" onclick="dahdi_modal_settings('modprobe');">Modprobe Settings</a><br />
+				<a href="#" onclick="dahdi_modal_settings('modules');">Module Settings</a><br />
                 <?php
                 foreach($dahdi_cards->modules as $mod_name => $module) {
                     if(method_exists($module,'settings')) {
@@ -70,6 +72,24 @@ if ($dahdi_cards->hdwr_changes()) {
                 }
                 ?>
        		</ul>
+                <br /> <br /> <br /> <br /> <br /> <br /> <br />
+<!--/* OpenX Javascript Tag v2.8.10 */-->
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=102");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aea98e58' border='0' alt='' /></a></noscript>
+
        	</div>
        	
        	<div id="global-settings" title="Global Settings" style="display: none;">
@@ -80,6 +100,10 @@ if ($dahdi_cards->hdwr_changes()) {
         </div>
        	<div id="modprobe-settings" title="Modprobe Settings" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_modprobe_settings.php'; ?>
+        </div>
+       	<div id="modules-settings" title="Module Settings" style="display: none;">
+			<?php $mods = $dahdi_cards->get_all_modules(); ?>
+            <?php require dirname(__FILE__).'/views/dahdi_modules_settings.php'; ?>
         </div>
         <?php
         foreach($dahdi_cards->modules as $mod_name => $module) {
@@ -156,7 +180,7 @@ if ($dahdi_cards->hdwr_changes()) {
         cause any confusion
         </i> 
     </div>
-<h5><?php echo $dahdi_info[1];?></h5>
+<h5><?php echo trim($dahdi_info[1]);?></h5>
 
 <script>
 var dgps = new Array();
@@ -201,6 +225,7 @@ $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function
 
 <?php } ?> 
 $(function(){ 
+	$('.modules-sortable').sortable();
     <?php
     if ($amp_conf['DAHDIDISABLEWRITE']) {
         ?>
@@ -530,6 +555,51 @@ $(function(){
                 $("#reboot").fadeIn(3000).show();
                 $( this ).dialog( "close" );
             },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+        }
+    });
+    $( "#modules-settings" ).dialog({
+        autoOpen: false,
+        height: 600,
+        width: 500,
+        modal: true,
+        buttons: {
+            "Save": function() {
+				var morder = {}
+				$(".modules-sortable li").each(function(i, el){
+					var id = $(el).attr('id');
+					if (/^mod\-ud\-(?:\d*)$/i.test(id)) {
+						id = id.replace("mod-ud-","");
+						var name = $('#mod-ud-name-'+id).val();
+						if(name !== undefined && name != '') {
+							morder['ud::'+name] = $('#mod-ud-checkbox-'+id).prop('checked')
+						}
+					} else if(/mod\-/i.test(id)) {
+						id = id.replace("mod-","");
+						morder['sys::'+id] = $('#input-'+id).prop('checked')
+					}
+				});
+				
+				options.data = { order: morder }
+                $("#form-modules").ajaxSubmit(options);
+                toggle_reload_button('show');
+                $("#reboot_mods").fadeIn(3000).show();
+                $( this ).dialog( "close" );
+            },
+			"Reset File To Defaults": function() {
+				var r=confirm("This will reload the page");
+				if (r==true) {
+					options.data = { reset: true }
+					options.success = function(responseText, statusText, xhr, $form) {
+						location.reload();
+					};
+                	$("#form-modules").ajaxSubmit(options);
+				}
+			},
             Cancel: function() {
                 $( this ).dialog( "close" );
             }

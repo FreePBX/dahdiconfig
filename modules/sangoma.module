@@ -4,7 +4,8 @@ class dahdi_sangoma {
     private $data_store = array();
     private $sangoma_settings = array(
         "dahdimode" => "no",
-        "t1mode" => "T1"
+        "t1mode" => "T1",
+		"wpwd" => "TRUE"
     );
     public function datastore() {
     }
@@ -12,7 +13,9 @@ class dahdi_sangoma {
         $sql = "SELECT `settings` FROM dahdi_modules WHERE `module_name` = 'sangoma'";
         $o = sql($sql,'getOne');
         if($o) {
-            return json_decode($o,TRUE);
+			$array = json_decode($o,TRUE);
+			$array['wpwd'] = isset($array['wpwd']) ? $array['wpwd'] : 'TRUE';
+            return $array;
         } else {
             return $this->sangoma_settings;
         }
@@ -44,7 +47,22 @@ EOF;
                         </select>
                     </td>
                 </tr>
-                <tr id="sangoma_t1mode" style="$none">
+                <tr>
+                    <td style="width:10px;">
+                        <label for="sangoma_wpwd">Run Wanpipe In DIGIUM Mode:</label>
+                    </td>
+                    <td>
+                        <select name="sangoma_wpwd" id="sangoma_wpwd">
+EOF;
+        $false = $settings['wpwd'] == 'FALSE' ? 'selected' : '';
+        $true = $settings['wpwd'] == 'TRUE' ? 'selected' : '';
+        $output['html'] .= '<option value="FALSE" '.$false.'>FALSE</option>';
+        $output['html'] .= '<option value="TRUE" '.$true.'>TRUE</option>';
+        $output['html'] .= <<< EOF
+                        </select>
+                    </td>
+                </tr>
+                <tr id="sangoma_t1mode">
                     <td style="width:10px;">
                         <label for="sangoma_t1mode">T1 Mode:</label>
                     </td>
@@ -104,11 +122,12 @@ EOF;
 	public function generateConf($file) {
         global $amp_conf;
         $settings = $this->get_sangoma_settings();
+		$settings['wpwd'] = isset($settings['wpwd']) ? $settings['wpwd'] : TRUE;
         if(!$amp_conf['DAHDIDISABLEWRITE'] && $settings['dahdimode'] == 'yes') {
     		switch($file) {
                 case '/etc/wanpipe/global.conf':
                     if($settings['dahdimode'] == 'yes') {
-                        $output = "WANPIPE_GLOBAL_CFG=DAHDI\nWANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode'];
+                        $output = "WANPIPE_WITH_DIGIUM=".$settings['wpwd']."\nWANPIPE_GLOBAL_CFG=DAHDI\nWANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode'];
                         file_put_contents($file, $output);
                     } elseif(file_exists($file)) {
                         if(!unlink($file)) {

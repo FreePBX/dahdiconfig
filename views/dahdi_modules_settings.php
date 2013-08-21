@@ -23,17 +23,3 @@
 	</div>
 	<input type="hidden" id="mods_add_id" value"<?php echo $mod_id + 1?>">
 </form>
-
-<script>
-	var mods_add_id = $('#mods_add_id').val();
-	function mods_add_field() {
-		$('#modules-sortable li:last').after('<li id="mod-ud-'+mods_add_id+'"><input type="checkbox" id="mod-ud-checkbox-'+mods_add_id+'"><a><img height="10px" style="cursor: pointer;" src="images/trash.png" onclick="mods_del_field(\'mod-ud-'+mods_add_id+'\')"></a><input type="textbox" id="mod-ud-name-'+mods_add_id+'" value=""></li>');
-		mods_add_id++
-		$('.modules-sortable').sortable('destroy');
-		$('.modules-sortable').sortable();
-	}
-	
-	function mods_del_field(id) {
-		$('#'+id).remove();
-	}
-</script>

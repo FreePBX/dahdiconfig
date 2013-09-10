@@ -9,7 +9,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
  * Author: Ryan Brindley <ryan@digium.com>
  *
  * This program is free software, distributed under the terms of
- * the GNU General Public License Version 2. 
+ * the GNU General Public License Version 2.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -40,3 +40,6 @@ out('Remove FreePBX Advanced Setting');
 $freepbx_conf =& freepbx_conf::create();
 $freepbx_conf->remove_conf_settings('DAHDISHOWDIGITALCHANS');
 $freepbx_conf->remove_conf_settings('DAHDIDISABLEWRITE');
+if(file_exists($amp_conf['AMPBIN'].'/freepbx_engine_hook_dahdiconfig')) {
+    unlink($amp_conf['AMPBIN'].'/freepbx_engine_hook_dahdiconfig');
+}

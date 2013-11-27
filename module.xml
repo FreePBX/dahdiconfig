@@ -3,12 +3,13 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.26</version>
+	<version>2.11.27</version>
 	<publisher>Schmoozecom</publisher>
 	<license>GPLv2</license>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
     <changelog>
+		*2.11.27* Fixes: #6963, #6955, #6926, #6961, #6960, #6959, #6351, #6797, #6921, #6742, #6919
         *2.11.26* Remove symlinked hook file on uninstall
 		*2.11.25* Allow editing and sorting of DAHDi Modules File Directly
 		*2.11.24.1* #6585, #6461, #6583
@@ -52,7 +53,7 @@
 		<file>/usr/sbin/dahdi_cfg</file>
 	</requirements>
 	<menuitems>
-		<dahdi needsenginedb="yes">DAHDi</dahdi>
+		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>
 	<location>release/2.11/dahdiconfig-2.11.26.tgz</location>
 	<md5sum>6f1c6b2d0c4c07eea517af0612c82810</md5sum>

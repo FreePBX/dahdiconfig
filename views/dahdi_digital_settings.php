@@ -61,8 +61,8 @@
             <td>
                 <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
                     <option value="--" disabled>--PRI--</option>
+					<option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>>PRI - CPE</option>
             		<option value="pri_net" <?php echo set_default($span['signalling'],'pri_net'); ?>>PRI - Net</option>
-            		<option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>>PRI - CPE</option>
                     <option value="--" disabled>--E &amp; M--</option>
             		<option value="em" <?php echo set_default($span['signalling'],'em'); ?>>E &amp; M</option>
             		<option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>>E &amp; M -- Wink</option>
@@ -88,7 +88,7 @@
                 		<option value="national" <?php echo set_default($span['switchtype'],'national'); ?>>National ISDN 2 (default)</option>
                 		<option value="dms100" <?php echo set_default($span['switchtype'],'dms100'); ?>>Nortel DMS100</option>
                 		<option value="4ess" <?php echo set_default($span['switchtype'],'4ess'); ?>>AT&amp;T 4ESS</option>
-                		<option value="5ess" <?php echo set_default($span['switchtype'],'5ess'); ?>>Lucent 4ESS</option>
+                		<option value="5ess" <?php echo set_default($span['switchtype'],'5ess'); ?>>Lucent 5ESS</option>
                 		<option value="euroisdn" <?php echo set_default($span['switchtype'],'euroisdn'); ?>>EuroISDN</option>
                 		<option value="ni1" <?php echo set_default($span['switchtype'],'ni1'); ?>>Old National ISDN 1</option>
                 		<option value="qsig" <?php echo set_default($span['switchtype'],'qsig'); ?>>Q.SIG</option>
@@ -101,7 +101,7 @@
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_syncsrc" name="editspan_<?php echo $key?>_syncsrc">
-            	<?php for($i=0; $i<$dahdi_cards->get_span_count($span['location']); $i++): ?>
+            	<?php for($i=0; $i<=$dahdi_cards->get_span_count($span['location']); $i++): ?>
             		<option value="<?php echo $i?>" <?php echo set_default($span['syncsrc'],$i); ?>><?php echo $i?></option>
             	<?php endfor; ?>
             	</select>

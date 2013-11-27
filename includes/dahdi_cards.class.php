@@ -101,7 +101,7 @@ class dahdi_cards {
         
         global $amp_conf;
 		if (!is_file($amp_conf['DAHDISYSTEMLOC'])) {
-			$this->dahdi_genconf();
+			exec('/usr/sbin/dahdi_genconf',$output,$return_var);
 		}
 		$me = $amp_conf['AMPASTERISKUSER'];
 		
@@ -166,7 +166,8 @@ class dahdi_cards {
 					$item = str_replace('#','',$item);
 					$modules[$item]['status'] = false;
 				} else {
-					$modules[$item]['status'] = true;
+					exec('modprobe '.$item,$out,$return_var);
+					$modules[$item]['status'] = ($return_var == '0') ? true : false;
 				}
 				$modules[$item]['type'] = ($list[$key-1] == '# UserDefined') ? 'ud' : 'sys';
 			}
@@ -224,24 +225,6 @@ class dahdi_cards {
 		  'startchan' => $y
 		);
 	 }
-
-	/**
-	 * DAHDi Gen Conf
-	 *
-	 * Run dahdi_genconf to generate system.conf
-	 */
-	 public function dahdi_genconf() {
-		return `/usr/sbin/dahdi_genconf`;
-	 }
-
-	 /**
-	  * DAHDi Config
-	  *
-	  * Run dahdi_cfg
-	  */
-	  public function dahdi_cfg() {
-		return `/usr/sbin/dahdi_cfg`;
-	  }
 
 	/**
 	 * Detect Hardware Changes
@@ -493,8 +476,8 @@ class dahdi_cards {
 
 		$this->hdwr_changes = $this->detect_hdwr_changes();
 		if ($this->hdwr_changes) {
-			$this->dahdi_genconf();
-			$this->dahdi_cfg();
+			exec('/usr/sbin/dahdi_genconf');
+			exec('/usr/sbin/dahdi_cfg');
 			$this->read_dahdi_scan();
 			$this->write_detected();
 			$this->write_spans();
@@ -687,7 +670,8 @@ class dahdi_cards {
 			}
 
 			if ( ! $hasaline) {
-				if(!$this->dahdi_genconf()) {
+				exec('/usr/sbin/dahdi_genconf',$output,$return_var);
+				if($return_var != '0') {
                     //If genconf returns an error then we should abort otherwise we will be in a neverending loop
                     break;
 				}
@@ -824,14 +808,16 @@ class dahdi_cards {
 	 * Read all the information given in the DAHDi Scan script
 	 */
 	public function read_dahdi_scan() {
-	    $this->dahdi_scan = `/usr/sbin/dahdi_scan`;
+		exec('/usr/sbin/dahdi_scan',$dahdi_scan_output,$return_var);
+		if($return_var != '0') {
+			return false;
+		}
 		unset($this->fxo_ports);
 		unset($this->fxs_ports);
 		$this->fxo_ports = array();
 		$this->fxs_ports = array();
 
-        $lines = explode("\n",$this->dahdi_scan);
-		foreach ($lines as $line) {
+		foreach ($dahdi_scan_output as $line) {
 			if ($line == '') {
 				continue;
 			} else if (preg_match('/^\[([-a-zA-Z0-9_][-a-zA-Z0-9_]*)\]/', $line, $matches)) {
@@ -868,10 +854,10 @@ class dahdi_cards {
 			if ((!array_key_exists('description', $cxt)) || (strpos($cxt['description'],'DAHDI_DUMMY') === false)) {
 				continue;
 			}
-			return;
+			return false;
 		}
 
-		$spans = dahdi_config2array($this->dahdi_scan);
+		$spans = dahdi_config2array($dahdi_scan_output);
 		
 		if (count($spans) == 0) {
 			$this->has_digital_hdwr = FALSE;
@@ -1172,6 +1158,15 @@ class dahdi_cards {
 			die_freepbx($result->getDebugInfo());
 		}
 		unset($result);
+		
+		//If there is no newly detected hardware
+		//then return false otherwise we will crash out
+		//when we try to add nothing to the db
+		//we have to clear out the configured locations regardless
+		//otherwise our groups are not regenerated
+		if(empty($this->detected_hdwr)) {
+			return false;
+		}
 
 		$flds = array('location', 'device', 'basechan', 'type');
 		$inserts = array();
@@ -1433,6 +1428,9 @@ class dahdi_cards {
 					}
 					//no break here as we want to run this next bit on the user defined settings as well
 				case "sys":
+					//dont allow broken modules to be saved here
+					exec('modprobe '.$module,$out,$return_var);
+					$state = ($return_var == '0') ? $state : false;
 					if($state) {
 						//make sure module is enabled, if it is then skip, if not fix it
 						if(!preg_match('/^'.$module.'$/m', $contents) && preg_match('/^#'.$module.'$/m', $contents)) {

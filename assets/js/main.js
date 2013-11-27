@@ -3,10 +3,178 @@ function dahdi_modal_settings(type,id) {
     if(typeof id !== 'undefined') {
         $( "#"+type+"-settings-"+id ).dialog( "open" );
     } else {
+		if(type == "modprobe") {
+			createModProbeSettings();
+		}
         $( "#"+type+"-settings" ).dialog( "open" );
     }
 }
 /* End Popup Box Function */
+function storeModProbeSettings(mod_name) {
+    //Local Storage is an object {}
+    var settings = {'mp_setting_add':[]};
+	var module = (mod_name != null) ? mod_name : $('#module_name').val();
+    var z = 0;
+    //Find ALL elements in modprobe id.
+    $("#modprobe").find('*').each(function() {
+        //Store jquery data in child
+        var child = $(this);
+        //Following check to make sure they or form elements
+        if (child.is(":checkbox"))
+            settings[child.attr("name")] = child.attr("checked") ? true : false;
+        if (child.is(":text"))
+            settings[child.attr("name")] = child.val();
+        if (child.is("select"))
+            settings[child.attr("name")] = child.val();
+        if (child.is(":input:hidden") && child.attr("name") == 'mp_setting_add[]') {
+            settings['mp_setting_add'][z] = child.val();
+            z++
+        }
+    })
+
+    if(!modprobesettings.hasOwnProperty(module)) {
+        modprobesettings[module] = {}
+    }
+    modprobesettings[module]['formsettings'] = settings;
+}
+
+function createModProbeSettings() {
+	el = $('#module_name');
+    //If there is no session data then pull from database
+    if(!modprobesettings.hasOwnProperty($(el).val()) || !modprobesettings[$(el).val()].hasOwnProperty('formsettings')) {
+        $.ajaxSetup({ cache: false });
+        $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{dcmodule: $(el).val(), type: 'modprobe'}, function(j){
+            if(j.status) {
+                $('.mp_js_additionals').remove();
+                $('#mp_setting_key_0').val('')
+                $('#mp_setting_value_0').val('')
+                $('#mp_setting_origsetting_key_0').val('')
+                
+				if(j.module == "wctdm") {
+					$('#tr_ringdetect').show();
+				} else {
+					$('#tr_ringdetect').hide();
+				}
+				
+                if(j.module == "wctc4xxp") { 
+                    $('#normal_mp_settings').hide();
+                    $('#wct4xxp_wcte12xp_settings').hide();
+                    $('#wctc4xxp_settings').show();
+                    $("#mode_checkbox").attr('checked',j.mode_checkbox);
+                    $('#mode').val(j.mode);
+                } else {
+                    if((j.module == "wct4xxp") || (j.module == "wcte12xp")) {
+                        $('#wct4xxp_wcte12xp_settings').show();
+                        $('#defaultlinemode_checkbox').attr('checked',j.defaultlinemode_checkbox);
+                        $('#defaultlinemode').val(j.defaultlinemode);
+						$('#normal_mp_settings').hide();
+                    } else {
+                        $('#wct4xxp_wcte12xp_settings').hide();
+                        $('#defaultlinemode_checkbox').attr('checked',false);
+                        $('#defaultlinemode').val('t1');
+						 $('#normal_mp_settings').show();
+                    }
+                    $('#wctc4xxp_settings').hide();
+                    $("#opermode_checkbox").attr('checked',j.opermode_checkbox);
+                    $('#opermode').val(j.opermode);
+                    $("#alawoverride_checkbox").attr('checked',j.alawoverride_checkbox);
+                    $('#alawoverride').val(j.alawoverride);
+                    $('#fxs_honor_mode_checkbox').attr('checked',j.fxs_honor_mode_checkbox);
+                    $('#fxs_honor_mode').val(j.fxs_honor_mode);
+                    $('#boostringer_checkbox').attr('checked',j.boostringer_checkbox);
+                    $('#boostringer').val(j.boostringer);
+                    $('#fastringer_checkbox').attr('checked',j.fastringer_checkbox);
+                    $('#fastringer').val(j.fastringer);
+                    $('#lowpower_checkbox').attr('checked',j.lowpower_checkbox);
+                    $('#lowpower').val(j.lowpower);
+                    $('#ringdetect_checkbox').attr('checked',j.ringdetect_checkbox);
+                    $('#ringdetect').val(j.ringdetect);
+                    $('#mwi_checkbox').attr('checked',j.mwi_checkbox);
+                    $('#mwi').val(j.mwi);
+                    if (j.mwi == 'neon') {
+                        $('.neon').show();
+                    } else {
+                        $('.neon').hide();
+                    }
+                    $('#neon_voltage').val(j.neon_voltage);
+                    $('#neon_offlimit').val(j.neon_offlimit);
+                }
+                
+                //Re-create additionals for this probe
+                var z = 1;
+                if(typeof j.additionals !== 'undefined') {
+                    $.each(j.additionals, function(index, value) {
+                        if(z == 1) {
+                            $('#mp_setting_key_0').val(index)
+                            $('#mp_setting_value_0').val(value)
+                        } else {
+                            $("#mp_add").before('<tr class="mp_js_additionals" id="mp_additional_'+z+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="mp_delete_field('+z+',\''+j.module+'\')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="mp_setting_add[]" value="'+z+'" /><input type="hidden" id="mp_setting_origsetting_key_'+z+'" name="mp_setting_origsetting_key_'+z+'" value="'+index+'" /> <input id="mp_setting_key_'+z+'" name="mp_setting_key_'+z+'" value="'+index+'" /> = <input id="mp_setting_value_'+z+'" name="mp_setting_value_'+z+'" value="'+value+'" /> <br /></td></tr>');
+                        }
+                        z++  
+                    })
+                }
+                $("#mp_add_button").attr("onclick","mp_add_field("+z+",'"+j.module+"')");
+				storeModProbeSettings(el.val());
+				//$( "#modprobe" ).dialog( "option", "height", $("#modprobe").height() + 100 );
+            }
+        })
+    } else {
+		if($(el).val() == "wctdm") {
+			$('#tr_ringdetect').show();
+		} else {
+			$('#tr_ringdetect').hide();
+		}
+		
+        if(($(el).val() == "wct4xxp") || ($(el).val() == "wcte12xp")) {
+            $('#wct4xxp_wcte12xp_settings').show();
+			$('#normal_mp_settings').hide();
+        } else {
+            $('#wct4xxp_wcte12xp_settings').hide();
+			$('#normal_mp_settings').show();
+        }
+        
+        //Hide neon settings
+        $('.neon').hide();
+        //Remove all extra additionals
+        $('.mp_js_additionals').remove();
+        var module = $(el).val();
+        //Re-create additionals for this probe
+        var z = 1;
+        $.each(modprobesettings[$(el).val()]['formsettings']['mp_setting_add'], function(index, value) {
+            var i = value;
+            if(i != '0') {
+                $("#mp_add").before('<tr class="mp_js_additionals" id="mp_additional_'+i+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="mp_delete_field('+i+',\''+module+'\')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="mp_setting_add[]" value="'+i+'" /> <input id="mp_setting_key_'+i+'" name="mp_setting_key_'+i+'" value="" /> = <input id="mp_setting_value_'+i+'" name="mp_setting_value_'+i+'" value="" /> <br /></td></tr>');
+            }
+            z++
+        })
+        $("#mp_add_button").attr("onclick","mp_add_field("+z+",'"+module+"')");
+        $.each(modprobesettings[$(el).val()]['formsettings'], function(index, value) { 
+            //Check to make sure ID exits before we reset it, but only do it inside the modprobe div element (though IDs should be unique!)
+          if (document.getElementById(index)) {
+              element = $('#modprobe #'+index);
+              if (element.is(":checkbox")) {
+                  if(value) {
+                    element.attr('checked','checked');
+                } else {
+                    element.removeAttr('checked');
+                }
+              }
+              if (element.is(":text")) {
+                  element.val(value);
+              }
+                  
+              if (element.is("select"))
+                  element.val(value);
+                //Show extra neon stuff
+                if ((index == 'mwi') && (value == 'neon')) {
+                    $('.neon').show();
+                }
+          }
+        });
+		//console.log('end'+$("#modprobe").height());
+		//$( "#modprobe-settings" ).dialog( "option", "height", $("#modprobe").height() + 100 );
+    }
+}
 
 /* Span Group Automation */
 function update_digital_groups(span,group,usedchans) {

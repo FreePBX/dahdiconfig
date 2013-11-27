@@ -9,7 +9,7 @@
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
     <changelog>
-		*2.11.27* Fixes: #6963, #6955, #6926, #6961, #6960, #6959, #6351, #6797, #6921, #6742, #6919
+		*2.11.27* Fixes: #6963, #6955, #6962, #6961, #6960, #6959, #6351, #6797, #6921, #6742, #6919
         *2.11.26* Remove symlinked hook file on uninstall
 		*2.11.25* Allow editing and sorting of DAHDi Modules File Directly
 		*2.11.24.1* #6585, #6461, #6583

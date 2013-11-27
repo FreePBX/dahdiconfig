@@ -56,3 +56,28 @@ wctc4xxp
 
 # Xorcom Astribank Devices
 xpp_usb
+
+# OpenVox D115P/DE115P/D130P/DE130P: PCI Single-port T1/E1/J1 
+# OpenVox D115E/DE115E/D130E/DE130E: PCI-Express Single-port T1/E1/J1 
+opvxd115
+
+# OpenVox A2410P: up to 24 analog ports
+opvxa24xx
+
+# OpenVox A2410P: up to 12 analog ports
+opvxa1200
+
+# OpenVox B100P: 1 NT/TE BRI ports
+zaphfc
+
+# Allo 1,2 and 4 port T1/E1/J1
+tor3e
+
+# Rhino Single Span T1/E1/J1
+r1t1
+
+# Rhino Multi Span T1/E1/J1
+rxt1
+
+# Rhino FXO
+rcbfx

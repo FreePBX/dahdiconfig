@@ -52,4 +52,4 @@
 	</menuitems>
 	<location>release/2.11/dahdiconfig-2.11.23.tgz</location>
 	<md5sum>f65501360df936aa56393a7f9e70af98</md5sum>
-</module>
+<supported><version>2.11</version></supported></module>

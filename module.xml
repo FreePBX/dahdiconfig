@@ -33,4 +33,4 @@
 	</menuitems>
 	<location>release/2.11/dahdiconfig-2.11.1.10.tgz</location>
 	<md5sum>bd46ccbaa07090590e1cc42e8588d6c2</md5sum>
-</module>
+<supported><version>2.11</version></supported></module>

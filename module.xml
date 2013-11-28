@@ -47,4 +47,4 @@
 	</menuitems>
 	<location>release/2.11/dahdiconfig-2.11.18.tgz</location>
 	<md5sum>bce60b4a356cb70f1cffcaa50f66aae0</md5sum>
-</module>
+<supported><version>2.11</version></supported></module>

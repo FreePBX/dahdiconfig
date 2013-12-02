@@ -4,7 +4,6 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 if (isset($_POST['reloaddahdi'])) {
     exec('asterisk -rx "module unload chan_dahdi.so"');
     exec('asterisk -rx "module load chan_dahdi.so"');
-    $astman->send_request('Command', array('Command' => 'dahdi restart'));
 }
 
 if (isset($_POST['restartamportal'])) {
@@ -28,14 +27,14 @@ if(!$amp_conf['DAHDIDISABLEWRITE'] && is_link('/etc/asterisk/chan_dahdi.conf') &
     if(!unlink('/etc/asterisk/chan_dahdi.conf')) {
         //If unlink fails then alert the user
         $dahdi_message = 'Please Delete the System Generated /etc/asterisk/chan_dahdi.conf';
-        include('views/dahdi_message_box.php');        
+        include('views/dahdi_message_box.php');
     }
 }
 
 $dahdi_cards = new dahdi_cards();
 $error = array();
 
-if ($dahdi_cards->hdwr_changes()) { 
+if ($dahdi_cards->hdwr_changes()) {
 	$dahdi_message = 'You have new hardware! Please configure your new hardware using the Edit button(s). Then reload DAHDI with the button below.';
     include('views/dahdi_message_box.php');
     if(file_exists($amp_conf['ASTETCDIR'].'/chan_dahdi_groups.conf')) {
@@ -91,7 +90,7 @@ if ($dahdi_cards->hdwr_changes()) {
 //]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=<?php echo rand()?>' target='_blank'><img src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=<?php echo rand()?>&amp;n=aea98e58' border='0' alt='' /></a></noscript>
 
        	</div>
-       	
+
        	<div id="global-settings" title="Global Settings" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_global_settings.php'; ?>
         </div>
@@ -119,7 +118,7 @@ if ($dahdi_cards->hdwr_changes()) {
             }
         }
         ?>
-        <?php foreach($dahdi_cards->get_spans() as $key=>$span) { 
+        <?php foreach($dahdi_cards->get_spans() as $key=>$span) {
             $span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : '';
             $span['switchtype'] = !empty($span['switchtype']) ? $span['switchtype'] : '';
             $span['pridialplan'] = !empty($span['pridialplan']) ? $span['pridialplan'] : '';
@@ -131,7 +130,7 @@ if ($dahdi_cards->hdwr_changes()) {
         <div id="digital-settings-<?php echo $key;?>" title="Span: <?php echo $span['description']?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_digital_settings.php'; ?>
         </div>
-        <?php } ?>    
+        <?php } ?>
         <div id="analog-settings-fxo" title="FXO Settings" style="display: none;">
             <?php $analog_type = 'fxo'; require dirname(__FILE__).'/views/dahdi_analog_settings.php'; ?>
         </div>
@@ -163,12 +162,12 @@ if ($dahdi_cards->hdwr_changes()) {
             <li><?php echo $amp_conf['DAHDISYSTEMLOC']?></li>
             <li><?php echo $amp_conf['DAHDIMODPROBELOC']?></li>
         </ul>
-        It is <strong>YOUR</strong> responsibility to backup all relevant files on your system! 
-        We can <strong>NOT</strong> be held responsible if you enable this module and your trunks/cards suddenly 
+        It is <strong>YOUR</strong> responsibility to backup all relevant files on your system!
+        We can <strong>NOT</strong> be held responsible if you enable this module and your trunks/cards suddenly
         stop working because your configurations have changed.
         <br />
         <br />
-        This module should never be used alongside <i>dahdi_genconfig</i>. Using <i>dahdi_genconfig</i> and 
+        This module should never be used alongside <i>dahdi_genconfig</i>. Using <i>dahdi_genconfig</i> and
         this module at the same time can have unexpected consequences.
         <br />
         <br />
@@ -178,7 +177,7 @@ if ($dahdi_cards->hdwr_changes()) {
         <br/>
         <i>This message will re-appear everytime you load the module while it is in a disabled write state so as to not
         cause any confusion
-        </i> 
+        </i>
     </div>
 <h5><?php echo trim($dahdi_info[1]);?></h5>
 
@@ -193,7 +192,7 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
 
 <?php } ?>
 
-<?php foreach($dahdi_cards->get_spans() as $key=>$span) { 
+<?php foreach($dahdi_cards->get_spans() as $key=>$span) {
     $o = $span;
     unset($o['additional_groups']);
     $o = json_encode($o);
@@ -211,7 +210,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = json_decode($span['additional_groups'],TRUE); 
+<?php $groups = json_decode($span['additional_groups'],TRUE);
     foreach($groups as $gkey => $data) { ?>
 $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
     var span = <?php echo $key?>;
@@ -221,10 +220,10 @@ $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function
     update_digital_groups(span,group,endchan);
 });
 
-<?php } ?> 
+<?php } ?>
 
-<?php } ?> 
-$(function(){ 
+<?php } ?>
+$(function(){
 	$('.modules-sortable').sortable();
     <?php
     if ($amp_conf['DAHDIDISABLEWRITE']) {
@@ -264,8 +263,8 @@ $(function(){
     }).change(function() {
         createModProbeSettings();
     })
-    
-    var options = { 
+
+    var options = {
         type: 'POST'
     };
     $( "#analog-settings-fxo" ).dialog({
@@ -316,7 +315,7 @@ $(function(){
             "Save": function() {
                 //spandata[<?php echo $key?>]
                 gdata = JSON.stringify(spandata[<?php echo $key?>]['groups'])
-                $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) { 
+                $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) {
                         if(j.status) {
                             $.each(j, function(index, value) {
 								if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
@@ -432,7 +431,7 @@ $(function(){
 						morder['sys::'+id] = $('#input-'+id).prop('checked')
 					}
 				});
-				
+
 				options.data = { order: morder }
                 $("#form-modules").ajaxSubmit(options);
                 toggle_reload_button('show');
@@ -487,9 +486,9 @@ $(function(){
                     modprobesettings[$('#module_name').val()] = {}
                 }
                 modprobesettings[$('#module_name').val()]['formsettings'] = settings
-                $.each(modprobesettings, function(index, value) {  
+                $.each(modprobesettings, function(index, value) {
                     $.post("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php&type=modprobesubmit",{settings: JSON.stringify(value['formsettings'])}, function(j){
-                    
+
                     })
                 })
                 toggle_reload_button('show');
@@ -504,7 +503,7 @@ $(function(){
 			storeModProbeSettings();
         }
     });
-    
+
  })
 $('#mwi').change(function(evt) {
 	if ($('#mwi :selected').val() == 'neon') {

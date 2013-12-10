@@ -460,10 +460,11 @@ switch ($dispnum) {
 }
 
 function dahdiconfig_module_repo_parameters_callback($opts) {
+	global $amp_conf;
 	$dahdi_cards = new dahdi_cards();
 	$hd = $dahdi_cards->get_hardware();
 	$final = array();
-	if(count($hd)) {
+	if(count($hd) && $amp_conf['BROWSER_STATS']) {
 		$spans = $dahdi_cards->get_spans();
 		foreach($hd as &$h) {
 			foreach($spans as $span) {

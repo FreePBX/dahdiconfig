@@ -459,6 +459,32 @@ switch ($dispnum) {
   $currentcomponent->addguifunc("dahdiconfig_{$dispnum}_configpageload");
 }
 
+function dahdiconfig_module_repo_parameters_callback($opts) {
+	$dahdi_cards = new dahdi_cards();
+	$hd = $dahdi_cards->get_hardware();
+	$final = array();
+	if(count($hd)) {
+		$spans = $dahdi_cards->get_spans();
+		foreach($hd as &$h) {
+			foreach($spans as $span) {
+				if($span['devicetype'] == $h['device']) {
+					$h['manufacturer'] = $span['manufacturer'];
+				}
+			}
+		}
+		$hd = array_values($hd);
+		$final['cards'] = count($hd);
+		foreach($hd as $k => $card) {
+			$final['card_'.$k.'_type'] = (!empty($card['manufacturer']) && $card['type'] == 'analog') ? 'hybrid' : $card['type'];
+			$final['card_'.$k.'_device'] = $card['device'];
+			if(!empty($card['manufacturer'])) {
+				$final['card_'.$k.'_man'] = $card['manufacturer'];
+			}
+		}
+	}
+	return $final;
+}
+
 function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
   global $tabindex;
   $html = '';

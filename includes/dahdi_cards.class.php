@@ -166,8 +166,8 @@ class dahdi_cards {
 					$item = str_replace('#','',$item);
 					$modules[$item]['status'] = false;
 				} else {
-					exec('modprobe '.$item,$out,$return_var);
-					$modules[$item]['status'] = ($return_var == '0') ? true : false;
+					//exec('modprobe '.$item,$out,$return_var);
+					$modules[$item]['status'] = true;
 				}
 				$modules[$item]['type'] = ($list[$key-1] == '# UserDefined') ? 'ud' : 'sys';
 			}
@@ -1080,7 +1080,7 @@ class dahdi_cards {
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
         $this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
-                
+
 		$this->write_spans(); 
 		$this->write_system_conf();	
 
@@ -1429,8 +1429,8 @@ class dahdi_cards {
 					//no break here as we want to run this next bit on the user defined settings as well
 				case "sys":
 					//dont allow broken modules to be saved here
-					exec('modprobe '.$module,$out,$return_var);
-					$state = ($return_var == '0') ? $state : false;
+					//exec('modprobe '.$module,$out,$return_var);
+					//$state = ($return_var == '0') ? $state : false;
 					if($state) {
 						//make sure module is enabled, if it is then skip, if not fix it
 						if(!preg_match('/^'.$module.'$/m', $contents) && preg_match('/^#'.$module.'$/m', $contents)) {

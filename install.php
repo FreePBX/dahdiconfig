@@ -393,25 +393,19 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_analog WHERE FIELD = "txgain"')) {
     $sql = "ALTER TABLE `dahdi_analog` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
     $result = $db->query($sql);
 }
-exec('modprobe wcte43x',$out,$return_var);
-$wcte43xstate = ($return_var == '0') ? $state : false;
-exec('modprobe wcaxx',$out,$return_var);
-$wcaxxstate = ($return_var == '0') ? $state : false;
 
-if($wcte43xstate || $wcaxxstate) {
-	$mod_loc = $freepbx_conf->get_conf_setting('DAHDIMODULESLOC');
-	
-	if(file_exists($mod_loc)) {
-		$contents = file_get_contents($mod_loc);
-		if($wcte43xstate && (!preg_match('/^wcte43x/im',$contents) && !preg_match('/^#wcte43x/im',$contents))) {
-			out("Detected new Dahdi Module: wcte43x, Appending to ".basename($mod_loc));
-			$data = "\n# Digium TE435\n# Digium TE235\nwcte43x\n";
-			file_put_contents($mod_loc,$data,FILE_APPEND);
-		}
-		if($wcaxxstate&& (!preg_match('/^wcaxx/im',$contents) && !preg_match('/^#wcaxx/im',$contents))) {
-			out("Detected new Dahdi Module: wcaxx, Appending to ".basename($mod_loc));
-			$data = "\n# Digium A4A/A4B/A8A/A8B\nwcaxx\n";
-			file_put_contents($mod_loc,$data,FILE_APPEND);
-		}
+$mod_loc = $freepbx_conf->get_conf_setting('DAHDIMODULESLOC');
+
+if(file_exists($mod_loc)) {
+	$contents = file_get_contents($mod_loc);
+	if((!preg_match('/^wcte43x/im',$contents) && !preg_match('/^#wcte43x/im',$contents))) {
+		out("Detected new Dahdi Module: wcte43x, Appending to ".basename($mod_loc));
+		$data = "\n# Digium TE435\n# Digium TE235\n#wcte43x\n";
+		file_put_contents($mod_loc,$data,FILE_APPEND);
+	}
+	if((!preg_match('/^wcaxx/im',$contents) && !preg_match('/^#wcaxx/im',$contents))) {
+		out("Detected new Dahdi Module: wcaxx, Appending to ".basename($mod_loc));
+		$data = "\n# Digium A4A/A4B/A8A/A8B\n#wcaxx\n";
+		file_put_contents($mod_loc,$data,FILE_APPEND);
 	}
 }

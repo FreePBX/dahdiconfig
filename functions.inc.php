@@ -48,7 +48,6 @@ global $db;
  	public function dahdiconfig_conf() {
 		$this->cards = new dahdi_cards();
 
-       exec('/usr/sbin/dahdi_cfg');
         global $amp_conf;
         if (!$amp_conf['DAHDIDISABLEWRITE']) {
     		$this->cards->write_modprobe();

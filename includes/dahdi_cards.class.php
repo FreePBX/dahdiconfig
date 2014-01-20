@@ -101,7 +101,7 @@ class dahdi_cards {
         
         global $amp_conf;
 		if (!is_file($amp_conf['DAHDISYSTEMLOC'])) {
-			exec('/usr/sbin/dahdi_genconf',$output,$return_var);
+			exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 		}
 		$me = $amp_conf['AMPASTERISKUSER'];
 		
@@ -476,7 +476,7 @@ class dahdi_cards {
 
 		$this->hdwr_changes = $this->detect_hdwr_changes();
 		if ($this->hdwr_changes) {
-			exec('/usr/sbin/dahdi_genconf');
+			exec('/usr/sbin/dahdi_genconf system');
 			exec('/usr/sbin/dahdi_cfg');
 			$this->read_dahdi_scan();
 			$this->write_detected();
@@ -670,7 +670,7 @@ class dahdi_cards {
 			}
 
 			if ( ! $hasaline) {
-				exec('/usr/sbin/dahdi_genconf',$output,$return_var);
+				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 				if($return_var != '0') {
                     //If genconf returns an error then we should abort otherwise we will be in a neverending loop
                     break;

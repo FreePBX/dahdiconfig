@@ -100,7 +100,7 @@ class dahdi_cards {
         }
         
         global $amp_conf;
-		if (!is_file($amp_conf['DAHDISYSTEMLOC'])) {
+		if (!is_file($amp_conf['DAHDISYSTEMLOC']) && file_exists('/usr/sbin/dahdi_genconf')) {
 			exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 		}
 		$me = $amp_conf['AMPASTERISKUSER'];
@@ -475,7 +475,7 @@ class dahdi_cards {
 		$this->read_dahdi_scan();
 
 		$this->hdwr_changes = $this->detect_hdwr_changes();
-		if ($this->hdwr_changes) {
+		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
 			exec('/usr/sbin/dahdi_genconf system');
 			exec('/usr/sbin/dahdi_cfg');
 			$this->read_dahdi_scan();
@@ -670,6 +670,9 @@ class dahdi_cards {
 			}
 
 			if ( ! $hasaline) {
+				if(!file_exists('/usr/sbin/dahdi_genconf')) {
+					break;
+				}
 				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 				if($return_var != '0') {
                     //If genconf returns an error then we should abort otherwise we will be in a neverending loop
@@ -808,6 +811,9 @@ class dahdi_cards {
 	 * Read all the information given in the DAHDi Scan script
 	 */
 	public function read_dahdi_scan() {
+		if(!file_exists('/usr/sbin/dahdi_scan')) {
+			return false;
+		}
 		exec('/usr/sbin/dahdi_scan',$dahdi_scan_output,$return_var);
 		if($return_var != '0') {
 			return false;

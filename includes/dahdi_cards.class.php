@@ -1321,7 +1321,8 @@ class dahdi_cards {
 		}
 
 		if ($dchan) {
-			$output[] = "dchan={$dchan}";
+			//$output[] = "dchan={$dchan}";
+			$output[]  = "hardhdlc={$dchan}";
 		}
 
 		if ($hardhdlc) {

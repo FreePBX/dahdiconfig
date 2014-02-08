@@ -70,6 +70,9 @@
                     <option value="--" disabled>--ANALOG--</option>
             		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>>FXOKS</option>
             		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>>FXOLS</option>
+				    <option value="--" disabled>--RHNIO--</option>
+					<option value="fxs_ks" <?php echo set_default($span['signalling'],'fxs_ks'); ?>>FXSKS</option>
+					<option value="fxs_ls" <?php echo set_default($span['signalling'],'fxs_ls'); ?>>FXSLS</option>
                     <option value="--" disabled>--BRI--</option>
                     <option value="bri_net" <?php echo set_default($span['signalling'],'bri_net'); ?>>BRI PTP - Net</option>
                     <option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>>BRI PTP - CPE</option>

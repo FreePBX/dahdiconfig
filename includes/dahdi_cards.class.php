@@ -1321,8 +1321,7 @@ class dahdi_cards {
 		}
 
 		if ($dchan) {
-			//$output[] = "dchan={$dchan}";
-			$output[]  = "hardhdlc={$dchan}";
+			$output[]  = (!empty($span['manufacturer']) && preg_match('/sangoma/i',$span['manufacturer'])) ? "hardhdlc={$dchan}" : "dchan={$dchan}";
 		}
 
 		if ($hardhdlc) {

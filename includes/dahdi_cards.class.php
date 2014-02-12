@@ -1301,7 +1301,7 @@ class dahdi_cards {
 				} else {
 					$fxx[$fx] = $chan;
 				}
-			} else if (substr($span['signalling'],0,3) == 'pri') {
+			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
 				$dchan .= ($dchan) ? ",{$span['reserved_ch']}" : "{$span['reserved_ch']}";
 			} else {
@@ -1321,7 +1321,7 @@ class dahdi_cards {
 		}
 
 		if ($dchan) {
-			$output[]  = (!empty($span['manufacturer']) && preg_match('/sangoma/i',$span['manufacturer'])) ? "hardhdlc={$dchan}" : "dchan={$dchan}";
+			$output[]  = "dchan={$dchan}";
 		}
 
 		if ($hardhdlc) {

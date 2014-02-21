@@ -45,7 +45,7 @@ function dahdiconfig_start_it_up() {
 f_command=$1
 
 #This happens AFTER asterisk has been stopped
-function stop_asterisk_hook_*() {
+function stop_asterisk_hook_dahdiconfig() {
     #look for wanrouter. Echo output to null
     if which wanrouter > /dev/null 2>&1
         then
@@ -76,7 +76,7 @@ if [ "$1" == "start" ]
 fi
 
 #chown our files to....us
-function chown_asterisk_hook_*() {
+function chown_asterisk_hook_dahdiconfig() {
     #Check for System.conf
     if [ -f $DAHDISYSTEMLOC ]
         then
@@ -94,5 +94,11 @@ function chown_asterisk_hook_*() {
         then
             #Change permissions regardless
             chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/dahdi/modules
+    fi
+    #Change wanpipe global.conf permissions
+    if [ -f '/etc/wanpipe/global.conf' ]
+        then
+            #Change permissions regardless
+            chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP /etc/wanpipe/global.conf
     fi
 }

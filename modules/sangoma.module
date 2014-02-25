@@ -43,12 +43,13 @@ EOF;
         $output['html'] .= '<option value="no" '.$no.'>No</option>';
         $output['html'] .= '<option value="yes" '.$yes.'>Yes</option>';
         $none = $settings['dahdimode'] == 'no' ? 'display:none;' : '';
+		$display = ($settings['dahdimode'] == 'yes') ? '' : 'display:none;';
         $output['html'] .= <<< EOF
                         </select>
                     </td>
                 </tr>
-                <tr id="sangoma_t1mode">
-                    <td style="width:10px;">
+                <tr id="sangoma_t1mode" style="${display}">
+                    <td style="width:10px">
                         <label for="sangoma_t1mode">T1 Mode:</label>
                     </td>
                     <td>
@@ -85,7 +86,7 @@ EOF;
                 if(isset($settings['sangoma_'.$key])) {
                     $n[$key] = $settings['sangoma_'.$key];
                 } else {
-                    $n[$key] = $settings[$default_value];
+                    $n[$key] = $default_value;
                 }
             }
             $json_settings = json_encode($n);

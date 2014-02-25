@@ -1380,17 +1380,8 @@ class dahdi_cards {
         foreach($this->modules as $mod_name => $module) {
             if(method_exists($module,'get_filename')) {
                 foreach($module->get_filename() as $file) {
-                    if(!file_exists($file)) {
-                        file_put_contents($file,'');
-                    }
-                    if(is_writable($file)) {
-                        if(method_exists($module,'generateConf')) {
-                            $module->generateConf($file);
-                        }
-                    } else {
-                        global $db;
-                        $nt =& notifications::create($db);
-            			$nt->add_error('dahdiconfig', strtoupper($mod_name), _('Unable to write to '.$file), "Please change permissions on ".$file, "", false, true);
+                    if(method_exists($module,'generateConf')) {
+                        $module->generateConf($file);
                     }
                 }
             }

@@ -118,11 +118,9 @@ EOF;
 						$contents = file_get_contents($file);
 						$contents = str_replace("WANPIPE_WITH_DIGIUM=TRUE\n","",$contents);
 						$contents = str_replace("WANPIPE_GLOBAL_CFG=DAHDI\n","",$contents);
-                        if(!file_put_contents($file, $contents)) {
-                            global $db;
-                            $nt =& notifications::create($db);
-                			$nt->add_error('dahdiconfig', 'SANGOMA', _('Unable to write to '.$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
-                        }
+						if(is_writable($file)) {
+							file_put_contents($file, $contents);
+						}
                     }
                     break;
                 default:

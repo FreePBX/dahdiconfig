@@ -530,7 +530,7 @@ class dahdi_cards {
 		global $db;
 
         if(isset($_REQUEST['module_name'])) {
-            $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".mysql_real_escape_string($_REQUEST['module_name'])."'";
+            $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$db->escapeSimple($_REQUEST['module_name'])."'";
             $module_name = $_REQUEST['module_name'];
         } else {
             $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$this->modprobe['module_name']."'";
@@ -1016,7 +1016,7 @@ class dahdi_cards {
         if(isset($params['module_name'])) {
             $module_name = $params['module_name'];
             unset($params['module_name']);
-            $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($module_name)."', '".mysql_real_escape_string(json_encode($params))."')";
+            $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(json_encode($params))."')";
             sql($sql);
 		    needreload();
 	    }
@@ -1036,7 +1036,7 @@ class dahdi_cards {
 	    foreach($params as $k => $v) {
 	        if(isset($v) && ($v != "")) {
                 $additional = array_key_exists($k,$this->globalsettings) ? 0 : 1;
-	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'chandahdi')";
+	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'chandahdi')";
                 sql($sql);
                 needreload();
             }
@@ -1048,7 +1048,7 @@ class dahdi_cards {
 	    foreach($params as $k => $v) {
 	        if(isset($v) && ($v != "")) {
                 $additional = array_key_exists($k,$this->systemsettings) ? 0 : 1;
-	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."', ".$additional.", 'system')";
+	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'system')";
                 sql($sql);
                 needreload();
             }

@@ -24,7 +24,7 @@ switch($_REQUEST['type']) {
         }
         break;
     case "modprobe":
-        $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".mysql_real_escape_string($_REQUEST['dcmodule'])."'";
+        $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$db->escapeSimple($_REQUEST['dcmodule'])."'";
         $settings = sql($sql, 'getOne');
         if($settings) {
             $json = array(
@@ -143,7 +143,7 @@ switch($_REQUEST['type']) {
         break;
     case "systemsettingsremove":
         if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_system)) {
-            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."' AND type='system'";
+            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".$db->escapeSimple($_REQUEST['origkeyword'])."' AND type='system'";
             sql($sql);
             $json = array("status" => true);
         } else {
@@ -153,7 +153,7 @@ switch($_REQUEST['type']) {
         break;
     case "globalsettingsremove":
         if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global)) {
-            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".mysql_real_escape_string($_REQUEST['origkeyword'])."' AND type='chandahdi'";
+            $sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".$db->escapeSimple($_REQUEST['origkeyword'])."' AND type='chandahdi'";
             sql($sql);
             $json = array("status" => true);
         } else {

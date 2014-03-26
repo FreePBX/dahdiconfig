@@ -90,7 +90,7 @@ EOF;
                 }
             }
             $json_settings = json_encode($n);
-            $sql = "REPLACE INTO dahdi_modules (module_name, settings) VALUES ('sangoma', '".mysql_real_escape_string($json_settings)."')";
+            $sql = "REPLACE INTO dahdi_modules (module_name, settings) VALUES ('sangoma', '".$db->escapeSimple($json_settings)."')";
             sql($sql);
         
             return array("status" => true);

@@ -278,7 +278,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
     unset($settings[$module_name]);
 
 	out("Inserting Old Data from Dahdi Advanced Table");
-    $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($module_name)."', '".mysql_real_escape_string(serialize($settings))."')";
+    $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(serialize($settings))."')";
     sql($sql);
 	
 	out("Deleting old dahdi module data from database (its been migrated)");
@@ -313,7 +313,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	outn('Replacing..');
 	foreach($globalsettings as $k => $v) {
 		outn('..'.$k.'..');
-	    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".mysql_real_escape_string($v)."', '".mysql_real_escape_string($k)."')";
+	    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."')";
 	    sql($sql);
 	}
 	out('..Done');
@@ -348,7 +348,7 @@ foreach($old as $list) {
 	if(unserialize($list['settings']) !== FALSE) {
 		out("Migrating module ".$list['module_name']." from serialized data to json");
 	    $o = json_encode(unserialize($list['settings']));
-	    $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".mysql_real_escape_string($list['module_name'])."', '".mysql_real_escape_string($o)."')";
+	    $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($list['module_name'])."', '".$db->escapeSimple($o)."')";
 	    sql($sql);
 	}
 }

@@ -1,27 +1,9 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-
-/**
- * FreePBX DAHDi Config Module
- *
- * Copyright (c) 2009, Digium, Inc.
- * Copyright (c) 2012, Schmooze Com Inc
- * Author: Ryan Brindley <ryan@digium.com>
- * Author: Schmooze Com Inc
- *
- * This program is free software, distributed under the terms of
- * the GNU General Public License Version 2. 
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- */
- 
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//  Copyright (c) 2009, Digium, Inc.
+//
  /*
  function GetCallingMethodName(){
      $e = new Exception();

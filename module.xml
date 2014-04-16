@@ -3,12 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.40</version>
-	<publisher>Schmoozecom</publisher>
-	<license>GPLv2</license>
+	<version>2.11.41</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
     <changelog>
+    	*2.11.41* Add license info
 		*2.11.40* Database abstraction layer fixes
 		*2.11.39* Just remove the notice all together. Its too confusing.
 		*2.11.38* Resolve outstanding wanpipe global.conf issues

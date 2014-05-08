@@ -1295,12 +1295,14 @@ class dahdi_cards {
 				} else {
 					$fx = 'e&m';
 				}
+				 $s = json_decode($span['additional_groups'], true);
+                                $s = $s[0];        
+                                if ($fxx[$fx]) {
+                                        $fxx[$fx] .= $s['startchan'].'-'.($s['startchan']+$span['definedchans']);
+                                } else {
+                                        $fxx[$fx] = $s['startchan'].'-'.($s['startchan']+$span['definedchans']);
+                                }               
 
-				if ($fxx[$fx]) {
-					$fxx[$fx] .= ",{$chan}";
-				} else {
-					$fxx[$fx] = $chan;
-				}
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
 				$dchan .= ($dchan) ? ",{$span['reserved_ch']}" : "{$span['reserved_ch']}";
@@ -1311,9 +1313,11 @@ class dahdi_cards {
 
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
-
+                
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
+                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$val;
+
 		}
 
 		if ($bchan) {
@@ -1351,15 +1355,22 @@ class dahdi_cards {
 
 		if ($fxols) {
 			$output[] = "fxsls=".dahdi_array2chans($fxols);
+                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxols);
+
 		}
 		if ($fxoks) {
 			$output[] = "fxsks=".dahdi_array2chans($fxoks);
+                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxoks);
+
 		}
 		if ($fxsls) {
 			$output[] = "fxols=".dahdi_array2chans($fxsls);
+                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsls);
 		}
 		if ($fxsks) {
 			$output[] = "fxoks=".dahdi_array2chans($fxsks);
+                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsks);
+
 		}
 
 		$output[] = "loadzone={$this->systemsettings['tone_region']}";

@@ -1,26 +1,6 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-/**
- * FreePBX DAHDi Config Module
- *
- * Copyright (c) 2009, Digium, Inc.
- *
- * Author: Ryan Brindley <ryan@digium.com>
- *
- * This program is free software, distributed under the terms of
- * the GNU General Public License Version 2. 
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- */
-
 global $db;
 global $amp_conf;
 global $asterisk_conf;
@@ -248,6 +228,20 @@ $set['description'] = 'DAHDi Modules Location (/etc/dahdi/modules)';
 $set['type'] = CONF_TYPE_TEXT;
 $freepbx_conf->define_conf_setting('DAHDIMODULESLOC',$set,true);
 
+//echocan
+//echo cancel
+$set['value'] = 'oslec';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Software EC';
+$set['description'] = 'software EC to use in system.conf';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDIECHOCAN',$set,true);
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	out("Creating Dahdi Advanced Modules Table");

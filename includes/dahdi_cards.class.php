@@ -1286,7 +1286,6 @@ class dahdi_cards {
 			if ($span['type'] != 'gsm') {
 				$output[] = "span={$spanline}";
 			}
-
 			$ofxx = $this->calc_bchan_fxx($num);
 			$chan = $ofxx['fxx'];
 			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri' && substr($span['signalling'],0,3) != 'gsm') {
@@ -1295,13 +1294,14 @@ class dahdi_cards {
 				} else {
 					$fx = 'e&m';
 				}
-				 $s = json_decode($span['additional_groups'], true);
-                                $s = $s[0];        
-                                if ($fxx[$fx]) {
-                                        $fxx[$fx] .= $s['startchan'].'-'.($s['startchan']+$span['definedchans']);
-                                } else {
-                                        $fxx[$fx] = $s['startchan'].'-'.($s['startchan']+$span['definedchans']);
-                                }               
+				$data = json_decode($span['additional_groups'], true);
+				foreach($data as $s){        
+	                if ($fxx[$fx]) {
+		                $fxx[$fx] .= $s['startchan'].'-'.($s['startchan']+$s['usedchans']);
+	                } else {
+	                $fxx[$fx] = $s['startchan'].'-'.($s['startchan']+$s['usedchans']);
+	                }
+					}           
 
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";

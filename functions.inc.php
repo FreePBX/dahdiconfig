@@ -125,7 +125,7 @@ global $db;
                     foreach($groups as $gkey => $data) {
     				    $output[] = "group={$data['group']}";
     				    $output[] = "context={$data['context']}";
-    				    $output[] = "channel =>".$data['startchan']."-".($data['startchan']+$span['definedchans']);
+    				    $output[] = "channel =>".$data['startchan']."-".($data['startchan']+$data['usedchans']);
 				    }
     				
     				$output[] = !empty($span['priexclusive']) ? "priexclusive={$span['priexclusive']}" : "";

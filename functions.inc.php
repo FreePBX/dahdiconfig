@@ -123,9 +123,14 @@ global $db;
     				
     				$groups = json_decode($span['additional_groups'],TRUE); 
                     foreach($groups as $gkey => $data) {
+						//Add option for skip group for people who don't want to use all channels
+						if ($data['group'] == 's'){
+							continue;
+                        }
     				    $output[] = "group={$data['group']}";
     				    $output[] = "context={$data['context']}";
-    				    $output[] = "channel =>".$data['startchan']."-".($data['startchan']+$data['usedchans']);
+    				    $output[] = "channel =>".$data['startchan']."-".$data['endchan'];
+
 				    }
     				
     				$output[] = !empty($span['priexclusive']) ? "priexclusive={$span['priexclusive']}" : "";

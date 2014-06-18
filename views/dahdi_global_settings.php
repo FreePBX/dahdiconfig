@@ -197,10 +197,10 @@
             </td>
             <td>
               	<select id="faxdetect" name="faxdetect">
-            	    <option value="yes" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'yes'); ?>><?php echo _('Yes')?></option>
             	    <option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'no'); ?>><?php echo _('No')?></option>
             	    <option value="incoming" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'incoming'); ?>><?php echo _('Incoming')?></option>
             	    <option value="outgoing" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'outgoing'); ?>><?php echo _('Outgoing')?></option>
+            	    <option value="both" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'both'); ?>><?php echo _('Both')?></option>
             	</select>
             </td>
         </tr> 

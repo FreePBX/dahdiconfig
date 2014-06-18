@@ -1303,12 +1303,15 @@ class dahdi_cards {
 				}
 				$data = json_decode($span['additional_groups'], true);
 				foreach($data as $s){
-	                if ($fxx[$fx]) {
-		                $fxx[$fx] .= $s['startchan'].'-'.($s['startchan']+$s['usedchans']);
-	                } else {
-	                $fxx[$fx] = $s['startchan'].'-'.($s['startchan']+$s['usedchans']);
-	                }
-					}
+					if (strtolower($s['group'] == 's')){
+						continue;
+                    }
+                    if ($fxx[$fx]) {
+						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'];
+                    } else {
+						$fxx[$fx] = $s['startchan'].'-'.$s['endchan'];
+                    }
+                }
 
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";

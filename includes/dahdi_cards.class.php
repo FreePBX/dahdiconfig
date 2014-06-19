@@ -1127,7 +1127,7 @@ class dahdi_cards {
 			$group = (isset($this->analog_ports[$fxo]['group']))?$this->analog_ports[$fxo]['group']:0;
 			$context = (isset($this->analog_ports[$fxo]['context']))?$this->analog_ports[$fxo]['context']:'from-analog';
 
-			$ports[] = "($fxo, 'fxo', '$sig', $group, '$context')";
+			$ports[] = "($fxo, 'fxo', '$sig', '".$db->escapeSimple($group)."', '".$db->escapeSimple($context)."')";
 		}
 
 		foreach ($this->fxs_ports as $fxs) {
@@ -1140,7 +1140,7 @@ class dahdi_cards {
 			$group = (isset($this->analog_ports[$fxs]['group']))?$this->analog_ports[$fxs]['group']:0;
 			$context = (isset($this->analog_ports[$fxs]['context']))?$this->analog_ports[$fxs]['context']:'from-analog';
 
-			$ports[] = "($fxs, 'fxs', '$sig', $group, '$context')";
+			$ports[] = "($fxs, 'fxs', '$sig', '".$db->escapeSimple($group)."', '".$db->escapeSimple($context)."')";
 		}
 
 		if (sizeof($ports) <= 0) {

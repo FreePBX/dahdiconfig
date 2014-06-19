@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.44</version>
+	<version>2.11.45</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
     <changelog>
+		*2.11.45* Fix all the bugs. Yes I am trying! Also allow resetting of groups if needed per span (FREEPBX-7381) and FREEPBX-7051
 		*2.11.44* Wrong channel count bug. Argh
 		*2.11.43* Fix channel range for Analog T1 and add echocan info
 		*2.11.42* FREEPBX-7437 Fix sangoma module bug

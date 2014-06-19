@@ -119,7 +119,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 		`port` INT UNIQUE,
 		`type` ENUM ('fxo', 'fxs'),
 		`signalling` ENUM ('ks', 'ls'),
-		`group` INT UNSIGNED,
+		`group` VARCHAR(10),
 		`context` VARCHAR(255)
 	);";
 
@@ -128,6 +128,9 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 		die_freepbx($result->getDebugInfo());
 	}
 	unset($result);
+} else {
+	$sql = "ALTER TABLE `dahdi_analog` CHANGE COLUMN `group` `group` VARCHAR(10) NULL DEFAULT NULL ;";
+	$db->query($sql);
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
@@ -274,7 +277,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	out("Inserting Old Data from Dahdi Advanced Table");
     $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(serialize($settings))."')";
     sql($sql);
-	
+
 	out("Deleting old dahdi module data from database (its been migrated)");
 	foreach ($entries as $entry=>$default_val) {
 	    if($entry != 'tone_region') {
@@ -282,10 +285,10 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	        sql($sql);
 	    }
 	}
-	
+
 	$globalsettings = array(		// global array of values
 		'tone_region'=>'us',
-	    'language'=>'en', 
+	    'language'=>'en',
 	    'busydetect'=>'yes',
 	    'busycount'=>'10',
 	    'usecallerid'=>'yes',
@@ -301,7 +304,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	    'immediate'=>'no',
 	    'faxdetect'=>'no',
 	    'rxgain'=>'0.0',
-	    'txgain'=>'0.0' 
+	    'txgain'=>'0.0'
 	    );
 
 	outn('Replacing..');
@@ -325,7 +328,7 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
         $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
         $result = $db->query($sql);
     }
-    
+
     $sql = "ALTER TABLE `dahdi_spans` change `dchannel` `reserved_ch`  int (5) NOT NULL DEFAULT '0";
     $result = $db->query($sql);
 }
@@ -359,14 +362,14 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_modules"')) {
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "type"')) {
 	out("Add type column");
 	sql('ALTER TABLE dahdi_advanced ADD type varchar(50) default "chandahdi"');
-	
+
 	sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"')) {
 	out("add additional column");
 	sql('ALTER TABLE dahdi_advanced ADD additional bool default 1');
-	
+
 	foreach($globalsettings as $ksettings => $settings) {
 	    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
 	}

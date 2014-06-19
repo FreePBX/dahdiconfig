@@ -49,14 +49,14 @@ function createModProbeSettings() {
                 $('#mp_setting_key_0').val('')
                 $('#mp_setting_value_0').val('')
                 $('#mp_setting_origsetting_key_0').val('')
-                
+
 				if(j.module == "wctdm") {
 					$('#tr_ringdetect').show();
 				} else {
 					$('#tr_ringdetect').hide();
 				}
-				
-                if(j.module == "wctc4xxp") { 
+
+                if(j.module == "wctc4xxp") {
                     $('#normal_mp_settings').hide();
                     $('#wct4xxp_wcte12xp_settings').hide();
                     $('#wctc4xxp_settings').show();
@@ -99,7 +99,7 @@ function createModProbeSettings() {
                     $('#neon_voltage').val(j.neon_voltage);
                     $('#neon_offlimit').val(j.neon_offlimit);
                 }
-                
+
                 //Re-create additionals for this probe
                 var z = 1;
                 if(typeof j.additionals !== 'undefined') {
@@ -110,7 +110,7 @@ function createModProbeSettings() {
                         } else {
                             $("#mp_add").before('<tr class="mp_js_additionals" id="mp_additional_'+z+'"><td style="width:10px;vertical-align:top;"></td><td style="vertical-align:bottom;"><a href="#" onclick="mp_delete_field('+z+',\''+j.module+'\')"><img height="10px" src="images/trash.png"></a> <input type="hidden" name="mp_setting_add[]" value="'+z+'" /><input type="hidden" id="mp_setting_origsetting_key_'+z+'" name="mp_setting_origsetting_key_'+z+'" value="'+index+'" /> <input id="mp_setting_key_'+z+'" name="mp_setting_key_'+z+'" value="'+index+'" /> = <input id="mp_setting_value_'+z+'" name="mp_setting_value_'+z+'" value="'+value+'" /> <br /></td></tr>');
                         }
-                        z++  
+                        z++
                     })
                 }
                 $("#mp_add_button").attr("onclick","mp_add_field("+z+",'"+j.module+"')");
@@ -124,7 +124,7 @@ function createModProbeSettings() {
 		} else {
 			$('#tr_ringdetect').hide();
 		}
-		
+
         if(($(el).val() == "wct4xxp") || ($(el).val() == "wcte12xp")) {
             $('#wct4xxp_wcte12xp_settings').show();
 			$('#normal_mp_settings').hide();
@@ -132,7 +132,7 @@ function createModProbeSettings() {
             $('#wct4xxp_wcte12xp_settings').hide();
 			$('#normal_mp_settings').show();
         }
-        
+
         //Hide neon settings
         $('.neon').hide();
         //Remove all extra additionals
@@ -148,7 +148,7 @@ function createModProbeSettings() {
             z++
         })
         $("#mp_add_button").attr("onclick","mp_add_field("+z+",'"+module+"')");
-        $.each(modprobesettings[$(el).val()]['formsettings'], function(index, value) { 
+        $.each(modprobesettings[$(el).val()]['formsettings'], function(index, value) {
             //Check to make sure ID exits before we reset it, but only do it inside the modprobe div element (though IDs should be unique!)
           if (document.getElementById(index)) {
               element = $('#modprobe #'+index);
@@ -162,7 +162,7 @@ function createModProbeSettings() {
               if (element.is(":text")) {
                   element.val(value);
               }
-                  
+
               if (element.is("select"))
                   element.val(value);
                 //Show extra neon stuff
@@ -176,22 +176,26 @@ function createModProbeSettings() {
     }
 }
 
+function reset_digital_groups(span,usedchans) {
+    update_digital_groups(span,0,usedchans);
+}
+
 /* Span Group Automation */
 function update_digital_groups(span,group,usedchans) {
     usedchans = Number(usedchans)
     span = Number(span)
     group = Number(group)
-    
+
     spandata[span]['groups'][group]['usedchans'] = Number(usedchans)
-    
+
     $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'calcbchanfxx', span: span, usedchans: usedchans, startchan: spandata[span]['groups'][group]['startchan']}, function(j){
         j.endchan = Number(j.endchan)
         $('#editspan_'+span+'_from_'+ group).html(j.fxx);
         spandata[span]['groups'][group]['endchan'] = j.endchan;
         spandata[span]['groups'][group]['fxx'] = j.fxx
         spandata[span]['groups'][group]['span'] = j.span
-        
-        if(j.endchan < spandata[span]['spandata']['max_ch']) {
+
+        if(j.endchan < (spandata[span]['spandata']['max_ch']-1)) {
             if (!document.getElementById('editspan_'+span+'_group_settings_' + (group+1))) {
                 var startchan = j.endchan+1
                 var add = ((spandata[span]['groups'][group]['usedchans'] + Number(spandata[span]['spandata']['min_ch'])) > spandata[span]['spandata']['reserved_ch']) ? 1 : 0;
@@ -218,7 +222,7 @@ function update_digital_groups(span,group,usedchans) {
                 $.each(spandata[span]['groups'], function(key, value) {
                     if(group < key) {
                         var startchan = spandata[span]['groups'][(prevkey)]['endchan'] + 1
-                        var usedchans = $('#editspan_'+span+'_definedchans_'+key).val()                        
+                        var usedchans = $('#editspan_'+span+'_definedchans_'+key).val()
                         var selected = 0;
                         if(i == count) {
                             usedchans = spandata[span]['spandata']['max_ch'] - spandata[span]['groups'][prevkey]['endchan']
@@ -239,7 +243,7 @@ function update_digital_groups(span,group,usedchans) {
                             spandata[span]['groups'][key]['fxx'] = x.fxx
                             spandata[span]['groups'][key]['startchan'] = x.startchan
                         });
-                          
+
                     }
                     i++;
                     prevkey = key;

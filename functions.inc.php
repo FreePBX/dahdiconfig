@@ -510,7 +510,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
       ';
     }
 
-	  $URL = $_SERVER['PHP_SELF'].'?'.'display=dahdi';
+	  $URL = '?'.'display=dahdi';
     $html .= '
 				<tr><td colspan="2"><input type="hidden" id="dahdi_trunks" value=""></td></tr>
 				<tr>

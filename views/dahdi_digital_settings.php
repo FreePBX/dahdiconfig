@@ -34,7 +34,7 @@
             	   default:
             	   	break;
             	} ?>
-            	</select> 
+            	</select>
             </td>
         </tr>
         <tr>
@@ -47,7 +47,7 @@
         </tr>
         <!--<tr id="editspan_<?php echo $key?>_reserved_ch" style="<?php if(isset($span['signalling']) && (($span['signalling'] != 'pri_net') || ($span['signalling'] != 'pri_cpe'))) { ?>display:none;<?php } ?>">
             <td style="width:10px;">
-                <label>DChannel:</label>    	
+                <label>DChannel:</label>
             </td>
             <td>
                 <?php echo $span['reserved_ch'];?>
@@ -95,7 +95,7 @@
                 		<option value="euroisdn" <?php echo set_default($span['switchtype'],'euroisdn'); ?>>EuroISDN</option>
                 		<option value="ni1" <?php echo set_default($span['switchtype'],'ni1'); ?>>Old National ISDN 1</option>
                 		<option value="qsig" <?php echo set_default($span['switchtype'],'qsig'); ?>>Q.SIG</option>
-                	</select>   
+                	</select>
                 </td>
             </tr>
         <tr>
@@ -141,7 +141,7 @@
             		<option value="international" <?php echo set_default($span['pridialplan'],'international'); ?>>International</option>
             	</select>
             </td>
-        </tr>  
+        </tr>
         <tr>
             <td style="width:10px;">
             	<label for="editspan_<?php echo $key?>_prilocaldialplan">Prilocaldialplan:</label>
@@ -182,7 +182,7 @@
 	        </tr>
 		<?php } ?>
         <tr>
-            <td style="width:10px;"> 
+            <td style="width:10px;">
                 <label for="editspan_<?php echo $key?>_rxgain"><a href="#" class="info">Receive Gain<span>The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.</span></a></label>
             </td>
             <td>
@@ -190,7 +190,7 @@
             </td>
         </tr>
         <tr>
-            <td style="width:10px;"> 
+            <td style="width:10px;">
                 <label for="editspan_<?php echo $key?>_txgain"><a href="#" class="info">Transmit Gain<span>The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.</span></a></label>
             </td>
             <td>
@@ -199,15 +199,15 @@
         </tr>
     </table>
     <br />
-    <h2>Group Settings</h2>
+    <h2>Group Settings (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);">Reset Groups</a>)</h2>
     <hr>
-    <?php $groups = json_decode($span['additional_groups'],TRUE); 
+    <?php $groups = json_decode($span['additional_groups'],TRUE);
         foreach($groups as $gkey => $data) {
     ?>
     <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">
         <tr>
             <td style="width:10px;">
-                <label>Group: </label>
+                <label><a href="#" class="info">Group:<span>Group Number, use 's' to skip said group</span></a></label>
             </td>
             <td>
         	    <input type="text" id="editspan_<?php echo $key?>_group_<?php echo $gkey?>" name="editspan_<?php echo $key?>_group_<?php echo $gkey?>" size="2" value="<?php echo set_default($data['group']); ?>" />
@@ -227,7 +227,8 @@
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>" name="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>">
-            	<?php for($i=1; $i<=$span['totchans']; $i++) { ?>
+            	<?php for($i=1; $i<=($span['totchans']-1); $i++) { ?>
+                    <?php $data['usedchans'] = ($data['usedchans'] == $span['totchans']) ? ($data['usedchans'] -1) : $data['usedchans']; ?>
             		<option value="<?php echo $i?>" <?php echo set_default($data['usedchans'],$i); ?>><?php echo $i?></option>
             	<?php } ?>
             	</select>

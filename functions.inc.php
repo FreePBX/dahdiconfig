@@ -1,27 +1,9 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-
-/**
- * FreePBX DAHDi Config Module
- *
- * Copyright (c) 2009, Digium, Inc.
- * Copyright (c) 2012, Schmooze Com Inc
- * Author: Ryan Brindley <ryan@digium.com>
- * Author: Schmooze Com Inc
- *
- * This program is free software, distributed under the terms of
- * the GNU General Public License Version 2. 
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- */
- 
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//  Copyright (c) 2009, Digium, Inc.
+//
  /*
  function GetCallingMethodName(){
      $e = new Exception();
@@ -31,7 +13,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
      return($last_call);
  }
  */
- 
+
 require_once('includes/dahdi_cards.class.php');
 
 
@@ -39,7 +21,7 @@ global $db;
 
 /**
  * DAHDI CONF
- * 
+ *
  * This class contains all the functions to configure asterisk via freepbx
  */
  class dahdiconfig_conf {
@@ -78,11 +60,11 @@ global $db;
 		        $output[] = "#include chan_dahdi_general_custom.conf";
 		        $output[] = "";
 		        $output[] = "[channels]";
-		        
+
 		        foreach($this->cards->get_all_globalsettings() as $k => $v) {
                         $output[] = $k."=".$v;
                 }
-                
+
 		        $output[] = "";
 		        $output[] = "; for user additions not provided by module";
 		        $output[] = "#include chan_dahdi_channels_custom.conf";
@@ -96,10 +78,10 @@ global $db;
 		        return implode("\n", $output);
     		case 'chan_dahdi_general.conf':
     			$output = array();
-		
+
 		        /* TODO: Andrew Fix
     			if ( ! $this->cards->get_advanced('mwi_checkbox')) {
-    				return '';	
+    				return '';
     			}
 
     			if ($this->cards->get_advanced('mwi') == 'fsk') {
@@ -138,14 +120,19 @@ global $db;
 						if(!empty($span['rxgain']) && $span['rxgain'] != '0.0')
 							$output[] = "rxgain={$span['rxgain']}";
 					}
-    				
-    				$groups = json_decode($span['additional_groups'],TRUE); 
+
+    				$groups = json_decode($span['additional_groups'],TRUE);
                     foreach($groups as $gkey => $data) {
+						//Add option for skip group for people who don't want to use all channels
+						if ($data['group'] == 's' || empty($data['fxx'])){
+							continue;
+                        }
     				    $output[] = "group={$data['group']}";
     				    $output[] = "context={$data['context']}";
-    				    $output[] = "channel={$data['fxx']}";
+    				    $output[] = "channel=>{$data['fxx']}";
+
 				    }
-    				
+
     				$output[] = !empty($span['priexclusive']) ? "priexclusive={$span['priexclusive']}" : "";
     			}
 
@@ -175,14 +162,14 @@ global $db;
 
 function dahdi_config2array ($config) {
 	if (! is_array($config)) {
-		$config = explode("\n", $config);	
+		$config = explode("\n", $config);
 	}
 
 	$cxts = array();
 	$cxt = '';
 
 	unset($config[count($config)-1]);
-	
+
 	for($i=0;$i<count($config);$i++) {
 		unset($matches);
 		if ($config[$i] == '') {
@@ -198,7 +185,7 @@ function dahdi_config2array ($config) {
 		}
 
 		list($var, $val) = explode('=',$config[$i]);
-		
+
 		if (isset($cxts[$cxt][$var])) {
 			if (gettype($cxts[$cxt][$var]) !== 'array') {
 				$cxts[$cxt][$var] = array($cxts[$cxt][$var]);
@@ -219,7 +206,7 @@ function dahdi_chans2array($chans=null) {
 	}
 
 	$chanarray = array();
-	
+
 	if (strpos($chans,',') && strpos($chans,'-')) {
 		$segs = explode(',',$chans);
 		foreach ($segs as $seg) {
@@ -234,7 +221,7 @@ function dahdi_chans2array($chans=null) {
 			$chanarray[] = $seg;
 		}
 	} else if (strpos($chans,',')) {
-		$chanarray = explode(',',$chans);	
+		$chanarray = explode(',',$chans);
 	} else if (strpos($chans,'-')) {
 		list($start,$end) = explode('-',$chans);
 		for($i=$start; $i<=$end; $i++) {
@@ -254,7 +241,7 @@ function dahdi_array2chans($arr) {
 	$seq_count = 0;
 	$first = '';
 	foreach($arr as $key => $chan) {
-	    //Separator 
+	    //Separator
 	    $sep = ($seq_count > 0) ? '-' : ',';
 	    switch($key) {
 	        case 0:
@@ -284,7 +271,7 @@ function dahdi_array2chans($arr) {
 	                $conf_chans[$seq] = $chan;
 	                $seq_count = 0;
 	                $first = $chan;
-	                $prev = $chan; 
+	                $prev = $chan;
 	            }
 	            break;
 	    }
@@ -295,8 +282,8 @@ function dahdi_array2chans($arr) {
 // list unused DAHDI fxs channels that can be configured for extensions
 //
 function dahdiconfig_get_unused_fxs_channels($current_device='') {
-  $all_channels = sql('SELECT * FROM dahdi_analog WHERE type = "fxs"','getAll',DB_FETCHMODE_ASSOC); 
-  $used_channels = sql('SELECT id device, data port FROM dahdi WHERE keyword = "channel"','getAll',DB_FETCHMODE_ASSOC); 
+  $all_channels = sql('SELECT * FROM dahdi_analog WHERE type = "fxs"','getAll',DB_FETCHMODE_ASSOC);
+  $used_channels = sql('SELECT id device, data port FROM dahdi WHERE keyword = "channel"','getAll',DB_FETCHMODE_ASSOC);
   $used_channels_hash = array();
   foreach ($used_channels as $chan) {
     $used_channels_hash[$chan['port']] = $chan['device'];
@@ -422,7 +409,7 @@ switch ($dispnum) {
         return true;
       }
     }
-  
+
 	  $channel_select  = dahdiconfig_get_unused_fxs_channels($extdisplay);
     $currentcomponent->addoptlistitem('dahdi_channel_select', '', _('==Choose=='));
 	  foreach ($channel_select as $val) {
@@ -497,7 +484,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
       $html = '
 				<tr>
 					<td>
-						<a href=# class="info">' . _("DAHDI Trunks") . '<span>' . _("Available DAHDI Groups and Channels configued in the DAHDI Configuration Module") . '</span></a>: 
+						<a href=# class="info">' . _("DAHDI Trunks") . '<span>' . _("Available DAHDI Groups and Channels configued in the DAHDI Configuration Module") . '</span></a>:
           </td>
           <td>
             <select name="dahdi_trunks" id="dahdi_trunks" tabindex="' . ++$tabindex . '">
@@ -517,7 +504,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
       $html .= '
 				<tr>
 					<td colspan="2">
-						<a href=# class="info">' . _("No Available Groups or Channels") . '<span>' . _("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards") . '</span></a> 
+						<a href=# class="info">' . _("No Available Groups or Channels") . '<span>' . _("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards") . '</span></a>
           </td>
 				</tr>
       ';
@@ -528,7 +515,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 				<tr><td colspan="2"><input type="hidden" id="dahdi_trunks" value=""></td></tr>
 				<tr>
 					<td colspan="2">
-						<a href="'.$URL.'" class="info">' . _("Configure/Edit DAHDI Cards") . '<span>' . _("Configure/Edit DAHDI Card settings in DAHDi Module") . '</span></a> 
+						<a href="'.$URL.'" class="info">' . _("Configure/Edit DAHDI Cards") . '<span>' . _("Configure/Edit DAHDI Card settings in DAHDi Module") . '</span></a>
           </td>
 				</tr>
     ';
@@ -553,12 +540,12 @@ function dahdiconfig_configpageload($mode) {
   if (!empty($dahdi_channel_select)) {
     // Generate Channel Select, on submit populuate device channel, dial and signalling fields
     $currentcomponent->addguielem('Device Options', new gui_selectbox(
-      'dahdi_channel', 
+      'dahdi_channel',
       $dahdi_channel_select,
       '',
-      _('Channel'), 
+      _('Channel'),
       sprintf(_('Choose the FXS channel for this %s'),$mode),
-    false, 
+    false,
       "javascript:if (document.frm_{$mode}s.dahdi_channel.value) {parts = document.frm_{$mode}s.dahdi_channel.value.split(':');document.frm_{$mode}s.devinfo_channel.value = parts[0];document.frm_{$mode}s.devinfo_dial.value = 'DAHDI/'+parts[0];document.frm_{$mode}s.devinfo_signalling.value = parts[1]; } else { document.frm_{$mode}s.devinfo_channel.value = ''}"
     ));
 
@@ -608,7 +595,7 @@ function dahdiconfig_trunks_configpageload() {
 
 function dahdiconfig_getinfo($info=null) {
 	global $astman;
-	
+
 	if($astman && $astman->connected()) {
 		$o = $astman->send_request('Command', array('Command' => 'dahdi show version'));
 

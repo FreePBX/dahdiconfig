@@ -1,26 +1,6 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-/**
- * FreePBX DAHDi Config Module
- *
- * Copyright (c) 2009, Digium, Inc.
- *
- * Author: Ryan Brindley <ryan@digium.com>
- *
- * This program is free software, distributed under the terms of
- * the GNU General Public License Version 2. 
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Affero General Public License for more details.
- *
- * You should have received a copy of the GNU Affero General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
- *
- */
-
 global $db;
 global $amp_conf;
 global $asterisk_conf;
@@ -139,7 +119,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 		`port` INT UNIQUE,
 		`type` ENUM ('fxo', 'fxs'),
 		`signalling` ENUM ('ks', 'ls'),
-		`group` INT UNSIGNED,
+		`group` VARCHAR(10),
 		`context` VARCHAR(255)
 	);";
 
@@ -148,6 +128,9 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 		die_freepbx($result->getDebugInfo());
 	}
 	unset($result);
+} else {
+	$sql = "ALTER TABLE `dahdi_analog` CHANGE COLUMN `group` `group` VARCHAR(10) NULL DEFAULT NULL ;";
+	$db->query($sql);
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
@@ -248,6 +231,20 @@ $set['description'] = 'DAHDi Modules Location (/etc/dahdi/modules)';
 $set['type'] = CONF_TYPE_TEXT;
 $freepbx_conf->define_conf_setting('DAHDIMODULESLOC',$set,true);
 
+//echocan
+//echo cancel
+$set['value'] = 'oslec';
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 0;
+$set['hidden'] = 0;
+$set['level'] = 0;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Software EC';
+$set['description'] = 'software EC to use in system.conf';
+$set['type'] = CONF_TYPE_TEXT;
+$freepbx_conf->define_conf_setting('DAHDIECHOCAN',$set,true);
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	out("Creating Dahdi Advanced Modules Table");
@@ -280,7 +277,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	out("Inserting Old Data from Dahdi Advanced Table");
     $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(serialize($settings))."')";
     sql($sql);
-	
+
 	out("Deleting old dahdi module data from database (its been migrated)");
 	foreach ($entries as $entry=>$default_val) {
 	    if($entry != 'tone_region') {
@@ -288,10 +285,10 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	        sql($sql);
 	    }
 	}
-	
+
 	$globalsettings = array(		// global array of values
 		'tone_region'=>'us',
-	    'language'=>'en', 
+	    'language'=>'en',
 	    'busydetect'=>'yes',
 	    'busycount'=>'10',
 	    'usecallerid'=>'yes',
@@ -307,7 +304,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	    'immediate'=>'no',
 	    'faxdetect'=>'no',
 	    'rxgain'=>'0.0',
-	    'txgain'=>'0.0' 
+	    'txgain'=>'0.0'
 	    );
 
 	outn('Replacing..');
@@ -331,7 +328,7 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
         $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
         $result = $db->query($sql);
     }
-    
+
     $sql = "ALTER TABLE `dahdi_spans` change `dchannel` `reserved_ch`  int (5) NOT NULL DEFAULT '0";
     $result = $db->query($sql);
 }
@@ -365,14 +362,14 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_modules"')) {
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "type"')) {
 	out("Add type column");
 	sql('ALTER TABLE dahdi_advanced ADD type varchar(50) default "chandahdi"');
-	
+
 	sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"')) {
 	out("add additional column");
 	sql('ALTER TABLE dahdi_advanced ADD additional bool default 1');
-	
+
 	foreach($globalsettings as $ksettings => $settings) {
 	    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
 	}

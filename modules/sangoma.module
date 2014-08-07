@@ -77,8 +77,9 @@ EOF;
 EOF;
         return $output;
     }
-    
+
     public function settings_process($type,$settings) {
+        global $db;
         $this->check_wanrouter();
         $n = array();
         if($type == 'sangomasettingssubmit') {
@@ -92,15 +93,15 @@ EOF;
             $json_settings = json_encode($n);
             $sql = "REPLACE INTO dahdi_modules (module_name, settings) VALUES ('sangoma', '".$db->escapeSimple($json_settings)."')";
             sql($sql);
-        
+
             return array("status" => true);
         }
     }
-    
+
 	public function get_filename() {
          return array('/etc/wanpipe/global.conf');
 	}
-    
+
 	public function generateConf($file) {
         global $amp_conf;
         $settings = $this->get_sangoma_settings();
@@ -128,7 +129,7 @@ EOF;
             }
         }
     }
-    
+
     private function check_wanrouter() {
         /*
         $binary = exec('which wanrouter');

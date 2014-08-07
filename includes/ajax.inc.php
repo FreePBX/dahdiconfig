@@ -214,8 +214,8 @@ switch($_REQUEST['type']) {
     		$port['signalling'] = $_POST[$type."_port_{$span}"];
     		$port['group'] = ($_POST[$type."_port_{$span}_group"])?$_POST[$type."_port_{$span}_group"]:0;
     		$port['context'] = $_POST[$type."_port_{$span}_context"];
-			$port['rxgain'] = $_POST[$type."_port_{$span}_rxgain"];
-			$port['txgain'] = $_POST[$type."_port_{$span}_txgain"];
+			$port['rxgain'] = !empty($_POST[$type."_port_{$span}_rxgain"]) ? $_POST[$type."_port_{$span}_rxgain"] : '';
+			$port['txgain'] = !empty($_POST[$type."_port_{$span}_txgain"]) ? $_POST[$type."_port_{$span}_txgain"] : '';
     		$dahdi_cards->set_analog_signalling($span, $port);
     		unset($port);
     	}

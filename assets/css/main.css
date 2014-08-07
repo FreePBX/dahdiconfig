@@ -3,7 +3,6 @@ label {
     float:left;
 }
 th { background: #7aa8f9; } 
-tr.odd td { background: #fde9d1; } 
-.alert { background: #fde9d1; border: 2px dashed red; margin: 5px; padding: 5px; }
+tr.odd td { background: #fde9d1; }
 
 .modules-sortable{list-style-type:none;cursor:move}

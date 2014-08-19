@@ -41,7 +41,7 @@ function storeModProbeSettings(mod_name) {
 function createModProbeSettings() {
 	el = $('#module_name');
     //If there is no session data then pull from database
-    if(!modprobesettings.hasOwnProperty($(el).val()) || !modprobesettings[$(el).val()].hasOwnProperty('formsettings')) {
+    if(typeof modprobesettings === undefined || !modprobesettings.hasOwnProperty($(el).val()) || !modprobesettings[$(el).val()].hasOwnProperty('formsettings')) {
         $.ajaxSetup({ cache: false });
         $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{dcmodule: $(el).val(), type: 'modprobe'}, function(j){
             if(j.status) {

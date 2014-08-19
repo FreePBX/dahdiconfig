@@ -3,63 +3,59 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.45</version>
+	<version>2.11.47</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
-    <changelog>
-		*2.11.45* Fix all the bugs. Yes I am trying! Also allow resetting of groups if needed per span (FREEPBX-7381) and FREEPBX-7051
-		*2.11.44* Wrong channel count bug. Argh
-		*2.11.43* Fix channel range for Analog T1 and add echocan info
-		*2.11.42* FREEPBX-7437 Fix sangoma module bug
-    	*2.11.41* Add license info
-		*2.11.40* Database abstraction layer fixes
-		*2.11.39* Just remove the notice all together. Its too confusing.
-		*2.11.38* Resolve outstanding wanpipe global.conf issues
-		*2.11.37* #7142 fixes Sangoma dual selection modes which were confusing and diverged
-		*2.11.36* Putting the fix within the foreach loop would probably help
-		*2.11.35* Only force set hardhdlc on sangoma cards everthing else shold be automatic
-		*2.11.34* Added support for FXS digital channels to support Rhino CB-24 Channel Banks
-		*2.11.33* Fixes #7111, Change dchan= to be hardhdlc=
-		*2.11.32* Fixes #6628, Dont run dahdi_cfg on retrieve_conf
-		*2.11.31* Packaging of ver 2.11.31
-		*2.11.30* Packaging of ver 2.11.30
-    	*2.11.29* Russian language support
-		*2.11.28* Dont depend on modprobe to give accurate information
-		*2.11.27* Fixes: #6963, #6955, #6962, #6961, #6960, #6959, #6351, #6797, #6921, #6742, #6919
-        *2.11.26* Remove symlinked hook file on uninstall
-		*2.11.25* Allow editing and sorting of DAHDi Modules File Directly
-		*2.11.24.1* #6585, #6461, #6583
-		*2.11.24* Fixes #6583, Add txgain and rxgain per digital card.
-		*2.11.23* Fixes Lanuage Name #6442
-		*2.11.22* Fixes #6434, #6438, #6361 Add many more languages (not all are tested). Fixed issue of resetting data on module upgrade.
-		*2.11.21* Fixes #6434,#6436 (only show fwringer of module is wctdm) added italian re #6361
-		*2.11.20* Fixes #6420 dont allow usage of fwringdetect in 2.6.0 and greater
-		*2.11.19* Add sangoma GSM card control and setup
-        *2.11.18* Fixes #6329 and random Insert fatal
-        *2.11.17* Fixes #6346, dont try to write to sangoma config if we set the option to no (default)
-        *2.11.16* Fixes #6329 and random Insert fatal
-        *2.11.15* Fixes #6289, also allows users to define the location of dahdi and dahdi configuration files
-        *2.11.14* With help from [sr] Fixes #6244 and also fixes #6247
-        *2.11.11* Fix #6281, #6269. Work on BRI re #6244
-        *2.11.9* Protect End Users Configuration Files
-        *2.11.8* Sangoma Support
-        *2.11.7* Fixed modprobe overwrite issue and space after equals
-        *2.11.6* Moshe skinin'
-	    *2.11.5* Remove mac extra atts...again
-	    *2.11.4* Finished modprobe additional custom entries and cleanup
-	    *2.11.3* Fix up restarting issues and General Settings additional Settings
-	    *2.11.2* Add to extended repo
-	    *2.11.1.8* Fixes #4409
-	    *2.11.1.5* Fixes #4558, #4837, #5005, #5256
-		*2.10.0.0* new version changes
-		*2.9.0.1* #4921
-		*2.9.0.0* #4914, #4915
-		*2.8.0.1* dependency set to 2.8 because of dahdi tables
-		*2.8.0.0* adds hooks into extensions and trunks pages and other fixes and tweaks
-		*0.1* initial commit
+		<changelog>
+			*2.11.47* Visual Cleanup
+			*2.11.46* Attempt to fix some errors in javascript
+			*2.11.45* Fix all the bugs. Yes I am trying! Also allow resetting of groups if needed per span (FREEPBX-7381) and FREEPBX-7051
+			*2.11.44* Wrong channel count bug. Argh
+			*2.11.43* Fix channel range for Analog T1 and add echocan info
+			*2.11.42* FREEPBX-7437 Fix sangoma module bug
+			*2.11.41* Add license info
+			*2.11.40* Database abstraction layer fixes
+			*2.11.39* Just remove the notice all together. Its too confusing.
+			*2.11.38* Resolve outstanding wanpipe global.conf issues
+			*2.11.37* #7142 fixes Sangoma dual selection modes which were confusing and diverged
+			*2.11.36* Putting the fix within the foreach loop would probably help
+			*2.11.35* Only force set hardhdlc on sangoma cards everthing else shold be automatic
+			*2.11.34* Added support for FXS digital channels to support Rhino CB-24 Channel Banks
+			*2.11.33* Fixes #7111, Change dchan= to be hardhdlc=
+			*2.11.32* Fixes #6628, Dont run dahdi_cfg on retrieve_conf
+			*2.11.31* Packaging of ver 2.11.31
+			*2.11.30* Packaging of ver 2.11.30
+			*2.11.29* Russian language support
+			*2.11.28* Dont depend on modprobe to give accurate information
+			*2.11.27* Fixes: #6963, #6955, #6962, #6961, #6960, #6959, #6351, #6797, #6921, #6742, #6919
+			*2.11.26* Remove symlinked hook file on uninstall
+			*2.11.25* Allow editing and sorting of DAHDi Modules File Directly
+			*2.11.24.1* #6585, #6461, #6583
+			*2.11.24* Fixes #6583, Add txgain and rxgain per digital card.
+			*2.11.23* Fixes Lanuage Name #6442
+			*2.11.22* Fixes #6434, #6438, #6361 Add many more languages (not all are tested). Fixed issue of resetting data on module upgrade.
+			*2.11.21* Fixes #6434,#6436 (only show fwringer of module is wctdm) added italian re #6361
+			*2.11.20* Fixes #6420 dont allow usage of fwringdetect in 2.6.0 and greater
+			*2.11.19* Add sangoma GSM card control and setup
+			*2.11.18* Fixes #6329 and random Insert fatal
+			*2.11.17* Fixes #6346, dont try to write to sangoma config if we set the option to no (default)
+			*2.11.16* Fixes #6329 and random Insert fatal
+			*2.11.15* Fixes #6289, also allows users to define the location of dahdi and dahdi configuration files
+			*2.11.14* With help from [sr] Fixes #6244 and also fixes #6247
+			*2.11.11* Fix #6281, #6269. Work on BRI re #6244
+			*2.11.9* Protect End Users Configuration Files
+			*2.11.8* Sangoma Support
+			*2.11.7* Fixed modprobe overwrite issue and space after equals
+			*2.11.6* Moshe skinin'
+			*2.11.5* Remove mac extra atts...again
+			*2.11.4* Finished modprobe additional custom entries and cleanup
+			*2.11.3* Fix up restarting issues and General Settings additional Settings
+			*2.11.2* Add to extended repo
+			*2.11.1.8* Fixes #4409
+			*2.11.1.5* Fixes #4558, #4837, #5005, #5256
 	</changelog>
 	<supported>
 		<version>2.10</version>

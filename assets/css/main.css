@@ -1,8 +1,6 @@
 label {
-    width:160px;    /*Or however much space you need for the form’s labels*/
+    width:160px;
     float:left;
 }
-th { background: #7aa8f9; } 
-tr.odd td { background: #fde9d1; }
 
 .modules-sortable{list-style-type:none;cursor:move}

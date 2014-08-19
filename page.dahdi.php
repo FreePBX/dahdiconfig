@@ -52,26 +52,36 @@ if ($dahdi_cards->hdwr_changes()) {
 <div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below</div>
 
 <script type="text/javascript" src="assets/dahdiconfig/js/jquery.form.js"></script>
-        <!-- right side menu -->
-       	<div class="rnav">
-       		<ul>
-       			<a style="text-decoration:underline"><strong>Settings</strong></a><br />
-       			<a href="#" onclick="dahdi_modal_settings('global');">Global Settings</a><br />
-                <a href="#" onclick="dahdi_modal_settings('system');">System Settings</a><br />
-       			<a href="#" onclick="dahdi_modal_settings('modprobe');">Modprobe Settings</a><br />
-				<a href="#" onclick="dahdi_modal_settings('modules');">Module Settings</a><br />
-                <?php
-                foreach($dahdi_cards->modules as $mod_name => $module) {
-                    if(method_exists($module,'settings')) {
-                        $out = $module->settings();
-                        ?>
-                        <a href="#" onclick="dahdi_modal_settings('<?php echo $mod_name?>');"><?php echo $out['title']?></a><br />
-                        <?php
-                    }
-                }
-                ?>
-       		</ul>
-                <br /> <br /> <br /> <br /> <br /> <br /> <br />
+  <!-- right side menu -->
+  <div class="rnav">
+    <ul>
+      <li style="text-decoration:underline"><strong>Settings</strong></li>
+      <li>
+        <a href="#" onclick="dahdi_modal_settings('global');">Global Settings</a>
+      </li>
+      <li>
+        <a href="#" onclick="dahdi_modal_settings('system');">System Settings</a>
+      </li>
+      <li>
+        <a href="#" onclick="dahdi_modal_settings('modprobe');">Modprobe Settings</a>
+      </li>
+      <li>
+        <a href="#" onclick="dahdi_modal_settings('modules');">Module Settings</a>
+      </li>
+      <?php
+      foreach($dahdi_cards->modules as $mod_name => $module) {
+        if(method_exists($module,'settings')) {
+          $out = $module->settings();
+          ?>
+          <li>
+            <a href="#" onclick="dahdi_modal_settings('<?php echo $mod_name?>');"><?php echo $out['title']?></a>
+          </li>
+          <?php
+        }
+      }
+      ?>
+    </ul>
+    <br /> <br /> <br /> <br /> <br /> <br /> <br />
 <!--/* OpenX Javascript Tag v2.8.10 */-->
 <script type='text/javascript'><!--//<![CDATA[
    var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
@@ -199,7 +209,7 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
     ?>
 
 spandata[<?php echo $key?>] = {};
-spandata[<?php echo $key?>]['groups'] = <?php echo $span['additional_groups']?>;
+spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? $span['additional_groups'] : '{}'?>;
 spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
 
 $('#editspan_<?php echo $key?>_signalling').change(function() {

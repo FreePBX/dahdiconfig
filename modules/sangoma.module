@@ -3,7 +3,7 @@
 class dahdi_sangoma {
     private $data_store = array();
     private $sangoma_settings = array(
-        "dahdimode" => "no",
+        "dahdimode" => "yes",
         "t1mode" => "T1",
 		"wpwd" => "TRUE"
     );

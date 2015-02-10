@@ -73,6 +73,11 @@
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>
+	<hooks>
+		<framework namespace="FreePBX\Console\Command" class="Start">
+			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="preAsteriskHooks">startFreepbx</method>
+		</framework>
+	</hooks>
 	<location>release/2.11/dahdiconfig-2.11.28.tgz</location>
 	<md5sum>5ae07e1ac73fbafacaa8f66666d9a70e</md5sum>
 </module>

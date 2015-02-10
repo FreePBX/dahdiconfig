@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.47</version>
+	<version>13.0.1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -58,7 +58,7 @@
 			*2.11.1.5* Fixes #4558, #4837, #5005, #5256
 	</changelog>
 	<supported>
-		<version>2.10</version>
+		<version>13.0</version>
 	</supported>
 	<depends>
 		<phpversion>5.3.0</phpversion>
@@ -76,6 +76,12 @@
 	<hooks>
 		<framework namespace="FreePBX\Console\Command" class="Start">
 			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="preAsteriskHooks">startFreepbx</method>
+		</framework>
+		<framework namespace="FreePBX\Console\Command" class="Stop">
+			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="postAsteriskHooks">stopFreepbx</method>
+		</framework>
+		<framework namespace="FreePBX\Console\Command" class="Chown">
+			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="fwcChownFiles">chownFreepbx</method>
 		</framework>
 	</hooks>
 	<location>release/2.11/dahdiconfig-2.11.28.tgz</location>

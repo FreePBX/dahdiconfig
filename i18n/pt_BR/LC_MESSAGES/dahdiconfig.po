@@ -20,53 +20,1071 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-31 12:10-0400\n"
+"POT-Creation-Date: 2015-02-11 17:43-0500\n"
 "PO-Revision-Date: 2014-07-26 01:19+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) "
-"<http://git.freepbx.org/projects/freepbx/dahdiconfig/pt_BR/>\n"
-"Language: pt_BR\n"
+"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
+"dahdiconfig/pt_BR/>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:414
 msgid "==Choose=="
 msgstr "==Escolha=="
 
-msgid "DAHDI Trunks"
-msgstr "Troncos DAHDI"
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:121
+msgid "A-law Override"
+msgstr ""
 
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:44
+msgid "ARGENTINA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:45
+msgid "AUSTRALIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:46
+msgid "AUSTRIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:112
+msgid "Also enables call parking (overrides the \"canpark\" parameter)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:184
+msgid "Answer Immediately"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:28
+msgid "Any"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:138
+msgid "Apply Opermode to FXO Modules"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:139
+msgid "Apply Opermode to FXS and FXO Modules"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:36
+msgid "Argentine Spanish"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:14
+msgid "Australian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:278
+msgid "Auto"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:487
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
 msgstr ""
-"Grupos e Canais DAHDI disponível para configuração no Modulo de Configuração "
+"Grupos e Canais DAHDI disponÃ­vel para configuraÃ§Ã£o no Modulo de ConfiguraÃ§Ã£o "
 "DAHDI"
 
-msgid "No Available Groups or Channels"
-msgstr "Nenhum Grupo ou Canal Disponível"
-
-msgid ""
-"There are no DAHDI Groups or Channels available to be configured. Check the "
-"DAHDI module (linked below) to configure any un-used cards"
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:47
+msgid "BAHRAIN"
 msgstr ""
-"Não ha nenhum Grupo ou Canal DAHDI disponível para configuração. Verifique o "
-"Módulo DAHDI (link abaixo) para configurar qualquer placa sem uso"
 
-msgid "Configure/Edit DAHDI Cards"
-msgstr "Configurar/Editar Placas DAHDI"
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:48
+msgid "BELGIUM"
+msgstr ""
 
-msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
-msgstr "Configurar/Editar Placa DAHDI no Modulo DAHDI"
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:49
+msgid "BRAZIL"
+msgstr ""
 
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:50
+msgid "BULGARIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:145
+msgid "Boostringer"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:203
+msgid "Both"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:27
+msgid "Brazilian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:54
+msgid "Busy Detect Count"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:51
+msgid "CANADA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:52
+msgid "CHILE"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:53
+msgid "CHINA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:54
+msgid "COLUMBIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:55
+msgid "CROATIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:56
+msgid "CYRPUS"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:57
+msgid "CZECH"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:546
 msgid "Channel"
 msgstr "Canal"
 
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:35
+msgid "Chinese"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:547
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Selecione o canal FXS para esse %s"
 
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:518
+msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
+msgstr "Configurar/Editar Placa DAHDI no Modulo DAHDI"
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:518
+msgid "Configure/Edit DAHDI Cards"
+msgstr "Configurar/Editar Placas DAHDI"
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:487
+msgid "DAHDI Trunks"
+msgstr "Troncos DAHDI"
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:58
+msgid "DENMARK"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:271
+msgid "Default Line Mode"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:16
+msgid "Dutch"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:277
+msgid "E1"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:59
+msgid "ECUADOR"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:60
+msgid "EGYPT"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:61
+msgid "ELSALVADOR"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:258
+msgid "Echo Canc. NLP Max Suppression"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:246
+msgid "Echo Canc. NLP Threshold"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:224
+msgid "Echo Canc. NLP Type"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:43
+msgid "Enable Busy Detect"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:127
+msgid "Enable Call Forwarding"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:138
+msgid "Enable Call Return"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:77
+msgid "Enable Call Waiting"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:161
+msgid "Enable EC when bridged"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:149
+msgid "Enable Echo Canceling"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:172
+msgid "Enable Echo Training"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:99
+msgid "Enable Three Way Calling"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:110
+msgid "Enable Transfer"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:149
+msgid "Enable echo cancellation"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:13
+msgid "English"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:33
+msgid "Estonian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:62
+msgid "FCC"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:63
+msgid "FINLAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:64
+msgid "FRANCE"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:205
+msgid "FSK"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:196
+msgid "FSK - Performs Frequency Shift Key detection"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:133
+msgid "FXS Honor Mode"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:163
+msgid "Fast Ringer (25hz)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:175
+msgid "Fast Ringer to 50v Peak"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:157
+msgid "Fastringer:"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:196
+msgid "Fax Detection"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/includes/dahdi_cards.class.php:123
+msgid "File "
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:18
+msgid "Finnish"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:110
+msgid "For FXS ports (either direct analog or over T1/E1)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:114
+msgid "For digital ports using ISDN PRI protocols"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:196
+msgid "For fax detection"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:15
+msgid "French"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:187
+msgid "Full Wave"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:65
+msgid "GERMANY"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:66
+msgid "GREECE"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:67
+msgid "GUAM"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:161
+msgid ""
+"Generally, it is not necessary (and in fact undesirable) to echo cancel when "
+"the circuit path is entirely TDM.  You may, however, change this behavior by "
+"enabling the echo canceler during pure TDM bridging below"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:17
+msgid "German"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:3
+msgid "Global Settings"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:23
+msgid "Greek"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:68
+msgid "HONGKONG"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:69
+msgid "HUNGARY"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:34
+msgid "Hindi"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:239
+msgid "Hoth Noise"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:229
+msgid ""
+"Hoth Noise - This setting causes the NLP to inject a low-end Gaussian noise "
+"with a frequency spectrum similar to voice. For users in normal "
+"environments, Hoth Noise may be acceptable"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:28
+msgid "Hungarian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:70
+msgid "ICELAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:71
+msgid "INDIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:72
+msgid "INDONESIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:73
+msgid "IRELAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:74
+msgid "ISRAEL"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:75
+msgid "ITALY"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:54
+msgid ""
+"If busydetect is enabled, it is also possible to specify how many busy tones "
+"to wait for before hanging up.  The default is 3, but it might be safer to "
+"set to 6 or even 8.  Mind that the higher the number, the more time that "
+"will be needed to hangup a channel, but lowers the probability that you will "
+"get random hangups"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:23
+msgid "In Any mode it'll run 92 channels of either codec."
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:23
+msgid "In G.723.1 mode it'll run 92 channels"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:23
+msgid "In G.729 mode it'll run 120 channels"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:174
+msgid ""
+"In some cases this option can make echo worse!  If you are trying to debug "
+"an echo problem, it is worth checking to see if your echo is better with the "
+"option set to yes or no.  Use whatever setting gives the best results"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:172
+msgid ""
+"In some cases, the echo canceller doesn't train quickly enough and there is "
+"echo at the beginning of the call.  Enabling echo training will cause DAHDI "
+"to briefly mute the channel, send an impulse, and use the impulse response "
+"to pre-train the echo canceller so it can start out with a much closer idea "
+"of the actual echo.  Value may be \"yes\", \"no\", or a number of "
+"milliseconds to delay before training (default = 400)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:201
+msgid "Incoming"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:26
+msgid "Israeli Hebrew"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:22
+msgid "Italian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:76
+msgid "JAPAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:77
+msgid "JORDAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:20
+msgid "Japanese"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:78
+msgid "KAZAKHSTAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:79
+msgid "KUWAIT"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:80
+msgid "LATVIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:81
+msgid "LEBANON"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:82
+msgid "LUXEMBOURG"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:29
+msgid "Lithuanian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:169
+msgid "Lowpower"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:83
+msgid "MACAO"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:84
+msgid "MALAYSIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:85
+msgid "MALTA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:86
+msgid "MEXICO"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:87
+msgid "MOROCCO"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:193
+msgid "MWI Mode"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:23
+msgid "Mode"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:3
+msgid "Modprobe Settings"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:9
+msgid "Module Name"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:237
+msgid "Mute"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:227
+msgid ""
+"Mute - This setting causes the NLP to mute inbound audio streams while a "
+"user connected to Asterisk is speaking. For users in quiet environments, "
+"Mute may be acceptable"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:206
+msgid "NEON"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:197
+msgid "NEON - Performs Neon MWI detection"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:88
+msgid "NETHERLANDS"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:89
+msgid "NEWZEALAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:90
+msgid "NIGERIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:91
+msgid "NORWAY"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:216
+msgid "Neon MWI Off Limit"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:214
+msgid "Neon MWI Voltage Level"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:48
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:71
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:82
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:93
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:104
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:121
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:132
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:143
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:155
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:166
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:190
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:200
+msgid "No"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:507
+msgid "No Available Groups or Channels"
+msgstr "Nenhum Grupo ou Canal DisponÃ­vel"
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:567
 msgid "No Unused DAHDi Channels Available"
-msgstr "Nenhum Canal DAHDI Disponível"
+msgstr "Nenhum Canal DAHDI DisponÃ­vel"
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:204
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:236
+msgid "None"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:226
+msgid ""
+"None - This setting disables NLP processing and is not a recommended "
+"setting. Under most circumstances, choos- ing None will cause some residual "
+"echo"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:150
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:162
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:174
+msgid "Normal"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:21
+msgid "Norwegian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:150
+msgid ""
+"Note that if any of your DAHDI cards have hardware echo cancelers, then this "
+"setting only turns them on and off. There are no special settings required "
+"for hardware echo cancelers; when present and enabled in their kernel "
+"modules, they take precedence over the software echo canceler compiled into "
+"DAHDI automatically"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:176
+msgid "Note that these parameters do not apply to hardware echo cancellers"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:185
+msgid ""
+"Note: If yes the dialplan execution will always start at extension 's' "
+"priority 1 regardless of the dialed number!"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:92
+msgid "OMAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:43
+msgid ""
+"On trunk interfaces (FXS) and E&M interfaces (E&M, Wink, Feature Group D "
+"etc) it can be useful to perform busy detection either in an effort to "
+"detect hangup or for detecting busies"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:38
+msgid "Opermode"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:240
+msgid "Other Global Dahdi Settings"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:299
+msgid "Other Modprobe Settings"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:202
+msgid "Outgoing"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:93
+msgid "PAKISTAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:94
+msgid "PERU"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:95
+msgid "PHILIPPINES"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:96
+msgid "POLAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:97
+msgid "PORTUGAL"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:151
+msgid "Peak (89v)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:30
+msgid "Polish"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:32
+msgid "Portuguese"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:98
+msgid "ROMANIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:99
+msgid "RUSSIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:238
+msgid "Random Noise"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:228
+msgid ""
+"Random Noise - This setting causes the NLP to inject random noise to mask "
+"the echo reflection. For users in normal environments, Random Noise may be "
+"acceptable"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:209
+msgid "Receive Gain"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:181
+msgid "Ring Detect"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:37
+msgid "Russian"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:100
+msgid "SAUDIARABIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:101
+msgid "SINGAPORE"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:102
+msgid "SLOVAKIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:103
+msgid "SLOVENIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:104
+msgid "SOUTHAFRICA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:105
+msgid "SOUTHKOREA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:106
+msgid "SPAIN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:107
+msgid "SWEDEN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:108
+msgid "SWITZERLAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:109
+msgid "SYRIA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:9
+msgid "Select Language"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:31
+msgid "South African"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:19
+msgid "Spanish"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:38
+msgid ""
+"Specify the On Hook Speed, Ringer Impedance, Ringer Threshold, Current "
+"limiting, Tip/Ring voltage adjustment, Minimum Operational Loop current, and "
+"AC Impedance selection as predefined for each countries' analog line "
+"characteristics. Select the country in which your Asterisk server is "
+"operating. FCC is equivalent to United States. TBR21 is equivalent to "
+"Austria, Belgium, Denmark, Finland, France, Germany, Greece, Iceland, "
+"Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain, Sweden, "
+"Switzerland, and the United Kingdom. If no choice is specified, the default "
+"is FCC"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:121
+msgid ""
+"Specify the audio compression scheme (codec) to be used for analog lines. "
+"North American users should choose ulaw. All other countries, unless "
+"otherwise known, should be assumed to be alaw. If no choice is specified, "
+"the default is ulaw. Confirm the scheme which will be best for operation"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:9
+msgid "Specify the kernel module used by the installed analog hardware"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:9
+msgid "Specify the language"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:193
+msgid ""
+"Specify the type of Message Waiting Indicator detection to be done on FXO "
+"ports. If no choice is specified, the default is none. The following options "
+"are available"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:145
+msgid ""
+"Specify the voltage used for ringing an analog phone. Normal will set the "
+"ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is "
+"specified, the default is normal"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:184
+msgid ""
+"Specify whether the channel should be answered immediately or if the simple "
+"switch should provide dialtone, read digits, etc"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:157
+msgid ""
+"Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) "
+"(commonly used in conjunction with the Low Power option) increases the "
+"ringing speed to 25Hz. If no choice is specified, the default is normal"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:169
+msgid ""
+"Specify whether to apply Low Power operation. Setting Fast Ringer to 50V "
+"peak in conjunction with the Fast Ringer option increases the peak voltage "
+"during Fast Ringer operation to 50V. If no choice is specified, the default "
+"is normal"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:181
+msgid ""
+"Specify whether to apply normal ring detection, or a full wave detection to "
+"prevent false ring detection for lines where CallerID is sent before the "
+"first ring and proceeded by a polarity reversal (as in the United Kingdom). "
+"If you are experiencing trouble with detecting CallerID from analog service "
+"providers, or have lines which exhibit a polarity reversal before CallerID "
+"is transmitted from the provider, then select Full Wave. If no choice is "
+"specified, the default is standard"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:133
+msgid ""
+"Specify whether to apply the opermode setting to your FXO modules only, or "
+"to both FXS and FXO modules. If no choice is specified, the default is apply "
+"opermode to fxo modules only"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:186
+msgid "Standard"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:127
+msgid "Support call forward variable"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:111
+msgid "Support flash-hook call transfer (requires three way calling)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:115
+msgid "Support switch-side transfer (called 2BCT, RLT or other names)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:99
+msgid "Support three-way calling"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:240
+msgid "Suppression NLP (default)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:230
+msgid ""
+"Suppression NLP - This setting causes the NLP to suppress echo reflections "
+"by reducing the amplitude of their volume. Suppression may be used in "
+"combination with the Echo cancellation NLP Max Suppression option. For users "
+"in loud environments, Suppression NLP may be the best option. This is the "
+"default setting for the Echo Cancellation NLP Type option"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:25
+msgid "Swedish"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:276
+msgid "T1"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:110
+msgid "TAIWAN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:111
+msgid "TBR21"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:112
+msgid "THAILAND"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:24
+msgid "Taiwanese"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:271
+msgid ""
+"The recommended way to set line mode on your Digium 1-, 2-, and 4-port "
+"(span) digital telephony cards is to set the jumper(s) on the card for "
+"either T1 or E1 mode for each span on the card. With the jumper off, the "
+"span is ready for T1 mode; with the jumper on, the span is ready for E1 "
+"mode. For more details about the jumpers, see the user manual for the "
+"single, dual, or quad span digital cards.<br/>However, sometimes a card will "
+"have been installed in a server without first setting the jumper(s) "
+"correctly, and it may be inconvenient to remove the card from the server to "
+"access its jumper(s).  In this case, the \"default_linemode\" option can be "
+"passed when the card's device driver is loaded"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:209
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:217
+msgid ""
+"The values are in db (decibels). A positive number increases the volume "
+"level on a channel, and a negative value decreases volume level"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/functions.inc.php:507
+msgid ""
+"There are no DAHDI Groups or Channels available to be configured. Check the "
+"DAHDI module (linked below) to configure any un-used cards"
+msgstr ""
+"NÃ£o ha nenhum Grupo ou Canal DAHDI disponÃ­vel para configuraÃ§Ã£o. Verifique o "
+"MÃ³dulo DAHDI (link abaixo) para configurar qualquer placa sem uso"
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:4
+msgid "This edits all settings in"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:4
+msgid "This edits all settings in chan_dahdi.conf"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:43
+msgid "This enables listening for the beep-beep busy pattern"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:246
+msgid ""
+"This option allows you to specify the threshold, in dB difference between "
+"the received audio (post echo cancellation) and the transmitted audio, for "
+"when the NLP will engage (VPMADT032 only). The default setting is 24 dB"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:224
+msgid ""
+"This option allows you to specify the type of Non Linear Processor you want "
+"applied to the post echo-cancelled audio reflections received from analog "
+"connections (VPMADT032 only). There are several options"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:258
+msgid ""
+"This option, only functional when the Echo Cancellation NLP Type option is "
+"set to Suppression NLP, specifies the maximum amount of dB that the NLP "
+"should attenuate the residual echo (VPMADT032 only). Lower numbers mean that "
+"the NLP will provide less suppression (the residual echo will sound louder). "
+"Higher numbers, especially those approaching or equaling the Echo "
+"Cancellation NLP Threshold option, will nearly mute the residual echo. The "
+"default setting is 24 dB"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:116
+msgid ""
+"This setting must be enabled on both ports involved, and the \"facilityenable"
+"\" setting must also be enabled to allow sending the transfer to the ISDN "
+"switch, since it sent in a FACILITY message"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:217
+msgid "Transmit Gain"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:113
+msgid "UAE"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:114
+msgid "UK"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:43
+msgid "USA"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/includes/dahdi_cards.class.php:1271
+#: /usr/src/freepbx/dahdiconfig/includes/dahdi_cards.class.php:1549
+msgid "Unable to write to "
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:66
+msgid "Use Caller ID"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:88
+msgid "Use Caller ID Presentation"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:174
+msgid "WARNING"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:77
+msgid ""
+"Whether or not to enable call waiting on internal extensions. With this set "
+"to \"yes\", busy extensions will hear the call-waiting tone, and can use "
+"hook-flash to switch between callers. The Dial() app will not return the "
+"\"BUSY\" result for extensions."
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:138
+msgid ""
+"Whether or not to support Call Return (*69, if your dialplan doesn't catch "
+"this first)"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:66
+msgid "Whether or not to use caller ID"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:88
+msgid ""
+"Whether or not to use the caller ID presentation for the outgoing call that "
+"the calling switch is sending"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:115
+msgid "YEMEN"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:47
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:70
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:81
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:92
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:103
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:120
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:131
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:142
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:154
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:165
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_global_settings.php:189
+msgid "Yes"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:127
+msgid "alaw"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:195
+msgid "none - Performs no detection"
+msgstr ""
+
+#: /usr/src/freepbx/dahdiconfig/views/dahdi_modprobe_settings.php:126
+msgid "ulaw"
+msgstr ""

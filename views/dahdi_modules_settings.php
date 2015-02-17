@@ -1,9 +1,9 @@
 <form id="form-modules" action="config.php?quietmode=1&amp;handler=file&amp;module=dahdiconfig&amp;file=ajax.html.php&amp;type=modulessubmit">
 	<div id="modules">
-		<h2>DAHDi Module Load/Order</h2>
-		<h3>This edits order and loading of DAHDi modules in /etc/dahdi/modules</h3>
+		<h2><?php echo _('DAHDi Module Load/Order')?></h2>
+		<h3><?php echo sprintf(_('This edits order and loading of DAHDi modules in %s'),'/etc/dahdi/modules')?></h3>
 		<ul class="modules-sortable" id="modules-sortable">
-		<?php 
+		<?php
 		$mod_id = 0;
 		foreach($mods as $modules => $info) {?>
 			<li id="mod-<?php echo ($info['type'] == 'ud') ? 'ud-'.$mod_id : $modules ?>">

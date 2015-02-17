@@ -1,14 +1,14 @@
 <?php
 /**
- * DAHDI CARDS
- *
- * This class contains all the functions necessary to manage DAHDi hardware.
- */
+* DAHDI CARDS
+*
+* This class contains all the functions necessary to manage DAHDi hardware.
+*/
 class dahdi_cards {
 	private $analog_ports = array();	// stores all analog port info
-    private $systemsettings = array(
-        'tone_region' => 'us'
-    );
+	private $systemsettings = array(
+		'tone_region' => 'us'
+	);
 	private $modprobe = array(		// modprobe array of values
 		'module_name'=>'wctdm24xxp',
 		'opermode_checkbox'=>FALSE,
@@ -34,26 +34,28 @@ class dahdi_cards {
 		'echocan_nlp_max_supp'=>'',
 		'mode_checkbox' => FALSE,
 		'mode'=>'any',
-        'defaultlinemode_checkbox' => FALSE,
-        'defaultlinemode' => 'T1');
+		'defaultlinemode_checkbox' => FALSE,
+		'defaultlinemode' => 'T1'
+	);
 	private $globalsettings = array(		// global array of values
-        'language'=>'en',
-        'busydetect'=>'yes',
-        'busycount'=>'10',
-        'usecallerid'=>'yes',
-        'callwaiting'=>'yes',
-        'usecallingpres'=>'yes',
-        'threewaycalling'=>'yes',
-        'transfer'=>'yes',
-        'cancallforward'=>'yes',
-        'callreturn'=>'yes',
-        'echocancel'=>'yes',
-        'echocancelwhenbridged'=>'no',
-        'echotraining'=>'no',
-        'immediate'=>'no',
-        'faxdetect'=>'no',
-        'rxgain'=>'0.0',
-        'txgain'=>'0.0' );
+		'language'=>'en',
+		'busydetect'=>'yes',
+		'busycount'=>'10',
+		'usecallerid'=>'yes',
+		'callwaiting'=>'yes',
+		'usecallingpres'=>'yes',
+		'threewaycalling'=>'yes',
+		'transfer'=>'yes',
+		'cancallforward'=>'yes',
+		'callreturn'=>'yes',
+		'echocancel'=>'yes',
+		'echocancelwhenbridged'=>'no',
+		'echotraining'=>'no',
+		'immediate'=>'no',
+		'faxdetect'=>'no',
+		'rxgain'=>'0.0',
+		'txgain'=>'0.0'
+	);
 	private $configured_hdwr = array(); 	// The hardware already configured
 	private $channels = array();
 	private $chan_dahdi_conf;		// /etc/asterisk/chan_dahdi_additional.conf
@@ -65,7 +67,8 @@ class dahdi_cards {
 		'kb1'=>1,
 		'sec'=>2,
 		'sec2'=>3,
-		'hpec'=>4 );
+		'hpec'=>4
+	);
 	private $error_msg = '';		// The latest error message
 	private $fxo_ports = array();
 	private $fxs_ports = array();
@@ -79,27 +82,28 @@ class dahdi_cards {
 	private $module_name = 'wctdm24xxp';	// The module used
 	private $ports_signalling = array(	// The ports signalling
 		'ls' => array(),
-		'ks' => array() );
+		'ks' => array()
+	);
 	private $spancount = array();		// Per location
 	private $spans = array();		// The current spans
 	private $system_conf;			// /etc/dahdi/system.conf
 	private $header;    //config file header
-    public $modules = array();
+	public $modules = array();
 
 	/**
 	 * Constructor
 	 */
 	public function __construct () {
-        foreach (glob(dirname(dirname(__FILE__))."/modules/*.module") as $filename) {
-            require_once($filename);
-            $name = basename($filename,'.module');
-            if (class_exists('dahdi_'.$name)) {
-                $class = 'dahdi_'.$name;
-                $this->modules[$name] = new $class();
-            }
-        }
+		foreach (glob(dirname(dirname(__FILE__))."/modules/*.module") as $filename) {
+			require_once($filename);
+			$name = basename($filename,'.module');
+			if (class_exists('dahdi_'.$name)) {
+				$class = 'dahdi_'.$name;
+				$this->modules[$name] = new $class();
+			}
+		}
 
-        global $amp_conf;
+		global $amp_conf;
 		if (!is_file($amp_conf['DAHDISYSTEMLOC']) && file_exists('/usr/sbin/dahdi_genconf')) {
 			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf')) {
 				$contents = file_get_contents('/etc/dahdi/system.conf');
@@ -118,45 +122,45 @@ class dahdi_cards {
 		global $db;
 		$nt =& notifications::create($db);
 		foreach($check as $list) {
-		    $o = posix_getpwuid(fileowner($list));
-		    if($me != $o['name']) {
-		        $nt->add_error('dahdiconfig', str_replace("/","",$list), _('File '.$list.' is not owned by '. $me), "Please run 'amportal chown'", "", false, true);
-		    } else {
-		        if($nt->exists('dahdiconfig', str_replace("/","",$list))) {
-    		        $nt->delete('dahdiconfig', str_replace("/","",$list));
-    		    }
-		    }
+			$o = posix_getpwuid(fileowner($list));
+			if($me != $o['name']) {
+				$nt->add_error('dahdiconfig', str_replace("/","",$list), _('File '.$list.' is not owned by '. $me), "Please run 'amportal chown'", "", false, true);
+			} else {
+				if($nt->exists('dahdiconfig', str_replace("/","",$list))) {
+					$nt->delete('dahdiconfig', str_replace("/","",$list));
+				}
+			}
 		}
 
 		//Read Avalible Active modules
 		if(file_exists($amp_conf['DAHDIMODULESLOC'])) {
-		    $handle = fopen($amp_conf['DAHDIMODULESLOC'], "r");
-            while (($buffer = fgets($handle, 4096)) !== false) {
-                if(!preg_match('/#/',$buffer)) {
-                    $buffer = trim($buffer);
-                    if(!empty($buffer)) {
-                        $this->drivers_list[] = $buffer;
-                    }
-                }
-            }
-            fclose($handle);
+			$handle = fopen($amp_conf['DAHDIMODULESLOC'], "r");
+			while (($buffer = fgets($handle, 4096)) !== false) {
+				if(!preg_match('/#/',$buffer)) {
+					$buffer = trim($buffer);
+					if(!empty($buffer)) {
+						$this->drivers_list[] = $buffer;
+					}
+				}
+			}
+			fclose($handle);
 
 		}
 
 		$this->header = array();
 		$this->header[] = "# -------------------------------------------------------------------------------;";
-        $this->header[] = "# Do NOT edit this file as it is auto-generated by FreePBX. All modifications to ;";
-        $this->header[] = "# this file must be done via the web gui. There are alternative files to make    ;";
-        $this->header[] = "# custom modifications, details at: http://freepbx.org/configuration_files       ;";
-        $this->header[] = "# -------------------------------------------------------------------------------;";
-        $this->header[] = "#";
-        $this->header[] = "";
+		$this->header[] = "# Do NOT edit this file as it is auto-generated by FreePBX. All modifications to ;";
+		$this->header[] = "# this file must be done via the web gui. There are alternative files to make    ;";
+		$this->header[] = "# custom modifications, details at: http://freepbx.org/configuration_files       ;";
+		$this->header[] = "# -------------------------------------------------------------------------------;";
+		$this->header[] = "#";
+		$this->header[] = "";
 
-        $this->header = implode("\n", $this->header);
+		$this->header = implode("\n", $this->header);
 
-        $this->original_global = array_keys($this->globalsettings);
-        $this->original_modprobe = array_keys($this->modprobe);
-        $this->original_system = array_keys($this->systemsettings);
+		$this->original_global = array_keys($this->globalsettings);
+		$this->original_modprobe = array_keys($this->modprobe);
+		$this->original_system = array_keys($this->systemsettings);
 
 		$this->load();
 	}
@@ -187,8 +191,8 @@ class dahdi_cards {
 	 *
 	 * Calculates the bchan and fxx strings for a given span
 	 */
-	 public function calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
-	 	$span = $this->spans[$num];
+	public function calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
+		$span = $this->spans[$num];
 
 		$y = !empty($startchan) ? $startchan : $span['min_ch'];
 		$x = !empty($usedchans) ? ($y + $usedchans) -1 : ($y + $span['totchans'])-1;
@@ -201,37 +205,37 @@ class dahdi_cards {
 
 		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
 		$sig = !empty($signalling) ? $signalling : $span['signalling'];
-        if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
-    		$o = "";
-    		for($i=$y;$i<=$x;$i++) {
-                switch($i) {
-                    case $y:
-                        $o .= ($r != $i) ? $i : '';
-                        break;
-                    case $r - 1:
-                        $o .= "-".$i;
-                        break;
-                    case $r + 1:
-                        $o .= ($r != $y) ? ",".$i : $i;
-                        break;
-                    case $x:
-                        $o .= ($r != $i) ? "-".$i : '';
-                        break;
-                }
-    		}
-	    } else {
+		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
+			$o = "";
+			for($i=$y;$i<=$x;$i++) {
+				switch($i) {
+					case $y:
+					$o .= ($r != $i) ? $i : '';
+					break;
+					case $r - 1:
+					$o .= "-".$i;
+					break;
+					case $r + 1:
+					$o .= ($r != $y) ? ",".$i : $i;
+					break;
+					case $x:
+					$o .= ($r != $i) ? "-".$i : '';
+					break;
+				}
+			}
+		} else {
 			if($x == $r) {
 				$o = $y;
 			} else {
 				$o = $y . "-" . $x;
 			}
-	    }
+		}
 		return array(
-		  'fxx' => $o,
-		  'endchan' => ($x == $r) ? $y : $x,
-		  'startchan' => $y
+			'fxx' => $o,
+			'endchan' => ($x == $r) ? $y : $x,
+			'startchan' => $y
 		);
-	 }
+	}
 
 	/**
 	 * Detect Hardware Changes
@@ -287,7 +291,7 @@ class dahdi_cards {
 	}
 
 	public function get_drivers_list() {
-	    return $this->drivers_list;
+		return $this->drivers_list;
 	}
 
 	/**
@@ -295,56 +299,54 @@ class dahdi_cards {
 	 *
 	 * Get an advanced parameter
 	 */
-
-	 public function get_globalsettings($param) {
+	public function get_globalsettings($param) {
 		return isset($this->globalsettings[$param]) ? $this->globalsettings[$param] : '';
-	 }
+	}
 
-	 public function get_systemsettings($param) {
- 		return isset($this->systemsettings[$param]) ? $this->systemsettings[$param] : '';
- 	 }
+	public function get_systemsettings($param) {
+		return isset($this->systemsettings[$param]) ? $this->systemsettings[$param] : '';
+	}
 
-	 public function get_modprobe($param) {
- 		return isset($this->modprobe[$param]) ? $this->modprobe[$param] : '';
- 	 }
+	public function get_modprobe($param) {
+		return isset($this->modprobe[$param]) ? $this->modprobe[$param] : '';
+	}
 
 	/**
 	 * Get All Advanced
 	 *
 	 * Get all advanced parameters
 	 */
-
-	 public function get_all_globalsettings() {
+	public function get_all_globalsettings() {
 		return $this->globalsettings;
-	 }
+	}
 
-	 public function get_all_systemsettings() {
+	public function get_all_systemsettings() {
 		return $this->systemsettings;
-	 }
+	}
 
-	 public function get_all_modprobe($module=NULL) {
-	    if($module == 'wctc4xxp') {
-	        $o = array();
-	        $o['module_name'] = $module;
-	        $o['mode'] = $this->modprobe['mode'];
-	        $o['mode_checkbox'] = $this->modprobe['mode_checkbox'];
-	        return $o;
-	    } else {
-	        $o = $this->modprobe;
-	        unset($o['mode']);
-	        unset($o['mode_checkbox']);
-	        return $o;
-	    }
-	 }
+	public function get_all_modprobe($module=NULL) {
+		if($module == 'wctc4xxp') {
+			$o = array();
+			$o['module_name'] = $module;
+			$o['mode'] = $this->modprobe['mode'];
+			$o['mode_checkbox'] = $this->modprobe['mode_checkbox'];
+			return $o;
+		} else {
+			$o = $this->modprobe;
+			unset($o['mode']);
+			unset($o['mode_checkbox']);
+			return $o;
+		}
+	}
 
 	/**
 	 * Get Analog Ports
 	 *
 	 * Get all analog port info
 	 */
-	 public function get_analog_ports() {
+	public function get_analog_ports() {
 		return $this->analog_ports;
-	 }
+	}
 
 	/**
 	 * Get Channels
@@ -496,7 +498,7 @@ class dahdi_cards {
 		$this->read_chan_dahdi_conf();
 		$this->read_dahdi_modprobe();
 		$this->read_dahdi_globalsettings();
-        $this->read_dahdi_systemsettings();
+		$this->read_dahdi_systemsettings();
 		$this->read_dahdi_analog();
 		$this->read_dahdi_spans();
 	}
@@ -506,7 +508,7 @@ class dahdi_cards {
 	 *
 	 * Go check out the database and read in the configured hardware
 	 */
-	 public function read_configured_hdwr() {
+	public function read_configured_hdwr() {
 		global $db;
 
 		$sql = "SELECT * FROM dahdi_configured_locations ORDER BY basechan";
@@ -526,7 +528,7 @@ class dahdi_cards {
 			$this->configured_hdwr[$row['location']]['basechan'] = $row['basechan'];
 			$this->configured_hdwr[$row['location']]['type'] = $row['type'];
 		}
-	 }
+	}
 
 	/**
 	 * Read DAHDi Advanced
@@ -536,56 +538,52 @@ class dahdi_cards {
 	public function read_dahdi_modprobe() {
 		global $db;
 
-        if(isset($_REQUEST['module_name'])) {
-            $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$db->escapeSimple($_REQUEST['module_name'])."'";
-            $module_name = $_REQUEST['module_name'];
-        } else {
-            $sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$this->modprobe['module_name']."'";
-            $module_name = $this->modprobe['module_name'];
-        }
-        $settings = sql($sql, 'getOne');
-        if($settings) {
-            $this->modprobe = json_decode($settings,TRUE);
-            $this->modprobe['module_name'] = $module_name;
-        }
+		if(isset($_REQUEST['module_name'])) {
+			$sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$db->escapeSimple($_REQUEST['module_name'])."'";
+			$module_name = $_REQUEST['module_name'];
+		} else {
+			$sql = "SELECT settings FROM dahdi_advanced_modules WHERE module_name = '".$this->modprobe['module_name']."'";
+			$module_name = $this->modprobe['module_name'];
+		}
+		$settings = sql($sql, 'getOne');
+		if($settings) {
+			$this->modprobe = json_decode($settings,TRUE);
+			$this->modprobe['module_name'] = $module_name;
+		}
 	}
 
 	public function read_all_dahdi_modprobe() {
-	    $sql = "SELECT module_name, settings FROM dahdi_advanced_modules";
-	    $settings = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
-        if($settings) {
-            return $settings;
-        } else {
-            return FALSE;
-        }
+		$sql = "SELECT module_name, settings FROM dahdi_advanced_modules";
+		$settings = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+		if($settings) {
+			return $settings;
+		} else {
+			return FALSE;
+		}
 	}
 
 	public function read_dahdi_globalsettings() {
-        $tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='chandahdi'";
-        $settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
-        if($settings) {
-            foreach($settings as $set) {
-                $key = $set['keyword'];
-                $this->globalsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
-            }
-        }
+		$tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='chandahdi'";
+		$settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
+		if($settings) {
+			foreach($settings as $set) {
+				$key = $set['keyword'];
+				$this->globalsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
+			}
+		}
 	}
 
 	public function read_dahdi_systemsettings() {
-        $tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='system'";
-        $settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
-        if($settings) {
-            foreach($settings as $set) {
-                $key = $set['keyword'];
-                $this->systemsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
-            }
-        }
+		$tone_sql = "SELECT keyword, val, default_val FROM dahdi_advanced WHERE type='system'";
+		$settings = sql($tone_sql, 'getAll', DB_FETCHMODE_ASSOC);
+		if($settings) {
+			foreach($settings as $set) {
+				$key = $set['keyword'];
+				$this->systemsettings[$key] = isset($set['val']) ? $set['val'] : $set['default_val'];
+			}
+		}
 	}
 
-	/**
-	 *
-	 *
-	 */
 	public function read_dahdi_analog() {
 		global $db;
 
@@ -634,15 +632,15 @@ class dahdi_cards {
 			if(!empty($this->spans[$span['span']]['additional_groups'])) {
 
 			} else {
-			    $o = $this->calc_bchan_fxx($span['span']);
-			    $this->spans[$span['span']]['additional_groups'] = json_encode(array(0 => array(
-			         "group" => 0,
-			         "context" => 'from-digital',
-			         "usedchans" => $this->spans[$span['span']]['totchans'],
-			         "startchan" => $this->spans[$span['span']]['min_ch'],
-			         "endchan" => $this->spans[$span['span']]['max_ch'],
-			         "fxx" => $o['fxx']
-			         )));
+				$o = $this->calc_bchan_fxx($span['span']);
+				$this->spans[$span['span']]['additional_groups'] = json_encode(array(0 => array(
+					"group" => 0,
+					"context" => 'from-digital',
+					"usedchans" => $this->spans[$span['span']]['totchans'],
+					"startchan" => $this->spans[$span['span']]['min_ch'],
+					"endchan" => $this->spans[$span['span']]['max_ch'],
+					"fxx" => $o['fxx']
+				)));
 			}
 		}
 	}
@@ -655,7 +653,7 @@ class dahdi_cards {
 	public function read_system_conf() {
 		//return false;
 
-        //TODO: neverending loop
+		//TODO: neverending loop
 		$nomore = false;
 		$ctr = 0;
 		do {
@@ -667,13 +665,13 @@ class dahdi_cards {
 			$lines = explode("\n", $this->systemsettings_conf);
 
 			$hasaline = false;
-            foreach ($lines as $line) {
+			foreach ($lines as $line) {
 				// its a comment, like this line
 				if (substr($line,0,1) == '#' || trim($line) == '') {
 					continue;
 				}
 				$hasaline = true;
-                break;
+				break;
 			}
 
 			if ( ! $hasaline) {
@@ -682,8 +680,8 @@ class dahdi_cards {
 				}
 				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 				if($return_var != '0') {
-                    //If genconf returns an error then we should abort otherwise we will be in a neverending loop
-                    break;
+					//If genconf returns an error then we should abort otherwise we will be in a neverending loop
+					break;
 				}
 			}
 
@@ -706,32 +704,32 @@ class dahdi_cards {
 
 			$begin = substr($line, 0, 5);
 			switch($begin) {
-			case 'fxoks':
-			case 'fxsks':
-				$ks_ports = explode('=',$line);
-				$ks_ports = $ks_ports[1];
-				$this->ports_signalling['ks'] = array_merge($this->ports_signalling['ks'], dahdi_chans2array($ks_ports));
+				case 'fxoks':
+				case 'fxsks':
+					$ks_ports = explode('=',$line);
+					$ks_ports = $ks_ports[1];
+					$this->ports_signalling['ks'] = array_merge($this->ports_signalling['ks'], dahdi_chans2array($ks_ports));
 				break;
-			case 'fxols':
-			case 'fxsls':
-				$ls_ports = explode('=',$line);
-				$ls_ports = $ls_ports[1];
-				$this->ports_signalling['ls'] = array_merge($this->ports_signalling['ls'], dahdi_chans2array($ls_ports));
+				case 'fxols':
+				case 'fxsls':
+					$ls_ports = explode('=',$line);
+					$ls_ports = $ls_ports[1];
+					$this->ports_signalling['ls'] = array_merge($this->ports_signalling['ls'], dahdi_chans2array($ls_ports));
 				break;
-			case 'echoc': //echocanceller
-				$this->has_echo_can = true;
+				case 'echoc': //echocanceller
+					$this->has_echo_can = true;
 				break;
-			case 'span=':
-				$info = explode('=', $line);
-				list($num, $timing, $lbo, $framing, $coding) = explode(',', $info[1]);
-				$spaninfo = explode(',', $info[1]);
-				$yellow = isset($spaninfo[5]) ? $spaninfo[5] : '';
-				$this->spans[$num]['timing'] = $timing;
-				$this->spans[$num]['lbo'] = $lbo;
-				$this->spans[$num]['framing'] = $framing;
-				$this->spans[$num]['coding'] = $coding.(($yellow)?"/$yellow":"");
+				case 'span=':
+					$info = explode('=', $line);
+					list($num, $timing, $lbo, $framing, $coding) = explode(',', $info[1]);
+					$spaninfo = explode(',', $info[1]);
+					$yellow = isset($spaninfo[5]) ? $spaninfo[5] : '';
+					$this->spans[$num]['timing'] = $timing;
+					$this->spans[$num]['lbo'] = $lbo;
+					$this->spans[$num]['framing'] = $framing;
+					$this->spans[$num]['coding'] = $coding.(($yellow)?"/$yellow":"");
 				break;
-			default:
+				default:
 			}
 		}
 
@@ -743,8 +741,8 @@ class dahdi_cards {
 	 *
 	 * Read from chan_dahdi_additional.conf and get any useful information
 	 */
-	 public function read_chan_dahdi_conf() {
-	 	global $db;
+	public function read_chan_dahdi_conf() {
+		global $db;
 
 		$sql = 'SELECT * FROM dahdi WHERE id = -1 AND keyword != "account" AND flags != 1';
 		$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
@@ -773,11 +771,11 @@ class dahdi_cards {
 			}
 
 			switch($result['keyword']) {
-			case 'record_in':
-			case 'record_out':
-			case 'dial':
+				case 'record_in':
+				case 'record_out':
+				case 'dial':
 				break;
-			default:
+				default:
 				$accounts[$result['id']][$result['keyword']] = $result['data'];
 			}
 		}
@@ -810,7 +808,7 @@ class dahdi_cards {
 		}
 
 		return true;
-	 }
+	}
 
 	/**
 	 * Read DAHDi Scan
@@ -834,9 +832,9 @@ class dahdi_cards {
 			if ($line == '') {
 				continue;
 			} else if (preg_match('/^\[([-a-zA-Z0-9_][-a-zA-Z0-9_]*)\]/', $line, $matches)) {
-						$cxt = $matches[1];
-						$cxts[$cxt] = array();
-						continue;
+				$cxt = $matches[1];
+				$cxts[$cxt] = array();
+				continue;
 			}
 
 			list($var, $val) = explode('=', $line);
@@ -901,84 +899,85 @@ class dahdi_cards {
 
 			$this->spans[$key] = array();
 			foreach ($span as $attr=>$val) {
-			    $this->spans[$key]['dsid'] = $key;
+				$this->spans[$key]['dsid'] = $key;
 				$this->spans[$key][$attr] = $span[$attr];
 				$this->spans[$key]['type'] = (isset($this->spans[$key]['devicetype']) && ($this->spans[$key]['devicetype'] == 'W400')) ? 'gsm' : (isset($this->spans[$key]['type']) ? $this->spans[$key]['type'] : '');
 				switch($attr) {
-				case 'location':
-					if ( ! isset($this->spancount[$val]) ) {
-						$this->spancount[$val] = 0;
-					}
+					case 'location':
+						if ( ! isset($this->spancount[$val]) ) {
+							$this->spancount[$val] = 0;
+						}
 
-					$this->spancount[$val]++;
+						$this->spancount[$val]++;
 
-					if (!isset($this->hardware[$val]) ) {
-						$this->hardware[$val] = array();
-						$this->hardware[$val]['device'] = $span['devicetype'];
-						$this->hardware[$val]['basechan'] = $span['basechan'];
-						$this->hardware[$val]['type'] = $span['type'];
-						$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
-					}
+						if (!isset($this->hardware[$val]) ) {
+							$this->hardware[$val] = array();
+							$this->hardware[$val]['device'] = $span['devicetype'];
+							$this->hardware[$val]['basechan'] = $span['basechan'];
+							$this->hardware[$val]['type'] = $span['type'];
+							$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
+						}
 					break;
-				case 'totchans':
-					list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
-					$this->spans[$key]['min_ch'] = $span['basechan'];
-					$this->spans[$key]['max_ch'] = $span['basechan'] + $span['totchans'] - 1;
+					case 'totchans':
+						list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
+						$this->spans[$key]['min_ch'] = $span['basechan'];
+						$this->spans[$key]['max_ch'] = $span['basechan'] + $span['totchans'] - 1;
 
-					switch ($span['totchans']) {
-					case 2:
-						$this->spans[$key]['definedchans'] = 1;
-						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 1;
-						break;
-					case 3:
-						$this->spans[$key]['definedchans'] = 2;
-						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 2;
-						break;
-					case 24:
-						$this->spans[$key]['definedchans'] = 23;
-						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 23;
-						break;
-					case 31:
-						$this->spans[$key]['definedchans'] = 31;
-						$this->spans[$key]['reserved_ch'] = $span['basechan'] + 15;
-						break;
+						switch ($span['totchans']) {
+							case 2:
+								$this->spans[$key]['definedchans'] = 1;
+								$this->spans[$key]['reserved_ch'] = $span['basechan'] + 1;
+							break;
+							case 3:
+								$this->spans[$key]['definedchans'] = 2;
+								$this->spans[$key]['reserved_ch'] = $span['basechan'] + 2;
+							break;
+							case 24:
+								$this->spans[$key]['definedchans'] = 23;
+								$this->spans[$key]['reserved_ch'] = $span['basechan'] + 23;
+							break;
+							case 31:
+								$this->spans[$key]['definedchans'] = 31;
+								$this->spans[$key]['reserved_ch'] = $span['basechan'] + 15;
+							break;
+							default:
+								$this->spans[$key]['definedchans'] = 0;
+							break;
+						}
+					break;
+					case 'lbo':
+						switch($val){
+							//TODO: do we localize "feet?"
+							case '0 db (CSU)/0-133 feet (DSX-1)':
+								$this->spans[$key]['lbo'] = 0;
+							break;
+							case '133-266 feet (DSX-1)':
+								$this->spans[$key]['lbo'] = 1;
+							break;
+							case '266-399 feet (DSX-1)':
+								$this->spans[$key]['lbo'] = 2;
+							break;
+							case '399-533 feet (DSX-1)':
+								$this->spans[$key]['lbo'] = 3;
+							break;
+							case '533-655 feet (DSX-1)':
+								$this->spans[$key]['lbo'] = 4;
+							break;
+							case '-7.5db (CSU)':
+								$this->spans[$key]['lbo'] = 5;
+							break;
+							case '-15db (CSU)':
+								$this->spans[$key]['lbo'] = 6;
+							break;
+							case '-22.5db (CSU)':
+								$this->spans[$key]['lbo'] = 7;
+							break;
+							default:
+								$this->spans[$key]['lbo'] = 0;
+							break;
+						}
+					break;
 					default:
-						$this->spans[$key]['definedchans'] = 0;
-						break;
-					}
-					break;
-				case 'lbo':
-					switch($val){
-					case '0 db (CSU)/0-133 feet (DSX-1)':
-						$this->spans[$key]['lbo'] = 0;
-						break;
-					case '133-266 feet (DSX-1)':
-						$this->spans[$key]['lbo'] = 1;
-						break;
-					case '266-399 feet (DSX-1)':
-						$this->spans[$key]['lbo'] = 2;
-						break;
-					case '399-533 feet (DSX-1)':
-						$this->spans[$key]['lbo'] = 3;
-						break;
-					case '533-655 feet (DSX-1)':
-						$this->spans[$key]['lbo'] = 4;
-						break;
-					case '-7.5db (CSU)':
-						$this->spans[$key]['lbo'] = 5;
-						break;
-					case '-15db (CSU)':
-						$this->spans[$key]['lbo'] = 6;
-						break;
-					case '-22.5db (CSU)':
-						$this->spans[$key]['lbo'] = 7;
-						break;
-					default:
-						$this->spans[$key]['lbo'] = 0;
-						break;
-					}
-					break;
-				default:
 					break;
 				}
 			}
@@ -1018,19 +1017,19 @@ class dahdi_cards {
 	 * @return bool
 	 */
 	public function update_dahdi_modprobe($params) {
-	 	global $db;
+		global $db;
 
-        if(isset($params['module_name'])) {
-            $module_name = $params['module_name'];
-            unset($params['module_name']);
-            $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(json_encode($params))."')";
-            sql($sql);
-		    needreload();
-	    }
+		if(isset($params['module_name'])) {
+			$module_name = $params['module_name'];
+			unset($params['module_name']);
+			$sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(json_encode($params))."')";
+			sql($sql);
+			needreload();
+		}
 	}
 
 	public function update_dahdi_modules($params) {
-	 	global $db;
+		global $db;
 
 		//I question if we should write this to the DB....but naw.
 		//We should write it directly to the file because if the user changes things manually we need to know about those changes instantly
@@ -1039,28 +1038,28 @@ class dahdi_cards {
 	}
 
 	public function update_dahdi_globalsettings($params) {
-	    global $db;
-	    foreach($params as $k => $v) {
-	        if(isset($v) && ($v != "")) {
-                $additional = array_key_exists($k,$this->globalsettings) ? 0 : 1;
-	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'chandahdi')";
-                sql($sql);
-                needreload();
-            }
-        }
-    }
+		global $db;
+		foreach($params as $k => $v) {
+			if(isset($v) && ($v != "")) {
+				$additional = array_key_exists($k,$this->globalsettings) ? 0 : 1;
+				$sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'chandahdi')";
+				sql($sql);
+				needreload();
+			}
+		}
+	}
 
 	public function update_dahdi_systemsettings($params) {
-	    global $db;
-	    foreach($params as $k => $v) {
-	        if(isset($v) && ($v != "")) {
-                $additional = array_key_exists($k,$this->systemsettings) ? 0 : 1;
-	            $sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'system')";
-                sql($sql);
-                needreload();
-            }
-        }
-    }
+		global $db;
+		foreach($params as $k => $v) {
+			if(isset($v) && ($v != "")) {
+				$additional = array_key_exists($k,$this->systemsettings) ? 0 : 1;
+				$sql = "REPLACE INTO dahdi_advanced (val, keyword, additional, type) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."', ".$additional.", 'system')";
+				sql($sql);
+				needreload();
+			}
+		}
+	}
 
 	/**
 	 * Update Span
@@ -1089,10 +1088,10 @@ class dahdi_cards {
 		$this->spans[$num]['group'] = $editspan['group'];
 		$this->spans[$num]['context'] = $editspan['context'];
 		$this->spans[$num]['reserved_ch'] = $editspan['reserved_ch'];
-        $this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
+		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
-        $this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
+		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
 
 		$this->write_spans();
 		$this->write_system_conf();
@@ -1220,7 +1219,7 @@ class dahdi_cards {
 		}
 		unset($result);
 
- 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain');
+		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain');
 
 		$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 
@@ -1256,24 +1255,24 @@ class dahdi_cards {
 	 * Take all the information received and write a new /etc/dahdi/system.conf
 	 */
 	public function write_system_conf() {
-	  	$fxx = array();
-	   	$output = array();
+		$fxx = array();
+		$output = array();
 		$bchan = '';
 		$dchan = '';
 		$hardhdlc = '';
 
-        global $amp_conf;
+		global $amp_conf;
 		$file = $amp_conf['DAHDISYSTEMLOC'];
 
-        global $db;
-        $nt =& notifications::create($db);
+		global $db;
+		$nt =& notifications::create($db);
 		if ( ! is_writable($file)) {
-			$nt->add_error('dahdiconfig', 'SYSTEMCONF', _('Unable to write to '.$file), "Please change permissions on ".$file, "", false, true);
+			$nt->add_error('dahdiconfig', 'SYSTEMCONF', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s"),$file), "", false, true);
 			return false;
 		} else {
-		    if($nt->exists('dahdiconfig', 'SYSTEMCONF')) {
-		        $nt->delete('dahdiconfig', 'SYSTEMCONF');
-		    }
+			if($nt->exists('dahdiconfig', 'SYSTEMCONF')) {
+				$nt->delete('dahdiconfig', 'SYSTEMCONF');
+			}
 		}
 
 		foreach ($this->spans as $num=>$span) {
@@ -1305,13 +1304,13 @@ class dahdi_cards {
 				foreach($data as $s){
 					if (strtolower($s['group'] == 's')){
 						continue;
-                    }
-                    if ($fxx[$fx]) {
+					}
+					if ($fxx[$fx]) {
 						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'];
-                    } else {
+					} else {
 						$fxx[$fx] = $s['startchan'].'-'.$s['endchan'];
-                    }
-                }
+					}
+				}
 
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
@@ -1326,7 +1325,7 @@ class dahdi_cards {
 
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
-                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$val;
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$val;
 
 		}
 
@@ -1365,31 +1364,31 @@ class dahdi_cards {
 
 		if ($fxols) {
 			$output[] = "fxsls=".dahdi_array2chans($fxols);
-                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxols);
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxols);
 
 		}
 		if ($fxoks) {
 			$output[] = "fxsks=".dahdi_array2chans($fxoks);
-                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxoks);
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxoks);
 
 		}
 		if ($fxsls) {
 			$output[] = "fxols=".dahdi_array2chans($fxsls);
-                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsls);
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsls);
 		}
 		if ($fxsks) {
 			$output[] = "fxoks=".dahdi_array2chans($fxsks);
-                        $output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsks);
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsks);
 
 		}
 
 		$output[] = "loadzone={$this->systemsettings['tone_region']}";
 		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
 
-        foreach($this->get_all_systemsettings() as $k => $v) {
-            if(!in_array($k,$this->original_system))
-                $output[] = $k."=".$v;
-        }
+		foreach($this->get_all_systemsettings() as $k => $v) {
+			if(!in_array($k,$this->original_system))
+			$output[] = $k."=".$v;
+		}
 
 		$output = implode("\n", $output);
 		file_put_contents($file,$this->header.$output);
@@ -1397,18 +1396,18 @@ class dahdi_cards {
 		return true;
 	}
 
-    public function write_modules() {
-        foreach($this->modules as $mod_name => $module) {
-            if(method_exists($module,'get_filename')) {
-                foreach($module->get_filename() as $file) {
-                    if(method_exists($module,'generateConf')) {
-                        $module->generateConf($file);
-                    }
-                }
-            }
-        }
+	public function write_modules() {
+		foreach($this->modules as $mod_name => $module) {
+			if(method_exists($module,'get_filename')) {
+				foreach($module->get_filename() as $file) {
+					if(method_exists($module,'generateConf')) {
+						$module->generateConf($file);
+					}
+				}
+			}
+		}
 		return true;
-    }
+	}
 
 	public function write_dahdi_modules($settings) {
 		global $amp_conf,$db;
@@ -1440,26 +1439,26 @@ class dahdi_cards {
 			$type = $key_split[0];
 			switch($type) {
 				case "ud":
-					//see if module exists add it if it doesn't create/add it
-					if(!preg_match('/^#'.$module.'$/m', $contents) && !preg_match('/^'.$module.'$/m', $contents)) {
-						$contents = preg_replace('/'.$previous_module.'/', $previous_module."\n\n# UserDefined\n".$module, $contents);
-					}
-					//no break here as we want to run this next bit on the user defined settings as well
+				//see if module exists add it if it doesn't create/add it
+				if(!preg_match('/^#'.$module.'$/m', $contents) && !preg_match('/^'.$module.'$/m', $contents)) {
+					$contents = preg_replace('/'.$previous_module.'/', $previous_module."\n\n# UserDefined\n".$module, $contents);
+				}
+				//no break here as we want to run this next bit on the user defined settings as well
 				case "sys":
-					//dont allow broken modules to be saved here
-					//exec('modprobe '.$module,$out,$return_var);
-					//$state = ($return_var == '0') ? $state : false;
-					if($state) {
-						//make sure module is enabled, if it is then skip, if not fix it
-						if(!preg_match('/^'.$module.'$/m', $contents) && preg_match('/^#'.$module.'$/m', $contents)) {
-							$contents = preg_replace('/^#'.$module.'$/m', $module, $contents);
-						}
-					} else {
-						//make sure module is disabled, if it is then skip, if not fix it
-						if(!preg_match('/^#'.$module.'$/m', $contents) && preg_match('/^'.$module.'$/m', $contents)) {
-							$contents = preg_replace('/^'.$module.'$/m', '#'.$module, $contents);
-						}
+				//dont allow broken modules to be saved here
+				//exec('modprobe '.$module,$out,$return_var);
+				//$state = ($return_var == '0') ? $state : false;
+				if($state) {
+					//make sure module is enabled, if it is then skip, if not fix it
+					if(!preg_match('/^'.$module.'$/m', $contents) && preg_match('/^#'.$module.'$/m', $contents)) {
+						$contents = preg_replace('/^#'.$module.'$/m', $module, $contents);
 					}
+				} else {
+					//make sure module is disabled, if it is then skip, if not fix it
+					if(!preg_match('/^#'.$module.'$/m', $contents) && preg_match('/^'.$module.'$/m', $contents)) {
+						$contents = preg_replace('/^'.$module.'$/m', '#'.$module, $contents);
+					}
+				}
 				break;
 			}
 			$previous_module = $module;
@@ -1487,7 +1486,7 @@ class dahdi_cards {
 			//or if our line has no whitespaces and the next line starts with a comment
 			//then we assume we are about to start a new group
 			if(empty($line) || (preg_match('/\s/', $line) && preg_match('/^#/', $lines[$key+1])))
-				$i++;
+			$i++;
 
 			if(!empty($line)) {
 				$groups[$i] = isset($groups[$i]) ? $groups[$i] . $line . "\n" : $line . "\n";
@@ -1538,70 +1537,70 @@ class dahdi_cards {
 	 * Write all the modprob options to modprobe.conf
 	 */
 	public function write_modprobe() {
-        global $amp_conf;
+		global $amp_conf;
 
 		$dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
 		$file = $amp_conf['DAHDIMODPROBELOC'];
 
-        global $db;
-        $nt =& notifications::create($db);
+		global $db;
+		$nt =& notifications::create($db);
 		if ( ! is_writable($file)) {
-			$nt->add_error('dahdiconfig', 'MODPROBECONF', _('Unable to write to '.$file), "Please change permissions on ".$file, "", false, true);
+			$nt->add_error('dahdiconfig', 'MODPROBECONF', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s"),$file), "", false, true);
 			return false;
 		} else {
-		    if($nt->exists('dahdiconfig', 'MODPROBECONF')) {
-		        $nt->delete('dahdiconfig', 'MODPROBECONF');
-		    }
+			if($nt->exists('dahdiconfig', 'MODPROBECONF')) {
+				$nt->delete('dahdiconfig', 'MODPROBECONF');
+			}
 		}
 
 		$content = '';
 
 		$sql = "SELECT * FROM dahdi_advanced_modules";
-        $options = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+		$options = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
-        foreach($options as $data) {
-            $settings = json_decode($data['settings'],TRUE);
-            $options = "";
+		foreach($options as $data) {
+			$settings = json_decode($data['settings'],TRUE);
+			$options = "";
 
-            $opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode', 'defaultlinemode'=>'default_linemode');
-    		if($dahdi_ge_260 && $data['module_name'] != 'wctdm') {
-    			unset($opts['ringdetect']);
-    		}
+			$opts = array('opermode'=>'opermode', 'alawoverride'=>'alawoverride', 'boostringer'=>'boostringer', 'lowpower'=>'lowpower', 'fastringer'=>'fastringer', 'ringdetect'=>'fwringdetect', 'fxs_honor_mode'=>'fxshonormode', 'mode'=>'mode', 'defaultlinemode'=>'default_linemode');
+			if($dahdi_ge_260 && $data['module_name'] != 'wctdm') {
+				unset($opts['ringdetect']);
+			}
 			foreach ($opts as $opt=>$name) {
-        		if ($settings["{$opt}_checkbox"]) {
-        			$options .= " {$name}={$settings[$opt]}";
-        		}
-		    }
+				if ($settings["{$opt}_checkbox"]) {
+					$options .= " {$name}={$settings[$opt]}";
+				}
+			}
 
-    		if ($settings["mwi_checkbox"]) {
-    		    if ($settings['mwi'] == 'neon') {
-    		        $options .= " neonmwi_monitor=1";
-    		        if ($settings['neon_voltage']) {
-    					$options .= " neonmwi_level={$settings['neon_voltage']}";
-    				}
-    				if ($settings['neon_offlimit']) {
-    					$options .= " neonmwi_offlimit={$settings['neon_offlimit']}";
-    				}
-		        } else {
-		            $options .= " neonmwi_monitor=0";
-		        }
-		    }
+			if ($settings["mwi_checkbox"]) {
+				if ($settings['mwi'] == 'neon') {
+					$options .= " neonmwi_monitor=1";
+					if ($settings['neon_voltage']) {
+						$options .= " neonmwi_level={$settings['neon_voltage']}";
+					}
+					if ($settings['neon_offlimit']) {
+						$options .= " neonmwi_offlimit={$settings['neon_offlimit']}";
+					}
+				} else {
+					$options .= " neonmwi_monitor=0";
+				}
+			}
 
-		    $opts = array('echocan_nlp_type'=>'vpmnlptype', 'echocan_nlp_threshold'=>'vpmnlpthresh', 'echocan_nlp_max_supp'=>'vpmnlpmaxsupp');
-    		foreach ($opts as $adv=>$opt) {
-    			if ($settings[$adv]) {
-    				$options .= " {$opt}={$settings[$adv]}";
-    			}
-    		}
+			$opts = array('echocan_nlp_type'=>'vpmnlptype', 'echocan_nlp_threshold'=>'vpmnlpthresh', 'echocan_nlp_max_supp'=>'vpmnlpmaxsupp');
+			foreach ($opts as $adv=>$opt) {
+				if ($settings[$adv]) {
+					$options .= " {$opt}={$settings[$adv]}";
+				}
+			}
 
-    		if(isset($settings['additionals'])) {
-    		    foreach($settings['additionals'] as $key=>$val) {
-    		        $options .= " {$key}={$val}";
-    		    }
-    		}
+			if(isset($settings['additionals'])) {
+				foreach($settings['additionals'] as $key=>$val) {
+					$options .= " {$key}={$val}";
+				}
+			}
 
-            $content .= !empty($options) ? "options ".$data['module_name'] .$options."\n" : '';
-        }
+			$content .= !empty($options) ? "options ".$data['module_name'] .$options."\n" : '';
+		}
 
 		if(!$amp_conf['DAHDIDISABLEWRITE']) {
 			file_put_contents($file, $this->header.$content);

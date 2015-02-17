@@ -26,6 +26,8 @@ class dahdi_sangoma {
         $output['reboot'] = true;
         $output['dialog']['height'] = 400;
         $output['dialog']['width'] = 500;
+        $option1 = _('Run Wanpipe In DAHDI/DIGIUM Mode');
+        $option2 = _("T1/Mode");
         $output['html'] = <<< EOF
             <h2>Sangoma Settings</h2>
             <h3>This edits all settings in /etc/wanpipe/global.conf</h3>
@@ -33,7 +35,7 @@ class dahdi_sangoma {
             <table width="100%" style="text-align:left;">
                 <tr>
                     <td style="width:10px;">
-                        <label for="sangoma_dahdimode">Run Wanpipe In DAHDI/DIGIUM Mode:</label>
+                        <label for="sangoma_dahdimode">$option1:</label>
                     </td>
                     <td>
                         <select name="sangoma_dahdimode" id="sangoma_dahdimode">
@@ -50,7 +52,7 @@ EOF;
                 </tr>
                 <tr id="sangoma_t1mode" style="${display}">
                     <td style="width:10px">
-                        <label for="sangoma_t1mode">T1 Mode:</label>
+                        <label for="sangoma_t1mode">$option2:</label>
                     </td>
                     <td>
                         <select name="sangoma_t1mode">

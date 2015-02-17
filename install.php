@@ -18,7 +18,7 @@ if (! function_exists('outn')) {
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced"')) {
-	out('Creating Dahdi Advanced Settings Table');
+	out(_('Creating Dahdi Advanced Settings Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced (
 		`keyword` VARCHAR(50) NOT NULL PRIMARY KEY,
 		`val` VARCHAR(255),
@@ -71,7 +71,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced"')) {
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_spans"')) {
-	out('Creating Dahdi Spans Table');
+	out(_('Creating Dahdi Spans Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_spans (
 		`id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
 		`span` INT UNSIGNED NOT NULL,
@@ -114,7 +114,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_spans"')) {
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
-	out('Creating Dahdi Analog Table');
+	out(_('Creating Dahdi Analog Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_analog (
 		`port` INT UNIQUE,
 		`type` ENUM ('fxo', 'fxs'),
@@ -134,7 +134,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
-	out('Create Configured Locations Table');
+	out(_('Create Configured Locations Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (
 		`location` VARCHAR(50),
 		`device` VARCHAR(50),
@@ -258,7 +258,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
     	die_freepbx($result->getDebugInfo());
     }
 
-	out("Migrating Old Data from Dahdi Advanced Table");
+	out(_("Migrating Old Data from Dahdi Advanced Table"));
     $sql = 'SELECT * FROM dahdi_advanced';
     $oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 
@@ -274,11 +274,11 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
     unset($settings['module_name']);
     unset($settings[$module_name]);
 
-	out("Inserting Old Data from Dahdi Advanced Table");
+	out(_("Inserting Old Data from Dahdi Advanced Table"));
     $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(serialize($settings))."')";
     sql($sql);
 
-	out("Deleting old dahdi module data from database (its been migrated)");
+	out(_("Deleting old dahdi module data from database (its been migrated)"));
 	foreach ($entries as $entry=>$default_val) {
 	    if($entry != 'tone_region') {
 	        $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
@@ -307,24 +307,24 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	    'txgain'=>'0.0'
 	    );
 
-	outn('Replacing..');
+	outn(_('Replacing..'));
 	foreach($globalsettings as $k => $v) {
 		outn('..'.$k.'..');
 	    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."')";
 	    sql($sql);
 	}
-	out('..Done');
+	out(_('..Done'));
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "priexclusive"')) {
-	out("Adding priexclusive column");
+	out(_("Adding priexclusive column"));
     $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `priexclusive` varchar (3) NOT NULL DEFAULT ''";
     $result = $db->query($sql);
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
     if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "dchannel"')) {
-		out("Moving/Adding dchannel column");
+		out(_("Moving/Adding dchannel column"));
         $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `dchannel` int (5) NOT NULL DEFAULT '0'";
         $result = $db->query($sql);
     }
@@ -334,7 +334,7 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "additional_groups"')) {
-	out("Adding Additional_groups column");
+	out(_("Adding Additional_groups column"));
     $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `additional_groups` blob";
     $result = $db->query($sql);
 }
@@ -343,7 +343,7 @@ $sql = "SELECT module_name, settings FROM dahdi_advanced_modules";
 $old = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 foreach($old as $list) {
 	if(unserialize($list['settings']) !== FALSE) {
-		out("Migrating module ".$list['module_name']." from serialized data to json");
+		out(sprintf(_("Migrating module %s from serialized data to json"),$list['module_name']));
 	    $o = json_encode(unserialize($list['settings']));
 	    $sql = "REPLACE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($list['module_name'])."', '".$db->escapeSimple($o)."')";
 	    sql($sql);
@@ -351,7 +351,7 @@ foreach($old as $list) {
 }
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_modules"')) {
-	out('Creating dahdi modules Table');
+	out(_('Creating dahdi modules Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_modules (
 		`module_name` VARCHAR(100) UNIQUE,
 		`settings` BLOB
@@ -360,14 +360,14 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_modules"')) {
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "type"')) {
-	out("Add type column");
+	out(_("Add type column"));
 	sql('ALTER TABLE dahdi_advanced ADD type varchar(50) default "chandahdi"');
 
 	sql('UPDATE dahdi_advanced SET type="system" WHERE keyword="tone_region"');
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"')) {
-	out("add additional column");
+	out(_("add additional column"));
 	sql('ALTER TABLE dahdi_advanced ADD additional bool default 1');
 
 	foreach($globalsettings as $ksettings => $settings) {
@@ -376,7 +376,7 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"'))
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "txgain"')) {
-	out("Adding txgain and rxgain column to digital table");
+	out(_("Adding txgain and rxgain column to digital table"));
     $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `txgain` varchar (10) NOT NULL DEFAULT '0.0'";
     $result = $db->query($sql);
     $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
@@ -384,7 +384,7 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "txgain"')) {
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_analog WHERE FIELD = "txgain"')) {
-	out("Adding txgain and rxgain column to analog table");
+	out(_("Adding txgain and rxgain column to analog table"));
     $sql = "ALTER TABLE `dahdi_analog` ADD COlUMN `txgain` varchar (10) NOT NULL DEFAULT '0.0'";
     $result = $db->query($sql);
     $sql = "ALTER TABLE `dahdi_analog` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
@@ -396,12 +396,12 @@ $mod_loc = $freepbx_conf->get_conf_setting('DAHDIMODULESLOC');
 if(file_exists($mod_loc)) {
 	$contents = file_get_contents($mod_loc);
 	if((!preg_match('/^wcte43x/im',$contents) && !preg_match('/^#wcte43x/im',$contents))) {
-		out("Detected new Dahdi Module: wcte43x, Appending to ".basename($mod_loc));
+		out(sprintf(_("Detected new Dahdi Module: wcte43x, Appending to %s"),basename($mod_loc)));
 		$data = "\n# Digium TE435\n# Digium TE235\n#wcte43x\n";
 		file_put_contents($mod_loc,$data,FILE_APPEND);
 	}
 	if((!preg_match('/^wcaxx/im',$contents) && !preg_match('/^#wcaxx/im',$contents))) {
-		out("Detected new Dahdi Module: wcaxx, Appending to ".basename($mod_loc));
+		out(sprintf(_("Detected new Dahdi Module: wcaxx, Appending to %s"),basename($mod_loc)));
 		$data = "\n# Digium A4A/A4B/A8A/A8B\n#wcaxx\n";
 		file_put_contents($mod_loc,$data,FILE_APPEND);
 	}

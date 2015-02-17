@@ -1,7 +1,7 @@
 <form id="form-modprobe" action="config.php?quietmode=1&amp;handler=file&amp;module=dahdiconfig&amp;file=ajax.html.php&amp;type=modprobesubmit">
     <div id="modprobe">
         <h2><?php echo _('Modprobe Settings')?></h2>
-        <h3><?php echo _('This edits all settings in')?> /etc/modprobe.d/dahdi.conf</h3>
+        <h3><?php echo sprintf(_('This edits all settings in %s'),'/etc/modprobe.d/dahdi.conf')?> </h3>
         <hr />
         <table width="100%" style="text-align:left;">
             <tr>
@@ -29,7 +29,7 @@
                 		<option value="g723.1" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g723.1'); ?>>G723.1</option>
                 		<option value="g729" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g729'); ?>>G729</option>
                 	</select>
-                </td>  
+                </td>
             </tr>
         </table>
         <table width="100%" id="normal_mp_settings" style="text-align:left;">
@@ -40,84 +40,84 @@
                 <td>
                 	<input type="checkbox" id="opermode_checkbox" name="opermode_checkbox" <?php echo ($dahdi_cards->get_modprobe('opermode_checkbox'))?'checked':''?> />
                 	<select id="opermode" name="opermode">
-                		<option value="USA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'USA'); ?>><?php echo _('USA')?></option>
-                		<option value="ARGENTINA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ARGENTINA'); ?>><?php echo _('ARGENTINA')?></option>
-                		<option value="AUSTRALIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'AUSTRALIA'); ?>><?php echo _('AUSTRALIA')?></option>
-                		<option value="AUSTRIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'AUSTRIA'); ?>><?php echo _('AUSTRIA')?></option>
-                		<option value="BAHRAIN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BAHRAIN'); ?>><?php echo _('BAHRAIN')?></option>
-                		<option value="BELGIUM" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BELGIUM'); ?>><?php echo _('BELGIUM')?></option>
-                		<option value="BRAZIL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BRAZIL'); ?>><?php echo _('BRAZIL')?></option>
-                		<option value="BULGARIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BULGARIA'); ?>><?php echo _('BULGARIA')?></option>
-                		<option value="CANADA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CANADA'); ?>><?php echo _('CANADA')?></option>
-                		<option value="CHILE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CHILE'); ?>><?php echo _('CHILE')?></option>
-                		<option value="CHINA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CHINA'); ?>><?php echo _('CHINA')?></option>
-                		<option value="COLUMBIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'COLUMBIA'); ?>><?php echo _('COLUMBIA')?></option>
-                		<option value="CROATIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CROATIA'); ?>><?php echo _('CROATIA')?></option>
-                		<option value="CYRPUS" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CYRPUS'); ?>><?php echo _('CYRPUS')?></option>
-                		<option value="CZECH" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CZECH'); ?>><?php echo _('CZECH')?></option>
-                		<option value="DENMARK" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'DENMARK'); ?>><?php echo _('DENMARK')?></option>
-                		<option value="ECUADOR" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ECUADOR'); ?>><?php echo _('ECUADOR')?></option>
-                		<option value="EGYPT" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'EGYPT'); ?>><?php echo _('EGYPT')?></option>
-                		<option value="ELSALVADOR" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ELSALVADOR'); ?>><?php echo _('ELSALVADOR')?></option>
-                		<option value="FCC" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FCC'); ?>><?php echo _('FCC')?></option>
-                		<option value="FINLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FINLAND'); ?>><?php echo _('FINLAND')?></option>
-                		<option value="FRANCE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FRANCE'); ?>><?php echo _('FRANCE')?></option>
-                		<option value="GERMANY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GERMANY'); ?>><?php echo _('GERMANY')?></option>
-                		<option value="GREECE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GREECE'); ?>><?php echo _('GREECE')?></option>
-                		<option value="GUAM" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GUAM'); ?>><?php echo _('GUAM')?></option>
-                		<option value="HONGKONG" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'HONGKONG'); ?>><?php echo _('HONGKONG')?></option>
-                		<option value="HUNGARY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'HUNGARY'); ?>><?php echo _('HUNGARY')?></option>
-                		<option value="ICELAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ICELAND'); ?>><?php echo _('ICELAND')?></option>
-                		<option value="INDIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'INDIA'); ?>><?php echo _('INDIA')?></option>
-                		<option value="INDONESIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'INDONESIA'); ?>><?php echo _('INDONESIA')?></option>
-                		<option value="IRELAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'IRELAND'); ?>><?php echo _('IRELAND')?></option>
-                		<option value="ISRAEL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ISRAEL'); ?>><?php echo _('ISRAEL')?></option>
-                		<option value="ITALY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ITALY'); ?>><?php echo _('ITALY')?></option>
-                		<option value="JAPAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'JAPAN'); ?>><?php echo _('JAPAN')?></option>
-                		<option value="JORDAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'JORDAN'); ?>><?php echo _('JORDAN')?></option>
-                		<option value="KAZAKHSTAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'KAZAKHSTAN'); ?>><?php echo _('KAZAKHSTAN')?></option>
-                		<option value="KUWAIT" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'KUWAIT'); ?>><?php echo _('KUWAIT')?></option>
-                		<option value="LATVIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LATVIA'); ?>><?php echo _('LATVIA')?></option>
-                		<option value="LEBANON" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LEBANON'); ?>><?php echo _('LEBANON')?></option>
-                		<option value="LUXEMBOURG" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LUXEMBOURG'); ?>><?php echo _('LUXEMBOURG')?></option>
-                		<option value="MACAO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MACACO'); ?>><?php echo _('MACAO')?></option>
-                		<option value="MALAYSIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MALAYSIA'); ?>><?php echo _('MALAYSIA')?></option>
-                		<option value="MALTA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MALTA'); ?>><?php echo _('MALTA')?></option>
-                		<option value="MEXICO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MEXICO'); ?>><?php echo _('MEXICO')?></option>
-                		<option value="MOROCCO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MOROCCO'); ?>><?php echo _('MOROCCO')?></option>
-                		<option value="NETHERLANDS" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NETHERLANDS'); ?>><?php echo _('NETHERLANDS')?></option>
-                		<option value="NEWZEALAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NEWZEALAND'); ?>><?php echo _('NEWZEALAND')?></option>
-                		<option value="NIGERIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NIGERIA'); ?>><?php echo _('NIGERIA')?></option>
-                		<option value="NORWAY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NORWAY'); ?>><?php echo _('NORWAY')?></option>
-                		<option value="OMAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'OMAN'); ?>><?php echo _('OMAN')?></option>
-                		<option value="PAKISTAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PAKISTAN'); ?>><?php echo _('PAKISTAN')?></option>
-                		<option value="PERU" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PERU'); ?>><?php echo _('PERU')?></option>
-                		<option value="PHILIPPINES" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PHILIPPINES'); ?>><?php echo _('PHILIPPINES')?></option>
-                		<option value="POLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'POLAND'); ?>><?php echo _('POLAND')?></option>
-                		<option value="PORTUGAL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PORTUGAL'); ?>><?php echo _('PORTUGAL')?></option>
-                		<option value="ROMANIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ROMANIA'); ?>><?php echo _('ROMANIA')?></option>
-                		<option value="RUSSIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'RUSSIA'); ?>><?php echo _('RUSSIA')?></option>
-                		<option value="SAUDIARABIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SAUDIARABIA'); ?>><?php echo _('SAUDIARABIA')?></option>
-                		<option value="SINGAPORE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SINGAPORE'); ?>><?php echo _('SINGAPORE')?></option>
-                		<option value="SLOVAKIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SLOVAKIA'); ?>><?php echo _('SLOVAKIA')?></option>
-                		<option value="SLOVENIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SLOVENIA'); ?>><?php echo _('SLOVENIA')?></option>
-                		<option value="SOUTHAFRICA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SOUTHAFRICA'); ?>><?php echo _('SOUTHAFRICA')?></option>
-                		<option value="SOUTHKOREA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SOUTHKOREA'); ?>><?php echo _('SOUTHKOREA')?></option>
-                		<option value="SPAIN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SPAIN'); ?>><?php echo _('SPAIN')?></option>
-                		<option value="SWEDEN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SWEDEN'); ?>><?php echo _('SWEDEN')?></option>
-                		<option value="SWITZERLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SWITZERLAND'); ?>><?php echo _('SWITZERLAND')?></option>
-                		<option value="SYRIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SYRIA'); ?>><?php echo _('SYRIA')?></option>
-                		<option value="TAIWAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'TAIWAN'); ?>><?php echo _('TAIWAN')?></option>
+                		<option value="USA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'USA'); ?>><?php echo _('United States/North America')?></option>
+                		<option value="ARGENTINA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ARGENTINA'); ?>><?php echo _('Argentina')?></option>
+                		<option value="AUSTRALIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'AUSTRALIA'); ?>><?php echo _('Australia')?></option>
+                		<option value="AUSTRIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'AUSTRIA'); ?>><?php echo _('Austria')?></option>
+                		<option value="BAHRAIN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BAHRAIN'); ?>><?php echo _('Bahrain')?></option>
+                		<option value="BELGIUM" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BELGIUM'); ?>><?php echo _('Belgium')?></option>
+                		<option value="BRAZIL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BRAZIL'); ?>><?php echo _('Brazil')?></option>
+                		<option value="BULGARIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'BULGARIA'); ?>><?php echo _('Bulgaria')?></option>
+                		<option value="CANADA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CANADA'); ?>><?php echo _('Canada')?></option>
+                		<option value="CHILE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CHILE'); ?>><?php echo _('Chile')?></option>
+                		<option value="CHINA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CHINA'); ?>><?php echo _('China')?></option>
+                		<option value="COLUMBIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'COLUMBIA'); ?>><?php echo _('Columbia')?></option>
+                		<option value="CROATIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CROATIA'); ?>><?php echo _('Croatia')?></option>
+                		<option value="CYRPUS" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CYRPUS'); ?>><?php echo _('Cyrpus')?></option>
+                		<option value="CZECH" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'CZECH'); ?>><?php echo _('Czech')?></option>
+                		<option value="DENMARK" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'DENMARK'); ?>><?php echo _('Denmark')?></option>
+                		<option value="ECUADOR" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ECUADOR'); ?>><?php echo _('Ecuador')?></option>
+                		<option value="EGYPT" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'EGYPT'); ?>><?php echo _('Egypt')?></option>
+                		<option value="ELSALVADOR" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ELSALVADOR'); ?>><?php echo _('El Salvador')?></option>
+                		<option value="FCC" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FCC'); ?>><?php echo _('fcc')?></option>
+                		<option value="FINLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FINLAND'); ?>><?php echo _('Finland')?></option>
+                		<option value="FRANCE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'FRANCE'); ?>><?php echo _('France')?></option>
+                		<option value="GERMANY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GERMANY'); ?>><?php echo _('Germany')?></option>
+                		<option value="GREECE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GREECE'); ?>><?php echo _('Greece')?></option>
+                		<option value="GUAM" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'GUAM'); ?>><?php echo _('Guam')?></option>
+                		<option value="HONGKONG" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'HONGKONG'); ?>><?php echo _('Hong Kong')?></option>
+                		<option value="HUNGARY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'HUNGARY'); ?>><?php echo _('Hungary')?></option>
+                		<option value="ICELAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ICELAND'); ?>><?php echo _('Iceland')?></option>
+                		<option value="INDIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'INDIA'); ?>><?php echo _('India')?></option>
+                		<option value="INDONESIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'INDONESIA'); ?>><?php echo _('Indonesia')?></option>
+                		<option value="IRELAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'IRELAND'); ?>><?php echo _('Ireland')?></option>
+                		<option value="ISRAEL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ISRAEL'); ?>><?php echo _('Israel')?></option>
+                		<option value="ITALY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ITALY'); ?>><?php echo _('Italy')?></option>
+                		<option value="JAPAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'JAPAN'); ?>><?php echo _('Japan')?></option>
+                		<option value="JORDAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'JORDAN'); ?>><?php echo _('Jordan')?></option>
+                		<option value="KAZAKHSTAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'KAZAKHSTAN'); ?>><?php echo _('Kazakhstan')?></option>
+                		<option value="KUWAIT" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'KUWAIT'); ?>><?php echo _('Kuwait')?></option>
+                		<option value="LATVIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LATVIA'); ?>><?php echo _('Latvia')?></option>
+                		<option value="LEBANON" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LEBANON'); ?>><?php echo _('Lebanon')?></option>
+                		<option value="LUXEMBOURG" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'LUXEMBOURG'); ?>><?php echo _('Luxembourg')?></option>
+                		<option value="MACAO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MACACO'); ?>><?php echo _('Macao')?></option>
+                		<option value="MALAYSIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MALAYSIA'); ?>><?php echo _('Malaysia')?></option>
+                		<option value="MALTA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MALTA'); ?>><?php echo _('Malta')?></option>
+                		<option value="MEXICO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MEXICO'); ?>><?php echo _('Mexico')?></option>
+                		<option value="MOROCCO" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'MOROCCO'); ?>><?php echo _('Morocco')?></option>
+                		<option value="NETHERLANDS" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NETHERLANDS'); ?>><?php echo _('Netherlands')?></option>
+                		<option value="NEWZEALAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NEWZEALAND'); ?>><?php echo _('Newzealand')?></option>
+                		<option value="NIGERIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NIGERIA'); ?>><?php echo _('Nigeria')?></option>
+                		<option value="NORWAY" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'NORWAY'); ?>><?php echo _('Norway')?></option>
+                		<option value="OMAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'OMAN'); ?>><?php echo _('Oman')?></option>
+                		<option value="PAKISTAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PAKISTAN'); ?>><?php echo _('Pakistan')?></option>
+                		<option value="PERU" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PERU'); ?>><?php echo _('Peru')?></option>
+                		<option value="PHILIPPINES" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PHILIPPINES'); ?>><?php echo _('Philippines')?></option>
+                		<option value="POLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'POLAND'); ?>><?php echo _('Poland')?></option>
+                		<option value="PORTUGAL" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'PORTUGAL'); ?>><?php echo _('Portugal')?></option>
+                		<option value="ROMANIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'ROMANIA'); ?>><?php echo _('Romania')?></option>
+                		<option value="RUSSIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'RUSSIA'); ?>><?php echo _('Russia')?></option>
+                		<option value="SAUDIARABIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SAUDIARABIA'); ?>><?php echo _('Saudi Arabia')?></option>
+                		<option value="SINGAPORE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SINGAPORE'); ?>><?php echo _('Singapore')?></option>
+                		<option value="SLOVAKIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SLOVAKIA'); ?>><?php echo _('Slovakia')?></option>
+                		<option value="SLOVENIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SLOVENIA'); ?>><?php echo _('Slovenia')?></option>
+                		<option value="SOUTHAFRICA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SOUTHAFRICA'); ?>><?php echo _('South Africa')?></option>
+                		<option value="SOUTHKOREA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SOUTHKOREA'); ?>><?php echo _('South Korea')?></option>
+                		<option value="SPAIN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SPAIN'); ?>><?php echo _('Spain')?></option>
+                		<option value="SWEDEN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SWEDEN'); ?>><?php echo _('Sweden')?></option>
+                		<option value="SWITZERLAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SWITZERLAND'); ?>><?php echo _('Switzerland')?></option>
+                		<option value="SYRIA" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'SYRIA'); ?>><?php echo _('Syria')?></option>
+                		<option value="TAIWAN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'TAIWAN'); ?>><?php echo _('Taiwan')?></option>
                 		<option value="TBR21" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'TBR21'); ?>><?php echo _('TBR21')?></option>
-                		<option value="THAILAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'THAILAND'); ?>><?php echo _('THAILAND')?></option>
+                		<option value="THAILAND" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'THAILAND'); ?>><?php echo _('Thailand')?></option>
                 		<option value="UAE" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'UAE'); ?>><?php echo _('UAE')?></option>
                 		<option value="UK" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'UK'); ?>><?php echo _('UK')?></option>
-                		<option value="YEMEN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'YEMEN'); ?>><?php echo _('YEMEN')?></option>
+                		<option value="YEMEN" <?php echo set_default($dahdi_cards->get_modprobe('opermode'),'YEMEN'); ?>><?php echo _('Yemen')?></option>
                 	</select>
                 </td>
-            </tr> 
+            </tr>
             <tr>
-                <td style="width:10px;"> 
+                <td style="width:10px;">
                     <label for="alawoverride_checkbox"><a href="#" class="info"><?php echo _('A-law Override')?>:<span><?php echo _('Specify the audio compression scheme (codec) to be used for analog lines. North American users should choose ulaw. All other countries, unless otherwise known, should be assumed to be alaw. If no choice is specified, the default is ulaw. Confirm the scheme which will be best for operation')?>.</span></a></label>
                 </td>
                 <td>
@@ -151,7 +151,7 @@
                 		<option value="1" <?php echo set_default($dahdi_cards->get_modprobe('boostringer'),'1'); ?>><?php echo _('Peak (89v)')?></option>
                 	</select>
                 </td>
-            </tr> 
+            </tr>
             <tr>
                 <td style="width:10px;">
                     <label for="fastringer_checkbox"><a href="#" class="info"><?php echo _('Fastringer:')?><span><?php echo _('Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) (commonly used in conjunction with the Low Power option) increases the ringing speed to 25Hz. If no choice is specified, the default is normal')?>.</span></a></label>
@@ -277,7 +277,7 @@
                 		<option value="e1" <?php echo set_default($dahdi_cards->get_modprobe('defaultlinemode'),'e1'); ?>><?php echo _('E1')?></option>
                 		<option value="auto" <?php echo set_default($dahdi_cards->get_modprobe('defaultlinemode'),'auto'); ?>><?php echo _('Auto')?></option>
                 	</select>
-                </td>  
+                </td>
             </tr>
         </table>
         <?php
@@ -306,7 +306,7 @@
                     <input id="mp_setting_value_0" name="mp_setting_value_0" value="<?php echo $mp_val?>" /> <br />
                 </td>
             </tr>
-            <?php 
+            <?php
             $a = 1;
             if(isset($mp['additionals'])) {
                 foreach($mp['additionals'] as $key => $value) {?>
@@ -321,12 +321,12 @@
                             <input id="mp_setting_value_<?php echo $a?>" name="mp_setting_value_<?php echo $a?>" value="<?php echo $value?>" /> <br />
                         </td>
                     </tr>
-                <?php 
+                <?php
                     $a++;
                 }
             } ?>
             <tr id="mp_add">
-                <td> 
+                <td>
                 </td>
                 <td>
                     <a id="mp_add_button" style="cursor: pointer;" onclick="mp_add_field(<?php echo $a?>,'<?php echo $dahdi_cards->get_modprobe('module_name')?>')"><img src="assets/dahdiconfig/images/add.png"></a>

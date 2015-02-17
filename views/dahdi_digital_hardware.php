@@ -1,15 +1,15 @@
-<h2>Digital Hardware</h2>
+<h2><?php echo _('Digital Hardware')?></h2>
 <hr width="75%" style="text-align:left;margin-left:0"/>
 <table width="75%" class="alt_table" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
         <thead>
         <tr>
-                <th>Span</th>
-                <th>Alarms</th>
-                <th>Framing/Coding</th>
-                <th>Channels Used/Total</th>
-                <th>D-Channel</th>
-                <th>Signaling</th>
-                <th>Action</th>
+                <th><?php echo _('Span')?></th>
+                <th><?php echo _('Alarms')?></th>
+                <th><?php echo _('Framing/Coding')?></th>
+                <th><?php echo _('Channels Used/Total')?></th>
+                <th><?php echo _('D-Channel')?></th>
+                <th><?php echo _('Signaling')?></th>
+                <th><?php echo _('Action')?></th>
         </tr>
         </thead>
         <tbody>
@@ -22,10 +22,10 @@
 	<tr>
 		<td><?php echo $name?></td>
 		<td id="digital_alarms_<?php echo $key; ?>_label"><?php echo $span['alarms']?></td>
-		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo !empty($span['framing']) ? $span['framing'] : 'N/A'?><?php echo !empty($span['coding']) ? "/".$span['coding'] : ''?></td>
+		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo !empty($span['framing']) ? $span['framing'] : _('N/A')?><?php echo !empty($span['coding']) ? "/".$span['coding'] : ''?></td>
 		<td id="digital_totchans_<?php echo $key; ?>_label"><?php echo $span['totchans']."/".$span['totchans']?></td>
-		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:"Not Yet Defined")?></td>
-		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:"Not Yet Defined")?></td>
+		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:_("Not Yet Defined"))?></td>
+		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:_("Not Yet Defined"))?></td>
 		<td><a href="#" onclick="dahdi_modal_settings('digital','<?php echo $key?>');">Edit</a></td>
 	</tr>
 	<?php $ctr++;

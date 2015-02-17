@@ -1,12 +1,12 @@
 <form id="dahdi_editspan_<?php echo $key?>" method="POST" action="config.php?quietmode=1&amp;handler=file&amp;module=dahdiconfig&amp;file=ajax.html.php&amp;type=digital&amp;id=<?php echo $key;?>">
     <input type="hidden" name="editspan_<?php echo $key?>_reserved_ch" value="<?php echo $span['reserved_ch'];?>">
     <input type="hidden" name="editspan_<?php echo $key?>_groupc" value="0">
-    <h2>General Settings</h2>
+    <h2><?php echo _('General Settings')?></h2>
     <hr>
     <table width="100%" style="text-align:left;" border="0" cellspacing="0">
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_alarm">Alarms:</label>
+                <label for="editspan_<?php echo $key?>_alarm"><?php echo _('Alarms')?>:</label>
             </td>
             <td>
                 <span id="editspan_<?php echo $key?>_alarms" name="editspan_<?php echo $key?>_alarms"><?php echo $span['alarms']?></span>
@@ -15,7 +15,7 @@
 		<?php if(empty($span['type']) || $span['type'] != 'gsm') {?>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_framing">Framing/Coding:</label>
+                <label for="editspan_<?php echo $key?>_framing">Framing/Coding')?>:</label>
             </td>
             <td>
                	<select id="editspan_<?php echo $key?>_fac" name="editspan_<?php echo $key?>_fac">
@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_channels">Channels:</label>
+                <label for="editspan_<?php echo $key?>_channels"><?php echo ('Channels')?>:</label>
             </td>
             <td>
                 <span id="editspan_<?php echo $key?>_channels"><?php echo "{$span['definedchans']}/{$span['totchans']}"?> <?php echo !empty($span['spantype']) ? "({$span['spantype']})" : "" ?></span>
@@ -56,7 +56,7 @@
         -->
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_signalling">Signalling:</label>
+                <label for="editspan_<?php echo $key?>_signalling"><?php echo ('Signaling')?>:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
@@ -67,7 +67,7 @@
             		<option value="em" <?php echo set_default($span['signalling'],'em'); ?>>E &amp; M</option>
             		<option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>>E &amp; M -- Wink</option>
             		<option value="featd" <?php echo set_default($span['signalling'],'featd'); ?>>E &amp; M -- fead(DTMF)</option>
-                    <option value="--" disabled>--ANALOG--</option>
+                    <option value="--" disabled>--<?php echo ('ANALOG')?>--</option>
             		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>>FXOKS</option>
             		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>>FXOLS</option>
 				    <option value="--" disabled>--RHNIO--</option>
@@ -84,11 +84,11 @@
         <?php $display = (substr($span['signalling'],0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') ? 'show' : 'none'; ?>
             <tr id="editspan_<?php echo $key?>_switchtype_tr" style="display:<?php echo $display?>;">
                 <td style="width:10px;">
-                	<label for="editspan_<?php echo $key?>_switchtype">Switchtype:</label>
+                	<label for="editspan_<?php echo $key?>_switchtype"><?php echo ('Switchtype')?>:</label>
                 </td>
                 <td>
                  	<select id="editspan_<?php echo $key?>_switchtype" name="editspan_<?php echo $key?>_switchtype">
-                		<option value="national" <?php echo set_default($span['switchtype'],'national'); ?>>National ISDN 2 (default)</option>
+                		<option value="national" <?php echo set_default($span['switchtype'],'national'); ?>>National ISDN 2 (<?php echo ('default')?>)</option>
                 		<option value="dms100" <?php echo set_default($span['switchtype'],'dms100'); ?>>Nortel DMS100</option>
                 		<option value="4ess" <?php echo set_default($span['switchtype'],'4ess'); ?>>AT&amp;T 4ESS</option>
                 		<option value="5ess" <?php echo set_default($span['switchtype'],'5ess'); ?>>Lucent 5ESS</option>
@@ -100,7 +100,7 @@
             </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_syncsrc">Sync/Clock Source:</label>
+                <label for="editspan_<?php echo $key?>_syncsrc"><?php echo ('Sync/Clock Source')?>:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_syncsrc" name="editspan_<?php echo $key?>_syncsrc">
@@ -112,7 +112,7 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_lbo">Line Build Out:</label>
+                <label for="editspan_<?php echo $key?>_lbo"><?php echo ('Line Build Out')?>:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_lbo" name="editspan_<?php echo $key?>_lbo">
@@ -129,50 +129,50 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_pridialplan">Pridialplan:</label>
+                <label for="editspan_<?php echo $key?>_pridialplan"><?php echo ('PRI Dialplan')?>:</label>
             </td>
             <td>
               	<select id="editspan_<?php echo $key?>_pridialplan" name="editspan_<?php echo $key?>_pridialplan">
-            		<option value="national" <?php echo set_default($span['pridialplan'],'national'); ?>>National</option>
-            		<option value="dynamic" <?php echo set_default($span['pridialplan'],'dynamic'); ?>>Dynamic</option>
-            		<option value="unknown" <?php echo set_default($span['pridialplan'],'unknown'); ?>>Unknown</option>
-            		<option value="local" <?php echo set_default($span['pridialplan'],'local'); ?>>Local</option>
-            		<option value="private" <?php echo set_default($span['pridialplan'],'private'); ?>>Private</option>
-            		<option value="international" <?php echo set_default($span['pridialplan'],'international'); ?>>International</option>
+            		<option value="national" <?php echo set_default($span['pridialplan'],'national'); ?>><?php echo ('National')?></option>
+            		<option value="dynamic" <?php echo set_default($span['pridialplan'],'dynamic'); ?>><?php echo ('Dynamic')?></option>
+            		<option value="unknown" <?php echo set_default($span['pridialplan'],'unknown'); ?>><?php echo ('Unknown')?></option>
+            		<option value="local" <?php echo set_default($span['pridialplan'],'local'); ?>><?php echo ('Local')?></option>
+            		<option value="private" <?php echo set_default($span['pridialplan'],'private'); ?>><?php echo ('Private')?></option>
+            		<option value="international" <?php echo set_default($span['pridialplan'],'international'); ?>><?php echo ('International')?></option>
             	</select>
             </td>
         </tr>
         <tr>
             <td style="width:10px;">
-            	<label for="editspan_<?php echo $key?>_prilocaldialplan">Prilocaldialplan:</label>
+            	<label for="editspan_<?php echo $key?>_prilocaldialplan"><?php echo ('PRI Local Dialplan')?>:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_prilocaldialplan" name="editspan_<?php echo $key?>_prilocaldialplan">
-            		<option value="national" <?php echo set_default($span['prilocaldialplan'],'national'); ?>>National</option>
-            		<option value="dynamic" <?php echo set_default($span['prilocaldialplan'],'dynamic'); ?>>Dynamic</option>
-            		<option value="unknown" <?php echo set_default($span['prilocaldialplan'],'unknown'); ?>>Unknown</option>
-            		<option value="local" <?php echo set_default($span['prilocaldialplan'],'local'); ?>>Local</option>
-            		<option value="private" <?php echo set_default($span['prilocaldialplan'],'private'); ?>>Private</option>
-            		<option value="international" <?php echo set_default($span['prilocaldialplan'],'international'); ?>>International</option>
+            		<option value="national" <?php echo set_default($span['prilocaldialplan'],'national'); ?>><?php echo ('National')?></option>
+            		<option value="dynamic" <?php echo set_default($span['prilocaldialplan'],'dynamic'); ?>><?php echo ('Dynamic')?></option>
+            		<option value="unknown" <?php echo set_default($span['prilocaldialplan'],'unknown'); ?>><?php echo ('Unknown')?></option>
+            		<option value="local" <?php echo set_default($span['prilocaldialplan'],'local'); ?>><?php echo ('Local')?></option>
+            		<option value="private" <?php echo set_default($span['prilocaldialplan'],'private'); ?>><?php echo ('Private')?></option>
+            		<option value="international" <?php echo set_default($span['prilocaldialplan'],'international'); ?>><?php echo ('International')?></option>
             	</select>
             </td>
         </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_priexclusive">Priexclusive:</label>
+                <label for="editspan_<?php echo $key?>_priexclusive"><?php echo ('PRI Exclusive')?>:</label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_priexclusive" name="editspan_<?php echo $key?>_priexclusive">
                     <option value="" <?php echo set_default($span['priexclusive'],''); ?>></option>
-                    <option value="no" <?php echo set_default($span['priexclusive'],'no'); ?>>No</option>
-                    <option value="yes" <?php echo set_default($span['priexclusive'],'yes'); ?>>Yes</option>
+                    <option value="no" <?php echo set_default($span['priexclusive'],'no'); ?>><?php echo ('No')?></option>
+                    <option value="yes" <?php echo set_default($span['priexclusive'],'yes'); ?>><?php echo ('Yes')?></option>
                 </select>
             </td>
         </tr>
 		<?php } else { ?>
 	        <tr>
 	            <td style="width:10px;">
-	                <label for="editspan_<?php echo $key?>_signalling">Signalling:</label>
+	                <label for="editspan_<?php echo $key?>_signalling"><?php echo ('Signaling')?>:</label>
 	            </td>
 	            <td>
 	                <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
@@ -183,7 +183,7 @@
 		<?php } ?>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_rxgain"><a href="#" class="info">Receive Gain<span>The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.</span></a></label>
+                <label for="editspan_<?php echo $key?>_rxgain"><a href="#" class="info"><?php echo ('Receive Gain')?><span><?php echo ('The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.')?></span></a></label>
             </td>
             <td>
                 <input type="text" name="editspan_<?php echo $key?>_rxgain" id="editspan_<?php echo $key?>_rxgain" value="<?php echo $span['rxgain']; ?>">
@@ -191,7 +191,7 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_txgain"><a href="#" class="info">Transmit Gain<span>The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.</span></a></label>
+                <label for="editspan_<?php echo $key?>_txgain"><a href="#" class="info"><?php echo ('Transmit Gain')?><span><?php echo ('The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.')?></span></a></label>
             </td>
             <td>
                 <input type="text" name="editspan_<?php echo $key?>_txgain" id="editspan_<?php echo $key?>_txgain" value="<?php echo $span['txgain']; ?>">
@@ -199,7 +199,7 @@
         </tr>
     </table>
     <br />
-    <h2>Group Settings (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);">Reset Groups</a>)</h2>
+    <h2><?php echo ('Group Settings')?> (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);"><?php echo ('Reset Groups')?></a>)</h2>
     <hr>
     <?php $groups = json_decode($span['additional_groups'],TRUE);
         foreach($groups as $gkey => $data) {
@@ -207,7 +207,7 @@
     <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">
         <tr>
             <td style="width:10px;">
-                <label><a href="#" class="info">Group:<span>Group Number, use 's' to skip said group</span></a></label>
+                <label><a href="#" class="info"><?php echo ('Group')?>:<span><?php echo ("Group Number, use 's' to skip said group")?></span></a></label>
             </td>
             <td>
         	    <input type="text" id="editspan_<?php echo $key?>_group_<?php echo $gkey?>" name="editspan_<?php echo $key?>_group_<?php echo $gkey?>" size="2" value="<?php echo set_default($data['group']); ?>" />
@@ -215,7 +215,7 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label>Context: </label>
+                <label><?php echo ('Context')?>: </label>
             </td>
             <td>
                 <input type="text" id="editspan_<?php echo $key?>_context_<?php echo $gkey?>" name="editspan_<?php echo $key?>_context_<?php echo $gkey?>" value="<?php echo set_default($data['context']); ?>" />
@@ -223,7 +223,7 @@
         </tr>
         <tr>
             <td style="width:10px;">
-                <label>Used Channels: </label>
+                <label><?php echo ('Used Channels')?>: </label>
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>" name="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>">
@@ -232,8 +232,8 @@
             		<option value="<?php echo $i?>" <?php echo set_default($data['usedchans'],$i); ?>><?php echo $i?></option>
             	<?php } ?>
             	</select>
-            	From: <span id="editspan_<?php echo $key?>_from_<?php echo $gkey?>"><?php echo $data['fxx'];?></span>
-            	Reserved: <span id="editspan_<?php echo $key?>_reserved_<?php echo $gkey?>"><?php echo $span['reserved_ch']?></span>
+              <?php echo ('From')?>: <span id="editspan_<?php echo $key?>_from_<?php echo $gkey?>"><?php echo $data['fxx'];?></span>
+              <?php echo ('Reserved')?>: <span id="editspan_<?php echo $key?>_reserved_<?php echo $gkey?>"><?php echo $span['reserved_ch']?></span>
             	<input type="hidden" id="editspan_<?php echo $key?>_endchan_<?php echo $gkey?>" name="editspan_<?php echo $key?>_endchan_<?php echo $gkey?>" value="<?php echo $data['endchan']; ?>" />
             	<input type="hidden" id="editspan_<?php echo $key?>_startchan_<?php echo $gkey?>" name="editspan_<?php echo $key?>_startchan_<?php echo $gkey?>" value="<?php echo $data['startchan']; ?>" />
             </td>

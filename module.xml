@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.48</version>
+	<version>2.11.49</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 		<changelog>
+			*2.11.49* Remove useless requirements parts
 			*2.11.48* FREEPBX-6888 complete localization
 			*2.11.47* Visual Cleanup
 			*2.11.46* Attempt to fix some errors in javascript
@@ -65,12 +66,6 @@
 		<phpversion>5.3.0</phpversion>
 		<version>2.10</version>
 	</depends>
-	<requirements>
-		<file>/usr/sbin/asterisk</file>
-		<file>/usr/sbin/dahdi_scan</file>
-		<file>/usr/sbin/dahdi_genconf</file>
-		<file>/usr/sbin/dahdi_cfg</file>
-	</requirements>
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>

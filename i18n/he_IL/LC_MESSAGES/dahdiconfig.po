@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-18 20:08-0500\n"
+"POT-Creation-Date: 2015-02-19 16:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 msgid "Alarms"
 msgstr ""
 
-#: dahdiconfig.i18n.php:7
+#: dahdiconfig.i18n.php:13
 msgid "Allow PRI Discrete Channels"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
-#: dahdiconfig.i18n.php:23
+#: dahdiconfig.i18n.php:29
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Configure/Edit DAHDI Cards"
 msgstr ""
 
-#: dahdiconfig.i18n.php:4
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:9
 msgid "Connectivity"
 msgstr ""
 
@@ -301,19 +301,20 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr ""
 
-#: dahdiconfig.i18n.php:3 dahdiconfig.i18n.php:5
+#: dahdiconfig.i18n.php:3 dahdiconfig.i18n.php:5 dahdiconfig.i18n.php:7
+#: dahdiconfig.i18n.php:11
 msgid "DAHDi Config"
 msgstr ""
 
-#: dahdiconfig.i18n.php:9
+#: dahdiconfig.i18n.php:15
 msgid "DAHDi Configuration Module"
 msgstr ""
 
-#: dahdiconfig.i18n.php:13
+#: dahdiconfig.i18n.php:19
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:27
+#: dahdiconfig.i18n.php:33
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -321,19 +322,19 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: dahdiconfig.i18n.php:17
+#: dahdiconfig.i18n.php:23
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:19
+#: dahdiconfig.i18n.php:25
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: dahdiconfig.i18n.php:35
+#: dahdiconfig.i18n.php:41
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
-#: dahdiconfig.i18n.php:11
+#: dahdiconfig.i18n.php:17
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -377,7 +378,7 @@ msgstr ""
 msgid "Digital Hardware"
 msgstr ""
 
-#: dahdiconfig.i18n.php:21
+#: dahdiconfig.i18n.php:27
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
@@ -513,8 +514,9 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:127
-msgid "File "
+#: includes/dahdi_cards.class.php:128
+#, php-format
+msgid "File %s is not owned by %s"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
@@ -790,7 +792,7 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: dahdiconfig.i18n.php:15
+#: dahdiconfig.i18n.php:21
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -850,7 +852,7 @@ msgstr ""
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
-#: dahdiconfig.i18n.php:25
+#: dahdiconfig.i18n.php:31
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1051,7 +1053,7 @@ msgstr ""
 msgid "Philippines"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1270 includes/dahdi_cards.class.php:1548
+#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1060,6 +1062,11 @@ msgstr ""
 msgid ""
 "Please choose your country or your nearest neighboring country for default "
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
+msgstr ""
+
+#: includes/dahdi_cards.class.php:128
+#, php-format
+msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:36 views/dahdi_advanced_settings.php:113
@@ -1170,7 +1177,7 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:29
+#: dahdiconfig.i18n.php:35
 msgid "Software EC"
 msgstr ""
 
@@ -1394,7 +1401,7 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
-#: dahdiconfig.i18n.php:33
+#: dahdiconfig.i18n.php:39
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -1543,7 +1550,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1270 includes/dahdi_cards.class.php:1548
+#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -1634,7 +1641,7 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
-#: dahdiconfig.i18n.php:31
+#: dahdiconfig.i18n.php:37
 msgid "software EC to use in system.conf"
 msgstr ""
 

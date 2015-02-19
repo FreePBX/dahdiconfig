@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-18 20:06-0500\n"
+"POT-Creation-Date: 2015-02-18 20:08-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,6 +77,10 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:9
 msgid "Alarms"
+msgstr ""
+
+#: dahdiconfig.i18n.php:7
+msgid "Allow PRI Discrete Channels"
 msgstr ""
 
 #: views/dahdi_global_settings.php:112
@@ -184,6 +188,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:54
 msgid "Busy Detect Count"
+msgstr ""
+
+#: dahdiconfig.i18n.php:23
+msgid ""
+"By default the DAHDi configuration module will NOT write out any data to "
+"protect any current configuration settings"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
@@ -295,8 +305,40 @@ msgstr ""
 msgid "DAHDi Config"
 msgstr ""
 
+#: dahdiconfig.i18n.php:9
+msgid "DAHDi Configuration Module"
+msgstr ""
+
+#: dahdiconfig.i18n.php:13
+msgid "DAHDi Executable Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:27
+msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+msgstr ""
+
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
+msgstr ""
+
+#: dahdiconfig.i18n.php:17
+msgid "DAHDi Modules Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:19
+msgid "DAHDi Modules Location (/etc/dahdi/modules)"
+msgstr ""
+
+#: dahdiconfig.i18n.php:35
+msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
+msgstr ""
+
+#: dahdiconfig.i18n.php:11
+msgid ""
+"DAHDi trunk configuration is normally done using groups for PRI "
+"configuration. If there is a need to configure trunks to specific channels, "
+"setting this to true will allow each channel to be configured. This can be "
+"useful when troubleshooting a PRI and trying to isolate a bad B Channel."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:271
@@ -333,6 +375,10 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:1
 msgid "Digital Hardware"
+msgstr ""
+
+#: dahdiconfig.i18n.php:21
+msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
 #: views/dahdi_global_settings.php:16
@@ -744,6 +790,10 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
+#: dahdiconfig.i18n.php:15
+msgid "Location of the DAHDi Executable"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -798,6 +848,10 @@ msgstr ""
 #: install.php:346
 #, php-format
 msgid "Migrating module %s from serialized data to json"
+msgstr ""
+
+#: dahdiconfig.i18n.php:25
+msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:23
@@ -1116,6 +1170,10 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
+#: dahdiconfig.i18n.php:29
+msgid "Software EC"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
 msgid "South Africa"
@@ -1334,6 +1392,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:126 views/dahdi_modprobe_settings.php:109
 msgid "Syria"
+msgstr ""
+
+#: dahdiconfig.i18n.php:33
+msgid "System Configuration File Location"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:276
@@ -1570,6 +1632,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:186
 msgid "none - Performs no detection "
+msgstr ""
+
+#: dahdiconfig.i18n.php:31
+msgid "software EC to use in system.conf"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:126

@@ -114,8 +114,9 @@ class dahdi_cards {
 				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
 			}
 		}
-		$me = $amp_conf['AMPASTERISKUSER'];
 
+		$check = array();
+		$me = $amp_conf['AMPASTERISKUSER'];
 		$check[] = $amp_conf['DAHDIMODULESLOC'];
 		$check[] = $amp_conf['DAHDISYSTEMLOC'];
 		$check[] = $amp_conf['DAHDIMODPROBELOC'];
@@ -124,7 +125,7 @@ class dahdi_cards {
 		foreach($check as $list) {
 			$o = posix_getpwuid(fileowner($list));
 			if($me != $o['name']) {
-				$nt->add_error('dahdiconfig', str_replace("/","",$list), _('File '.$list.' is not owned by '. $me), "Please run 'amportal chown'", "", false, true);
+				$nt->add_error('dahdiconfig', str_replace("/","",$list), sprintf(_('File %s is not owned by %s'), $list, $me), sprintf(_("Please run '%s', then go back into the DAHDi Config Module"),'amportal chown'), "", false, true);
 			} else {
 				if($nt->exists('dahdiconfig', str_replace("/","",$list))) {
 					$nt->delete('dahdiconfig', str_replace("/","",$list));

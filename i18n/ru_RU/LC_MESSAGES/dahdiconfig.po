@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-19 16:56-0500\n"
+"POT-Creation-Date: 2015-02-20 19:16-0500\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Alarms"
 msgstr ""
 
-#: dahdiconfig.i18n.php:13
+#: dahdiconfig.i18n.php:7
 msgid "Allow PRI Discrete Channels"
 msgstr "Разрешить разделять каналы PRI"
 
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
-#: dahdiconfig.i18n.php:29
+#: dahdiconfig.i18n.php:23
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -235,7 +235,7 @@ msgstr "Конфигурировать/редактировать настрой
 msgid "Configure/Edit DAHDI Cards"
 msgstr "Конфигурировать/редактировать карты DAHDi"
 
-#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:9
+#: dahdiconfig.i18n.php:4
 msgid "Connectivity"
 msgstr "Подключения"
 
@@ -288,20 +288,19 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
-#: dahdiconfig.i18n.php:3 dahdiconfig.i18n.php:5 dahdiconfig.i18n.php:7
-#: dahdiconfig.i18n.php:11
+#: dahdiconfig.i18n.php:3 dahdiconfig.i18n.php:5
 msgid "DAHDi Config"
 msgstr "Конфигурация DAHDi"
 
-#: dahdiconfig.i18n.php:15
+#: dahdiconfig.i18n.php:9
 msgid "DAHDi Configuration Module"
 msgstr "Модуль конфигурации DAHDi"
 
-#: dahdiconfig.i18n.php:19
+#: dahdiconfig.i18n.php:13
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:33
+#: dahdiconfig.i18n.php:27
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -309,19 +308,19 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: dahdiconfig.i18n.php:23
+#: dahdiconfig.i18n.php:17
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:25
+#: dahdiconfig.i18n.php:19
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: dahdiconfig.i18n.php:41
+#: dahdiconfig.i18n.php:35
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
-#: dahdiconfig.i18n.php:17
+#: dahdiconfig.i18n.php:11
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -370,7 +369,7 @@ msgstr ""
 msgid "Digital Hardware"
 msgstr ""
 
-#: dahdiconfig.i18n.php:27
+#: dahdiconfig.i18n.php:21
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
@@ -784,7 +783,7 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: dahdiconfig.i18n.php:21
+#: dahdiconfig.i18n.php:15
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -844,7 +843,7 @@ msgstr ""
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
-#: dahdiconfig.i18n.php:31
+#: dahdiconfig.i18n.php:25
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1169,7 +1168,7 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:35
+#: dahdiconfig.i18n.php:29
 msgid "Software EC"
 msgstr ""
 
@@ -1393,7 +1392,7 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
-#: dahdiconfig.i18n.php:39
+#: dahdiconfig.i18n.php:33
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -1635,7 +1634,7 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
-#: dahdiconfig.i18n.php:37
+#: dahdiconfig.i18n.php:31
 msgid "software EC to use in system.conf"
 msgstr ""
 

@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:16-0500\n"
-"PO-Revision-Date: 2015-02-20 19:16-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-02-21 11:18+0200\n"
+"Last-Translator: Kevin <kevin@qloog.com>\n"
+"Language-Team: Japanese "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/dahdi_analog_hardware.php:17 views/dahdi_analog_hardware.php:34
 #, php-format
@@ -63,7 +66,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "高度な設定"
 
 #: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:9
 msgid "Alarms"
@@ -94,7 +97,7 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:1
 msgid "Analog Hardware"
-msgstr ""
+msgstr "アナログハードウェア"
 
 #: views/dahdi_global_settings.php:184
 msgid "Answer Immediately"
@@ -253,7 +256,7 @@ msgstr ""
 
 #: install.php:21
 msgid "Creating Dahdi Advanced Settings Table"
-msgstr ""
+msgstr "DAHDi用の高度な設定のテーブルを作成中"
 
 #: install.php:117
 msgid "Creating Dahdi Analog Table"
@@ -293,7 +296,7 @@ msgstr ""
 
 #: dahdiconfig.i18n.php:3 dahdiconfig.i18n.php:5
 msgid "DAHDi Config"
-msgstr ""
+msgstr "DAHDi設定"
 
 #: dahdiconfig.i18n.php:9
 msgid "DAHDi Configuration Module"
@@ -365,7 +368,7 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:1
 msgid "Digital Hardware"
-msgstr ""
+msgstr "デジタルハードウェア"
 
 #: dahdiconfig.i18n.php:21
 msgid "Disable DAHDi Configuration Writes"
@@ -548,7 +551,7 @@ msgstr ""
 
 #: views/dahdi_digital_settings.php:4
 msgid "General Settings"
-msgstr ""
+msgstr "一般設定"
 
 #: views/dahdi_global_settings.php:161
 msgid ""
@@ -568,7 +571,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:3
 msgid "Global Settings"
-msgstr ""
+msgstr "グローバル設定"
 
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
@@ -851,7 +854,7 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
-msgstr ""
+msgstr "Modprobe設定"
 
 #: views/dahdi_advanced_settings.php:7 views/dahdi_modprobe_settings.php:9
 msgid "Module Name"
@@ -1015,11 +1018,11 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:240
 msgid "Other Global Dahdi Settings"
-msgstr ""
+msgstr "その他のグローバルDAHDi設定"
 
 #: views/dahdi_modprobe_settings.php:299
 msgid "Other Modprobe Settings"
-msgstr ""
+msgstr "その他のModprobe設定"
 
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
@@ -1075,7 +1078,7 @@ msgstr ""
 #: views/dahdi_analog_settings.php:12
 #, php-format
 msgid "Port %s Settings"
-msgstr ""
+msgstr "ポート %s 設定"
 
 #: views/dahdi_analog_hardware.php:7
 msgid "Ports"

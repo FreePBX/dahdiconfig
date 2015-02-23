@@ -21,7 +21,7 @@ function storeModProbeSettings(mod_name) {
         var child = $(this);
         //Following check to make sure they or form elements
         if (child.is(":checkbox"))
-            settings[child.attr("name")] = child.attr("checked") ? true : false;
+            settings[child.attr("name")] = child.prop("checked");
         if (child.is(":text"))
             settings[child.attr("name")] = child.val();
         if (child.is("select"))

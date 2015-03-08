@@ -10,32 +10,35 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-25 14:20+1000\n"
-"PO-Revision-Date: 2015-02-25 14:20+1000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-03-07 18:52+0200\n"
+"Last-Translator: james <zhulizhong@gmail.com>\n"
+"Language-Team: Simplified Chinese "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/dahdi_analog_hardware.php:17 views/dahdi_analog_hardware.php:34
 #, php-format
 msgid "%s Ports"
-msgstr ""
+msgstr "%s 端口"
 
 #: install.php:316
 msgid "..Done"
-msgstr ""
+msgstr "..完成"
 
 #: views/dahdi_analog_settings.php:29
 msgid ""
 "A group ID number to associate this analog device with when referencing it "
 "elswhere using g<num>"
-msgstr ""
+msgstr "当在其他地方使用 g<num>时，组ID 号码是和模拟设备关联的"
 
 #: views/dahdi_advanced_settings.php:136 views/dahdi_modprobe_settings.php:121
 msgid "A-law Override"
-msgstr ""
+msgstr "A-law 覆盖"
 
 #: views/dahdi_analog_hardware.php:8 views/dahdi_digital_hardware.php:12
 msgid "Action"
@@ -43,11 +46,11 @@ msgstr ""
 
 #: install.php:363
 msgid "Add type column"
-msgstr ""
+msgstr "添加列"
 
 #: install.php:337
 msgid "Adding Additional_groups column"
-msgstr ""
+msgstr "添加 Additional_groups 列"
 
 #: install.php:320
 msgid "Adding priexclusive column"
@@ -63,11 +66,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "高级设置"
 
 #: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:9
 msgid "Alarms"
-msgstr ""
+msgstr "告警"
 
 #: dahdiconfig.i18n.php:13
 msgid "Allow PRI Discrete Channels"
@@ -75,22 +78,22 @@ msgstr "允许PRI独立设置通道"
 
 #: views/dahdi_global_settings.php:112
 msgid "Also enables call parking (overrides the \"canpark\" parameter)"
-msgstr ""
+msgstr "开启呼叫驻留(覆盖 \"canpark\" 参数)"
 
 #: views/dahdi_analog_settings.php:1
 #, php-format
 msgid "Analog %s"
-msgstr ""
+msgstr "模拟 %s"
 
 #: views/dahdi_analog_signalling_form.php:1
 #, php-format
 msgid "Analog %s Ports"
-msgstr ""
+msgstr "模拟 %s 端口"
 
 #: functions.inc.php:312
 #, php-format
 msgid "Analog Channel %s"
-msgstr ""
+msgstr "模拟通道 %s"
 
 #: views/dahdi_analog_hardware.php:1
 msgid "Analog Hardware"
@@ -102,15 +105,15 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:28
 msgid "Any"
-msgstr ""
+msgstr "任何"
 
 #: views/dahdi_advanced_settings.php:147 views/dahdi_modprobe_settings.php:138
 msgid "Apply Opermode to FXO Modules"
-msgstr ""
+msgstr "对FXO模块添加 Opermode 参数命令"
 
 #: views/dahdi_advanced_settings.php:148 views/dahdi_modprobe_settings.php:139
 msgid "Apply Opermode to FXS and FXO Modules"
-msgstr ""
+msgstr "对FXS和FXO模块添加Opermode 驱动启动参数命令"
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_modprobe_settings.php:44
@@ -184,7 +187,7 @@ msgstr ""
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
-msgstr ""
+msgstr "默认环境下，Dahdi 配置模块将不会对当前配置做任何保护"
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
@@ -201,7 +204,7 @@ msgstr "通道"
 
 #: views/dahdi_digital_hardware.php:9
 msgid "Channels Used/Total"
-msgstr ""
+msgstr "已使用的/总数"
 
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
@@ -219,7 +222,7 @@ msgstr ""
 
 #: functions.inc.php:389
 msgid "Choose"
-msgstr ""
+msgstr "选择"
 
 #: functions.inc.php:524
 #, php-format
@@ -249,23 +252,23 @@ msgstr ""
 
 #: install.php:137
 msgid "Create Configured Locations Table"
-msgstr ""
+msgstr "创建配置路径表"
 
 #: install.php:21
 msgid "Creating Dahdi Advanced Settings Table"
-msgstr ""
+msgstr "创建语音板卡高级设置表"
 
 #: install.php:117
 msgid "Creating Dahdi Analog Table"
-msgstr ""
+msgstr "创建模拟语音板卡表"
 
 #: install.php:74
 msgid "Creating Dahdi Spans Table"
-msgstr ""
+msgstr "创建Dahdi 端口配置表"
 
 #: install.php:354
 msgid "Creating dahdi modules Table"
-msgstr ""
+msgstr "正在创建dahdi模块表"
 
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"

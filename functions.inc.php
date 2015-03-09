@@ -557,9 +557,9 @@ function dahdiconfig_configpageload($mode) {
 		if ($("#dahdi_channel").val() == null) {
 			$("#dahdi_channel").val("");
 		}
-		$("#devinfo_channel").parent().parent().hide();
-		$("#devinfo_signalling").parent().parent().hide();
-		$("#devinfo_dial").parent().parent().hide();
+		//$("#devinfo_channel").parent().parent().hide();
+		//$("#devinfo_signalling").parent().parent().hide();
+		//$("#devinfo_dial").parent().parent().hide();
 	});
 	</script>';
 	$currentcomponent->addguielem($section, new guielement('dahdi-chan-html', $js, ''));
@@ -568,9 +568,9 @@ function dahdiconfig_configpageload($mode) {
 	$currentcomponent->addguielem($section, new gui_label('no_dahdi_channel', _('No Unused DAHDi Channels Available')));
 	$js = '<script type="text/javascript">
 	$(document).ready(function(){
-		$("#devinfo_channel").parent().parent().hide();
-		$("#devinfo_signalling").parent().parent().hide();
-		$("#devinfo_dial").parent().parent().hide();
+		//$("#devinfo_channel").parent().parent().hide();
+		//$("#devinfo_signalling").parent().parent().hide();
+		//$("#devinfo_dial").parent().parent().hide();
 	});
 	</script>';
 	$currentcomponent->addguielem($section, new guielement('dahdi-chan-html', $js, ''));

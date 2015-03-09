@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-25 14:20+1000\n"
+"POT-Creation-Date: 2015-03-09 19:51-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,10 +70,6 @@ msgstr ""
 #: views/dahdi_digital_hardware.php:7
 #: views/dahdi_digital_settings.php:9
 msgid "Alarms"
-msgstr ""
-
-#: dahdiconfig.i18n.php:13
-msgid "Allow PRI Discrete Channels"
 msgstr ""
 
 #: views/dahdi_global_settings.php:112
@@ -147,12 +143,6 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:462
-msgid ""
-"Available DAHDI Groups and Channels configued in the DAHDI Configuration "
-"Module"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:64
 #: views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
@@ -193,12 +183,6 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
-#: dahdiconfig.i18n.php:24
-msgid ""
-"By default the DAHDi configuration module will NOT write out any data to "
-"protect any current configuration settings"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:68
 #: views/dahdi_modprobe_settings.php:51
 msgid "Canada"
@@ -209,7 +193,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:523
+#: functions.inc.php:547
 msgid "Channel"
 msgstr ""
 
@@ -237,7 +221,7 @@ msgstr ""
 msgid "Choose"
 msgstr ""
 
-#: functions.inc.php:524
+#: functions.inc.php:548
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr ""
@@ -247,15 +231,8 @@ msgstr ""
 msgid "Columbia"
 msgstr ""
 
-#: functions.inc.php:493
-msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
-msgstr ""
-
-#: functions.inc.php:493
-msgid "Configure/Edit DAHDI Cards"
-msgstr ""
-
-#: dahdiconfig.i18n.php:4
+#: dahdiconfig.i18n.php:6
+#: dahdiconfig.i18n.php:10
 msgid "Connectivity"
 msgstr ""
 
@@ -307,55 +284,32 @@ msgstr ""
 msgid "D-Channel"
 msgstr ""
 
-#: functions.inc.php:462
-msgid "DAHDI Trunks"
+#: Dahdiconfig.class.php:39
+#: Dahdiconfig.class.php:84
+msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: dahdiconfig.i18n.php:3
-#: dahdiconfig.i18n.php:5
+#: dahdiconfig.i18n.php:4
+#: dahdiconfig.i18n.php:8
 msgid "DAHDi Config"
 msgstr ""
 
-#: dahdiconfig.i18n.php:6
-#: dahdiconfig.i18n.php:7
-#: dahdiconfig.i18n.php:8
-#: dahdiconfig.i18n.php:9
-#: dahdiconfig.i18n.php:10
-#: dahdiconfig.i18n.php:11
-#: dahdiconfig.i18n.php:12
-msgid "DAHDi Configuration Module"
-msgstr ""
-
-#: dahdiconfig.i18n.php:15
-msgid "DAHDi Executable Location"
-msgstr ""
-
-#: dahdiconfig.i18n.php:26
-msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+#: Dahdiconfig.class.php:72
+#: Dahdiconfig.class.php:117
+#, php-format
+msgid "DAHDi Failed: %s"
 msgstr ""
 
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: dahdiconfig.i18n.php:18
-msgid "DAHDi Modules Location"
+#: Dahdiconfig.class.php:70
+msgid "DAHDi Started"
 msgstr ""
 
-#: dahdiconfig.i18n.php:28
-msgid "DAHDi Modules Location (/etc/dahdi/modules)"
-msgstr ""
-
-#: dahdiconfig.i18n.php:27
-msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
-msgstr ""
-
-#: dahdiconfig.i18n.php:23
-msgid ""
-"DAHDi trunk configuration is normally done using groups for PRI "
-"configuration. If there is a need to configure trunks to specific channels, "
-"setting this to true will allow each channel to be configured. This can be "
-"useful when troubleshooting a PRI and trying to isolate a bad B Channel."
+#: Dahdiconfig.class.php:115
+msgid "DAHDi Stopped"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:271
@@ -382,7 +336,7 @@ msgstr ""
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:536
 msgid "Device Options"
 msgstr ""
 
@@ -393,10 +347,6 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:1
 msgid "Digital Hardware"
-msgstr ""
-
-#: dahdiconfig.i18n.php:14
-msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
 #: views/dahdi_global_settings.php:16
@@ -842,10 +792,6 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: dahdiconfig.i18n.php:25
-msgid "Location of the DAHDi Executable"
-msgstr ""
-
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -907,10 +853,6 @@ msgstr ""
 #: install.php:346
 #, php-format
 msgid "Migrating module %s from serialized data to json"
-msgstr ""
-
-#: dahdiconfig.i18n.php:16
-msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:23
@@ -1013,11 +955,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:482
-msgid "No Available Groups or Channels"
-msgstr ""
-
-#: functions.inc.php:544
+#: functions.inc.php:568
 msgid "No Unused DAHDi Channels Available"
 msgstr ""
 
@@ -1271,10 +1209,6 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:19
-msgid "Software EC"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:37
 #: views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
@@ -1445,6 +1379,22 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
+#: Dahdiconfig.class.php:68
+msgid "Starting DAHDi for Digium Cards"
+msgstr ""
+
+#: Dahdiconfig.class.php:57
+msgid "Starting Wanrouter for Sangoma Cards"
+msgstr ""
+
+#: Dahdiconfig.class.php:113
+msgid "Stopping DAHDi for Digium Cards"
+msgstr ""
+
+#: Dahdiconfig.class.php:102
+msgid "Stopping Wanrouter for Sangoma Cards"
+msgstr ""
+
 #: views/dahdi_global_settings.php:127
 msgid "Support call forward variable"
 msgstr ""
@@ -1505,10 +1455,6 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
-#: dahdiconfig.i18n.php:17
-msgid "System Configuration File Location"
-msgstr ""
-
 #: views/dahdi_modprobe_settings.php:276
 msgid "T1"
 msgstr ""
@@ -1557,12 +1503,6 @@ msgstr ""
 msgid ""
 "The values are in db (decibels). A positive number increases the volume "
 "level on a channel, and a negative value decreases volume level"
-msgstr ""
-
-#: functions.inc.php:482
-msgid ""
-"There are no DAHDI Groups or Channels available to be configured. Check the "
-"DAHDI module (linked below) to configure any un-used cards"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:4
@@ -1697,6 +1637,20 @@ msgstr ""
 msgid "WARNING"
 msgstr ""
 
+#: Dahdiconfig.class.php:61
+#: Dahdiconfig.class.php:106
+#, php-format
+msgid "Wanrouter Failed: %s"
+msgstr ""
+
+#: Dahdiconfig.class.php:59
+msgid "Wanrouter Started"
+msgstr ""
+
+#: Dahdiconfig.class.php:104
+msgid "Wanrouter Stopped"
+msgstr ""
+
 #: views/dahdi_global_settings.php:77
 msgid ""
 "Whether or not to enable call waiting on internal extensions. With this set "
@@ -1758,10 +1712,6 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:186
 msgid "none - Performs no detection "
-msgstr ""
-
-#: dahdiconfig.i18n.php:29
-msgid "software EC to use in system.conf"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:126

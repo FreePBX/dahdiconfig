@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.1</version>
+	<version>13.0.1alpha1</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 		<changelog>
+			*13.0.1alpha1* Use new console framework for startup
 			*2.11.47* Visual Cleanup
 			*2.11.46* Attempt to fix some errors in javascript
 			*2.11.45* Fix all the bugs. Yes I am trying! Also allow resetting of groups if needed per span (FREEPBX-7381) and FREEPBX-7051

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-25 14:20+1000\n"
-"PO-Revision-Date: 2015-03-31 06:34+0200\n"
-"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"PO-Revision-Date: 2015-04-02 08:59+0200\n"
+"Last-Translator: Daver Jorge <daverjorge46@gmail.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
 "Language: es_ES\n"
@@ -154,12 +154,12 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:64 views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
-msgstr "Bahrain"
+msgstr "Bahrein"
 
 #: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48
 msgid "Belgium"
-msgstr "Belgium"
+msgstr "Bélgica"
 
 #: views/dahdi_advanced_settings.php:152 views/dahdi_modprobe_settings.php:145
 msgid "Boostringer"
@@ -197,7 +197,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
-msgstr "Canada"
+msgstr "Canadá"
 
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
@@ -266,7 +266,7 @@ msgstr "Creando Tabla de Configuración Avanzada Dahdi"
 
 #: install.php:117
 msgid "Creating Dahdi Analog Table"
-msgstr "Crear Tabla Análoga Dahdi"
+msgstr "Crear Tabla Analógica Dahdi"
 
 #: install.php:74
 msgid "Creating Dahdi Spans Table"
@@ -282,19 +282,19 @@ msgstr "Croacia"
 
 #: views/dahdi_advanced_settings.php:73 views/dahdi_modprobe_settings.php:56
 msgid "Cyrpus"
-msgstr "Cyrpus"
+msgstr "Chipre"
 
 #: views/dahdi_advanced_settings.php:74 views/dahdi_modprobe_settings.php:57
 msgid "Czech"
-msgstr "Czech"
+msgstr "Checo"
 
 #: views/dahdi_advanced_settings.php:45
 msgid "Czech Republic"
-msgstr "Czech Republic"
+msgstr "República Checa"
 
 #: views/dahdi_digital_hardware.php:10
 msgid "D-Channel"
-msgstr "D-Channel"
+msgstr "Canal-D"
 
 #: functions.inc.php:462
 msgid "DAHDI Trunks"

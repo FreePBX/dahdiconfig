@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-25 14:20+1000\n"
-"PO-Revision-Date: 2015-04-02 08:59+0200\n"
-"Last-Translator: Daver Jorge <daverjorge46@gmail.com>\n"
+"PO-Revision-Date: 2015-04-15 09:48+0200\n"
+"Last-Translator: Daver <daverjorge46@gmail.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
 "Language: es_ES\n"
@@ -585,7 +585,7 @@ msgstr "German"
 #: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
-msgstr "Germany"
+msgstr "Alemania"
 
 #: views/dahdi_global_settings.php:3
 msgid "Global Settings"
@@ -594,7 +594,7 @@ msgstr "Configuración Global"
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
 msgid "Greece"
-msgstr "Greece"
+msgstr "Grecia"
 
 #: views/dahdi_global_settings.php:23
 msgid "Greek"
@@ -672,11 +672,11 @@ msgstr "Hungarian"
 #: views/dahdi_advanced_settings.php:34 views/dahdi_advanced_settings.php:86
 #: views/dahdi_modprobe_settings.php:69
 msgid "Hungary"
-msgstr "Hungary"
+msgstr "Húngaro"
 
 #: views/dahdi_advanced_settings.php:87 views/dahdi_modprobe_settings.php:70
 msgid "Iceland"
-msgstr "Iceland"
+msgstr "Islandia"
 
 #: views/dahdi_global_settings.php:54
 msgid ""
@@ -750,7 +750,7 @@ msgstr "Inserción de datos antiguos de Dahdi Tabla avanzada"
 
 #: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
 msgid "Ireland"
-msgstr "Ireland"
+msgstr "Irlanda"
 
 #: views/dahdi_advanced_settings.php:32 views/dahdi_advanced_settings.php:91
 #: views/dahdi_modprobe_settings.php:74
@@ -768,7 +768,7 @@ msgstr "Italian"
 #: views/dahdi_advanced_settings.php:24 views/dahdi_advanced_settings.php:92
 #: views/dahdi_modprobe_settings.php:75
 msgid "Italy"
-msgstr "Italy"
+msgstr "Italia"
 
 #: views/dahdi_advanced_settings.php:20 views/dahdi_advanced_settings.php:93
 #: views/dahdi_modprobe_settings.php:76

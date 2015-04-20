@@ -23,8 +23,7 @@ msgstr ""
 "POT-Creation-Date: 2015-03-09 19:51-0400\n"
 "PO-Revision-Date: 2014-07-22 15:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/"
-"dahdiconfig/bg/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dahdiconfig/bg/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -42,9 +41,7 @@ msgid "..Done"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:29
-msgid ""
-"A group ID number to associate this analog device with when referencing it "
-"elswhere using g<num>"
+msgid "A group ID number to associate this analog device with when referencing it elswhere using g<num>"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:136 views/dahdi_modprobe_settings.php:121
@@ -518,10 +515,7 @@ msgid "General Settings"
 msgstr ""
 
 #: views/dahdi_global_settings.php:161
-msgid ""
-"Generally, it is not necessary (and in fact undesirable) to echo cancel when "
-"the circuit path is entirely TDM.  You may, however, change this behavior by "
-"enabling the echo canceler during pure TDM bridging below"
+msgid "Generally, it is not necessary (and in fact undesirable) to echo cancel when the circuit path is entirely TDM.  You may, however, change this behavior by enabling the echo canceler during pure TDM bridging below"
 msgstr ""
 
 #: views/dahdi_global_settings.php:17
@@ -592,17 +586,11 @@ msgid "Hoth Noise"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:229
-msgid ""
-"Hoth Noise - This setting causes the NLP to inject a low-end Gaussian noise "
-"with a frequency spectrum similar to voice. For users in normal "
-"environments, Hoth Noise may be acceptable"
+msgid "Hoth Noise - This setting causes the NLP to inject a low-end Gaussian noise with a frequency spectrum similar to voice. For users in normal environments, Hoth Noise may be acceptable"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:211
-msgid ""
-"Hoth Noise - This setting causes the NLP to inject a low-end Gaussian noise "
-"with a frequency spectrum similar to voice. For users in normal "
-"environments, Hoth Noise may be acceptable."
+msgid "Hoth Noise - This setting causes the NLP to inject a low-end Gaussian noise with a frequency spectrum similar to voice. For users in normal environments, Hoth Noise may be acceptable."
 msgstr ""
 
 #: views/dahdi_global_settings.php:28
@@ -619,12 +607,7 @@ msgid "Iceland"
 msgstr ""
 
 #: views/dahdi_global_settings.php:54
-msgid ""
-"If busydetect is enabled, it is also possible to specify how many busy tones "
-"to wait for before hanging up.  The default is 3, but it might be safer to "
-"set to 6 or even 8.  Mind that the higher the number, the more time that "
-"will be needed to hangup a channel, but lowers the probability that you will "
-"get random hangups"
+msgid "If busydetect is enabled, it is also possible to specify how many busy tones to wait for before hanging up.  The default is 3, but it might be safer to set to 6 or even 8.  Mind that the higher the number, the more time that will be needed to hangup a channel, but lowers the probability that you will get random hangups"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:23
@@ -640,20 +623,11 @@ msgid "In G.729 mode it'll run 120 channels"
 msgstr ""
 
 #: views/dahdi_global_settings.php:174
-msgid ""
-"In some cases this option can make echo worse!  If you are trying to debug "
-"an echo problem, it is worth checking to see if your echo is better with the "
-"option set to yes or no.  Use whatever setting gives the best results"
+msgid "In some cases this option can make echo worse!  If you are trying to debug an echo problem, it is worth checking to see if your echo is better with the option set to yes or no.  Use whatever setting gives the best results"
 msgstr ""
 
 #: views/dahdi_global_settings.php:172
-msgid ""
-"In some cases, the echo canceller doesn't train quickly enough and there is "
-"echo at the beginning of the call.  Enabling echo training will cause DAHDI "
-"to briefly mute the channel, send an impulse, and use the impulse response "
-"to pre-train the echo canceller so it can start out with a much closer idea "
-"of the actual echo.  Value may be \"yes\", \"no\", or a number of "
-"milliseconds to delay before training (default = 400)"
+msgid "In some cases, the echo canceller doesn't train quickly enough and there is echo at the beginning of the call.  Enabling echo training will cause DAHDI to briefly mute the channel, send an impulse, and use the impulse response to pre-train the echo canceller so it can start out with a much closer idea of the actual echo.  Value may be \"yes\", \"no\", or a number of milliseconds to delay before training (default = 400)"
 msgstr ""
 
 #: views/dahdi_global_settings.php:201
@@ -718,14 +692,7 @@ msgid "Kewl Start"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:17
-msgid ""
-"Kewl Start - Coined term for an extension of loop start (FXO and FXS) "
-"signaling which adds disconnect supervision through the use of an open "
-"switching interval (OSI). In addition to the operation afforded by loop "
-"start, the CO (central office) signals the terminal (user) end that the "
-"distant party has hung up. The CO switch will remove battery voltage from "
-"the loop for about 250 ms, within 6 seconds after the far-end party "
-"disconnects."
+msgid "Kewl Start - Coined term for an extension of loop start (FXO and FXS) signaling which adds disconnect supervision through the use of an open switching interval (OSI). In addition to the operation afforded by loop start, the CO (central office) signals the terminal (user) end that the distant party has hung up. The CO switch will remove battery voltage from the loop for about 250 ms, within 6 seconds after the far-end party disconnects."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:96 views/dahdi_modprobe_settings.php:79
@@ -754,15 +721,7 @@ msgid "Loop Start"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:18
-msgid ""
-"Loop Start - When idle, or on-hook, the loop potential is held a nominal 48V "
-"DC, provided by the telephone exchange or a foreign exchange station (FXS) "
-"interface. When a terminal initiates use the line, it causes current to flow "
-"by closing the loop, and this signals the FXS end to provide dial tone on "
-"the line and to expect dial signals, in form of DTMF digits or dial pulses, "
-"or a hook flash. When the loop is opened and current stops flowing, the "
-"subscriber equipment signals that it has finished using the line; the "
-"telephone exchange resets the line to an idle state."
+msgid "Loop Start - When idle, or on-hook, the loop potential is held a nominal 48V DC, provided by the telephone exchange or a foreign exchange station (FXS) interface. When a terminal initiates use the line, it causes current to flow by closing the loop, and this signals the FXS end to provide dial tone on the line and to expect dial signals, in form of DTMF digits or dial pulses, or a hook flash. When the loop is opened and current stops flowing, the subscriber equipment signals that it has finished using the line; the telephone exchange resets the line to an idle state."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:168 views/dahdi_modprobe_settings.php:169
@@ -829,17 +788,11 @@ msgid "Mute"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:227
-msgid ""
-"Mute - This setting causes the NLP to mute inbound audio streams while a "
-"user connected to Asterisk is speaking. For users in quiet environments, "
-"Mute may be acceptable"
+msgid "Mute - This setting causes the NLP to mute inbound audio streams while a user connected to Asterisk is speaking. For users in quiet environments, Mute may be acceptable"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:209
-msgid ""
-"Mute - This setting causes the NLP to mute inbound audio streams while a "
-"user connected to Asterisk is speaking. For users in quiet environments, "
-"Mute may be acceptable."
+msgid "Mute - This setting causes the NLP to mute inbound audio streams while a user connected to Asterisk is speaking. For users in quiet environments, Mute may be acceptable."
 msgstr ""
 
 #: views/dahdi_digital_hardware.php:25
@@ -902,17 +855,11 @@ msgid "None"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:226
-msgid ""
-"None - This setting disables NLP processing and is not a recommended "
-"setting. Under most circumstances, choos- ing None will cause some residual "
-"echo"
+msgid "None - This setting disables NLP processing and is not a recommended setting. Under most circumstances, choos- ing None will cause some residual echo"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:208
-msgid ""
-"None - This setting disables NLP processing and is not a recommended "
-"setting. Under most circumstances, choos- ing None will cause some residual "
-"echo."
+msgid "None - This setting disables NLP processing and is not a recommended setting. Under most circumstances, choos- ing None will cause some residual echo."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
@@ -935,12 +882,7 @@ msgid "Not Yet Defined"
 msgstr ""
 
 #: views/dahdi_global_settings.php:150
-msgid ""
-"Note that if any of your DAHDI cards have hardware echo cancelers, then this "
-"setting only turns them on and off. There are no special settings required "
-"for hardware echo cancelers; when present and enabled in their kernel "
-"modules, they take precedence over the software echo canceler compiled into "
-"DAHDI automatically"
+msgid "Note that if any of your DAHDI cards have hardware echo cancelers, then this setting only turns them on and off. There are no special settings required for hardware echo cancelers; when present and enabled in their kernel modules, they take precedence over the software echo canceler compiled into DAHDI automatically"
 msgstr ""
 
 #: views/dahdi_global_settings.php:176
@@ -948,9 +890,7 @@ msgid "Note that these parameters do not apply to hardware echo cancellers"
 msgstr ""
 
 #: views/dahdi_global_settings.php:185
-msgid ""
-"Note: If yes the dialplan execution will always start at extension 's' "
-"priority 1 regardless of the dialed number!"
+msgid "Note: If yes the dialplan execution will always start at extension 's' priority 1 regardless of the dialed number!"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:109 views/dahdi_modprobe_settings.php:92
@@ -958,10 +898,7 @@ msgid "Oman"
 msgstr ""
 
 #: views/dahdi_global_settings.php:43
-msgid ""
-"On trunk interfaces (FXS) and E&M interfaces (E&M, Wink, Feature Group D "
-"etc) it can be useful to perform busy detection either in an effort to "
-"detect hangup or for detecting busies"
+msgid "On trunk interfaces (FXS) and E&M interfaces (E&M, Wink, Feature Group D etc) it can be useful to perform busy detection either in an effort to detect hangup or for detecting busies"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
@@ -1003,9 +940,7 @@ msgid "Please change permissions on %s"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:11
-msgid ""
-"Please choose your country or your nearest neighboring country for default "
-"Tones (Ex: dialtone, busy tone, ring tone etc.)"
+msgid "Please choose your country or your nearest neighboring country for default Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
 #: includes/dahdi_cards.class.php:128
@@ -1050,17 +985,11 @@ msgid "Random Noise"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:228
-msgid ""
-"Random Noise - This setting causes the NLP to inject random noise to mask "
-"the echo reflection. For users in normal environments, Random Noise may be "
-"acceptable"
+msgid "Random Noise - This setting causes the NLP to inject random noise to mask the echo reflection. For users in normal environments, Random Noise may be acceptable"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:210
-msgid ""
-"Random Noise - This setting causes the NLP to inject random noise to mask "
-"the echo reflection. For users in normal environments, Random Noise may be "
-"acceptable."
+msgid "Random Noise - This setting causes the NLP to inject random noise to mask the echo reflection. For users in normal environments, Random Noise may be acceptable."
 msgstr ""
 
 #: views/dahdi_global_settings.php:209
@@ -1148,32 +1077,15 @@ msgid "Spanish"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
-msgid ""
-"Specify the On Hook Speed, Ringer Impedance, Ringer Threshold, Current "
-"limiting, Tip/Ring voltage adjustment, Minimum Operational Loop current, and "
-"AC Impedance selection as predefined for each countries' analog line "
-"characteristics. Select the country in which your Asterisk server is "
-"operating. FCC is equivalent to United States. TBR21 is equivalent to "
-"Austria, Belgium, Denmark, Finland, France, Germany, Greece, Iceland, "
-"Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain, Sweden, "
-"Switzerland, and the United Kingdom. If no choice is specified, the default "
-"is FCC"
+msgid "Specify the On Hook Speed, Ringer Impedance, Ringer Threshold, Current limiting, Tip/Ring voltage adjustment, Minimum Operational Loop current, and AC Impedance selection as predefined for each countries' analog line characteristics. Select the country in which your Asterisk server is operating. FCC is equivalent to United States. TBR21 is equivalent to Austria, Belgium, Denmark, Finland, France, Germany, Greece, Iceland, Ireland, Italy, Luxembourg, Netherlands, Norway, Portugal, Spain, Sweden, Switzerland, and the United Kingdom. If no choice is specified, the default is FCC"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:121
-msgid ""
-"Specify the audio compression scheme (codec) to be used for analog lines. "
-"North American users should choose ulaw. All other countries, unless "
-"otherwise known, should be assumed to be alaw. If no choice is specified, "
-"the default is ulaw. Confirm the scheme which will be best for operation"
+msgid "Specify the audio compression scheme (codec) to be used for analog lines. North American users should choose ulaw. All other countries, unless otherwise known, should be assumed to be alaw. If no choice is specified, the default is ulaw. Confirm the scheme which will be best for operation"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:136
-msgid ""
-"Specify the audio compression scheme (codec) to be used for analog lines. "
-"North American users should choose ulaw. All other countries, unless "
-"otherwise known, should be assumed to be alaw. If no choice is specified, "
-"the default is ulaw. Confirm the scheme which will be best for operation."
+msgid "Specify the audio compression scheme (codec) to be used for analog lines. North American users should choose ulaw. All other countries, unless otherwise known, should be assumed to be alaw. If no choice is specified, the default is ulaw. Confirm the scheme which will be best for operation."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:9
@@ -1189,96 +1101,51 @@ msgid "Specify the language"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
-msgid ""
-"Specify the type of Message Waiting Indicator detection to be done on FXO "
-"ports. If no choice is specified, the default is none. The following options "
-"are available"
+msgid "Specify the type of Message Waiting Indicator detection to be done on FXO ports. If no choice is specified, the default is none. The following options are available"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:145
-msgid ""
-"Specify the voltage used for ringing an analog phone. Normal will set the "
-"ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is "
-"specified, the default is normal"
+msgid "Specify the voltage used for ringing an analog phone. Normal will set the ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is specified, the default is normal"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:152
-msgid ""
-"Specify the voltage used for ringing an analog phone. Normal will set the "
-"ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is "
-"specified, the default is normal."
+msgid "Specify the voltage used for ringing an analog phone. Normal will set the ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is specified, the default is normal."
 msgstr ""
 
 #: views/dahdi_global_settings.php:184
-msgid ""
-"Specify whether the channel should be answered immediately or if the simple "
-"switch should provide dialtone, read digits, etc"
+msgid "Specify whether the channel should be answered immediately or if the simple switch should provide dialtone, read digits, etc"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:157
-msgid ""
-"Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) "
-"(commonly used in conjunction with the Low Power option) increases the "
-"ringing speed to 25Hz. If no choice is specified, the default is normal"
+msgid "Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) (commonly used in conjunction with the Low Power option) increases the ringing speed to 25Hz. If no choice is specified, the default is normal"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:160
-msgid ""
-"Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) "
-"(commonly used in conjunction with the Low Power option) increases the "
-"ringing speed to 25Hz. If no choice is specified, the default is normal."
+msgid "Specify whether to apply Fast Ringer operation. Setting Fast Ringer (25Hz) (commonly used in conjunction with the Low Power option) increases the ringing speed to 25Hz. If no choice is specified, the default is normal."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:169
-msgid ""
-"Specify whether to apply Low Power operation. Setting Fast Ringer to 50V "
-"peak in conjunction with the Fast Ringer option increases the peak voltage "
-"during Fast Ringer operation to 50V. If no choice is specified, the default "
-"is normal"
+msgid "Specify whether to apply Low Power operation. Setting Fast Ringer to 50V peak in conjunction with the Fast Ringer option increases the peak voltage during Fast Ringer operation to 50V. If no choice is specified, the default is normal"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:168
-msgid ""
-"Specify whether to apply Low Power operation. Setting Fast Ringer to 50V "
-"peak in conjunction with the Fast Ringer option increases the peak voltage "
-"during Fast Ringer operation to 50V. If no choice is specified, the default "
-"is normal."
+msgid "Specify whether to apply Low Power operation. Setting Fast Ringer to 50V peak in conjunction with the Fast Ringer option increases the peak voltage during Fast Ringer operation to 50V. If no choice is specified, the default is normal."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:181
-msgid ""
-"Specify whether to apply normal ring detection, or a full wave detection to "
-"prevent false ring detection for lines where CallerID is sent before the "
-"first ring and proceeded by a polarity reversal (as in the United Kingdom). "
-"If you are experiencing trouble with detecting CallerID from analog service "
-"providers, or have lines which exhibit a polarity reversal before CallerID "
-"is transmitted from the provider, then select Full Wave. If no choice is "
-"specified, the default is standard"
+msgid "Specify whether to apply normal ring detection, or a full wave detection to prevent false ring detection for lines where CallerID is sent before the first ring and proceeded by a polarity reversal (as in the United Kingdom). If you are experiencing trouble with detecting CallerID from analog service providers, or have lines which exhibit a polarity reversal before CallerID is transmitted from the provider, then select Full Wave. If no choice is specified, the default is standard"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:176
-msgid ""
-"Specify whether to apply normal ring detection, or a full wave detection to "
-"prevent false ring detection for lines where CallerID is sent before the "
-"first ring and proceeded by a polarity reversal (as in the United Kingdom). "
-"If you are experiencing trouble with detecting CallerID from analog service "
-"providers, or have lines which exhibit a polarity reversal before CallerID "
-"is transmitted from the provider, then select Full Wave. If no choice is "
-"specified, the default is standard."
+msgid "Specify whether to apply normal ring detection, or a full wave detection to prevent false ring detection for lines where CallerID is sent before the first ring and proceeded by a polarity reversal (as in the United Kingdom). If you are experiencing trouble with detecting CallerID from analog service providers, or have lines which exhibit a polarity reversal before CallerID is transmitted from the provider, then select Full Wave. If no choice is specified, the default is standard."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:133
-msgid ""
-"Specify whether to apply the opermode setting to your FXO modules only, or "
-"to both FXS and FXO modules. If no choice is specified, the default is apply "
-"opermode to fxo modules only"
+msgid "Specify whether to apply the opermode setting to your FXO modules only, or to both FXS and FXO modules. If no choice is specified, the default is apply opermode to fxo modules only"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:144
-msgid ""
-"Specify whether to apply the opermode setting to your FXO modules only, or "
-"to both FXS and FXO modules. If no choice is specified, the default is apply "
-"opermode to fxo modules only."
+msgid "Specify whether to apply the opermode setting to your FXO modules only, or to both FXS and FXO modules. If no choice is specified, the default is apply opermode to fxo modules only."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:179 views/dahdi_modprobe_settings.php:186
@@ -1322,21 +1189,11 @@ msgid "Suppression NLP (default)"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:230
-msgid ""
-"Suppression NLP - This setting causes the NLP to suppress echo reflections "
-"by reducing the amplitude of their volume. Suppression may be used in "
-"combination with the Echo cancellation NLP Max Suppression option. For users "
-"in loud environments, Suppression NLP may be the best option. This is the "
-"default setting for the Echo Cancellation NLP Type option"
+msgid "Suppression NLP - This setting causes the NLP to suppress echo reflections by reducing the amplitude of their volume. Suppression may be used in combination with the Echo cancellation NLP Max Suppression option. For users in loud environments, Suppression NLP may be the best option. This is the default setting for the Echo Cancellation NLP Type option"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:212
-msgid ""
-"Suppression NLP - This setting causes the NLP to suppress echo reflections "
-"by reducing the amplitude of their volume. Suppression may be used in "
-"combination with the Echo cancellation NLP Max Suppression option. For users "
-"in loud environments, Suppression NLP may be the best option. This is the "
-"default setting for the Echo Cancellation NLP Type option."
+msgid "Suppression NLP - This setting causes the NLP to suppress echo reflections by reducing the amplitude of their volume. Suppression may be used in combination with the Echo cancellation NLP Max Suppression option. For users in loud environments, Suppression NLP may be the best option. This is the default setting for the Echo Cancellation NLP Type option."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:29 views/dahdi_advanced_settings.php:124
@@ -1384,23 +1241,11 @@ msgid "The context to use for inbound calls to this analog device"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:271
-msgid ""
-"The recommended way to set line mode on your Digium 1-, 2-, and 4-port "
-"(span) digital telephony cards is to set the jumper(s) on the card for "
-"either T1 or E1 mode for each span on the card. With the jumper off, the "
-"span is ready for T1 mode; with the jumper on, the span is ready for E1 "
-"mode. For more details about the jumpers, see the user manual for the "
-"single, dual, or quad span digital cards.<br/>However, sometimes a card will "
-"have been installed in a server without first setting the jumper(s) "
-"correctly, and it may be inconvenient to remove the card from the server to "
-"access its jumper(s).  In this case, the \"default_linemode\" option can be "
-"passed when the card's device driver is loaded"
+msgid "The recommended way to set line mode on your Digium 1-, 2-, and 4-port (span) digital telephony cards is to set the jumper(s) on the card for either T1 or E1 mode for each span on the card. With the jumper off, the span is ready for T1 mode; with the jumper on, the span is ready for E1 mode. For more details about the jumpers, see the user manual for the single, dual, or quad span digital cards.<br/>However, sometimes a card will have been installed in a server without first setting the jumper(s) correctly, and it may be inconvenient to remove the card from the server to access its jumper(s).  In this case, the \"default_linemode\" option can be passed when the card's device driver is loaded"
 msgstr ""
 
 #: views/dahdi_global_settings.php:209 views/dahdi_global_settings.php:217
-msgid ""
-"The values are in db (decibels). A positive number increases the volume "
-"level on a channel, and a negative value decreases volume level"
+msgid "The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:4
@@ -1422,58 +1267,31 @@ msgid "This enables listening for the beep-beep busy pattern"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:246
-msgid ""
-"This option allows you to specify the threshold, in dB difference between "
-"the received audio (post echo cancellation) and the transmitted audio, for "
-"when the NLP will engage (VPMADT032 only). The default setting is 24 dB"
+msgid "This option allows you to specify the threshold, in dB difference between the received audio (post echo cancellation) and the transmitted audio, for when the NLP will engage (VPMADT032 only). The default setting is 24 dB"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:224
-msgid ""
-"This option allows you to specify the threshold, in dB difference between "
-"the received audio (post echo cancellation) and the transmitted audio, for "
-"when the NLP will engage (VPMADT032 only). The default setting is 24 dB."
+msgid "This option allows you to specify the threshold, in dB difference between the received audio (post echo cancellation) and the transmitted audio, for when the NLP will engage (VPMADT032 only). The default setting is 24 dB."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:206 views/dahdi_modprobe_settings.php:224
-msgid ""
-"This option allows you to specify the type of Non Linear Processor you want "
-"applied to the post echo-cancelled audio reflections received from analog "
-"connections (VPMADT032 only). There are several options"
+msgid "This option allows you to specify the type of Non Linear Processor you want applied to the post echo-cancelled audio reflections received from analog connections (VPMADT032 only). There are several options"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15
-msgid ""
-"This option allows you to specify the type signaling for this analog device."
+msgid "This option allows you to specify the type signaling for this analog device."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:258
-msgid ""
-"This option, only functional when the Echo Cancellation NLP Type option is "
-"set to Suppression NLP, specifies the maximum amount of dB that the NLP "
-"should attenuate the residual echo (VPMADT032 only). Lower numbers mean that "
-"the NLP will provide less suppression (the residual echo will sound louder). "
-"Higher numbers, especially those approaching or equaling the Echo "
-"Cancellation NLP Threshold option, will nearly mute the residual echo. The "
-"default setting is 24 dB"
+msgid "This option, only functional when the Echo Cancellation NLP Type option is set to Suppression NLP, specifies the maximum amount of dB that the NLP should attenuate the residual echo (VPMADT032 only). Lower numbers mean that the NLP will provide less suppression (the residual echo will sound louder). Higher numbers, especially those approaching or equaling the Echo Cancellation NLP Threshold option, will nearly mute the residual echo. The default setting is 24 dB"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:228
-msgid ""
-"This option, only functional when the Echo Cancellation NLP Type option is "
-"set to Suppression NLP, specifies the maximum amount of dB that the NLP "
-"should attenuate the residual echo (VPMADT032 only). Lower numbers mean that "
-"the NLP will provide less suppression (the residual echo will sound louder). "
-"Higher numbers, especially those approaching or equaling the Echo "
-"Cancellation NLP Threshold option, will nearly mute the residual echo. The "
-"default setting is 24 dB."
+msgid "This option, only functional when the Echo Cancellation NLP Type option is set to Suppression NLP, specifies the maximum amount of dB that the NLP should attenuate the residual echo (VPMADT032 only). Lower numbers mean that the NLP will provide less suppression (the residual echo will sound louder). Higher numbers, especially those approaching or equaling the Echo Cancellation NLP Threshold option, will nearly mute the residual echo. The default setting is 24 dB."
 msgstr ""
 
 #: views/dahdi_global_settings.php:116
-msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+msgid "This setting must be enabled on both ports involved, and the \"facilityenable\" setting must also be enabled to allow sending the transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:11
@@ -1544,17 +1362,11 @@ msgid "Wanrouter Stopped"
 msgstr ""
 
 #: views/dahdi_global_settings.php:77
-msgid ""
-"Whether or not to enable call waiting on internal extensions. With this set "
-"to \"yes\", busy extensions will hear the call-waiting tone, and can use "
-"hook-flash to switch between callers. The Dial() app will not return the "
-"\"BUSY\" result for extensions."
+msgid "Whether or not to enable call waiting on internal extensions. With this set to \"yes\", busy extensions will hear the call-waiting tone, and can use hook-flash to switch between callers. The Dial() app will not return the \"BUSY\" result for extensions."
 msgstr ""
 
 #: views/dahdi_global_settings.php:138
-msgid ""
-"Whether or not to support Call Return (*69, if your dialplan doesn't catch "
-"this first)"
+msgid "Whether or not to support Call Return (*69, if your dialplan doesn't catch this first)"
 msgstr ""
 
 #: views/dahdi_global_settings.php:66
@@ -1562,9 +1374,7 @@ msgid "Whether or not to use caller ID"
 msgstr ""
 
 #: views/dahdi_global_settings.php:88
-msgid ""
-"Whether or not to use the caller ID presentation for the outgoing call that "
-"the calling switch is sending"
+msgid "Whether or not to use the caller ID presentation for the outgoing call that the calling switch is sending"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:132 views/dahdi_modprobe_settings.php:115
@@ -1602,6 +1412,176 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
+msgstr ""
+
+#: dahdiconfig.i18n.php:12
+msgid "Allow PRI Discrete Channels"
+msgstr ""
+
+#: functions.inc.php:462
+msgid "Available DAHDI Groups and Channels configued in the DAHDI Configuration Module"
+msgstr ""
+
+#: page.dahdi.php:184
+msgid "Because of this the module's configuration file write ability is disabled by default. You can enable it in this window or you can later enable it under Advanced Settings"
+msgstr ""
+
+#: dahdiconfig.i18n.php:28
+msgid "By default the DAHDi configuration module will NOT write out any data to protect any current configuration settings"
+msgstr ""
+
+#: functions.inc.php:493
+msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
+msgstr ""
+
+#: functions.inc.php:493
+msgid "Configure/Edit DAHDI Cards"
+msgstr ""
+
+#: dahdiconfig.i18n.php:14
+msgid "DAHDi Configuration Module"
+msgstr ""
+
+#: page.dahdi.php:22
+msgid "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below"
+msgstr ""
+
+#: dahdiconfig.i18n.php:18
+msgid "DAHDi Executable Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:32
+msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+msgstr ""
+
+#: dahdiconfig.i18n.php:22
+msgid "DAHDi Modules Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:24
+msgid "DAHDi Modules Location (/etc/dahdi/modules)"
+msgstr ""
+
+#: dahdiconfig.i18n.php:40
+msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
+msgstr ""
+
+#: page.dahdi.php:166
+msgid "DAHDi Write Disabled Disclaimer"
+msgstr ""
+
+#: page.dahdi.php:167
+msgid "DAHDi is DISABLED for writing"
+msgstr ""
+
+#: dahdiconfig.i18n.php:16
+msgid "DAHDi trunk configuration is normally done using groups for PRI configuration. If there is a need to configure trunks to specific channels, setting this to true will allow each channel to be configured. This can be useful when troubleshooting a PRI and trying to isolate a bad B Channel."
+msgstr ""
+
+#: page.dahdi.php:250
+msgid "Disable"
+msgstr ""
+
+#: dahdiconfig.i18n.php:26
+msgid "Disable DAHDi Configuration Writes"
+msgstr ""
+
+#: page.dahdi.php:245
+msgid "Enable"
+msgstr ""
+
+#: page.dahdi.php:146
+msgid "FXO Settings"
+msgstr ""
+
+#: page.dahdi.php:149
+msgid "FXS Settings"
+msgstr ""
+
+#: page.dahdi.php:177
+msgid "It is YOUR responsibility to backup all relevant files on your system!"
+msgstr ""
+
+#: dahdiconfig.i18n.php:20
+msgid "Location of the DAHDi Executable"
+msgstr ""
+
+#: dahdiconfig.i18n.php:30
+msgid "ModProbe.d Configuration File Location"
+msgstr ""
+
+#: page.dahdi.php:71 page.dahdi.php:115
+msgid "Module Settings"
+msgstr ""
+
+#: functions.inc.php:482
+msgid "No Available Groups or Channels"
+msgstr ""
+
+#: page.dahdi.php:31
+#, php-format
+msgid "Please Delete the System Generated %s"
+msgstr ""
+
+#: page.dahdi.php:160
+msgid "Reload Asterisk Dahdi Module"
+msgstr ""
+
+#: page.dahdi.php:449
+msgid "Reset File To Defaults"
+msgstr ""
+
+#: page.dahdi.php:162
+msgid "Restart Dahdi & Asterisk"
+msgstr ""
+
+#: page.dahdi.php:60
+msgid "Settings"
+msgstr ""
+
+#: dahdiconfig.i18n.php:34
+msgid "Software EC"
+msgstr ""
+
+#: dahdiconfig.i18n.php:38
+msgid "System Configuration File Location"
+msgstr ""
+
+#: page.dahdi.php:65 page.dahdi.php:109
+msgid "System Settings"
+msgstr ""
+
+#: page.dahdi.php:178
+#, php-format
+msgid "The %s team can NOT be held responsible if you enable this module and your trunks/cards suddenly stop working because your configurations have changed."
+msgstr ""
+
+#: functions.inc.php:482
+msgid "There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards"
+msgstr ""
+
+#: page.dahdi.php:187
+msgid "This message will re-appear everytime you load the module while it is in a disabled write state so as to not cause any confusion"
+msgstr ""
+
+#: page.dahdi.php:181
+msgid "This module should never be used alongside \"dahdi_genconfig\". Using \"dahdi_genconfig\" and this module at the same time can have unexpected consequences."
+msgstr ""
+
+#: page.dahdi.php:450
+msgid "This will reload the page"
+msgstr ""
+
+#: page.dahdi.php:169
+msgid "WARNING: When this module is \"enabled\" for writing it WILL overwrite the following files:"
+msgstr ""
+
+#: page.dahdi.php:40
+msgid "You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below."
+msgstr ""
+
+#: dahdiconfig.i18n.php:36
+msgid "software EC to use in system.conf"
 msgstr ""
 
 #~ msgid "DAHDI Trunks"

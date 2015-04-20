@@ -14,10 +14,12 @@ if (isset($_POST['restartamportal'])) {
 
 $dahdi_info = dahdiconfig_getinfo();
 $dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
+global $amp_conf;
+$brand = $amp_conf['DASHBOARD_FREEPBX_BRAND']?$amp_conf['DASHBOARD_FREEPBX_BRAND']:'FreePBX';
 
 //Check to make sure dahdi is running. Display an error if it's not
 if(!preg_match('/\d/i',$dahdi_info[1])) {
-    $dahdi_message = 'DAHDi Doesn\'t appear to be running. Click the \'Restart/Reload Dahdi Button\' Below';
+    $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below");
     include('views/dahdi_message_box.php');
     $dahdi_info[1] = '';
 }
@@ -26,7 +28,7 @@ if(!preg_match('/\d/i',$dahdi_info[1])) {
 if(!$amp_conf['DAHDIDISABLEWRITE'] && is_link('/etc/asterisk/chan_dahdi.conf') && (readlink('/etc/asterisk/chan_dahdi.conf') == dirname(__FILE__).'/etc/chan_dahdi.conf')) {
     if(!unlink('/etc/asterisk/chan_dahdi.conf')) {
         //If unlink fails then alert the user
-        $dahdi_message = 'Please Delete the System Generated /etc/asterisk/chan_dahdi.conf';
+        $dahdi_message = sprintf(_('Please Delete the System Generated %s'),"/etc/asterisk/chan_dahdi.conf");
         include('views/dahdi_message_box.php');
     }
 }
@@ -35,7 +37,7 @@ $dahdi_cards = new dahdi_cards();
 $error = array();
 
 if ($dahdi_cards->hdwr_changes()) {
-	$dahdi_message = 'You have new hardware! Please configure your new hardware using the Edit button(s). Then reload DAHDI with the button below.';
+	$dahdi_message = _('You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below.');
     include('views/dahdi_message_box.php');
     if(file_exists($amp_conf['ASTETCDIR'].'/chan_dahdi_groups.conf')) {
         global $astman;
@@ -55,18 +57,18 @@ if ($dahdi_cards->hdwr_changes()) {
   <!-- right side menu -->
   <div class="rnav">
     <ul>
-      <li style="text-decoration:underline"><strong>Settings</strong></li>
+      <li style="text-decoration:underline"><strong><?php echo _('Settings')?></strong></li>
       <li>
-        <a href="#" onclick="dahdi_modal_settings('global');">Global Settings</a>
+        <a href="#" onclick="dahdi_modal_settings('global');"><?php echo _('Global Settings')?></a>
       </li>
       <li>
-        <a href="#" onclick="dahdi_modal_settings('system');">System Settings</a>
+        <a href="#" onclick="dahdi_modal_settings('system');"><?php echo _('System Settings')?></a>
       </li>
       <li>
-        <a href="#" onclick="dahdi_modal_settings('modprobe');">Modprobe Settings</a>
+        <a href="#" onclick="dahdi_modal_settings('modprobe');"><?php echo _('Modprobe Settings')?></a>
       </li>
       <li>
-        <a href="#" onclick="dahdi_modal_settings('modules');">Module Settings</a>
+        <a href="#" onclick="dahdi_modal_settings('modules');"><?php echo _('Module Settings')?></a>
       </li>
       <?php
       foreach($dahdi_cards->modules as $mod_name => $module) {
@@ -101,16 +103,16 @@ if ($dahdi_cards->hdwr_changes()) {
 
        	</div>
 
-       	<div id="global-settings" title="Global Settings" style="display: none;">
+         <div id="global-settings" title="<?php echo _('Global Settings')?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_global_settings.php'; ?>
         </div>
-       	<div id="system-settings" title="System Settings" style="display: none;">
+       	<div id="system-settings" title="<?php echo _('System Settings')?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_system_settings.php'; ?>
         </div>
-       	<div id="modprobe-settings" title="Modprobe Settings" style="display: none;">
+       	<div id="modprobe-settings" title="<?php echo _('Modprobe Settings')?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_modprobe_settings.php'; ?>
         </div>
-       	<div id="modules-settings" title="Module Settings" style="display: none;">
+       	<div id="modules-settings" title="<?php echo _('Module Settings')?>" style="display: none;">
 			<?php $mods = $dahdi_cards->get_all_modules(); ?>
             <?php require dirname(__FILE__).'/views/dahdi_modules_settings.php'; ?>
         </div>
@@ -141,10 +143,10 @@ if ($dahdi_cards->hdwr_changes()) {
             <?php require dirname(__FILE__).'/views/dahdi_digital_settings.php'; ?>
         </div>
         <?php } ?>
-        <div id="analog-settings-fxo" title="FXO Settings" style="display: none;">
+        <div id="analog-settings-fxo" title="<?php echo _('FXO Settings')?>" style="display: none;">
             <?php $analog_type = 'fxo'; require dirname(__FILE__).'/views/dahdi_analog_settings.php'; ?>
         </div>
-        <div id="analog-settings-fxs" title="FXS Settings" style="display: none;">
+        <div id="analog-settings-fxs" title="<?php echo _('FXS Settings')?>" style="display: none;">
             <?php $analog_type = 'fxs'; require dirname(__FILE__).'/views/dahdi_analog_settings.php'; ?>
         </div>
 	<div id="digital_hardware">
@@ -155,16 +157,16 @@ if ($dahdi_cards->hdwr_changes()) {
 	</div>
 	<div class="btn_container">
 	    <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-    	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="Reload Asterisk Dahdi Module" />
+    	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="<?php echo _('Reload Asterisk Dahdi Module')?>" />
             <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
-            <input type="submit" id="restartamportal" name="restartamportal" value="Restart Dahdi &amp; Asterisk" />
+            <input type="submit" id="restartamportal" name="restartamportal" value="<?php echo _('Restart Dahdi & Asterisk')?>" />
             <?php } ?>
     	</form>
     </div>
-   	<div id="dahdi-write" title="DAHDi Write Disabled Disclaimer" style="display: none;">
-        <div style="text-align:center;color:red;font-weight:bold;">DAHDi is DISABLED for writing</div>
+   	<div id="dahdi-write" title="<?php echo _('DAHDi Write Disabled Disclaimer')?>" style="display: none;">
+        <div style="text-align:center;color:red;font-weight:bold;"><?php echo _('DAHDi is DISABLED for writing')?></div>
         <br/>
-        <strong>WARNING:</strong> When this module is 'enabled' for writing it <strong>WILL</strong> overwrite the following files:
+        <strong><?php echo _('WARNING: When this module is "enabled" for writing it WILL overwrite the following files:')?></strong>
         <ul>
             <li><?php echo $amp_conf['ASTETCDIR']?>/chan_dahdi_general.conf</li>
             <li><?php echo $amp_conf['ASTETCDIR']?>/chan_dahdi_groups.conf</li>
@@ -172,21 +174,17 @@ if ($dahdi_cards->hdwr_changes()) {
             <li><?php echo $amp_conf['DAHDISYSTEMLOC']?></li>
             <li><?php echo $amp_conf['DAHDIMODPROBELOC']?></li>
         </ul>
-        It is <strong>YOUR</strong> responsibility to backup all relevant files on your system!
-        We can <strong>NOT</strong> be held responsible if you enable this module and your trunks/cards suddenly
-        stop working because your configurations have changed.
+        <?php echo _('It is YOUR responsibility to backup all relevant files on your system!')?>
+        <?php echo sprintf(_("The %s team can NOT be held responsible if you enable this module and your trunks/cards suddenly stop working because your configurations have changed."),$brand)?>
         <br />
         <br />
-        This module should never be used alongside <i>dahdi_genconfig</i>. Using <i>dahdi_genconfig</i> and
-        this module at the same time can have unexpected consequences.
+        <?php echo _('This module should never be used alongside "dahdi_genconfig". Using "dahdi_genconfig" and this module at the same time can have unexpected consequences.')?>
         <br />
         <br />
-        Because of this the module's configuration file write ability is disabled by default. You can enable it in
-        this window or you can later enable it under '<a href="config.php?display=advancedsettings">Advanced Settings</a>'
+        <?php echo _("Because of this the module's configuration file write ability is disabled by default. You can enable it in this window or you can later enable it under Advanced Settings")?>
         <br/>
         <br/>
-        <i>This message will re-appear everytime you load the module while it is in a disabled write state so as to not
-        cause any confusion
+        <i><?php echo _("This message will re-appear everytime you load the module while it is in a disabled write state so as to not cause any confusion")?>
         </i>
     </div>
 <h5><?php echo trim($dahdi_info[1]);?></h5>
@@ -244,12 +242,12 @@ $(function(){
             width: 500,
             modal: true,
             buttons: {
-                "Enable": function() {
+                "<?php echo _('Enable')?>": function() {
                     $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{mode: 'enable', type: 'write'}, function(j){
                     });
                     $( this ).dialog( "close" );
                 },
-                "Disable": function() {
+                "<?php echo _('Disable')?>": function() {
                     $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{mode: 'disable', type: 'write'}, function(j){
                     });
                     $( this ).dialog( "close" );
@@ -283,13 +281,13 @@ $(function(){
         width: 500,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 $("#dahdi_editanalog_fxo").ajaxSubmit();
                 $("#reboot").fadeIn(3000).show();
                 toggle_reload_button('show');
                 $( this ).dialog( "close" );
             },
-            Cancel: function() {
+            <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -302,13 +300,13 @@ $(function(){
         width: 500,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 $("#dahdi_editanalog_fxs").ajaxSubmit();
                 $("#reboot").fadeIn(3000).show();
                 toggle_reload_button('show');
                 $( this ).dialog( "close" );
             },
-            Cancel: function() {
+            <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -322,7 +320,7 @@ $(function(){
         width: 500,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 //spandata[<?php echo $key?>]
                 gdata = JSON.stringify(spandata[<?php echo $key?>]['groups'])
                 $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) {
@@ -337,7 +335,7 @@ $(function(){
                     }});
                 $( this ).dialog( "close" );
             },
-            Cancel: function() {
+            <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -364,14 +362,14 @@ $(function(){
                 width: <?php echo $out['dialog']['width']?>,
                 modal: true,
                 buttons: {
-                    "Save": function() {
+                    "<?php echo _('Save')?>": function() {
                         $("#form-<?php echo $mod_name?>settings").ajaxSubmit(options);
                         toggle_reload_button('show');
                         var reboot = '<?php echo $out['reboot'] ? 'reboot_mp' : 'reboot'?>';
                         $("#"+reboot).fadeIn(3000).show();
                         $( this ).dialog( "close" );
                     },
-                    Cancel: function() {
+                    <?php echo _('Cancel')?>: function() {
                         $( this ).dialog( "close" );
                     }
                 },
@@ -388,13 +386,13 @@ $(function(){
         width: 500,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 $("#form-globalsettings").ajaxSubmit(options);
                 toggle_reload_button('show');
                 $("#reboot").fadeIn(3000).show();
                 $( this ).dialog( "close" );
             },
-            Cancel: function() {
+            <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -407,13 +405,13 @@ $(function(){
         width: 550,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 $('#form-systemsettings').ajaxSubmit(options);
                 toggle_reload_button('show');
                 $("#reboot").fadeIn(3000).show();
                 $( this ).dialog( "close" );
             },
-            Cancel: function() {
+            <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -426,7 +424,7 @@ $(function(){
         width: 500,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
 				var morder = {}
 				$(".modules-sortable li").each(function(i, el){
 					var id = $(el).attr('id');
@@ -448,8 +446,8 @@ $(function(){
                 $("#reboot_mods").fadeIn(3000).show();
                 $( this ).dialog( "close" );
             },
-			"Reset File To Defaults": function() {
-				var r=confirm("This will reload the page");
+			"<?php echo _('Reset File To Defaults')?>": function() {
+				var r=confirm("<?php echo _('This will reload the page')?>");
 				if (r==true) {
 					options.data = { reset: true }
 					options.success = function(responseText, statusText, xhr, $form) {
@@ -458,7 +456,7 @@ $(function(){
                 	$("#form-modules").ajaxSubmit(options);
 				}
 			},
-            Cancel: function() {
+      <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
             }
         },
@@ -471,7 +469,7 @@ $(function(){
         width: 530,
         modal: true,
         buttons: {
-            "Save": function() {
+            "<?php echo _('Save')?>": function() {
                 //Local Storage is an object {}
                 var settings = {'mp_setting_add':[]};
                 var z = 0;

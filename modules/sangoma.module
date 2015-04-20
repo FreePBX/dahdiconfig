@@ -22,15 +22,16 @@ class dahdi_sangoma {
     }
     public function settings() {
         $settings = $this->get_sangoma_settings();
-        $output['title'] = 'Sangoma Settings';
+        $output['title'] = _('Sangoma Settings');
         $output['reboot'] = true;
         $output['dialog']['height'] = 400;
         $output['dialog']['width'] = 500;
         $option1 = _('Run Wanpipe In DAHDI/DIGIUM Mode');
         $option2 = _("T1/Mode");
+        $byline = sprintf(_('This edits all settings in %s'),'/etc/wanpipe/global.conf');
         $output['html'] = <<< EOF
-            <h2>Sangoma Settings</h2>
-            <h3>This edits all settings in /etc/wanpipe/global.conf</h3>
+            <h2>{$output['title']}</h2>
+            <h3>{$byline}</h3>
             <hr />
             <table width="100%" style="text-align:left;">
                 <tr>
@@ -42,8 +43,8 @@ class dahdi_sangoma {
 EOF;
         $no = $settings['dahdimode'] == 'no' ? 'selected' : '';
         $yes = $settings['dahdimode'] == 'yes' ? 'selected' : '';
-        $output['html'] .= '<option value="no" '.$no.'>No</option>';
-        $output['html'] .= '<option value="yes" '.$yes.'>Yes</option>';
+        $output['html'] .= '<option value="no" '.$no.'>'._('No').'</option>';
+        $output['html'] .= '<option value="yes" '.$yes.'>'._('Yes').'</option>';
         $none = $settings['dahdimode'] == 'no' ? 'display:none;' : '';
 		$display = ($settings['dahdimode'] == 'yes') ? '' : 'display:none;';
         $output['html'] .= <<< EOF
@@ -115,7 +116,7 @@ EOF;
                         if(!file_put_contents($file, $output)) {
                             global $db;
                             $nt =& notifications::create($db);
-                			$nt->add_error('dahdiconfig', 'SANGOMA', _('Unable to write to '.$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
+                			$nt->add_error('dahdiconfig', 'SANGOMA', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
                         }
                     } elseif(file_exists($file)) {
 						$contents = file_get_contents($file);

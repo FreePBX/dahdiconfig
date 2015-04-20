@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>2.11.51</version>
+	<version>2.11.52</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 		<changelog>
+			*2.11.52* Localization fixes
 			*2.11.51* Minor jQuery fix for module options.
 			*2.11.50* Better messages for bad permissions
 			*2.11.49* Remove useless requirements parts

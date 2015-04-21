@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-20 13:47-0400\n"
-"PO-Revision-Date: 2015-04-21 03:59+0200\n"
+"PO-Revision-Date: 2015-04-21 04:03+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
@@ -361,8 +361,9 @@ msgid "DAHDi Write Disabled Disclaimer"
 msgstr "DAHDi Escribe Disclaimer discapacitados"
 
 #: page.dahdi.php:167
+#, fuzzy
 msgid "DAHDi is DISABLED for writing"
-msgstr ""
+msgstr "DAHDi está DESHABILITADA para la escritura"
 
 #: dahdiconfig.i18n.php:16
 msgid ""
@@ -414,8 +415,9 @@ msgid "Digital Hardware"
 msgstr "Hardware digital"
 
 #: page.dahdi.php:250
+#, fuzzy
 msgid "Disable"
-msgstr ""
+msgstr "inhabilitar"
 
 #: dahdiconfig.i18n.php:26
 msgid "Disable DAHDi Configuration Writes"
@@ -467,7 +469,7 @@ msgstr "El Salvador"
 
 #: page.dahdi.php:245
 msgid "Enable"
-msgstr ""
+msgstr "Habilitar"
 
 #: views/dahdi_global_settings.php:43
 msgid "Enable Busy Detect"

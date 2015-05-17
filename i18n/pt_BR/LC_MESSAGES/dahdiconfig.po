@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-20 13:47-0400\n"
-"PO-Revision-Date: 2015-05-13 12:01+0200\n"
+"PO-Revision-Date: 2015-05-16 19:37+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/pt_BR/>\n"
@@ -1156,7 +1156,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:32
 msgid "Portuguese"
-msgstr ""
+msgstr "Português"
 
 #: views/dahdi_advanced_settings.php:218 views/dahdi_modprobe_settings.php:238
 msgid "Random Noise"

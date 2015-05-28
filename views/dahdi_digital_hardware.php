@@ -1,6 +1,5 @@
-<h2><?php echo _('Digital Hardware')?></h2>
-<hr width="75%" style="text-align:left;margin-left:0"/>
-<table width="75%" class="alt_table" id="digital_cards_table" cellpadding="5" cellspacing="1" border="0">
+
+<table  class="table table-striped" id="digital_cards_table">
         <thead>
         <tr>
                 <th><?php echo _('Span')?></th>

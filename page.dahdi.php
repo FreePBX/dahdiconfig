@@ -49,59 +49,84 @@ if ($dahdi_cards->hdwr_changes()) {
     }
 }
 ?>
-<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After pressing the Red Apply Changes Bar.</div>
-<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your hardware changes to take effect, you need to reboot your system!</div>
-<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;">For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below</div>
+<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After pressing the Red Apply Changes Bar.")?></div>
+<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system!")?></div>
+<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below")?></div>
 
 <script type="text/javascript" src="assets/dahdiconfig/js/jquery.form.js"></script>
-  <!-- right side menu -->
-  <div class="rnav">
-    <ul>
-      <li style="text-decoration:underline"><strong><?php echo _('Settings')?></strong></li>
-      <li>
-        <a href="#" onclick="dahdi_modal_settings('global');"><?php echo _('Global Settings')?></a>
-      </li>
-      <li>
-        <a href="#" onclick="dahdi_modal_settings('system');"><?php echo _('System Settings')?></a>
-      </li>
-      <li>
-        <a href="#" onclick="dahdi_modal_settings('modprobe');"><?php echo _('Modprobe Settings')?></a>
-      </li>
-      <li>
-        <a href="#" onclick="dahdi_modal_settings('modules');"><?php echo _('Module Settings')?></a>
-      </li>
-      <?php
-      foreach($dahdi_cards->modules as $mod_name => $module) {
-        if(method_exists($module,'settings')) {
-          $out = $module->settings();
-          ?>
-          <li>
-            <a href="#" onclick="dahdi_modal_settings('<?php echo $mod_name?>');"><?php echo $out['title']?></a>
-          </li>
+<br/>
+<br/>
+<div class="container-fluid">
+	<h1><?php echo _('DAHDI Configuration')?></h1>
+	<div class = "display full-border">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="fpbx-container">
+					<div class="display full-border">
+            <ul class="nav nav-tabs" role="tablist">
+              <li data-name="digital_hardware" class="change-tab active"><a href="#digital_hardware" aria-controls="digital_hardware" role="tab" data-toggle="tab"><?php echo _("Digital Hardware")?></a></li>
+              <li data-name="analog_hardware" class="change-tab"><a href="#analog_hardware" aria-controls="analog_hardware" role="tab" data-toggle="tab"><?php echo _("Analog Hardware")?></a></li>
+            </ul>
+            <div class="tab-content display">
+              <div id="digital_hardware" class="tab-pane active">
+                <?php require dirname(__FILE__).'/views/dahdi_digital_hardware.php'; ?>
+              </div>
+              <div id="analog_hardware" class="tab-pane">
+                <?php require dirname(__FILE__).'/views/dahdi_analog_hardware.php'; ?>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="btn_container">
+                <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
+                    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="<?php echo _('Reload Asterisk Dahdi Module')?>" />
+                      <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
+                      <input type="submit" id="restartamportal" name="restartamportal" value="<?php echo _('Restart Dahdi & Asterisk')?>" />
+                      <?php } ?>
+                </form>
+              </div>
+					</div>
+				</div>
+			</div>
+      <div class="col-sm-3 hidden-xs bootnav">
+        <div class="list-group">
+            <a href="#" class="list-group-item" onclick="dahdi_modal_settings('global');"><?php echo _('Global Settings')?></a>
+            <a href="#" class="list-group-item" onclick="dahdi_modal_settings('system');"><?php echo _('System Settings')?></a>
+            <a href="#" class="list-group-item" onclick="dahdi_modal_settings('modprobe');"><?php echo _('Modprobe Settings')?></a>
+            <a href="#" class="list-group-item" onclick="dahdi_modal_settings('modules');"><?php echo _('Module Settings')?></a>
           <?php
-        }
-      }
-      ?>
-    </ul>
-    <br /> <br /> <br /> <br /> <br /> <br /> <br />
-<!--/* OpenX Javascript Tag v2.8.10 */-->
-<script type='text/javascript'><!--//<![CDATA[
-   var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
-   var m3_r = Math.floor(Math.random()*99999999999);
-   if (!document.MAX_used) document.MAX_used = ',';
-   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-   document.write ("?zoneid=102");
-   document.write ('&amp;cb=' + m3_r);
-   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-   document.write ("&amp;loc=" + escape(window.location));
-   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-   if (document.context) document.write ("&context=" + escape(document.context));
-   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-   document.write ("'><\/scr"+"ipt>");
-//]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=<?php echo rand()?>' target='_blank'><img src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=<?php echo rand()?>&amp;n=aea98e58' border='0' alt='' /></a></noscript>
-
-       	</div>
+          foreach($dahdi_cards->modules as $mod_name => $module) {
+            if(method_exists($module,'settings')) {
+              $out = $module->settings();
+              ?>
+                <a href="#" class="list-group-item" onclick="dahdi_modal_settings('<?php echo $mod_name?>');"><?php echo $out['title']?></a>
+              <?php
+            }
+          }
+          ?>
+          <br/>
+          <br/>
+          <!--/* OpenX Javascript Tag v2.8.10 */-->
+          <script type='text/javascript'><!--//<![CDATA[
+             var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
+             var m3_r = Math.floor(Math.random()*99999999999);
+             if (!document.MAX_used) document.MAX_used = ',';
+             document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+             document.write ("?zoneid=102");
+             document.write ('&amp;cb=' + m3_r);
+             if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+             document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+             document.write ("&amp;loc=" + escape(window.location));
+             if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+             if (document.context) document.write ("&context=" + escape(document.context));
+             if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+             document.write ("'><\/scr"+"ipt>");
+          //]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=<?php echo rand()?>' target='_blank'><img class="img-responsive center-block" src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=<?php echo rand()?>&amp;n=aea98e58' border='0' alt='' /></a></noscript>
+        </div>
+      </div>
+		</div>
+	</div>
+</div>
 
          <div id="global-settings" title="<?php echo _('Global Settings')?>" style="display: none;">
             <?php require dirname(__FILE__).'/views/dahdi_global_settings.php'; ?>
@@ -149,20 +174,6 @@ if ($dahdi_cards->hdwr_changes()) {
         <div id="analog-settings-fxs" title="<?php echo _('FXS Settings')?>" style="display: none;">
             <?php $analog_type = 'fxs'; require dirname(__FILE__).'/views/dahdi_analog_settings.php'; ?>
         </div>
-	<div id="digital_hardware">
-	<?php require dirname(__FILE__).'/views/dahdi_digital_hardware.php'; ?>
-	</div>
-	<div id="analog_hardware">
-	<?php require dirname(__FILE__).'/views/dahdi_analog_hardware.php'; ?>
-	</div>
-	<div class="btn_container">
-	    <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-    	    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="<?php echo _('Reload Asterisk Dahdi Module')?>" />
-            <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
-            <input type="submit" id="restartamportal" name="restartamportal" value="<?php echo _('Restart Dahdi & Asterisk')?>" />
-            <?php } ?>
-    	</form>
-    </div>
    	<div id="dahdi-write" title="<?php echo _('DAHDi Write Disabled Disclaimer')?>" style="display: none;">
         <div style="text-align:center;color:red;font-weight:bold;"><?php echo _('DAHDi is DISABLED for writing')?></div>
         <br/>

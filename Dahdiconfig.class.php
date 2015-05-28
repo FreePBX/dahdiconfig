@@ -28,6 +28,7 @@ class Dahdiconfig implements \BMO {
 	public function restore($backup){
 
 	}
+	public function doConfigPageInit($page){}
 
 	/**
 	 * Start FreePBX for fwconsole hook

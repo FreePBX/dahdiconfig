@@ -80,6 +80,10 @@ msgstr ""
 msgid "Alarms"
 msgstr ""
 
+#: dahdiconfig.i18n.php:12
+msgid "Allow PRI Discrete Channels"
+msgstr ""
+
 #: views/dahdi_global_settings.php:112
 msgid "Also enables call parking (overrides the \"canpark\" parameter)"
 msgstr ""
@@ -150,6 +154,10 @@ msgstr ""
 msgid "Bahrain"
 msgstr ""
 
+#: page.dahdi.php:184
+msgid "Because of this the module's configuration file write ability is disabled by default. You can enable it in this window or you can later enable it under Advanced Settings"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48
 msgid "Belgium"
@@ -179,6 +187,10 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:54
 msgid "Busy Detect Count"
+msgstr ""
+
+#: dahdiconfig.i18n.php:28
+msgid "By default the DAHDi configuration module will NOT write out any data to protect any current configuration settings"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
@@ -282,13 +294,37 @@ msgstr ""
 msgid "DAHDi Config"
 msgstr ""
 
+#: dahdiconfig.i18n.php:14
+msgid "DAHDi Configuration Module"
+msgstr ""
+
+#: page.dahdi.php:22
+msgid "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below"
+msgstr ""
+
+#: dahdiconfig.i18n.php:18
+msgid "DAHDi Executable Location"
+msgstr ""
+
 #: Dahdiconfig.class.php:72 Dahdiconfig.class.php:117
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
 
+#: dahdiconfig.i18n.php:32
+msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+msgstr ""
+
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
+msgstr ""
+
+#: dahdiconfig.i18n.php:22
+msgid "DAHDi Modules Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:24
+msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
 #: Dahdiconfig.class.php:70
@@ -297,6 +333,22 @@ msgstr ""
 
 #: Dahdiconfig.class.php:115
 msgid "DAHDi Stopped"
+msgstr ""
+
+#: dahdiconfig.i18n.php:40
+msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
+msgstr ""
+
+#: page.dahdi.php:166
+msgid "DAHDi Write Disabled Disclaimer"
+msgstr ""
+
+#: page.dahdi.php:167
+msgid "DAHDi is DISABLED for writing"
+msgstr ""
+
+#: dahdiconfig.i18n.php:16
+msgid "DAHDi trunk configuration is normally done using groups for PRI configuration. If there is a need to configure trunks to specific channels, setting this to true will allow each channel to be configured. This can be useful when troubleshooting a PRI and trying to isolate a bad B Channel."
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:271
@@ -333,6 +385,14 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:1
 msgid "Digital Hardware"
+msgstr ""
+
+#: page.dahdi.php:250
+msgid "Disable"
+msgstr ""
+
+#: dahdiconfig.i18n.php:26
+msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
 #: views/dahdi_global_settings.php:16
@@ -377,6 +437,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:78 views/dahdi_modprobe_settings.php:61
 msgid "El Salvador"
+msgstr ""
+
+#: page.dahdi.php:245
+msgid "Enable"
 msgstr ""
 
 #: views/dahdi_global_settings.php:43
@@ -443,8 +507,16 @@ msgstr ""
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr ""
 
+#: page.dahdi.php:146
+msgid "FXO Settings"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:144 views/dahdi_modprobe_settings.php:133
 msgid "FXS Honor Mode"
+msgstr ""
+
+#: page.dahdi.php:149
+msgid "FXS Settings"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:164 views/dahdi_modprobe_settings.php:163
@@ -660,6 +732,10 @@ msgstr ""
 msgid "Israeli Hebrew"
 msgstr ""
 
+#: page.dahdi.php:177
+msgid "It is YOUR responsibility to backup all relevant files on your system!"
+msgstr ""
+
 #: views/dahdi_global_settings.php:22
 msgid "Italian"
 msgstr ""
@@ -715,6 +791,10 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
+#: dahdiconfig.i18n.php:20
+msgid "Location of the DAHDi Executable"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -763,6 +843,10 @@ msgstr ""
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
+#: dahdiconfig.i18n.php:30
+msgid "ModProbe.d Configuration File Location"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:23
 msgid "Mode"
 msgstr ""
@@ -773,6 +857,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:7 views/dahdi_modprobe_settings.php:9
 msgid "Module Name"
+msgstr ""
+
+#: page.dahdi.php:71 page.dahdi.php:115
+msgid "Module Settings"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
@@ -934,6 +1022,11 @@ msgstr ""
 msgid "Philippines"
 msgstr ""
 
+#: page.dahdi.php:31
+#, php-format
+msgid "Please Delete the System Generated %s"
+msgstr ""
+
 #: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
 #, php-format
 msgid "Please change permissions on %s"
@@ -978,7 +1071,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:32
 msgid "Portuguese"
-msgstr ""
+msgstr "Português"
 
 #: views/dahdi_advanced_settings.php:218 views/dahdi_modprobe_settings.php:238
 msgid "Random Noise"
@@ -996,8 +1089,20 @@ msgstr ""
 msgid "Receive Gain"
 msgstr ""
 
+#: page.dahdi.php:160
+msgid "Reload Asterisk Dahdi Module"
+msgstr ""
+
 #: install.php:310
 msgid "Replacing.."
+msgstr ""
+
+#: page.dahdi.php:449
+msgid "Reset File To Defaults"
+msgstr ""
+
+#: page.dahdi.php:162
+msgid "Restart Dahdi & Asterisk"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:176 views/dahdi_modprobe_settings.php:181
@@ -1033,6 +1138,10 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
+#: page.dahdi.php:60
+msgid "Settings"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:11
 msgid "Signaling"
 msgstr ""
@@ -1048,6 +1157,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:120 views/dahdi_modprobe_settings.php:103
 msgid "Slovenia"
+msgstr ""
+
+#: dahdiconfig.i18n.php:34
+msgid "Software EC"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
@@ -1150,7 +1263,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:179 views/dahdi_modprobe_settings.php:186
 msgid "Standard"
-msgstr ""
+msgstr "Padrão"
 
 #: Dahdiconfig.class.php:68
 msgid "Starting DAHDi for Digium Cards"
@@ -1214,6 +1327,14 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
+#: dahdiconfig.i18n.php:38
+msgid "System Configuration File Location"
+msgstr ""
+
+#: page.dahdi.php:65 page.dahdi.php:109
+msgid "System Settings"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:276
 msgid "T1"
 msgstr ""
@@ -1234,6 +1355,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:49 views/dahdi_advanced_settings.php:129
 #: views/dahdi_modprobe_settings.php:112
 msgid "Thailand"
+msgstr ""
+
+#: page.dahdi.php:178
+#, php-format
+msgid "The %s team can NOT be held responsible if you enable this module and your trunks/cards suddenly stop working because your configurations have changed."
 msgstr ""
 
 #: views/dahdi_analog_settings.php:36
@@ -1266,6 +1392,14 @@ msgstr ""
 msgid "This enables listening for the beep-beep busy pattern"
 msgstr ""
 
+#: page.dahdi.php:187
+msgid "This message will re-appear everytime you load the module while it is in a disabled write state so as to not cause any confusion"
+msgstr ""
+
+#: page.dahdi.php:181
+msgid "This module should never be used alongside \"dahdi_genconfig\". Using \"dahdi_genconfig\" and this module at the same time can have unexpected consequences."
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:246
 msgid "This option allows you to specify the threshold, in dB difference between the received audio (post echo cancellation) and the transmitted audio, for when the NLP will engage (VPMADT032 only). The default setting is 24 dB"
 msgstr ""
@@ -1292,6 +1426,10 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid "This setting must be enabled on both ports involved, and the \"facilityenable\" setting must also be enabled to allow sending the transfer to the ISDN switch, since it sent in a FACILITY message"
+msgstr ""
+
+#: page.dahdi.php:450
+msgid "This will reload the page"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:11
@@ -1348,6 +1486,10 @@ msgstr ""
 msgid "WARNING"
 msgstr ""
 
+#: page.dahdi.php:169
+msgid "WARNING: When this module is \"enabled\" for writing it WILL overwrite the following files:"
+msgstr ""
+
 #: Dahdiconfig.class.php:61 Dahdiconfig.class.php:106
 #, php-format
 msgid "Wanrouter Failed: %s"
@@ -1390,6 +1532,10 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
+#: page.dahdi.php:40
+msgid "You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below."
+msgstr ""
+
 #: install.php:370
 msgid "add additional column"
 msgstr ""
@@ -1410,159 +1556,19 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
+#: dahdiconfig.i18n.php:36
+msgid "software EC to use in system.conf"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr ""
 
-#: dahdiconfig.i18n.php:12
-msgid "Allow PRI Discrete Channels"
-msgstr ""
+#~ msgid "==Choose=="
+#~ msgstr "==Escolha=="
 
-#: page.dahdi.php:184
-msgid "Because of this the module's configuration file write ability is disabled by default. You can enable it in this window or you can later enable it under Advanced Settings"
-msgstr ""
-
-#: dahdiconfig.i18n.php:28
-msgid "By default the DAHDi configuration module will NOT write out any data to protect any current configuration settings"
-msgstr ""
-
-#: dahdiconfig.i18n.php:14
-msgid "DAHDi Configuration Module"
-msgstr ""
-
-#: page.dahdi.php:22
-msgid "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below"
-msgstr ""
-
-#: dahdiconfig.i18n.php:18
-msgid "DAHDi Executable Location"
-msgstr ""
-
-#: dahdiconfig.i18n.php:32
-msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
-msgstr ""
-
-#: dahdiconfig.i18n.php:22
-msgid "DAHDi Modules Location"
-msgstr ""
-
-#: dahdiconfig.i18n.php:24
-msgid "DAHDi Modules Location (/etc/dahdi/modules)"
-msgstr ""
-
-#: dahdiconfig.i18n.php:40
-msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
-msgstr ""
-
-#: page.dahdi.php:166
-msgid "DAHDi Write Disabled Disclaimer"
-msgstr ""
-
-#: page.dahdi.php:167
-msgid "DAHDi is DISABLED for writing"
-msgstr ""
-
-#: dahdiconfig.i18n.php:16
-msgid "DAHDi trunk configuration is normally done using groups for PRI configuration. If there is a need to configure trunks to specific channels, setting this to true will allow each channel to be configured. This can be useful when troubleshooting a PRI and trying to isolate a bad B Channel."
-msgstr ""
-
-#: page.dahdi.php:250
-msgid "Disable"
-msgstr ""
-
-#: dahdiconfig.i18n.php:26
-msgid "Disable DAHDi Configuration Writes"
-msgstr ""
-
-#: page.dahdi.php:245
-msgid "Enable"
-msgstr ""
-
-#: page.dahdi.php:146
-msgid "FXO Settings"
-msgstr ""
-
-#: page.dahdi.php:149
-msgid "FXS Settings"
-msgstr ""
-
-#: page.dahdi.php:177
-msgid "It is YOUR responsibility to backup all relevant files on your system!"
-msgstr ""
-
-#: dahdiconfig.i18n.php:20
-msgid "Location of the DAHDi Executable"
-msgstr ""
-
-#: dahdiconfig.i18n.php:30
-msgid "ModProbe.d Configuration File Location"
-msgstr ""
-
-#: page.dahdi.php:71 page.dahdi.php:115
-msgid "Module Settings"
-msgstr ""
-
-#: page.dahdi.php:31
-#, php-format
-msgid "Please Delete the System Generated %s"
-msgstr ""
-
-#: page.dahdi.php:160
-msgid "Reload Asterisk Dahdi Module"
-msgstr ""
-
-#: page.dahdi.php:449
-msgid "Reset File To Defaults"
-msgstr ""
-
-#: page.dahdi.php:162
-msgid "Restart Dahdi & Asterisk"
-msgstr ""
-
-#: page.dahdi.php:60
-msgid "Settings"
-msgstr ""
-
-#: dahdiconfig.i18n.php:34
-msgid "Software EC"
-msgstr ""
-
-#: dahdiconfig.i18n.php:38
-msgid "System Configuration File Location"
-msgstr ""
-
-#: page.dahdi.php:65 page.dahdi.php:109
-msgid "System Settings"
-msgstr ""
-
-#: page.dahdi.php:178
-#, php-format
-msgid "The %s team can NOT be held responsible if you enable this module and your trunks/cards suddenly stop working because your configurations have changed."
-msgstr ""
-
-#: page.dahdi.php:187
-msgid "This message will re-appear everytime you load the module while it is in a disabled write state so as to not cause any confusion"
-msgstr ""
-
-#: page.dahdi.php:181
-msgid "This module should never be used alongside \"dahdi_genconfig\". Using \"dahdi_genconfig\" and this module at the same time can have unexpected consequences."
-msgstr ""
-
-#: page.dahdi.php:450
-msgid "This will reload the page"
-msgstr ""
-
-#: page.dahdi.php:169
-msgid "WARNING: When this module is \"enabled\" for writing it WILL overwrite the following files:"
-msgstr ""
-
-#: page.dahdi.php:40
-msgid "You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below."
-msgstr ""
-
-#: dahdiconfig.i18n.php:36
-msgid "software EC to use in system.conf"
-msgstr ""
+#~ msgid "Available DAHDI Groups and Channels configued in the DAHDI Configuration Module"
+#~ msgstr "Grupos e Canais DAHDI disponível para configuração no Modulo de Configuração DAHDI"
 
 #~ msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
 #~ msgstr "Configurar/Editar Placa DAHDI no Modulo DAHDI"
@@ -1572,12 +1578,6 @@ msgstr ""
 
 #~ msgid "DAHDI Trunks"
 #~ msgstr "Troncos DAHDI"
-
-#~ msgid "==Choose=="
-#~ msgstr "==Escolha=="
-
-#~ msgid "Available DAHDI Groups and Channels configued in the DAHDI Configuration Module"
-#~ msgstr "Grupos e Canais DAHDI disponível para configuração no Modulo de Configuração DAHDI"
 
 #~ msgid "No Available Groups or Channels"
 #~ msgstr "Nenhum Grupo ou Canal Disponível"

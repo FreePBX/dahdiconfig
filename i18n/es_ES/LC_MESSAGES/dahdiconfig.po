@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-20 13:47-0400\n"
-"PO-Revision-Date: 2015-04-15 09:48+0200\n"
-"Last-Translator: Daver <daverjorge46@gmail.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"dahdiconfig/es_ES/>\n"
+"PO-Revision-Date: 2015-04-23 06:27+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -162,6 +162,9 @@ msgid ""
 "default. You can enable it in this window or you can later enable it under "
 "Advanced Settings"
 msgstr ""
+"Debido a esto, la capacidad de escritura de archivos de configuración del "
+"módulo está desactivado por defecto . Puede habilitarlo en esta ventana o "
+"posteriormente pueda activarlo en Configuración avanzada"
 
 #: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48
@@ -322,6 +325,8 @@ msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
 "Below"
 msgstr ""
+"DAHDi no parece estar funcionando. Haga clic en el boton 'Reiniciar/Recargar "
+"Dahdi' Abajo"
 
 #: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
@@ -350,11 +355,11 @@ msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
 
 #: page.dahdi.php:166
 msgid "DAHDi Write Disabled Disclaimer"
-msgstr ""
+msgstr "DAHDi renuncia acerca de discapacitados de escritura"
 
 #: page.dahdi.php:167
 msgid "DAHDi is DISABLED for writing"
-msgstr ""
+msgstr "DAHDi está DESHABILITADA para la escritura"
 
 #: dahdiconfig.i18n.php:16
 msgid ""
@@ -407,7 +412,7 @@ msgstr "Hardware digital"
 
 #: page.dahdi.php:250
 msgid "Disable"
-msgstr ""
+msgstr "inhabilitar"
 
 #: dahdiconfig.i18n.php:26
 msgid "Disable DAHDi Configuration Writes"
@@ -459,7 +464,7 @@ msgstr "El Salvador"
 
 #: page.dahdi.php:245
 msgid "Enable"
-msgstr ""
+msgstr "Habilitar"
 
 #: views/dahdi_global_settings.php:43
 msgid "Enable Busy Detect"
@@ -527,7 +532,7 @@ msgstr "FSK- Ejecutar detección FSK"
 
 #: page.dahdi.php:146
 msgid "FXO Settings"
-msgstr ""
+msgstr "Configuración FXO"
 
 #: views/dahdi_advanced_settings.php:144 views/dahdi_modprobe_settings.php:133
 msgid "FXS Honor Mode"
@@ -535,7 +540,7 @@ msgstr "FXS Modo Honor"
 
 #: page.dahdi.php:149
 msgid "FXS Settings"
-msgstr ""
+msgstr "Configuración FXS"
 
 #: views/dahdi_advanced_settings.php:164 views/dahdi_modprobe_settings.php:163
 msgid "Fast Ringer (25hz)"
@@ -801,6 +806,8 @@ msgstr "Israeli Hebrew"
 #: page.dahdi.php:177
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
+"Es SU responsabilidad mantener respaldo de todos los archivos relevantes de "
+"su sistema!"
 
 #: views/dahdi_global_settings.php:22
 msgid "Italian"
@@ -958,7 +965,7 @@ msgstr "Nombre de Modulo"
 
 #: page.dahdi.php:71 page.dahdi.php:115
 msgid "Module Settings"
-msgstr ""
+msgstr "Configuración de Módulos"
 
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
@@ -1173,7 +1180,7 @@ msgstr "Philippines"
 #: page.dahdi.php:31
 #, php-format
 msgid "Please Delete the System Generated %s"
-msgstr ""
+msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
 #: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
 #, php-format
@@ -1256,7 +1263,7 @@ msgstr "Ganancia Recibida"
 
 #: page.dahdi.php:160
 msgid "Reload Asterisk Dahdi Module"
-msgstr ""
+msgstr "Recargar el Modulo Dahdi Asterisk"
 
 #: install.php:310
 msgid "Replacing.."
@@ -1264,11 +1271,11 @@ msgstr "Reemplazando.."
 
 #: page.dahdi.php:449
 msgid "Reset File To Defaults"
-msgstr ""
+msgstr "Restaurar Archivo a Valores por defecto"
 
 #: page.dahdi.php:162
 msgid "Restart Dahdi & Asterisk"
-msgstr ""
+msgstr "Reiniciar Dahdi y Asterisk"
 
 #: views/dahdi_advanced_settings.php:176 views/dahdi_modprobe_settings.php:181
 msgid "Ring Detect"
@@ -1307,7 +1314,7 @@ msgstr "Seleccione Idioma"
 
 #: page.dahdi.php:60
 msgid "Settings"
-msgstr ""
+msgstr "Configuraciones"
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:11
 msgid "Signaling"
@@ -1644,7 +1651,7 @@ msgstr "Localización del Archivo de Configuración del Sistema"
 
 #: page.dahdi.php:65 page.dahdi.php:109
 msgid "System Settings"
-msgstr ""
+msgstr "Configuraciones del Sistema"
 
 #: views/dahdi_modprobe_settings.php:276
 msgid "T1"
@@ -1674,6 +1681,9 @@ msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
 "trunks/cards suddenly stop working because your configurations have changed."
 msgstr ""
+"EL grupo %s NO se hace responsable si usted habilita este modulo y sus "
+"troncales/tarjetas sorpresivamente dejan de funcionar debido a que la "
+"configuración ha cambiado."
 
 #: views/dahdi_analog_settings.php:36
 msgid "The context to use for inbound calls to this analog device"
@@ -1743,6 +1753,8 @@ msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
 msgstr ""
+"Este mensaje re-aparecerá cada vez que usted cargue el modulo mientras este "
+"en modo de escritura deshabilitado, de manera de no causar ninguna confusión"
 
 #: page.dahdi.php:181
 msgid ""
@@ -1750,6 +1762,9 @@ msgid ""
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
 "consequences."
 msgstr ""
+"Este módulo nunca debe ser usado junto con \"dahdi_genconf\". El uso de \""
+"dahdi_genconf\" y este módulo al mismo tiempo puede tener consecuencias "
+"inesperadas."
 
 #: views/dahdi_modprobe_settings.php:246
 msgid ""
@@ -1838,7 +1853,7 @@ msgstr ""
 
 #: page.dahdi.php:450
 msgid "This will reload the page"
-msgstr ""
+msgstr "Esto recargará la página"
 
 #: views/dahdi_advanced_settings.php:11
 msgid "Tone Region"
@@ -1899,6 +1914,8 @@ msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"
 msgstr ""
+"CUIDADO: cuando este  módulo esta \"habilitado\" para escritura, el "
+"SOBREESCRIBIRA los siguientes archivos:"
 
 #: views/dahdi_global_settings.php:77
 msgid ""
@@ -1950,6 +1967,8 @@ msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
 "button(s). Then reload DAHDi with the button below."
 msgstr ""
+"Usted tiene nuevo hardware! Por favor configure su nuevo hardware usando el "
+"botón editar. Luego recargue DAHDi con el botón de abajo."
 
 #: install.php:370
 msgid "add additional column"

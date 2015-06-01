@@ -1,5 +1,5 @@
 
-<table  class="table table-striped" id="digital_cards_table">
+<table  data-maintain-selected="true" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true"  id="digital_cards_table">
         <thead>
         <tr>
                 <th><?php echo _('Span')?></th>

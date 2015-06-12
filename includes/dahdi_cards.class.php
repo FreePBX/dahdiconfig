@@ -121,7 +121,7 @@ class dahdi_cards {
 		$check[] = $amp_conf['DAHDISYSTEMLOC'];
 		$check[] = $amp_conf['DAHDIMODPROBELOC'];
 		global $db;
-		$nt =& notifications::create($db);
+		$nt = notifications::create($db);
 		foreach($check as $list) {
 			$o = posix_getpwuid(fileowner($list));
 			if($me != $o['name']) {
@@ -1544,7 +1544,7 @@ class dahdi_cards {
 		$file = $amp_conf['DAHDIMODPROBELOC'];
 
 		global $db;
-		$nt =& notifications::create($db);
+		$nt = notifications::create($db);
 		if ( ! is_writable($file)) {
 			$nt->add_error('dahdiconfig', 'MODPROBECONF', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s"),$file), "", false, true);
 			return false;

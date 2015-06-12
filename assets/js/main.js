@@ -63,7 +63,7 @@ function createModProbeSettings() {
                     $("#mode_checkbox").attr('checked',j.mode_checkbox);
                     $('#mode').val(j.mode);
                 } else {
-                    if((j.module == "wct4xxp") || (j.module == "wcte12xp")) {
+                    if((j.module == "wct4xxp") || (j.module == "wcte12xp")||(j.module == "wcte12xp")) {
                         $('#wct4xxp_wcte12xp_settings').show();
                         $('#defaultlinemode_checkbox').attr('checked',j.defaultlinemode_checkbox);
                         $('#defaultlinemode').val(j.defaultlinemode);

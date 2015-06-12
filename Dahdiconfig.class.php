@@ -47,11 +47,23 @@ class Dahdiconfig implements \BMO {
 
 		$process = new Process('which wanrouter');
 		$process->run();
-
+		$wrc = explode(PHP_EOL, file_get_contents('/etc/wanpipe/wanrouter.rc'));
+		$wanrouterconf = array();
+		foreach($wrc as $line){
+			$c = explode("=", $line);
+			$wanrouterconf[$c[0]] = $c[1];
+		}
+		$wandevices = explode(" ", $wanrouterconf['WAN_DEVICES']);
+		$confspresent = 0;
+		foreach ($wandevices as $wandev) {
+			if(file_exists('/etc/wanpipe/'.trim($wandev).'.conf')){
+				$confspresent++;
+			}
+		}
 		// executes after the command finishes
 		if ($process->isSuccessful()) {
 			$wanrouterLocation = $process->getOutput();
-			if(!empty($wanrouterLocation)) {
+			if(!empty($wanrouterLocation) && $confspresent > 0) {
 				$wanrouterLocation = trim($wanrouterLocation);
 				$process = new Process($wanrouterLocation.' start');
 				try {
@@ -60,6 +72,13 @@ class Dahdiconfig implements \BMO {
 					$output->writeln(_("Wanrouter Started"));
 				} catch (ProcessFailedException $e) {
 					$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
+				}
+			}else{
+				if(empty($wanrouterLocation)){
+					$output->writeln("<error>Couldn't find the Wanrouter executable</error>");
+				}
+				if($confspresent == 0){
+					$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
 				}
 			}
 		}

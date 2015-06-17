@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-01 14:57-0400\n"
+"POT-Creation-Date: 2015-06-17 12:16-0400\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -269,7 +269,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:85
+#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:104
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -279,7 +279,7 @@ msgid ""
 "Below"
 msgstr ""
 
-#: Dahdiconfig.class.php:73 Dahdiconfig.class.php:118
+#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:137
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -288,11 +288,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: Dahdiconfig.class.php:71
+#: Dahdiconfig.class.php:90
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:116
+#: Dahdiconfig.class.php:135
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1348,19 +1348,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:69
+#: Dahdiconfig.class.php:88
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:58
+#: Dahdiconfig.class.php:70
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:114
+#: Dahdiconfig.class.php:133
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:103
+#: Dahdiconfig.class.php:122
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -1627,16 +1627,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:62 Dahdiconfig.class.php:107
+#: Dahdiconfig.class.php:74 Dahdiconfig.class.php:126
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:60
+#: Dahdiconfig.class.php:72
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:105
+#: Dahdiconfig.class.php:124
 msgid "Wanrouter Stopped"
 msgstr ""
 

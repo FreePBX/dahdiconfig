@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.1alpha3</version>
+	<version>13.0.2</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.2* Version bump Beta
 			*13.0.1alpha3* Fix auto-start for DAHDi
 			*13.0.1alpha2* Update visuals
 			*13.0.1alpha1* Use new console framework for startup
@@ -71,14 +72,14 @@
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>
 	<hooks>
-		<framework namespace="FreePBX\Console\Command" class="Start">
-			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="preAsteriskHooks">startFreepbx</method>
+		<framework class="Start" namespace="FreePBX\Console\Command">
+			<method callingMethod="preAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">startFreepbx</method>
 		</framework>
-		<framework namespace="FreePBX\Console\Command" class="Stop">
-			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="postAsteriskHooks">stopFreepbx</method>
+		<framework class="Stop" namespace="FreePBX\Console\Command">
+			<method callingMethod="postAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">stopFreepbx</method>
 		</framework>
-		<framework namespace="FreePBX\Console\Command" class="Chown">
-			<method namespace="FreePBX\modules" class="Dahdiconfig" callingMethod="fwcChownFiles">chownFreepbx</method>
+		<framework class="Chown" namespace="FreePBX\Console\Command">
+			<method callingMethod="fwcChownFiles" class="Dahdiconfig" namespace="FreePBX\modules">chownFreepbx</method>
 		</framework>
 	</hooks>
 	<location>release/2.11/dahdiconfig-2.11.28.tgz</location>

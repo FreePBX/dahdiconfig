@@ -108,10 +108,10 @@ class dahdi_cards {
 			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf')) {
 				$contents = file_get_contents('/etc/dahdi/system.conf');
 				if(empty($contents)) {
-					exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
+					exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
 				}
 			} else {
-				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
+				exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
 			}
 		}
 
@@ -486,8 +486,8 @@ class dahdi_cards {
 
 		$this->hdwr_changes = $this->detect_hdwr_changes();
 		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
-			exec('/usr/sbin/dahdi_genconf system');
-			exec('/usr/sbin/dahdi_cfg');
+			exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
+			exec('/usr/sbin/dahdi_cfg 2>/dev/null');
 			$this->read_dahdi_scan();
 			$this->write_detected();
 			$this->write_spans();
@@ -679,7 +679,7 @@ class dahdi_cards {
 				if(!file_exists('/usr/sbin/dahdi_genconf')) {
 					break;
 				}
-				exec('/usr/sbin/dahdi_genconf system',$output,$return_var);
+				exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
 				if($return_var != '0') {
 					//If genconf returns an error then we should abort otherwise we will be in a neverending loop
 					break;
@@ -820,7 +820,7 @@ class dahdi_cards {
 		if(!file_exists('/usr/sbin/dahdi_scan')) {
 			return false;
 		}
-		exec('/usr/sbin/dahdi_scan',$dahdi_scan_output,$return_var);
+		exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
 		if($return_var != '0') {
 			return false;
 		}

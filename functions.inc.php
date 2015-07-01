@@ -516,6 +516,15 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			<!--END DAHDICONFIG HOOK-->
 			';
 		}
+		$html .= '
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("input[name=\'channelid\']").attr("id","channelid").val($("#dahdi_trunks").val()).parent().parent().addClass("hidden");
+			$("#dahdi_trunks").change(function(){
+				$("#channelid").val(this.value);
+			});
+		});
+		</script>';
 	}
 	return $html;
 }
@@ -589,7 +598,7 @@ function dahdiconfig_trunks_configpageload() {
 	});
 	</script>';
 	//Hide Dahdi Identifier original setting
-	$currentcomponent->addguielem('_top', new guielement('dahdi-chan-html', $js, ''));
+	//$currentcomponent->addguielem('_top', new guielement('dahdi-chan-html', $js, ''));
 }
 
 function dahdiconfig_getinfo($info=null) {

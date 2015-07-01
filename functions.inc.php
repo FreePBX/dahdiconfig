@@ -464,11 +464,11 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			<div class="row">
 			<div class="form-group">
 			<div class="col-md-3">
-			<label class="control-label" for="dahdi_trunks"><?php echo _("DAHDI Trunks") ?></label>
+			<label class="control-label" for="dahdi_trunks">'._("DAHDI Trunks") .'</label>
 			<i class="fa fa-question-circle fpbx-help-icon" data-for="dahdi_trunks"></i>
 			</div>
 			<div class="col-md-9">
-			<select name="dahdi_trunks" id="dahdi_trunks"  class="form-control" tabindex="' . ++$tabindex . '">';
+			<select name="dahdi_trunks" id="dahdi_trunks"  class="form-control">';
 			foreach ($avail_trunks as $ident) {
 				$selected = $ident['selected'] ? ' SELECTED' : '';
 				$html .= "<option value='{$ident['identifier']}'$selected>{$ident['name']}</option>";
@@ -482,7 +482,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			</div>
 			<div class="row">
 			<div class="col-md-12">
-			<span id="dahdi_trunks-help" class="help-block fpbx-help-block"><?php echo _("Available DAHDI Groups and Channels configued in the DAHDI Configuration Module")?></span>
+			<span id="dahdi_trunks-help" class="help-block fpbx-help-block">'. _("Available DAHDI Groups and Channels configued in the DAHDI Configuration Module").'</span>
 			</div>
 			</div>
 			</div>
@@ -497,11 +497,11 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			<div class="row">
 			<div class="form-group">
 			<div class="col-md-3">
-			<label class="control-label" for="dahdi_trunks"><?php echo _("DAHDI Trunks") ?></label>
+			<label class="control-label" for="dahdi_trunks">'._("DAHDI Trunks").'</label>
 			<i class="fa fa-question-circle fpbx-help-icon" data-for="dahdi_trunks"></i>
 			</div>
 			<div class="col-md-9">
-			<b><?php echo _("No Available Groups or Channels")?></b>
+			<b>'._("No Available Groups or Channels").'</b>
 			</div>
 			</div>
 			</div>
@@ -509,7 +509,7 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			</div>
 			<div class="row">
 			<div class="col-md-12">
-			<span id="dahdi_trunks-help" class="help-block fpbx-help-block"><?php echo _("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards")?></span>
+			<span id="dahdi_trunks-help" class="help-block fpbx-help-block"> '._("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards").'</span>
 			</div>
 			</div>
 			</div>

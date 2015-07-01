@@ -509,15 +509,13 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 			</div>
 			<div class="row">
 			<div class="col-md-12">
-			<span id="dahdi_trunks-help" class="help-block fpbx-help-block"> '._("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module (linked below) to configure any un-used cards").'</span>
+			<span id="dahdi_trunks-help" class="help-block fpbx-help-block"> '._("There are no DAHDI Groups or Channels available to be configured. Check the DAHDI module to configure any un-used cards").'</span>
 			</div>
 			</div>
 			</div>
 			<!--END DAHDICONFIG HOOK-->
 			';
 		}
-
-		$URL = '?'.'display=dahdi';
 	}
 	return $html;
 }

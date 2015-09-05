@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-17 12:16-0400\n"
+"POT-Creation-Date: 2015-09-04 18:03-0700\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -135,6 +135,12 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
+#: functions.inc.php:485
+msgid ""
+"Available DAHDI Groups and Channels configued in the DAHDI Configuration "
+"Module"
+msgstr "DAHDI 配置模块下配置的可用的dahdi 组和通道。"
+
 #: views/dahdi_advanced_settings.php:64 views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
 msgstr ""
@@ -188,7 +194,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:547
+#: functions.inc.php:554
 msgid "Channel"
 msgstr "通道"
 
@@ -214,7 +220,7 @@ msgstr ""
 msgid "Choose"
 msgstr "选择"
 
-#: functions.inc.php:548
+#: functions.inc.php:555
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "为%s 设置一个FXS通道"
@@ -272,9 +278,13 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:104
+#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:107
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
+
+#: functions.inc.php:467 functions.inc.php:500
+msgid "DAHDI Trunks"
+msgstr "DAHDI中继"
 
 #: page.dahdi.php:22
 msgid ""
@@ -282,7 +292,7 @@ msgid ""
 "Below"
 msgstr ""
 
-#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:137
+#: Dahdiconfig.class.php:96 Dahdiconfig.class.php:159
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -291,11 +301,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: Dahdiconfig.class.php:90
+#: Dahdiconfig.class.php:94
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:135
+#: Dahdiconfig.class.php:157
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -330,7 +340,7 @@ msgstr ""
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
 
-#: functions.inc.php:536
+#: functions.inc.php:543
 msgid "Device Options"
 msgstr ""
 
@@ -939,7 +949,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:568
+#: functions.inc.php:504
+msgid "No Available Groups or Channels"
+msgstr "无可用的组或语音通道"
+
+#: functions.inc.php:575
 msgid "No Unused DAHDi Channels Available"
 msgstr "没有未使用的通道"
 
@@ -1351,7 +1365,7 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:88
+#: Dahdiconfig.class.php:92
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
@@ -1359,11 +1373,11 @@ msgstr ""
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:133
+#: Dahdiconfig.class.php:155
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:122
+#: Dahdiconfig.class.php:139
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -1478,6 +1492,12 @@ msgstr ""
 msgid ""
 "The values are in db (decibels). A positive number increases the volume "
 "level on a channel, and a negative value decreases volume level"
+msgstr ""
+
+#: functions.inc.php:512
+msgid ""
+"There are no DAHDI Groups or Channels available to be configured. Check the "
+"DAHDI module to configure any un-used cards"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:4
@@ -1630,7 +1650,7 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:74 Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:74 Dahdiconfig.class.php:143
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
@@ -1639,7 +1659,7 @@ msgstr ""
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:124
+#: Dahdiconfig.class.php:141
 msgid "Wanrouter Stopped"
 msgstr ""
 
@@ -1730,9 +1750,6 @@ msgstr ""
 #~ msgid "Configure/Edit DAHDI Cards"
 #~ msgstr "配置/编辑DAHDI语音卡"
 
-#~ msgid "DAHDI Trunks"
-#~ msgstr "DAHDI中继"
-
 #~ msgid "DAHDi Configuration Module"
 #~ msgstr "DAHDI配置模块"
 
@@ -1746,14 +1763,6 @@ msgstr ""
 #~ "DAHDI 中继配置通常是支持PRI 的组的配置环境。如果用户需要对指定的通道来配置"
 #~ "中继，设置为true允许配置每一个具体的通道。这个功能相当有用处，可以用来排查"
 #~ "PRI 或者非正常的语音通道。"
-
-#~ msgid ""
-#~ "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
-#~ "Module"
-#~ msgstr "DAHDI 配置模块下配置的可用的dahdi 组和通道。"
-
-#~ msgid "No Available Groups or Channels"
-#~ msgstr "无可用的组或语音通道"
 
 #~ msgid ""
 #~ "There are no DAHDI Groups or Channels available to be configured. Check "

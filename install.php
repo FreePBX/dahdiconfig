@@ -406,3 +406,7 @@ if(file_exists($mod_loc)) {
 		file_put_contents($mod_loc,$data,FILE_APPEND);
 	}
 }
+
+if(file_exists($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig") && is_writable($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig")) {
+	unlink($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig");
+}

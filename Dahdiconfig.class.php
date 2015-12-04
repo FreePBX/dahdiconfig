@@ -65,13 +65,24 @@ class Dahdiconfig implements \BMO {
 					$wanrouterLocation = $process->getOutput();
 					if(!empty($wanrouterLocation) && $confspresent > 0) {
 						$wanrouterLocation = trim($wanrouterLocation);
-						$process = new Process($wanrouterLocation.' start');
-						try {
-							$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
-							$process->mustRun();
-							$output->writeln(_("Wanrouter Started"));
-						} catch (ProcessFailedException $e) {
-							$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
+						$process = new Process($wanrouterLocation.' status');
+						$process->run();
+						if($process->isSuccessful()) {
+							$out = $process->getOutput();
+							if(preg_match('/Router is stopped/i',$out)) {
+								$process = new Process($wanrouterLocation.' start');
+								try {
+									$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
+									$process->mustRun();
+									$output->writeln(_("Wanrouter Started"));
+								} catch (ProcessFailedException $e) {
+									$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
+								}
+							} else {
+								$output->writeln("<comment>Wanrouter: Already started</comment>");
+							}
+						} else {
+							$output->writeln("<error>Wanrouter: Unexpected response</error>");
 						}
 					}else{
 						if(empty($wanrouterLocation)){
@@ -87,13 +98,19 @@ class Dahdiconfig implements \BMO {
 			}
 		}
 
-		$process = new Process($dahdiexec.' start');
-		try {
-			$output->writeln(_("Starting DAHDi for Digium Cards"));
-			$process->mustRun();
-			$output->writeln(_("DAHDi Started"));
-		} catch (ProcessFailedException $e) {
-			$output->writeln("<error>".sprintf(_("DAHDi Failed: %s")."</error>",$e->getMessage()));
+		$process = new Process($dahdiexec.' status');
+		$process->run();
+		if(!$process->isSuccessful() && $process->getExitCode() == 3) {
+			$process = new Process($dahdiexec.' start');
+			try {
+				$output->writeln(_("Starting DAHDi for Digium Cards"));
+				$process->mustRun();
+				$output->writeln(_("DAHDi Started"));
+			} catch (ProcessFailedException $e) {
+				$output->writeln("<error>".sprintf(_("DAHDi Failed: %s")."</error>",$e->getMessage()));
+			}
+		} else {
+			$output->writeln("<comment>DAHDi: Already started</comment>");
 		}
 	}
 
@@ -165,13 +182,14 @@ class Dahdiconfig implements \BMO {
 	 */
 	public function chownFreepbx() {
 		$files = array();
-
+		/** NO, these need to be owned and managed BY root
 		$files[] = array('type' => 'file',
 												'path' => '/dev/zap',
 												'perms' => 0644);
 		$files[] = array('type' => 'file',
 												'path' => '/dev/dahdi',
 												'perms' => 0644);
+		**/
 		$files[] = array('type' => 'rdir',
 												'path' => '/etc/dahdi',
 												'perms' => 0755);

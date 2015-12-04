@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 18:03-0700\n"
+"POT-Creation-Date: 2015-12-04 13:14-0800\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -226,6 +226,10 @@ msgstr "Выбрать канал FXS для %s"
 msgid "Columbia"
 msgstr ""
 
+#: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
+msgid "Connectivity"
+msgstr "Подключения"
+
 #: views/dahdi_analog_settings.php:36
 #: views/dahdi_analog_signalling_form.php:19
 msgid "Context"
@@ -275,7 +279,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:107
+#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:124
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -283,13 +287,17 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:8
+msgid "DAHDi Config"
+msgstr "Конфигурация DAHDi"
+
 #: page.dahdi.php:22
 msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
 "Below"
 msgstr ""
 
-#: Dahdiconfig.class.php:96 Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:110 Dahdiconfig.class.php:176
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -298,11 +306,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: Dahdiconfig.class.php:94
+#: Dahdiconfig.class.php:108
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:157
+#: Dahdiconfig.class.php:174
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1362,19 +1370,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:92
+#: Dahdiconfig.class.php:106
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:70
+#: Dahdiconfig.class.php:75
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:155
+#: Dahdiconfig.class.php:172
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:139
+#: Dahdiconfig.class.php:156
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -1647,16 +1655,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:74 Dahdiconfig.class.php:143
+#: Dahdiconfig.class.php:79 Dahdiconfig.class.php:160
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:72
+#: Dahdiconfig.class.php:77
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:141
+#: Dahdiconfig.class.php:158
 msgid "Wanrouter Stopped"
 msgstr ""
 
@@ -1726,12 +1734,6 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr ""
-
-#~ msgid "Connectivity"
-#~ msgstr "Подключения"
-
-#~ msgid "DAHDi Config"
-#~ msgstr "Конфигурация DAHDi"
 
 #~ msgid "Allow PRI Discrete Channels"
 #~ msgstr "Разрешить разделять каналы PRI"

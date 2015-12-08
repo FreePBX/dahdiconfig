@@ -182,14 +182,12 @@ class Dahdiconfig implements \BMO {
 	 */
 	public function chownFreepbx() {
 		$files = array();
-		/** NO, these need to be owned and managed BY root
 		$files[] = array('type' => 'file',
 												'path' => '/dev/zap',
 												'perms' => 0644);
 		$files[] = array('type' => 'file',
 												'path' => '/dev/dahdi',
 												'perms' => 0644);
-		**/
 		$files[] = array('type' => 'rdir',
 												'path' => '/etc/dahdi',
 												'perms' => 0755);

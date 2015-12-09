@@ -228,6 +228,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
 });
 
 <?php $groups = json_decode($span['additional_groups'],TRUE);
+    $groups = is_array($groups) ? $groups : array();
     foreach($groups as $gkey => $data) { ?>
 $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
     var span = <?php echo $key?>;

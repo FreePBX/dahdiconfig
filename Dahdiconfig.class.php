@@ -182,12 +182,15 @@ class Dahdiconfig implements \BMO {
 	 */
 	public function chownFreepbx() {
 		$files = array();
+		/* This is disabled because of FREEPBX-10859 and FREEPBX-11012
+		 * Basically let root (or dahdi driver) control the permissions for these
 		$files[] = array('type' => 'file',
 												'path' => '/dev/zap',
 												'perms' => 0644);
 		$files[] = array('type' => 'file',
 												'path' => '/dev/dahdi',
 												'perms' => 0644);
+		*/
 		$files[] = array('type' => 'rdir',
 												'path' => '/etc/dahdi',
 												'perms' => 0755);

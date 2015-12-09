@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-04 13:14-0800\n"
+"POT-Creation-Date: 2015-12-09 12:48-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -201,13 +201,13 @@ msgstr ""
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:299
-#: page.dahdi.php:318
-#: page.dahdi.php:347
-#: page.dahdi.php:381
-#: page.dahdi.php:404
-#: page.dahdi.php:423
-#: page.dahdi.php:468
+#: page.dahdi.php:300
+#: page.dahdi.php:319
+#: page.dahdi.php:348
+#: page.dahdi.php:382
+#: page.dahdi.php:405
+#: page.dahdi.php:424
+#: page.dahdi.php:469
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Digital Hardware"
 msgstr ""
 
-#: page.dahdi.php:259
+#: page.dahdi.php:260
 msgid "Disable"
 msgstr ""
 
@@ -445,7 +445,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: page.dahdi.php:254
+#: page.dahdi.php:255
 msgid "Enable"
 msgstr ""
 
@@ -1254,7 +1254,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:458
+#: page.dahdi.php:459
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1290,14 +1290,14 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:293
-#: page.dahdi.php:312
-#: page.dahdi.php:332
-#: page.dahdi.php:374
-#: page.dahdi.php:398
-#: page.dahdi.php:417
-#: page.dahdi.php:436
-#: page.dahdi.php:481
+#: page.dahdi.php:294
+#: page.dahdi.php:313
+#: page.dahdi.php:333
+#: page.dahdi.php:375
+#: page.dahdi.php:399
+#: page.dahdi.php:418
+#: page.dahdi.php:437
+#: page.dahdi.php:482
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1729,7 +1729,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:459
+#: page.dahdi.php:460
 msgid "This will reload the page"
 msgstr ""
 

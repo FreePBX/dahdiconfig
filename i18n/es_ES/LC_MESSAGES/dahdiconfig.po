@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-04 13:14-0800\n"
+"POT-Creation-Date: 2015-12-09 12:48-0800\n"
 "PO-Revision-Date: 2015-04-23 06:27+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -197,8 +197,8 @@ msgstr "Conteo de detección Ocupado"
 msgid "Canada"
 msgstr "Canadá"
 
-#: page.dahdi.php:299 page.dahdi.php:318 page.dahdi.php:347 page.dahdi.php:381
-#: page.dahdi.php:404 page.dahdi.php:423 page.dahdi.php:468
+#: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:348 page.dahdi.php:382
+#: page.dahdi.php:405 page.dahdi.php:424 page.dahdi.php:469
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -373,7 +373,7 @@ msgstr "Canal digital %s"
 msgid "Digital Hardware"
 msgstr "Hardware digital"
 
-#: page.dahdi.php:259
+#: page.dahdi.php:260
 msgid "Disable"
 msgstr "inhabilitar"
 
@@ -421,7 +421,7 @@ msgstr "Egypt"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: page.dahdi.php:254
+#: page.dahdi.php:255
 msgid "Enable"
 msgstr "Habilitar"
 
@@ -1238,7 +1238,7 @@ msgstr "Recargar el Modulo Dahdi Asterisk"
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
-#: page.dahdi.php:458
+#: page.dahdi.php:459
 msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
@@ -1270,8 +1270,8 @@ msgstr "Russian Federation"
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: page.dahdi.php:293 page.dahdi.php:312 page.dahdi.php:332 page.dahdi.php:374
-#: page.dahdi.php:398 page.dahdi.php:417 page.dahdi.php:436 page.dahdi.php:481
+#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:333 page.dahdi.php:375
+#: page.dahdi.php:399 page.dahdi.php:418 page.dahdi.php:437 page.dahdi.php:482
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1821,7 +1821,7 @@ msgstr ""
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
 "la transferencia al switch ISDN, ya que envía en un mensaje FACILIDAD"
 
-#: page.dahdi.php:459
+#: page.dahdi.php:460
 msgid "This will reload the page"
 msgstr "Esto recargará la página"
 

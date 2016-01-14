@@ -100,7 +100,7 @@ class Dahdiconfig implements \BMO {
 
 		$process = new Process($dahdiexec.' status');
 		$process->run();
-		if(!$process->isSuccessful() && $process->getExitCode() == 3) {
+		if($process->getExitCode() == 3) {
 			$process = new Process($dahdiexec.' start');
 			try {
 				$output->writeln(_("Starting DAHDi for Digium Cards"));

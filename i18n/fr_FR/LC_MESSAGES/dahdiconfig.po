@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 06:56-0800\n"
-"PO-Revision-Date: 2016-01-16 10:29+0200\n"
+"PO-Revision-Date: 2016-01-17 08:40+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/fr_FR/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
 msgid "%s Ports"
-msgstr "%s ports"
+msgstr "Ports %s"
 
 #: install.php:316
 msgid "..Done"
@@ -520,11 +520,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
 #: views/dahdi_modprobe_settings.php:63
 msgid "Finland"
-msgstr ""
+msgstr "Finlande"
 
 #: views/dahdi_global_settings.php:18
 msgid "Finnish"
-msgstr ""
+msgstr "Finlandais"
 
 #: views/dahdi_global_settings.php:110
 msgid "For FXS ports (either direct analog or over T1/E1)"
@@ -1700,7 +1700,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:132 views/dahdi_modprobe_settings.php:115
 msgid "Yemen"
-msgstr ""
+msgstr "Yémen"
 
 #: views/dahdi_global_settings.php:47 views/dahdi_global_settings.php:70
 #: views/dahdi_global_settings.php:81 views/dahdi_global_settings.php:92
@@ -1709,25 +1709,28 @@ msgstr ""
 #: views/dahdi_global_settings.php:154 views/dahdi_global_settings.php:165
 #: views/dahdi_global_settings.php:189
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: page.dahdi.php:40
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
 "button(s). Then reload DAHDi with the button below."
 msgstr ""
+"Vous avez du nouveau matériel! S'il vous plait, configurer votre nouveau "
+"matériel en utilisant le(s) bouton(s) d'édition puis recharger DAHDi avec le "
+"bouton situé plus bas."
 
 #: install.php:370
 msgid "add additional column"
-msgstr ""
+msgstr "Ajouter une colonne additionnelle"
 
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
-msgstr ""
+msgstr "alaw"
 
 #: views/dahdi_modprobe_settings.php:62
 msgid "fcc"
-msgstr ""
+msgstr "FCC"
 
 #: views/dahdi_modprobe_settings.php:195
 msgid "none - Performs no detection"
@@ -1739,4 +1742,4 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
-msgstr ""
+msgstr "ulaw"

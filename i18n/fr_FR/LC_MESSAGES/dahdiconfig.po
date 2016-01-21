@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 06:56-0800\n"
-"PO-Revision-Date: 2016-01-17 08:40+0200\n"
+"PO-Revision-Date: 2016-01-21 08:04+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/fr_FR/>\n"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Paramètres avancés"
 
 #: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:9
 msgid "Alarms"
@@ -79,17 +79,17 @@ msgstr ""
 #: views/dahdi_analog_settings.php:1
 #, php-format
 msgid "Analog %s"
-msgstr ""
+msgstr "%s analogue"
 
 #: views/dahdi_analog_signalling_form.php:1
 #, php-format
 msgid "Analog %s Ports"
-msgstr ""
+msgstr "Ports %s analogue"
 
 #: functions.inc.php:312
 #, php-format
 msgid "Analog Channel %s"
-msgstr ""
+msgstr "Canal analogue %s"
 
 #: page.dahdi.php:68
 msgid "Analog Hardware"
@@ -118,12 +118,12 @@ msgstr "Argentine"
 
 #: views/dahdi_global_settings.php:36
 msgid "Argentine Spanish"
-msgstr ""
+msgstr "Espagnol argentin"
 
 #: views/dahdi_advanced_settings.php:14 views/dahdi_advanced_settings.php:62
 #: views/dahdi_modprobe_settings.php:45
 msgid "Australia"
-msgstr ""
+msgstr "Australie"
 
 #: views/dahdi_global_settings.php:14
 msgid "Australian"
@@ -146,7 +146,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:64 views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahreïn"
 
 #: page.dahdi.php:193
 msgid ""
@@ -175,12 +175,12 @@ msgstr "Brésil"
 
 #: views/dahdi_global_settings.php:27
 msgid "Brazilian"
-msgstr ""
+msgstr "Brésilien"
 
 #: views/dahdi_advanced_settings.php:50 views/dahdi_advanced_settings.php:67
 #: views/dahdi_modprobe_settings.php:50
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarie"
 
 #: views/dahdi_global_settings.php:54
 msgid "Busy Detect Count"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 #: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:348 page.dahdi.php:382
 #: page.dahdi.php:405 page.dahdi.php:424 page.dahdi.php:469
@@ -230,11 +230,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
 msgid "Columbia"
-msgstr ""
+msgstr "Colombie"
 
 #: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
 msgid "Connectivity"
-msgstr ""
+msgstr "Connectivité"
 
 #: views/dahdi_analog_settings.php:36
 #: views/dahdi_analog_signalling_form.php:19
@@ -263,7 +263,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
-msgstr ""
+msgstr "Croatie"
 
 #: views/dahdi_advanced_settings.php:73 views/dahdi_modprobe_settings.php:56
 msgid "Cyrpus"

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 06:56-0800\n"
-"PO-Revision-Date: 2016-01-21 08:04+0200\n"
-"Last-Translator: Nicolas <forums@riendeau.org>\n"
+"PO-Revision-Date: 2016-02-01 03:09+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -563,11 +563,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:15 views/dahdi_advanced_settings.php:81
 #: views/dahdi_modprobe_settings.php:64
 msgid "France"
-msgstr ""
+msgstr "France"
 
 #: views/dahdi_global_settings.php:15
 msgid "French"
-msgstr ""
+msgstr "Français"
 
 #: views/dahdi_advanced_settings.php:180 views/dahdi_modprobe_settings.php:187
 msgid "Full Wave"
@@ -575,7 +575,7 @@ msgstr ""
 
 #: views/dahdi_digital_settings.php:4
 msgid "General Settings"
-msgstr ""
+msgstr "Paramètres généraux"
 
 #: views/dahdi_global_settings.php:161
 msgid ""
@@ -586,30 +586,30 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:17
 msgid "German"
-msgstr ""
+msgstr "Allemand"
 
 #: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
-msgstr ""
+msgstr "Allemagne"
 
 #: page.dahdi.php:93 page.dahdi.php:129 views/dahdi_global_settings.php:3
 msgid "Global Settings"
-msgstr ""
+msgstr "Paramètres globaux"
 
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
 msgid "Greece"
-msgstr ""
+msgstr "Grèce"
 
 #: views/dahdi_global_settings.php:23
 msgid "Greek"
-msgstr ""
+msgstr "Grec"
 
 #: views/dahdi_analog_settings.php:29
 #: views/dahdi_analog_signalling_form.php:16
 msgid "Group"
-msgstr ""
+msgstr "Groupe"
 
 #: functions.inc.php:308 functions.inc.php:326
 #, php-format

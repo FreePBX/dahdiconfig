@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 06:56-0800\n"
-"PO-Revision-Date: 2016-02-01 03:09+0200\n"
-"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
+"PO-Revision-Date: 2016-02-01 23:04+0200\n"
+"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -46,23 +46,23 @@ msgstr "Action"
 
 #: install.php:363
 msgid "Add type column"
-msgstr ""
+msgstr "Ajoute de la colonne type"
 
 #: install.php:337
 msgid "Adding Additional_groups column"
-msgstr ""
+msgstr "Ajout de la colonne  additional_groups"
 
 #: install.php:320
 msgid "Adding priexclusive column"
-msgstr ""
+msgstr "Ajoute de la colonne priexclusive"
 
 #: install.php:387
 msgid "Adding txgain and rxgain column to analog table"
-msgstr ""
+msgstr "Ajout des colonnes txgain et rxgain à la table analogue"
 
 #: install.php:379
 msgid "Adding txgain and rxgain column to digital table"
-msgstr ""
+msgstr "Ajout des colonnes txgain et rxgain à la table numérique"
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
@@ -93,7 +93,7 @@ msgstr "Canal analogue %s"
 
 #: page.dahdi.php:68
 msgid "Analog Hardware"
-msgstr ""
+msgstr "Matériel analogue"
 
 #: views/dahdi_global_settings.php:184
 msgid "Answer Immediately"
@@ -105,11 +105,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:147 views/dahdi_modprobe_settings.php:138
 msgid "Apply Opermode to FXO Modules"
-msgstr ""
+msgstr "Appliquer openmode aux modules FXO"
 
 #: views/dahdi_advanced_settings.php:148 views/dahdi_modprobe_settings.php:139
 msgid "Apply Opermode to FXS and FXO Modules"
-msgstr ""
+msgstr "Appliquer openmode aux modules FXS et FXO"
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_modprobe_settings.php:44
@@ -221,12 +221,12 @@ msgstr "Chinois"
 
 #: functions.inc.php:389
 msgid "Choose"
-msgstr ""
+msgstr "Choisir"
 
 #: functions.inc.php:555
 #, php-format
 msgid "Choose the FXS channel for this %s"
-msgstr ""
+msgstr "Choisir le canal FXS pour ce %s"
 
 #: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
 msgid "Columbia"
@@ -275,7 +275,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:45
 msgid "Czech Republic"
-msgstr ""
+msgstr "République tchèque"
 
 #: views/dahdi_digital_hardware.php:9
 msgid "D-Channel"
@@ -291,11 +291,11 @@ msgstr ""
 
 #: functions.inc.php:467 functions.inc.php:500
 msgid "DAHDI Trunks"
-msgstr ""
+msgstr "Jonction DAHDI"
 
 #: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:8
 msgid "DAHDi Config"
-msgstr ""
+msgstr "Configuration DAHDi"
 
 #: page.dahdi.php:22
 msgid ""
@@ -314,11 +314,11 @@ msgstr ""
 
 #: Dahdiconfig.class.php:108
 msgid "DAHDi Started"
-msgstr ""
+msgstr "DAHDi démarré"
 
 #: Dahdiconfig.class.php:174
 msgid "DAHDi Stopped"
-msgstr ""
+msgstr "DAHDi arrêté"
 
 #: page.dahdi.php:175
 msgid "DAHDi Write Disabled Disclaimer"
@@ -339,7 +339,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:44 views/dahdi_advanced_settings.php:75
 #: views/dahdi_modprobe_settings.php:58
 msgid "Denmark"
-msgstr ""
+msgstr "Danemark"
 
 #: install.php:404
 #, php-format
@@ -353,28 +353,28 @@ msgstr ""
 
 #: functions.inc.php:543
 msgid "Device Options"
-msgstr ""
+msgstr "Options du dispositif"
 
 #: functions.inc.php:345
 #, php-format
 msgid "Digital Channel %s"
-msgstr ""
+msgstr "Canal numérique %s"
 
 #: page.dahdi.php:67
 msgid "Digital Hardware"
-msgstr ""
+msgstr "Matériel numérique"
 
 #: page.dahdi.php:260
 msgid "Disable"
-msgstr ""
+msgstr "Désactiver"
 
 #: views/dahdi_global_settings.php:16
 msgid "Dutch"
-msgstr ""
+msgstr "Hollandais"
 
 #: views/dahdi_modprobe_settings.php:277
 msgid "E1"
-msgstr ""
+msgstr "E1"
 
 #: views/dahdi_modprobe_settings.php:258
 msgid "Echo Canc. NLP Max Suppression"

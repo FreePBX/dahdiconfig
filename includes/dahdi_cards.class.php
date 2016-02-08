@@ -123,7 +123,11 @@ class dahdi_cards {
 		global $db;
 		$nt = notifications::create($db);
 		foreach($check as $list) {
-			$o = posix_getpwuid(fileowner($list));
+			if(file_exists($list)){
+				$o = posix_getpwuid(fileowner($list));
+			}else{
+				$o = array('name' => 'nofile');
+			}
 			if($me != $o['name']) {
 				$nt->add_error('dahdiconfig', str_replace("/","",$list), sprintf(_('File %s is not owned by %s'), $list, $me), sprintf(_("Please run '%s', then go back into the DAHDi Config Module"),'amportal chown'), "", false, true);
 			} else {

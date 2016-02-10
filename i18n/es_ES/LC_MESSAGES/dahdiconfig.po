@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 12:48-0800\n"
+"POT-Creation-Date: 2016-02-10 14:52-0800\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
-"Language: es_ES\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"dahdiconfig/es_ES/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -73,6 +73,10 @@ msgstr "Opciones Avanzadas"
 #: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:9
 msgid "Alarms"
 msgstr "Alarmas"
+
+#: dahdiconfig.i18n.php:12
+msgid "Allow PRI Discrete Channels"
+msgstr "Permitir canales PRI discretos"
 
 #: views/dahdi_global_settings.php:112
 msgid "Also enables call parking (overrides the \"canpark\" parameter)"
@@ -193,6 +197,14 @@ msgstr "Bulgaria"
 msgid "Busy Detect Count"
 msgstr "Conteo de detección Ocupado"
 
+#: dahdiconfig.i18n.php:34
+msgid ""
+"By default the DAHDi configuration module will NOT write out any data to "
+"protect any current configuration settings"
+msgstr ""
+"Por defecto, el módulo de configuración Dahdi NO escribirá ningún dato para "
+"proteger los valores de configuración actuales"
+
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
 msgstr "Canadá"
@@ -306,6 +318,12 @@ msgstr "Líneas DAHDI"
 msgid "DAHDi Config"
 msgstr "Config Hardware DAHDi"
 
+#: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
+#: dahdiconfig.i18n.php:50
+msgid "DAHDi Configuration Module"
+msgstr "Módulo Configuración DAHDi"
+
 #: page.dahdi.php:22
 msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
@@ -314,14 +332,31 @@ msgstr ""
 "DAHDi no parece estar funcionando. Haga clic en el boton 'Reiniciar/Recargar "
 "Dahdi' Abajo"
 
+#: dahdiconfig.i18n.php:18
+msgid "DAHDi Executable Location"
+msgstr "Localidad Ejecutable DAHDI"
+
 #: Dahdiconfig.class.php:110 Dahdiconfig.class.php:176
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
 
+#: dahdiconfig.i18n.php:40
+msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+msgstr ""
+"DAHDI ModProbe.d Localidad Archivo de Configuración (modprobe.d/dahdi.conf)"
+
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
 msgstr "Modulo DAHDI load/order"
+
+#: dahdiconfig.i18n.php:24
+msgid "DAHDi Modules Location"
+msgstr "Localidad Módulos DAHDI"
+
+#: dahdiconfig.i18n.php:28
+msgid "DAHDi Modules Location (/etc/dahdi/modules)"
+msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
 #: Dahdiconfig.class.php:108
 msgid "DAHDi Started"
@@ -331,6 +366,10 @@ msgstr "DAHDI Iniciado"
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
+#: dahdiconfig.i18n.php:52
+msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
+msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
+
 #: page.dahdi.php:175
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr "DAHDi renuncia acerca de discapacitados de escritura"
@@ -338,6 +377,19 @@ msgstr "DAHDi renuncia acerca de discapacitados de escritura"
 #: page.dahdi.php:176
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi está DESHABILITADA para la escritura"
+
+#: dahdiconfig.i18n.php:16
+msgid ""
+"DAHDi trunk configuration is normally done using groups for PRI "
+"configuration. If there is a need to configure trunks to specific channels, "
+"setting this to true will allow each channel to be configured. This can be "
+"useful when troubleshooting a PRI and trying to isolate a bad B Channel."
+msgstr ""
+"La configuración de las líneas DAHDI se realiza normalmente con grupos para "
+"la configuración del PRI. Si hay una necesidad de configurar líneas o "
+"canales específicos, marcando ésta opción permitirá asignar cada canal que "
+"desea configurar. Esto puede ser útil para solucionar problemas de PRI y "
+"poder aislar a un canal B que está mal."
 
 #: views/dahdi_modprobe_settings.php:271
 msgid "Default Line Mode"
@@ -378,6 +430,10 @@ msgstr "Hardware digital"
 #: page.dahdi.php:260
 msgid "Disable"
 msgstr "inhabilitar"
+
+#: dahdiconfig.i18n.php:30
+msgid "Disable DAHDi Configuration Writes"
+msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
 #: views/dahdi_global_settings.php:16
 msgid "Dutch"
@@ -523,7 +579,7 @@ msgstr "Fastringer:"
 msgid "Fax Detection"
 msgstr "Detección Fax"
 
-#: includes/dahdi_cards.class.php:128
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Archivo %s no es propiedad de %s"
@@ -864,6 +920,10 @@ msgstr "Lithuania"
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
+#: dahdiconfig.i18n.php:22
+msgid "Location of the DAHDi Executable"
+msgstr "Localidad del Ejecutable DAHDI"
+
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -928,6 +988,10 @@ msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr "Migrando Modulo %s desde datos serializados a json"
+
+#: dahdiconfig.i18n.php:36
+msgid "ModProbe.d Configuration File Location"
+msgstr "Localidad del Archivo de Configuración ModProbe.d"
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "Mode"
@@ -1160,7 +1224,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
+#: includes/dahdi_cards.class.php:1275 includes/dahdi_cards.class.php:1553
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1173,7 +1237,7 @@ msgstr ""
 "Por favor, elija su país o su país más cercano para los tonos por defecto "
 "(Ej: tono de llamada, tono de ocupado, tono de timbre, etc.)"
 
-#: includes/dahdi_cards.class.php:128
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
@@ -1306,6 +1370,10 @@ msgstr "Slovakia"
 #: views/dahdi_advanced_settings.php:120 views/dahdi_modprobe_settings.php:103
 msgid "Slovenia"
 msgstr "Slovenia"
+
+#: dahdiconfig.i18n.php:42
+msgid "Software EC"
+msgstr "Software CE"
 
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
@@ -1631,6 +1699,10 @@ msgstr "Switzerland"
 msgid "Syria"
 msgstr "Syria"
 
+#: dahdiconfig.i18n.php:48
+msgid "System Configuration File Location"
+msgstr "Localización del Archivo de Configuración del Sistema"
+
 #: page.dahdi.php:94 page.dahdi.php:132
 msgid "System Settings"
 msgstr "Configuraciones del Sistema"
@@ -1856,7 +1928,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
+#: includes/dahdi_cards.class.php:1275 includes/dahdi_cards.class.php:1553
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -1984,19 +2056,13 @@ msgstr "ninguno - no hace detección"
 msgid "none - Performs no detection "
 msgstr "ninguno - no hace detección "
 
+#: dahdiconfig.i18n.php:46
+msgid "software EC to use in system.conf"
+msgstr "CE Por software a usar en system.conf"
+
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
-
-#~ msgid "Allow PRI Discrete Channels"
-#~ msgstr "Permitir canales PRI discretos"
-
-#~ msgid ""
-#~ "By default the DAHDi configuration module will NOT write out any data to "
-#~ "protect any current configuration settings"
-#~ msgstr ""
-#~ "Por defecto, el módulo de configuración Dahdi NO escribirá ningún dato "
-#~ "para proteger los valores de configuración actuales"
 
 #~ msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
 #~ msgstr "Configurar/Editar la tarjeta DAHDI en el Módulo DAHDI"
@@ -2004,56 +2070,8 @@ msgstr "u-law"
 #~ msgid "Configure/Edit DAHDI Cards"
 #~ msgstr "Configurar/Editar Tarjetas DAHDI"
 
-#~ msgid "DAHDi Configuration Module"
-#~ msgstr "Módulo Configuración DAHDi"
-
-#~ msgid "DAHDi Executable Location"
-#~ msgstr "Localidad Ejecutable DAHDI"
-
-#~ msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
-#~ msgstr ""
-#~ "DAHDI ModProbe.d Localidad Archivo de Configuración (modprobe.d/dahdi."
-#~ "conf)"
-
-#~ msgid "DAHDi Modules Location"
-#~ msgstr "Localidad Módulos DAHDI"
-
-#~ msgid "DAHDi Modules Location (/etc/dahdi/modules)"
-#~ msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
-
-#~ msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
-#~ msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
-
-#~ msgid ""
-#~ "DAHDi trunk configuration is normally done using groups for PRI "
-#~ "configuration. If there is a need to configure trunks to specific "
-#~ "channels, setting this to true will allow each channel to be configured. "
-#~ "This can be useful when troubleshooting a PRI and trying to isolate a bad "
-#~ "B Channel."
-#~ msgstr ""
-#~ "La configuración de las líneas DAHDI se realiza normalmente con grupos "
-#~ "para la configuración del PRI. Si hay una necesidad de configurar líneas "
-#~ "o canales específicos, marcando ésta opción permitirá asignar cada canal "
-#~ "que desea configurar. Esto puede ser útil para solucionar problemas de "
-#~ "PRI y poder aislar a un canal B que está mal."
-
-#~ msgid "Disable DAHDi Configuration Writes"
-#~ msgstr "Deshabilitar Escrituras Configuración DAHDI"
-
-#~ msgid "Location of the DAHDi Executable"
-#~ msgstr "Localidad del Ejecutable DAHDI"
-
-#~ msgid "ModProbe.d Configuration File Location"
-#~ msgstr "Localidad del Archivo de Configuración ModProbe.d"
-
 #~ msgid "Settings"
 #~ msgstr "Configuraciones"
-
-#~ msgid "Software EC"
-#~ msgstr "Software CE"
-
-#~ msgid "System Configuration File Location"
-#~ msgstr "Localización del Archivo de Configuración del Sistema"
 
 #~ msgid ""
 #~ "There are no DAHDI Groups or Channels available to be configured. Check "
@@ -2062,6 +2080,3 @@ msgstr "u-law"
 #~ "No hay grupos de DAHDI o canales disponibles para ser configurados. "
 #~ "Compruebe el módulo DAHDI (enlace más abajo) para configurar las tarjetas "
 #~ "no utilizadas"
-
-#~ msgid "software EC to use in system.conf"
-#~ msgstr "CE Por software a usar en system.conf"

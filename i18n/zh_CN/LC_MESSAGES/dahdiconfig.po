@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-09 12:48-0800\n"
+"POT-Creation-Date: 2016-02-10 14:52-0800\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -68,6 +68,10 @@ msgstr "高级设置"
 #: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:9
 msgid "Alarms"
 msgstr "告警"
+
+#: dahdiconfig.i18n.php:12
+msgid "Allow PRI Discrete Channels"
+msgstr "允许PRI独立设置通道"
 
 #: views/dahdi_global_settings.php:112
 msgid "Also enables call parking (overrides the \"canpark\" parameter)"
@@ -183,6 +187,12 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
+#: dahdiconfig.i18n.php:34
+msgid ""
+"By default the DAHDi configuration module will NOT write out any data to "
+"protect any current configuration settings"
+msgstr "默认环境下，Dahdi 配置模块将不会对当前配置做任何保护"
+
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
 msgstr ""
@@ -294,10 +304,20 @@ msgstr "DAHDI中继"
 msgid "DAHDi Config"
 msgstr "DAHDI 配置"
 
+#: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
+#: dahdiconfig.i18n.php:50
+msgid "DAHDi Configuration Module"
+msgstr "DAHDI配置模块"
+
 #: page.dahdi.php:22
 msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
 "Below"
+msgstr ""
+
+#: dahdiconfig.i18n.php:18
+msgid "DAHDi Executable Location"
 msgstr ""
 
 #: Dahdiconfig.class.php:110 Dahdiconfig.class.php:176
@@ -305,8 +325,20 @@ msgstr ""
 msgid "DAHDi Failed: %s"
 msgstr ""
 
+#: dahdiconfig.i18n.php:40
+msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
+msgstr ""
+
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
+msgstr ""
+
+#: dahdiconfig.i18n.php:24
+msgid "DAHDi Modules Location"
+msgstr ""
+
+#: dahdiconfig.i18n.php:28
+msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
 #: Dahdiconfig.class.php:108
@@ -317,6 +349,10 @@ msgstr ""
 msgid "DAHDi Stopped"
 msgstr ""
 
+#: dahdiconfig.i18n.php:52
+msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
+msgstr ""
+
 #: page.dahdi.php:175
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr ""
@@ -324,6 +360,17 @@ msgstr ""
 #: page.dahdi.php:176
 msgid "DAHDi is DISABLED for writing"
 msgstr ""
+
+#: dahdiconfig.i18n.php:16
+msgid ""
+"DAHDi trunk configuration is normally done using groups for PRI "
+"configuration. If there is a need to configure trunks to specific channels, "
+"setting this to true will allow each channel to be configured. This can be "
+"useful when troubleshooting a PRI and trying to isolate a bad B Channel."
+msgstr ""
+"DAHDI 中继配置通常是支持PRI 的组的配置环境。如果用户需要对指定的通道来配置中"
+"继，设置为true允许配置每一个具体的通道。这个功能相当有用处，可以用来排查PRI "
+"或者非正常的语音通道。"
 
 #: views/dahdi_modprobe_settings.php:271
 msgid "Default Line Mode"
@@ -363,6 +410,10 @@ msgstr "数字语音板卡"
 
 #: page.dahdi.php:260
 msgid "Disable"
+msgstr ""
+
+#: dahdiconfig.i18n.php:30
+msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
 #: views/dahdi_global_settings.php:16
@@ -509,7 +560,7 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:128
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr ""
@@ -809,6 +860,10 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
+#: dahdiconfig.i18n.php:22
+msgid "Location of the DAHDi Executable"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -863,6 +918,10 @@ msgstr ""
 #: install.php:346
 #, php-format
 msgid "Migrating module %s from serialized data to json"
+msgstr ""
+
+#: dahdiconfig.i18n.php:36
+msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:23
@@ -1071,7 +1130,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
+#: includes/dahdi_cards.class.php:1275 includes/dahdi_cards.class.php:1553
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1082,7 +1141,7 @@ msgid ""
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:128
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
@@ -1207,6 +1266,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:120 views/dahdi_modprobe_settings.php:103
 msgid "Slovenia"
+msgstr ""
+
+#: dahdiconfig.i18n.php:42
+msgid "Software EC"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
@@ -1445,6 +1508,10 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
+#: dahdiconfig.i18n.php:48
+msgid "System Configuration File Location"
+msgstr ""
+
 #: page.dahdi.php:94 page.dahdi.php:132
 msgid "System Settings"
 msgstr ""
@@ -1618,7 +1685,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1271 includes/dahdi_cards.class.php:1549
+#: includes/dahdi_cards.class.php:1275 includes/dahdi_cards.class.php:1553
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -1734,37 +1801,19 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
+#: dahdiconfig.i18n.php:46
+msgid "software EC to use in system.conf"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr ""
-
-#~ msgid ""
-#~ "By default the DAHDi configuration module will NOT write out any data to "
-#~ "protect any current configuration settings"
-#~ msgstr "默认环境下，Dahdi 配置模块将不会对当前配置做任何保护"
-
-#~ msgid "Allow PRI Discrete Channels"
-#~ msgstr "允许PRI独立设置通道"
 
 #~ msgid "Configure/Edit DAHDI Card settings in DAHDi Module"
 #~ msgstr "在DAHDI模块中配置/编辑语音卡设置"
 
 #~ msgid "Configure/Edit DAHDI Cards"
 #~ msgstr "配置/编辑DAHDI语音卡"
-
-#~ msgid "DAHDi Configuration Module"
-#~ msgstr "DAHDI配置模块"
-
-#~ msgid ""
-#~ "DAHDi trunk configuration is normally done using groups for PRI "
-#~ "configuration. If there is a need to configure trunks to specific "
-#~ "channels, setting this to true will allow each channel to be configured. "
-#~ "This can be useful when troubleshooting a PRI and trying to isolate a bad "
-#~ "B Channel."
-#~ msgstr ""
-#~ "DAHDI 中继配置通常是支持PRI 的组的配置环境。如果用户需要对指定的通道来配置"
-#~ "中继，设置为true允许配置每一个具体的通道。这个功能相当有用处，可以用来排查"
-#~ "PRI 或者非正常的语音通道。"
 
 #~ msgid ""
 #~ "There are no DAHDI Groups or Channels available to be configured. Check "

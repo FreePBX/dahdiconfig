@@ -172,6 +172,9 @@ class dahdi_cards {
 
 	public function get_all_modules() {
 		global $amp_conf;
+		if(!file_exists($amp_conf['DAHDIMODULESLOC']) || !is_readable($amp_conf['DAHDIMODULESLOC'])) {
+			return array();
+		}
 		$module_file = file_get_contents($amp_conf['DAHDIMODULESLOC']);
 		$list = explode("\n",$module_file);
 		$modules = array();
@@ -662,6 +665,9 @@ class dahdi_cards {
 		$nomore = false;
 		$ctr = 0;
 		do {
+			if(!file_exists('/etc/dahdi/system.conf') || !is_readable('/etc/dahdi/system.conf')) {
+				return FALSE;
+			}
 			$this->systemsettings_conf = file_get_contents('/etc/dahdi/system.conf');
 			if (! $this->systemsettings_conf) {
 				return FALSE;
@@ -1419,6 +1425,9 @@ class dahdi_cards {
 		$file = $amp_conf['DAHDIMODULESLOC'];
 
 		if(!empty($settings['reset'])) {
+			if(!file_exists(dirname(__FILE__).'/modules.reset') || !is_readable(dirname(__FILE__).'/modules.reset')) {
+				return false;
+			}
 			$m = file_get_contents(dirname(__FILE__).'/modules.reset');
 			if(!$amp_conf['DAHDIDISABLEWRITE']) {
 				file_put_contents($file, $m);
@@ -1433,6 +1442,9 @@ class dahdi_cards {
 		$settings = $settings['order'];
 
 		//because in the function parse_ini harsh marks are depreciated and this file uses them so I skip that function
+		if(!file_exists($file) || !is_readable($file)) {
+			return false;
+		}
 		$contents = file_get_contents($file);
 
 		//Enable/disable modules already in the file

@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.11</version>
+	<version>13.0.12</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+			*13.0.12* If files dont exist then dont try to read them
 			*13.0.11* Dahdi Config should handle missing files better
 			*13.0.10* FREEPBX-11315
 			*13.0.9* FREEPBX-10859 and FREEPBX-11012 permissions on /dev/*

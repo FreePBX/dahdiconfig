@@ -1319,7 +1319,7 @@ class dahdi_cards {
 					if ($fxx[$fx]) {
 						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'];
 					} else {
-						$fxx[$fx] = $s['startchan'].'-'.$s['endchan'];
+						$fxx[$fx] = $s['startchan'].'-'.$s['endchan'].',';
 					}
 				}
 

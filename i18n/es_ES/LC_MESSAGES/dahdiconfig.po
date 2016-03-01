@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 13:47-0400\n"
+"POT-Creation-Date: 2016-03-01 12:06-0800\n"
 "PO-Revision-Date: 2015-04-15 09:48+0200\n"
 "Last-Translator: Daver <daverjorge46@gmail.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -194,7 +194,7 @@ msgstr "Bulgaria"
 msgid "Busy Detect Count"
 msgstr "Conteo de detección Ocupado"
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:34
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -313,7 +313,9 @@ msgstr "Líneas DAHDI"
 msgid "DAHDi Config"
 msgstr "Config Hardware DAHDi"
 
-#: dahdiconfig.i18n.php:14
+#: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
+#: dahdiconfig.i18n.php:50
 msgid "DAHDi Configuration Module"
 msgstr "Módulo Configuración DAHDi"
 
@@ -327,7 +329,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
-#: dahdiconfig.i18n.php:32
+#: dahdiconfig.i18n.php:40
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 "DAHDI ModProbe.d Localidad Archivo de Configuración (modprobe.d/dahdi.conf)"
@@ -336,15 +338,15 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr "Modulo DAHDI load/order"
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location"
 msgstr "Localidad Módulos DAHDI"
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:28
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:52
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
 
@@ -409,7 +411,7 @@ msgstr "Hardware digital"
 msgid "Disable"
 msgstr ""
 
-#: dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:30
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
@@ -871,7 +873,7 @@ msgstr "Lithuania"
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
-#: dahdiconfig.i18n.php:20
+#: dahdiconfig.i18n.php:22
 msgid "Location of the DAHDi Executable"
 msgstr "Localidad del Ejecutable DAHDI"
 
@@ -940,7 +942,7 @@ msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
 msgid "Migrating module %s from serialized data to json"
 msgstr "Migrando Modulo %s desde datos serializados a json"
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:36
 msgid "ModProbe.d Configuration File Location"
 msgstr "Localidad del Archivo de Configuración ModProbe.d"
 
@@ -1326,7 +1328,7 @@ msgstr "Slovakia"
 msgid "Slovenia"
 msgstr "Slovenia"
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:42
 msgid "Software EC"
 msgstr "Software CE"
 
@@ -1638,7 +1640,7 @@ msgstr "Switzerland"
 msgid "Syria"
 msgstr "Syria"
 
-#: dahdiconfig.i18n.php:38
+#: dahdiconfig.i18n.php:48
 msgid "System Configuration File Location"
 msgstr "Localización del Archivo de Configuración del Sistema"
 
@@ -1971,7 +1973,7 @@ msgstr "ninguno - no hace detección"
 msgid "none - Performs no detection "
 msgstr "ninguno - no hace detección "
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:46
 msgid "software EC to use in system.conf"
 msgstr "CE Por software a usar en system.conf"
 

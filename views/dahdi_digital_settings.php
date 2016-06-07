@@ -15,21 +15,21 @@
 		<?php if(empty($span['type']) || $span['type'] != 'gsm') {?>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_framing">Framing/Coding')?>:</label>
+                <label for="editspan_<?php echo $key?>_framing"><?php echo _("Framing/Coding')?>:</label>
             </td>
             <td>
                	<select id="editspan_<?php echo $key?>_fac" name="editspan_<?php echo $key?>_fac">
             	<?php switch($span['totchans']) {
             	   case 3: ?>
-            		<option value="CCS/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/AMI'); ?>>CCS/AMI</option>
+            		<option value="CCS/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/AMI'); ?>><?php echo _("CCS/AMI")?></option>
             	<?php 	break;
             	   case 24: ?>
-            		<option value="ESF/B8ZS" <?php echo set_default($span['framing']."/".$span['coding'],'ESF/B8ZS'); ?>>ESF/B8ZS</option>
-            		<option value="D4/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'D4/AMI'); ?>>D4/AMI</option>
+            		<option value="ESF/B8ZS" <?php echo set_default($span['framing']."/".$span['coding'],'ESF/B8ZS'); ?>><?php echo _("ESF/B8ZS")?></option>
+            		<option value="D4/AMI" <?php echo set_default($span['framing']."/".$span['coding'],'D4/AMI'); ?>><?php echo _("D4/AMI")?></option>
             	<?php 	break;
             	   case 31: ?>
-            		<option value="CCS/HDB3" <?php echo set_default($span['framing']."/".$span['coding'], 'CCS/HDB3'); ?>>CCS/HDB3</option>
-            		<option value="CCS/HDB3/CRC4" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/HDB3/CRC4'); ?>>CCS/HDB3/CRC4</option>
+            		<option value="CCS/HDB3" <?php echo set_default($span['framing']."/".$span['coding'], 'CCS/HDB3'); ?>><?php echo _("CCS/HDB3")?></option>
+            		<option value="CCS/HDB3/CRC4" <?php echo set_default($span['framing']."/".$span['coding'],'CCS/HDB3/CRC4'); ?>><?php echo _("CCS/HDB3/CRC4")?></option>
             	   <?php	break;
             	   default:
             	   	break;
@@ -61,23 +61,23 @@
             <td>
                 <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
                     <option value="--" disabled>--PRI--</option>
-					<option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>>PRI - CPE</option>
-            		<option value="pri_net" <?php echo set_default($span['signalling'],'pri_net'); ?>>PRI - Net</option>
+					<option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>><?php echo _("PRI - CPE")?></option>
+            		<option value="pri_net" <?php echo set_default($span['signalling'],'pri_net'); ?>><?php echo _("PRI - Net")?></option>
                     <option value="--" disabled>--E &amp; M--</option>
-            		<option value="em" <?php echo set_default($span['signalling'],'em'); ?>>E &amp; M</option>
-            		<option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>>E &amp; M -- Wink</option>
-            		<option value="featd" <?php echo set_default($span['signalling'],'featd'); ?>>E &amp; M -- fead(DTMF)</option>
+            		<option value="em" <?php echo set_default($span['signalling'],'em'); ?>><?php echo _("E &amp; M")?></option>
+            		<option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>><?php echo _("E &amp; M -- Wink")?></option>
+            		<option value="featd" <?php echo set_default($span['signalling'],'featd'); ?>><?php echo _("E &amp; M -- fead(DTMF)")?></option>
                     <option value="--" disabled>--<?php echo ('ANALOG')?>--</option>
-            		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>>FXOKS</option>
-            		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>>FXOLS</option>
+            		<option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>><?php echo _("FXOKS")?></option>
+            		<option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>><?php echo _("FXOLS")?></option>
 				    <option value="--" disabled>--RHNIO--</option>
-					<option value="fxs_ks" <?php echo set_default($span['signalling'],'fxs_ks'); ?>>FXSKS</option>
-					<option value="fxs_ls" <?php echo set_default($span['signalling'],'fxs_ls'); ?>>FXSLS</option>
+					<option value="fxs_ks" <?php echo set_default($span['signalling'],'fxs_ks'); ?>><?php echo _("FXSKS")?></option>
+					<option value="fxs_ls" <?php echo set_default($span['signalling'],'fxs_ls'); ?>><?php echo _("FXSLS")?></option>
                     <option value="--" disabled>--BRI--</option>
-                    <option value="bri_net" <?php echo set_default($span['signalling'],'bri_net'); ?>>BRI PTP - Net</option>
-                    <option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>>BRI PTP - CPE</option>
-                    <option value="bri_net_ptmp" <?php echo set_default($span['signalling'],'bri_net_ptmp'); ?>>BRI PTMP - Net</option>
-                    <option value="bri_cpe_ptmp" <?php echo set_default($span['signalling'],'bri_cpe_ptmp'); ?>>BRI PTMP - CPE</option>
+                    <option value="bri_net" <?php echo set_default($span['signalling'],'bri_net'); ?>><?php echo _("BRI PTP - Net")?></option>
+                    <option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>><?php echo _("BRI PTP - CPE")?></option>
+                    <option value="bri_net_ptmp" <?php echo set_default($span['signalling'],'bri_net_ptmp'); ?>><?php echo _("BRI PTMP - Net")?></option>
+                    <option value="bri_cpe_ptmp" <?php echo set_default($span['signalling'],'bri_cpe_ptmp'); ?>><?php echo _("BRI PTMP - CPE")?></option>
             	</select>
             </td>
         </tr>
@@ -88,13 +88,13 @@
                 </td>
                 <td>
                  	<select id="editspan_<?php echo $key?>_switchtype" name="editspan_<?php echo $key?>_switchtype">
-                		<option value="national" <?php echo set_default($span['switchtype'],'national'); ?>>National ISDN 2 (<?php echo ('default')?>)</option>
-                		<option value="dms100" <?php echo set_default($span['switchtype'],'dms100'); ?>>Nortel DMS100</option>
-                		<option value="4ess" <?php echo set_default($span['switchtype'],'4ess'); ?>>AT&amp;T 4ESS</option>
-                		<option value="5ess" <?php echo set_default($span['switchtype'],'5ess'); ?>>Lucent 5ESS</option>
-                		<option value="euroisdn" <?php echo set_default($span['switchtype'],'euroisdn'); ?>>EuroISDN</option>
-                		<option value="ni1" <?php echo set_default($span['switchtype'],'ni1'); ?>>Old National ISDN 1</option>
-                		<option value="qsig" <?php echo set_default($span['switchtype'],'qsig'); ?>>Q.SIG</option>
+                		<option value="national" <?php echo set_default($span['switchtype'],'national'); ?>><?php echo _("National ISDN 2 (<?php echo ('default')?>)")?></option>
+                		<option value="dms100" <?php echo set_default($span['switchtype'],'dms100'); ?>><?php echo _("Nortel DMS100")?></option>
+                		<option value="4ess" <?php echo set_default($span['switchtype'],'4ess'); ?>><?php echo _("AT&amp;T 4ESS")?></option>
+                		<option value="5ess" <?php echo set_default($span['switchtype'],'5ess'); ?>><?php echo _("Lucent 5ESS")?></option>
+                		<option value="euroisdn" <?php echo set_default($span['switchtype'],'euroisdn'); ?>><?php echo _("EuroISDN")?></option>
+                		<option value="ni1" <?php echo set_default($span['switchtype'],'ni1'); ?>><?php echo _("Old National ISDN 1")?></option>
+                		<option value="qsig" <?php echo set_default($span['switchtype'],'qsig'); ?>><?php echo _("Q.SIG")?></option>
                 	</select>
                 </td>
             </tr>
@@ -116,14 +116,14 @@
             </td>
             <td>
                 <select id="editspan_<?php echo $key?>_lbo" name="editspan_<?php echo $key?>_lbo">
-            		<option value="0" <?php echo set_default($span['lbo'],0); ?>>0 db (CSU)/0-133 feet (DSX-1)</option>
-            		<option value="1" <?php echo set_default($span['lbo'],1); ?>>133-266 feet (DSX-1)</option>
-            		<option value="2" <?php echo set_default($span['lbo'],2); ?>>266-399 feet (DSX-1)</option>
-            		<option value="3" <?php echo set_default($span['lbo'],3); ?>>399-533 feet (DSX-1)</option>
-            		<option value="4" <?php echo set_default($span['lbo'],4); ?>>533-655 feet (DSX-1)</option>
-            		<option value="5" <?php echo set_default($span['lbo'],5); ?>>-7.5db (CSU)</option>
-            		<option value="6" <?php echo set_default($span['lbo'],6); ?>>-15db (CSU)</option>
-            		<option value="7" <?php echo set_default($span['lbo'],7); ?>>-22.5db (CSU)</option>
+            		<option value="0" <?php echo set_default($span['lbo'],0); ?>><?php echo _("0 db (CSU)/0-133 feet (DSX-1)")?></option>
+            		<option value="1" <?php echo set_default($span['lbo'],1); ?>><?php echo _("133-266 feet (DSX-1)")?></option>
+            		<option value="2" <?php echo set_default($span['lbo'],2); ?>><?php echo _("266-399 feet (DSX-1)")?></option>
+            		<option value="3" <?php echo set_default($span['lbo'],3); ?>><?php echo _("399-533 feet (DSX-1)")?></option>
+            		<option value="4" <?php echo set_default($span['lbo'],4); ?>><?php echo _("533-655 feet (DSX-1)")?></option>
+            		<option value="5" <?php echo set_default($span['lbo'],5); ?>><?php echo _("-7.5db (CSU)")?></option>
+            		<option value="6" <?php echo set_default($span['lbo'],6); ?>><?php echo _("-15db (CSU)")?></option>
+            		<option value="7" <?php echo set_default($span['lbo'],7); ?>><?php echo _("-22.5db (CSU)")?></option>
             	</select>
             </td>
         </tr>
@@ -176,7 +176,7 @@
 	            </td>
 	            <td>
 	                <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
-	            		<option value="gsm" <?php echo set_default($span['signalling'],'gsm'); ?>>gsm</option>
+	            		<option value="gsm" <?php echo set_default($span['signalling'],'gsm'); ?>><?php echo _("gsm")?></option>
 	            	</select>
 	            </td>
 	        </tr>

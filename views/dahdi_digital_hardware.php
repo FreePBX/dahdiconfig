@@ -25,7 +25,7 @@
 		<td id="digital_totchans_<?php echo $key; ?>_label"><?php echo $span['totchans']."/".$span['totchans']?></td>
 		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:_("Not Yet Defined"))?></td>
 		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:_("Not Yet Defined"))?></td>
-		<td><a href="#" onclick="dahdi_modal_settings('digital','<?php echo $key?>');">Edit</a></td>
+		<td><a href="#" onclick="dahdi_modal_settings('digital','<?php echo $key?>');"><?php echo _('Edit')?></a></td>
 	</tr>
 	<?php $ctr++;
 	} ?>

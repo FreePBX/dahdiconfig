@@ -26,8 +26,8 @@
                   	<input type="checkbox" id="mode_checkbox" name="mode_checkbox" <?php echo ($dahdi_cards->get_modprobe('mode_checkbox'))?'checked':''?> />
                 	<select id="mode" name="mode">
                 		<option value="any" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'any'); ?>><?php echo _('Any')?></option>
-                		<option value="g723.1" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g723.1'); ?>>G723.1</option>
-                		<option value="g729" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g729'); ?>>G729</option>
+                		<option value="g723.1" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g723.1'); ?>><?php echo _("G723.1")?></option>
+                		<option value="g729" <?php echo set_default($dahdi_cards->get_modprobe('mode'),'g729'); ?>><?php echo _("G729")?></option>
                 	</select>
                 </td>
             </tr>

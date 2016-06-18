@@ -15,7 +15,7 @@
 		<?php if(empty($span['type']) || $span['type'] != 'gsm') {?>
         <tr>
             <td style="width:10px;">
-                <label for="editspan_<?php echo $key?>_framing"><?php echo _("Framing/Coding')?>:</label>
+                <label for="editspan_<?php echo $key?>_framing"><?php echo _('Framing/Coding')?>:</label>
             </td>
             <td>
                	<select id="editspan_<?php echo $key?>_fac" name="editspan_<?php echo $key?>_fac">

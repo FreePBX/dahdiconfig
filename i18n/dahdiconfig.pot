@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-01 12:08-0800\n"
+"POT-Creation-Date: 2016-06-17 18:18-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,8 +23,40 @@ msgstr ""
 msgid "%s Ports"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:125
+msgid "-15db (CSU)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:126
+msgid "-22.5db (CSU)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:124
+msgid "-7.5db (CSU)"
+msgstr ""
+
 #: install.php:316
 msgid "..Done"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:119
+msgid "0 db (CSU)/0-133 feet (DSX-1)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:120
+msgid "133-266 feet (DSX-1)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:121
+msgid "266-399 feet (DSX-1)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:122
+msgid "399-533 feet (DSX-1)"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:123
+msgid "533-655 feet (DSX-1)"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:29
@@ -36,6 +68,10 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:136
 #: views/dahdi_modprobe_settings.php:121
 msgid "A-law Override"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:93
+msgid "AT&amp;T 4ESS"
 msgstr ""
 
 #: views/dahdi_analog_hardware.php:7
@@ -153,6 +189,22 @@ msgid ""
 "Module"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:80
+msgid "BRI PTMP - CPE"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:79
+msgid "BRI PTMP - Net"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:78
+msgid "BRI PTP - CPE"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:77
+msgid "BRI PTP - Net"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:64
 #: views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
@@ -204,6 +256,18 @@ msgstr ""
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:24
+msgid "CCS/AMI"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:31
+msgid "CCS/HDB3"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:32
+msgid "CCS/HDB3/CRC4"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:68
@@ -312,6 +376,10 @@ msgstr ""
 
 #: views/dahdi_digital_hardware.php:9
 msgid "D-Channel"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:28
+msgid "D4/AMI"
 msgstr ""
 
 #: page.dahdi.php:60
@@ -452,8 +520,24 @@ msgstr ""
 msgid "Dutch"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:67
+msgid "E &amp; M"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:68
+msgid "E &amp; M -- Wink"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:69
+msgid "E &amp; M -- fead(DTMF)"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:277
 msgid "E1"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:27
+msgid "ESF/B8ZS"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:258
@@ -484,6 +568,7 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:30
 #: views/dahdi_analog_hardware.php:35
+#: views/dahdi_digital_hardware.php:28
 msgid "Edit"
 msgstr ""
 
@@ -553,6 +638,10 @@ msgstr ""
 msgid "Estonian"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:95
+msgid "EuroISDN"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:79
 msgid "FCC"
 msgstr ""
@@ -570,6 +659,14 @@ msgstr ""
 msgid "FXO Settings"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:71
+msgid "FXOKS"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:72
+msgid "FXOLS"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:144
 #: views/dahdi_modprobe_settings.php:133
 msgid "FXS Honor Mode"
@@ -577,6 +674,14 @@ msgstr ""
 
 #: page.dahdi.php:172
 msgid "FXS Settings"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:74
+msgid "FXSKS"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:75
+msgid "FXSLS"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:164
@@ -647,6 +752,7 @@ msgid ""
 msgstr ""
 
 #: views/dahdi_digital_hardware.php:7
+#: views/dahdi_digital_settings.php:18
 msgid "Framing/Coding"
 msgstr ""
 
@@ -663,6 +769,14 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:180
 #: views/dahdi_modprobe_settings.php:187
 msgid "Full Wave"
+msgstr ""
+
+#: views/dahdi_modprobe_settings.php:29
+msgid "G723.1"
+msgstr ""
+
+#: views/dahdi_modprobe_settings.php:30
+msgid "G729"
 msgstr ""
 
 #: views/dahdi_digital_settings.php:4
@@ -953,6 +1067,10 @@ msgstr ""
 msgid "Lowpower"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:94
+msgid "Lucent 5ESS"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:99
 #: views/dahdi_modprobe_settings.php:82
 msgid "Luxembourg"
@@ -1062,6 +1180,10 @@ msgstr ""
 msgid "NEON - Performs Neon MWI detection."
 msgstr ""
 
+#: views/dahdi_digital_settings.php:91
+msgid "National ISDN 2 (<?php echo ('default')?>)"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:216
 msgid "Neon MWI Off Limit"
 msgstr ""
@@ -1143,6 +1265,10 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:92
+msgid "Nortel DMS100"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:21
 #: views/dahdi_advanced_settings.php:108
 #: views/dahdi_modprobe_settings.php:91
@@ -1177,6 +1303,10 @@ msgid ""
 "priority 1 regardless of the dialed number!"
 msgstr ""
 
+#: views/dahdi_digital_settings.php:96
+msgid "Old National ISDN 1"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:109
 #: views/dahdi_modprobe_settings.php:92
 msgid "Oman"
@@ -1204,6 +1334,14 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:64
+msgid "PRI - CPE"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:65
+msgid "PRI - Net"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:110
@@ -1281,6 +1419,10 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:32
 msgid "Portuguese"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:97
+msgid "Q.SIG"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:218
@@ -1938,6 +2080,10 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:62
 msgid "fcc"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:179
+msgid "gsm"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:195

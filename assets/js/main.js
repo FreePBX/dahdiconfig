@@ -1,11 +1,49 @@
+/* MFC/R2 show/hide */
+function mfcr2_set_defaults(span) {
+    $('#editspan_' + span + '_mfcr2_variant')[0].value = 'ITU';
+    $('#editspan_' + span + '_mfcr2_max_ani')[0].value = 10;
+    $('#editspan_' + span + '_mfcr2_max_dnis')[0].value = 4;
+    $('#editspan_' + span + '_mfcr2_get_ani_first')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_category')[0].value = 'national_subscriber';
+    $('#editspan_' + span + '_mfcr2_logdir')[0].value = '';
+    $('#editspan_' + span + '_mfcr2_call_files')[0].value = 'no'; 
+    $('#editspan_' + span + '_mfcr2_logging')[0].value = '';
+    $('#editspan_' + span + '_mfcr2_mfback_timeout')[0].value = '';
+    $('#editspan_' + span + '_mfcr2_metering_pulse_timeout')[0].value = '';
+    $('#editspan_' + span + '_mfcr2_allow_collect_calls')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_double_answer')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_immediate_accept')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_accept_on_offer')[0].value = 'yes';
+    $('#editspan_' + span + '_mfcr2_skip_category')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_forced_release')[0].value = 'no';
+    $('#editspan_' + span + '_mfcr2_charge_calls')[0].value = 'yes';
+    $('#editspan_' + span + '_mfcr2_advanced_protocol_file')[0].value = '';
+}
+/* MFC/R2 show/hide */
+function mfcr2_toggle() {
+    if ($('input[name=mfcr2_active]').val() === "0") {
+        $('.mfcr2-settings').hide();
+        $('.isdn-settings').show();
+    }
+    else {
+        $('.mfcr2-settings').show();
+        $('.isdn-settings').hide();
+    }
+}
+
 /* Popup Box Function */
 function dahdi_modal_settings(type,id) {
     if(typeof id !== 'undefined') {
         $( "#"+type+"-settings-"+id ).dialog( "open" );
+        if (type == "digital") {
+            $('.mfcr2-settings').hide();
+            $('.isdn-settings').show();
+
+        }
     } else {
-		if(type == "modprobe") {
-			createModProbeSettings();
-		}
+        if(type == "modprobe") {
+            createModProbeSettings();
+        }
         $( "#"+type+"-settings" ).dialog( "open" );
     }
 }

@@ -162,7 +162,7 @@ if ($dahdi_cards->hdwr_changes()) {
 			$span['txgain'] = !empty($span['txgain']) ? $span['txgain'] : '0.0';
 			$span['rxgain'] = !empty($span['rxgain']) ? $span['rxgain'] : '0.0';
             ?>
-        <div id="digital-settings-<?php echo $key;?>" title="Span: <?php echo $span['description']?>" style="display: none;">
+        <div id="digital-settings-<?php echo $key;?>" title="Span: <?php echo $span['description']?>" style="display: none;" class="span-container">
             <?php require dirname(__FILE__).'/views/dahdi_digital_settings.php'; ?>
         </div>
         <?php } ?>
@@ -326,18 +326,42 @@ $(function(){
     <?php foreach($dahdi_cards->get_spans() as $key=>$span) { ?>
     $( "#digital-settings-<?php echo $key?>" ).dialog({
         autoOpen: false,
-        height: 400,
-        width: 500,
+        height: 900,
+        width: 630,
         modal: true,
         buttons: {
+            "btnMfcR2Def": {
+                text: "<?php echo _('Set Defaults') ?>",
+                id: 'button_mfc_r2_defs_<?php echo $key ?>',
+                click: function() {
+                    mfcr2_set_defaults(<?php echo $key?>);
+                }
+            },
+            "btnMfcR2": {
+                text: "<?php echo _('MFC/R2 Settings') ?>",
+                id: 'button_mfc_r2_span<?php echo $key?>',
+                click: function() {
+                    if ($('input[name=mfcr2_active]').val() === "0") {
+                        $('input[name=mfcr2_active]').val('1');
+                        $('#button_mfc_r2_span<?php echo $key?>').text('General Settings');
+                        $('#button_mfc_r2_defs_<?php echo $key ?>').show();
+                    } 
+                    else {
+                        $('input[name=mfcr2_active]').val('0');
+                        $('#button_mfc_r2_span<?php echo $key?>').text('MFC/R2 Settings');
+                        $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
+                    }
+                    mfcr2_toggle();
+                }
+            },
             "<?php echo _('Save')?>": function() {
                 //spandata[<?php echo $key?>]
                 gdata = JSON.stringify(spandata[<?php echo $key?>]['groups'])
                 $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) {
                         if(j.status) {
                             $.each(j, function(index, value) {
-								if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
-                                	$("#digital_"+index+"_"+j.span+"_label").html(value);
+                                if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
+                                    $("#digital_"+index+"_"+j.span+"_label").html(value);
                             });
                             toggle_reload_button('show');
                             $("#reboot").show();
@@ -347,6 +371,19 @@ $(function(){
             },
             <?php echo _('Cancel')?>: function() {
                 $( this ).dialog( "close" );
+            },
+        },
+        open: function() {
+    	    mfcr2_toggle();
+            $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
+            $('input[name=mfcr2_active]').val('0');
+            if ("<?php echo $span['signalling']?>" != 'mfc_r2') {
+                $('#button_mfc_r2_span<?php echo $key?>').hide();
+                $("#editspan_<?php echo $key?>_switchtype_tr").show();
+            }
+            else {
+                $('#button_mfc_r2_span<?php echo $key?>').show(); 
+                $("#editspan_<?php echo $key?>_switchtype_tr").hide();
             }
         },
         close: function() {
@@ -358,6 +395,17 @@ $(function(){
             $("#editspan_<?php echo $key?>_switchtype").val('euroisdn')
         } else {
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow')
+        }
+        if ($(this).val() == 'mfc_r2') {
+            $('#button_mfc_r2_span<?php echo $key?>').show();
+            $("#editspan_<?php echo $key?>_fac").val('CAS/HDB3');
+            $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow');
+            mfcr2_set_defaults(<?php echo $key ?>);
+        }
+        else {
+            $('#button_mfc_r2_span<?php echo $key?>').hide();
+            $("#editspan_<?php echo $key?>_fac").val('CCS/HDB3');
+            $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow');
         }
     })
     <?php } ?>

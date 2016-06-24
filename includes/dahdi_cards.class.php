@@ -1102,7 +1102,28 @@ class dahdi_cards {
 		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
-		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : json_encode(array());
+		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : '';
+		
+		if ($editspan['signalling'] == "mfc_r2") {
+		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
+		    $this->spans[$num]['mfcr2_max_ani'] 				= $editspan['mfcr2_max_ani'] ? $editspan['mfcr2_max_ani'] : 10;
+		    $this->spans[$num]['mfcr2_max_dnis'] 				= $editspan['mfcr2_max_dnis'] ? $editspan['mfcr2_max_dnis'] : 4;
+		    $this->spans[$num]['mfcr2_get_ani_first'] 			= $editspan['mfcr2_get_ani_first'] ? $editspan['mfcr2_get_ani_first'] : 'no';
+		    $this->spans[$num]['mfcr2_category'] 				= $editspan['mfcr2_category'] ? $editspan['mfcr2_category'] : 'national_subscriber';
+		    $this->spans[$num]['mfcr2_logdir'] 					= $editspan['mfcr2_logdir'] ? $editspan['mfcr2_logdir'] : '';
+		    $this->spans[$num]['mfcr2_call_files'] 				= $editspan['mfcr2_call_files'] ? $editspan['mfcr2_call_files'] : '';
+		    $this->spans[$num]['mfcr2_logging'] 				= $editspan['mfcr2_logging'] ? $editspan['mfcr2_logging'] : '';
+		    $this->spans[$num]['mfcr2_mfback_timeout'] 			= $editspan['mfcr2_mfback_timeout'] ? $editspan['mfcr2_mfback_timeout'] : -1;
+		    $this->spans[$num]['mfcr2_metering_pulse_timeout'] 	= $editspan['mfcr2_metering_pulse_timeout'] ? $editspan['mfcr2_metering_pulse_timeout'] : -1;
+		    $this->spans[$num]['mfcr2_allow_collect_calls'] 	= $editspan['mfcr2_allow_collect_calls'] ? $editspan['mfcr2_allow_collect_calls'] : 'no';
+		    $this->spans[$num]['mfcr2_double_answer'] 			= $editspan['mfcr2_double_answer'] ? $editspan['mfcr2_double_answer'] : 'yes';
+		    $this->spans[$num]['mfcr2_immediate_accept']		= $editspan['mfcr2_immediate_accept'] ? $editspan['mfcr2_immediate_accept'] : 'no';
+		    $this->spans[$num]['mfcr2_accept_on_offer'] 		= $editspan['mfcr2_accept_on_offer'] ? $editspan['mfcr2_accept_on_offer'] : 'yes';
+		    $this->spans[$num]['mfcr2_skip_category'] 			= $editspan['mfcr2_skip_category'] ? $editspan['mfcr2_skip_category'] : 'no';
+		    $this->spans[$num]['mfcr2_forced_release'] 			= $editspan['mfcr2_forced_release'] ? $editspan['mfcr2_forced_release'] : 'no';
+		    $this->spans[$num]['mfcr2_charge_calls'] 			= $editspan['mfcr2_charge_calls'] ? $editspan['mfcr2_charge_calls'] : 'yes';
+		    $this->spans[$num]['mfcr2_advanced_protocol_file'] 	= $editspan['mfcr2_advanced_protocol_file'] ? $editspan['mfcr2_advanced_protocol_file'] : '';
+		}
 
 		$this->write_spans();
 		$this->write_system_conf();
@@ -1230,7 +1251,7 @@ class dahdi_cards {
 		}
 		unset($result);
 
-		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain');
+		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain', 'mfcr2_variant', 'mfcr2_get_ani_first', 'mfcr2_max_ani', 'mfcr2_max_dnis', 'mfcr2_category', 'mfcr2_call_files', 'mfcr2_logdir', 'mfcr2_logging', 'mfcr2_mfback_timeout', 'mfcr2_metering_pulse_timeout', 'mfcr2_allow_collect_calls', 'mfcr2_double_answer', 'mfcr2_immediate_accept', 'mfcr2_forced_release', 'mfcr2_charge_calls', 'mfcr2_accept_on_offer', 'mfcr2_skip_category', 'mfcr2_advanced_protocol_file');
 
 		$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 
@@ -1308,6 +1329,8 @@ class dahdi_cards {
 			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri' && substr($span['signalling'],0,3) != 'gsm') {
 				if (substr($span['signalling'],0,2) == 'fx') {
 					$fx = str_replace('_','',$span['signalling']);
+				} else if ($span['signalling'] == 'mfc_r2') {
+					$fx = 'cas';
 				} else {
 					$fx = 'e&m';
 				}
@@ -1316,13 +1339,8 @@ class dahdi_cards {
 					if (strtolower($s['group'] == 's')){
 						continue;
 					}
-					if ($fxx[$fx]) {
-						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'];
-					} else {
-						$fxx[$fx] = $s['startchan'].'-'.$s['endchan'].',';
-					}
+					$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 				}
-
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
 				$dchan .= ($dchan) ? ",{$span['reserved_ch']}" : "{$span['reserved_ch']}";
@@ -1333,11 +1351,10 @@ class dahdi_cards {
 
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
-
+		$fxx[$fx] = rtrim($fxx[$fx], ',');
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
 			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$val;
-
 		}
 
 		if ($bchan) {

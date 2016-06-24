@@ -1339,7 +1339,11 @@ class dahdi_cards {
 					if (strtolower($s['group'] == 's')){
 						continue;
 					}
-					$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+					if ($span['signalling'] == 'mfc_r2') {
+						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
+					} else {
+						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+					}
 				}
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
@@ -1354,7 +1358,7 @@ class dahdi_cards {
 		$fxx[$fx] = rtrim($fxx[$fx], ',');
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$val;
+			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.str_replace(":1101", "", $val);
 		}
 
 		if ($bchan) {

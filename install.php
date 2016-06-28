@@ -103,7 +103,25 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_spans"')) {
 		`syncsrc` INT UNSIGNED,
 		`timing` INT UNSIGNED,
 		`totchans` INT UNSIGNED,
-		`type` VARCHAR(25)
+		`type` VARCHAR(25),
+		`mfcr2_variant` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'ITU',
+		`mfcr2_get_ani_first` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+		`mfcr2_max_ani` tinyint(4) NOT NULL DEFAULT '10',
+		`mfcr2_max_dnis` tinyint(4) NOT NULL DEFAULT '4',
+		`mfcr2_category` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'national_subscriber',
+		`mfcr2_call_files` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
+		`mfcr2_logdir` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+		`mfcr2_logging` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+		`mfcr2_mfback_timeout` decimal(10,0) NOT NULL,
+		`mfcr2_metering_pulse_timeout` decimal(10,0) NOT NULL,
+		`mfcr2_allow_collect_calls` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+		`mfcr2_double_answer` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
+		`mfcr2_immediate_accept` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+		`mfcr2_forced_release` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+		`mfcr2_charge_calls` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
+		`mfcr2_accept_on_offer` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'yes',
+		`mfcr2_skip_category` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'no',
+		`mfcr2_advanced_protocol_file` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 	);";
 
 	$result = $db->query($sql);

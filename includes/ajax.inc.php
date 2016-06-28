@@ -192,7 +192,7 @@ switch($_REQUEST['type']) {
                 unset($editspan['groupdata'][$key]);
             }
 	    }
-	    $editspan['additional_groups'] = $editspan['groupdata'] ? json_encode($editspan['groupdata']) : '';
+	    $editspan['additional_groups'] = !empty($editspan['groupdata']) ? json_encode($editspan['groupdata']) : '';
 
 	    $dahdi_cards->update_span($editspan);
 

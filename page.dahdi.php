@@ -326,7 +326,7 @@ $(function(){
     <?php foreach($dahdi_cards->get_spans() as $key=>$span) { ?>
     $( "#digital-settings-<?php echo $key?>" ).dialog({
         autoOpen: false,
-        height: 900,
+        height: 700,
         width: 630,
         modal: true,
         buttons: {
@@ -345,7 +345,7 @@ $(function(){
                         $('input[name=mfcr2_active]').val('1');
                         $('#button_mfc_r2_span<?php echo $key?>').text('General Settings');
                         $('#button_mfc_r2_defs_<?php echo $key ?>').show();
-                    } 
+                    }
                     else {
                         $('input[name=mfcr2_active]').val('0');
                         $('#button_mfc_r2_span<?php echo $key?>').text('MFC/R2 Settings');
@@ -382,7 +382,7 @@ $(function(){
                 $("#editspan_<?php echo $key?>_switchtype_tr").show();
             }
             else {
-                $('#button_mfc_r2_span<?php echo $key?>').show(); 
+                $('#button_mfc_r2_span<?php echo $key?>').show();
                 $("#editspan_<?php echo $key?>_switchtype_tr").hide();
             }
         },

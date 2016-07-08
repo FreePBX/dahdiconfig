@@ -70,6 +70,7 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced"')) {
 	}
 }
 
+outn(_("Checking tables..."));
 $table = FreePBX::Database()->migrate("dahdi_spans");
 $cols = array(
 	"id" => array(
@@ -236,9 +237,109 @@ $cols = array(
 		"length" => 10,
 		"notnull" => true,
 		"default" => "0.0"
-	)
+	),
+	"mfcr2_variant" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "ITU"
+	),
+	"mfcr2_get_ani_first" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_max_ani" => array(
+		"type" => "smallint",
+		"notnull" => true,
+		"default" => 10
+	),
+	"mfcr2_max_dnis" => array(
+		"type" => "smallint",
+		"notnull" => true,
+		"default" => 4
+	),
+	"mfcr2_category" => array(
+		"type" => "string",
+		"length" => 50,
+		"notnull" => true,
+		"default" => "national_subscriber"
+	),
+	"mfcr2_call_files" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_logdir" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false,
+	),
+	"mfcr2_logging" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false,
+	),
+	"mfcr2_mfback_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_mfback_pulse_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_allow_collect_calls" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_double_answer" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_immediate_accept" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_forced_release" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_charge_calls" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_accept_on_offer" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_skip_catefory" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_advanced_protocol_file" => array(
+		"type" => "string",
+		"length" => 100,
+		"notnull" => false
+	),
 );
 $table->modify($cols,array());
+out(_("Done"));
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 	out(_('Creating Dahdi Analog Table'));

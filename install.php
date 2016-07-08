@@ -70,48 +70,276 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced"')) {
 	}
 }
 
-if(!$db->getAll('SHOW TABLES LIKE "dahdi_spans"')) {
-	out(_('Creating Dahdi Spans Table'));
-	$sql = "CREATE TABLE IF NOT EXISTS dahdi_spans (
-		`id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
-		`span` INT UNSIGNED NOT NULL,
-		`active` BOOL DEFAULT 1,
-		`alarms` VARCHAR(15),
-		`basechan` INT UNSIGNED,
-		`coding` VARCHAR(10),
-		`coding_opts` VARCHAR(255),
-		`context` VARCHAR(255),
-		`definedchans` INT UNSIGNED,
-		`description` VARCHAR (255),
-		`devicetype` VARCHAR(255),
-		`framing` VARCHAR(10),
-		`framing_opts` VARCHAR(255),
-		`group` INT UNSIGNED,
-		`irq` VARCHAR(10),
-		`lbo` INT UNSIGNED,
-		`location` VARCHAR(255),
-		`name` VARCHAR(25),
-		`manufacturer` VARCHAR (25) DEFAULT 'Digium',
-		`max_ch` INT UNSIGNED,
-		`min_ch` INT UNSIGNED,
-		`pridialplan` VARCHAR(25),
-		`prilocaldialplan` VARCHAR(25),
-		`reserved_ch` INT UNSIGNED,
-		`signalling` VARCHAR(50),
-		`spantype` VARCHAR(10),
-		`switchtype` VARCHAR(50),
-		`syncsrc` INT UNSIGNED,
-		`timing` INT UNSIGNED,
-		`totchans` INT UNSIGNED,
-		`type` VARCHAR(25)
-	);";
-
-	$result = $db->query($sql);
-	if (DB::IsError($result)) {
-		die_freepbx($result->getDebugInfo());
-	}
-	unset($result);
-}
+outn(_("Checking tables..."));
+$table = FreePBX::Database()->migrate("dahdi_spans");
+$cols = array(
+	"id" => array(
+		"type" => "integer",
+		"autoincrement" => true,
+		"primaryKey" => true
+	),
+	"span" => array(
+		"type" => "integer",
+		"notnull" => true
+	),
+	"active" => array(
+		"type" => "boolean",
+		"default" => 1,
+		"notnull" => false
+	),
+	"alarms" => array(
+		"type" => "string",
+		"length" => 15,
+		"notnull" => false
+	),
+	"basechan" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"coding" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false
+	),
+	"coding_opts" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"context" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"definedchans" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"description" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"devicetype" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"framing" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false
+	),
+	"framing_opts" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"group" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"irq" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false
+	),
+	"lbo" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"location" => array(
+		"type" => "string",
+		"length" => 255,
+		"notnull" => false
+	),
+	"name" => array(
+		"type" => "string",
+		"length" => 25,
+		"notnull" => false
+	),
+	"manufacturer" => array(
+		"type" => "string",
+		"length" => 25,
+		"default" => "Digium"
+	),
+	"max_ch" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"min_ch" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"pridialplan" => array(
+		"type" => "string",
+		"length" => 25,
+		"notnull" => false
+	),
+	"prilocaldialplan" => array(
+		"type" => "string",
+		"length" => 25,
+		"notnull" => false
+	),
+	"reserved_ch" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"signalling" => array(
+		"type" => "string",
+		"length" => 50,
+		"notnull" => false
+	),
+	"spantype" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false
+	),
+	"switchtype" => array(
+		"type" => "string",
+		"length" => 50,
+		"notnull" => false
+	),
+	"syncsrc" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"timing" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"totchans" => array(
+		"type" => "integer",
+		"notnull" => false
+	),
+	"type" => array(
+		"type" => "string",
+		"length" => 25,
+		"notnull" => false
+	),
+	"priexclusive" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true
+	),
+	"additional_groups" => array(
+		"type" => "blob",
+		"notnull" => false
+	),
+	"txgain" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => true,
+		"default" => "0.0"
+	),
+	"rxgain" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => true,
+		"default" => "0.0"
+	),
+	"mfcr2_variant" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "ITU"
+	),
+	"mfcr2_get_ani_first" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_max_ani" => array(
+		"type" => "smallint",
+		"notnull" => true,
+		"default" => 10
+	),
+	"mfcr2_max_dnis" => array(
+		"type" => "smallint",
+		"notnull" => true,
+		"default" => 4
+	),
+	"mfcr2_category" => array(
+		"type" => "string",
+		"length" => 50,
+		"notnull" => true,
+		"default" => "national_subscriber"
+	),
+	"mfcr2_call_files" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_logdir" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false,
+	),
+	"mfcr2_logging" => array(
+		"type" => "string",
+		"length" => 10,
+		"notnull" => false,
+	),
+	"mfcr2_mfback_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_mfback_pulse_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_allow_collect_calls" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_double_answer" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_immediate_accept" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_forced_release" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_charge_calls" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_accept_on_offer" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "yes"
+	),
+	"mfcr2_skip_catefory" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
+	"mfcr2_advanced_protocol_file" => array(
+		"type" => "string",
+		"length" => 100,
+		"notnull" => false
+	),
+);
+$table->modify($cols,array());
+out(_("Done"));
 
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 	out(_('Creating Dahdi Analog Table'));
@@ -316,11 +544,6 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	out(_('..Done'));
 }
 
-if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "priexclusive"')) {
-	out(_("Adding priexclusive column"));
-    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `priexclusive` varchar (3) NOT NULL DEFAULT ''";
-    $result = $db->query($sql);
-}
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
     if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "dchannel"')) {
@@ -330,12 +553,6 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "reserved_ch"')) {
     }
 
     $sql = "ALTER TABLE `dahdi_spans` change `dchannel` `reserved_ch`  int (5) NOT NULL DEFAULT '0";
-    $result = $db->query($sql);
-}
-
-if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "additional_groups"')) {
-	out(_("Adding Additional_groups column"));
-    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `additional_groups` blob";
     $result = $db->query($sql);
 }
 
@@ -373,14 +590,6 @@ if (!$db->getAll('SHOW COLUMNS FROM dahdi_advanced WHERE FIELD = "additional"'))
 	foreach($globalsettings as $ksettings => $settings) {
 	    sql('UPDATE dahdi_advanced SET additional=0 WHERE keyword="'.$ksettings.'"');
 	}
-}
-
-if (!$db->getAll('SHOW COLUMNS FROM dahdi_spans WHERE FIELD = "txgain"')) {
-	out(_("Adding txgain and rxgain column to digital table"));
-    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `txgain` varchar (10) NOT NULL DEFAULT '0.0'";
-    $result = $db->query($sql);
-    $sql = "ALTER TABLE `dahdi_spans` ADD COlUMN `rxgain` varchar (10) NOT NULL DEFAULT '0.0'";
-    $result = $db->query($sql);
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM dahdi_analog WHERE FIELD = "txgain"')) {

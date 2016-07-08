@@ -87,9 +87,31 @@ class dahdiconfig_conf {
 						$output[] = "wat_moduletype=telit";
 					} else {
 						$output[] = "signalling={$span['signalling']}";
-						$output[] = "switchtype={$span['switchtype']}";
-						$output[] = "pridialplan={$span['pridialplan']}";
-						$output[] = "prilocaldialplan={$span['prilocaldialplan']}";
+						if ($span['signalling'] == 'mfc_r2') {
+							if ($span['mfcr2_variant']) {$output[] = "mfcr2_variant=" . strtolower($span['mfcr2_variant']);}
+							if ($span['mfcr2_get_ani_first']) {$output[] = "mfcr2_get_ani_first={$span['mfcr2_get_ani_first']}";}
+							if ($span['mfcr2_max_ani']) {$output[] = "mfcr2_max_ani={$span['mfcr2_max_ani']}";}
+							if ($span['mfcr2_max_dnis']) {$output[] = "mfcr2_max_dnis={$span['mfcr2_max_dnis']}";}
+							if ($span['mfcr2_category']) {$output[] = "mfcr2_category={$span['mfcr2_category']}";}
+							if ($span['mfcr2_logdir']) {$output[] = "mfcr2_logdir={$span['mfcr2_logdir']}";}
+							if ($span['mfcr2_call_files']) {$output[] = "mfcr2_call_files={$span['mfcr2_call_files']}";}
+							if ($span['mfcr2_logging']) {$output[] = "mfcr2_logging={$span['mfcr2_logging']}";}
+							$output[] = $span['mfcr2_mfback_timeout'] ? "mfcr2_mfback_timeout={$span['mfcr2_mfback_timeout']}" : '-1';
+							$output[] = $span['mfcr2_metering_pulse_timeout'] ? "mfcr2_metering_pulse_timeout={$span['mfcr2_metering_pulse_timeout']}" : '-1';
+							if ($span['mfcr2_allow_collect_calls']) {$output[] = "mfcr2_allow_collect_calls={$span['mfcr2_allow_collect_calls']}";}
+							if ($span['mfcr2_double_answer']) {$output[] = "mfcr2_double_answer={$span['mfcr2_double_answer']}";}
+							if ($span['mfcr2_immediate_accept']) {$output[] = "mfcr2_immediate_accept={$span['mfcr2_immediate_accept']}";}
+							if ($span['mfcr2_accept_on_offer']) {$output[] = "mfcr2_accept_on_offer={$span['mfcr2_accept_on_offer']}";}
+							if ($span['mfcr2_skip_category']) {$output[] = "mfcr2_skip_category={$span['mfcr2_skip_category']}";}
+							if ($span['mfcr2_forced_release']) {$output[] = "mfcr2_forced_release={$span['mfcr2_forced_release']}";}
+							if ($span['mfcr2_charge_calls']) {$output[] = "mfcr2_charge_calls={$span['mfcr2_charge_calls']}";}
+							if ($span['mfcr2_advanced_protocol_file']) {$output[] = "mfcr2_advanced_protocol_file={$span['mfcr2_advanced_protocol_file']}";}
+						}
+						else {
+							$output[] = "switchtype={$span['switchtype']}";
+							$output[] = "pridialplan={$span['pridialplan']}";
+							$output[] = "prilocaldialplan={$span['prilocaldialplan']}";
+						}
 						if(!empty($span['txgain']) && $span['txgain'] != '0.0')
 						$output[] = "txgain={$span['txgain']}";
 						if(!empty($span['rxgain']) && $span['rxgain'] != '0.0')

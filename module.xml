@@ -79,7 +79,7 @@
 	</supported>
 	<depends>
 		<phpversion>5.3.0</phpversion>
-		<version>2.10</version>
+		<version>13.0.121</version>
 	</depends>
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>

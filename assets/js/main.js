@@ -1,11 +1,49 @@
+/* MFC/R2 show/hide */
+function mfcr2_set_defaults(span) {
+    $('#editspan_' + span + '_mfcr2_variant').val('ITU');
+    $('#editspan_' + span + '_mfcr2_max_ani').val(10);
+    $('#editspan_' + span + '_mfcr2_max_dnis').val(4);
+    $('#editspan_' + span + '_mfcr2_get_ani_first').val('no');
+    $('#editspan_' + span + '_mfcr2_category').val('national_subscriber');
+    $('#editspan_' + span + '_mfcr2_logdir').val('');
+    $('#editspan_' + span + '_mfcr2_call_files').val('no');
+    $('#editspan_' + span + '_mfcr2_logging').val('');
+    $('#editspan_' + span + '_mfcr2_mfback_timeout').val('');
+    $('#editspan_' + span + '_mfcr2_metering_pulse_timeout').val('');
+    $('#editspan_' + span + '_mfcr2_allow_collect_calls').val('no');
+    $('#editspan_' + span + '_mfcr2_double_answer').val('no');
+    $('#editspan_' + span + '_mfcr2_immediate_accept').val('no');
+    $('#editspan_' + span + '_mfcr2_accept_on_offer').val('yes');
+    $('#editspan_' + span + '_mfcr2_skip_category').val('no');
+    $('#editspan_' + span + '_mfcr2_forced_release').val('no');
+    $('#editspan_' + span + '_mfcr2_charge_calls').val('yes');
+    $('#editspan_' + span + '_mfcr2_advanced_protocol_file').val('');
+}
+/* MFC/R2 show/hide */
+function mfcr2_toggle() {
+    if ($('input[name=mfcr2_active]').val() === "0") {
+        $('.mfcr2-settings').hide();
+        $('.isdn-settings').show();
+    }
+    else {
+        $('.mfcr2-settings').show();
+        $('.isdn-settings').hide();
+    }
+}
+
 /* Popup Box Function */
 function dahdi_modal_settings(type,id) {
     if(typeof id !== 'undefined') {
         $( "#"+type+"-settings-"+id ).dialog( "open" );
+        if (type == "digital") {
+            $('.mfcr2-settings').hide();
+            $('.isdn-settings').show();
+
+        }
     } else {
-		if(type == "modprobe") {
-			createModProbeSettings();
-		}
+        if(type == "modprobe") {
+            createModProbeSettings();
+        }
         $( "#"+type+"-settings" ).dialog( "open" );
     }
 }

@@ -174,7 +174,7 @@ switch($_REQUEST['type']) {
         break;
     case "digital":
         $editspan = array();
-	    $vars = array('fac', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'reserved_ch', 'priexclusive', 'txgain', 'rxgain');
+	    $vars = array('fac', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'reserved_ch', 'priexclusive', 'txgain', 'rxgain', 'mfcr2_variant', 'mfcr2_get_ani_first', 'mfcr2_max_ani', 'mfcr2_max_dnis', 'mfcr2_category', 'mfcr2_call_files', 'mfcr2_logdir', 'mfcr2_logging', 'mfcr2_mfback_timeout', 'mfcr2_metering_pulse_timeout', 'mfcr2_allow_collect_calls', 'mfcr2_double_answer', 'mfcr2_immediate_accept', 'mfcr2_forced_release', 'mfcr2_charge_calls', 'mfcr2_accept_on_offer', 'mfcr2_skip_category', 'mfcr2_advanced_protocol_file');
 	    $id = isset($_GET['id']) ? $_GET['id'] : '';
 	    foreach ($vars as $var) {
 	        if(isset($_POST['editspan_'.$id.'_'.$var]))
@@ -192,8 +192,7 @@ switch($_REQUEST['type']) {
                 unset($editspan['groupdata'][$key]);
             }
 	    }
-
-	    $editspan['additional_groups'] = json_encode($editspan['groupdata']);
+	    $editspan['additional_groups'] = !empty($editspan['groupdata']) ? json_encode($editspan['groupdata']) : '';
 
 	    $dahdi_cards->update_span($editspan);
 

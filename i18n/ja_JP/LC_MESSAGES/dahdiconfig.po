@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-17 18:18-0700\n"
+"POT-Creation-Date: 2016-07-08 16:21-0700\n"
 "PO-Revision-Date: 2015-02-21 11:20+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -26,40 +26,47 @@ msgstr ""
 msgid "%s Ports"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:125
+#: views/dahdi_digital_settings.php:133
 msgid "-15db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:126
+#: views/dahdi_digital_settings.php:134
 msgid "-22.5db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:124
+#: views/dahdi_digital_settings.php:132
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:316
+#: install.php:544
 msgid "..Done"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:119
+#: views/dahdi_digital_settings.php:127
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:120
+#: views/dahdi_digital_settings.php:128
 msgid "133-266 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:121
+#: views/dahdi_digital_settings.php:129
 msgid "266-399 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:122
+#: views/dahdi_digital_settings.php:130
 msgid "399-533 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:123
+#: views/dahdi_digital_settings.php:131
 msgid "533-655 feet (DSX-1)"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:301
+msgid ""
+"<strong>WARNING:</strong> advanced users only as it allows you custom define "
+"tone definitions used in the protocol! <br /> This parameter is commented by "
+"default because YOU DON'T NEED IT UNLESS YOU REALLY UNDERSTAND MFC/R2!"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:29
@@ -72,40 +79,40 @@ msgstr ""
 msgid "A-law Override"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:93
+#: views/dahdi_digital_settings.php:101
 msgid "AT&amp;T 4ESS"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:227
+msgid "Accept on Offer"
 msgstr ""
 
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
 msgstr ""
 
-#: install.php:363
+#: install.php:580
 msgid "Add type column"
 msgstr ""
 
-#: install.php:337
-msgid "Adding Additional_groups column"
-msgstr ""
-
-#: install.php:320
-msgid "Adding priexclusive column"
-msgstr ""
-
-#: install.php:387
+#: install.php:596
 msgid "Adding txgain and rxgain column to analog table"
 msgstr ""
 
-#: install.php:379
-msgid "Adding txgain and rxgain column to digital table"
+#: views/dahdi_mfcr2_settings.php:299
+msgid "Advanced Protocol Configuration File"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
 msgstr "高度な設定"
 
-#: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:9
+#: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:15
 msgid "Alarms"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:173
+msgid "Allow Collect Calls"
 msgstr ""
 
 #: dahdiconfig.i18n.php:12
@@ -126,7 +133,7 @@ msgstr ""
 msgid "Analog %s Ports"
 msgstr ""
 
-#: functions.inc.php:312
+#: functions.inc.php:334
 #, php-format
 msgid "Analog Channel %s"
 msgstr ""
@@ -152,7 +159,7 @@ msgid "Apply Opermode to FXS and FXO Modules"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
-#: views/dahdi_modprobe_settings.php:44
+#: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
 msgid "Argentina"
 msgstr ""
 
@@ -178,25 +185,25 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:485
+#: functions.inc.php:507
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:80
+#: views/dahdi_digital_settings.php:88
 msgid "BRI PTMP - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:79
+#: views/dahdi_digital_settings.php:87
 msgid "BRI PTMP - Net"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:78
+#: views/dahdi_digital_settings.php:86
 msgid "BRI PTP - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:77
+#: views/dahdi_digital_settings.php:85
 msgid "BRI PTP - Net"
 msgstr ""
 
@@ -225,8 +232,30 @@ msgid "Both"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:33 views/dahdi_advanced_settings.php:66
-#: views/dahdi_modprobe_settings.php:49
+#: views/dahdi_mfcr2_settings.php:17 views/dahdi_modprobe_settings.php:49
 msgid "Brazil"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:175
+msgid ""
+"Brazil uses a special calling party category for collect calls (llamadas por "
+"cobrar)<br />instead of using the operator (as in Mexico). The R2 spec in "
+"Brazil says a special GB tone should be used to reject collect calls. If you "
+"want to ALLOW collect calls specify 'yes', if you want to BLOCK collect "
+"calls then say 'no'. Default is to block collect calls. <br />(see also "
+"'mfcr2_double_answer')<br /> <strong>Default:</strong>no"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:265
+msgid ""
+"Brazil uses a special signal to force the release of the line (hangup) from "
+"the backward perspective. <br />When mfcr2_forced_release=no, the normal "
+"clear back signal will be sent on hangup, which is OK for most mfcr2 "
+"variants except for the Brazilian variant where the central will leave the "
+"line up for several seconds (30, 60). <br /> This is sometimes is not what "
+"people really want. When mfcr2_forced_release=yes, a different ; signal will "
+"be sent to hangup the call indicating that the line should be released "
+"immediately.<br /> <strong>Default:</strong>no"
 msgstr ""
 
 #: views/dahdi_global_settings.php:27
@@ -248,35 +277,59 @@ msgid ""
 "protect any current configuration settings"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:24
+#: views/dahdi_digital_settings.php:39
+msgid "CAS/HDB3"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:30
 msgid "CCS/AMI"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:31
+#: views/dahdi_digital_settings.php:37
 msgid "CCS/HDB3"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:32
+#: views/dahdi_digital_settings.php:38
 msgid "CCS/HDB3/CRC4"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:99
+msgid "Call Logging Directory"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:113
+msgid "Call Logging Enable"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:79
+msgid "Caller Category to Send"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:348 page.dahdi.php:382
-#: page.dahdi.php:405 page.dahdi.php:424 page.dahdi.php:469
+#: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:372 page.dahdi.php:430
+#: page.dahdi.php:453 page.dahdi.php:472 page.dahdi.php:517
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:554
+#: functions.inc.php:576
 msgid "Channel"
 msgstr ""
 
 #: views/dahdi_digital_hardware.php:8
 msgid "Channels Used/Total"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:281
+msgid "Charge Calls"
+msgstr ""
+
+#: install.php:73
+msgid "Checking tables..."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
@@ -285,7 +338,7 @@ msgid "Chile"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:46 views/dahdi_advanced_settings.php:70
-#: views/dahdi_modprobe_settings.php:53
+#: views/dahdi_mfcr2_settings.php:18 views/dahdi_modprobe_settings.php:53
 msgid "China"
 msgstr ""
 
@@ -293,13 +346,17 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: functions.inc.php:389
+#: functions.inc.php:411
 msgid "Choose"
 msgstr ""
 
-#: functions.inc.php:555
+#: functions.inc.php:577
 #, php-format
 msgid "Choose the FXS channel for this %s"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:20
+msgid "Colombia"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
@@ -315,7 +372,7 @@ msgstr "接続"
 msgid "Context"
 msgstr "コンテキスト"
 
-#: install.php:137
+#: install.php:365
 msgid "Create Configured Locations Table"
 msgstr ""
 
@@ -323,15 +380,11 @@ msgstr ""
 msgid "Creating Dahdi Advanced Settings Table"
 msgstr "DAHDi用の高度な設定のテーブルを作成中"
 
-#: install.php:117
+#: install.php:345
 msgid "Creating Dahdi Analog Table"
 msgstr ""
 
-#: install.php:74
-msgid "Creating Dahdi Spans Table"
-msgstr ""
-
-#: install.php:354
+#: install.php:571
 msgid "Creating dahdi modules Table"
 msgstr ""
 
@@ -347,7 +400,7 @@ msgstr ""
 msgid "Czech"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:45
+#: views/dahdi_advanced_settings.php:45 views/dahdi_mfcr2_settings.php:19
 msgid "Czech Republic"
 msgstr ""
 
@@ -355,7 +408,7 @@ msgstr ""
 msgid "D-Channel"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:28
+#: views/dahdi_digital_settings.php:34
 msgid "D4/AMI"
 msgstr ""
 
@@ -367,7 +420,7 @@ msgstr ""
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:467 functions.inc.php:500
+#: functions.inc.php:489 functions.inc.php:522
 msgid "DAHDI Trunks"
 msgstr ""
 
@@ -444,7 +497,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr ""
 
-#: install.php:281
+#: install.php:509
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 
@@ -453,21 +506,33 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: install.php:404
+#: install.php:613
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr ""
 
-#: install.php:399
+#: install.php:608
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
 
-#: functions.inc.php:543
+#: views/dahdi_mfcr2_settings.php:115
+msgid ""
+"Determine whether or not to drop call files into mfcr2_logdir. (see tooltip "
+"under Call Loggin Directory. <br /> Default: no"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:63
+msgid ""
+"Determine whether or not to get the ANI before getting DNIS.  Some telcos "
+"require ANI first some others do not care.<br /> <strong>Default:</strong>no"
+msgstr ""
+
+#: functions.inc.php:565
 msgid "Device Options"
 msgstr ""
 
-#: functions.inc.php:345
+#: functions.inc.php:367
 #, php-format
 msgid "Digital Channel %s"
 msgstr ""
@@ -484,19 +549,27 @@ msgstr ""
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
+#: install.php:342
+msgid "Done"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:191
+msgid "Double Answer"
+msgstr ""
+
 #: views/dahdi_global_settings.php:16
 msgid "Dutch"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:67
+#: views/dahdi_digital_settings.php:75
 msgid "E &amp; M"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:68
+#: views/dahdi_digital_settings.php:76
 msgid "E &amp; M -- Wink"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:69
+#: views/dahdi_digital_settings.php:77
 msgid "E &amp; M -- fead(DTMF)"
 msgstr ""
 
@@ -504,7 +577,7 @@ msgstr ""
 msgid "E1"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:27
+#: views/dahdi_digital_settings.php:33
 msgid "ESF/B8ZS"
 msgstr ""
 
@@ -528,7 +601,8 @@ msgstr ""
 msgid "Echo Cancel NLP Threshold"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:76 views/dahdi_modprobe_settings.php:59
+#: views/dahdi_advanced_settings.php:76 views/dahdi_mfcr2_settings.php:21
+#: views/dahdi_modprobe_settings.php:59
 msgid "Ecuador"
 msgstr ""
 
@@ -601,7 +675,7 @@ msgstr ""
 msgid "Estonian"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:95
+#: views/dahdi_digital_settings.php:103
 msgid "EuroISDN"
 msgstr ""
 
@@ -621,11 +695,11 @@ msgstr ""
 msgid "FXO Settings"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:71
+#: views/dahdi_digital_settings.php:79
 msgid "FXOKS"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:72
+#: views/dahdi_digital_settings.php:80
 msgid "FXOLS"
 msgstr ""
 
@@ -637,11 +711,11 @@ msgstr ""
 msgid "FXS Settings"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:74
+#: views/dahdi_digital_settings.php:82
 msgid "FXSKS"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:75
+#: views/dahdi_digital_settings.php:83
 msgid "FXSLS"
 msgstr ""
 
@@ -709,7 +783,11 @@ msgid ""
 "pressing the Red Apply Changes Bar."
 msgstr ""
 
-#: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:18
+#: views/dahdi_mfcr2_settings.php:263
+msgid "Forced Release"
+msgstr ""
+
+#: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:24
 msgid "Framing/Coding"
 msgstr ""
 
@@ -734,7 +812,7 @@ msgstr ""
 msgid "G729"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:4
+#: views/dahdi_digital_settings.php:10
 msgid "General Settings"
 msgstr "一般設定"
 
@@ -752,6 +830,10 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:61
+msgid "Get ANI Before DNIS"
 msgstr ""
 
 #: page.dahdi.php:93 page.dahdi.php:129 views/dahdi_global_settings.php:3
@@ -772,22 +854,22 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:308 functions.inc.php:326
+#: functions.inc.php:330 functions.inc.php:348
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:309 functions.inc.php:327
+#: functions.inc.php:331 functions.inc.php:349
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:310 functions.inc.php:328
+#: functions.inc.php:332 functions.inc.php:350
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:311 functions.inc.php:329
+#: functions.inc.php:333 functions.inc.php:351
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
@@ -848,6 +930,10 @@ msgid ""
 "get random hangups"
 msgstr ""
 
+#: views/dahdi_mfcr2_settings.php:209
+msgid "Immediate Accept"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:23
 msgid "In Any mode it'll run 92 channels of either codec."
 msgstr ""
@@ -886,12 +972,17 @@ msgstr ""
 msgid "India"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:89 views/dahdi_modprobe_settings.php:72
+#: views/dahdi_advanced_settings.php:89 views/dahdi_mfcr2_settings.php:22
+#: views/dahdi_modprobe_settings.php:72
 msgid "Indonesia"
 msgstr ""
 
-#: install.php:277
+#: install.php:505
 msgid "Inserting Old Data from Dahdi Advanced Table"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:23
+msgid "International Telecommunication Union"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
@@ -977,6 +1068,19 @@ msgstr ""
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
+#: views/dahdi_mfcr2_settings.php:131
+msgid "Log Levels"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:101
+msgid ""
+"Logging is stored at the Asterisk logging directory specified in asterisk."
+"conf plus mfcr2/<whatever you put here>. If you specify 'span1' here and "
+"asterisk.conf has as logging directory /var/log/asterisk then the full path "
+"to your MFC/R2 call logs will be /var/log/asterisk/mfcr2/span1 (the "
+"directory will be automatically created if not present already)"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
@@ -998,12 +1102,61 @@ msgstr ""
 msgid "Lowpower"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:94
+#: views/dahdi_digital_settings.php:102
 msgid "Lucent 5ESS"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:99 views/dahdi_modprobe_settings.php:82
 msgid "Luxembourg"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:145
+msgid "MF Timeout"
+msgstr ""
+
+#: views/dahdi_digital_settings.php:73
+msgid "MFC/R2"
+msgstr ""
+
+#: page.dahdi.php:341 views/dahdi_mfcr2_settings.php:1
+msgid "MFC/R2 Settings"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:7
+msgid "MFC/R2 Variant"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:133
+msgid ""
+"MFC/R2 valid logging values are: all, error, warning, debug, notice, cas, "
+"mf, stack, nothing<br />error,warning,debug and notice are self-descriptive. "
+"<br />'cas' is for logging ABCD CAS tx and rx<br />'mf' is for logging of "
+"the Multi Frequency tones<br /> 'stack' is for very verbose output of the "
+"channel and context call stack, only useful if you are debugging a crash or "
+"want to learn how the library works. The stack logging will be only enabled "
+"if the openr2 library was compiled with -DOR2_TRACE_STACKS. <br /> You can "
+"mix up values, like: <strong>`loglevel=error,debug,mf`</strong> to log just "
+"error, debug and multi frequency messages<br /> 'all' is a special value to "
+"log all the activity <br /> 'nothing' is a clean-up value, in case you want "
+"to not log any activity for a channel or group of channels <br /> BE AWARE "
+"that the level of output logged will ALSO depend on the value you have in "
+"logger.conf, if you disable output in logger.conf then it does not matter "
+"you specify 'all' here, nothing will be logged so logger.conf has the last "
+"word on what is going to be logged"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:147
+msgid ""
+"MFC/R2 value in milliseconds for the MF timeout. <br />Any negative value "
+"means 'default', smaller values than 500ms are not recommended and can cause "
+"malfunctioning. <br />If you experience protocol error due to MF timeout try "
+"incrementing this value in 500ms steps<br /> <strong>Default:</strong>-1"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:9
+msgid ""
+"MFC/R2 variant, this depends on the OpenR2 supported variants. A list of "
+"values can be found by executing the openr2 command `r2test -l`"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
@@ -1023,16 +1176,52 @@ msgstr ""
 msgid "Malta"
 msgstr ""
 
+#: views/dahdi_mfcr2_settings.php:33
+msgid "Max ANI"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:47
+msgid "Max DNIS"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:35
+msgid "Max amount of ANI to ask for<br /> <strong>Default:</strong>10"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:49
+msgid "Max amount of DNIS to ask for<br /> <strong>Default:</strong>4"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:159
+msgid "Metering Pulse Time Out"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:161
+msgid ""
+"Metering pulses are sent by some telcos for some R2 variants during a call "
+"presumably for billing purposes to indicate costs, however this pulses use "
+"the same signal that is used to indicate call hangup. <br />Therefore a "
+"timeout is sometimes required to distinguish between a <strong>real</strong> "
+"hangup and a billing pulse that should not last more than 500ms. <br />If "
+"you experience call drops some minutes after being established, try setting "
+"a value of some ms here. Values greater than 500ms are not recommended. <br /"
+"> BE AWARE that choosing the proper protocol mfcr2_variant parameter "
+"implicitly sets a good recommended value for this timer.<br />Use this "
+"parameter only when you *really* want to override the default, otherwise "
+"just comment out this value or put a -1. <br /> Any negative value means "
+"'default'.<br /> <strong>Default:</strong>-1"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
-#: views/dahdi_modprobe_settings.php:86
+#: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
 msgid "Mexico"
 msgstr ""
 
-#: install.php:261
+#: install.php:489
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr ""
 
-#: install.php:346
+#: install.php:563
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
@@ -1061,7 +1250,7 @@ msgstr ""
 msgid "Morocco"
 msgstr ""
 
-#: install.php:327
+#: install.php:550
 msgid "Moving/Adding dchannel column"
 msgstr ""
 
@@ -1099,7 +1288,7 @@ msgstr ""
 msgid "NEON - Performs Neon MWI detection."
 msgstr ""
 
-#: views/dahdi_digital_settings.php:91
+#: views/dahdi_digital_settings.php:99
 msgid "National ISDN 2 (<?php echo ('default')?>)"
 msgstr ""
 
@@ -1134,14 +1323,19 @@ msgstr ""
 #: views/dahdi_global_settings.php:132 views/dahdi_global_settings.php:143
 #: views/dahdi_global_settings.php:155 views/dahdi_global_settings.php:166
 #: views/dahdi_global_settings.php:190 views/dahdi_global_settings.php:200
+#: views/dahdi_mfcr2_settings.php:71 views/dahdi_mfcr2_settings.php:123
+#: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
+#: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
+#: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
+#: views/dahdi_mfcr2_settings.php:291
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:504
+#: functions.inc.php:526
 msgid "No Available Groups or Channels"
 msgstr ""
 
-#: functions.inc.php:575
+#: functions.inc.php:597
 msgid "No Unused DAHDi Channels Available"
 msgstr ""
 
@@ -1170,7 +1364,7 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:92
+#: views/dahdi_digital_settings.php:100
 msgid "Nortel DMS100"
 msgstr ""
 
@@ -1206,7 +1400,7 @@ msgid ""
 "priority 1 regardless of the dialed number!"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:96
+#: views/dahdi_digital_settings.php:104
 msgid "Old National ISDN 1"
 msgstr ""
 
@@ -1237,11 +1431,11 @@ msgstr "その他のModprobe設定"
 msgid "Outgoing"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:64
+#: views/dahdi_digital_settings.php:71
 msgid "PRI - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:65
+#: views/dahdi_digital_settings.php:72
 msgid "PRI - Net"
 msgstr ""
 
@@ -1258,7 +1452,7 @@ msgid "Peru"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:52 views/dahdi_advanced_settings.php:112
-#: views/dahdi_modprobe_settings.php:95
+#: views/dahdi_mfcr2_settings.php:25 views/dahdi_modprobe_settings.php:95
 msgid "Philippines"
 msgstr ""
 
@@ -1267,7 +1461,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1281 includes/dahdi_cards.class.php:1565
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1315,7 +1509,7 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:97
+#: views/dahdi_digital_settings.php:105
 msgid "Q.SIG"
 msgstr ""
 
@@ -1345,11 +1539,11 @@ msgstr ""
 msgid "Reload Asterisk Dahdi Module"
 msgstr ""
 
-#: install.php:310
+#: install.php:538
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:459
+#: page.dahdi.php:507
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1381,8 +1575,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:333 page.dahdi.php:375
-#: page.dahdi.php:399 page.dahdi.php:418 page.dahdi.php:437 page.dahdi.php:482
+#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:357 page.dahdi.php:423
+#: page.dahdi.php:447 page.dahdi.php:466 page.dahdi.php:485 page.dahdi.php:530
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1392,6 +1586,10 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
+#: page.dahdi.php:334
+msgid "Set Defaults"
+msgstr ""
+
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
 msgstr ""
@@ -1399,6 +1597,16 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:31 views/dahdi_advanced_settings.php:118
 #: views/dahdi_modprobe_settings.php:101
 msgid "Singapore"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:245
+msgid "Skip Category"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:247
+msgid ""
+"Skips request of calling party category and ANI. <br />You need openr2 >= "
+"1.2.0 to use this feature<br /> <strong>Default:</strong>no"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:119 views/dahdi_modprobe_settings.php:102
@@ -1710,7 +1918,7 @@ msgid ""
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
 
-#: functions.inc.php:512
+#: functions.inc.php:534
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -1732,6 +1940,23 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:43
 msgid "This enables listening for the beep-beep busy pattern"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:211
+msgid ""
+"This feature allows to skip the use of Group B/II signals and go directly to "
+"the accepted state for incoming calls.<br /> <strong>Default:</strong>no"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:193
+msgid ""
+"This feature is related but independent of mfcr2_allow_collect_calls. <br /"
+">Some PBX's require a double-answer process to block collect calls, if you "
+"ever have problems blocking collect calls using Group B signals "
+"(mfcr2_allow_collect_calls=no) then you may want to try with "
+"mfcr2_double_answer=yes, this will cause that every answer signal is changed "
+"by answer->clear back->answer (sort of a flash) (see also "
+"'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
 #: page.dahdi.php:196
@@ -1802,8 +2027,20 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:460
+#: page.dahdi.php:508
 msgid "This will reload the page"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:283
+msgid ""
+"Toggles 'report accept call with charge'; whether or not report to the other "
+"end 'accept call with charge'.  This setting has no effect with most telcos "
+"and is usually is safe.<br />Leave the default (yes), but once in a while "
+"when interconnecting with old PBXs this may be useful. <br />Concretely this "
+"affects the Group B signal used to accept calls. <br />The application "
+"DAHDIAcceptR2Call can also be used to decide this in the dial plan in a per-"
+"call basis instead of doing it here for all calls.<br /> <strong>Default:</"
+"strong>yes"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:11
@@ -1826,7 +2063,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1281 includes/dahdi_cards.class.php:1565
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -1852,7 +2089,17 @@ msgstr ""
 msgid "Use Caller ID Presentation"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:51
+#: views/dahdi_mfcr2_settings.php:81
+msgid ""
+"Usually national_subscriber works just fine.  You can also change this "
+"setting from the dialplan by setting the variable MFCR2_CATEGORY (remember "
+"to set _MFCR2_CATEGORY from originating channels). <br />MFCR2_CATEGORY will "
+"also be a variable available in your context on incoming calls set to the "
+"value received from the far end.<br /> <strong>Default:</"
+"strong>national_subscriber"
+msgstr ""
+
+#: views/dahdi_advanced_settings.php:51 views/dahdi_mfcr2_settings.php:26
 msgid "Venezuela"
 msgstr ""
 
@@ -1912,7 +2159,11 @@ msgstr ""
 #: views/dahdi_global_settings.php:103 views/dahdi_global_settings.php:120
 #: views/dahdi_global_settings.php:131 views/dahdi_global_settings.php:142
 #: views/dahdi_global_settings.php:154 views/dahdi_global_settings.php:165
-#: views/dahdi_global_settings.php:189
+#: views/dahdi_global_settings.php:189 views/dahdi_mfcr2_settings.php:72
+#: views/dahdi_mfcr2_settings.php:124 views/dahdi_mfcr2_settings.php:184
+#: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
+#: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
+#: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
 msgid "Yes"
 msgstr ""
 
@@ -1922,7 +2173,23 @@ msgid ""
 "button(s). Then reload DAHDi with the button below."
 msgstr ""
 
-#: install.php:370
+#: views/dahdi_mfcr2_settings.php:229
+msgid ""
+"You most likely dont need this feature. Default is yes. <br />When this is "
+"set to yes, all calls that are offered (incoming calls) for which DNIS is "
+"valid (exists in extensions.conf) and also pass collect call validation will "
+"be accepted with a Group B tone (either call with charge or not, depending "
+"on mfcr2_charge_calls).<br />With this set to 'no' then the call will NOT be "
+"accepted on offered and the call will start its execution in extensions.conf "
+"without being accepted until the channel is answered (either with Answer() "
+"or any other application resulting in the channel being answered). <br /"
+">This can be set to 'no' if your telco or PBX needs the hangup cause to be "
+"set accurately. <br />When this option is set to 'no' you must explicitly "
+"accept the call with DAHDIAcceptR2Call or implicitly through the Answer() "
+"application.<br /> <strong>Default:</strong>yes"
+msgstr ""
+
+#: install.php:587
 msgid "add additional column"
 msgstr ""
 
@@ -1930,12 +2197,32 @@ msgstr ""
 msgid "alaw"
 msgstr ""
 
+#: views/dahdi_mfcr2_settings.php:92
+msgid "collect_call"
+msgstr ""
+
 #: views/dahdi_modprobe_settings.php:62
 msgid "fcc"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:179
+#: views/dahdi_digital_settings.php:187
 msgid "gsm"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:91
+msgid "international_priority_subscriber"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:90
+msgid "international_subscriber"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:89
+msgid "national_priority_subscriber"
+msgstr ""
+
+#: views/dahdi_mfcr2_settings.php:88
+msgid "national_subscriber"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:195

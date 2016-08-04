@@ -1103,7 +1103,7 @@ class dahdi_cards {
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
 		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : 'array()';
-		
+
 		if ($editspan['signalling'] == "mfc_r2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
 		    $this->spans[$num]['mfcr2_max_ani'] 				= $editspan['mfcr2_max_ani'] ? $editspan['mfcr2_max_ani'] : 10;
@@ -1335,14 +1335,16 @@ class dahdi_cards {
 					$fx = 'e&m';
 				}
 				$data = json_decode($span['additional_groups'], true);
-				foreach($data as $s){
-					if (strtolower($s['group'] == 's')){
-						continue;
-					}
-					if ($span['signalling'] == 'mfc_r2') {
-						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
-					} else {
-						$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+				if (!empty($data)) {
+					foreach($data as $s){
+						if (strtolower($s['group'] == 's')){
+							continue;
+						}
+						if ($span['signalling'] == 'mfc_r2') {
+							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
+						} else {
+							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+						}
 					}
 				}
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {

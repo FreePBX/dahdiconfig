@@ -13,17 +13,17 @@
         </td>
         <td>
            	<select id="editspan_<?php echo $key?>_mfcr2_variant" name="editspan_<?php echo $key?>_mfcr2_variant">
-	    		<option value="AR"	<?php echo set_default($span['mfcr2_variant'], 'AR') ?>><?echo _('Argentina')?></option>
-	    		<option value="BR"  <?php echo set_default($span['mfcr2_variant'], 'BR') ?>><?echo _('Brazil')?></option>
-	    		<option value="CN"	<?php echo set_default($span['mfcr2_variant'], 'CN') ?>><?echo _('China')?></option>
-	    		<option value="CZ"	<?php echo set_default($span['mfcr2_variant'], 'CZ') ?>><?echo _('Czech Republic')?></option>
-	    		<option value="CO"	<?php echo set_default($span['mfcr2_variant'], 'CO') ?>><?echo _('Colombia')?></option>
-	    		<option value="EC"	<?php echo set_default($span['mfcr2_variant'], 'EC') ?>><?echo _('Ecuador')?></option>
-	    		<option value="ID"	<?php echo set_default($span['mfcr2_variant'], 'ID') ?>><?echo _('Indonesia')?></option>
-	    		<option value="ITU"	<?php echo set_default($span['mfcr2_variant'], 'ITU')?>><?echo _('International Telecommunication Union')?></option>
-	    		<option value="MX"	<?php echo set_default($span['mfcr2_variant'], 'MX') ?>><?echo _('Mexico')?></option>
-	    		<option value="PH"	<?php echo set_default($span['mfcr2_variant'], 'PH') ?>><?echo _('Philippines')?></option>
-	    		<option value="VE"	<?php echo set_default($span['mfcr2_variant'], 'VE') ?>><?echo _('Venezuela')?></option>
+	    		<option value="AR"	<?php echo set_default($span['mfcr2_variant'], 'AR') ?>><?php echo _('Argentina')?></option>
+	    		<option value="BR"  <?php echo set_default($span['mfcr2_variant'], 'BR') ?>><?php echo _('Brazil')?></option>
+	    		<option value="CN"	<?php echo set_default($span['mfcr2_variant'], 'CN') ?>><?php echo _('China')?></option>
+	    		<option value="CZ"	<?php echo set_default($span['mfcr2_variant'], 'CZ') ?>><?php echo _('Czech Republic')?></option>
+	    		<option value="CO"	<?php echo set_default($span['mfcr2_variant'], 'CO') ?>><?php echo _('Colombia')?></option>
+	    		<option value="EC"	<?php echo set_default($span['mfcr2_variant'], 'EC') ?>><?php echo _('Ecuador')?></option>
+	    		<option value="ID"	<?php echo set_default($span['mfcr2_variant'], 'ID') ?>><?php echo _('Indonesia')?></option>
+	    		<option value="ITU"	<?php echo set_default($span['mfcr2_variant'], 'ITU')?>><?php echo _('International Telecommunication Union')?></option>
+	    		<option value="MX"	<?php echo set_default($span['mfcr2_variant'], 'MX') ?>><?php echo _('Mexico')?></option>
+	    		<option value="PH"	<?php echo set_default($span['mfcr2_variant'], 'PH') ?>><?php echo _('Philippines')?></option>
+	    		<option value="VE"	<?php echo set_default($span['mfcr2_variant'], 'VE') ?>><?php echo _('Venezuela')?></option>
         	</select>
         </td>
     </tr>
@@ -308,4 +308,3 @@
     	</td>
     </tr>
 </table>
-

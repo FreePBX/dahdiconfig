@@ -272,6 +272,12 @@ $cols = array(
 		"notnull" => true,
 		"default" => "yes"
 	),
+	"mfcr2_skip_category" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
 	"mfcr2_logdir" => array(
 		"type" => "string",
 		"length" => 10,
@@ -287,6 +293,10 @@ $cols = array(
 		"notnull" => true,
 	),
 	"mfcr2_mfback_pulse_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_metering_pulse_timeout" => array(
 		"type" => "decimal",
 		"notnull" => true,
 	),

@@ -209,4 +209,33 @@ class Dahdiconfig implements \BMO {
 
 		return $files;
 	}
+	public function ajaxRequest($req, &$setting) {
+		switch ($req) {
+			case 'digitalspans':
+			case 'analogspans':
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
+	public function ajaxHandler(){
+		\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+		$dahdi_cards = new \dahdi_cards();
+		switch ($_REQUEST['command']) {
+			case 'digitalspans':
+			 $spans = array();
+			 foreach($dahdi_cards->get_spans() as $key => $val){
+				 $spans[] = $val;
+			 }
+			 return $spans;
+			break;
+			case 'analogspans':
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
 }

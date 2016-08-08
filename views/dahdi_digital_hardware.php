@@ -1,33 +1,35 @@
 
-<table  data-maintain-selected="true" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true"  id="digital_cards_table">
-        <thead>
-        <tr>
-                <th><?php echo _('Span')?></th>
-                <th><?php echo _('Alarms')?></th>
-                <th><?php echo _('Framing/Coding')?></th>
-                <th><?php echo _('Channels Used/Total')?></th>
-                <th><?php echo _('D-Channel')?></th>
-                <th><?php echo _('Signaling')?></th>
-                <th><?php echo _('Action')?></th>
-        </tr>
-        </thead>
-        <tbody>
-	<?php $ctr = 1;
-	foreach($dahdi_cards->get_spans() as $key=>$span) {
-		$name_split = explode('/', $span['name']);
-		$devicetype = $span['devicetype'];
-		$name = "{$span['manufacturer']} - {$span['description']} [{$span['dsid']}]";
-	?>
-	<tr>
-		<td><?php echo $name?></td>
-		<td id="digital_alarms_<?php echo $key; ?>_label"><?php echo $span['alarms']?></td>
-		<td id="digital_framingcoding_<?php echo $key; ?>_label"><?php echo !empty($span['framing']) ? $span['framing'] : _('N/A')?><?php echo !empty($span['coding']) ? "/".$span['coding'] : ''?></td>
-		<td id="digital_totchans_<?php echo $key; ?>_label"><?php echo $span['totchans']."/".$span['totchans']?></td>
-		<td id="digital_dchan_<?php echo $key; ?>_label"><?php echo ((isset($span['reserved_ch']))?$span['reserved_ch']:_("Not Yet Defined"))?></td>
-		<td id="digital_signalling_<?php echo $key; ?>_label"><?php echo ((isset($span['signalling']))?$span['signalling']:_("Not Yet Defined"))?></td>
-		<td><a href="#" onclick="dahdi_modal_settings('digital','<?php echo $key?>');"><?php echo _('Edit')?></a></td>
-	</tr>
-	<?php $ctr++;
-	} ?>
-        </tbody>
+<table	data-toolbar="#toolbar-digital" data-url="ajax.php?module=dahdiconfig&command=digitalspans" data-maintain-selected="true" data-show-columns="true" data-show-toggle="true" data-toggle="table" data-pagination="true" data-search="true"	id="digital_cards_table">
+	<thead>
+		<tr>
+			<th data-field = "dsid" data-formatter="spanFormatter"><?php echo _('Span')?></th>
+			<th data-field = "alarms"><?php echo _('Alarms')?></th>
+			<th data-formatter = "framingFormatter"><?php echo _('Framing/Coding')?></th>
+			<th data-formatter = "channelFormatter"><?php echo _('Channels Used/Total')?></th>
+			<th data-field = "reserved_ch"><?php echo _('D-Channel')?></th>
+			<th data-field="signalling" data-formatter="signallingFormatter"><?php echo _('Signaling')?></th>
+			<th data-formatter = "actionFormatter"><?php echo _('Action')?></th>
+		</tr>
+	</thead>
 </table>
+<script>
+function spanFormatter(value, row, index){
+  return row['manufacturer']+" - "+row['description']+" [ "+row['dsid']+"]";
+}
+function framingFormatter(value, row, index){
+	return row['framing']+'/'+row['coding'];
+}
+function channelFormatter(value,row,index){
+	return row['totchans']+'/'+row['definedchans'];
+}
+function actionFormatter(value, row, index){
+	return '<a href="#" onclick="dahdi_modal_settings(\'digital\',\''+row['dsid']+'\');">'+ _('Edit')+'</a>';
+}
+function signallingFormatter(v){
+  if(v == ''){
+    return _("Not Yet Defined");
+  }else{
+    return v;
+  }
+}
+</script>

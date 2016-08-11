@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.18</version>
+	<version>13.0.19</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+			*13.0.19* More fixes
 			*13.0.18* FREEPBX-12761
 			*13.0.17* General fixes
 			*13.0.16* FREEPBX-12569 - MFC R2 settings on Dahdi configuration module

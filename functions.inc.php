@@ -119,6 +119,7 @@ class dahdiconfig_conf {
 					}
 
 					$groups = json_decode($span['additional_groups'],TRUE);
+					$groups = is_array($groups) ? $groups : array();
 					foreach($groups as $gkey => $data) {
 						//Add option for skip group for people who don't want to use all channels
 						if ($data['group'] == 's' || empty($data['fxx'])){

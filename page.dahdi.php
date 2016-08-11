@@ -216,7 +216,7 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
     ?>
 
   spandata[<?php echo $key?>] = {};
-  spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? json_encode($span['additional_groups']) : '{}'?>;
+  spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? $span['additional_groups'] : '{}'?>;
   spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
 
 $('#editspan_<?php echo $key?>_signalling').change(function() {

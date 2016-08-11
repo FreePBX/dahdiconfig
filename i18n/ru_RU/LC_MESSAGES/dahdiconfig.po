@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 15:08-0700\n"
+"POT-Creation-Date: 2016-08-11 16:01-0700\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -127,7 +127,7 @@ msgstr ""
 msgid "Analog %s Ports"
 msgstr ""
 
-#: functions.inc.php:334
+#: functions.inc.php:335
 #, php-format
 msgid "Analog Channel %s"
 msgstr ""
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:507
+#: functions.inc.php:508
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:576
+#: functions.inc.php:577
 msgid "Channel"
 msgstr "Канал"
 
@@ -340,11 +340,11 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: functions.inc.php:411
+#: functions.inc.php:412
 msgid "Choose"
 msgstr ""
 
-#: functions.inc.php:577
+#: functions.inc.php:578
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Выбрать канал FXS для %s"
@@ -414,7 +414,7 @@ msgstr ""
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:489 functions.inc.php:522
+#: functions.inc.php:490 functions.inc.php:523
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
@@ -527,11 +527,11 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:565
+#: functions.inc.php:566
 msgid "Device Options"
 msgstr ""
 
-#: functions.inc.php:367
+#: functions.inc.php:368
 #, php-format
 msgid "Digital Channel %s"
 msgstr ""
@@ -852,22 +852,22 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:330 functions.inc.php:348
+#: functions.inc.php:331 functions.inc.php:349
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:331 functions.inc.php:349
+#: functions.inc.php:332 functions.inc.php:350
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:332 functions.inc.php:350
+#: functions.inc.php:333 functions.inc.php:351
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:333 functions.inc.php:351
+#: functions.inc.php:334 functions.inc.php:352
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
@@ -1325,11 +1325,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:526
+#: functions.inc.php:527
 msgid "No Available Groups or Channels"
 msgstr "Нет доступных групп или каналов"
 
-#: functions.inc.php:597
+#: functions.inc.php:598
 msgid "No Unused DAHDi Channels Available"
 msgstr "Нет больше незадействованных каналов DAHDi"
 
@@ -1908,7 +1908,7 @@ msgid ""
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
 
-#: functions.inc.php:534
+#: functions.inc.php:535
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"

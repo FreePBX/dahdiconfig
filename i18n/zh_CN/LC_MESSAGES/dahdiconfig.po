@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 14:14-0700\n"
+"POT-Creation-Date: 2016-08-11 15:08-0700\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1452,7 +1452,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -2054,7 +2054,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""

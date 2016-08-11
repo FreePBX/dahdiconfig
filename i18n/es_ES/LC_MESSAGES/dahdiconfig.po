@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 14:14-0700\n"
+"POT-Creation-Date: 2016-08-11 15:08-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -1546,7 +1546,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -2297,7 +2297,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"

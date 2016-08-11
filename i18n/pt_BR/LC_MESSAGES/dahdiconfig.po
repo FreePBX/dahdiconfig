@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-08 16:21-0700\n"
+"POT-Creation-Date: 2016-08-11 14:14-0700\n"
 "PO-Revision-Date: 2014-07-26 01:19+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:544
+#: install.php:554
 msgid "..Done"
 msgstr ""
 
@@ -102,11 +102,11 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: install.php:580
+#: install.php:590
 msgid "Add type column"
 msgstr ""
 
-#: install.php:596
+#: install.php:606
 msgid "Adding txgain and rxgain column to analog table"
 msgstr ""
 
@@ -385,7 +385,7 @@ msgstr ""
 msgid "Context"
 msgstr ""
 
-#: install.php:365
+#: install.php:375
 msgid "Create Configured Locations Table"
 msgstr ""
 
@@ -393,11 +393,11 @@ msgstr ""
 msgid "Creating Dahdi Advanced Settings Table"
 msgstr ""
 
-#: install.php:345
+#: install.php:355
 msgid "Creating Dahdi Analog Table"
 msgstr ""
 
-#: install.php:571
+#: install.php:581
 msgid "Creating dahdi modules Table"
 msgstr ""
 
@@ -510,7 +510,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr ""
 
-#: install.php:509
+#: install.php:519
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 
@@ -519,12 +519,12 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: install.php:613
+#: install.php:623
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr ""
 
-#: install.php:608
+#: install.php:618
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
@@ -562,7 +562,7 @@ msgstr ""
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
-#: install.php:342
+#: install.php:352
 msgid "Done"
 msgstr ""
 
@@ -620,7 +620,6 @@ msgid "Ecuador"
 msgstr ""
 
 #: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
-#: views/dahdi_digital_hardware.php:28
 msgid "Edit"
 msgstr ""
 
@@ -990,7 +989,7 @@ msgstr ""
 msgid "Indonesia"
 msgstr ""
 
-#: install.php:505
+#: install.php:515
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr ""
 
@@ -1230,11 +1229,11 @@ msgstr ""
 msgid "Mexico"
 msgstr ""
 
-#: install.php:489
+#: install.php:499
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr ""
 
-#: install.php:563
+#: install.php:573
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
@@ -1263,7 +1262,7 @@ msgstr ""
 msgid "Morocco"
 msgstr ""
 
-#: install.php:550
+#: install.php:560
 msgid "Moving/Adding dchannel column"
 msgstr ""
 
@@ -1283,10 +1282,6 @@ msgid ""
 "Mute - This setting causes the NLP to mute inbound audio streams while a "
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable."
-msgstr ""
-
-#: views/dahdi_digital_hardware.php:24
-msgid "N/A"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:206
@@ -1390,10 +1385,6 @@ msgstr ""
 msgid "Norwegian"
 msgstr ""
 
-#: views/dahdi_digital_hardware.php:26 views/dahdi_digital_hardware.php:27
-msgid "Not Yet Defined"
-msgstr ""
-
 #: views/dahdi_global_settings.php:150
 msgid ""
 "Note that if any of your DAHDI cards have hardware echo cancelers, then this "
@@ -1474,7 +1465,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1552,7 +1543,7 @@ msgstr ""
 msgid "Reload Asterisk Dahdi Module"
 msgstr ""
 
-#: install.php:538
+#: install.php:548
 msgid "Replacing.."
 msgstr ""
 
@@ -2076,7 +2067,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2202,7 +2193,7 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:587
+#: install.php:597
 msgid "add additional column"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-08 16:21-0700\n"
+"POT-Creation-Date: 2016-08-11 14:14-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:544
+#: install.php:554
 msgid "..Done"
 msgstr "..Hecho"
 
@@ -93,11 +93,11 @@ msgstr ""
 msgid "Action"
 msgstr "Acción"
 
-#: install.php:580
+#: install.php:590
 msgid "Add type column"
 msgstr "Agregar columna type"
 
-#: install.php:596
+#: install.php:606
 msgid "Adding txgain and rxgain column to analog table"
 msgstr "Agregando columna txgain y rxgain a la tabla analoga"
 
@@ -381,7 +381,7 @@ msgstr "Conexiones"
 msgid "Context"
 msgstr "Contexto"
 
-#: install.php:365
+#: install.php:375
 msgid "Create Configured Locations Table"
 msgstr "Crear Tabla de Localidades Configuradas"
 
@@ -389,11 +389,11 @@ msgstr "Crear Tabla de Localidades Configuradas"
 msgid "Creating Dahdi Advanced Settings Table"
 msgstr "Creando Tabla de Configuración Avanzada Dahdi"
 
-#: install.php:345
+#: install.php:355
 msgid "Creating Dahdi Analog Table"
 msgstr "Crear Tabla Analógica Dahdi"
 
-#: install.php:571
+#: install.php:581
 msgid "Creating dahdi modules Table"
 msgstr "Creando Tabla módulos Dahdi"
 
@@ -516,7 +516,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Modo Línea por defecto"
 
-#: install.php:509
+#: install.php:519
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
 
@@ -525,12 +525,12 @@ msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
 msgid "Denmark"
 msgstr "Dinamarca"
 
-#: install.php:613
+#: install.php:623
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcaxx. Anexando a %s"
 
-#: install.php:608
+#: install.php:618
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcte43x. Anexando a %s"
@@ -568,7 +568,7 @@ msgstr "inhabilitar"
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
-#: install.php:342
+#: install.php:352
 msgid "Done"
 msgstr ""
 
@@ -626,7 +626,6 @@ msgid "Ecuador"
 msgstr "Ecuador"
 
 #: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
-#: views/dahdi_digital_hardware.php:28
 msgid "Edit"
 msgstr "Editar"
 
@@ -1028,7 +1027,7 @@ msgstr "India"
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: install.php:505
+#: install.php:515
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr "Inserción de datos antiguos de Dahdi Tabla avanzada"
 
@@ -1286,11 +1285,11 @@ msgstr ""
 msgid "Mexico"
 msgstr "México"
 
-#: install.php:489
+#: install.php:499
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
 
-#: install.php:563
+#: install.php:573
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr "Migrando Modulo %s desde datos serializados a json"
@@ -1319,7 +1318,7 @@ msgstr "Configuración de Módulos"
 msgid "Morocco"
 msgstr "Morocco"
 
-#: install.php:550
+#: install.php:560
 msgid "Moving/Adding dchannel column"
 msgstr "Mover/Agregar columna dchannel"
 
@@ -1346,10 +1345,6 @@ msgstr ""
 "Mudo - Esta configuración hace que la NLP para silenciar los flujos de audio "
 "de entrada mientras que un usuario conectado a Asterisk está hablando. Para "
 "los usuarios en ambientes tranquilos, Mute puede ser aceptable."
-
-#: views/dahdi_digital_hardware.php:24
-msgid "N/A"
-msgstr "N/A"
 
 #: views/dahdi_modprobe_settings.php:206
 msgid "NEON"
@@ -1458,10 +1453,6 @@ msgstr "Norway"
 msgid "Norwegian"
 msgstr "Norwegian"
 
-#: views/dahdi_digital_hardware.php:26 views/dahdi_digital_hardware.php:27
-msgid "Not Yet Defined"
-msgstr "No se ha definido"
-
 #: views/dahdi_global_settings.php:150
 msgid ""
 "Note that if any of your DAHDI cards have hardware echo cancelers, then this "
@@ -1555,7 +1546,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1642,7 +1633,7 @@ msgstr "Ganancia Recibida"
 msgid "Reload Asterisk Dahdi Module"
 msgstr "Recargar el Modulo Dahdi Asterisk"
 
-#: install.php:538
+#: install.php:548
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
@@ -2306,7 +2297,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1586
+#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1588
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2444,7 +2435,7 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:587
+#: install.php:597
 msgid "add additional column"
 msgstr "agregar columna adicional"
 
@@ -2495,6 +2486,12 @@ msgstr "CE Por software a usar en system.conf"
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
+
+#~ msgid "N/A"
+#~ msgstr "N/A"
+
+#~ msgid "Not Yet Defined"
+#~ msgstr "No se ha definido"
 
 #~ msgid "Adding Additional_groups column"
 #~ msgstr "Agregando columna Additional_groups"

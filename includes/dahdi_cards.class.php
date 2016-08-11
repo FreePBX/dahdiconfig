@@ -1346,6 +1346,9 @@ class dahdi_cards {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 						}
 					}
+					if(!empty($fxx[$fx])) {
+						$fxx[$fx] = rtrim($fxx[$fx], ',');
+					}
 				}
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
 				$bchan .= ($bchan) ? ",$chan" : "$chan";
@@ -1357,7 +1360,6 @@ class dahdi_cards {
 
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
-		$fxx[$fx] = rtrim($fxx[$fx], ',');
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
 			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.str_replace(":1101", "", $val);

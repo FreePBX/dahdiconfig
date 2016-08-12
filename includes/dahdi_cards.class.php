@@ -1399,34 +1399,46 @@ class dahdi_cards {
 		}
 
 		if ($fxols) {
-			$output[] = "fxsls=".dahdi_array2chans($fxols);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxols);
-
+			$channels = dahdi_array2chans($fxols);
+			if($channels !== false){
+				$output[] = "fxsls=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxoks) {
-			$output[] = "fxsks=".dahdi_array2chans($fxoks);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxoks);
-
+			$channels = dahdi_array2chans($fxoks);
+			if($channels !== false){
+				$output[] = "fxsks=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxsls) {
-			$output[] = "fxols=".dahdi_array2chans($fxsls);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsls);
+			$channels = dahdi_array2chans($fxsls);
+			if($channels !== false){
+				$output[] = "fxols=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxsks) {
-			$output[] = "fxoks=".dahdi_array2chans($fxsks);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsks);
-
+			$channels = dahdi_array2chans($fxsks);
+			if($channels !== false){
+				$output[] = "fxoks=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 
 		$output[] = "loadzone={$this->systemsettings['tone_region']}";
 		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
 
 		foreach($this->get_all_systemsettings() as $k => $v) {
-			if(!in_array($k,$this->original_system))
-			$output[] = $k."=".$v;
+			if(!in_array($k,$this->original_system)){
+				if(empty($k)||empty($v)){continue;}
+				$output[] = $k."=".$v;
+			}
 		}
 
-		$output = implode("\n", $output);
+		$output = implode(PHP_EOL, $output);
+
 		file_put_contents($file,$this->header.$output);
 
 		return true;

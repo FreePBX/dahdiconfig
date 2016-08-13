@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 16:01-0700\n"
+"POT-Creation-Date: 2016-08-12 18:42-0700\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -410,7 +410,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:40 Dahdiconfig.class.php:124
+#: Dahdiconfig.class.php:64 Dahdiconfig.class.php:120
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:110 Dahdiconfig.class.php:176
+#: Dahdiconfig.class.php:106 Dahdiconfig.class.php:150
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -459,11 +459,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:104
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:148
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1775,19 +1775,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:106
+#: Dahdiconfig.class.php:102
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:75
+#: Dahdiconfig.class.php:81
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:146
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:156
+#: Dahdiconfig.class.php:133
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2103,16 +2103,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:79 Dahdiconfig.class.php:160
+#: Dahdiconfig.class.php:85 Dahdiconfig.class.php:137
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:77
+#: Dahdiconfig.class.php:83
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:158
+#: Dahdiconfig.class.php:135
 msgid "Wanrouter Stopped"
 msgstr ""
 

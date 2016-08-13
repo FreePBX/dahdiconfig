@@ -5,7 +5,13 @@ class dahdi_sangoma {
 	private $sangoma_settings = array(
 		"dahdimode" => "yes",
 		"t1mode" => "T1",
-		"wpwd" => "TRUE"
+		"WANPIPE_GLOBAL_FE_CLOCK" => "NORMAL",
+		"WANPIPE_GLOBAL_HW_DTMF" => "YES",
+		"WANPIPE_GLOBAL_FAKE_POLARITY" => "NO",
+		"WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD" => "16000",
+		"WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER" => "400",
+		"WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT" => "5000",
+		"WANPIPE_GLOBAL_RING_DEBOUNCE" => "0"
 	);
 	public function datastore() {
 	}
@@ -14,7 +20,12 @@ class dahdi_sangoma {
 		$o = sql($sql,'getOne');
 		if($o) {
 			$array = json_decode($o,TRUE);
-			$array['wpwd'] = isset($array['wpwd']) ? $array['wpwd'] : 'TRUE';
+			$array = !empty($array) ? $array : array();
+			foreach($this->sangoma_settings as $key => $value) {
+				if(!isset($array[$key])) {
+					$array[$key] = $value;
+				}
+			}
 			return $array;
 		} else {
 			return $this->sangoma_settings;
@@ -26,58 +37,14 @@ class dahdi_sangoma {
 		$output['reboot'] = true;
 		$output['dialog']['height'] = 400;
 		$output['dialog']['width'] = 500;
-		$option1 = _('Run Wanpipe In DAHDI/DIGIUM Mode');
-		$option2 = _("T1/Mode");
-		$byline = sprintf(_('This edits all settings in %s'),'/etc/wanpipe/global.conf');
-		$output['html'] = <<< EOF
-		<h2>{$output['title']}</h2>
-		<h3>{$byline}</h3>
-		<hr />
-		<table width="100%" style="text-align:left;">
-		<tr>
-		<td style="width:10px;">
-		<label for="sangoma_dahdimode">$option1:</label>
-		</td>
-		<td>
-		<select name="sangoma_dahdimode" id="sangoma_dahdimode">
-EOF;
-		$no = $settings['dahdimode'] == 'no' ? 'selected' : '';
-		$yes = $settings['dahdimode'] == 'yes' ? 'selected' : '';
-		$output['html'] .= '<option value="no" '.$no.'>'._('No').'</option>';
-		$output['html'] .= '<option value="yes" '.$yes.'>'._('Yes').'</option>';
-		$none = $settings['dahdimode'] == 'no' ? 'display:none;' : '';
-		$display = ($settings['dahdimode'] == 'yes') ? '' : 'display:none;';
-		$output['html'] .= <<< EOF
-		</select>
-		</td>
-		</tr>
-		<tr id="sangoma_t1mode" style="${display}">
-		<td style="width:10px">
-		<label for="sangoma_t1mode">$option2:</label>
-		</td>
-		<td>
-		<select name="sangoma_t1mode">
-EOF;
-		$t1 = $settings['t1mode'] == 'T1' ? 'selected' : '';
-		$e1 = $settings['t1mode'] == 'E1' ? 'selected' : '';
-		$output['html'] .= '<option value="T1" '.$t1.'>T1</option>';
-		$output['html'] .= '<option value="E1" '.$e1.'>E1</option>';
-		$output['html'] .= <<< EOF
-		</select>
-		</td>
-		</tr>
-		</table>
-EOF;
-		$output['javascript'] = <<< EOF
-		$('#sangoma_dahdimode').change(function() {
-			val = $(this).val()
-			if(val == 'yes') {
-				$('#sangoma_t1mode').show()
-			} else {
-				$('#sangoma_t1mode').hide()
-			}
-		});
-EOF;
+		$output['javascript'] = "";
+		$files = glob("/etc/wanpipe/wanpipe*.conf");
+		if(empty($files)) {
+			$output['html'] = load_view(dirname(__DIR__)."/views/sangoma.php",array("settings" => $settings));
+		} else {
+			$output['html'] = sprintf(_("Global Configuration is disabled since there are %s files"),"/etc/wanpipe/wanpipe*.conf");
+		}
+
 		return $output;
 	}
 
@@ -112,21 +79,27 @@ EOF;
 			switch($file) {
 				case '/etc/wanpipe/global.conf':
 					global $db;
-					if($settings['dahdimode'] == 'yes') {
-						$output = "WANPIPE_WITH_DIGIUM=TRUE\nWANPIPE_GLOBAL_CFG=DAHDI\nWANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode'];
-						$nt =& notifications::create($db);
-						if(!file_exists('/etc/wanpipe/global.conf') || !file_put_contents($file, $output)) {
-							$nt->add_error('dahdiconfig', 'SANGOMA', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
-							return;
-						}
-					} elseif(file_exists($file)) {
-						$contents = file_get_contents($file);
-						$contents = str_replace("WANPIPE_WITH_DIGIUM=TRUE\n","",$contents);
-						$contents = str_replace("WANPIPE_GLOBAL_CFG=DAHDI\n","",$contents);
-						if(is_writable($file)) {
-							file_put_contents($file, $contents);
-						}
+					$files = glob("/etc/wanpipe/wanpipe*.conf");
+					if(!empty($files) || !file_exists($file)) {
+						return;
 					}
+					$output = "WANPIPE_GLOBAL_CFG=DAHDI\n";
+					$output .= "WANPIPE_WITH_DIGIUM=".($settings['dahdimode'] == 'yes' ? 'TRUE' : 'FALSE')."\n";
+					$output .= !empty($settings['dahdimode']) && !empty($settings['t1mode']) && $settings['dahdimode'] == 'yes' ? "WANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode']."\n" : "";
+					$output .= !empty($settings['WANPIPE_GLOBAL_FE_CLOCK']) ? "WANPIPE_GLOBAL_FE_CLOCK=".$settings['WANPIPE_GLOBAL_FE_CLOCK']."\n" : "";
+					$output .= !empty($settings['WANPIPE_GLOBAL_HW_DTMF']) ? "WANPIPE_GLOBAL_HW_DTMF=".$settings['WANPIPE_GLOBAL_HW_DTMF']."\n" : "";
+					$output .= !empty($settings['WANPIPE_GLOBAL_RING_DEBOUNCE']) ? "WANPIPE_GLOBAL_RING_DEBOUNCE=".$settings['WANPIPE_GLOBAL_RING_DEBOUNCE']."\n" : "";
+					if(!empty($settings['WANPIPE_GLOBAL_FAKE_POLARITY']) && $settings['WANPIPE_GLOBAL_FAKE_POLARITY'] == "YES") {
+						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY']."\n";
+						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD']."\n";
+						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER']."\n";
+						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT']."\n";
+					}
+					if(!file_put_contents($file, $output)) {
+						$nt->add_error('dahdiconfig', 'SANGOMA', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
+						return;
+					}
+					return;
 				break;
 				default:
 				break;

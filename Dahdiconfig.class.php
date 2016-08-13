@@ -30,6 +30,30 @@ class Dahdiconfig implements \BMO {
 	}
 	public function doConfigPageInit($page){}
 
+	public function sangomaHardwareExists() {
+		$wanrouterLocation = fpbx_which("wanrouter");
+		$process = new Process($wanrouterLocation.' hwprobe dump');
+		try {
+			$process->mustRun();
+			$out = trim($process->getOutput());
+			$lines = explode("\n",$out);
+			$cardline = end($lines);
+			$cards = explode("|",ltrim($cardline,"|"));
+			if($cards[0] == "Card Cnt") {
+				unset($cards[0]);
+				foreach($cards as $card) {
+					$parts = explode("=",$card);
+					if($parts[1] == 1) {
+						return true;
+					}
+				}
+			}
+
+		} catch (ProcessFailedException $e) {
+			return false;
+		}
+	}
+
 	/**
 	 * Start FreePBX for fwconsole hook
 	 * @param object $output The output object.
@@ -45,57 +69,29 @@ class Dahdiconfig implements \BMO {
 			return;
 		}
 
-		if(file_exists("/etc/wanpipe/wanrouter.rc")) {
-			//TODO: need to use loadConfig when it is able to understand # as comments.
-			//Before PHP 7
-			$wanrouterconf = @parse_ini_file("/etc/wanpipe/wanrouter.rc");
-			if(!empty($wanrouterconf['WAN_DEVICES'])) {
-				$wanrouterconf['WAN_DEVICES'] = trim($wanrouterconf['WAN_DEVICES']);
-				$wandevices = explode(" ", $wanrouterconf['WAN_DEVICES']);
-				$confspresent = 0;
-				foreach ($wandevices as $wandev) {
-					if(file_exists('/etc/wanpipe/'.trim($wandev).'.conf')){
-						$confspresent++;
+		$wanrouterLocation = fpbx_which("wanrouter");
+		if(!empty($wanrouterLocation) && $this->sangomaHardwareExists()) {
+			$process = new Process($wanrouterLocation.' status');
+			$process->run();
+			if($process->isSuccessful()) {
+				$out = $process->getOutput();
+				if(preg_match('/Router is stopped/i',$out)) {
+					$process = new Process($wanrouterLocation.' start');
+					try {
+						$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
+						$process->mustRun();
+						$output->writeln(_("Wanrouter Started"));
+					} catch (ProcessFailedException $e) {
+						$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
 					}
-				}
-
-				$process = new Process('which wanrouter');
-				$process->run();
-				if ($process->isSuccessful()) {
-					$wanrouterLocation = $process->getOutput();
-					if(!empty($wanrouterLocation) && $confspresent > 0) {
-						$wanrouterLocation = trim($wanrouterLocation);
-						$process = new Process($wanrouterLocation.' status');
-						$process->run();
-						if($process->isSuccessful()) {
-							$out = $process->getOutput();
-							if(preg_match('/Router is stopped/i',$out)) {
-								$process = new Process($wanrouterLocation.' start');
-								try {
-									$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
-									$process->mustRun();
-									$output->writeln(_("Wanrouter Started"));
-								} catch (ProcessFailedException $e) {
-									$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
-								}
-							} else {
-								$output->writeln("<comment>Wanrouter: Already started</comment>");
-							}
-						} else {
-							$output->writeln("<error>Wanrouter: Unexpected response</error>");
-						}
-					}else{
-						if(empty($wanrouterLocation)){
-							$output->writeln("<error>Couldn't find the Wanrouter executable</error>");
-						}
-						if($confspresent == 0){
-							$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
-						}
-					}
+				} else {
+					$output->writeln("<comment>Wanrouter: Already started</comment>");
 				}
 			} else {
-				$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
+				$output->writeln("<error>Wanrouter: Unexpected response</error>");
 			}
+		}else{
+			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
 		}
 
 		$process = new Process($dahdiexec.' status');
@@ -129,43 +125,21 @@ class Dahdiconfig implements \BMO {
 			return;
 		}
 
-		if(file_exists("/etc/wanpipe/wanrouter.rc")) {
-			//TODO: need to use loadConfig when it is able to understand # as comments.
-			//Before PHP 7
-			$wanrouterconf = @parse_ini_file("/etc/wanpipe/wanrouter.rc");
-			if(!empty($wanrouterconf['WAN_DEVICES'])) {
-				$wanrouterconf['WAN_DEVICES'] = trim($wanrouterconf['WAN_DEVICES']);
-				$wandevices = explode(" ", $wanrouterconf['WAN_DEVICES']);
-				$confspresent = 0;
-				foreach ($wandevices as $wandev) {
-					if(file_exists('/etc/wanpipe/'.trim($wandev).'.conf')){
-						$confspresent++;
-					}
-				}
-				if(!empty($confspresent)) {
-					$process = new Process('which wanrouter');
-					$process->run();
-
-					// executes after the command finishes
-					if ($process->isSuccessful()) {
-						$wanrouterLocation = $process->getOutput();
-						if(!empty($wanrouterLocation)) {
-							$wanrouterLocation = trim($wanrouterLocation);
-							$process = new Process($wanrouterLocation.' stop');
-							try {
-								$output->writeln(_("Stopping Wanrouter for Sangoma Cards"));
-								$process->mustRun();
-								$output->writeln(_("Wanrouter Stopped"));
-							} catch (ProcessFailedException $e) {
-								$output->writeln(sprintf(_("Wanrouter Failed: %s"),$e->getMessage()));
-							}
-						}
-					}
-				} else {
-					$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
-				}
+		$wanrouterLocation = fpbx_which("wanrouter");
+		if(!empty($wanrouterLocation) && $this->sangomaHardwareExists()) {
+			$wanrouterLocation = trim($wanrouterLocation);
+			$process = new Process($wanrouterLocation.' stop');
+			try {
+				$output->writeln(_("Stopping Wanrouter for Sangoma Cards"));
+				$process->mustRun();
+				$output->writeln(_("Wanrouter Stopped"));
+			} catch (ProcessFailedException $e) {
+				$output->writeln(sprintf(_("Wanrouter Failed: %s"),$e->getMessage()));
 			}
+		} else {
+			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
 		}
+
 
 		$process = new Process($dahdiexec.' stop');
 		try {

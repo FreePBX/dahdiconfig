@@ -30,6 +30,17 @@ class Dahdiconfig implements \BMO {
 	}
 	public function doConfigPageInit($page){}
 
+	public function wanrouterRunning() {
+		if(!file_exists('/proc/net/wanrouter/status')) {
+			return false;
+		}
+		$contents = file_get_contents("/proc/net/wanrouter/status");
+		if(!preg_match_all("/wanpipe/",$contents,$matches)) {
+			return false;
+		}
+		return true;
+	}
+
 	public function sangomaHardwareExists() {
 		$wanrouterLocation = fpbx_which("wanrouter");
 		$process = new Process($wanrouterLocation.' hwprobe dump');
@@ -70,25 +81,18 @@ class Dahdiconfig implements \BMO {
 		}
 
 		$wanrouterLocation = fpbx_which("wanrouter");
-		if(!empty($wanrouterLocation) && $this->sangomaHardwareExists()) {
-			$process = new Process($wanrouterLocation.' status');
-			$process->run();
-			if($process->isSuccessful()) {
-				$out = $process->getOutput();
-				if(preg_match('/Router is stopped/i',$out)) {
-					$process = new Process($wanrouterLocation.' start');
-					try {
-						$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
-						$process->mustRun();
-						$output->writeln(_("Wanrouter Started"));
-					} catch (ProcessFailedException $e) {
-						$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
-					}
-				} else {
-					$output->writeln("<comment>Wanrouter: Already started</comment>");
+		if($this->sangomaHardwareExists()) {
+			if(!$this->wanrouterRunning()) {
+				$process = new Process($wanrouterLocation.' start');
+				try {
+					$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
+					$process->mustRun();
+					$output->writeln(_("Wanrouter Started"));
+				} catch (ProcessFailedException $e) {
+					$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
 				}
 			} else {
-				$output->writeln("<error>Wanrouter: Unexpected response</error>");
+				$output->writeln("<comment>Wanrouter: Already started</comment>");
 			}
 		}else{
 			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
@@ -126,7 +130,7 @@ class Dahdiconfig implements \BMO {
 		}
 
 		$wanrouterLocation = fpbx_which("wanrouter");
-		if(!empty($wanrouterLocation) && $this->sangomaHardwareExists()) {
+		if($this->sangomaHardwareExists()) {
 			$wanrouterLocation = trim($wanrouterLocation);
 			$process = new Process($wanrouterLocation.' stop');
 			try {

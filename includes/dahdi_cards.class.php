@@ -95,12 +95,12 @@ class dahdi_cards {
 	 */
 	public function __construct () {
 		foreach (glob(dirname(dirname(__FILE__))."/modules/*.module") as $filename) {
-			require_once($filename);
 			$name = basename($filename,'.module');
-			if (class_exists('dahdi_'.$name)) {
-				$class = 'dahdi_'.$name;
-				$this->modules[$name] = new $class();
+			if (!class_exists('dahdi_'.$name)) {
+				require_once($filename);
 			}
+			$class = 'dahdi_'.$name;
+			$this->modules[$name] = new $class();
 		}
 
 		global $amp_conf;

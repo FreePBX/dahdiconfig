@@ -72,15 +72,15 @@ class dahdi_sangoma {
 		return array('/etc/wanpipe/global.conf');
 	}
 
-	public function generateConf($file) {
+	public function generateConf($file,$force = false) {
 		global $amp_conf;
 		$settings = $this->get_sangoma_settings();
-		if(!$amp_conf['DAHDIDISABLEWRITE']) {
+		if($force || !$amp_conf['DAHDIDISABLEWRITE']) {
 			switch($file) {
 				case '/etc/wanpipe/global.conf':
 					global $db;
 					$files = glob("/etc/wanpipe/wanpipe*.conf");
-					if(!empty($files) || !file_exists($file)) {
+					if(!$force && (!empty($files) || !file_exists($file))) {
 						return;
 					}
 					$output = "WANPIPE_GLOBAL_CFG=DAHDI\n";

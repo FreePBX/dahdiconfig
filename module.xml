@@ -3,36 +3,37 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.21</version>
+	<version>13.0.22</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-			*13.0.21* Fix Wanrouter start
-			*13.0.20* Improvements to Sangoma configurations
-			*13.0.19* More fixes
-			*13.0.18* FREEPBX-12761
-			*13.0.17* General fixes
-			*13.0.16* FREEPBX-12569 - MFC R2 settings on Dahdi configuration module
-			*13.0.15* FREEPBX-12423 fix display issue
-			*13.0.14* Fix error when writing to Sangoma wanrouter files
-			*13.0.13* FREEPBX-77776 Fix system.conf for multiple analog ranges
-			*13.0.12* If files dont exist then dont try to read them
-			*13.0.11* Dahdi Config should handle missing files better
-			*13.0.10* FREEPBX-11315
-			*13.0.9* FREEPBX-10859 and FREEPBX-11012 permissions on /dev/*
-			*13.0.8* FREEPBX-11012
-			*13.0.7* FREEPBX-10898
-			*13.0.6* Fixes FREEPBX-10941 and FREEPBX-10859
-			*13.0.5* Remove old bin scripts
-			*13.0.4* Detect and parse WanRouter configurations correctly
-			*13.0.3* Send error output to dev/null
-			*13.0.2* Version bump Beta
-			*13.0.1alpha3* Fix auto-start for DAHDi
-			*13.0.1alpha2* Update visuals
-			*13.0.1alpha1* Use new console framework for startup
+		*13.0.22* Finishing touches re: Sangoma Engineering
+		*13.0.21* Fix Wanrouter start
+		*13.0.20* Improvements to Sangoma configurations
+		*13.0.19* More fixes
+		*13.0.18* FREEPBX-12761
+		*13.0.17* General fixes
+		*13.0.16* FREEPBX-12569 - MFC R2 settings on Dahdi configuration module
+		*13.0.15* FREEPBX-12423 fix display issue
+		*13.0.14* Fix error when writing to Sangoma wanrouter files
+		*13.0.13* FREEPBX-77776 Fix system.conf for multiple analog ranges
+		*13.0.12* If files dont exist then dont try to read them
+		*13.0.11* Dahdi Config should handle missing files better
+		*13.0.10* FREEPBX-11315
+		*13.0.9* FREEPBX-10859 and FREEPBX-11012 permissions on /dev/*
+		*13.0.8* FREEPBX-11012
+		*13.0.7* FREEPBX-10898
+		*13.0.6* Fixes FREEPBX-10941 and FREEPBX-10859
+		*13.0.5* Remove old bin scripts
+		*13.0.4* Detect and parse WanRouter configurations correctly
+		*13.0.3* Send error output to dev/null
+		*13.0.2* Version bump Beta
+		*13.0.1alpha3* Fix auto-start for DAHDi
+		*13.0.1alpha2* Update visuals
+		*13.0.1alpha1* Use new console framework for startup
 	</changelog>
 	<supported>
 		<version>13.0</version>

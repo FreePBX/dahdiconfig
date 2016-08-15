@@ -30,6 +30,10 @@ class Dahdiconfig implements \BMO {
 	}
 	public function doConfigPageInit($page){}
 
+	/**
+	 * Is Wanrouter adding
+	 * @return boolean True if modules loaded and running, false otherwise
+	 */
 	public function wanrouterRunning() {
 		if(!file_exists('/proc/net/wanrouter/status')) {
 			return false;
@@ -41,6 +45,10 @@ class Dahdiconfig implements \BMO {
 		return true;
 	}
 
+	/**
+	 * Check if Sangoma Hardware Exists
+	 * @return boolean True if hardware exists, false if not
+	 */
 	public function sangomaHardwareExists() {
 		$wanrouterLocation = fpbx_which("wanrouter");
 		$process = new Process($wanrouterLocation.' hwprobe dump');
@@ -66,6 +74,27 @@ class Dahdiconfig implements \BMO {
 	}
 
 	/**
+	 * Write out default global.conf file if missing
+	 * and if wanpipe*.conf do not exist
+	 * @param  object $output The CLI Output object
+	 */
+	public function checkDefaultSangomaGlobal($output) {
+		$files = glob("/etc/wanpipe/wanpipe*.conf");
+		if(!empty($files)) {
+			return;
+		}
+		$file = "/etc/wanpipe/global.conf";
+		if(!file_exists($file)) {
+			\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+			$dahdi_cards = new \dahdi_cards();
+			if(isset($dahdi_cards->modules['sangoma']) && is_object($dahdi_cards->modules['sangoma'])) {
+				$output->writeln("<info>"._("Writing out default Sangoma conf")."</info>");
+				$dahdi_cards->modules['sangoma']->generateConf($file,true);
+			}
+		}
+	}
+
+	/**
 	 * Start FreePBX for fwconsole hook
 	 * @param object $output The output object.
 	 */
@@ -82,6 +111,8 @@ class Dahdiconfig implements \BMO {
 
 		$wanrouterLocation = fpbx_which("wanrouter");
 		if($this->sangomaHardwareExists()) {
+			//check for wanpipe*, if none then generate global if it doesnt exist
+			$this->checkDefaultSangomaGlobal($output);
 			if(!$this->wanrouterRunning()) {
 				$process = new Process($wanrouterLocation.' start');
 				try {

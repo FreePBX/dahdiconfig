@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-12 18:42-0700\n"
+"POT-Creation-Date: 2016-08-15 12:08-0700\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -413,7 +413,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:64 Dahdiconfig.class.php:120
+#: Dahdiconfig.class.php:75 Dahdiconfig.class.php:124
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:106 Dahdiconfig.class.php:150
+#: Dahdiconfig.class.php:110 Dahdiconfig.class.php:154
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -462,11 +462,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:104
+#: Dahdiconfig.class.php:108
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:148
+#: Dahdiconfig.class.php:152
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1776,19 +1776,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:102
+#: Dahdiconfig.class.php:106
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:81
+#: Dahdiconfig.class.php:88
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:146
+#: Dahdiconfig.class.php:150
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:133
+#: Dahdiconfig.class.php:137
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2104,16 +2104,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:85 Dahdiconfig.class.php:137
+#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:141
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:83
+#: Dahdiconfig.class.php:90
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:135
+#: Dahdiconfig.class.php:139
 msgid "Wanrouter Stopped"
 msgstr ""
 

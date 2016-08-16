@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 21:45-0700\n"
+"POT-Creation-Date: 2016-08-15 22:05-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -657,6 +657,10 @@ msgstr "Habilitar retorno de llamada"
 msgid "Enable Call Waiting"
 msgstr "Habilitar Llamada en espera"
 
+#: views/sangoma.php:51
+msgid "Enable DTMF CID"
+msgstr ""
+
 #: views/dahdi_global_settings.php:161
 msgid "Enable EC when bridged"
 msgstr "Habilitar EC cuando puenteado (bridged)"
@@ -1244,6 +1248,10 @@ msgstr "Malaysia"
 msgid "Malta"
 msgstr "Malta"
 
+#: views/sangoma.php:34
+msgid "Master"
+msgstr ""
+
 #: views/dahdi_mfcr2_settings.php:33
 msgid "Max ANI"
 msgstr ""
@@ -1397,7 +1405,8 @@ msgstr "Nigeria"
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
+#: views/sangoma.php:45 views/sangoma.php:55
 msgid "No"
 msgstr "NO"
 
@@ -1437,6 +1446,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
 #: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
 #: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
+#: views/sangoma.php:33
 msgid "Normal"
 msgstr "Normal"
 
@@ -1546,7 +1556,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
+#: includes/dahdi_cards.class.php:1304 includes/dahdi_cards.class.php:1592
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1569,6 +1579,18 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:96
 msgid "Poland"
 msgstr "Poland"
+
+#: views/sangoma.php:78
+msgid "Polarity CID Timeout"
+msgstr ""
+
+#: views/sangoma.php:70
+msgid "Polarity CID Timer"
+msgstr ""
+
+#: views/sangoma.php:62
+msgid "Polarity Threshold"
+msgstr ""
 
 #: views/dahdi_global_settings.php:30
 msgid "Polish"
@@ -1653,6 +1675,10 @@ msgstr "Detección de Timbrado"
 msgid "Romania"
 msgstr "Romania"
 
+#: views/sangoma.php:7
+msgid "Run Wanpipe In DAHDI/DIGIUM Mode"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
 msgstr "Russia"
@@ -1664,6 +1690,10 @@ msgstr "Russian"
 #: views/dahdi_advanced_settings.php:53
 msgid "Russian Federation"
 msgstr "Russian Federation"
+
+#: views/sangoma.php:1
+msgid "Sangoma Settings"
+msgstr ""
 
 #: views/dahdi_advanced_settings.php:117 views/dahdi_modprobe_settings.php:100
 msgid "Saudi Arabia"
@@ -1682,6 +1712,10 @@ msgstr "Seleccione Idioma"
 
 #: page.dahdi.php:333
 msgid "Set Defaults"
+msgstr ""
+
+#: views/sangoma.php:29 views/sangoma.php:40
+msgid "Set wanpipe port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
@@ -2051,6 +2085,10 @@ msgstr "Configuraciones del Sistema"
 msgid "T1"
 msgstr "T1"
 
+#: views/sangoma.php:18
+msgid "T1/Mode"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:128 views/dahdi_modprobe_settings.php:111
 msgid "TBR21"
 msgstr "TBR21"
@@ -2123,7 +2161,7 @@ msgstr ""
 "No hay grupos DAHDI o canales disponibles para ser configurado. Compruebe el "
 "módulo DAHDI para configurar las tarjetas no en uso"
 
-#: views/dahdi_modprobe_settings.php:4
+#: views/dahdi_modprobe_settings.php:4 views/sangoma.php:2
 #, php-format
 msgid "This edits all settings in %s"
 msgstr "Esto edita toda la configuración en %s"
@@ -2297,7 +2335,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1302 includes/dahdi_cards.class.php:1590
+#: includes/dahdi_cards.class.php:1304 includes/dahdi_cards.class.php:1592
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2412,6 +2450,7 @@ msgstr "Yemen"
 #: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
 #: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
 #: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
+#: views/sangoma.php:12 views/sangoma.php:44 views/sangoma.php:56
 msgid "Yes"
 msgstr "Si"
 

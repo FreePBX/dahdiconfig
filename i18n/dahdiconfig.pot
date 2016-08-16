@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 21:45-0700\n"
+"POT-Creation-Date: 2016-08-15 22:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -679,6 +679,10 @@ msgstr ""
 msgid "Enable Call Waiting"
 msgstr ""
 
+#: views/sangoma.php:51
+msgid "Enable DTMF CID"
+msgstr ""
+
 #: views/dahdi_global_settings.php:161
 msgid "Enable EC when bridged"
 msgstr ""
@@ -1254,6 +1258,10 @@ msgstr ""
 msgid "Malta"
 msgstr ""
 
+#: views/sangoma.php:34
+msgid "Master"
+msgstr ""
+
 #: views/dahdi_mfcr2_settings.php:33
 msgid "Max ANI"
 msgstr ""
@@ -1423,6 +1431,9 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:255
 #: views/dahdi_mfcr2_settings.php:273
 #: views/dahdi_mfcr2_settings.php:291
+#: views/sangoma.php:11
+#: views/sangoma.php:45
+#: views/sangoma.php:55
 msgid "No"
 msgstr ""
 
@@ -1461,6 +1472,7 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:150
 #: views/dahdi_modprobe_settings.php:162
 #: views/dahdi_modprobe_settings.php:174
+#: views/sangoma.php:33
 msgid "Normal"
 msgstr ""
 
@@ -1565,8 +1577,8 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302
-#: includes/dahdi_cards.class.php:1590
+#: includes/dahdi_cards.class.php:1304
+#: includes/dahdi_cards.class.php:1592
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1586,6 +1598,18 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:113
 #: views/dahdi_modprobe_settings.php:96
 msgid "Poland"
+msgstr ""
+
+#: views/sangoma.php:78
+msgid "Polarity CID Timeout"
+msgstr ""
+
+#: views/sangoma.php:70
+msgid "Polarity CID Timer"
+msgstr ""
+
+#: views/sangoma.php:62
+msgid "Polarity Threshold"
 msgstr ""
 
 #: views/dahdi_global_settings.php:30
@@ -1669,6 +1693,10 @@ msgstr ""
 msgid "Romania"
 msgstr ""
 
+#: views/sangoma.php:7
+msgid "Run Wanpipe In DAHDI/DIGIUM Mode"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:116
 #: views/dahdi_modprobe_settings.php:99
 msgid "Russia"
@@ -1680,6 +1708,10 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:53
 msgid "Russian Federation"
+msgstr ""
+
+#: views/sangoma.php:1
+msgid "Sangoma Settings"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:117
@@ -1706,6 +1738,11 @@ msgstr ""
 
 #: page.dahdi.php:333
 msgid "Set Defaults"
+msgstr ""
+
+#: views/sangoma.php:29
+#: views/sangoma.php:40
+msgid "Set wanpipe port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15
@@ -2002,6 +2039,10 @@ msgstr ""
 msgid "T1"
 msgstr ""
 
+#: views/sangoma.php:18
+msgid "T1/Mode"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:128
 #: views/dahdi_modprobe_settings.php:111
 msgid "TBR21"
@@ -2062,6 +2103,7 @@ msgid ""
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:4
+#: views/sangoma.php:2
 #, php-format
 msgid "This edits all settings in %s"
 msgstr ""
@@ -2203,8 +2245,8 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1302
-#: includes/dahdi_cards.class.php:1590
+#: includes/dahdi_cards.class.php:1304
+#: includes/dahdi_cards.class.php:1592
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2323,6 +2365,9 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:256
 #: views/dahdi_mfcr2_settings.php:274
 #: views/dahdi_mfcr2_settings.php:292
+#: views/sangoma.php:12
+#: views/sangoma.php:44
+#: views/sangoma.php:56
 msgid "Yes"
 msgstr ""
 

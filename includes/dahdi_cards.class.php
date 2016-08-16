@@ -639,7 +639,8 @@ class dahdi_cards {
 			$this->spans[$span['span']]['context'] = (isset($this->spans[$span['span']]['context']) && !empty($this->spans[$span['span']]['context'])) ? $this->spans[$span['span']]['context'] : 'from-digital';
 			if(!empty($this->spans[$span['span']]['additional_groups'])) {
 				$this->spans[$span['span']]['additional_groups'] = json_decode($this->spans[$span['span']]['additional_groups'],true);
-			} else {
+			}
+			if(empty($this->spans[$span['span']]['additional_groups'])) {
 				$o = $this->calc_bchan_fxx($span['span']);
 				$this->spans[$span['span']]['additional_groups'] = array(0 => array(
 					"group" => 0,
@@ -651,6 +652,7 @@ class dahdi_cards {
 				));
 			}
 		}
+		dbug($this->spans);
 	}
 
 	/**

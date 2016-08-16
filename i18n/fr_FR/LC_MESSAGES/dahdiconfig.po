@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 12:48-0700\n"
+"POT-Creation-Date: 2016-08-15 21:15-0700\n"
 "PO-Revision-Date: 2016-02-01 23:04+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -309,8 +309,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Canada"
 
-#: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:372 page.dahdi.php:430
-#: page.dahdi.php:453 page.dahdi.php:472 page.dahdi.php:517
+#: page.dahdi.php:301 page.dahdi.php:320 page.dahdi.php:373 page.dahdi.php:431
+#: page.dahdi.php:454 page.dahdi.php:473 page.dahdi.php:518
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -541,7 +541,7 @@ msgstr "Canal numérique %s"
 msgid "Digital Hardware"
 msgstr "Matériel numérique"
 
-#: page.dahdi.php:260
+#: page.dahdi.php:261
 msgid "Disable"
 msgstr "Désactiver"
 
@@ -618,7 +618,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: page.dahdi.php:255
+#: page.dahdi.php:256
 msgid "Enable"
 msgstr ""
 
@@ -1117,7 +1117,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:341 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:342 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1534,7 +1534,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:507
+#: page.dahdi.php:508
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1566,8 +1566,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:357 page.dahdi.php:423
-#: page.dahdi.php:447 page.dahdi.php:466 page.dahdi.php:485 page.dahdi.php:530
+#: page.dahdi.php:295 page.dahdi.php:314 page.dahdi.php:358 page.dahdi.php:424
+#: page.dahdi.php:448 page.dahdi.php:467 page.dahdi.php:486 page.dahdi.php:531
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1577,7 +1577,7 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
-#: page.dahdi.php:334
+#: page.dahdi.php:335
 msgid "Set Defaults"
 msgstr ""
 
@@ -2018,7 +2018,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:508
+#: page.dahdi.php:509
 msgid "This will reload the page"
 msgstr ""
 

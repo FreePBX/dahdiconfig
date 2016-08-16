@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 12:48-0700\n"
+"POT-Creation-Date: 2016-08-15 21:15-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -318,8 +318,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Canadá"
 
-#: page.dahdi.php:300 page.dahdi.php:319 page.dahdi.php:372 page.dahdi.php:430
-#: page.dahdi.php:453 page.dahdi.php:472 page.dahdi.php:517
+#: page.dahdi.php:301 page.dahdi.php:320 page.dahdi.php:373 page.dahdi.php:431
+#: page.dahdi.php:454 page.dahdi.php:473 page.dahdi.php:518
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -560,7 +560,7 @@ msgstr "Canal digital %s"
 msgid "Digital Hardware"
 msgstr "Hardware digital"
 
-#: page.dahdi.php:260
+#: page.dahdi.php:261
 msgid "Disable"
 msgstr "inhabilitar"
 
@@ -637,7 +637,7 @@ msgstr "Egypt"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: page.dahdi.php:255
+#: page.dahdi.php:256
 msgid "Enable"
 msgstr "Habilitar"
 
@@ -1186,7 +1186,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:341 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:342 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1637,7 +1637,7 @@ msgstr "Recargar el Modulo Dahdi Asterisk"
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
-#: page.dahdi.php:507
+#: page.dahdi.php:508
 msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
@@ -1669,8 +1669,8 @@ msgstr "Russian Federation"
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:357 page.dahdi.php:423
-#: page.dahdi.php:447 page.dahdi.php:466 page.dahdi.php:485 page.dahdi.php:530
+#: page.dahdi.php:295 page.dahdi.php:314 page.dahdi.php:358 page.dahdi.php:424
+#: page.dahdi.php:448 page.dahdi.php:467 page.dahdi.php:486 page.dahdi.php:531
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1680,7 +1680,7 @@ msgstr "Salvar"
 msgid "Select Language"
 msgstr "Seleccione Idioma"
 
-#: page.dahdi.php:334
+#: page.dahdi.php:335
 msgid "Set Defaults"
 msgstr ""
 
@@ -2261,7 +2261,7 @@ msgstr ""
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
 "la transferencia al switch ISDN, ya que envía en un mensaje FACILIDAD"
 
-#: page.dahdi.php:508
+#: page.dahdi.php:509
 msgid "This will reload the page"
 msgstr "Esto recargará la página"
 

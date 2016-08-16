@@ -209,8 +209,7 @@
         <br />
         <h2><?php echo ('Group Settings')?> (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);"><?php echo ('Reset Groups')?></a>)</h2>
         <hr>
-        <?php $groups = json_decode($span['additional_groups'],TRUE);
-            $groups = is_array($groups)?$groups:array();
+        <?php $groups = is_array($span['additional_groups'])?$span['additional_groups']:array();
             foreach($groups as $gkey => $data) {
         ?>
         <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">

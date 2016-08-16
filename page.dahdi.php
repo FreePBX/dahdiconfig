@@ -213,11 +213,10 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
     $o = $span;
     unset($o['additional_groups']);
     $o = json_encode($o);
-    $additional_groups = !empty($span['additional_groups']) ? (is_array($span['additional_groups']) ? json_encode($span['additional_groups']) : $span['additional_groups']) : '{}';
     ?>
 
   spandata[<?php echo $key?>] = {};
-  spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? json_encode($span['additional_groups']) : '{}'?>;
+  spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? $span['additional_groups'] : '{}'?>;
   spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
 
 $('#editspan_<?php echo $key?>_signalling').change(function() {
@@ -228,8 +227,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = json_decode($span['additional_groups'],TRUE);
-    $groups = is_array($groups) ? $groups : array();
+<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
     foreach($groups as $gkey => $data) { ?>
 $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
     var span = <?php echo $key?>;

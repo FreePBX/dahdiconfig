@@ -118,7 +118,7 @@ class dahdiconfig_conf {
 						$output[] = "rxgain={$span['rxgain']}";
 					}
 
-					$groups = is_array($span['additional_groups']) ? $groups : array();
+					$groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
 					foreach($groups as $gkey => $data) {
 						//Add option for skip group for people who don't want to use all channels
 						if ($data['group'] == 's' || empty($data['fxx'])){

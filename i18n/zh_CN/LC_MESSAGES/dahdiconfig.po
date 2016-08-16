@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 21:15-0700\n"
+"POT-Creation-Date: 2016-08-15 21:45-0700\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -130,7 +130,7 @@ msgstr "模拟 %s"
 msgid "Analog %s Ports"
 msgstr "模拟 %s 端口"
 
-#: functions.inc.php:335
+#: functions.inc.php:334
 #, php-format
 msgid "Analog Channel %s"
 msgstr "模拟通道 %s"
@@ -306,8 +306,8 @@ msgstr ""
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:301 page.dahdi.php:320 page.dahdi.php:373 page.dahdi.php:431
-#: page.dahdi.php:454 page.dahdi.php:473 page.dahdi.php:518
+#: page.dahdi.php:299 page.dahdi.php:318 page.dahdi.php:371 page.dahdi.php:429
+#: page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -541,7 +541,7 @@ msgstr ""
 msgid "Digital Hardware"
 msgstr "数字语音板卡"
 
-#: page.dahdi.php:261
+#: page.dahdi.php:259
 msgid "Disable"
 msgstr ""
 
@@ -618,7 +618,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: page.dahdi.php:256
+#: page.dahdi.php:254
 msgid "Enable"
 msgstr ""
 
@@ -853,22 +853,22 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:331 functions.inc.php:349
+#: functions.inc.php:330 functions.inc.php:349
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:332 functions.inc.php:350
+#: functions.inc.php:331 functions.inc.php:350
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:333 functions.inc.php:351
+#: functions.inc.php:332 functions.inc.php:351
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:334 functions.inc.php:352
+#: functions.inc.php:333 functions.inc.php:352
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
@@ -1117,7 +1117,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:342 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:340 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1534,7 +1534,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:508
+#: page.dahdi.php:506
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1566,8 +1566,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:295 page.dahdi.php:314 page.dahdi.php:358 page.dahdi.php:424
-#: page.dahdi.php:448 page.dahdi.php:467 page.dahdi.php:486 page.dahdi.php:531
+#: page.dahdi.php:293 page.dahdi.php:312 page.dahdi.php:356 page.dahdi.php:422
+#: page.dahdi.php:446 page.dahdi.php:465 page.dahdi.php:484 page.dahdi.php:529
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1577,7 +1577,7 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
-#: page.dahdi.php:335
+#: page.dahdi.php:333
 msgid "Set Defaults"
 msgstr ""
 
@@ -2018,7 +2018,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:509
+#: page.dahdi.php:507
 msgid "This will reload the page"
 msgstr ""
 

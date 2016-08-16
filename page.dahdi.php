@@ -213,6 +213,7 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
     $o = $span;
     unset($o['additional_groups']);
     $o = json_encode($o);
+    $additional_groups = !empty($span['additional_groups']) ? (is_array($span['additional_groups']) ? json_encode($span['additional_groups']) : $span['additional_groups']) : '{}';
     ?>
 
   spandata[<?php echo $key?>] = {};

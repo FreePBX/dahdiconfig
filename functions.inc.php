@@ -118,8 +118,7 @@ class dahdiconfig_conf {
 						$output[] = "rxgain={$span['rxgain']}";
 					}
 
-					$groups = json_decode($span['additional_groups'],TRUE);
-					$groups = is_array($groups) ? $groups : array();
+					$groups = is_array($span['additional_groups']) ? $groups : array();
 					foreach($groups as $gkey => $data) {
 						//Add option for skip group for people who don't want to use all channels
 						if ($data['group'] == 's' || empty($data['fxx'])){
@@ -343,7 +342,8 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
 			continue;
 		}
 		$alarms = $span['alarms'];
-		foreach(json_decode($span['additional_groups'],TRUE) as $groups) {
+		$span['additional_groups'] = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
+		foreach($span['additional_groups'] as $groups) {
 			$grp = $groups['group'];
 			if (!isset($avail_group["g$grp"])) {
 				$avail_group["g$grp"] = array('identifier' => "g$grp",'name' => sprintf(_("Group %s Ascending"),$grp),'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));

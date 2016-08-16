@@ -641,14 +641,14 @@ class dahdi_cards {
 
 			} else {
 				$o = $this->calc_bchan_fxx($span['span']);
-				$this->spans[$span['span']]['additional_groups'] = json_encode(array(0 => array(
+				$this->spans[$span['span']]['additional_groups'] = array(0 => array(
 					"group" => 0,
 					"context" => 'from-digital',
 					"usedchans" => $this->spans[$span['span']]['totchans'],
 					"startchan" => $this->spans[$span['span']]['min_ch'],
 					"endchan" => $this->spans[$span['span']]['max_ch'],
 					"fxx" => $o['fxx']
-				)));
+				));
 			}
 		}
 	}
@@ -1102,7 +1102,7 @@ class dahdi_cards {
 		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
-		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : 'array()';
+		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : '{}';
 
 		if ($editspan['signalling'] == "mfc_r2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
@@ -1334,7 +1334,7 @@ class dahdi_cards {
 				} else {
 					$fx = 'e&m';
 				}
-				$data = json_decode($span['additional_groups'], true);
+				$data = $span['additional_groups'];
 				if (!empty($data)) {
 					foreach($data as $s){
 						if (strtolower($s['group'] == 's')){

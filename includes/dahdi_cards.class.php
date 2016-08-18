@@ -105,12 +105,12 @@ class dahdi_cards {
 
 		global $amp_conf;
 		if (!is_file($amp_conf['DAHDISYSTEMLOC']) && file_exists('/usr/sbin/dahdi_genconf')) {
-			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf')) {
+			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf') && is_writable('/etc/dahdi/system.conf')) {
 				$contents = file_get_contents('/etc/dahdi/system.conf');
 				if(empty($contents)) {
 					exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
 				}
-			} else {
+			} elseif(!file_exists('/etc/dahdi/system.conf')) {
 				exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
 			}
 		}
@@ -486,15 +486,23 @@ class dahdi_cards {
 	 * Load all the information the various locations (database, system.conf, chan_dahdi.conf)
 	 */
 	public function load() {
-		global $db;
+		global $db, $amp_conf;
 
 		$this->read_configured_hdwr();
 		$this->read_dahdi_scan();
 
 		$this->hdwr_changes = $this->detect_hdwr_changes();
 		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
-			exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
-			exec('/usr/sbin/dahdi_cfg 2>/dev/null');
+			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf') && is_writable('/etc/dahdi/system.conf')) {
+				$contents = file_get_contents('/etc/dahdi/system.conf');
+				if(empty($contents)) {
+					exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
+					exec('/usr/sbin/dahdi_cfg 2>/dev/null');
+				}
+			} elseif(!file_exists('/etc/dahdi/system.conf')) {
+				exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
+				exec('/usr/sbin/dahdi_cfg 2>/dev/null');
+			}
 			$this->read_dahdi_scan();
 			$this->write_detected();
 			$this->write_spans();

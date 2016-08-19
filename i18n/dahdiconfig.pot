@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 13:02-0700\n"
+"POT-Creation-Date: 2016-08-19 14:20-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -448,7 +448,7 @@ msgid "DAHDI Configuration"
 msgstr ""
 
 #: Dahdiconfig.class.php:108
-#: Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:163
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -483,7 +483,7 @@ msgid "DAHDi Executable Location"
 msgstr ""
 
 #: Dahdiconfig.class.php:145
-#: Dahdiconfig.class.php:189
+#: Dahdiconfig.class.php:193
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -508,7 +508,7 @@ msgstr ""
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:187
+#: Dahdiconfig.class.php:191
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1984,11 +1984,11 @@ msgstr ""
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:185
+#: Dahdiconfig.class.php:189
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:176
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2164,7 +2164,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:253
+#: Dahdiconfig.class.php:257
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2329,7 +2329,7 @@ msgid ""
 msgstr ""
 
 #: Dahdiconfig.class.php:127
-#: Dahdiconfig.class.php:176
+#: Dahdiconfig.class.php:180
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
@@ -2338,7 +2338,7 @@ msgstr ""
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:178
 msgid "Wanrouter Stopped"
 msgstr ""
 

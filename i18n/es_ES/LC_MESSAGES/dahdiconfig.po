@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 13:02-0700\n"
+"POT-Creation-Date: 2016-08-19 14:20-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -429,7 +429,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr "Configuracion DAHDI"
 
-#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:163
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
@@ -461,7 +461,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
-#: Dahdiconfig.class.php:145 Dahdiconfig.class.php:189
+#: Dahdiconfig.class.php:145 Dahdiconfig.class.php:193
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
@@ -487,7 +487,7 @@ msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 msgid "DAHDi Started"
 msgstr "DAHDI Iniciado"
 
-#: Dahdiconfig.class.php:187
+#: Dahdiconfig.class.php:191
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
@@ -2020,11 +2020,11 @@ msgstr "Iniciando DAHDI para tarjetas Digium"
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Iniciando Wanrouter para tarjetas Sangoma"
 
-#: Dahdiconfig.class.php:185
+#: Dahdiconfig.class.php:189
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Deteniendo DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:176
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Deteniendo Wanrouter para tarjetas Sangoma"
 
@@ -2222,7 +2222,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:253
+#: Dahdiconfig.class.php:257
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2417,7 +2417,7 @@ msgstr ""
 "CUIDADO: cuando este  módulo esta \"habilitado\" para escritura, el "
 "SOBREESCRIBIRA los siguientes archivos:"
 
-#: Dahdiconfig.class.php:127 Dahdiconfig.class.php:176
+#: Dahdiconfig.class.php:127 Dahdiconfig.class.php:180
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Error Wanrouter: %s"
@@ -2426,7 +2426,7 @@ msgstr "Error Wanrouter: %s"
 msgid "Wanrouter Started"
 msgstr "Wanrouter Iniciado"
 
-#: Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:178
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter Detenido"
 

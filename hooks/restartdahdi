@@ -1,4 +1,16 @@
 #!/bin/bash
 
-/usr/local/sbin/fwconsole stop
-/usr/local/sbin/fwconsole start
+# Figure out where fwconsole is
+if [ -x /usr/local/sbin/fwconsole ]; then
+       FWCONSOLE=/usr/local/sbin/fwconsole
+elif [ -x /usr/sbin/fwconsole ]; then
+ 	FWCONSOLE=/usr/sbin/fwconsole
+elif [ -x /sbin/fwconsole ]; then
+	FWCONSOLE=/sbin/fwconsole
+else
+	echo "Can't find FWCONSOLE, aborting"
+	exit
+fi
+
+$FWCONSOLE stop
+$FWCONSOLE start

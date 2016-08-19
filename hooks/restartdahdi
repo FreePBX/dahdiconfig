@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/local/sbin/fwconsole stop
+/usr/local/sbin/fwconsole start

@@ -242,9 +242,9 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 				return array("started" => !$this->getConfig("restarting"));
 			break;
 			case 'restart':
-				if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {
+				if(file_exists('/etc/incron.d/sysadmin')) {
 					$this->setConfig("restarting",true);
-					file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
+					touch('/var/spool/asterisk/incron/dahdiconfig.restartdahdi');
 					return array("status" => true);
 				}
 				return array("status" => false, "message" => _("This is not available on your system"));

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 14:52-0700\n"
+"POT-Creation-Date: 2016-08-19 15:31-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -451,11 +451,9 @@ msgstr "Módulo Configuración DAHDi"
 
 #: page.dahdi.php:11
 msgid ""
-"DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
-"Below"
+"DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' "
+"button below"
 msgstr ""
-"DAHDi no parece estar funcionando. Haga clic en el boton 'Reiniciar/Recargar "
-"Dahdi' Abajo"
 
 #: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
@@ -1242,7 +1240,7 @@ msgstr "Macao"
 #: page.dahdi.php:70
 msgid ""
 "Make sure to hit 'Apply Config' if you've made any changed before Restarting "
-"Dahdi & Asterisk"
+"DAHDi & Asterisk"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:48 views/dahdi_advanced_settings.php:101
@@ -1658,8 +1656,8 @@ msgid "Receive Gain"
 msgstr "Ganancia Recibida"
 
 #: page.dahdi.php:74
-msgid "Reload Asterisk Dahdi Module"
-msgstr "Recargar el Modulo Dahdi Asterisk"
+msgid "Reload Asterisk DAHDi Module"
+msgstr ""
 
 #: assets/js/main.js:432
 msgid "Reloading..."
@@ -1674,8 +1672,8 @@ msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
 #: page.dahdi.php:72
-msgid "Restart Dahdi & Asterisk"
-msgstr "Reiniciar Dahdi y Asterisk"
+msgid "Restart DAHDi & Asterisk"
+msgstr ""
 
 #: page.dahdi.php:570
 msgid "Restarting DAHDi and Asterisk. Please wait..."
@@ -2549,6 +2547,19 @@ msgstr "CE Por software a usar en system.conf"
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
+
+#~ msgid ""
+#~ "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi "
+#~ "Button' Below"
+#~ msgstr ""
+#~ "DAHDi no parece estar funcionando. Haga clic en el boton 'Reiniciar/"
+#~ "Recargar Dahdi' Abajo"
+
+#~ msgid "Reload Asterisk Dahdi Module"
+#~ msgstr "Recargar el Modulo Dahdi Asterisk"
+
+#~ msgid "Restart Dahdi & Asterisk"
+#~ msgstr "Reiniciar Dahdi y Asterisk"
 
 #~ msgid ""
 #~ "For your changes to take effect, click the 'Restart/Reload Dahdi Button' "

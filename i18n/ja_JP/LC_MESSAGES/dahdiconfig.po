@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 14:52-0700\n"
+"POT-Creation-Date: 2016-08-19 15:31-0700\n"
 "PO-Revision-Date: 2015-02-21 11:20+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -440,8 +440,8 @@ msgstr ""
 
 #: page.dahdi.php:11
 msgid ""
-"DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
-"Below"
+"DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' "
+"button below"
 msgstr ""
 
 #: dahdiconfig.i18n.php:18
@@ -1180,7 +1180,7 @@ msgstr ""
 #: page.dahdi.php:70
 msgid ""
 "Make sure to hit 'Apply Config' if you've made any changed before Restarting "
-"Dahdi & Asterisk"
+"DAHDi & Asterisk"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:48 views/dahdi_advanced_settings.php:101
@@ -1562,7 +1562,7 @@ msgid "Receive Gain"
 msgstr ""
 
 #: page.dahdi.php:74
-msgid "Reload Asterisk Dahdi Module"
+msgid "Reload Asterisk DAHDi Module"
 msgstr ""
 
 #: assets/js/main.js:432
@@ -1578,7 +1578,7 @@ msgid "Reset File To Defaults"
 msgstr ""
 
 #: page.dahdi.php:72
-msgid "Restart Dahdi & Asterisk"
+msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
 #: page.dahdi.php:570

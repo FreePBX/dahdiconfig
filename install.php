@@ -629,3 +629,7 @@ if(file_exists($mod_loc)) {
 if(file_exists($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig") && is_writable($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig")) {
 	unlink($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig");
 }
+
+\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+$dahdi_cards = new \dahdi_cards();
+$dahdi_cards->checkHardware();

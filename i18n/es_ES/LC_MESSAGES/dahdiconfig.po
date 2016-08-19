@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 15:31-0700\n"
+"POT-Creation-Date: 2016-08-19 16:18-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -135,7 +135,7 @@ msgstr "Análogo %s"
 msgid "Analog %s Ports"
 msgstr "Puertos %s Análogos"
 
-#: functions.inc.php:334
+#: functions.inc.php:300
 #, php-format
 msgid "Analog Channel %s"
 msgstr "Canales %s Análogos"
@@ -191,7 +191,7 @@ msgstr "Austria"
 msgid "Auto"
 msgstr "Automatico"
 
-#: functions.inc.php:508
+#: functions.inc.php:474
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -329,7 +329,7 @@ msgstr "Canadá"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: functions.inc.php:577
+#: functions.inc.php:543
 msgid "Channel"
 msgstr "Canal"
 
@@ -359,11 +359,11 @@ msgstr "China"
 msgid "Chinese"
 msgstr "Chino"
 
-#: functions.inc.php:412
+#: functions.inc.php:378
 msgid "Choose"
 msgstr "Escoger"
 
-#: functions.inc.php:578
+#: functions.inc.php:544
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Seleccione el Canal FXS para este %s"
@@ -435,7 +435,7 @@ msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
 "Dahdi]!"
 
-#: functions.inc.php:490 functions.inc.php:523
+#: functions.inc.php:456 functions.inc.php:489
 msgid "DAHDI Trunks"
 msgstr "Líneas DAHDI"
 
@@ -549,11 +549,11 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:566
+#: functions.inc.php:532
 msgid "Device Options"
 msgstr "Opciones Dispositivo"
 
-#: functions.inc.php:368
+#: functions.inc.php:334
 #, php-format
 msgid "Digital Channel %s"
 msgstr "Canal digital %s"
@@ -885,22 +885,22 @@ msgstr "Greek"
 msgid "Group"
 msgstr "Grupo"
 
-#: functions.inc.php:330 functions.inc.php:349
+#: functions.inc.php:296 functions.inc.php:315
 #, php-format
 msgid "Group %s Ascending"
 msgstr "Grupo %s Ascendente"
 
-#: functions.inc.php:331 functions.inc.php:350
+#: functions.inc.php:297 functions.inc.php:316
 #, php-format
 msgid "Group %s Descending"
 msgstr "Grupo %s Descendente"
 
-#: functions.inc.php:332 functions.inc.php:351
+#: functions.inc.php:298 functions.inc.php:317
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr "Grupo %s Round Robin Ascendente"
 
-#: functions.inc.php:333 functions.inc.php:352
+#: functions.inc.php:299 functions.inc.php:318
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr "Grupo %s Round Robin Descendente"
@@ -1414,11 +1414,11 @@ msgstr "Nigeria"
 msgid "No"
 msgstr "NO"
 
-#: functions.inc.php:527
+#: functions.inc.php:493
 msgid "No Available Groups or Channels"
 msgstr "No hay Grupos o Canales Disponibles"
 
-#: functions.inc.php:598
+#: functions.inc.php:564
 msgid "No Unused DAHDi Channels Available"
 msgstr "No hay Canales DAHDi Disponibles NO utilizados"
 
@@ -1560,7 +1560,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1332 includes/dahdi_cards.class.php:1620
+#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1623
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -2169,7 +2169,7 @@ msgstr ""
 "Los valores están en dB (decibelios). Un número positivo aumenta el nivel de "
 "volumen en un canal, y un valor negativo disminuye el nivel de volumen"
 
-#: functions.inc.php:535
+#: functions.inc.php:501
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -2355,7 +2355,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1332 includes/dahdi_cards.class.php:1620
+#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1623
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2506,6 +2506,10 @@ msgstr "a-law"
 
 #: views/dahdi_mfcr2_settings.php:92
 msgid "collect_call"
+msgstr ""
+
+#: includes/dahdi_cards.class.php:831
+msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:62

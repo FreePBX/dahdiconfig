@@ -26,7 +26,7 @@ $dahdi_cards = new dahdi_cards();
 $error = array();
 
 if ($dahdi_cards->hdwr_changes()) {
-	$dahdi_message = _('You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below.');
+	$dahdi_message = _('You have new hardware! Please configure your new hardware using the edit button(s)');
     include('views/dahdi_message_box.php');
     if(file_exists($amp_conf['ASTETCDIR'].'/chan_dahdi_groups.conf')) {
         global $astman;
@@ -38,9 +38,9 @@ if ($dahdi_cards->hdwr_changes()) {
     }
 }
 ?>
-<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After pressing the Red Apply Changes Bar.")?></div>
-<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system!")?></div>
-<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below")?></div>
+<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the 'Restart DAHDi & Asterisk' button below")?></div>
+<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system")?></div>
+<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your changes to take effect, click the 'Restart DAHDi & Asterisk' button below")?></div>
 
 <script type="text/javascript" src="assets/dahdiconfig/js/jquery.form.js"></script>
 <br/>

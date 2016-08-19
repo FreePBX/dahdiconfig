@@ -12,5 +12,6 @@ else
 	exit
 fi
 
-$FWCONSOLE stop
-$FWCONSOLE start
+#yeah dev/null because we are children with our coding in PHP
+$FWCONSOLE stop &>> /dev/null
+$FWCONSOLE start &>> /dev/null

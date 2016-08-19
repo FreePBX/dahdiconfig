@@ -456,15 +456,19 @@ $("#restartamportal").click(function(e) {
 	var $this = this;
 	$.post("ajax.php?module=dahdiconfig&command=restart", function(z){
 		if(z.status) {
+			var count = 0;
 			var inter = setInterval(function(){
 				$.post("ajax.php?module=dahdiconfig&command=checkrestart", function(z){
 					if(z.started) {
-						$(".screendoor").hide();
-						$($this).prop("disabled",false);
-						$($this).text(text);
 						location.reload();
 						clearInterval(inter);
 					}
+				}).always(function() {
+					if(count > 60) {
+						location.reload();
+						clearInterval(inter);
+					}
+					count++;
 				});
 			}, 1000);
 		}

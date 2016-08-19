@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 12:55-0700\n"
+"POT-Creation-Date: 2016-08-19 13:02-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2164,7 +2164,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:250
+#: Dahdiconfig.class.php:253
 msgid "This is not available on your system"
 msgstr ""
 

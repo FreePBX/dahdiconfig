@@ -284,7 +284,6 @@ class dahdi_cards {
 						if ($configured['port'][$i] == $detected['port'][$i]) {
 							continue;
 						}
-
 						return TRUE;
 					}
 
@@ -660,7 +659,7 @@ class dahdi_cards {
 				));
 			}
 		}
-		dbug($this->spans);
+		//dbug($this->spans);
 	}
 
 	/**
@@ -903,7 +902,16 @@ class dahdi_cards {
 				$this->has_vpm = true;
 			}
 
-			if ($span['type'] == 'analog' && strpos($span['devicetype'],'W400') === FALSE) {
+			if(isset($this->hardware[$span['location']]['type']) && ($this->hardware[$span['location']]['type'] != $span['type'])) {
+				$this->hardware[$span['location']] = array();
+				$this->hardware[$span['location']]['device'] = $span['devicetype'];
+				$this->hardware[$span['location']]['basechan'] = $span['basechan'];
+				$this->hardware[$span['location']]['type'] = 'hybrid';
+				if($span['type'] == 'analog') {
+					$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
+					continue;
+				}
+			} elseif ($span['type'] == 'analog' && strpos($span['devicetype'],'W400') === FALSE) {
 				$this->hardware[$span['location']] = array();
 				$this->hardware[$span['location']]['device'] = $span['devicetype'];
 				$this->hardware[$span['location']]['basechan'] = $span['basechan'];
@@ -911,8 +919,6 @@ class dahdi_cards {
 				$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
 				continue;
 			}
-
-
 
 			if (strpos($span['description'], 'ztdummy') !== false) {
 				continue;
@@ -940,7 +946,23 @@ class dahdi_cards {
 						}
 					break;
 					case 'totchans':
-						list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
+						$parts = explode('-',$span['type']);
+						if(empty($parts[1])) {
+							switch ($span['totchans']) {
+								case 3:
+									$this->spans[$key]['spantype'] = 'bri';
+								break;
+								case 25:
+									$this->spans[$key]['spantype'] = 'T1';
+								break;
+								case 31:
+									$this->spans[$key]['spantype'] = 'E1';
+								break;
+							}
+						} else {
+							$this->spans[$key]['spantype'] = $parts[1];
+						}
+						//list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
 						$this->spans[$key]['min_ch'] = $span['basechan'];
 						$this->spans[$key]['max_ch'] = $span['basechan'] + $span['totchans'] - 1;
 

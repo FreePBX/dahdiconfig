@@ -121,7 +121,7 @@ class dahdiconfig_conf {
 					$groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
 					foreach($groups as $gkey => $data) {
 						//Add option for skip group for people who don't want to use all channels
-						if ($data['group'] == 's' || empty($data['fxx'])){
+						if ($data['group'] === 's' || empty($data['fxx'])){
 							continue;
 						}
 						$output[] = "group={$data['group']}";
@@ -180,7 +180,7 @@ function dahdi_config2array ($config) {
 			continue;
 		}
 
-		list($var, $val) = explode('=',$config[$i]);
+		list($var, $val) = explode('=',$config[$i],2);
 
 		if (isset($cxts[$cxt][$var])) {
 			if (gettype($cxts[$cxt][$var]) !== 'array') {

@@ -400,10 +400,9 @@ $(function(){
             $("#editspan_<?php echo $key?>_fac").val('CAS/HDB3');
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow');
             mfcr2_set_defaults(<?php echo $key ?>);
-        }
-        else {
+        } else {
             $('#button_mfc_r2_span<?php echo $key?>').hide();
-            $("#editspan_<?php echo $key?>_fac").val('CCS/HDB3');
+            $("#editspan_<?php echo $key?>_fac")[0].selectedIndex = 0;
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow');
         }
     })

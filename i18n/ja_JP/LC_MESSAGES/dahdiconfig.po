@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-18 16:58-0700\n"
+"POT-Creation-Date: 2016-08-18 18:49-0700\n"
 "PO-Revision-Date: 2015-02-21 11:20+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -309,8 +309,8 @@ msgstr ""
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:299 page.dahdi.php:318 page.dahdi.php:371 page.dahdi.php:429
-#: page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
+#: page.dahdi.php:299 page.dahdi.php:318 page.dahdi.php:371 page.dahdi.php:428
+#: page.dahdi.php:451 page.dahdi.php:470 page.dahdi.php:515
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -1462,7 +1462,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1312 includes/dahdi_cards.class.php:1600
+#: includes/dahdi_cards.class.php:1334 includes/dahdi_cards.class.php:1622
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1556,7 +1556,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:506
+#: page.dahdi.php:505
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1596,8 +1596,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:293 page.dahdi.php:312 page.dahdi.php:356 page.dahdi.php:422
-#: page.dahdi.php:446 page.dahdi.php:465 page.dahdi.php:484 page.dahdi.php:529
+#: page.dahdi.php:293 page.dahdi.php:312 page.dahdi.php:356 page.dahdi.php:421
+#: page.dahdi.php:445 page.dahdi.php:464 page.dahdi.php:483 page.dahdi.php:528
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -2056,7 +2056,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:507
+#: page.dahdi.php:506
 msgid "This will reload the page"
 msgstr ""
 
@@ -2092,7 +2092,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1312 includes/dahdi_cards.class.php:1600
+#: includes/dahdi_cards.class.php:1334 includes/dahdi_cards.class.php:1622
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-18 18:49-0700\n"
+"POT-Creation-Date: 2016-08-19 12:55-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "%s Ports"
 msgstr "Puertos %s"
 
-#: views/dahdi_digital_settings.php:133
+#: views/dahdi_digital_settings.php:142
 msgid "-15db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:134
+#: views/dahdi_digital_settings.php:143
 msgid "-22.5db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:132
+#: views/dahdi_digital_settings.php:141
 msgid "-7.5db (CSU)"
 msgstr ""
 
@@ -42,23 +42,23 @@ msgstr ""
 msgid "..Done"
 msgstr "..Hecho"
 
-#: views/dahdi_digital_settings.php:127
+#: views/dahdi_digital_settings.php:136
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:128
+#: views/dahdi_digital_settings.php:137
 msgid "133-266 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:129
+#: views/dahdi_digital_settings.php:138
 msgid "266-399 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:130
+#: views/dahdi_digital_settings.php:139
 msgid "399-533 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:131
+#: views/dahdi_digital_settings.php:140
 msgid "533-655 feet (DSX-1)"
 msgstr ""
 
@@ -81,7 +81,7 @@ msgstr ""
 msgid "A-law Override"
 msgstr "Forzar A-law"
 
-#: views/dahdi_digital_settings.php:101
+#: views/dahdi_digital_settings.php:110
 msgid "AT&amp;T 4ESS"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr "Puertos %s Análogos"
 msgid "Analog Channel %s"
 msgstr "Canales %s Análogos"
 
-#: page.dahdi.php:68
+#: page.dahdi.php:58
 msgid "Analog Hardware"
 msgstr "Hardware Análogo"
 
@@ -159,6 +159,10 @@ msgstr "Aplicar Openmode a módulos FXO"
 #: views/dahdi_advanced_settings.php:148 views/dahdi_modprobe_settings.php:139
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Aplicar Openmode a módulos FXS y FXO"
+
+#: assets/js/main.js:449
+msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
+msgstr ""
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
@@ -195,19 +199,19 @@ msgstr ""
 "Grupos disponibles DAHDI y Canales configurados en el módulo de "
 "configuración de DAHDI"
 
-#: views/dahdi_digital_settings.php:88
+#: views/dahdi_digital_settings.php:97
 msgid "BRI PTMP - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:87
+#: views/dahdi_digital_settings.php:96
 msgid "BRI PTMP - Net"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:86
+#: views/dahdi_digital_settings.php:94
 msgid "BRI PTP - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:85
+#: views/dahdi_digital_settings.php:95
 msgid "BRI PTP - Net"
 msgstr ""
 
@@ -215,7 +219,7 @@ msgstr ""
 msgid "Bahrain"
 msgstr "Bahrein"
 
-#: page.dahdi.php:193
+#: page.dahdi.php:183
 msgid ""
 "Because of this the module's configuration file write ability is disabled by "
 "default. You can enable it in this window or you can later enable it under "
@@ -318,8 +322,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Canadá"
 
-#: page.dahdi.php:299 page.dahdi.php:318 page.dahdi.php:371 page.dahdi.php:428
-#: page.dahdi.php:451 page.dahdi.php:470 page.dahdi.php:515
+#: page.dahdi.php:289 page.dahdi.php:308 page.dahdi.php:358 page.dahdi.php:415
+#: page.dahdi.php:438 page.dahdi.php:457 page.dahdi.php:502
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -421,11 +425,11 @@ msgstr "Canal-D"
 msgid "D4/AMI"
 msgstr ""
 
-#: page.dahdi.php:60
+#: page.dahdi.php:50
 msgid "DAHDI Configuration"
 msgstr "Configuracion DAHDI"
 
-#: Dahdiconfig.class.php:104 Dahdiconfig.class.php:155
+#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:159
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
@@ -445,7 +449,7 @@ msgstr "Config Hardware DAHDi"
 msgid "DAHDi Configuration Module"
 msgstr "Módulo Configuración DAHDi"
 
-#: page.dahdi.php:22
+#: page.dahdi.php:11
 msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' "
 "Below"
@@ -457,7 +461,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
-#: Dahdiconfig.class.php:141 Dahdiconfig.class.php:185
+#: Dahdiconfig.class.php:145 Dahdiconfig.class.php:189
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
@@ -479,11 +483,11 @@ msgstr "Localidad Módulos DAHDI"
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
-#: Dahdiconfig.class.php:139
+#: Dahdiconfig.class.php:143
 msgid "DAHDi Started"
 msgstr "DAHDI Iniciado"
 
-#: Dahdiconfig.class.php:183
+#: Dahdiconfig.class.php:187
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
@@ -491,11 +495,11 @@ msgstr "DAHDI Se detuvo"
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
 
-#: page.dahdi.php:175
+#: page.dahdi.php:165
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr "DAHDi renuncia acerca de discapacitados de escritura"
 
-#: page.dahdi.php:176
+#: page.dahdi.php:166
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi está DESHABILITADA para la escritura"
 
@@ -556,17 +560,21 @@ msgstr "Opciones Dispositivo"
 msgid "Digital Channel %s"
 msgstr "Canal digital %s"
 
-#: page.dahdi.php:67
+#: page.dahdi.php:57
 msgid "Digital Hardware"
 msgstr "Hardware digital"
 
-#: page.dahdi.php:259
+#: page.dahdi.php:249
 msgid "Disable"
 msgstr "inhabilitar"
 
 #: dahdiconfig.i18n.php:30
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
+
+#: assets/js/main.js:443
+msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
+msgstr ""
 
 #: install.php:352
 msgid "Done"
@@ -580,15 +588,15 @@ msgstr ""
 msgid "Dutch"
 msgstr "Dutch"
 
-#: views/dahdi_digital_settings.php:75
+#: views/dahdi_digital_settings.php:84
 msgid "E &amp; M"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:76
+#: views/dahdi_digital_settings.php:85
 msgid "E &amp; M -- Wink"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:77
+#: views/dahdi_digital_settings.php:86
 msgid "E &amp; M -- fead(DTMF)"
 msgstr ""
 
@@ -637,7 +645,7 @@ msgstr "Egypt"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: page.dahdi.php:254
+#: page.dahdi.php:244
 msgid "Enable"
 msgstr "Habilitar"
 
@@ -697,7 +705,7 @@ msgstr "Estonia"
 msgid "Estonian"
 msgstr "Estonian"
 
-#: views/dahdi_digital_settings.php:103
+#: views/dahdi_digital_settings.php:112
 msgid "EuroISDN"
 msgstr ""
 
@@ -713,15 +721,15 @@ msgstr "FSK"
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr "FSK- Ejecutar detección FSK"
 
-#: page.dahdi.php:169
+#: page.dahdi.php:159
 msgid "FXO Settings"
 msgstr "Configuración FXO"
 
-#: views/dahdi_digital_settings.php:79
+#: views/dahdi_digital_settings.php:88
 msgid "FXOKS"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:80
+#: views/dahdi_digital_settings.php:89
 msgid "FXOLS"
 msgstr ""
 
@@ -729,15 +737,15 @@ msgstr ""
 msgid "FXS Honor Mode"
 msgstr "FXS Modo Honor"
 
-#: page.dahdi.php:172
+#: page.dahdi.php:162
 msgid "FXS Settings"
 msgstr "Configuración FXS"
 
-#: views/dahdi_digital_settings.php:82
+#: views/dahdi_digital_settings.php:91
 msgid "FXSKS"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:83
+#: views/dahdi_digital_settings.php:92
 msgid "FXSLS"
 msgstr ""
 
@@ -761,7 +769,7 @@ msgstr "Fastringer:"
 msgid "Fax Detection"
 msgstr "Detección Fax"
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:122
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Archivo %s no es propiedad de %s"
@@ -787,7 +795,7 @@ msgstr "Para puertos digitales usando protocolos ISDN PRI"
 msgid "For fax detection"
 msgstr "Para detección de Fax"
 
-#: page.dahdi.php:54
+#: page.dahdi.php:44
 msgid ""
 "For your changes to take effect, click the 'Restart/Reload Dahdi Button' "
 "Below"
@@ -795,14 +803,14 @@ msgstr ""
 "Para que los cambios surtan efecto, haga clic en el 'Reiniciar / Actualizar "
 "Dahdi' Abajo"
 
-#: page.dahdi.php:53
+#: page.dahdi.php:43
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system!"
 msgstr ""
 "Para los cambios de hardware surtan efecto, es necesario reiniciar el "
 "sistema!"
 
-#: page.dahdi.php:52
+#: page.dahdi.php:42
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system! "
 "<br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After "
@@ -869,7 +877,7 @@ msgstr "Alemania"
 msgid "Get ANI Before DNIS"
 msgstr ""
 
-#: page.dahdi.php:93 page.dahdi.php:129 views/dahdi_global_settings.php:3
+#: page.dahdi.php:83 page.dahdi.php:119 views/dahdi_global_settings.php:3
 msgid "Global Settings"
 msgstr "Configuración Global"
 
@@ -1052,7 +1060,7 @@ msgstr "Israel"
 msgid "Israeli Hebrew"
 msgstr "Israeli Hebrew"
 
-#: page.dahdi.php:186
+#: page.dahdi.php:176
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
 "Es SU responsabilidad mantener respaldo de todos los archivos relevantes de "
@@ -1174,7 +1182,7 @@ msgstr ""
 msgid "Lowpower"
 msgstr "Lowpower"
 
-#: views/dahdi_digital_settings.php:102
+#: views/dahdi_digital_settings.php:111
 msgid "Lucent 5ESS"
 msgstr ""
 
@@ -1186,11 +1194,11 @@ msgstr "Luxembourg"
 msgid "MF Timeout"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:73
+#: views/dahdi_digital_settings.php:82
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:340 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:330 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1238,6 +1246,12 @@ msgstr "Modo MWI"
 #: views/dahdi_advanced_settings.php:100 views/dahdi_modprobe_settings.php:83
 msgid "Macao"
 msgstr "Macao"
+
+#: page.dahdi.php:71
+msgid ""
+"Make sure to hit 'Apply Config' if you've made any changed before Restarting "
+"Dahdi & Asterisk"
+msgstr ""
 
 #: views/dahdi_advanced_settings.php:48 views/dahdi_advanced_settings.php:101
 #: views/dahdi_modprobe_settings.php:84
@@ -1310,7 +1324,7 @@ msgstr "Localidad del Archivo de Configuración ModProbe.d"
 msgid "Mode"
 msgstr "Modo"
 
-#: page.dahdi.php:95 page.dahdi.php:135 views/dahdi_modprobe_settings.php:3
+#: page.dahdi.php:85 page.dahdi.php:125 views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
 msgstr "Configuración Modprobe"
 
@@ -1318,7 +1332,7 @@ msgstr "Configuración Modprobe"
 msgid "Module Name"
 msgstr "Nombre de Modulo"
 
-#: page.dahdi.php:96 page.dahdi.php:138
+#: page.dahdi.php:86 page.dahdi.php:128
 msgid "Module Settings"
 msgstr "Configuración de Módulos"
 
@@ -1366,7 +1380,7 @@ msgstr "NEON - Ejecuta Detección NWI Neon"
 msgid "NEON - Performs Neon MWI detection."
 msgstr "NEON - Ejecuta detección MWI Neon."
 
-#: views/dahdi_digital_settings.php:99
+#: views/dahdi_digital_settings.php:108
 msgid "National ISDN 2 (<?php echo ('default')?>)"
 msgstr ""
 
@@ -1450,7 +1464,7 @@ msgstr ""
 msgid "Normal"
 msgstr "Normal"
 
-#: views/dahdi_digital_settings.php:100
+#: views/dahdi_digital_settings.php:109
 msgid "Nortel DMS100"
 msgstr ""
 
@@ -1492,7 +1506,7 @@ msgstr ""
 "Nota: En caso afirmativo la ejecución del dialplan siempre comenzará en la "
 "extensión 's' de prioridad 1, independientemente del número marcado!"
 
-#: views/dahdi_digital_settings.php:104
+#: views/dahdi_digital_settings.php:113
 msgid "Old National ISDN 1"
 msgstr ""
 
@@ -1526,11 +1540,11 @@ msgstr "Otras Configuraciones Modprobe"
 msgid "Outgoing"
 msgstr "Saliente"
 
-#: views/dahdi_digital_settings.php:71
+#: views/dahdi_digital_settings.php:80
 msgid "PRI - CPE"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:72
+#: views/dahdi_digital_settings.php:81
 msgid "PRI - Net"
 msgstr ""
 
@@ -1551,12 +1565,12 @@ msgstr "Perú"
 msgid "Philippines"
 msgstr "Philippines"
 
-#: page.dahdi.php:31
+#: page.dahdi.php:20
 #, php-format
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1334 includes/dahdi_cards.class.php:1622
+#: includes/dahdi_cards.class.php:1332 includes/dahdi_cards.class.php:1620
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1569,7 +1583,7 @@ msgstr ""
 "Por favor, elija su país o su país más cercano para los tonos por defecto "
 "(Ej: tono de llamada, tono de ocupado, tono de timbre, etc.)"
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:122
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
@@ -1619,7 +1633,7 @@ msgstr "Portugal"
 msgid "Portuguese"
 msgstr "Portuguese"
 
-#: views/dahdi_digital_settings.php:105
+#: views/dahdi_digital_settings.php:114
 msgid "Q.SIG"
 msgstr ""
 
@@ -1651,21 +1665,33 @@ msgstr ""
 msgid "Receive Gain"
 msgstr "Ganancia Recibida"
 
-#: page.dahdi.php:82
+#: page.dahdi.php:75
 msgid "Reload Asterisk Dahdi Module"
 msgstr "Recargar el Modulo Dahdi Asterisk"
+
+#: assets/js/main.js:432
+msgid "Reloading..."
+msgstr ""
 
 #: install.php:548
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
-#: page.dahdi.php:505
+#: page.dahdi.php:492
 msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
-#: page.dahdi.php:84
+#: page.dahdi.php:73
 msgid "Restart Dahdi & Asterisk"
 msgstr "Reiniciar Dahdi y Asterisk"
+
+#: page.dahdi.php:571
+msgid "Restarting DAHDi and Asterisk. Please wait..."
+msgstr ""
+
+#: assets/js/main.js:454
+msgid "Restarting..."
+msgstr ""
 
 #: views/dahdi_advanced_settings.php:176 views/dahdi_modprobe_settings.php:181
 msgid "Ring Detect"
@@ -1699,8 +1725,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: page.dahdi.php:293 page.dahdi.php:312 page.dahdi.php:356 page.dahdi.php:421
-#: page.dahdi.php:445 page.dahdi.php:464 page.dahdi.php:483 page.dahdi.php:528
+#: page.dahdi.php:283 page.dahdi.php:302 page.dahdi.php:346 page.dahdi.php:408
+#: page.dahdi.php:432 page.dahdi.php:451 page.dahdi.php:470 page.dahdi.php:515
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1710,7 +1736,7 @@ msgstr "Salvar"
 msgid "Select Language"
 msgstr "Seleccione Idioma"
 
-#: page.dahdi.php:333
+#: page.dahdi.php:323
 msgid "Set Defaults"
 msgstr ""
 
@@ -1986,19 +2012,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Estándar"
 
-#: Dahdiconfig.class.php:137
+#: Dahdiconfig.class.php:141
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Iniciando DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:119
+#: Dahdiconfig.class.php:123
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Iniciando Wanrouter para tarjetas Sangoma"
 
-#: Dahdiconfig.class.php:181
+#: Dahdiconfig.class.php:185
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Deteniendo DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:168
+#: Dahdiconfig.class.php:172
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Deteniendo Wanrouter para tarjetas Sangoma"
 
@@ -2077,7 +2103,7 @@ msgstr "Syria"
 msgid "System Configuration File Location"
 msgstr "Localización del Archivo de Configuración del Sistema"
 
-#: page.dahdi.php:94 page.dahdi.php:132
+#: page.dahdi.php:84 page.dahdi.php:122
 msgid "System Settings"
 msgstr "Configuraciones del Sistema"
 
@@ -2107,7 +2133,7 @@ msgstr "Taiwanese"
 msgid "Thailand"
 msgstr "Thailand"
 
-#: page.dahdi.php:187
+#: page.dahdi.php:177
 #, php-format
 msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
@@ -2196,7 +2222,11 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: page.dahdi.php:196
+#: Dahdiconfig.class.php:250
+msgid "This is not available on your system"
+msgstr ""
+
+#: page.dahdi.php:186
 msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
@@ -2204,7 +2234,7 @@ msgstr ""
 "Este mensaje re-aparecerá cada vez que usted cargue el modulo mientras este "
 "en modo de escritura deshabilitado, de manera de no causar ninguna confusión"
 
-#: page.dahdi.php:190
+#: page.dahdi.php:180
 msgid ""
 "This module should never be used alongside \"dahdi_genconfig\". Using "
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
@@ -2299,7 +2329,7 @@ msgstr ""
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
 "la transferencia al switch ISDN, ya que envía en un mensaje FACILIDAD"
 
-#: page.dahdi.php:506
+#: page.dahdi.php:493
 msgid "This will reload the page"
 msgstr "Esto recargará la página"
 
@@ -2335,7 +2365,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1334 includes/dahdi_cards.class.php:1622
+#: includes/dahdi_cards.class.php:1332 includes/dahdi_cards.class.php:1620
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2379,7 +2409,7 @@ msgstr "Venezuela"
 msgid "WARNING"
 msgstr "ADVERTENCIA"
 
-#: page.dahdi.php:178
+#: page.dahdi.php:168
 msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"
@@ -2387,16 +2417,16 @@ msgstr ""
 "CUIDADO: cuando este  módulo esta \"habilitado\" para escritura, el "
 "SOBREESCRIBIRA los siguientes archivos:"
 
-#: Dahdiconfig.class.php:123 Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:127 Dahdiconfig.class.php:176
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Error Wanrouter: %s"
 
-#: Dahdiconfig.class.php:121
+#: Dahdiconfig.class.php:125
 msgid "Wanrouter Started"
 msgstr "Wanrouter Iniciado"
 
-#: Dahdiconfig.class.php:170
+#: Dahdiconfig.class.php:174
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter Detenido"
 
@@ -2454,7 +2484,7 @@ msgstr "Yemen"
 msgid "Yes"
 msgstr "Si"
 
-#: page.dahdi.php:40
+#: page.dahdi.php:30
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
 "button(s). Then reload DAHDi with the button below."
@@ -2494,7 +2524,7 @@ msgstr ""
 msgid "fcc"
 msgstr "fcc"
 
-#: views/dahdi_digital_settings.php:187
+#: views/dahdi_digital_settings.php:196
 msgid "gsm"
 msgstr ""
 

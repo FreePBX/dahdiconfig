@@ -827,6 +827,9 @@ class dahdi_cards {
 		if(!file_exists('/usr/sbin/dahdi_scan')) {
 			return false;
 		}
+		if(!is_executable('/usr/sbin/dahdi_scan')) {
+			throw new \Exception(_("dahdi_scan exists but can not be run as this user!"));
+		}
 		exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
 		if($return_var != '0') {
 			return false;

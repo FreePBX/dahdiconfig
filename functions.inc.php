@@ -157,43 +157,9 @@ class dahdiconfig_conf {
 }
 
 function dahdi_config2array ($config) {
-	if (! is_array($config)) {
-		$config = explode("\n", $config);
-	}
-
-	$cxts = array();
-	$cxt = '';
-
-	unset($config[count($config)-1]);
-
-	for($i=0;$i<count($config);$i++) {
-		unset($matches);
-		if ($config[$i] == '') {
-			continue;
-		} else if (preg_match('/^\[([-a-zA-Z0-9_][-a-zA-Z0-9_]*)\]/', $config[$i], $matches)) {
-			$cxt = $matches[1];
-			$cxts[$cxt] = array();
-			continue;
-		}
-
-		if ($cxt == '') {
-			continue;
-		}
-
-		list($var, $val) = explode('=',$config[$i],2);
-
-		if (isset($cxts[$cxt][$var])) {
-			if (gettype($cxts[$cxt][$var]) !== 'array') {
-				$cxts[$cxt][$var] = array($cxts[$cxt][$var]);
-			}
-
-			$cxts[$cxt][$var][] = $val;
-		} else {
-			$cxts[$cxt][$var] = $val;
-		}
-	}
-
-	return $cxts;
+	$e = implode("\n",$config);
+	$array = parse_ini_string($e,true,INI_SCANNER_RAW);
+	return $array;
 }
 
 function dahdi_chans2array($chans=null) {

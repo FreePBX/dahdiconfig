@@ -439,9 +439,16 @@ $("#reloaddahdi").click(function(e) {
 	});
 });
 
+$("#button_reload").click(function(e) {
+	alert(_("Don't forget to Restart Dahdi & Asterisk after this completes"));
+});
+
 $("#restartamportal").click(function(e) {
 	e.preventDefault();
 	e.stopPropagation();
+	if($("#button_reload").is(":visible") && !confirm(_("Are you sure you want to Restart without hitting 'Apply Config'?"))) {
+		return true;
+	}
 	$(this).prop("disabled",true);
 	var text = $(this).text();
 	$(this).text(_("Restarting..."));

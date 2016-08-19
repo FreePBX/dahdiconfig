@@ -67,14 +67,14 @@ if ($dahdi_cards->hdwr_changes()) {
             </div>
             <br/>
             <br/>
-            <div class="btn_container">
-                <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-                    <button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk Dahdi Module')?></button>
-                      <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
-                      <button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart Dahdi & Asterisk')?></button>
-                      <?php } ?>
-                </form>
-              </div>
+						<div class="alert alert-info">
+							<?php echo _("Make sure to hit 'Apply Config' if you've made any changed before Restarting Dahdi & Asterisk")?>
+							<?php if(file_exists('/etc/incron.d/sysadmin')) {?>
+								<button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart Dahdi & Asterisk')?></button>
+							<?php } else { ?>
+								<button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk Dahdi Module')?></button>
+							<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>

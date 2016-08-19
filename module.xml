@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.27</version>
+	<version>13.0.28</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.28* Chown hook
 		*13.0.27* More bugs and cleanup
 		*13.0.26* Worked through numerous issues with Rob on this
 		*13.0.25* FREEPBX-12968

@@ -211,6 +211,9 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 												'path' => '/etc/wanpipe',
 												'perms' => 0755);
 		$files[] = array('type' => 'file',
+												'path' => __DIR__."/hooks/restartdahdi",
+												'perms' => 0755);
+		$files[] = array('type' => 'file',
 												'path' => $this->freepbx->Config->get('DAHDIMODULESLOC'),
 												'perms' => 0755);
 		$files[] = array('type' => 'file',

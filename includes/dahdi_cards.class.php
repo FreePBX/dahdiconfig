@@ -104,16 +104,6 @@ class dahdi_cards {
 		}
 
 		global $amp_conf;
-		if (!is_file($amp_conf['DAHDISYSTEMLOC']) && file_exists('/usr/sbin/dahdi_genconf')) {
-			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf') && is_writable('/etc/dahdi/system.conf')) {
-				$contents = file_get_contents('/etc/dahdi/system.conf');
-				if(empty($contents)) {
-					exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
-				}
-			} elseif(!file_exists('/etc/dahdi/system.conf')) {
-				exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
-			}
-		}
 
 		$check = array();
 		$me = $amp_conf['AMPASTERISKUSER'];
@@ -485,11 +475,19 @@ class dahdi_cards {
 	 * Load all the information the various locations (database, system.conf, chan_dahdi.conf)
 	 */
 	public function load() {
-		global $db, $amp_conf;
-
 		$this->read_configured_hdwr();
 		$this->read_dahdi_scan();
+		$this->read_system_conf();
+		$this->read_chan_dahdi_conf();
+		$this->read_dahdi_modprobe();
+		$this->read_dahdi_globalsettings();
+		$this->read_dahdi_systemsettings();
+		$this->read_dahdi_analog();
+		$this->read_dahdi_spans();
+	}
 
+	public function checkHardware() {
+		global $amp_conf;
 		$this->hdwr_changes = $this->detect_hdwr_changes();
 		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
 			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf') && is_writable('/etc/dahdi/system.conf')) {
@@ -502,20 +500,11 @@ class dahdi_cards {
 				exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
 				exec('/usr/sbin/dahdi_cfg 2>/dev/null');
 			}
-			$this->read_dahdi_scan();
+			$this->read_dahdi_scan(); //TODO why?
 			$this->write_detected();
 			$this->write_spans();
 			$this->write_analog_signalling();
 		}
-
-
-		$this->read_system_conf();
-		$this->read_chan_dahdi_conf();
-		$this->read_dahdi_modprobe();
-		$this->read_dahdi_globalsettings();
-		$this->read_dahdi_systemsettings();
-		$this->read_dahdi_analog();
-		$this->read_dahdi_spans();
 	}
 
 	/**
@@ -659,7 +648,6 @@ class dahdi_cards {
 				));
 			}
 		}
-		//dbug($this->spans);
 	}
 
 	/**
@@ -929,6 +917,7 @@ class dahdi_cards {
 				$this->spans[$key]['dsid'] = $key;
 				$this->spans[$key][$attr] = $span[$attr];
 				$this->spans[$key]['type'] = (isset($this->spans[$key]['devicetype']) && ($this->spans[$key]['devicetype'] == 'W400')) ? 'gsm' : (isset($this->spans[$key]['type']) ? $this->spans[$key]['type'] : '');
+				$this->spans[$key]['additional_groups'] = array();
 				switch($attr) {
 					case 'location':
 						if ( ! isset($this->spancount[$val]) ) {
@@ -950,7 +939,7 @@ class dahdi_cards {
 						if(empty($parts[1])) {
 							switch ($span['totchans']) {
 								case 3:
-									$this->spans[$key]['spantype'] = 'bri';
+									$this->spans[$key]['spantype'] = 'BRI';
 								break;
 								case 25:
 									$this->spans[$key]['spantype'] = 'T1';
@@ -1134,7 +1123,7 @@ class dahdi_cards {
 		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
-		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : '{}';
+		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : array();
 
 		if ($editspan['signalling'] == "mfc_r2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
@@ -1294,23 +1283,32 @@ class dahdi_cards {
 				$span['type'] = $matches[1];
 			}
 			foreach ($flds as $fld) {
-				if ($fld == 'span') {
-					$values[] = "'$key'";
-				} else {
-					$values[] = "'{$span[$fld]}'";
+				switch($fld) {
+					case 'additional_groups':
+						$values[] = "'".json_encode($span[$fld])."'";
+					break;
+					case 'span':
+						$values[] = "'$key'";
+					break;
+					default:
+						// If the variable is undefined, this is a bug.
+						if (!isset($span[$fld])) {
+							$values[] = "''";
+							// throw new \Exception("Error reading $fld from span $key - ".json_encode($this->spans));
+						} else {
+							$values[] = "'{$span[$fld]}'";
+						}
+					break;
 				}
 			}
 
 			$inserts[] = '('.implode(', ',$values).')';
 			unset($values);
+			$result = $db->query($sql.implode(', ', $inserts));
+			if (DB::IsError($result)) {
+				die_freepbx($result->getDebugInfo());
+			}
 		}
-		$sql .= implode(', ', $inserts);
-
-		$result = $db->query($sql);
-		if (DB::IsError($result)) {
-			//die_freepbx($result->getDebugInfo());
-		}
-		unset($result);
 	}
 
 	/**

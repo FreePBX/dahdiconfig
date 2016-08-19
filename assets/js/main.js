@@ -423,3 +423,43 @@ function mods_add_field() {
 function mods_del_field(id) {
 	$('#'+id).remove();
 }
+
+$("#reloaddahdi").click(function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	$(this).prop("disabled",true);
+	var text = $(this).text();
+	$(this).text(_("Reloading..."));
+	var $this = this;
+	$.post("ajax.php?module=dahdiconfig&command=reload", function(z){
+		if(z.status) {
+			$($this).prop("disabled",false);
+			$($this).text(text);
+		}
+	});
+});
+
+$("#restartamportal").click(function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	$(this).prop("disabled",true);
+	var text = $(this).text();
+	$(this).text(_("Restarting..."));
+	$(".screendoor").show();
+	var $this = this;
+	$.post("ajax.php?module=dahdiconfig&command=restart", function(z){
+		if(z.status) {
+			var inter = setInterval(function(){
+				$.post("ajax.php?module=dahdiconfig&command=checkrestart", function(z){
+					if(z.started) {
+						$(".screendoor").hide();
+						$($this).prop("disabled",false);
+						$($this).text(text);
+						$("#digital_cards_table").bootstrapTable('refresh');
+						clearInterval(inter);
+					}
+				});
+			}, 1000);
+		}
+	});
+});

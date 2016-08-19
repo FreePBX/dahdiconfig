@@ -6,7 +6,7 @@
 namespace FreePBX\modules;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-class Dahdiconfig implements \BMO {
+class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $lookupCache = array();
 	private $contactsCache = array();
@@ -92,6 +92,10 @@ class Dahdiconfig implements \BMO {
 				$dahdi_cards->modules['sangoma']->generateConf($file,true);
 			}
 		}
+	}
+
+	public function postStartFreepbx($output) {
+		$this->setConfig("restarting",false);
 	}
 
 	/**
@@ -220,8 +224,11 @@ class Dahdiconfig implements \BMO {
 	}
 	public function ajaxRequest($req, &$setting) {
 		switch ($req) {
+			case 'restart':
+			case 'reload':
 			case 'digitalspans':
 			case 'analogspans':
+			case 'checkrestart':
 				return true;
 			break;
 			default:
@@ -233,12 +240,28 @@ class Dahdiconfig implements \BMO {
 		\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
 		$dahdi_cards = new \dahdi_cards();
 		switch ($_REQUEST['command']) {
+			case 'checkrestart':
+				return array("started" => !$this->getConfig("restarting"));
+			break;
+			case 'restart':
+				if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {
+					$this->setConfig("restarting",true);
+					file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
+					return array("status" => true);
+				}
+				return array("status" => false, "message" => _("This is not available on your system"));
+			break;
+			case 'reload':
+				exec('asterisk -rx "module unload chan_dahdi.so"');
+				exec('asterisk -rx "module load chan_dahdi.so"');
+				return true;
+			break;
 			case 'digitalspans':
-			 $spans = array();
-			 foreach($dahdi_cards->get_spans() as $key => $val){
-				 $spans[] = $val;
-			 }
-			 return $spans;
+				$spans = array();
+				foreach($dahdi_cards->get_spans() as $key => $val){
+					$spans[] = $val;
+				}
+				return $spans;
 			break;
 			case 'analogspans':
 			break;

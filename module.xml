@@ -52,6 +52,7 @@
 	<hooks>
 		<framework class="Start" namespace="FreePBX\Console\Command">
 			<method callingMethod="preAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">startFreepbx</method>
+			<method callingMethod="postAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">postStartFreepbx</method>
 		</framework>
 		<framework class="Stop" namespace="FreePBX\Console\Command">
 			<method callingMethod="postAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">stopFreepbx</method>

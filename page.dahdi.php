@@ -1,17 +1,6 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-if (isset($_POST['reloaddahdi'])) {
-    exec('asterisk -rx "module unload chan_dahdi.so"');
-    exec('asterisk -rx "module load chan_dahdi.so"');
-}
-
-if (isset($_POST['restartamportal'])) {
-    if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {
-        file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
-    }
-}
-
 $dahdi_info = dahdiconfig_getinfo();
 $dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
 global $amp_conf;
@@ -34,6 +23,7 @@ if(!$amp_conf['DAHDIDISABLEWRITE'] && is_link('/etc/asterisk/chan_dahdi.conf') &
 }
 
 $dahdi_cards = new dahdi_cards();
+$dahdi_cards->checkHardware();
 $error = array();
 
 if ($dahdi_cards->hdwr_changes()) {
@@ -79,9 +69,9 @@ if ($dahdi_cards->hdwr_changes()) {
             <br/>
             <div class="btn_container">
                 <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-                    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="<?php echo _('Reload Asterisk Dahdi Module')?>" />
+                    <button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk Dahdi Module')?></button>
                       <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
-                      <input type="submit" id="restartamportal" name="restartamportal" value="<?php echo _('Restart Dahdi & Asterisk')?>" />
+                      <button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart Dahdi & Asterisk')?></button>
                       <?php } ?>
                 </form>
               </div>
@@ -358,10 +348,7 @@ $(function(){
                 gdata = JSON.stringify(spandata[<?php echo $key?>]['groups'])
                 $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) {
                         if(j.status) {
-                            $.each(j, function(index, value) {
-                                if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
-                                    $("#digital_"+index+"_"+j.span+"_label").html(value);
-                            });
+													$("#digital_cards_table").bootstrapTable('refresh');
                             toggle_reload_button('show');
                             $("#reboot").show();
                         }
@@ -578,6 +565,14 @@ $('#mwi').change(function(evt) {
 });
 
 </script>
+<div class="screendoor">
+	<div class="message center-block">
+		<div class="text">
+			<?php echo _("Restarting DAHDi and Asterisk. Please wait..."); ?>
+		</div>
+		<i class="fa fa-spinner fa-spin"></i>
+	</div>
+</div>
 <?php
 //Easy Form Setting method
 function set_default($default,$option=NULL,$true='selected') {

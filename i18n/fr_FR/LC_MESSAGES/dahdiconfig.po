@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 14:38-0700\n"
+"POT-Creation-Date: 2016-08-19 14:52-0700\n"
 "PO-Revision-Date: 2016-02-01 23:04+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -778,20 +778,19 @@ msgstr ""
 
 #: page.dahdi.php:43
 msgid ""
-"For your changes to take effect, click the 'Restart/Reload Dahdi Button' "
-"Below"
+"For your changes to take effect, click the 'Restart DAHDi & Asterisk' button "
+"below"
 msgstr ""
 
 #: page.dahdi.php:42
 msgid ""
-"For your hardware changes to take effect, you need to reboot your system!"
+"For your hardware changes to take effect, you need to reboot your system"
 msgstr ""
 
 #: page.dahdi.php:41
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system! "
-"<br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After "
-"pressing the Red Apply Changes Bar."
+"<br/> or <br/>Press the 'Restart DAHDi & Asterisk' button below"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:263
@@ -2234,11 +2233,8 @@ msgstr "Oui"
 #: page.dahdi.php:29
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
-"button(s). Then reload DAHDi with the button below."
+"button(s)"
 msgstr ""
-"Vous avez du nouveau matériel! S'il vous plait, configurer votre nouveau "
-"matériel en utilisant le(s) bouton(s) d'édition puis recharger DAHDi avec le "
-"bouton situé plus bas."
 
 #: views/dahdi_mfcr2_settings.php:229
 msgid ""
@@ -2307,6 +2303,14 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "ulaw"
+
+#~ msgid ""
+#~ "You have new hardware! Please configure your new hardware using the edit "
+#~ "button(s). Then reload DAHDi with the button below."
+#~ msgstr ""
+#~ "Vous avez du nouveau matériel! S'il vous plait, configurer votre nouveau "
+#~ "matériel en utilisant le(s) bouton(s) d'édition puis recharger DAHDi avec "
+#~ "le bouton situé plus bas."
 
 #~ msgid "Adding Additional_groups column"
 #~ msgstr "Ajout de la colonne  additional_groups"

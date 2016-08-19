@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 14:38-0700\n"
+"POT-Creation-Date: 2016-08-19 14:52-0700\n"
 "PO-Revision-Date: 2014-07-22 15:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/"
@@ -789,20 +789,19 @@ msgstr ""
 
 #: page.dahdi.php:43
 msgid ""
-"For your changes to take effect, click the 'Restart/Reload Dahdi Button' "
-"Below"
+"For your changes to take effect, click the 'Restart DAHDi & Asterisk' button "
+"below"
 msgstr ""
 
 #: page.dahdi.php:42
 msgid ""
-"For your hardware changes to take effect, you need to reboot your system!"
+"For your hardware changes to take effect, you need to reboot your system"
 msgstr ""
 
 #: page.dahdi.php:41
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system! "
-"<br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After "
-"pressing the Red Apply Changes Bar."
+"<br/> or <br/>Press the 'Restart DAHDi & Asterisk' button below"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:263
@@ -2245,7 +2244,7 @@ msgstr ""
 #: page.dahdi.php:29
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
-"button(s). Then reload DAHDi with the button below."
+"button(s)"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:229

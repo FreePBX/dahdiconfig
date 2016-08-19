@@ -147,6 +147,10 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		} else {
 			$output->writeln("<comment>DAHDi: Already started</comment>");
 		}
+
+		\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+		$dahdi_cards = new \dahdi_cards();
+		$dahdi_cards->checkHardware();
 	}
 
 	/**

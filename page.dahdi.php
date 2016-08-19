@@ -23,7 +23,6 @@ if(!$amp_conf['DAHDIDISABLEWRITE'] && is_link('/etc/asterisk/chan_dahdi.conf') &
 }
 
 $dahdi_cards = new dahdi_cards();
-$dahdi_cards->checkHardware();
 $error = array();
 
 if ($dahdi_cards->hdwr_changes()) {

@@ -630,6 +630,8 @@ if(file_exists($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig") && is_wri
 	unlink($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig");
 }
 
-\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
-$dahdi_cards = new \dahdi_cards();
-$dahdi_cards->checkHardware();
+if(!function_exists("dahdi_config2array")) {
+	include __DIR__."/functions.inc.php";
+	$dahdi_cards = new \dahdi_cards();
+	$dahdi_cards->checkHardware();
+}

@@ -8,7 +8,7 @@ $brand = $amp_conf['DASHBOARD_FREEPBX_BRAND']?$amp_conf['DASHBOARD_FREEPBX_BRAND
 
 //Check to make sure dahdi is running. Display an error if it's not
 if(!preg_match('/\d/i',$dahdi_info[1])) {
-    $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below");
+    $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' button below");
     include('views/dahdi_message_box.php');
     $dahdi_info[1] = '';
 }
@@ -67,11 +67,11 @@ if ($dahdi_cards->hdwr_changes()) {
             <br/>
             <br/>
 						<div class="alert alert-info">
-							<?php echo _("Make sure to hit 'Apply Config' if you've made any changed before Restarting Dahdi & Asterisk")?>
+							<?php echo _("Make sure to hit 'Apply Config' if you've made any changed before Restarting DAHDi & Asterisk")?>
 							<?php if(file_exists('/etc/incron.d/sysadmin')) {?>
-								<button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart Dahdi & Asterisk')?></button>
+								<button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart DAHDi & Asterisk')?></button>
 							<?php } else { ?>
-								<button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk Dahdi Module')?></button>
+								<button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk DAHDi Module')?></button>
 							<?php } ?>
 						</div>
 					</div>

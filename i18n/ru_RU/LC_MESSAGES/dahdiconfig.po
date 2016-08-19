@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 14:20-0700\n"
+"POT-Creation-Date: 2016-08-19 14:38-0700\n"
 "PO-Revision-Date: 2013-12-10 12:09+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Analog Channel %s"
 msgstr ""
 
-#: page.dahdi.php:58
+#: page.dahdi.php:57
 msgid "Analog Hardware"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Bahrain"
 msgstr ""
 
-#: page.dahdi.php:183
+#: page.dahdi.php:182
 msgid ""
 "Because of this the module's configuration file write ability is disabled by "
 "default. You can enable it in this window or you can later enable it under "
@@ -307,8 +307,8 @@ msgstr ""
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:289 page.dahdi.php:308 page.dahdi.php:358 page.dahdi.php:415
-#: page.dahdi.php:438 page.dahdi.php:457 page.dahdi.php:502
+#: page.dahdi.php:288 page.dahdi.php:307 page.dahdi.php:357 page.dahdi.php:414
+#: page.dahdi.php:437 page.dahdi.php:456 page.dahdi.php:501
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -410,7 +410,7 @@ msgstr ""
 msgid "D4/AMI"
 msgstr ""
 
-#: page.dahdi.php:50
+#: page.dahdi.php:49
 msgid "DAHDI Configuration"
 msgstr ""
 
@@ -475,11 +475,11 @@ msgstr ""
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
-#: page.dahdi.php:165
+#: page.dahdi.php:164
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr ""
 
-#: page.dahdi.php:166
+#: page.dahdi.php:165
 msgid "DAHDi is DISABLED for writing"
 msgstr ""
 
@@ -540,11 +540,11 @@ msgstr ""
 msgid "Digital Channel %s"
 msgstr ""
 
-#: page.dahdi.php:57
+#: page.dahdi.php:56
 msgid "Digital Hardware"
 msgstr ""
 
-#: page.dahdi.php:249
+#: page.dahdi.php:248
 msgid "Disable"
 msgstr ""
 
@@ -625,7 +625,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: page.dahdi.php:244
+#: page.dahdi.php:243
 msgid "Enable"
 msgstr ""
 
@@ -701,7 +701,7 @@ msgstr ""
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr ""
 
-#: page.dahdi.php:159
+#: page.dahdi.php:158
 msgid "FXO Settings"
 msgstr ""
 
@@ -717,7 +717,7 @@ msgstr ""
 msgid "FXS Honor Mode"
 msgstr ""
 
-#: page.dahdi.php:162
+#: page.dahdi.php:161
 msgid "FXS Settings"
 msgstr ""
 
@@ -775,18 +775,18 @@ msgstr ""
 msgid "For fax detection"
 msgstr ""
 
-#: page.dahdi.php:44
+#: page.dahdi.php:43
 msgid ""
 "For your changes to take effect, click the 'Restart/Reload Dahdi Button' "
 "Below"
 msgstr ""
 
-#: page.dahdi.php:43
+#: page.dahdi.php:42
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system!"
 msgstr ""
 
-#: page.dahdi.php:42
+#: page.dahdi.php:41
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system! "
 "<br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After "
@@ -846,7 +846,7 @@ msgstr ""
 msgid "Get ANI Before DNIS"
 msgstr ""
 
-#: page.dahdi.php:83 page.dahdi.php:119 views/dahdi_global_settings.php:3
+#: page.dahdi.php:82 page.dahdi.php:118 views/dahdi_global_settings.php:3
 msgid "Global Settings"
 msgstr ""
 
@@ -1008,7 +1008,7 @@ msgstr ""
 msgid "Israeli Hebrew"
 msgstr ""
 
-#: page.dahdi.php:176
+#: page.dahdi.php:175
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
 
@@ -1128,7 +1128,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:330 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:329 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1177,7 +1177,7 @@ msgstr ""
 msgid "Macao"
 msgstr ""
 
-#: page.dahdi.php:71
+#: page.dahdi.php:70
 msgid ""
 "Make sure to hit 'Apply Config' if you've made any changed before Restarting "
 "Dahdi & Asterisk"
@@ -1254,7 +1254,7 @@ msgstr ""
 msgid "Mode"
 msgstr ""
 
-#: page.dahdi.php:85 page.dahdi.php:125 views/dahdi_modprobe_settings.php:3
+#: page.dahdi.php:84 page.dahdi.php:124 views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
 msgstr ""
 
@@ -1262,7 +1262,7 @@ msgstr ""
 msgid "Module Name"
 msgstr ""
 
-#: page.dahdi.php:86 page.dahdi.php:128
+#: page.dahdi.php:85 page.dahdi.php:127
 msgid "Module Settings"
 msgstr ""
 
@@ -1561,7 +1561,7 @@ msgstr ""
 msgid "Receive Gain"
 msgstr ""
 
-#: page.dahdi.php:75
+#: page.dahdi.php:74
 msgid "Reload Asterisk Dahdi Module"
 msgstr ""
 
@@ -1573,15 +1573,15 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:492
+#: page.dahdi.php:491
 msgid "Reset File To Defaults"
 msgstr ""
 
-#: page.dahdi.php:73
+#: page.dahdi.php:72
 msgid "Restart Dahdi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:571
+#: page.dahdi.php:570
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
@@ -1621,8 +1621,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:283 page.dahdi.php:302 page.dahdi.php:346 page.dahdi.php:408
-#: page.dahdi.php:432 page.dahdi.php:451 page.dahdi.php:470 page.dahdi.php:515
+#: page.dahdi.php:282 page.dahdi.php:301 page.dahdi.php:345 page.dahdi.php:407
+#: page.dahdi.php:431 page.dahdi.php:450 page.dahdi.php:469 page.dahdi.php:514
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1632,7 +1632,7 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
-#: page.dahdi.php:323
+#: page.dahdi.php:322
 msgid "Set Defaults"
 msgstr ""
 
@@ -1911,7 +1911,7 @@ msgstr ""
 msgid "System Configuration File Location"
 msgstr ""
 
-#: page.dahdi.php:84 page.dahdi.php:122
+#: page.dahdi.php:83 page.dahdi.php:121
 msgid "System Settings"
 msgstr ""
 
@@ -1941,7 +1941,7 @@ msgstr ""
 msgid "Thailand"
 msgstr ""
 
-#: page.dahdi.php:177
+#: page.dahdi.php:176
 #, php-format
 msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
@@ -2017,13 +2017,13 @@ msgstr ""
 msgid "This is not available on your system"
 msgstr ""
 
-#: page.dahdi.php:186
+#: page.dahdi.php:185
 msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
 msgstr ""
 
-#: page.dahdi.php:180
+#: page.dahdi.php:179
 msgid ""
 "This module should never be used alongside \"dahdi_genconfig\". Using "
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
@@ -2085,7 +2085,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:493
+#: page.dahdi.php:492
 msgid "This will reload the page"
 msgstr ""
 
@@ -2165,7 +2165,7 @@ msgstr ""
 msgid "WARNING"
 msgstr ""
 
-#: page.dahdi.php:168
+#: page.dahdi.php:167
 msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"
@@ -2230,7 +2230,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: page.dahdi.php:30
+#: page.dahdi.php:29
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
 "button(s). Then reload DAHDi with the button below."

@@ -237,8 +237,6 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 	public function ajaxHandler(){
-		\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
-		$dahdi_cards = new \dahdi_cards();
 		switch ($_REQUEST['command']) {
 			case 'checkrestart':
 				return array("started" => !$this->getConfig("restarting"));
@@ -257,6 +255,8 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 				return true;
 			break;
 			case 'digitalspans':
+				\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+				$dahdi_cards = new \dahdi_cards();
 				$spans = array();
 				foreach($dahdi_cards->get_spans() as $key => $val){
 					$spans[] = $val;

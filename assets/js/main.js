@@ -455,7 +455,7 @@ $("#restartamportal").click(function(e) {
 						$(".screendoor").hide();
 						$($this).prop("disabled",false);
 						$($this).text(text);
-						$("#digital_cards_table").bootstrapTable('refresh');
+						location.reload();
 						clearInterval(inter);
 					}
 				});

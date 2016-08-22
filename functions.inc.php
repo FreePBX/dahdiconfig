@@ -238,7 +238,11 @@ function dahdi_array2chans($arr) {
 			break;
 		}
 	}
-	return implode(',',$conf_chans);
+	if(count($conf_chans) > 1){
+		return implode(',',$conf_chans);
+	}else{
+		return isset($conf_chans[0])?(string)$conf_chans[0]:false;
+	}
 }
 
 // list unused DAHDI fxs channels that can be configured for extensions

@@ -50,24 +50,11 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	 * @return boolean True if hardware exists, false if not
 	 */
 	public function sangomaHardwareExists() {
-		$wanrouterLocation = fpbx_which("wanrouter");
-		$process = new Process($wanrouterLocation.' hwprobe dump');
+		$process = new Process('lspci -n -d 1923:');
 		try {
 			$process->mustRun();
-			$out = trim($process->getOutput());
-			$lines = explode("\n",$out);
-			$cardline = end($lines);
-			$cards = explode("|",ltrim($cardline,"|"));
-			if($cards[0] == "Card Cnt") {
-				unset($cards[0]);
-				foreach($cards as $card) {
-					$parts = explode("=",$card);
-					if($parts[1] == 1) {
-						return true;
-					}
-				}
-			}
-
+			$out = $process->getOutput();
+			return count($out) > 0;
 		} catch (ProcessFailedException $e) {
 			return false;
 		}

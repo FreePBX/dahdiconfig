@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-19 16:18-0700\n"
+"POT-Creation-Date: 2016-08-21 23:40-0700\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -429,7 +429,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr "Configuracion DAHDI"
 
-#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:163
+#: Dahdiconfig.class.php:95 Dahdiconfig.class.php:150
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
@@ -459,7 +459,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
-#: Dahdiconfig.class.php:145 Dahdiconfig.class.php:193
+#: Dahdiconfig.class.php:132 Dahdiconfig.class.php:180
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
@@ -481,11 +481,11 @@ msgstr "Localidad Módulos DAHDI"
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
-#: Dahdiconfig.class.php:143
+#: Dahdiconfig.class.php:130
 msgid "DAHDi Started"
 msgstr "DAHDI Iniciado"
 
-#: Dahdiconfig.class.php:191
+#: Dahdiconfig.class.php:178
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
@@ -2002,19 +2002,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Estándar"
 
-#: Dahdiconfig.class.php:141
+#: Dahdiconfig.class.php:128
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Iniciando DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:123
+#: Dahdiconfig.class.php:110
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Iniciando Wanrouter para tarjetas Sangoma"
 
-#: Dahdiconfig.class.php:189
+#: Dahdiconfig.class.php:176
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Deteniendo DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:176
+#: Dahdiconfig.class.php:163
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Deteniendo Wanrouter para tarjetas Sangoma"
 
@@ -2212,7 +2212,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:257
+#: Dahdiconfig.class.php:244
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2407,16 +2407,16 @@ msgstr ""
 "CUIDADO: cuando este  módulo esta \"habilitado\" para escritura, el "
 "SOBREESCRIBIRA los siguientes archivos:"
 
-#: Dahdiconfig.class.php:127 Dahdiconfig.class.php:180
+#: Dahdiconfig.class.php:114 Dahdiconfig.class.php:167
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Error Wanrouter: %s"
 
-#: Dahdiconfig.class.php:125
+#: Dahdiconfig.class.php:112
 msgid "Wanrouter Started"
 msgstr "Wanrouter Iniciado"
 
-#: Dahdiconfig.class.php:178
+#: Dahdiconfig.class.php:165
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter Detenido"
 
@@ -2452,7 +2452,7 @@ msgstr ""
 "Usar o no presentación de ID de llamada para la llamada saliente que el "
 "conmutador esta enviando"
 
-#: Dahdiconfig.class.php:91
+#: Dahdiconfig.class.php:78
 msgid "Writing out default Sangoma conf"
 msgstr ""
 

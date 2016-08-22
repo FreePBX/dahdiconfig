@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 23:40-0700\n"
+"POT-Creation-Date: 2016-08-22 12:32-0700\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -130,7 +130,7 @@ msgstr "模拟 %s"
 msgid "Analog %s Ports"
 msgstr "模拟 %s 端口"
 
-#: functions.inc.php:300
+#: functions.inc.php:304
 #, php-format
 msgid "Analog Channel %s"
 msgstr "模拟通道 %s"
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:474
+#: functions.inc.php:478
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -317,7 +317,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:543
+#: functions.inc.php:547
 msgid "Channel"
 msgstr "通道"
 
@@ -347,11 +347,11 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: functions.inc.php:378
+#: functions.inc.php:382
 msgid "Choose"
 msgstr "选择"
 
-#: functions.inc.php:544
+#: functions.inc.php:548
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "为%s 设置一个FXS通道"
@@ -421,7 +421,7 @@ msgstr ""
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:456 functions.inc.php:489
+#: functions.inc.php:460 functions.inc.php:493
 msgid "DAHDI Trunks"
 msgstr "DAHDI中继"
 
@@ -532,11 +532,11 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:532
+#: functions.inc.php:536
 msgid "Device Options"
 msgstr ""
 
-#: functions.inc.php:334
+#: functions.inc.php:338
 #, php-format
 msgid "Digital Channel %s"
 msgstr ""
@@ -864,22 +864,22 @@ msgstr ""
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:296 functions.inc.php:315
+#: functions.inc.php:300 functions.inc.php:319
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:297 functions.inc.php:316
+#: functions.inc.php:301 functions.inc.php:320
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:298 functions.inc.php:317
+#: functions.inc.php:302 functions.inc.php:321
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:299 functions.inc.php:318
+#: functions.inc.php:303 functions.inc.php:322
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
@@ -1348,11 +1348,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:493
+#: functions.inc.php:497
 msgid "No Available Groups or Channels"
 msgstr "无可用的组或语音通道"
 
-#: functions.inc.php:564
+#: functions.inc.php:568
 msgid "No Unused DAHDi Channels Available"
 msgstr "没有未使用的通道"
 
@@ -1475,7 +1475,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1623
+#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1635
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1972,7 +1972,7 @@ msgid ""
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
 
-#: functions.inc.php:501
+#: functions.inc.php:505
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -2121,7 +2121,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1623
+#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1635
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""

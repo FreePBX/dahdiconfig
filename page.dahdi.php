@@ -105,22 +105,24 @@ if ($dahdi_cards->hdwr_changes()) {
           }
           ?>
         </div>
-        <!--/* OpenX Javascript Tag v2.8.10 */-->
-        <script type='text/javascript'><!--//<![CDATA[
-           var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
-           var m3_r = Math.floor(Math.random()*99999999999);
-           if (!document.MAX_used) document.MAX_used = ',';
-           document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-           document.write ("?zoneid=102");
-           document.write ('&amp;cb=' + m3_r);
-           if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-           document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-           document.write ("&amp;loc=" + escape(window.location));
-           if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-           if (document.context) document.write ("&context=" + escape(document.context));
-           if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-           document.write ("'><\/scr"+"ipt>");
-        //]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=<?php echo rand()?>' target='_blank'><img class="img-responsive center-block" src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=<?php echo rand()?>&amp;n=aea98e58' border='0' alt='' /></a></noscript>
+        <?php if (!FreePBX::Modules()->moduleHasMethod('sysadmin', 'isCommercialDeployment') || (FreePBX::Modules()->moduleHasMethod('sysadmin', 'isCommercialDeployment') && !FreePBX::Sysadmin()->isCommercialDeployment())) { ?>
+            <!--/* OpenX Javascript Tag v2.8.10 */-->
+            <script type='text/javascript'><!--//<![CDATA[
+               var m3_u = (location.protocol=='https:'?'https://ads.schmoozecom.net/www/delivery/ajs.php':'http://ads.schmoozecom.net/www/delivery/ajs.php');
+               var m3_r = Math.floor(Math.random()*99999999999);
+               if (!document.MAX_used) document.MAX_used = ',';
+               document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+               document.write ("?zoneid=102");
+               document.write ('&amp;cb=' + m3_r);
+               if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+               document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+               document.write ("&amp;loc=" + escape(window.location));
+               if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+               if (document.context) document.write ("&context=" + escape(document.context));
+               if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+               document.write ("'><\/scr"+"ipt>");
+            //]]>--></script><noscript><a href='http://ads.schmoozecom.net/www/delivery/ck.php?n=aea98e58&amp;cb=<?php echo rand()?>' target='_blank'><img class="img-responsive center-block" src='http://ads.schmoozecom.net/www/delivery/avw.php?zoneid=102&amp;cb=<?php echo rand()?>&amp;n=aea98e58' border='0' alt='' /></a></noscript>
+        <?php } ?>
       </div>
 		</div>
 	</div>

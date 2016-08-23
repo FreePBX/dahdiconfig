@@ -272,6 +272,12 @@ $cols = array(
 		"notnull" => true,
 		"default" => "yes"
 	),
+	"mfcr2_skip_category" => array(
+		"type" => "string",
+		"length" => 3,
+		"notnull" => true,
+		"default" => "no"
+	),
 	"mfcr2_logdir" => array(
 		"type" => "string",
 		"length" => 10,
@@ -287,6 +293,10 @@ $cols = array(
 		"notnull" => true,
 	),
 	"mfcr2_mfback_pulse_timeout" => array(
+		"type" => "decimal",
+		"notnull" => true,
+	),
+	"mfcr2_metering_pulse_timeout" => array(
 		"type" => "decimal",
 		"notnull" => true,
 	),
@@ -618,4 +628,10 @@ if(file_exists($mod_loc)) {
 
 if(file_exists($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig") && is_writable($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig")) {
 	unlink($amp_conf['AMPBIN']."/freepbx_engine_hook_dahdiconfig");
+}
+
+if(!function_exists("dahdi_config2array")) {
+	include __DIR__."/functions.inc.php";
+	$dahdi_cards = new \dahdi_cards();
+	$dahdi_cards->checkHardware();
 }

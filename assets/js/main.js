@@ -423,3 +423,54 @@ function mods_add_field() {
 function mods_del_field(id) {
 	$('#'+id).remove();
 }
+
+$("#reloaddahdi").click(function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	$(this).prop("disabled",true);
+	var text = $(this).text();
+	$(this).text(_("Reloading..."));
+	var $this = this;
+	$.post("ajax.php?module=dahdiconfig&command=reload", function(z){
+		if(z.status) {
+			$($this).prop("disabled",false);
+			$($this).text(text);
+		}
+	});
+});
+
+$("#button_reload").click(function(e) {
+	alert(_("Don't forget to Restart Dahdi & Asterisk after this completes"));
+});
+
+$("#restartamportal").click(function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+	if($("#button_reload").is(":visible") && !confirm(_("Are you sure you want to Restart without hitting 'Apply Config'?"))) {
+		return true;
+	}
+	$(this).prop("disabled",true);
+	var text = $(this).text();
+	$(this).text(_("Restarting..."));
+	$(".screendoor").show();
+	var $this = this;
+	$.post("ajax.php?module=dahdiconfig&command=restart", function(z){
+		if(z.status) {
+			var count = 0;
+			var inter = setInterval(function(){
+				$.post("ajax.php?module=dahdiconfig&command=checkrestart", function(z){
+					if(z.started) {
+						location.reload();
+						clearInterval(inter);
+					}
+				}).always(function() {
+					if(count > 60) {
+						location.reload();
+						clearInterval(inter);
+					}
+					count++;
+				});
+			}, 1000);
+		}
+	});
+});

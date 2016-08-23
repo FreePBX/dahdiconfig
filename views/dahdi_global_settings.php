@@ -121,7 +121,7 @@
             	    <option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('transfer'),'no'); ?>><?php echo _('No')?></option>
             	</select>
             </td>
-        </tr> 
+        </tr>
         <tr>
             <td style="width:10px;">
                 <label for="cancallforward"><a href="#" class="info"><?php echo _('Enable Call Forwarding')?><span><?php echo _('Support call forward variable')?></span></a></label>
@@ -141,7 +141,7 @@
                	<select id="callreturn" name="callreturn">
             	    <option value="yes" <?php echo set_default($dahdi_cards->get_globalsettings('callreturn'),'yes'); ?>><?php echo _('Yes')?></option>
             	    <option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('callreturn'),'no'); ?>><?php echo _('No')?></option>
-            	</select> 
+            	</select>
             </td>
         </tr>
         <tr>
@@ -154,7 +154,7 @@
             	    <option value="yes" <?php echo set_default($dahdi_cards->get_globalsettings('echocancel'),'yes'); ?>><?php echo _('Yes')?></option>
             	    <option value="no" <?php echo set_default($dahdi_cards->get_globalsettings('echocancel'),'no'); ?>><?php echo _('No')?></option>
             	</select>
-            </td>  
+            </td>
         </tr>
         <tr>
             <td style="width:10px;">
@@ -203,9 +203,9 @@
             	    <option value="both" <?php echo set_default($dahdi_cards->get_globalsettings('faxdetect'),'both'); ?>><?php echo _('Both')?></option>
             	</select>
             </td>
-        </tr> 
+        </tr>
         <tr>
-            <td style="width:10px;"> 
+            <td style="width:10px;">
                 <label for="rxgain"><a href="#" class="info"><?php echo _('Receive Gain')?><span><?php echo _('The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level')?>.</span></a></label>
             </td>
             <td>
@@ -213,7 +213,7 @@
             </td>
         </tr>
         <tr>
-            <td style="width:10px;"> 
+            <td style="width:10px;">
                 <label for="txgain"><a href="#" class="info"><?php echo _('Transmit Gain')?><span><?php echo _('The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level')?>.</span></a></label>
             </td>
             <td>
@@ -269,7 +269,7 @@
         }
         ?>
         <tr id="dh_global_add">
-            <td> 
+            <td>
             </td>
             <td>
                 <a style="cursor: pointer;" onclick="dh_global_add_field(<?php echo $a?>)"><img src="assets/dahdiconfig/images/add.png"></a>

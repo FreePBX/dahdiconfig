@@ -66,6 +66,15 @@
                     <label for="editspan_<?php echo $key?>_signalling"><?php echo ('Signaling')?>:</label>
                 </td>
                 <td>
+										<?php
+											if(empty($span['signalling'])) {
+												switch($span['spantype']) {
+													case "BRI":
+														$span['signalling'] = 'bri_cpe';
+													break;
+												}
+											}
+										?>
                     <select id="editspan_<?php echo $key?>_signalling" name="editspan_<?php echo $key?>_signalling">
                         <option value="--" disabled>--PRI--</option>
                         <option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>><?php echo _("PRI - CPE")?></option>
@@ -78,12 +87,12 @@
                         <option value="--" disabled>--<?php echo ('ANALOG')?>--</option>
                         <option value="fxo_ks" <?php echo set_default($span['signalling'],'fxo_ks'); ?>><?php echo _("FXOKS")?></option>
                         <option value="fxo_ls" <?php echo set_default($span['signalling'],'fxo_ls'); ?>><?php echo _("FXOLS")?></option>
-                        <option value="--" disabled>--RHNIO--</option>
+                        <option value="--" disabled>--RHINO--</option>
                         <option value="fxs_ks" <?php echo set_default($span['signalling'],'fxs_ks'); ?>><?php echo _("FXSKS")?></option>
                         <option value="fxs_ls" <?php echo set_default($span['signalling'],'fxs_ls'); ?>><?php echo _("FXSLS")?></option>
                         <option value="--" disabled>--BRI--</option>
+												<option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>><?php echo _("BRI PTP - CPE")?></option>
                         <option value="bri_net" <?php echo set_default($span['signalling'],'bri_net'); ?>><?php echo _("BRI PTP - Net")?></option>
-                        <option value="bri_cpe" <?php echo set_default($span['signalling'],'bri_cpe'); ?>><?php echo _("BRI PTP - CPE")?></option>
                         <option value="bri_net_ptmp" <?php echo set_default($span['signalling'],'bri_net_ptmp'); ?>><?php echo _("BRI PTMP - Net")?></option>
                         <option value="bri_cpe_ptmp" <?php echo set_default($span['signalling'],'bri_cpe_ptmp'); ?>><?php echo _("BRI PTMP - CPE")?></option>
                     </select>
@@ -209,8 +218,7 @@
         <br />
         <h2><?php echo ('Group Settings')?> (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);"><?php echo ('Reset Groups')?></a>)</h2>
         <hr>
-        <?php $groups = json_decode($span['additional_groups'],TRUE);
-            $groups = is_array($groups)?$groups:array();
+        <?php $groups = is_array($span['additional_groups'])?$span['additional_groups']:array();
             foreach($groups as $gkey => $data) {
         ?>
         <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">

@@ -118,10 +118,10 @@ class dahdiconfig_conf {
 						$output[] = "rxgain={$span['rxgain']}";
 					}
 
-					$groups = json_decode($span['additional_groups'],TRUE);
+					$groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
 					foreach($groups as $gkey => $data) {
 						//Add option for skip group for people who don't want to use all channels
-						if ($data['group'] == 's' || empty($data['fxx'])){
+						if ($data['group'] === 's' || empty($data['fxx'])){
 							continue;
 						}
 						$output[] = "group={$data['group']}";
@@ -157,43 +157,9 @@ class dahdiconfig_conf {
 }
 
 function dahdi_config2array ($config) {
-	if (! is_array($config)) {
-		$config = explode("\n", $config);
-	}
-
-	$cxts = array();
-	$cxt = '';
-
-	unset($config[count($config)-1]);
-
-	for($i=0;$i<count($config);$i++) {
-		unset($matches);
-		if ($config[$i] == '') {
-			continue;
-		} else if (preg_match('/^\[([-a-zA-Z0-9_][-a-zA-Z0-9_]*)\]/', $config[$i], $matches)) {
-			$cxt = $matches[1];
-			$cxts[$cxt] = array();
-			continue;
-		}
-
-		if ($cxt == '') {
-			continue;
-		}
-
-		list($var, $val) = explode('=',$config[$i]);
-
-		if (isset($cxts[$cxt][$var])) {
-			if (gettype($cxts[$cxt][$var]) !== 'array') {
-				$cxts[$cxt][$var] = array($cxts[$cxt][$var]);
-			}
-
-			$cxts[$cxt][$var][] = $val;
-		} else {
-			$cxts[$cxt][$var] = $val;
-		}
-	}
-
-	return $cxts;
+	$e = implode("\n",$config);
+	$array = parse_ini_string($e,true,INI_SCANNER_RAW);
+	return $array;
 }
 
 function dahdi_chans2array($chans=null) {
@@ -272,7 +238,11 @@ function dahdi_array2chans($arr) {
 			break;
 		}
 	}
-	return implode(',',$conf_chans);
+	if(count($conf_chans) > 1){
+		return implode(',',$conf_chans);
+	}else{
+		return isset($conf_chans[0])?(string)$conf_chans[0]:false;
+	}
 }
 
 // list unused DAHDI fxs channels that can be configured for extensions
@@ -342,7 +312,8 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
 			continue;
 		}
 		$alarms = $span['alarms'];
-		foreach(json_decode($span['additional_groups'],TRUE) as $groups) {
+		$span['additional_groups'] = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
+		foreach($span['additional_groups'] as $groups) {
 			$grp = $groups['group'];
 			if (!isset($avail_group["g$grp"])) {
 				$avail_group["g$grp"] = array('identifier' => "g$grp",'name' => sprintf(_("Group %s Ascending"),$grp),'alarms' => $alarms,'selected'  => ($current_identifier == "g$grp"));

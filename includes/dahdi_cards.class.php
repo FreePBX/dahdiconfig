@@ -95,25 +95,15 @@ class dahdi_cards {
 	 */
 	public function __construct () {
 		foreach (glob(dirname(dirname(__FILE__))."/modules/*.module") as $filename) {
-			require_once($filename);
 			$name = basename($filename,'.module');
-			if (class_exists('dahdi_'.$name)) {
-				$class = 'dahdi_'.$name;
-				$this->modules[$name] = new $class();
+			if (!class_exists('dahdi_'.$name)) {
+				require_once($filename);
 			}
+			$class = 'dahdi_'.$name;
+			$this->modules[$name] = new $class();
 		}
 
 		global $amp_conf;
-		if (!is_file($amp_conf['DAHDISYSTEMLOC']) && file_exists('/usr/sbin/dahdi_genconf')) {
-			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf')) {
-				$contents = file_get_contents('/etc/dahdi/system.conf');
-				if(empty($contents)) {
-					exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
-				}
-			} else {
-				exec('/usr/sbin/dahdi_genconf system 2>/dev/null',$output,$return_var);
-			}
-		}
 
 		$check = array();
 		$me = $amp_conf['AMPASTERISKUSER'];
@@ -284,7 +274,6 @@ class dahdi_cards {
 						if ($configured['port'][$i] == $detected['port'][$i]) {
 							continue;
 						}
-
 						return TRUE;
 					}
 
@@ -486,22 +475,8 @@ class dahdi_cards {
 	 * Load all the information the various locations (database, system.conf, chan_dahdi.conf)
 	 */
 	public function load() {
-		global $db;
-
 		$this->read_configured_hdwr();
 		$this->read_dahdi_scan();
-
-		$this->hdwr_changes = $this->detect_hdwr_changes();
-		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
-			exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
-			exec('/usr/sbin/dahdi_cfg 2>/dev/null');
-			$this->read_dahdi_scan();
-			$this->write_detected();
-			$this->write_spans();
-			$this->write_analog_signalling();
-		}
-
-
 		$this->read_system_conf();
 		$this->read_chan_dahdi_conf();
 		$this->read_dahdi_modprobe();
@@ -509,6 +484,27 @@ class dahdi_cards {
 		$this->read_dahdi_systemsettings();
 		$this->read_dahdi_analog();
 		$this->read_dahdi_spans();
+	}
+
+	public function checkHardware() {
+		global $amp_conf;
+		$this->hdwr_changes = $this->detect_hdwr_changes();
+		if ($this->hdwr_changes && file_exists('/usr/sbin/dahdi_genconf') && file_exists('/usr/sbin/dahdi_cfg')) {
+			if(file_exists('/etc/dahdi/system.conf') && is_readable('/etc/dahdi/system.conf') && is_writable('/etc/dahdi/system.conf')) {
+				$contents = file_get_contents('/etc/dahdi/system.conf');
+				if(empty($contents)) {
+					exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
+					exec('/usr/sbin/dahdi_cfg 2>/dev/null');
+				}
+			} elseif(!file_exists('/etc/dahdi/system.conf')) {
+				exec('/usr/sbin/dahdi_genconf system 2>/dev/null');
+				exec('/usr/sbin/dahdi_cfg 2>/dev/null');
+			}
+			$this->read_dahdi_scan(); //TODO why?
+			$this->write_detected();
+			$this->write_spans();
+			$this->write_analog_signalling();
+		}
 	}
 
 	/**
@@ -638,17 +634,18 @@ class dahdi_cards {
 			}
 			$this->spans[$span['span']]['context'] = (isset($this->spans[$span['span']]['context']) && !empty($this->spans[$span['span']]['context'])) ? $this->spans[$span['span']]['context'] : 'from-digital';
 			if(!empty($this->spans[$span['span']]['additional_groups'])) {
-
-			} else {
+				$this->spans[$span['span']]['additional_groups'] = json_decode($this->spans[$span['span']]['additional_groups'],true);
+			}
+			if(empty($this->spans[$span['span']]['additional_groups'])) {
 				$o = $this->calc_bchan_fxx($span['span']);
-				$this->spans[$span['span']]['additional_groups'] = json_encode(array(0 => array(
+				$this->spans[$span['span']]['additional_groups'] = array(0 => array(
 					"group" => 0,
 					"context" => 'from-digital',
 					"usedchans" => $this->spans[$span['span']]['totchans'],
 					"startchan" => $this->spans[$span['span']]['min_ch'],
 					"endchan" => $this->spans[$span['span']]['max_ch'],
 					"fxx" => $o['fxx']
-				)));
+				));
 			}
 		}
 	}
@@ -830,6 +827,9 @@ class dahdi_cards {
 		if(!file_exists('/usr/sbin/dahdi_scan')) {
 			return false;
 		}
+		if(!is_executable('/usr/sbin/dahdi_scan')) {
+			throw new \Exception(_("dahdi_scan exists but can not be run as this user!"));
+		}
 		exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
 		if($return_var != '0') {
 			return false;
@@ -893,7 +893,16 @@ class dahdi_cards {
 				$this->has_vpm = true;
 			}
 
-			if ($span['type'] == 'analog' && strpos($span['devicetype'],'W400') === FALSE) {
+			if(isset($this->hardware[$span['location']]['type']) && ($this->hardware[$span['location']]['type'] != $span['type'])) {
+				$this->hardware[$span['location']] = array();
+				$this->hardware[$span['location']]['device'] = $span['devicetype'];
+				$this->hardware[$span['location']]['basechan'] = $span['basechan'];
+				$this->hardware[$span['location']]['type'] = 'hybrid';
+				if($span['type'] == 'analog') {
+					$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
+					continue;
+				}
+			} elseif ($span['type'] == 'analog' && strpos($span['devicetype'],'W400') === FALSE) {
 				$this->hardware[$span['location']] = array();
 				$this->hardware[$span['location']]['device'] = $span['devicetype'];
 				$this->hardware[$span['location']]['basechan'] = $span['basechan'];
@@ -901,8 +910,6 @@ class dahdi_cards {
 				$this->detected_hdwr[$span['location']] = $this->hardware[$span['location']];
 				continue;
 			}
-
-
 
 			if (strpos($span['description'], 'ztdummy') !== false) {
 				continue;
@@ -913,6 +920,7 @@ class dahdi_cards {
 				$this->spans[$key]['dsid'] = $key;
 				$this->spans[$key][$attr] = $span[$attr];
 				$this->spans[$key]['type'] = (isset($this->spans[$key]['devicetype']) && ($this->spans[$key]['devicetype'] == 'W400')) ? 'gsm' : (isset($this->spans[$key]['type']) ? $this->spans[$key]['type'] : '');
+				$this->spans[$key]['additional_groups'] = array();
 				switch($attr) {
 					case 'location':
 						if ( ! isset($this->spancount[$val]) ) {
@@ -930,7 +938,23 @@ class dahdi_cards {
 						}
 					break;
 					case 'totchans':
-						list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
+						$parts = explode('-',$span['type']);
+						if(empty($parts[1])) {
+							switch ($span['totchans']) {
+								case 3:
+									$this->spans[$key]['spantype'] = 'BRI';
+								break;
+								case 25:
+									$this->spans[$key]['spantype'] = 'T1';
+								break;
+								case 31:
+									$this->spans[$key]['spantype'] = 'E1';
+								break;
+							}
+						} else {
+							$this->spans[$key]['spantype'] = $parts[1];
+						}
+						//list($dummy, $this->spans[$key]['spantype']) = explode('-',$span['type']);
 						$this->spans[$key]['min_ch'] = $span['basechan'];
 						$this->spans[$key]['max_ch'] = $span['basechan'] + $span['totchans'] - 1;
 
@@ -1102,7 +1126,7 @@ class dahdi_cards {
 		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
-		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : 'array()';
+		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : array();
 
 		if ($editspan['signalling'] == "mfc_r2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
@@ -1262,23 +1286,32 @@ class dahdi_cards {
 				$span['type'] = $matches[1];
 			}
 			foreach ($flds as $fld) {
-				if ($fld == 'span') {
-					$values[] = "'$key'";
-				} else {
-					$values[] = "'{$span[$fld]}'";
+				switch($fld) {
+					case 'additional_groups':
+						$values[] = "'".json_encode($span[$fld])."'";
+					break;
+					case 'span':
+						$values[] = "'$key'";
+					break;
+					default:
+						// If the variable is undefined, this is a bug.
+						if (!isset($span[$fld])) {
+							$values[] = "''";
+							// throw new \Exception("Error reading $fld from span $key - ".json_encode($this->spans));
+						} else {
+							$values[] = "'{$span[$fld]}'";
+						}
+					break;
 				}
 			}
 
 			$inserts[] = '('.implode(', ',$values).')';
 			unset($values);
+			$result = $db->query($sql.implode(', ', $inserts));
+			if (DB::IsError($result)) {
+				die_freepbx($result->getDebugInfo());
+			}
 		}
-		$sql .= implode(', ', $inserts);
-
-		$result = $db->query($sql);
-		if (DB::IsError($result)) {
-			//die_freepbx($result->getDebugInfo());
-		}
-		unset($result);
 	}
 
 	/**
@@ -1334,7 +1367,7 @@ class dahdi_cards {
 				} else {
 					$fx = 'e&m';
 				}
-				$data = json_decode($span['additional_groups'], true);
+				$data = $span['additional_groups'];
 				if (!empty($data)) {
 					foreach($data as $s){
 						if (strtolower($s['group'] == 's')){
@@ -1345,6 +1378,9 @@ class dahdi_cards {
 						} else {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 						}
+					}
+					if(!empty($fxx[$fx])) {
+						$fxx[$fx] = rtrim($fxx[$fx], ',');
 					}
 				}
 			} else if (substr($span['signalling'],0,3) == 'pri' && !preg_match('/sangoma/i',$span['manufacturer'])) {
@@ -1357,7 +1393,6 @@ class dahdi_cards {
 
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
-		$fxx[$fx] = rtrim($fxx[$fx], ',');
 		foreach ($fxx as $e=>$val) {
 			$output[]  = "$e={$val}";
 			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.str_replace(":1101", "", $val);
@@ -1397,34 +1432,46 @@ class dahdi_cards {
 		}
 
 		if ($fxols) {
-			$output[] = "fxsls=".dahdi_array2chans($fxols);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxols);
-
+			$channels = dahdi_array2chans($fxols);
+			if($channels !== false){
+				$output[] = "fxsls=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxoks) {
-			$output[] = "fxsks=".dahdi_array2chans($fxoks);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxoks);
-
+			$channels = dahdi_array2chans($fxoks);
+			if($channels !== false){
+				$output[] = "fxsks=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxsls) {
-			$output[] = "fxols=".dahdi_array2chans($fxsls);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsls);
+			$channels = dahdi_array2chans($fxsls);
+			if($channels !== false){
+				$output[] = "fxols=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 		if ($fxsks) {
-			$output[] = "fxoks=".dahdi_array2chans($fxsks);
-			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.dahdi_array2chans($fxsks);
-
+			$channels = dahdi_array2chans($fxsks);
+			if($channels !== false){
+				$output[] = "fxoks=".$channels;
+				$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.$channels;
+			}
 		}
 
 		$output[] = "loadzone={$this->systemsettings['tone_region']}";
 		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
 
 		foreach($this->get_all_systemsettings() as $k => $v) {
-			if(!in_array($k,$this->original_system))
-			$output[] = $k."=".$v;
+			if(!in_array($k,$this->original_system)){
+				if(empty($k)||empty($v)){continue;}
+				$output[] = $k."=".$v;
+			}
 		}
 
-		$output = implode("\n", $output);
+		$output = implode(PHP_EOL, $output);
+
 		file_put_contents($file,$this->header.$output);
 
 		return true;

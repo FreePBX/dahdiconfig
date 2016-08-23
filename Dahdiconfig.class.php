@@ -6,7 +6,7 @@
 namespace FreePBX\modules;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-class Dahdiconfig implements \BMO {
+class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $lookupCache = array();
 	private $contactsCache = array();
@@ -31,6 +31,61 @@ class Dahdiconfig implements \BMO {
 	public function doConfigPageInit($page){}
 
 	/**
+	 * Is Wanrouter adding
+	 * @return boolean True if modules loaded and running, false otherwise
+	 */
+	public function wanrouterRunning() {
+		if(!file_exists('/proc/net/wanrouter/status')) {
+			return false;
+		}
+		$contents = file_get_contents("/proc/net/wanrouter/status");
+		if(!preg_match_all("/wanpipe/",$contents,$matches)) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Check if Sangoma Hardware Exists
+	 * @return boolean True if hardware exists, false if not
+	 */
+	public function sangomaHardwareExists() {
+		$process = new Process('lspci -n -d 1923:');
+		try {
+			$process->mustRun();
+			$out = $process->getOutput();
+			return count($out) > 0;
+		} catch (ProcessFailedException $e) {
+			return false;
+		}
+	}
+
+	/**
+	 * Write out default global.conf file if missing
+	 * and if wanpipe*.conf do not exist
+	 * @param  object $output The CLI Output object
+	 */
+	public function checkDefaultSangomaGlobal($output) {
+		$files = glob("/etc/wanpipe/wanpipe*.conf");
+		if(!empty($files)) {
+			return;
+		}
+		$file = "/etc/wanpipe/global.conf";
+		if(!file_exists($file)) {
+			\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+			$dahdi_cards = new \dahdi_cards();
+			if(isset($dahdi_cards->modules['sangoma']) && is_object($dahdi_cards->modules['sangoma'])) {
+				$output->writeln("<info>"._("Writing out default Sangoma conf")."</info>");
+				$dahdi_cards->modules['sangoma']->generateConf($file,true);
+			}
+		}
+	}
+
+	public function postStartFreepbx($output) {
+		$this->setConfig("restarting",false);
+	}
+
+	/**
 	 * Start FreePBX for fwconsole hook
 	 * @param object $output The output object.
 	 */
@@ -45,57 +100,24 @@ class Dahdiconfig implements \BMO {
 			return;
 		}
 
-		if(file_exists("/etc/wanpipe/wanrouter.rc")) {
-			//TODO: need to use loadConfig when it is able to understand # as comments.
-			//Before PHP 7
-			$wanrouterconf = @parse_ini_file("/etc/wanpipe/wanrouter.rc");
-			if(!empty($wanrouterconf['WAN_DEVICES'])) {
-				$wanrouterconf['WAN_DEVICES'] = trim($wanrouterconf['WAN_DEVICES']);
-				$wandevices = explode(" ", $wanrouterconf['WAN_DEVICES']);
-				$confspresent = 0;
-				foreach ($wandevices as $wandev) {
-					if(file_exists('/etc/wanpipe/'.trim($wandev).'.conf')){
-						$confspresent++;
-					}
-				}
-
-				$process = new Process('which wanrouter');
-				$process->run();
-				if ($process->isSuccessful()) {
-					$wanrouterLocation = $process->getOutput();
-					if(!empty($wanrouterLocation) && $confspresent > 0) {
-						$wanrouterLocation = trim($wanrouterLocation);
-						$process = new Process($wanrouterLocation.' status');
-						$process->run();
-						if($process->isSuccessful()) {
-							$out = $process->getOutput();
-							if(preg_match('/Router is stopped/i',$out)) {
-								$process = new Process($wanrouterLocation.' start');
-								try {
-									$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
-									$process->mustRun();
-									$output->writeln(_("Wanrouter Started"));
-								} catch (ProcessFailedException $e) {
-									$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
-								}
-							} else {
-								$output->writeln("<comment>Wanrouter: Already started</comment>");
-							}
-						} else {
-							$output->writeln("<error>Wanrouter: Unexpected response</error>");
-						}
-					}else{
-						if(empty($wanrouterLocation)){
-							$output->writeln("<error>Couldn't find the Wanrouter executable</error>");
-						}
-						if($confspresent == 0){
-							$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
-						}
-					}
+		$wanrouterLocation = fpbx_which("wanrouter");
+		if($this->sangomaHardwareExists()) {
+			//check for wanpipe*, if none then generate global if it doesnt exist
+			$this->checkDefaultSangomaGlobal($output);
+			if(!$this->wanrouterRunning()) {
+				$process = new Process($wanrouterLocation.' start');
+				try {
+					$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
+					$process->mustRun();
+					$output->writeln(_("Wanrouter Started"));
+				} catch (ProcessFailedException $e) {
+					$output->writeln("<error>".sprintf(_("Wanrouter Failed: %s")."</error>",$e->getMessage()));
 				}
 			} else {
-				$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
+				$output->writeln("<comment>Wanrouter: Already started</comment>");
 			}
+		}else{
+			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
 		}
 
 		$process = new Process($dahdiexec.' status');
@@ -112,6 +134,10 @@ class Dahdiconfig implements \BMO {
 		} else {
 			$output->writeln("<comment>DAHDi: Already started</comment>");
 		}
+
+		\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+		$dahdi_cards = new \dahdi_cards();
+		$dahdi_cards->checkHardware();
 	}
 
 	/**
@@ -129,43 +155,21 @@ class Dahdiconfig implements \BMO {
 			return;
 		}
 
-		if(file_exists("/etc/wanpipe/wanrouter.rc")) {
-			//TODO: need to use loadConfig when it is able to understand # as comments.
-			//Before PHP 7
-			$wanrouterconf = @parse_ini_file("/etc/wanpipe/wanrouter.rc");
-			if(!empty($wanrouterconf['WAN_DEVICES'])) {
-				$wanrouterconf['WAN_DEVICES'] = trim($wanrouterconf['WAN_DEVICES']);
-				$wandevices = explode(" ", $wanrouterconf['WAN_DEVICES']);
-				$confspresent = 0;
-				foreach ($wandevices as $wandev) {
-					if(file_exists('/etc/wanpipe/'.trim($wandev).'.conf')){
-						$confspresent++;
-					}
-				}
-				if(!empty($confspresent)) {
-					$process = new Process('which wanrouter');
-					$process->run();
-
-					// executes after the command finishes
-					if ($process->isSuccessful()) {
-						$wanrouterLocation = $process->getOutput();
-						if(!empty($wanrouterLocation)) {
-							$wanrouterLocation = trim($wanrouterLocation);
-							$process = new Process($wanrouterLocation.' stop');
-							try {
-								$output->writeln(_("Stopping Wanrouter for Sangoma Cards"));
-								$process->mustRun();
-								$output->writeln(_("Wanrouter Stopped"));
-							} catch (ProcessFailedException $e) {
-								$output->writeln(sprintf(_("Wanrouter Failed: %s"),$e->getMessage()));
-							}
-						}
-					}
-				} else {
-					$output->writeln("<comment>Wanrouter: No valid device configs found, if you have no Sangoma cards this is OK</comment>");
-				}
+		$wanrouterLocation = fpbx_which("wanrouter");
+		if($this->sangomaHardwareExists()) {
+			$wanrouterLocation = trim($wanrouterLocation);
+			$process = new Process($wanrouterLocation.' stop');
+			try {
+				$output->writeln(_("Stopping Wanrouter for Sangoma Cards"));
+				$process->mustRun();
+				$output->writeln(_("Wanrouter Stopped"));
+			} catch (ProcessFailedException $e) {
+				$output->writeln(sprintf(_("Wanrouter Failed: %s"),$e->getMessage()));
 			}
+		} else {
+			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
 		}
+
 
 		$process = new Process($dahdiexec.' stop');
 		try {
@@ -198,6 +202,9 @@ class Dahdiconfig implements \BMO {
 												'path' => '/etc/wanpipe',
 												'perms' => 0755);
 		$files[] = array('type' => 'file',
+												'path' => __DIR__."/hooks/restartdahdi",
+												'perms' => 0755);
+		$files[] = array('type' => 'file',
 												'path' => $this->freepbx->Config->get('DAHDIMODULESLOC'),
 												'perms' => 0755);
 		$files[] = array('type' => 'file',
@@ -208,5 +215,53 @@ class Dahdiconfig implements \BMO {
 												'perms' => 0644);
 
 		return $files;
+	}
+	public function ajaxRequest($req, &$setting) {
+		switch ($req) {
+			case 'restart':
+			case 'reload':
+			case 'digitalspans':
+			case 'analogspans':
+			case 'checkrestart':
+				return true;
+			break;
+			default:
+				return false;
+			break;
+		}
+	}
+	public function ajaxHandler(){
+		switch ($_REQUEST['command']) {
+			case 'checkrestart':
+				return array("started" => !$this->getConfig("restarting"));
+			break;
+			case 'restart':
+				if(file_exists('/etc/incron.d/sysadmin')) {
+					$this->setConfig("restarting",true);
+					touch('/var/spool/asterisk/incron/dahdiconfig.restartdahdi');
+					return array("status" => true);
+				}
+				return array("status" => false, "message" => _("This is not available on your system"));
+			break;
+			case 'reload':
+				exec('asterisk -rx "module unload chan_dahdi.so"');
+				exec('asterisk -rx "module load chan_dahdi.so"');
+				return true;
+			break;
+			case 'digitalspans':
+				\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
+				$dahdi_cards = new \dahdi_cards();
+				$spans = array();
+				foreach($dahdi_cards->get_spans() as $key => $val){
+					$spans[] = $val;
+				}
+				return $spans;
+			break;
+			case 'analogspans':
+			break;
+			default:
+				return false;
+			break;
+		}
 	}
 }

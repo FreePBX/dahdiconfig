@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Figure out where fwconsole is
+if [ -x /usr/local/sbin/fwconsole ]; then
+       FWCONSOLE=/usr/local/sbin/fwconsole
+elif [ -x /usr/sbin/fwconsole ]; then
+ 	FWCONSOLE=/usr/sbin/fwconsole
+elif [ -x /sbin/fwconsole ]; then
+	FWCONSOLE=/sbin/fwconsole
+else
+	echo "Can't find FWCONSOLE, aborting"
+	exit
+fi
+
+#yeah dev/null because we are children with our coding in PHP
+$FWCONSOLE stop &>> /dev/null
+$FWCONSOLE start &>> /dev/null

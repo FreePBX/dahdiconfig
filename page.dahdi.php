@@ -1,17 +1,6 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-if (isset($_POST['reloaddahdi'])) {
-    exec('asterisk -rx "module unload chan_dahdi.so"');
-    exec('asterisk -rx "module load chan_dahdi.so"');
-}
-
-if (isset($_POST['restartamportal'])) {
-    if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {
-        file_put_contents('/var/spool/asterisk/sysadmin/amportal_restart',time());
-    }
-}
-
 $dahdi_info = dahdiconfig_getinfo();
 $dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
 global $amp_conf;
@@ -19,7 +8,7 @@ $brand = $amp_conf['DASHBOARD_FREEPBX_BRAND']?$amp_conf['DASHBOARD_FREEPBX_BRAND
 
 //Check to make sure dahdi is running. Display an error if it's not
 if(!preg_match('/\d/i',$dahdi_info[1])) {
-    $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart/Reload Dahdi Button' Below");
+    $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' button below");
     include('views/dahdi_message_box.php');
     $dahdi_info[1] = '';
 }
@@ -37,7 +26,7 @@ $dahdi_cards = new dahdi_cards();
 $error = array();
 
 if ($dahdi_cards->hdwr_changes()) {
-	$dahdi_message = _('You have new hardware! Please configure your new hardware using the edit button(s). Then reload DAHDi with the button below.');
+	$dahdi_message = _('You have new hardware! Please configure your new hardware using the edit button(s)');
     include('views/dahdi_message_box.php');
     if(file_exists($amp_conf['ASTETCDIR'].'/chan_dahdi_groups.conf')) {
         global $astman;
@@ -49,9 +38,9 @@ if ($dahdi_cards->hdwr_changes()) {
     }
 }
 ?>
-<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the Restart DAHDi and Asterisk Button! <br/>After pressing the Red Apply Changes Bar.")?></div>
-<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system!")?></div>
-<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your changes to take effect, click the 'Restart/Reload Dahdi Button' Below")?></div>
+<div id="reboot_mods" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system! <br/> or <br/>Press the 'Restart DAHDi & Asterisk' button below")?></div>
+<div id="reboot_mp" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your hardware changes to take effect, you need to reboot your system")?></div>
+<div id="reboot" style="display:none;background-color:#f8f8ff; border: 1px solid #aaaaff; padding:10px;font-family:arial;color:red;font-size:20px;text-align:center;font-weight:bolder;"> <?php echo _("For your changes to take effect, click the 'Restart DAHDi & Asterisk' button below")?></div>
 
 <script type="text/javascript" src="assets/dahdiconfig/js/jquery.form.js"></script>
 <br/>
@@ -77,14 +66,14 @@ if ($dahdi_cards->hdwr_changes()) {
             </div>
             <br/>
             <br/>
-            <div class="btn_container">
-                <form name="dahdi_advanced_settings" method="post" action="config.php?display=dahdi">
-                    <input type="submit" id="reloaddahdi" name="reloaddahdi" value="<?php echo _('Reload Asterisk Dahdi Module')?>" />
-                      <?php if(file_exists('/var/spool/asterisk/sysadmin/amportal_restart')) {?>
-                      <input type="submit" id="restartamportal" name="restartamportal" value="<?php echo _('Restart Dahdi & Asterisk')?>" />
-                      <?php } ?>
-                </form>
-              </div>
+						<div class="alert alert-info">
+							<?php echo _("Make sure to hit 'Apply Config' if you've made any changed before Restarting DAHDi & Asterisk")?>
+							<?php if(file_exists('/etc/incron.d/sysadmin')) {?>
+								<button class="btn btn-default" id="restartamportal" name="restartamportal"><?php echo _('Restart DAHDi & Asterisk')?></button>
+							<?php } else { ?>
+								<button class="btn btn-default" id="reloaddahdi" name="reloaddahdi"><?php echo _('Reload Asterisk DAHDi Module')?></button>
+							<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -217,9 +206,9 @@ modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php ech
     $o = json_encode($o);
     ?>
 
-spandata[<?php echo $key?>] = {};
-spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? $span['additional_groups'] : '{}'?>;
-spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
+  spandata[<?php echo $key?>] = {};
+  spandata[<?php echo $key?>]['groups'] = <?php echo !empty($span['additional_groups']) ? json_encode($span['additional_groups']) : '{}'?>;
+  spandata[<?php echo $key?>]['spandata'] = <?php echo $o?>;
 
 $('#editspan_<?php echo $key?>_signalling').change(function() {
     if(($(this).val() == 'pri_net') || ($(this).val() == 'pri_cpe')) {
@@ -229,8 +218,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = json_decode($span['additional_groups'],TRUE);
-    $groups = is_array($groups) ? $groups : array();
+<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
     foreach($groups as $gkey => $data) { ?>
 $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
     var span = <?php echo $key?>;
@@ -361,10 +349,7 @@ $(function(){
                 gdata = JSON.stringify(spandata[<?php echo $key?>]['groups'])
                 $("#dahdi_editspan_<?php echo $key?>").ajaxSubmit({data: {groupdata: gdata}, dataType: 'json', success: function(j) {
                         if(j.status) {
-                            $.each(j, function(index, value) {
-                                if((index == 'framingcoding' && value != '/') || (index != 'framingcoding' && value !== null))
-                                    $("#digital_"+index+"_"+j.span+"_label").html(value);
-                            });
+													$("#digital_cards_table").bootstrapTable('refresh');
                             toggle_reload_button('show');
                             $("#reboot").show();
                         }
@@ -403,10 +388,9 @@ $(function(){
             $("#editspan_<?php echo $key?>_fac").val('CAS/HDB3');
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow');
             mfcr2_set_defaults(<?php echo $key ?>);
-        }
-        else {
+        } else {
             $('#button_mfc_r2_span<?php echo $key?>').hide();
-            $("#editspan_<?php echo $key?>_fac").val('CCS/HDB3');
+            $("#editspan_<?php echo $key?>_fac")[0].selectedIndex = 0;
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow');
         }
     })
@@ -582,6 +566,14 @@ $('#mwi').change(function(evt) {
 });
 
 </script>
+<div class="screendoor">
+	<div class="message center-block">
+		<div class="text">
+			<?php echo _("Restarting DAHDi and Asterisk. Please wait..."); ?>
+		</div>
+		<i class="fa fa-spinner fa-spin"></i>
+	</div>
+</div>
 <?php
 //Easy Form Setting method
 function set_default($default,$option=NULL,$true='selected') {

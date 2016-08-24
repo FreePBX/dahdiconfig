@@ -54,7 +54,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		try {
 			$process->mustRun();
 			$out = $process->getOutput();
-			return count($out) > 0;
+			return !empty($out);
 		} catch (ProcessFailedException $e) {
 			return false;
 		}
@@ -100,11 +100,12 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 			return;
 		}
 
-		$wanrouterLocation = fpbx_which("wanrouter");
 		if($this->sangomaHardwareExists()) {
 			//check for wanpipe*, if none then generate global if it doesnt exist
 			$this->checkDefaultSangomaGlobal($output);
 			if(!$this->wanrouterRunning()) {
+				$wanrouterLocation = fpbx_which("wanrouter");
+				$wanrouterLocation = trim($wanrouterLocation);
 				$process = new Process($wanrouterLocation.' start');
 				try {
 					$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
@@ -155,8 +156,9 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 			return;
 		}
 
-		$wanrouterLocation = fpbx_which("wanrouter");
+
 		if($this->sangomaHardwareExists()) {
+			$wanrouterLocation = fpbx_which("wanrouter");
 			$wanrouterLocation = trim($wanrouterLocation);
 			$process = new Process($wanrouterLocation.' stop');
 			try {

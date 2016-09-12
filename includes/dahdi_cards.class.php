@@ -113,17 +113,29 @@ class dahdi_cards {
 		global $db;
 		$nt = notifications::create($db);
 		foreach($check as $list) {
-			if(file_exists($list)){
-				$o = posix_getpwuid(fileowner($list));
-			}else{
-				$o = array('name' => 'nofile');
+			if (!file_exists($list)) {
+				// Try to create the file if it doesn't exist
+				//
+				// Silence all warnings, because it's checked immediately
+				// afer this.
+				@mkdir(dirname($list), 0755, true);
+				@touch($list);
 			}
-			if($me != $o['name']) {
-				$nt->add_error('dahdiconfig', str_replace("/","",$list), sprintf(_('File %s is not owned by %s'), $list, $me), sprintf(_("Please run '%s', then go back into the DAHDi Config Module"),'amportal chown'), "", false, true);
-			} else {
-				if($nt->exists('dahdiconfig', str_replace("/","",$list))) {
-					$nt->delete('dahdiconfig', str_replace("/","",$list));
+
+			clearstatcache(); // Lolphp. It shouldn't cache a false, but, clear it just in case.
+
+			if (file_exists($list)) {
+				$o = posix_getpwuid(fileowner($list));
+				if($me != $o['name']) {
+					$nt->add_error('dahdiconfig', str_replace("/","",$list), sprintf(_('File %s is not owned by %s'), $list, $me), sprintf(_("Please run '%s', then go back into the DAHDi Config Module"),'fwconsole chown'), "", false, true);
+				} else {
+					if($nt->exists('dahdiconfig', str_replace("/","",$list))) {
+						$nt->delete('dahdiconfig', str_replace("/","",$list));
+					}
 				}
+			} else {
+				$o = array('name' => 'nofile');
+				$nt->add_error('dahdiconfig', str_replace("/","",$list), sprintf(_('File %s does not exist.'), $list), sprintf(_("Please run 'touch %s' and then '%s' to create this file."), $list, 'fwconsole chown'), "", false, true);
 			}
 		}
 

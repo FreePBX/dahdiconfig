@@ -3,60 +3,20 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.1</version>
+	<version>14.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*13.0.33.1* #13126 - Fix incorrect dashboard warning of /etc/dahdi/system.conf
-		*13.0.33* Sangoma hardware check
-		*13.0.32* #12989
-		*13.0.31* Unit tests
-		*13.0.30* Fix issues when theres no Sangoma hardware
-		*13.0.29* Use different parsing method
-		*13.0.28.5* Wording
-		*13.0.28.4* Send output to dev null
-		*13.0.28.3* Install fixes
-		*13.0.28.2* Check for new hardward during startup
-		*13.0.28.1* Chown hook
-		*13.0.27* More bugs and cleanup
-		*13.0.26* Worked through numerous issues with Rob on this
-		*13.0.25* FREEPBX-12968
-		*13.0.24* Include missing file
-		*13.0.23* Fix broken edit buttons
-		*13.0.22* Finishing touches re: Sangoma Engineering
-		*13.0.21* Fix Wanrouter start
-		*13.0.20* Improvements to Sangoma configurations
-		*13.0.19* More fixes
-		*13.0.18* FREEPBX-12761
-		*13.0.17* General fixes
-		*13.0.16* FREEPBX-12569 - MFC R2 settings on Dahdi configuration module
-		*13.0.15* FREEPBX-12423 fix display issue
-		*13.0.14* Fix error when writing to Sangoma wanrouter files
-		*13.0.13* FREEPBX-77776 Fix system.conf for multiple analog ranges
-		*13.0.12* If files dont exist then dont try to read them
-		*13.0.11* Dahdi Config should handle missing files better
-		*13.0.10* FREEPBX-11315
-		*13.0.9* FREEPBX-10859 and FREEPBX-11012 permissions on /dev/*
-		*13.0.8* FREEPBX-11012
-		*13.0.7* FREEPBX-10898
-		*13.0.6* Fixes FREEPBX-10941 and FREEPBX-10859
-		*13.0.5* Remove old bin scripts
-		*13.0.4* Detect and parse WanRouter configurations correctly
-		*13.0.3* Send error output to dev/null
-		*13.0.2* Version bump Beta
-		*13.0.1alpha3* Fix auto-start for DAHDi
-		*13.0.1alpha2* Update visuals
-		*13.0.1alpha1* Use new console framework for startup
+		*14.0.1* Initial Release for FreePBX 14
 	</changelog>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 	<depends>
-		<phpversion>5.3.0</phpversion>
-		<version>13.0.121</version>
+		<version>14.0.1alpha30</version>
 	</depends>
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
@@ -73,6 +33,6 @@
 			<method callingMethod="fwcChownFiles" class="Dahdiconfig" namespace="FreePBX\modules">chownFreepbx</method>
 		</framework>
 	</hooks>
-	<location>release/2.11/dahdiconfig-2.11.28.tgz</location>
-	<md5sum>5ae07e1ac73fbafacaa8f66666d9a70e</md5sum>
+	<location>legacy</location>
+	<md5sum>legacy</md5sum>
 </module>

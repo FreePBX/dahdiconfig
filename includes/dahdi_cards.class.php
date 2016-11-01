@@ -110,6 +110,7 @@ class dahdi_cards {
 		$check[] = $amp_conf['DAHDIMODULESLOC'];
 		$check[] = $amp_conf['DAHDISYSTEMLOC'];
 		$check[] = $amp_conf['DAHDIMODPROBELOC'];
+		$this->mockhw = $amp_conf['DAHDIMOCKHW'];
 		global $db;
 		$nt = notifications::create($db);
 		foreach($check as $list) {
@@ -173,6 +174,9 @@ class dahdi_cards {
 	}
 
 	public function get_all_modules() {
+		if($this->mockhw){
+			return $this->get_all_modules_mock();
+		}
 		global $amp_conf;
 		if(!file_exists($amp_conf['DAHDIMODULESLOC']) || !is_readable($amp_conf['DAHDIMODULESLOC'])) {
 			return array();
@@ -842,7 +846,12 @@ class dahdi_cards {
 		if(!is_executable('/usr/sbin/dahdi_scan')) {
 			throw new \Exception(_("dahdi_scan exists but can not be run as this user!"));
 		}
-		exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
+		if($this->mockhw){
+				$dahdi_scan_output = $this->dahdi_scan_mock();
+				$return_var = '0';
+		}else{
+			exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
+		}
 		if($return_var != '0') {
 			return false;
 		}
@@ -1706,5 +1715,12 @@ class dahdi_cards {
 		}
 
 		return true;
+	}
+	//Mocks
+	private function get_all_modules_mock(){
+		return json_decode('{"wct4xxp":{"status":true,"type":"sys"},"wcte43x":{"status":true,"type":"sys"},"wcte12xp":{"status":true,"type":"sys"},"wcte13xp":{"status":true,"type":"sys"},"wct1xxp":{"status":true,"type":"sys"},"wcte11xp":{"status":true,"type":"sys"},"wctdm24xxp":{"status":true,"type":"sys"},"wcaxx":{"status":true,"type":"sys"},"wcfxo":{"status":true,"type":"sys"},"wctdm":{"status":true,"type":"sys"},"wcb4xxp":{"status":true,"type":"sys"},"wctc4xxp":{"status":true,"type":"sys"},"xpp_usb":{"status":true,"type":"sys"},"opvxd115":{"status":false,"type":"sys"},"opvxa24xx":{"status":false,"type":"sys"},"opvxa1200":{"status":false,"type":"sys"},"zaphfc":{"status":false,"type":"sys"},"tor3e":{"status":false,"type":"sys"},"r1t1":{"status":true,"type":"sys"},"rxt1":{"status":true,"type":"sys"},"rcbfx":{"status":true,"type":"sys"}}',true);
+	}
+	private function dahdi_scan_mock(){
+		return json_decode('["[1]","active=yes","alarms=RED","description=wanpipe1 card 0","name=WPT1\/0","manufacturer=Sangoma Technologies","devicetype=B601","location=SLOT=1, BUS=7","basechan=1","totchans=24","irq=0","type=digital-T1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=B8ZS,AMI","framing_opts=ESF,D4","coding=B8ZS","framing=ESF","[2]","active=yes","alarms=OK","description=wrtdm Board 1","name=WRTDM\/0","manufacturer=Sangoma Technologies","devicetype=B601","location=SLOT=1, BUS=7","basechan=25","totchans=24","irq=0","type=analog","port=25,FXO","port=26,FXO","port=27,FXO","port=28,FXO","port=29,FXS","port=30,none","port=31,none","port=32,none","port=33,none","port=34,none","port=35,none","port=36,none","port=37,none","port=38,none","port=39,none","port=40,none","port=41,none","port=42,none","port=43,none","port=44,none","port=45,none","port=46,none","port=47,none","port=48,none","[3]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 1","name=TE4\/0\/1","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=49","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[4]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 2","name=TE4\/0\/2","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=80","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[5]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 3","name=TE4\/0\/3","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=111","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[6]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 4","name=TE4\/0\/4","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=142","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[7]","active=yes","alarms=UNCONFIGURED","description=Wildcard TE122 Card 0","name=WCT1\/0","manufacturer=Digium","devicetype=Wildcard TE122","location=PCI Bus 07 Slot 03","basechan=173","totchans=24","irq=0","type=digital-T1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=B8ZS,AMI","framing_opts=ESF,D4","coding=","framing=CAS"]',true);
 	}
 }

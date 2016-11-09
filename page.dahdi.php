@@ -223,7 +223,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
 $('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
     var span = <?php echo $key?>;
     var endchan = $(this).val();
-    var totalchan = <?php echo $span['totchans']?>;
+    var totalchan = <?php echo isset($span['totchans'])?$span['totchans']:'0'?>;
     var group = <?php echo $gkey?>;
     update_digital_groups(span,group,endchan);
 });

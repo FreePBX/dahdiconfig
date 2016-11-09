@@ -377,7 +377,7 @@ $(function(){
         }
     });
     $("#editspan_<?php echo $key?>_signalling").change(function() {
-        if($( this ).val().substring(0,3) == 'bri' || <?php echo $span['totchans']?> != 3 || $( this ).val().substring(0,3) == 'pri') {
+        if($( this ).val().substring(0,3) == 'bri' || <?php echo isset($span['totchans'])?$span['totchans']:'0'?> != 3 || $( this ).val().substring(0,3) == 'pri') {
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow')
             $("#editspan_<?php echo $key?>_switchtype").val('euroisdn')
         } else {

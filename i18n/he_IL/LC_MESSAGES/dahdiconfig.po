@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 11:15-0700\n"
+"POT-Creation-Date: 2016-11-29 11:05-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:554
+#: install.php:569
 msgid "..Done"
 msgstr ""
 
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: install.php:590
+#: install.php:605
 msgid "Add type column"
 msgstr ""
 
-#: install.php:606
+#: install.php:621
 msgid "Adding txgain and rxgain column to analog table"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Creating Dahdi Analog Table"
 msgstr ""
 
-#: install.php:581
+#: install.php:596
 msgid "Creating dahdi modules Table"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr ""
 
-#: install.php:519
+#: install.php:534
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 
@@ -517,12 +517,12 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: install.php:623
+#: install.php:638
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr ""
 
-#: install.php:618
+#: install.php:633
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
@@ -653,7 +653,7 @@ msgstr ""
 msgid "Enable Call Waiting"
 msgstr ""
 
-#: views/sangoma.php:51
+#: views/sangoma.php:62
 msgid "Enable DTMF CID"
 msgstr ""
 
@@ -757,7 +757,12 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:122
+#: includes/dahdi_cards.class.php:139
+#, php-format
+msgid "File %s does not exist."
+msgstr ""
+
+#: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr ""
@@ -994,7 +999,7 @@ msgstr ""
 msgid "Indonesia"
 msgstr ""
 
-#: install.php:515
+#: install.php:530
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr ""
 
@@ -1199,7 +1204,7 @@ msgstr ""
 msgid "Malta"
 msgstr ""
 
-#: views/sangoma.php:34
+#: views/sangoma.php:45
 msgid "Master"
 msgstr ""
 
@@ -1244,11 +1249,11 @@ msgstr ""
 msgid "Mexico"
 msgstr ""
 
-#: install.php:499
+#: install.php:514
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr ""
 
-#: install.php:573
+#: install.php:588
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
@@ -1277,7 +1282,7 @@ msgstr ""
 msgid "Morocco"
 msgstr ""
 
-#: install.php:560
+#: install.php:575
 msgid "Moving/Adding dchannel column"
 msgstr ""
 
@@ -1351,7 +1356,7 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
 #: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:45 views/sangoma.php:55
+#: views/sangoma.php:56 views/sangoma.php:66
 msgid "No"
 msgstr ""
 
@@ -1385,7 +1390,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
 #: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
 #: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
-#: views/sangoma.php:33
+#: views/sangoma.php:44
 msgid "Normal"
 msgstr ""
 
@@ -1482,7 +1487,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1635
+#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1493,9 +1498,14 @@ msgid ""
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:122
+#: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
+msgstr ""
+
+#: includes/dahdi_cards.class.php:139
+#, php-format
+msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:36 views/dahdi_advanced_settings.php:113
@@ -1503,15 +1513,15 @@ msgstr ""
 msgid "Poland"
 msgstr ""
 
-#: views/sangoma.php:78
+#: views/sangoma.php:89
 msgid "Polarity CID Timeout"
 msgstr ""
 
-#: views/sangoma.php:70
+#: views/sangoma.php:81
 msgid "Polarity CID Timer"
 msgstr ""
 
-#: views/sangoma.php:62
+#: views/sangoma.php:73
 msgid "Polarity Threshold"
 msgstr ""
 
@@ -1576,7 +1586,7 @@ msgstr ""
 msgid "Reloading..."
 msgstr ""
 
-#: install.php:548
+#: install.php:563
 msgid "Replacing.."
 msgstr ""
 
@@ -1643,12 +1653,16 @@ msgstr ""
 msgid "Set Defaults"
 msgstr ""
 
-#: views/sangoma.php:29 views/sangoma.php:40
+#: views/sangoma.php:40 views/sangoma.php:51
 msgid "Set wanpipe port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
+msgstr ""
+
+#: views/sangoma.php:29
+msgid "Signaling Mode"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:31 views/dahdi_advanced_settings.php:118
@@ -2128,7 +2142,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1335 includes/dahdi_cards.class.php:1635
+#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2233,7 +2247,7 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
 #: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
 #: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
-#: views/sangoma.php:12 views/sangoma.php:44 views/sangoma.php:56
+#: views/sangoma.php:12 views/sangoma.php:55 views/sangoma.php:67
 msgid "Yes"
 msgstr ""
 
@@ -2259,7 +2273,7 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:597
+#: install.php:612
 msgid "add additional column"
 msgstr ""
 
@@ -2271,7 +2285,7 @@ msgstr ""
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:831
+#: includes/dahdi_cards.class.php:847
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

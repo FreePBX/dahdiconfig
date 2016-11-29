@@ -24,6 +24,17 @@
 			</select>
 		</td>
 	</tr>
+	<tr id="sangoma_TE_SIG_MODE" style="<?php echo ($settings['dahdimode'] == 'yes') ? '' : 'hidden'?>">
+		<td style="width:10px">
+			<label for="sangoma_TE_SIG_MODE"><?php echo _("Signaling Mode")?>:</label>
+		</td>
+		<td>
+			<select name="sangoma_TE_SIG_MODE" class="form-control">
+				<option value="CCS" <?php echo $settings['TE_SIG_MODE'] == 'CCS' ? 'selected' : ''?>>CCS</option>
+				<option value="CAS" <?php echo $settings['TE_SIG_MODE'] == 'CAS' ? 'selected' : ''?>>CAS</option>
+			</select>
+		</td>
+	</tr>
   <tr>
     <td style="width:10px;">
       <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK"><?php echo _('Set wanpipe port clocking') ?></label>

@@ -404,6 +404,21 @@ $set['description'] = 'DAHDi trunk configuration is normally done using groups f
 $set['type'] = CONF_TYPE_BOOL;
 $freepbx_conf->define_conf_setting('DAHDISHOWDIGITALCHANS',$set,true);
 
+// DAHDISHOWDIGITALCHANS in Advanced Settings of FreePBX
+//
+$set['value'] = false;
+$set['defaultval'] =& $set['value'];
+$set['readonly'] = 1;
+$set['hidden'] = 0;
+$set['level'] = 1;
+$set['module'] = 'dahdiconfig'; //This will help delete the settings when module is uninstalled
+$set['category'] = 'DAHDi Configuration Module';
+$set['emptyok'] = 0;
+$set['name'] = 'Use mock hardware instead of real hardware';
+$set['description'] = 'Some development environments can not host DAHDI hardware so this mode uses mock files to acomplish the tasks.';
+$set['type'] = CONF_TYPE_BOOL;
+$freepbx_conf->define_conf_setting('DAHDIMOCKHW',$set,true);
+
 $set['value'] = true;
 $set['defaultval'] =& $set['value'];
 $set['readonly'] = 0;

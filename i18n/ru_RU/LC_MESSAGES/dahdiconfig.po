@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 13:53-0800\n"
+"POT-Creation-Date: 2016-12-07 14:50-0800\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -420,7 +420,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr "Конфигурация DAHDI"
 
-#: Dahdiconfig.class.php:95 Dahdiconfig.class.php:151
+#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI НЕ НАЙДЕН [Советуем де-инсталлировать модуль конфигурации DAHDI]!"
@@ -449,7 +449,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:133 Dahdiconfig.class.php:182
+#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Ошибка DAHDi: %s"
@@ -470,11 +470,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:131
+#: Dahdiconfig.class.php:128
 msgid "DAHDi Started"
 msgstr "DAHDi стартовал"
 
-#: Dahdiconfig.class.php:180
+#: Dahdiconfig.class.php:177
 msgid "DAHDi Stopped"
 msgstr "DAHDi остановлен"
 
@@ -667,6 +667,10 @@ msgstr "Включить эхоподавление"
 #: views/dahdi_global_settings.php:172
 msgid "Enable Echo Training"
 msgstr "Включить обучение эхо"
+
+#: views/sangoma.php:7
+msgid "Enable Sangoma Cards"
+msgstr ""
 
 #: views/dahdi_global_settings.php:99
 msgid "Enable Three Way Calling"
@@ -1686,10 +1690,6 @@ msgstr "Обнаружение сигнала вызова"
 msgid "Romania"
 msgstr "Румыния"
 
-#: views/sangoma.php:7
-msgid "Run Wanpipe In DAHDI/DIGIUM Mode"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
 msgstr "Россия"
@@ -2000,19 +2000,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Стандартный"
 
-#: Dahdiconfig.class.php:129
+#: Dahdiconfig.class.php:126
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Запуск DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:111
+#: Dahdiconfig.class.php:108
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Запуск Wanrouter-а для плат Sangoma"
 
-#: Dahdiconfig.class.php:178
+#: Dahdiconfig.class.php:175
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Останов DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:165
+#: Dahdiconfig.class.php:162
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Останов Wanrouter-a для плат Sangoma"
 
@@ -2204,7 +2204,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:246
+#: Dahdiconfig.class.php:243
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2402,16 +2402,16 @@ msgstr ""
 "ПРЕДУПРЕЖДЕНИЕ:Когда это модуль \"доступен\"  для записи он ПЕРЕЗАПИШЕТ  "
 "следующие файлы:"
 
-#: Dahdiconfig.class.php:115 Dahdiconfig.class.php:169
+#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Ошибка Wanrouter:%s"
 
-#: Dahdiconfig.class.php:113
+#: Dahdiconfig.class.php:110
 msgid "Wanrouter Started"
 msgstr "Wanrouter запущен"
 
-#: Dahdiconfig.class.php:167
+#: Dahdiconfig.class.php:164
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter остановлен"
 
@@ -2447,7 +2447,7 @@ msgstr ""
 "Указывает использовать ли представление значение идентификатора вызывающего "
 "абонента при исходящем вызове,который отправляет вызывающий коммутатор"
 
-#: Dahdiconfig.class.php:78
+#: Dahdiconfig.class.php:75
 msgid "Writing out default Sangoma conf"
 msgstr ""
 

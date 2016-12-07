@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 13:53-0800\n"
+"POT-Creation-Date: 2016-12-07 14:50-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -427,7 +427,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:95 Dahdiconfig.class.php:151
+#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -455,7 +455,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:133 Dahdiconfig.class.php:182
+#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -476,11 +476,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:131
+#: Dahdiconfig.class.php:128
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:180
+#: Dahdiconfig.class.php:177
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -667,6 +667,10 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:172
 msgid "Enable Echo Training"
+msgstr ""
+
+#: views/sangoma.php:7
+msgid "Enable Sangoma Cards"
 msgstr ""
 
 #: views/dahdi_global_settings.php:99
@@ -1614,10 +1618,6 @@ msgstr ""
 msgid "Romania"
 msgstr ""
 
-#: views/sangoma.php:7
-msgid "Run Wanpipe In DAHDI/DIGIUM Mode"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
 msgstr ""
@@ -1862,19 +1862,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:129
+#: Dahdiconfig.class.php:126
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:111
+#: Dahdiconfig.class.php:108
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:178
+#: Dahdiconfig.class.php:175
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:165
+#: Dahdiconfig.class.php:162
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2040,7 +2040,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:246
+#: Dahdiconfig.class.php:243
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2202,16 +2202,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:115 Dahdiconfig.class.php:169
+#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:113
+#: Dahdiconfig.class.php:110
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:167
+#: Dahdiconfig.class.php:164
 msgid "Wanrouter Stopped"
 msgstr ""
 
@@ -2239,7 +2239,7 @@ msgid ""
 "the calling switch is sending"
 msgstr ""
 
-#: Dahdiconfig.class.php:78
+#: Dahdiconfig.class.php:75
 msgid "Writing out default Sangoma conf"
 msgstr ""
 

@@ -4,7 +4,7 @@
 <table width="100%" style="text-align:left;">
 	<tr>
 		<td style="width:10px;">
-			<label for="sangoma_dahdimode"><?php echo _('Run Wanpipe In DAHDI/DIGIUM Mode') ?></label>
+			<label for="sangoma_dahdimode"><?php echo _('Enable Sangoma Cards') ?></label>
 		</td>
 		<td>
 			<select name="sangoma_dahdimode" id="sangoma_dahdimode" class="form-control">

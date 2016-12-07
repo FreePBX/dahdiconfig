@@ -66,12 +66,9 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	 * @param  object $output The CLI Output object
 	 */
 	public function checkDefaultSangomaGlobal($output) {
-		$files = glob("/etc/wanpipe/wanpipe*.conf");
-		if(!empty($files)) {
-			return;
-		}
-		$file = "/etc/wanpipe/global.conf";
-		if(!file_exists($file)) {
+		$wanpipeFiles = glob("/etc/wanpipe/wanpipe*.conf");
+		$globalFile = "/etc/wanpipe/global.conf";
+		if(file_exists($globalFile) || (!empty($wanpipeFiles) && !file_exists($globalFile))) {
 			\FreePBX::Modules()->loadFunctionsInc('dahdiconfig');
 			$dahdi_cards = new \dahdi_cards();
 			if(isset($dahdi_cards->modules['sangoma']) && is_object($dahdi_cards->modules['sangoma'])) {

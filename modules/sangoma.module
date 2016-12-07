@@ -39,13 +39,7 @@ class dahdi_sangoma {
 		$output['dialog']['height'] = 400;
 		$output['dialog']['width'] = 500;
 		$output['javascript'] = "";
-		$files = glob("/etc/wanpipe/wanpipe*.conf");
-		if(empty($files)) {
-			$output['html'] = load_view(dirname(__DIR__)."/views/sangoma.php",array("settings" => $settings));
-		} else {
-			$output['html'] = sprintf(_("Global Configuration is disabled since there are %s files"),"/etc/wanpipe/wanpipe*.conf");
-		}
-
+		$output['html'] = load_view(dirname(__DIR__)."/views/sangoma.php",array("settings" => $settings));
 		return $output;
 	}
 
@@ -80,8 +74,7 @@ class dahdi_sangoma {
 			switch($file) {
 				case '/etc/wanpipe/global.conf':
 					global $db;
-					$files = glob("/etc/wanpipe/wanpipe*.conf");
-					if(!$force && (!empty($files) || !file_exists($file))) {
+					if(!$force && (empty($settings['dahdimode']) || $settings['dahdimode'] != "yes")) {
 						return;
 					}
 					$output = "WANPIPE_GLOBAL_CFG=DAHDI\n";

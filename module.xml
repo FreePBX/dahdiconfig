@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.2</version>
+	<version>13.0.33.3</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.33.3* Fix signalling on mfc_r2
 		*13.0.33.2* FREEPBX-13252 not generated properly when using dahdiconfig for MFCR2 signalling
 		*13.0.33.1* #13126 - Fix incorrect dashboard warning of /etc/dahdi/system.conf
 		*13.0.33* Sangoma hardware check

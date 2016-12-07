@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 11:05-0800\n"
+"POT-Creation-Date: 2016-12-07 13:53-0800\n"
 "PO-Revision-Date: 2015-02-21 11:20+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -434,7 +434,7 @@ msgstr "DAHDi設定"
 
 #: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
 #: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
-#: dahdiconfig.i18n.php:50
+#: dahdiconfig.i18n.php:50 dahdiconfig.i18n.php:56
 msgid "DAHDi Configuration Module"
 msgstr ""
 
@@ -1685,6 +1685,12 @@ msgstr ""
 msgid "Software EC"
 msgstr ""
 
+#: dahdiconfig.i18n.php:58
+msgid ""
+"Some development environments can not host DAHDI hardware so this mode uses "
+"mock files to acomplish the tasks."
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
 msgid "South Africa"
@@ -2159,6 +2165,10 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:88
 msgid "Use Caller ID Presentation"
+msgstr ""
+
+#: dahdiconfig.i18n.php:54
+msgid "Use mock hardware instead of real hardware"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:81

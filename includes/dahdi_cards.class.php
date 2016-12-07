@@ -1149,7 +1149,7 @@ class dahdi_cards {
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
 		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : array();
 
-		if ($editspan['signalling'] == "mfc_r2") {
+		if ($editspan['signalling'] == "mfcr2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
 		    $this->spans[$num]['mfcr2_max_ani'] 				= $editspan['mfcr2_max_ani'] ? $editspan['mfcr2_max_ani'] : 10;
 		    $this->spans[$num]['mfcr2_max_dnis'] 				= $editspan['mfcr2_max_dnis'] ? $editspan['mfcr2_max_dnis'] : 4;
@@ -1383,7 +1383,7 @@ class dahdi_cards {
 			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri' && substr($span['signalling'],0,3) != 'gsm') {
 				if (substr($span['signalling'],0,2) == 'fx') {
 					$fx = str_replace('_','',$span['signalling']);
-				} else if ($span['signalling'] == 'mfc_r2') {
+				} else if ($span['signalling'] == 'mfcr2') {
 					$fx = 'cas';
 				} else {
 					$fx = 'e&m';
@@ -1394,7 +1394,7 @@ class dahdi_cards {
 						if (strtolower($s['group'] == 's')){
 							continue;
 						}
-						if ($span['signalling'] == 'mfc_r2') {
+						if ($span['signalling'] == 'mfcr2') {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
 						} else {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';

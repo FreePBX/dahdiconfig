@@ -79,7 +79,7 @@
                         <option value="--" disabled>--PRI--</option>
                         <option value="pri_cpe" <?php echo set_default($span['signalling'],'pri_cpe'); ?>><?php echo _("PRI - CPE")?></option>
                         <option value="pri_net" <?php echo set_default($span['signalling'],'pri_net'); ?>><?php echo _("PRI - Net")?></option>
-                        <option value="mfc_r2" <?php echo set_default($span['signalling'],'mfc_r2'); ?>><?php echo _("MFC/R2")?></option>
+                        <option value="mfcr2" <?php echo set_default($span['signalling'],'mfcr2'); ?>><?php echo _("MFC/R2")?></option>
                         <option value="--" disabled>--E &amp; M--</option>
                         <option value="em" <?php echo set_default($span['signalling'],'em'); ?>><?php echo _("E &amp; M")?></option>
                         <option value="em_w" <?php echo set_default($span['signalling'],'em_w'); ?>><?php echo _("E &amp; M -- Wink")?></option>

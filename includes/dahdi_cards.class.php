@@ -209,7 +209,13 @@ class dahdi_cards {
 		$span = $this->spans[$num];
 
 		$y = !empty($startchan) ? $startchan : $span['min_ch'];
+		if($y < $span['min_ch'] || $y > $span['max_ch']) {
+			throw new \Exception("Start channel is less than minimum channel!");
+		}
 		$x = !empty($usedchans) ? ($y + $usedchans) -1 : ($y + $span['totchans'])-1;
+		if($x > $span['max_ch'] || $x < $span['min_ch']) {
+			throw new \Exception("Exceded number of channels!");
+		}
 		$r = $span['reserved_ch'];
 		$u = !empty($usedchans) ? $usedchans - 1 : ($y + $span['totchans']);
 
@@ -834,12 +840,7 @@ class dahdi_cards {
 		return true;
 	}
 
-	/**
-	 * Read DAHDi Scan
-	 *
-	 * Read all the information given in the DAHDi Scan script
-	 */
-	public function read_dahdi_scan() {
+	public function execute_dahdi_scan() {
 		if(!file_exists('/usr/sbin/dahdi_scan')) {
 			return false;
 		}
@@ -854,6 +855,19 @@ class dahdi_cards {
 		}
 		if($return_var != '0') {
 			return false;
+		}
+		return $dahdi_scan_output;
+	}
+
+	/**
+	 * Read DAHDi Scan
+	 *
+	 * Read all the information given in the DAHDi Scan script
+	 */
+	public function read_dahdi_scan() {
+		$dahdi_scan_output = $this->execute_dahdi_scan();
+		if($dahdi_scan_output === false) {
+			return;
 		}
 		unset($this->fxo_ports);
 		unset($this->fxs_ports);
@@ -1389,6 +1403,7 @@ class dahdi_cards {
 					$fx = 'e&m';
 				}
 				$data = $span['additional_groups'];
+				dbug($data);
 				if (!empty($data)) {
 					foreach($data as $s){
 						if (strtolower($s['group'] == 's')){

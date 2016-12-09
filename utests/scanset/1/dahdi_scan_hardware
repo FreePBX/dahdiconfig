@@ -1,0 +1,1 @@
+{"SLOT=1, BUS=7":{"device":"B601","basechan":"25","type":"hybrid"},"Board ID Switch 0":{"device":"Wildcard TE420 (5th Gen)","basechan":"49","type":"digital-E1"},"PCI Bus 07 Slot 03":{"device":"Wildcard TE122","basechan":"173","type":"digital-T1"}}

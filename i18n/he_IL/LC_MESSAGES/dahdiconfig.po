@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 14:50-0800\n"
+"POT-Creation-Date: 2016-12-09 17:47-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr ""
 
-#: assets/js/main.js:449
+#: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 
@@ -320,8 +320,8 @@ msgstr ""
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:290 page.dahdi.php:309 page.dahdi.php:359 page.dahdi.php:416
-#: page.dahdi.php:439 page.dahdi.php:458 page.dahdi.php:503
+#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
+#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -552,7 +552,7 @@ msgstr ""
 msgid "Digital Hardware"
 msgstr ""
 
-#: page.dahdi.php:250
+#: page.dahdi.php:247
 msgid "Disable"
 msgstr ""
 
@@ -560,7 +560,7 @@ msgstr ""
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
-#: assets/js/main.js:443
+#: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr ""
 
@@ -633,7 +633,7 @@ msgstr ""
 msgid "El Salvador"
 msgstr ""
 
-#: page.dahdi.php:245
+#: page.dahdi.php:242
 msgid "Enable"
 msgstr ""
 
@@ -1144,7 +1144,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:331 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1491,7 +1491,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1586,7 +1586,7 @@ msgstr ""
 msgid "Reload Asterisk DAHDi Module"
 msgstr ""
 
-#: assets/js/main.js:432
+#: assets/js/main.js:464
 msgid "Reloading..."
 msgstr ""
 
@@ -1594,7 +1594,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr ""
 
-#: page.dahdi.php:493
+#: page.dahdi.php:490
 msgid "Reset File To Defaults"
 msgstr ""
 
@@ -1602,11 +1602,11 @@ msgstr ""
 msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:572
+#: page.dahdi.php:569
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
-#: assets/js/main.js:454
+#: assets/js/main.js:486
 msgid "Restarting..."
 msgstr ""
 
@@ -1638,8 +1638,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:284 page.dahdi.php:303 page.dahdi.php:347 page.dahdi.php:409
-#: page.dahdi.php:433 page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
+#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
+#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1649,7 +1649,7 @@ msgstr ""
 msgid "Select Language"
 msgstr ""
 
-#: page.dahdi.php:324
+#: page.dahdi.php:321
 msgid "Set Defaults"
 msgstr ""
 
@@ -2112,7 +2112,7 @@ msgid ""
 "switch, since it sent in a FACILITY message"
 msgstr ""
 
-#: page.dahdi.php:494
+#: page.dahdi.php:491
 msgid "This will reload the page"
 msgstr ""
 
@@ -2148,7 +2148,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2295,7 +2295,7 @@ msgstr ""
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:847
+#: includes/dahdi_cards.class.php:917
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

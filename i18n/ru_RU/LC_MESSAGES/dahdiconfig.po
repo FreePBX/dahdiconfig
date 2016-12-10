@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 14:50-0800\n"
+"POT-Creation-Date: 2016-12-09 17:47-0800\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -155,7 +155,7 @@ msgstr "Применить Opermode для модулей FXO"
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Применить Opermode для модулей FXS и FXO"
 
-#: assets/js/main.js:449
+#: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 
@@ -313,8 +313,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Канада"
 
-#: page.dahdi.php:290 page.dahdi.php:309 page.dahdi.php:359 page.dahdi.php:416
-#: page.dahdi.php:439 page.dahdi.php:458 page.dahdi.php:503
+#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
+#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -551,7 +551,7 @@ msgstr "Цифровой Канал %s"
 msgid "Digital Hardware"
 msgstr "Цифровое оборудование"
 
-#: page.dahdi.php:250
+#: page.dahdi.php:247
 msgid "Disable"
 msgstr "Выключить"
 
@@ -559,7 +559,7 @@ msgstr "Выключить"
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
-#: assets/js/main.js:443
+#: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr ""
 
@@ -632,7 +632,7 @@ msgstr "Египет"
 msgid "El Salvador"
 msgstr "Сальвадор"
 
-#: page.dahdi.php:245
+#: page.dahdi.php:242
 msgid "Enable"
 msgstr "Включить"
 
@@ -1183,7 +1183,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:331 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1554,7 +1554,7 @@ msgstr "Филиппины"
 msgid "Please Delete the System Generated %s"
 msgstr "Пожалуйста удалите сгенерированные системой %s"
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Пожалуйста измените права для %s"
@@ -1658,7 +1658,7 @@ msgstr "Усиление приёма"
 msgid "Reload Asterisk DAHDi Module"
 msgstr ""
 
-#: assets/js/main.js:432
+#: assets/js/main.js:464
 msgid "Reloading..."
 msgstr ""
 
@@ -1666,7 +1666,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr "Перемещение.."
 
-#: page.dahdi.php:493
+#: page.dahdi.php:490
 msgid "Reset File To Defaults"
 msgstr "Сбросить файл в значения по умолчанию"
 
@@ -1674,11 +1674,11 @@ msgstr "Сбросить файл в значения по умолчанию"
 msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:572
+#: page.dahdi.php:569
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
-#: assets/js/main.js:454
+#: assets/js/main.js:486
 msgid "Restarting..."
 msgstr ""
 
@@ -1710,8 +1710,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr "Саудовская Аравия"
 
-#: page.dahdi.php:284 page.dahdi.php:303 page.dahdi.php:347 page.dahdi.php:409
-#: page.dahdi.php:433 page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
+#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
+#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1721,7 +1721,7 @@ msgstr "Сохранить"
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: page.dahdi.php:324
+#: page.dahdi.php:321
 msgid "Set Defaults"
 msgstr ""
 
@@ -2310,7 +2310,7 @@ msgstr ""
 "передачу перевода вызова на ISDN - коммутатор,пока он передаётся в сообщении "
 "FACILITY"
 
-#: page.dahdi.php:494
+#: page.dahdi.php:491
 msgid "This will reload the page"
 msgstr "Это перезагрузит страницу"
 
@@ -2346,7 +2346,7 @@ msgstr "ОАЭ"
 msgid "UK"
 msgstr "Великобритания"
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Невозможно записать в %s"
@@ -2503,7 +2503,7 @@ msgstr "alaw-алгоритм"
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:847
+#: includes/dahdi_cards.class.php:917
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

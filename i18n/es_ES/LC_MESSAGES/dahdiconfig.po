@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-07 14:50-0800\n"
+"POT-Creation-Date: 2016-12-09 17:47-0800\n"
 "PO-Revision-Date: 2016-01-20 06:44+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -160,7 +160,7 @@ msgstr "Aplicar Openmode a módulos FXO"
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Aplicar Openmode a módulos FXS y FXO"
 
-#: assets/js/main.js:449
+#: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 
@@ -322,8 +322,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Canadá"
 
-#: page.dahdi.php:290 page.dahdi.php:309 page.dahdi.php:359 page.dahdi.php:416
-#: page.dahdi.php:439 page.dahdi.php:458 page.dahdi.php:503
+#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
+#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -562,7 +562,7 @@ msgstr "Canal digital %s"
 msgid "Digital Hardware"
 msgstr "Hardware digital"
 
-#: page.dahdi.php:250
+#: page.dahdi.php:247
 msgid "Disable"
 msgstr "inhabilitar"
 
@@ -570,7 +570,7 @@ msgstr "inhabilitar"
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
-#: assets/js/main.js:443
+#: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr ""
 
@@ -643,7 +643,7 @@ msgstr "Egypt"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: page.dahdi.php:245
+#: page.dahdi.php:242
 msgid "Enable"
 msgstr "Habilitar"
 
@@ -1197,7 +1197,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:331 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1569,7 +1569,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1673,7 +1673,7 @@ msgstr "Ganancia Recibida"
 msgid "Reload Asterisk DAHDi Module"
 msgstr ""
 
-#: assets/js/main.js:432
+#: assets/js/main.js:464
 msgid "Reloading..."
 msgstr ""
 
@@ -1681,7 +1681,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
-#: page.dahdi.php:493
+#: page.dahdi.php:490
 msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
@@ -1689,11 +1689,11 @@ msgstr "Restaurar Archivo a Valores por defecto"
 msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:572
+#: page.dahdi.php:569
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
-#: assets/js/main.js:454
+#: assets/js/main.js:486
 msgid "Restarting..."
 msgstr ""
 
@@ -1725,8 +1725,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: page.dahdi.php:284 page.dahdi.php:303 page.dahdi.php:347 page.dahdi.php:409
-#: page.dahdi.php:433 page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
+#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
+#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1736,7 +1736,7 @@ msgstr "Salvar"
 msgid "Select Language"
 msgstr "Seleccione Idioma"
 
-#: page.dahdi.php:324
+#: page.dahdi.php:321
 msgid "Set Defaults"
 msgstr ""
 
@@ -2339,7 +2339,7 @@ msgstr ""
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
 "la transferencia al switch ISDN, ya que envía en un mensaje FACILIDAD"
 
-#: page.dahdi.php:494
+#: page.dahdi.php:491
 msgid "This will reload the page"
 msgstr "Esto recargará la página"
 
@@ -2375,7 +2375,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1356 includes/dahdi_cards.class.php:1656
+#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2532,7 +2532,7 @@ msgstr "a-law"
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:847
+#: includes/dahdi_cards.class.php:917
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

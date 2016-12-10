@@ -230,7 +230,9 @@ class dahdi_cards {
 			}
 		}
 		$lastGroup = end($finalGroups);
-		if($lastGroup['endchan'] < $spanData['max_ch']) {
+		if(($spanData['max_ch'] == $lastGroup['reservedchan']) && ($lastGroup['endchan'] + 1) == $lastGroup['reservedchan']) {
+			//do nothing
+		} elseif($lastGroup['endchan'] < $spanData['max_ch']) {
 			$out = $this->new_calc_bchan_fxx($span,$spanData['signalling'],($lastGroup['endchan']+1));
 			$out['group'] = $groupint + 1;
 			$out['context'] = 'from-digital';

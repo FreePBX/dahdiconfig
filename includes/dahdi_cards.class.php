@@ -200,61 +200,131 @@ class dahdi_cards {
 		return $modules;
 	}
 
+	public function updateDigitalGroup($span, $updatedGroup, $groups) {
+		if(empty($this->spans[$span])) {
+			throw new \Exception("Invalid Span!");
+		}
+		$spanData = $this->spans[$span];
+		$updatedGroup = json_decode($updatedGroup,true);
+		$groups = json_decode($groups,true);
+		uasort($groups, function($a,$b){
+			if ($a['endchan'] == $b['endchan']) {
+				return 0;
+			}
+			return ($a['endchan'] < $b['endchan']) ? -1 : 1;
+		});
+
+		$finalGroups = array();
+		$lastgroup = 0;
+		$groupint = 0;
+		foreach($groups as $id => $group) {
+			if($id == $updatedGroup['groupid']) {
+				$group['usedchans'] = $updatedGroup['usedchans'];
+			}
+			$out = $this->new_calc_bchan_fxx($span,$spanData['signalling'],$group['startchan'],$group['usedchans']);
+			$out['group'] = $group['group'];
+			$out['context'] = 'from-digital';
+			$finalGroups[] = $out;
+			if($group['group'] !== 's') {
+				$groupint = $group['group'];
+			}
+		}
+		$lastGroup = end($finalGroups);
+		if($lastGroup['endchan'] < $spanData['max_ch']) {
+			$out = $this->new_calc_bchan_fxx($span,$spanData['signalling'],($lastGroup['endchan']+1));
+			$out['group'] = $groupint + 1;
+			$out['context'] = 'from-digital';
+			$finalGroups[] = $out;
+		}
+		return $finalGroups;
+	}
+
+	public function new_calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
+		if(empty($this->spans[$num])) {
+			throw new \Exception("Invalid Span!");
+		}
+		$span = $this->spans[$num];
+
+		$reservedchan = $span['reserved_ch'];
+
+		$startchan = !is_null($startchan) ? $startchan : $span['min_ch'];
+		if($startchan < $span['min_ch'] || $startchan > $span['max_ch']) {
+			throw new \Exception("Start channel is less than minimum channel!");
+		}
+		if($startchan == $reservedchan) {
+			$startchan++;
+		}
+
+		if(is_null($usedchans)) {
+			$endchan = $span['max_ch'];
+		} else {
+			$endchan = $usedchans + $startchan;
+			if($endchan < $reservedchan) {
+				$endchan--;
+			}
+		}
+
+		if($endchan > $span['max_ch'] || $endchan < $span['min_ch']) {
+			throw new \Exception("Exceded number of channels!");
+		}
+
+		$fxx = '';
+		$usedchans = 0;
+		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
+		$sig = !empty($signalling) ? $signalling : $span['signalling'];
+		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
+			for($i=$startchan;$i<=$endchan;$i++) {
+				if($i == $reservedchan) {
+					if($fxx != '') {
+						$fxx .= ",";
+					}
+					continue;
+				}
+				switch($i) {
+					case $startchan:
+						$fxx = $startchan;
+					break;
+					case $reservedchan - 1:
+						$fxx .= "-".$i;
+					break;
+					case $reservedchan + 1:
+						$fxx .= ($r != $y) ? ",".$i : $i;
+					break;
+					case $endchan:
+						$fxx .= ($r != $i) ? "-".$i : '';
+					break;
+				}
+				$usedchans++;
+			}
+			$fxx = rtrim($fxx, ',');
+		} else {
+			if($startchan == $reservedchan) {
+				$fxx = $startchan;
+			} else {
+				$o = $startchan . "-" . $endchan;
+			}
+		}
+
+		if($endchan == $reservedchan) {
+			$endchan--;
+		}
+
+		return array(
+			"fxx" => $fxx,
+			"startchan" => (int)$startchan,
+			"endchan" => (int)$endchan,
+			"usedchans" => (int)$usedchans,
+			"reservedchan" => (int)$reservedchan
+		);
+	}
+
 	/**
 	 * Calc Bchan Fxx
 	 *
 	 * Calculates the bchan and fxx strings for a given span
 	 */
 	public function calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
-		$span = $this->spans[$num];
-
-		$y = !empty($startchan) ? $startchan : $span['min_ch'];
-		if($y < $span['min_ch'] || $y > $span['max_ch']) {
-			throw new \Exception("Start channel is less than minimum channel!");
-		}
-		$x = !empty($usedchans) ? ($y + $usedchans) -1 : ($y + $span['totchans'])-1;
-		if($x > $span['max_ch'] || $x < $span['min_ch']) {
-			throw new \Exception("Exceded number of channels!");
-		}
-		$r = $span['reserved_ch'];
-		$u = !empty($usedchans) ? $usedchans - 1 : ($y + $span['totchans']);
-
-		$x = (((($y < $r) && ($x > $r)) || ($r == ($span['min_ch']+$u))) && ($u+1 < $span['totchans'])) ? $x+1 : $x;
-
-		$x = ($x <= $span['max_ch']) ? $x : $span['max_ch'];
-
-		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
-		$sig = !empty($signalling) ? $signalling : $span['signalling'];
-		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
-			$o = "";
-			for($i=$y;$i<=$x;$i++) {
-				switch($i) {
-					case $y:
-					$o .= ($r != $i) ? $i : '';
-					break;
-					case $r - 1:
-					$o .= "-".$i;
-					break;
-					case $r + 1:
-					$o .= ($r != $y) ? ",".$i : $i;
-					break;
-					case $x:
-					$o .= ($r != $i) ? "-".$i : '';
-					break;
-				}
-			}
-		} else {
-			if($x == $r) {
-				$o = $y;
-			} else {
-				$o = $y . "-" . $x;
-			}
-		}
-		return array(
-			'fxx' => $o,
-			'endchan' => ($x == $r) ? $y : $x,
-			'startchan' => $y
-		);
+		return $this->new_calc_bchan_fxx($num,$signalling,$startchan,$usedchans);
 	}
 
 	/**

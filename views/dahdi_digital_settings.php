@@ -218,10 +218,14 @@
         <br />
         <h2><?php echo ('Group Settings')?> (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);"><?php echo ('Reset Groups')?></a>)</h2>
         <hr>
+				<div class="digital-groups">
         <?php $groups = is_array($span['additional_groups'])?$span['additional_groups']:array();
+						end($groups);
+						$lastKey = key($groups);
+						reset($groups);
             foreach($groups as $gkey => $data) {
         ?>
-        <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">
+        <table width="100%" id="editspan_<?php echo $key?>_group_settings_<?php echo $gkey?>" data-span="<?php echo $key?>" data-group-id="<?php echo $gkey?>" style="text-align:left;" border="0" cellspacing="0">
             <tr>
                 <td style="width:10px;">
                     <label><a href="#" class="info"><?php echo ('Group')?>:<span><?php echo ("Group Number, use 's' to skip said group")?></span></a></label>
@@ -243,11 +247,12 @@
                     <label><?php echo ('Used Channels')?>: </label>
                 </td>
                 <td>
-                    <select id="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>" name="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>">
-                    <?php for($i=1; $i<=($span['totchans']-1); $i++) { ?>
-                        <?php $data['usedchans'] = ($data['usedchans'] == $span['totchans']) ? ($data['usedchans'] -1) : $data['usedchans']; ?>
+                    <select id="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>" class="digital-used-chans" name="editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>">
+										<?php if($gkey == $lastKey) { for($i=1; $i<=($data['usedchans']); $i++) { ?>
                         <option value="<?php echo $i?>" <?php echo set_default($data['usedchans'],$i); ?>><?php echo $i?></option>
-                    <?php } ?>
+                    <?php } } else { ?>
+											<option value="<?php echo $data['usedchans']?>" selected><?php echo $data['usedchans']?></option>
+											<?php } ?>
                     </select>
                   <?php echo ('From')?>: <span id="editspan_<?php echo $key?>_from_<?php echo $gkey?>"><?php echo $data['fxx'];?></span>
                   <?php echo ('Reserved')?>: <span id="editspan_<?php echo $key?>_reserved_<?php echo $gkey?>"><?php echo $span['reserved_ch']?></span>
@@ -257,5 +262,6 @@
             </tr>
         </table>
         <?php } ?>
+				</div>
     </div>
 </form>

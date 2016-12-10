@@ -4,6 +4,60 @@ $dahdi_cards = new dahdi_cards();
 
 
 switch($_REQUEST['type']) {
+	case "digitalgroupsupdate":
+		$groups = $dahdi_cards->updateDigitalGroup($_REQUEST['span'], $_REQUEST['group'], $_REQUEST['groups']);
+		$html = '';
+		$span = $_REQUEST['span'];
+		$context = 'from-digital';
+		end($groups);
+		$lastKey = key($groups);
+		reset($groups);
+		foreach($groups as $id => $group) {
+			if($id == $lastKey) {
+				$opts = '';
+				for($i=1; $i<=$group['usedchans']; $i++) {
+					$selected = ($i == $group['usedchans']) ? 'selected' : '';
+					$opts .= '<option value="'.$i.'" '.$selected.'>'.$i.'</option>';
+				}
+			} else {
+				$opts = '<option value="'.$group['usedchans'].'" selected>'.$group['usedchans'].'</option>';
+			}
+
+			$html .= <<<EOF
+			<table width="100%" id="editspan_{$span}_group_settings_${id}" style="text-align:left;" border="0" cellspacing="0" data-span="{$span}" data-group-id="{$id}">
+					<tr>
+							<td style="width:10px;">
+									<label>Group: </label>
+							</td>
+							<td>
+								<input type="text" id="editspan_{$span}_group_${id}" name="editspan_{$span}_group_${id}" size="2" value="{$group['group']}" />
+							</td>
+					</tr>
+					<tr>
+							<td style="width:10px;">
+									<label>Context: </label>
+							</td>
+							<td>
+								<input type="text" id="editspan_{$span}_context_${id}" name="editspan_{$span}_context_${id}" value="$context" />
+							</td>
+					</tr>
+					<tr>
+							<td style="width:10px;">
+									<label>Used Channels: </label>
+							</td>
+							<td>
+									<select id="editspan_{$span}_definedchans_${id}" class="digital-used-chans" name="editspan_{$span}_definedchans_${id}">
+											$opts
+								</select>
+								From: <span id="editspan_{$span}_from_${id}">{$group['fxx']}</span>
+								Reserved: <span id="editspan_{$span}_reserved_${id}">{$group['reservedchan']}</span>
+							</td>
+					</tr>
+			</table>
+EOF;
+		}
+		$json = array("status" => true, "groups" => $groups, "html" => $html);
+	break;
 	case "modulessubmit":
 		$json = array("status" => false);
 		if(!empty($_REQUEST['reset'])) {
@@ -257,13 +311,13 @@ switch($_REQUEST['type']) {
 
 				$o = $dahdi_cards->calc_bchan_fxx($_REQUEST['span'],NULL,$s,$c);
 				$html = <<<EOF
-				<table width="100%" id="editspan_{$span['id']}_group_settings_${groupc}" style="text-align:left;" border="0" cellspacing="0">
+				<table width="100%" id="editspan_{$span['span']}_group_settings_${groupc}" style="text-align:left;" border="0" cellspacing="0">
 						<tr>
 								<td style="width:10px;">
 										<label>Group: </label>
 								</td>
 								<td>
-									<input type="text" id="editspan_{$span['id']}_group_${groupc}" name="editspan_{$span['id']}_group_${groupc}" size="2" value="{$group_num}" />
+									<input type="text" id="editspan_{$span['span']}_group_${groupc}" name="editspan_{$span['span']}_group_${groupc}" size="2" value="{$group_num}" />
 								</td>
 						</tr>
 						<tr>
@@ -271,7 +325,7 @@ switch($_REQUEST['type']) {
 										<label>Context: </label>
 								</td>
 								<td>
-									<input type="text" id="editspan_{$span['id']}_context_${groupc}" name="editspan_{$span['id']}_context_${groupc}" value="$context" />
+									<input type="text" id="editspan_{$span['span']}_context_${groupc}" name="editspan_{$span['span']}_context_${groupc}" value="$context" />
 								</td>
 						</tr>
 						<tr>
@@ -279,11 +333,11 @@ switch($_REQUEST['type']) {
 										<label>Used Channels: </label>
 								</td>
 								<td>
-										<select id="editspan_{$span['id']}_definedchans_${groupc}" name="editspan_{$span['id']}_definedchans_${groupc}">
+										<select id="editspan_{$span['span']}_definedchans_${groupc}" name="editspan_{$span['span']}_definedchans_${groupc}">
 												$opts
 									</select>
-									From: <span id="editspan_{$span['id']}_from_${groupc}">{$o['fxx']}</span>
-									Reserved: <span id="editspan_{$span['id']}_reserved_${groupc}">{$span['reserved_ch']}</span>
+									From: <span id="editspan_{$span['span']}_from_${groupc}">{$o['fxx']}</span>
+									Reserved: <span id="editspan_{$span['span']}_reserved_${groupc}">{$span['reserved_ch']}</span>
 								</td>
 						</tr>
 				</table>

@@ -218,19 +218,16 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
-    foreach($groups as $gkey => $data) { ?>
-$('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
-    var span = <?php echo $key?>;
-    var endchan = $(this).val();
-    var totalchan = <?php echo isset($span['totchans'])?$span['totchans']:'0'?>;
-    var group = <?php echo $gkey?>;
-    update_digital_groups(span,group,endchan);
+<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();?>
+
+<?php } ?>
+$(document).on("change",".digital-used-chans",function(e) {
+	var table = $(this).parents("table");
+	var span = table.data("span");
+	var group = table.data("group-id");
+	var usedchans = $(this).val();
+	update_digital_groups(span,group,Number(usedchans));
 });
-
-<?php } ?>
-
-<?php } ?>
 $(function(){
 	$('.modules-sortable').sortable();
     <?php

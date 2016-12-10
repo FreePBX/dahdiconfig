@@ -328,17 +328,17 @@ $(function(){
                 text: "<?php echo _('MFC/R2 Settings') ?>",
                 id: 'button_mfc_r2_span<?php echo $key?>',
                 click: function() {
-                    if ($('input[name=mfcr2_active]').val() === "0") {
-                        $('input[name=mfcr2_active]').val('1');
+                    if ($('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val() === "0") {
+                        $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('1');
                         $('#button_mfc_r2_span<?php echo $key?>').text('General Settings');
                         $('#button_mfc_r2_defs_<?php echo $key ?>').show();
                     }
                     else {
-                        $('input[name=mfcr2_active]').val('0');
+                        $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('0');
                         $('#button_mfc_r2_span<?php echo $key?>').text('MFC/R2 Settings');
                         $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
                     }
-                    mfcr2_toggle();
+                    mfcr2_toggle(<?php echo $key?>);
                 }
             },
             "<?php echo _('Save')?>": function() {
@@ -358,10 +358,10 @@ $(function(){
             },
         },
         open: function() {
-    	    mfcr2_toggle();
+    	    	mfcr2_toggle(<?php echo $key?>);
             $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
-            $('input[name=mfcr2_active]').val('0');
-            if ("<?php echo $span['signalling']?>" != 'mfc_r2') {
+            $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('0');
+            if ($("#editspan_<?php echo $key ?>_signalling").val() != 'mfcr2') {
                 $('#button_mfc_r2_span<?php echo $key?>').hide();
                 $("#editspan_<?php echo $key?>_switchtype_tr").show();
             }
@@ -380,7 +380,7 @@ $(function(){
         } else {
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow')
         }
-        if ($(this).val() == 'mfc_r2') {
+        if ($(this).val() == 'mfcr2') {
             $('#button_mfc_r2_span<?php echo $key?>').show();
             $("#editspan_<?php echo $key?>_fac").val('CAS/HDB3');
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow');

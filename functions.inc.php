@@ -87,7 +87,7 @@ class dahdiconfig_conf {
 						$output[] = "wat_moduletype=telit";
 					} else {
 						$output[] = "signalling={$span['signalling']}";
-						if ($span['signalling'] == 'mfc_r2') {
+						if ($span['signalling'] == 'mfcr2') {
 							if ($span['mfcr2_variant']) {$output[] = "mfcr2_variant=" . strtolower($span['mfcr2_variant']);}
 							if ($span['mfcr2_get_ani_first']) {$output[] = "mfcr2_get_ani_first={$span['mfcr2_get_ani_first']}";}
 							if ($span['mfcr2_max_ani']) {$output[] = "mfcr2_max_ani={$span['mfcr2_max_ani']}";}

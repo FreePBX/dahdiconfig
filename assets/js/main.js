@@ -18,10 +18,12 @@ function mfcr2_set_defaults(span) {
     $('#editspan_' + span + '_mfcr2_forced_release').val('no');
     $('#editspan_' + span + '_mfcr2_charge_calls').val('yes');
     $('#editspan_' + span + '_mfcr2_advanced_protocol_file').val('');
+		$('#editspan_' + span + '_mfcr2_mfback_timeout').val('-1');
+		$('#editspan_' + span + '_mfcr2_metering_pulse_timeout').val('-1');
 }
 /* MFC/R2 show/hide */
-function mfcr2_toggle() {
-    if ($('input[name=mfcr2_active]').val() === "0") {
+function mfcr2_toggle(span) {
+    if ($('#digital-settings-'+span+' input[name=mfcr2_active]').val() === "0") {
         $('.mfcr2-settings').hide();
         $('.isdn-settings').show();
     }

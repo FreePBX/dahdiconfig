@@ -241,7 +241,7 @@ function update_digital_groups(span,groupid,usedchans) {
 
 		}).done(function(data){
 			spandata[span].groups = data.groups;
-			$(".digital-groups").html(data.html);
+			$("#dahdi_editspan_"+span+" .digital-groups").html(data.html);
 		}).fail(function () {
 			console.warn("Error");
 		});

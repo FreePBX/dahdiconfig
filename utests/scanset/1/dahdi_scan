@@ -142,3 +142,75 @@ coding_opts=B8ZS,AMI
 framing_opts=ESF,D4
 coding=
 framing=CAS
+[8]
+active=yes
+alarms=RED
+description=wanpipe1 card 0
+name=WPE1/0
+manufacturer=Sangoma Technologies
+devicetype=A104
+location=SLOT=4, BUS=8
+basechan=1
+totchans=31
+irq=0
+type=digital-E1
+syncsrc=0
+lbo=0 db (CSU)/0-133 feet (DSX-1)
+coding_opts=HDB3
+framing_opts=CCS,CRC4
+coding=HDB3
+framing=CAS
+[9]
+active=yes
+alarms=RED
+description=wanpipe2 card 1
+name=WPE1/1
+manufacturer=Sangoma Technologies
+devicetype=A104
+location=SLOT=4, BUS=8
+basechan=32
+totchans=31
+irq=0
+type=digital-E1
+syncsrc=0
+lbo=0 db (CSU)/0-133 feet (DSX-1)
+coding_opts=HDB3
+framing_opts=CCS,CRC4
+coding=HDB3
+framing=CAS
+[10]
+active=yes
+alarms=RED
+description=wanpipe3 card 2
+name=WPE1/2
+manufacturer=Sangoma Technologies
+devicetype=A104
+location=SLOT=4, BUS=8
+basechan=63
+totchans=31
+irq=0
+type=digital-E1
+syncsrc=0
+lbo=0 db (CSU)/0-133 feet (DSX-1)
+coding_opts=HDB3
+framing_opts=CCS,CRC4
+coding=HDB3
+framing=CAS
+[11]
+active=yes
+alarms=RED
+description=wanpipe4 card 3
+name=WPE1/3
+manufacturer=Sangoma Technologies
+devicetype=A104
+location=SLOT=4, BUS=8
+basechan=94
+totchans=31
+irq=0
+type=digital-E1
+syncsrc=0
+lbo=0 db (CSU)/0-133 feet (DSX-1)
+coding_opts=HDB3
+framing_opts=CCS,CRC4
+coding=HDB3
+framing=CAS

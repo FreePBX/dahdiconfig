@@ -272,12 +272,9 @@ class dahdi_cards {
 		$usedchans = 0;
 		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
 		$sig = !empty($signalling) ? $signalling : $span['signalling'];
-		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
+		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri' || substr($sig,0,5) == 'mfcr2') {
 			for($i=$startchan;$i<=$endchan;$i++) {
 				if($i == $reservedchan) {
-					if($fxx != '') {
-						$fxx .= ",";
-					}
 					continue;
 				}
 				switch($i) {
@@ -288,21 +285,21 @@ class dahdi_cards {
 						$fxx .= "-".$i;
 					break;
 					case $reservedchan + 1:
-						$fxx .= ($r != $y) ? ",".$i : $i;
+						$fxx .= ($reservedchan != $startchan) ? ",".$i : $i;
 					break;
 					case $endchan:
-						$fxx .= ($r != $i) ? "-".$i : '';
+						$fxx .= ($reservedchan != $i) ? "-".$i : '';
 					break;
 				}
 				$usedchans++;
 			}
 			$fxx = rtrim($fxx, ',');
 		} else {
-			if($startchan == $reservedchan) {
-				$fxx = $startchan;
-			} else {
-				$o = $startchan . "-" . $endchan;
+			if($endchan == $reservedchan) {
+				$endchan--;
 			}
+			$fxx = $startchan . "-" . $endchan;
+			$usedchans = ($endchan - $startchan) + 1;
 		}
 
 		if($endchan == $reservedchan) {

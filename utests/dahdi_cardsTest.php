@@ -84,20 +84,23 @@ class dahdiFunctionsTest extends PHPUnit_Framework_TestCase{
 	 * @depends testRead_dahdi_scan
 	 */
 	public function testCalc_bchan_fxx() {
-		$out = self::$dahdi_cards->calc_bchan_fxx(1,'pri_net',1,15);
-		$this->assertEquals($out, array('fxx' => '1-15', 'endchan' => '15', 'startchan' => 1));
+		$signallings = array("mfcr2","pri_cpe","pri_net","bri_cpe","bri_net","bri_net_ptmp","bri_cpe_ptmp");
+		foreach($signallings as $sig) {
+			$out = self::$dahdi_cards->calc_bchan_fxx(1,$sig,1,15);
+			$this->assertEquals(array('fxx' => '1-15', 'endchan' => 15, 'startchan' => 1, 'usedchans' => 15, 'reservedchan' => 24),$out);
 
-		$out = self::$dahdi_cards->calc_bchan_fxx(1,'pri_net',1,23);
-		$this->assertEquals($out, array('fxx' => '1-23', 'endchan' => '23', 'startchan' => 1));
+			$out = self::$dahdi_cards->calc_bchan_fxx(1,$sig,1,23);
+			$this->assertEquals(array('fxx' => '1-23', 'endchan' => 23, 'startchan' => 1, 'usedchans' => 23, 'reservedchan' => 24),$out);
 
-		$out = self::$dahdi_cards->calc_bchan_fxx(3,'pri_net',49,30);
-		$this->assertEquals($out, array('fxx' => '49-63,65-79', 'endchan' => '79', 'startchan' => 49));
+			$out = self::$dahdi_cards->calc_bchan_fxx(3,$sig,49,30);
+			$this->assertEquals(array('fxx' => '49-63,65-79', 'endchan' => 79, 'startchan' => 49, 'usedchans' => 30, 'reservedchan' => 64),$out);
+		}
 
-		$out = self::$dahdi_cards->calc_bchan_fxx(1,'random',1,15);
-		$this->assertEquals($out, array('fxx' => '1-15', 'endchan' => '15', 'startchan' => 1));
+		$out = self::$dahdi_cards->calc_bchan_fxx(1,'em',1,15);
+		$this->assertEquals(array('fxx' => '1-15', 'endchan' => 15, 'startchan' => 1, 'usedchans' => 15, 'reservedchan' => 24),$out);
 
-		$out = self::$dahdi_cards->calc_bchan_fxx(1,'random');
-		$this->assertEquals($out, array('fxx' => '1', 'endchan' => '1', 'startchan' => 1));
+		$out = self::$dahdi_cards->calc_bchan_fxx(1,'em_w',1,23);
+		$this->assertEquals(array('fxx' => '1-23', 'endchan' => 23, 'startchan' => 1, 'usedchans' => 23, 'reservedchan' => 24),$out);
 	}
 
 	/**
@@ -128,11 +131,11 @@ class dahdiFunctionsTest extends PHPUnit_Framework_TestCase{
 	public function testDahdiArray2Chans(){
     $arr = array(1);
     $ret = \dahdi_array2chans($arr);
-    $this->assertEquals($ret, '1');
+    $this->assertEquals('1',$ret);
 
     $arr = array(1,2,3,4,5,6,7,8,9,10);
     $ret = \dahdi_array2chans($arr);
-    $this->assertEquals($ret, '1-10');
+    $this->assertEquals('1-10',$ret);
 
     $arr = array();
     $ret = \dahdi_array2chans($arr);

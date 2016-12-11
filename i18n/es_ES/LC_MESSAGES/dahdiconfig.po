@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-09 17:47-0800\n"
-"PO-Revision-Date: 2016-12-11 03:58+0200\n"
+"PO-Revision-Date: 2016-12-11 04:03+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
@@ -1620,7 +1620,6 @@ msgid "Outgoing"
 msgstr "Saliente"
 
 #: views/dahdi_digital_settings.php:80
-#, fuzzy
 msgid "PRI - CPE"
 msgstr "PRI - CPE"
 
@@ -2633,6 +2632,20 @@ msgid ""
 "accept the call with DAHDIAcceptR2Call or implicitly through the Answer() "
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
+"Lo más probable es que no necesite esta función. El valor predeterminado es "
+"yes/si. <br/> Cuando se establece en sí, se aceptarán todas las llamadas que "
+"se ofrecen (llamadas entrantes) para las que DNIS es válido (existe en "
+"extensions.conf) y también la validación de llamada de recopilación con un "
+"tono de Grupo B (llamada con cargo o no, dependiendo de mfcr2_charge_calls). "
+"<br/> Con este valor en 'no' entonces la llamada NO será aceptada en la "
+"oferta y la llamada comenzará su ejecución en extensions.conf sin ser "
+"aceptada hasta que el canal sea contestado Con Respuesta () o cualquier otra "
+"aplicación que resulte en que el canal sea contestado). <br/> Esto se puede "
+"establecer en 'no' si su telco o PBX necesita que la causa de la "
+"interrupción se establezca con precisión. <br/> Cuando esta opción está "
+"establecida en 'no', debe aceptar explícitamente la llamada con "
+"DAHDIAcceptR2Call o implícitamente a través de la aplicación Answer (). <br/>"
+" <strong> Por defecto: </strong> yes"
 
 #: install.php:612
 msgid "add additional column"
@@ -2644,11 +2657,11 @@ msgstr "a-law"
 
 #: views/dahdi_mfcr2_settings.php:92
 msgid "collect_call"
-msgstr ""
+msgstr "collect_call"
 
 #: includes/dahdi_cards.class.php:917
 msgid "dahdi_scan exists but can not be run as this user!"
-msgstr ""
+msgstr "¡Dahdi_scan existe pero no puede ser ejecutado como este usuario!"
 
 #: views/dahdi_modprobe_settings.php:62
 msgid "fcc"
@@ -2656,23 +2669,23 @@ msgstr "fcc"
 
 #: views/dahdi_digital_settings.php:196
 msgid "gsm"
-msgstr ""
+msgstr "gsm"
 
 #: views/dahdi_mfcr2_settings.php:91
 msgid "international_priority_subscriber"
-msgstr ""
+msgstr "international_priority_subscriber"
 
 #: views/dahdi_mfcr2_settings.php:90
 msgid "international_subscriber"
-msgstr ""
+msgstr "international_subscriber"
 
 #: views/dahdi_mfcr2_settings.php:89
 msgid "national_priority_subscriber"
-msgstr ""
+msgstr "national_priority_subscriber"
 
 #: views/dahdi_mfcr2_settings.php:88
 msgid "national_subscriber"
-msgstr ""
+msgstr "national_subscriber"
 
 #: views/dahdi_modprobe_settings.php:195
 msgid "none - Performs no detection"

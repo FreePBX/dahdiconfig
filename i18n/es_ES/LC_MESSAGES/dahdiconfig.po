@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-09 17:47-0800\n"
+"POT-Creation-Date: 2016-12-12 11:48-0800\n"
 "PO-Revision-Date: 2016-12-11 04:03+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/es_ES/>\n"
-"Language: es_ES\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"dahdiconfig/es_ES/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -166,7 +166,8 @@ msgstr "Aplicar Openmode a módulos FXS y FXO"
 
 #: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
-msgstr "¿Está seguro de que desea reiniciar sin pulsar 'Aplicar configuración'?"
+msgstr ""
+"¿Está seguro de que desea reiniciar sin pulsar 'Aplicar configuración'?"
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
@@ -573,8 +574,8 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 "Determine si debe o no obtener el ANI antes de obtener DNIS. Algunas telcos "
-"requieren ANI primero otras no les importa. <br/> <strong> Por defecto: "
-"</strong> no"
+"requieren ANI primero otras no les importa. <br/> <strong> Por defecto: </"
+"strong> no"
 
 #: functions.inc.php:536
 msgid "Device Options"
@@ -1184,8 +1185,8 @@ msgid ""
 msgstr ""
 "El registro se almacena en el directorio de registro de Asterisk "
 "especificado en asterisk.conf más mfcr2/<lo que usted pone aquí>. Si "
-"especifica 'span1' aquí y asterisk.conf tiene como directorio de registro "
-"/var/log/asterisk entonces la ruta completa a sus registros de llamadas MFC/"
+"especifica 'span1' aquí y asterisk.conf tiene como directorio de registro /"
+"var/log/asterisk entonces la ruta completa a sus registros de llamadas MFC/"
 "R2 será /var/log/asterisk/mfcr2/span1 (el directorio será automáticamente "
 "Creado si no está presente ya)"
 
@@ -1339,7 +1340,8 @@ msgstr "Max DNIS"
 
 #: views/dahdi_mfcr2_settings.php:35
 msgid "Max amount of ANI to ask for<br /> <strong>Default:</strong>10"
-msgstr "Cantidad máxima de ANI a pedir <br/> <strong> Por defecto: </strong> 10"
+msgstr ""
+"Cantidad máxima de ANI a pedir <br/> <strong> Por defecto: </strong> 10"
 
 #: views/dahdi_mfcr2_settings.php:49
 msgid "Max amount of DNIS to ask for<br /> <strong>Default:</strong>4"
@@ -1378,8 +1380,8 @@ msgstr ""
 "establece un buen valor recomendado para este temporizador. <br/> Utilice "
 "este parámetro sólo cuando * * realmente quiere reemplazar el valor "
 "predeterminado, de lo contrario sólo comenta este valor o poner A -1. <br /> "
-"Cualquier valor negativo significa 'default'. <br/> <strong> Por defecto: "
-"</strong> -1"
+"Cualquier valor negativo significa 'default'. <br/> <strong> Por defecto: </"
+"strong> -1"
 
 #: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
 #: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
@@ -1649,7 +1651,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
+#: includes/dahdi_cards.class.php:1457 includes/dahdi_cards.class.php:1763
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1846,9 +1848,9 @@ msgid ""
 "Skips request of calling party category and ANI. <br />You need openr2 >= "
 "1.2.0 to use this feature<br /> <strong>Default:</strong>no"
 msgstr ""
-"Omite la solicitud de la categoría de la parte llamante y ANI. <br/>"
-"Necesitas openr2> = 1.2.0 para usar esta función <br/> <strong> Por defecto: "
-"</strong> no"
+"Omite la solicitud de la categoría de la parte llamante y ANI. <br/"
+">Necesitas openr2> = 1.2.0 para usar esta función <br/> <strong> Por "
+"defecto: </strong> no"
 
 #: views/dahdi_advanced_settings.php:119 views/dahdi_modprobe_settings.php:102
 msgid "Slovakia"
@@ -2322,8 +2324,8 @@ msgstr ""
 "Esta característica está relacionada pero independiente de "
 "mfcr2_allow_collect_calls. <br/> Algunas PBX requieren un proceso de doble "
 "respuesta para bloquear las llamadas de cobro, si alguna vez tiene problemas "
-"para bloquear las llamadas de cobro usando las señales del Grupo B ("
-"mfcr2_allow_collect_calls = no) entonces puede intentar con "
+"para bloquear las llamadas de cobro usando las señales del Grupo B "
+"(mfcr2_allow_collect_calls = no) entonces puede intentar con "
 "mfcr2_double_answer = yes, esto hará que cada Contestación se cambie por "
 "contestación-> clear back-> contestación (como un flash) (ver también "
 "'mfcr2_allow_collect_calls') <br/> <strong> Por defecto: </strong> no"
@@ -2480,7 +2482,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
+#: includes/dahdi_cards.class.php:1457 includes/dahdi_cards.class.php:1763
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2644,8 +2646,8 @@ msgstr ""
 "establecer en 'no' si su telco o PBX necesita que la causa de la "
 "interrupción se establezca con precisión. <br/> Cuando esta opción está "
 "establecida en 'no', debe aceptar explícitamente la llamada con "
-"DAHDIAcceptR2Call o implícitamente a través de la aplicación Answer (). <br/>"
-" <strong> Por defecto: </strong> yes"
+"DAHDIAcceptR2Call o implícitamente a través de la aplicación Answer (). <br/"
+"> <strong> Por defecto: </strong> yes"
 
 #: install.php:612
 msgid "add additional column"
@@ -2659,7 +2661,7 @@ msgstr "a-law"
 msgid "collect_call"
 msgstr "collect_call"
 
-#: includes/dahdi_cards.class.php:917
+#: includes/dahdi_cards.class.php:935
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "¡Dahdi_scan existe pero no puede ser ejecutado como este usuario!"
 

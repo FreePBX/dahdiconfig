@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-09 17:47-0800\n"
+"POT-Creation-Date: 2016-12-12 11:48-0800\n"
 "PO-Revision-Date: 2016-02-01 23:04+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -1484,7 +1484,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
+#: includes/dahdi_cards.class.php:1457 includes/dahdi_cards.class.php:1763
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -2141,7 +2141,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1439 includes/dahdi_cards.class.php:1740
+#: includes/dahdi_cards.class.php:1457 includes/dahdi_cards.class.php:1763
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2288,7 +2288,7 @@ msgstr "alaw"
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:917
+#: includes/dahdi_cards.class.php:935
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

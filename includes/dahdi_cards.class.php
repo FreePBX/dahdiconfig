@@ -1479,7 +1479,13 @@ class dahdi_cards {
 							continue;
 						}
 						if ($span['signalling'] == 'mfcr2') {
-							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
+							$chans = explode(',', $s['fxx']);
+							foreach($chans as $chan){
+									if(!empty($fxx[$fx])){
+										$fxx[$fx] .= ',';
+									}
+									$fxx[$fx] .= $chan.':1101';
+							}
 						} else {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 						}

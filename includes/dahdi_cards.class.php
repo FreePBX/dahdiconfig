@@ -170,7 +170,6 @@ class dahdi_cards {
 		$this->original_modprobe = array_keys($this->modprobe);
 		$this->original_system = array_keys($this->systemsettings);
 
-		$this->load();
 	}
 
 	public function get_all_modules() {
@@ -531,12 +530,31 @@ class dahdi_cards {
 	}
 
 	/**
+	 * Update the span definitions
+	 * @method set_spans
+	 * @param  Array    $spans Array of span information
+	 */
+	public function set_spans($spans) {
+		$this->spans = $spans;
+	}
+
+	/**
 	 * Get Span
 	 *
 	 * Get a digital span and all its info
 	 */
 	public function get_span($num) {
 		return $this->spans[$num];
+	}
+
+	/**
+	 * Set single span data
+	 * @method set_span
+	 * @param  integer   $num  The span number
+	 * @param  array   $data Array of data
+	 */
+	public function set_span($num, $data) {
+		$this->spans[$num] = $data;
 	}
 
 	/**
@@ -1435,7 +1453,7 @@ class dahdi_cards {
 
 		global $db;
 		$nt =& notifications::create($db);
-		if ( ! is_writable($file)) {
+		if ((file_exists($file) && !is_writable($file)) || (!file_exists($file) && !is_writable(dirname($file)))) {
 			$nt->add_error('dahdiconfig', 'SYSTEMCONF', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s"),$file), "", false, true);
 			return false;
 		} else {
@@ -1472,10 +1490,9 @@ class dahdi_cards {
 					$fx = 'e&m';
 				}
 				$data = $span['additional_groups'];
-				dbug($data);
 				if (!empty($data)) {
 					foreach($data as $s){
-						if (strtolower($s['group'] == 's')){
+						if (strtolower($s['group'] === 's')){
 							continue;
 						}
 						if ($span['signalling'] == 'mfcr2') {
@@ -1575,7 +1592,7 @@ class dahdi_cards {
 		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
 
 		foreach($this->get_all_systemsettings() as $k => $v) {
-			if(!in_array($k,$this->original_system)){
+			if(!is_array($this->original_system) || (is_array($this->original_system) && !in_array($k,$this->original_system))){
 				if(empty($k)||empty($v)){continue;}
 				$output[] = $k."=".$v;
 			}

@@ -123,6 +123,71 @@ class dahdiFunctionsTest extends PHPUnit_Framework_TestCase{
 		$o = self::$dahdi_cards->get_drivers_list();
 	}
 
+	/**
+	 * @depends testRead_dahdi_scan
+	 */
+
+	public function testWrite_system_conf() {
+		global $amp_conf;
+		$amp_conf['DAHDISYSTEMLOC'] = "/tmp/dahdisystem.conf";
+		$span = self::$dahdi_cards->get_span(8);
+		$span['additional_groups'] = array(
+			array(
+				'group' => 0,
+				'context' => 'from-digital',
+				'usedchans' => 29,
+				'startchan' => 1,
+				'endchan' => 30,
+				'fxx' => "1-15,17-30"
+			),
+			array(
+				'group' => 's',
+				'context' => 'from-digital',
+				'usedchans' => 1,
+				'startchan' => 31,
+				'endchan' => 31,
+				'fxx' => "31"
+			)
+		);
+		$span['signalling'] = 'mfcr2';
+		self::$dahdi_cards->set_span(8,$span);
+
+		$span = self::$dahdi_cards->get_span(9);
+		$span['additional_groups'] = array(
+			array(
+				'group' => 0,
+				'context' => 'from-digital',
+				'usedchans' => 30,
+				'startchan' => 32,
+				'endchan' => 62,
+				'fxx' => "32-46,48-62"
+			)
+		);
+		$span['signalling'] = 'pri_net';
+		self::$dahdi_cards->set_span(9,$span);
+
+		$span = self::$dahdi_cards->get_span(3);
+		$span['additional_groups'] = array(
+			array(
+				'group' => 0,
+				'context' => 'from-digital',
+				'usedchans' => 30,
+				'startchan' => 49,
+				'endchan' => 79,
+				'fxx' => "49-63,65-79"
+			)
+		);
+		$span['signalling'] = 'pri_net';
+		self::$dahdi_cards->set_span(3,$span);
+
+		self::$dahdi_cards->write_system_conf();
+		$out = file_get_contents("/tmp/dahdisystem.conf");
+		$out2 = file_get_contents(__DIR__."/scanset/1/systemconf");
+
+		$this->assertEquals(trim($out2),$out);
+		unlink("/tmp/dahdisystem.conf");
+	}
+
 	protected function tearDown() {
 		\Mockery::close();
 	}

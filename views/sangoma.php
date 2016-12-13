@@ -40,7 +40,7 @@
 	-->
   <tr>
     <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK"><?php echo _('Set wanpipe port clocking') ?></label>
+      <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK"><?php echo _('Set port clocking') ?></label>
     </td>
     <td>
       <select name="sangoma_WANPIPE_GLOBAL_FE_CLOCK" id="sangoma_WANPIPE_GLOBAL_FE_CLOCK" class="form-control">
@@ -51,7 +51,7 @@
   </tr>
   <tr>
     <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_HW_DTMF"><?php echo _('Set wanpipe port clocking') ?></label>
+      <label for="sangoma_WANPIPE_GLOBAL_HW_DTMF"><?php echo _('Control hardware DTMF') ?></label>
     </td>
     <td>
       <select name="sangoma_WANPIPE_GLOBAL_HW_DTMF" id="sangoma_WANPIPE_GLOBAL_HW_DTMF" class="form-control">

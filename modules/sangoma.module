@@ -78,7 +78,7 @@ class dahdi_sangoma {
 					}
 					$output = "WANPIPE_GLOBAL_CFG=DAHDI\n";
 					$output .= "WANPIPE_WITH_DIGIUM=".($settings['dahdimode'] == 'yes' ? 'TRUE' : 'FALSE')."\n";
-					$output .= !empty($settings['dahdimode']) && !empty($settings['t1mode']) && $settings['dahdimode'] == 'yes' ? "WANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode']."\n" : "";
+					$output .= !empty($settings['t1mode']) ? "WANPIPE_GLOBAL_FE_MEDIA=".$settings['t1mode']."\n" : "";
 					$output .= !empty($settings['WANPIPE_GLOBAL_FE_CLOCK']) ? "WANPIPE_GLOBAL_FE_CLOCK=".$settings['WANPIPE_GLOBAL_FE_CLOCK']."\n" : "";
 					$output .= !empty($settings['WANPIPE_GLOBAL_HW_DTMF']) ? "WANPIPE_GLOBAL_HW_DTMF=".$settings['WANPIPE_GLOBAL_HW_DTMF']."\n" : "";
 					$output .= !empty($settings['WANPIPE_GLOBAL_RING_DEBOUNCE']) ? "WANPIPE_GLOBAL_RING_DEBOUNCE=".$settings['WANPIPE_GLOBAL_RING_DEBOUNCE']."\n" : "";

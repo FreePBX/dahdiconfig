@@ -1486,7 +1486,7 @@ class dahdi_cards {
 				if (substr($span['signalling'],0,2) == 'fx') {
 					$fx = str_replace('_','',$span['signalling']);
 				} else if ($span['signalling'] == 'mfcr2') {
-					$fx = 'cas';
+					$fx = 'mfcr2';
 				} else {
 					$fx = 'e&m';
 				}
@@ -1502,7 +1502,7 @@ class dahdi_cards {
 									if(!empty($fxx[$fx])){
 										$fxx[$fx] .= ',';
 									}
-									$fxx[$fx] .= $chan.':1101';
+									$fxx[$fx] .= $chan;
 							}
 						} else {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
@@ -1523,7 +1523,12 @@ class dahdi_cards {
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
 		foreach ($fxx as $e=>$val) {
-			$output[]  = "$e={$val}";
+			if($e == "mfcr2") {
+				$output[]  = "cas={$val}:1101";
+			} else {
+				$output[]  = "$e={$val}";
+			}
+
 			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.str_replace(":1101", "", $val);
 		}
 

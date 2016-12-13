@@ -12,7 +12,7 @@ class dahdi_sangoma {
 		"WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER" => "400",
 		"WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT" => "5000",
 		"WANPIPE_GLOBAL_RING_DEBOUNCE" => "0",
-		"TE_SIG_MODE" => "CCS"
+		"WANPIPE_GLOBAL_FE_TE_SIG" => "CCS"
 	);
 	public function datastore() {
 	}
@@ -83,7 +83,7 @@ class dahdi_sangoma {
 					$output .= !empty($settings['WANPIPE_GLOBAL_FE_CLOCK']) ? "WANPIPE_GLOBAL_FE_CLOCK=".$settings['WANPIPE_GLOBAL_FE_CLOCK']."\n" : "";
 					$output .= !empty($settings['WANPIPE_GLOBAL_HW_DTMF']) ? "WANPIPE_GLOBAL_HW_DTMF=".$settings['WANPIPE_GLOBAL_HW_DTMF']."\n" : "";
 					$output .= !empty($settings['WANPIPE_GLOBAL_RING_DEBOUNCE']) ? "WANPIPE_GLOBAL_RING_DEBOUNCE=".$settings['WANPIPE_GLOBAL_RING_DEBOUNCE']."\n" : "";
-					$output .= !empty($settings['TE_SIG_MODE']) ? "TE_SIG_MODE=".$settings['TE_SIG_MODE']."\n" : "";
+					$output .= !empty($settings['WANPIPE_GLOBAL_FE_TE_SIG']) ? "WANPIPE_GLOBAL_FE_TE_SIG=".$settings['WANPIPE_GLOBAL_FE_TE_SIG']."\n" : "";
 					if(!empty($settings['WANPIPE_GLOBAL_FAKE_POLARITY']) && $settings['WANPIPE_GLOBAL_FAKE_POLARITY'] == "YES") {
 						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY']."\n";
 						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD']."\n";

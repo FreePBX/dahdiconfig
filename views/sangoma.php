@@ -13,10 +13,10 @@
 			</select>
 		</td>
 	</tr>
-	<!--
+
 	<tr id="sangoma_t1mode" style="<?php echo ($settings['dahdimode'] == 'yes') ? '' : 'hidden'?>">
 		<td style="width:10px">
-			<label for="sangoma_t1mode"><?php echo _("T1/Mode")?>:</label>
+			<label for="sangoma_t1mode"><?php echo _("Line Mode")?>:</label>
 		</td>
 		<td>
 			<select name="sangoma_t1mode" class="form-control">
@@ -25,7 +25,7 @@
 			</select>
 		</td>
 	</tr>
-	-->
+	<!--
 	<tr id="sangoma_TE_SIG_MODE" style="<?php echo ($settings['dahdimode'] == 'yes') ? '' : 'hidden'?>">
 		<td style="width:10px">
 			<label for="sangoma_TE_SIG_MODE"><?php echo _("Signaling Mode")?>:</label>
@@ -37,6 +37,7 @@
 			</select>
 		</td>
 	</tr>
+	-->
   <tr>
     <td style="width:10px;">
       <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK"><?php echo _('Set wanpipe port clocking') ?></label>

@@ -170,6 +170,7 @@ class dahdi_cards {
 		$this->original_modprobe = array_keys($this->modprobe);
 		$this->original_system = array_keys($this->systemsettings);
 
+		$this->load();
 	}
 
 	public function get_all_modules() {

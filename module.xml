@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.7</version>
+	<version>13.0.33.8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.33.8* Fix for loading hardware
 		*13.0.33.7* Remove TE_SIG_MODE, FREEPBX-13814 change name of line mode
 		*13.0.33.6* Fix system.conf and add unit tests
 		*13.0.33.5* More work for FREEPBX-13784

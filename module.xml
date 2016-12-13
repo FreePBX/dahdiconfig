@@ -10,7 +10,7 @@
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*13.0.33.7* TE_SIG_MODE should be WANPIPE_GLOBAL_FE_TE_SIG
+		*13.0.33.7* Remove TE_SIG_MODE, FREEPBX-13814 change name of line mode
 		*13.0.33.6* Fix system.conf and add unit tests
 		*13.0.33.5* More work for FREEPBX-13784
 		*13.0.33.4* Fix all issues in FREEPBX-13784

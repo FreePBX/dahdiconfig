@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-13 14:03-0800\n"
+"POT-Creation-Date: 2016-12-13 14:17-0800\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -375,6 +375,10 @@ msgstr "Подключения"
 #: views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Контекст"
+
+#: views/sangoma.php:54
+msgid "Control hardware DTMF"
+msgstr ""
 
 #: install.php:375
 msgid "Create Configured Locations Table"
@@ -1729,8 +1733,8 @@ msgstr "Выберите язык"
 msgid "Set Defaults"
 msgstr ""
 
-#: views/sangoma.php:43 views/sangoma.php:54
-msgid "Set wanpipe port clocking"
+#: views/sangoma.php:43
+msgid "Set port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10

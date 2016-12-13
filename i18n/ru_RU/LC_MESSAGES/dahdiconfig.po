@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-13 14:17-0800\n"
+"POT-Creation-Date: 2016-12-13 15:33-0800\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -376,7 +376,7 @@ msgstr "Подключения"
 msgid "Context"
 msgstr "Контекст"
 
-#: views/sangoma.php:54
+#: views/sangoma.php:41
 msgid "Control hardware DTMF"
 msgstr ""
 
@@ -656,7 +656,7 @@ msgstr "Включить Возврат Вызова"
 msgid "Enable Call Waiting"
 msgstr "Включить ожидание вызова"
 
-#: views/sangoma.php:65
+#: views/sangoma.php:52
 msgid "Enable DTMF CID"
 msgstr ""
 
@@ -1255,7 +1255,7 @@ msgstr "Малайзия"
 msgid "Malta"
 msgstr "Мальта"
 
-#: views/sangoma.php:48
+#: views/sangoma.php:35
 msgid "Master"
 msgstr ""
 
@@ -1413,7 +1413,7 @@ msgstr "Нигерия"
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
 #: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:59 views/sangoma.php:69
+#: views/sangoma.php:46 views/sangoma.php:56
 msgid "No"
 msgstr "Нет"
 
@@ -1453,7 +1453,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
 #: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
 #: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
-#: views/sangoma.php:47
+#: views/sangoma.php:34
 msgid "Normal"
 msgstr "Нормальный"
 
@@ -1562,7 +1562,7 @@ msgstr "Филиппины"
 msgid "Please Delete the System Generated %s"
 msgstr "Пожалуйста удалите сгенерированные системой %s"
 
-#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1764
+#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1769
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Пожалуйста измените права для %s"
@@ -1591,15 +1591,15 @@ msgstr ""
 msgid "Poland"
 msgstr "Польша"
 
-#: views/sangoma.php:92
+#: views/sangoma.php:79
 msgid "Polarity CID Timeout"
 msgstr ""
 
-#: views/sangoma.php:84
+#: views/sangoma.php:71
 msgid "Polarity CID Timer"
 msgstr ""
 
-#: views/sangoma.php:76
+#: views/sangoma.php:63
 msgid "Polarity Threshold"
 msgstr ""
 
@@ -1733,17 +1733,13 @@ msgstr "Выберите язык"
 msgid "Set Defaults"
 msgstr ""
 
-#: views/sangoma.php:43
+#: views/sangoma.php:30
 msgid "Set port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
 msgstr "Сигнальный"
-
-#: views/sangoma.php:31
-msgid "Signaling Mode"
-msgstr ""
 
 #: views/dahdi_advanced_settings.php:31 views/dahdi_advanced_settings.php:118
 #: views/dahdi_modprobe_settings.php:101
@@ -2350,7 +2346,7 @@ msgstr "ОАЭ"
 msgid "UK"
 msgstr "Великобритания"
 
-#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1764
+#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1769
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Невозможно записать в %s"
@@ -2469,7 +2465,7 @@ msgstr "Йемен"
 #: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
 #: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
 #: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
-#: views/sangoma.php:12 views/sangoma.php:58 views/sangoma.php:70
+#: views/sangoma.php:12 views/sangoma.php:45 views/sangoma.php:57
 msgid "Yes"
 msgstr "Да"
 

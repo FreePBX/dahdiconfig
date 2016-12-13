@@ -15,7 +15,7 @@
 	</tr>
 	<tr id="sangoma_t1mode" style="<?php echo ($settings['dahdimode'] == 'yes') ? '' : 'hidden'?>">
 		<td style="width:10px">
-			<label for="sangoma_t1mode"><?php echo _("T1/Mode")?>:</label>
+			<label for="sangoma_t1mode"><?php echo _("Line Mode")?>:</label>
 		</td>
 		<td>
 			<select name="sangoma_t1mode" class="form-control">

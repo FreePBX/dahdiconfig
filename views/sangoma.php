@@ -3,8 +3,8 @@
 </hr>
 <table width="100%" style="text-align:left;">
 	<tr>
-		<td style="width:10px;">
-			<label for="sangoma_dahdimode"><?php echo _('Enable Sangoma Cards') ?></label>
+		<td>
+			<label for="sangoma_dahdimode" style="width: 100px;"><?php echo _('Enable Sangoma Cards') ?></label>
 		</td>
 		<td>
 			<select name="sangoma_dahdimode" id="sangoma_dahdimode" class="form-control">
@@ -15,8 +15,8 @@
 	</tr>
 
 	<tr id="sangoma_t1mode" style="<?php echo ($settings['dahdimode'] == 'yes') ? '' : 'hidden'?>">
-		<td style="width:10px">
-			<label for="sangoma_t1mode"><?php echo _("Line Mode")?> [WANPIPE_GLOBAL_FE_MEDIA]</label>
+		<td>
+			<label for="sangoma_t1mode" style="width: 100px;"><?php echo _("Line Mode")?> [WANPIPE_GLOBAL_FE_MEDIA]</label>
 		</td>
 		<td>
 			<select name="sangoma_t1mode" class="form-control">
@@ -26,8 +26,8 @@
 		</td>
 	</tr>
   <tr>
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK"><?php echo _('Set port clocking') ?> [WANPIPE_GLOBAL_FE_CLOCK]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_FE_CLOCK" style="width: 100px;"><?php echo _('Set port clocking') ?> [WANPIPE_GLOBAL_FE_CLOCK]</label>
     </td>
     <td>
       <select name="sangoma_WANPIPE_GLOBAL_FE_CLOCK" id="sangoma_WANPIPE_GLOBAL_FE_CLOCK" class="form-control">
@@ -37,8 +37,8 @@
     </td>
   </tr>
   <tr>
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_HW_DTMF"><?php echo _('Control hardware DTMF') ?> [WANPIPE_GLOBAL_HW_DTMF]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_HW_DTMF" style="width: 100px;"><?php echo _('Control hardware DTMF') ?> [WANPIPE_GLOBAL_HW_DTMF]</label>
     </td>
     <td>
       <select name="sangoma_WANPIPE_GLOBAL_HW_DTMF" id="sangoma_WANPIPE_GLOBAL_HW_DTMF" class="form-control">
@@ -48,8 +48,8 @@
     </td>
   </tr>
   <tr>
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY"><?php echo _('Enable DTMF CID') ?> [WANPIPE_GLOBAL_FAKE_POLARITY]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY" style="width: 100px;"><?php echo _('Enable DTMF CID') ?> [WANPIPE_GLOBAL_FAKE_POLARITY]</label>
     </td>
     <td>
       <select name="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY" id="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY" class="form-control">
@@ -59,24 +59,24 @@
     </td>
   </tr>
   <tr class="dtmf-cid <?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY'] == 'NO' ? 'hidden' : ''?>">
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD"><?php echo _('Polarity Threshold') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD" style="width: 100px;"><?php echo _('Polarity Threshold') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD]</label>
     </td>
     <td>
       <input type="text" name="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD" id="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD" class="form-control" value="<?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY_THRESHOLD']?>">
     </td>
   </tr>
   <tr class="dtmf-cid <?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY'] == 'NO' ? 'hidden' : ''?>">
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER"><?php echo _('Polarity CID Timer') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER" style="width: 100px;"><?php echo _('Polarity CID Timer') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER]</label>
     </td>
     <td>
       <input type="text" name="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER" id="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER" class="form-control" value="<?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER']?>">
     </td>
   </tr>
   <tr class="dtmf-cid <?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY'] == 'NO' ? 'hidden' : ''?>">
-    <td style="width:10px;">
-      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT"><?php echo _('Polarity CID Timeout') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT]</label>
+    <td>
+      <label for="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT" style="width: 100px;"><?php echo _('Polarity CID Timeout') ?> [WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT]</label>
     </td>
     <td>
       <input type="text" name="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT" id="sangoma_WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT" class="form-control" value="<?php echo $settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT']?>">

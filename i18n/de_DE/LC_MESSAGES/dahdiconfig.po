@@ -10,34 +10,37 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-13 15:33-0800\n"
-"PO-Revision-Date: 2016-12-13 15:33-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-01-16 17:53+0200\n"
+"Last-Translator: Sven <spiderrs4@web.de>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
 msgid "%s Ports"
-msgstr ""
+msgstr "%s Ports"
 
 #: views/dahdi_digital_settings.php:142
 msgid "-15db (CSU)"
-msgstr ""
+msgstr "-15db (CSU)"
 
 #: views/dahdi_digital_settings.php:143
 msgid "-22.5db (CSU)"
-msgstr ""
+msgstr "-22.5db (CSU)"
 
 #: views/dahdi_digital_settings.php:141
 msgid "-7.5db (CSU)"
-msgstr ""
+msgstr "-7.5db (CSU)"
 
 #: install.php:569
 msgid "..Done"
-msgstr ""
+msgstr "..Erledigt"
 
 #: views/dahdi_digital_settings.php:136
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
@@ -86,11 +89,11 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
-msgstr ""
+msgstr "Aktion"
 
 #: install.php:605
 msgid "Add type column"
-msgstr ""
+msgstr "Spalte Typ hinzufügen"
 
 #: install.php:621
 msgid "Adding txgain and rxgain column to analog table"
@@ -102,11 +105,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Erweiterte Einstellungen"
 
 #: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:15
 msgid "Alarms"
-msgstr ""
+msgstr "Alarme"
 
 #: views/dahdi_mfcr2_settings.php:173
 msgid "Allow Collect Calls"
@@ -123,7 +126,7 @@ msgstr ""
 #: views/dahdi_analog_settings.php:1
 #, php-format
 msgid "Analog %s"
-msgstr ""
+msgstr "Analog %s"
 
 #: views/dahdi_analog_signalling_form.php:1
 #, php-format
@@ -137,7 +140,7 @@ msgstr ""
 
 #: page.dahdi.php:57
 msgid "Analog Hardware"
-msgstr ""
+msgstr "Analoge Hardware"
 
 #: views/dahdi_global_settings.php:184
 msgid "Answer Immediately"
@@ -162,29 +165,29 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
 msgid "Argentina"
-msgstr ""
+msgstr "Argentinien"
 
 #: views/dahdi_global_settings.php:36
 msgid "Argentine Spanish"
-msgstr ""
+msgstr "Argentinisch Spanisch"
 
 #: views/dahdi_advanced_settings.php:14 views/dahdi_advanced_settings.php:62
 #: views/dahdi_modprobe_settings.php:45
 msgid "Australia"
-msgstr ""
+msgstr "Australien"
 
 #: views/dahdi_global_settings.php:14
 msgid "Australian"
-msgstr ""
+msgstr "australisch"
 
 #: views/dahdi_advanced_settings.php:22 views/dahdi_advanced_settings.php:63
 #: views/dahdi_modprobe_settings.php:46
 msgid "Austria"
-msgstr ""
+msgstr "Österreich"
 
 #: views/dahdi_modprobe_settings.php:278
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: functions.inc.php:478
 msgid ""
@@ -210,7 +213,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:64 views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: page.dahdi.php:184
 msgid ""
@@ -222,7 +225,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48
 msgid "Belgium"
-msgstr ""
+msgstr "Belgien"
 
 #: views/dahdi_advanced_settings.php:152 views/dahdi_modprobe_settings.php:145
 msgid "Boostringer"
@@ -230,12 +233,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:203
 msgid "Both"
-msgstr ""
+msgstr "beide"
 
 #: views/dahdi_advanced_settings.php:33 views/dahdi_advanced_settings.php:66
 #: views/dahdi_mfcr2_settings.php:17 views/dahdi_modprobe_settings.php:49
 msgid "Brazil"
-msgstr ""
+msgstr "Brasilien"
 
 #: views/dahdi_mfcr2_settings.php:175
 msgid ""
@@ -261,12 +264,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:27
 msgid "Brazilian"
-msgstr ""
+msgstr "brasilianisch"
 
 #: views/dahdi_advanced_settings.php:50 views/dahdi_advanced_settings.php:67
 #: views/dahdi_modprobe_settings.php:50
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarien"
 
 #: views/dahdi_global_settings.php:54
 msgid "Busy Detect Count"
@@ -308,18 +311,18 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
 #: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: functions.inc.php:547
 msgid "Channel"
-msgstr ""
+msgstr "Kanal"
 
 #: views/dahdi_digital_hardware.php:8
 msgid "Channels Used/Total"
@@ -336,16 +339,16 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: views/dahdi_advanced_settings.php:46 views/dahdi_advanced_settings.php:70
 #: views/dahdi_mfcr2_settings.php:18 views/dahdi_modprobe_settings.php:53
 msgid "China"
-msgstr ""
+msgstr "China"
 
 #: views/dahdi_global_settings.php:35
 msgid "Chinese"
-msgstr ""
+msgstr "Chinesisch"
 
 #: functions.inc.php:382
 msgid "Choose"
@@ -358,7 +361,7 @@ msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:20
 msgid "Colombia"
-msgstr ""
+msgstr "Kolumbien"
 
 #: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
 msgid "Columbia"
@@ -366,12 +369,12 @@ msgstr ""
 
 #: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
 msgid "Connectivity"
-msgstr ""
+msgstr "Verbindungen"
 
 #: views/dahdi_analog_settings.php:36
 #: views/dahdi_analog_signalling_form.php:19
 msgid "Context"
-msgstr ""
+msgstr "Kontext"
 
 #: views/sangoma.php:41
 msgid "Control hardware DTMF"
@@ -395,19 +398,19 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
-msgstr ""
+msgstr "Kroatien"
 
 #: views/dahdi_advanced_settings.php:73 views/dahdi_modprobe_settings.php:56
 msgid "Cyrpus"
-msgstr ""
+msgstr "Zypern"
 
 #: views/dahdi_advanced_settings.php:74 views/dahdi_modprobe_settings.php:57
 msgid "Czech"
-msgstr ""
+msgstr "tschechisch"
 
 #: views/dahdi_advanced_settings.php:45 views/dahdi_mfcr2_settings.php:19
 msgid "Czech Republic"
-msgstr ""
+msgstr "Tschechien"
 
 #: views/dahdi_digital_hardware.php:9
 msgid "D-Channel"
@@ -437,7 +440,7 @@ msgstr ""
 #: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
 #: dahdiconfig.i18n.php:50 dahdiconfig.i18n.php:56
 msgid "DAHDi Configuration Module"
-msgstr ""
+msgstr "DAHDi Konfigurationsmodul"
 
 #: page.dahdi.php:11
 msgid ""

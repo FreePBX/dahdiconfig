@@ -352,6 +352,7 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
 		if ($trunk['tech'] != 'dahdi' || $trunk['channelid'] == $current_identifier) {
 			continue;
 		}
+
 		unset($avail_identifiers[$trunk['channelid']]);
 	}
 	return ($avail_identifiers);
@@ -362,49 +363,49 @@ function dahdiconfig_configpageinit($dispnum) {
 	switch ($dispnum) {
 		case 'devices':
 		case 'extensions':
-		// if tech_hardware set, this is an initial extension/device creation
-		// otherwise, determine if the target extension/device is DAHDI
-		//
-		if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic') {
-			$extdisplay = '';
-		} else {
-			if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
-				return true;
+			// if tech_hardware set, this is an initial extension/device creation
+			// otherwise, determine if the target extension/device is DAHDI
+			//
+			if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic' && trim($_REQUEST['extdisplay']) === "") {
+				$extdisplay = '';
+			} else {
+				if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
+					return true;
+				}
+				$extdisplay = $_REQUEST['extdisplay'];
+				$device_info = core_devices_get($extdisplay);
+				if (empty($device_info) || $device_info['tech'] != 'dahdi') {
+					return true;
+				}
 			}
-			$extdisplay = $_REQUEST['extdisplay'];
-			$device_info = core_devices_get($extdisplay);
-			if (empty($device_info) || $device_info['tech'] != 'dahdi') {
-				return true;
-			}
-		}
 
-		$channel_select  = dahdiconfig_get_unused_fxs_channels($extdisplay);
-		$currentcomponent->addoptlistitem('dahdi_channel_select', '', "=="._('Choose')."==");
-		foreach ($channel_select as $val) {
-			$currentcomponent->addoptlistitem('dahdi_channel_select', $val['channel'].':'.$val['signalling'], $val['channel']);
-		}
-		$currentcomponent->setoptlistopts('dahdi_channel_select', 'sort', false);
+			$channel_select  = dahdiconfig_get_unused_fxs_channels($extdisplay);
+			$currentcomponent->addoptlistitem('dahdi_channel_select', '', "=="._('Choose')."==");
+			foreach ($channel_select as $val) {
+				$currentcomponent->addoptlistitem('dahdi_channel_select', $val['channel'].':'.$val['signalling'], $val['channel']);
+			}
+			$currentcomponent->setoptlistopts('dahdi_channel_select', 'sort', false);
 		break;
 		case 'trunks':
-		if (isset($_REQUEST['tech']) && strtolower($_REQUEST['tech']) == 'dahdi') {
-			$extdisplay = '';
-			$_REQUEST['dahdi_current_channel'] = '';
-		} else {
-			if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
-				return true;
+			if (isset($_REQUEST['tech']) && strtolower($_REQUEST['tech']) == 'dahdi' && trim($_REQUEST['extdisplay']) === "") {
+				$extdisplay = '';
+				$_REQUEST['dahdi_current_channel'] = '';
+			} else {
+				if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
+					return true;
+				}
+				$extdisplay = $_REQUEST['extdisplay'];
+				$trunknum = ltrim($extdisplay,'OUT_');
+				$trunk_details = core_trunks_getDetails($trunknum);
+				$tech = $trunk_details['tech'];
+				if ($tech != 'dahdi') {
+					return true;
+				}
+				$_REQUEST['dahdi_current_channel'] = $trunk_details['channelid'];
 			}
-			$extdisplay = $_REQUEST['extdisplay'];
-			$trunknum = ltrim($extdisplay,'OUT_');
-			$trunk_details = core_trunks_getDetails($trunknum);
-			$tech = $trunk_details['tech'];
-			if ($tech != 'dahdi') {
-				return true;
-			}
-			$_REQUEST['dahdi_current_channel'] = $trunk_details['channelid'];
-		}
-		// dahdiconfig_hook_core will see this and create the needed selelect structure
-		//
-		$_REQUEST['display_dahdi_select'] = 'true';
+			// dahdiconfig_hook_core will see this and create the needed selelect structure
+			//
+			$_REQUEST['display_dahdi_select'] = 'true';
 		break;
 		default;
 		return true;
@@ -511,12 +512,10 @@ function dahdiconfig_hook_core($viewing_itemid, $target_menuid) {
 		}
 		$html .= '
 		<script type="text/javascript">
-		$(document).ready(function(){
-			$("input[name=\'channelid\']").attr("id","channelid").val($("#dahdi_trunks").val()).parent().parent().addClass("hidden");
+			$("input[name=\'channelid\']").attr("id","channelid").val($("#dahdi_trunks").val()).parents(".element-container").addClass("hidden");
 			$("#dahdi_trunks").change(function(){
 				$("#channelid").val(this.value);
 			});
-		});
 		</script>';
 	}
 	return $html;

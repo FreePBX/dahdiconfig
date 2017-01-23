@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dahdiconfig
-# Copyright (C) 2008-2016 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-13 15:33-0800\n"
+"POT-Creation-Date: 2017-01-23 10:56-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:478
+#: functions.inc.php:479
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -338,7 +338,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:547
+#: functions.inc.php:546
 msgid "Channel"
 msgstr ""
 
@@ -371,11 +371,11 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: functions.inc.php:382
+#: functions.inc.php:383
 msgid "Choose"
 msgstr ""
 
-#: functions.inc.php:548
+#: functions.inc.php:547
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr ""
@@ -456,8 +456,8 @@ msgstr ""
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:460
-#: functions.inc.php:493
+#: functions.inc.php:461
+#: functions.inc.php:494
 msgid "DAHDI Trunks"
 msgstr ""
 
@@ -573,7 +573,7 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:536
+#: functions.inc.php:535
 msgid "Device Options"
 msgstr ""
 
@@ -1468,11 +1468,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:497
+#: functions.inc.php:498
 msgid "No Available Groups or Channels"
 msgstr ""
 
-#: functions.inc.php:568
+#: functions.inc.php:567
 msgid "No Unused DAHDi Channels Available"
 msgstr ""
 
@@ -2141,7 +2141,7 @@ msgid ""
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
 
-#: functions.inc.php:505
+#: functions.inc.php:506
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"

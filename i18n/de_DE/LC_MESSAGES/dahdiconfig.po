@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-01-16 17:53+0200\n"
-"Last-Translator: Sven <spiderrs4@web.de>\n"
-"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/"
-"dahdiconfig/de_DE/>\n"
+"PO-Revision-Date: 2017-03-07 02:21+0200\n"
+"Last-Translator: hammer125 <auswertung@aon.at>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -406,7 +406,7 @@ msgstr "Zypern"
 
 #: views/dahdi_advanced_settings.php:74 views/dahdi_modprobe_settings.php:57
 msgid "Czech"
-msgstr "tschechisch"
+msgstr "Tschechisch"
 
 #: views/dahdi_advanced_settings.php:45 views/dahdi_mfcr2_settings.php:19
 msgid "Czech Republic"

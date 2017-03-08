@@ -18,10 +18,12 @@ function mfcr2_set_defaults(span) {
     $('#editspan_' + span + '_mfcr2_forced_release').val('no');
     $('#editspan_' + span + '_mfcr2_charge_calls').val('yes');
     $('#editspan_' + span + '_mfcr2_advanced_protocol_file').val('');
+		$('#editspan_' + span + '_mfcr2_mfback_timeout').val('-1');
+		$('#editspan_' + span + '_mfcr2_metering_pulse_timeout').val('-1');
 }
 /* MFC/R2 show/hide */
-function mfcr2_toggle() {
-    if ($('input[name=mfcr2_active]').val() === "0") {
+function mfcr2_toggle(span) {
+    if ($('#digital-settings-'+span+' input[name=mfcr2_active]').val() === "0") {
         $('.mfcr2-settings').hide();
         $('.isdn-settings').show();
     }
@@ -215,18 +217,42 @@ function createModProbeSettings() {
 }
 
 function reset_digital_groups(span,usedchans) {
+		spandata[span].groups = [
+			{
+				context: "from-digital",
+				endchan: Number(spandata[span].spandata.max_ch),
+				group: 0,
+				startchan: Number(spandata[span].spandata.min_ch),
+				usedchans: usedchans
+			}
+		];
     update_digital_groups(span,0,usedchans);
 }
 
 /* Span Group Automation */
-function update_digital_groups(span,group,usedchans) {
-    usedchans = Number(usedchans)
-    span = Number(span)
-    group = Number(group)
+function update_digital_groups(span,groupid,usedchans) {
+    usedchans = Number(usedchans);
+    span = Number(span);
+		var groupData = {
+			span: span,
+			groupid: groupid,
+			usedchans: usedchans
+		};
 
-    spandata[span]['groups'][group]['usedchans'] = Number(usedchans)
+		$.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'digitalgroupsupdate', span: span, groups: JSON.stringify(spandata[span].groups), group: JSON.stringify(groupData)}, function(data){
 
-    $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'calcbchanfxx', span: span, usedchans: usedchans, startchan: spandata[span]['groups'][group]['startchan']}, function(j){
+		}).done(function(data){
+			spandata[span].groups = data.groups;
+			$("#dahdi_editspan_"+span+" .digital-groups").html(data.html);
+		}).fail(function () {
+			console.warn("Error");
+		});
+
+
+		/*
+		spandata[span]['groups'][group]['usedchans'] = Number(usedchans);
+		$.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'calcbchanfxx', span: span, usedchans: usedchans, startchan: spandata[span]['groups'][group]['startchan']}, function(j){
+        console.log(j);
         j.endchan = Number(j.endchan)
         $('#editspan_'+span+'_from_'+ group).html(j.fxx);
         spandata[span]['groups'][group]['endchan'] = j.endchan;
@@ -241,7 +267,7 @@ function update_digital_groups(span,group,usedchans) {
                 var group_num = $('#editspan_'+span+'_group_'+group).val();
                 group_num = $.isNumeric(group_num) ? group_num : group;
                 $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",{type: 'digitaladd', span: span, groupc: group+1, usedchans: usedchans, startchan: startchan, group_num: (Number(group_num)+1)}, function(z){
-                    $('#editspan_'+span+'_group_settings_' + (group)).after(z.html);
+										$('#editspan_'+span+'_group_settings_' + (group)).after(z.html);
                     group++;
                     spandata[span]['groups'][group] = {};
                     spandata[span]['groups'][group]['endchan'] = z.endchan;
@@ -260,7 +286,11 @@ function update_digital_groups(span,group,usedchans) {
                 $.each(spandata[span]['groups'], function(key, value) {
                     if(group < key) {
                         var startchan = spandata[span]['groups'][(prevkey)]['endchan'] + 1
+												startchan = Number(startchan);
                         var usedchans = $('#editspan_'+span+'_definedchans_'+key).val()
+												usedchans = Number(usedchans);
+												var endchan = startchan + usedchans - 1;
+
                         var selected = 0;
                         if(i == count) {
                             usedchans = spandata[span]['spandata']['max_ch'] - spandata[span]['groups'][prevkey]['endchan']
@@ -268,6 +298,7 @@ function update_digital_groups(span,group,usedchans) {
                         } else {
                             selected = $('#editspan_'+span+'_definedchans_' + key).val()
                         }
+
                         $.ajax({
                           url: "config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",
                           dataType: 'json',
@@ -301,6 +332,7 @@ function update_digital_groups(span,group,usedchans) {
             })
         }
     })
+		*/
 }
 /* End Span Group Automation */
 /* Custom settings for Global Settings */

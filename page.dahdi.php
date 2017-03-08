@@ -218,19 +218,16 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();
-    foreach($groups as $gkey => $data) { ?>
-$('#editspan_<?php echo $key?>_definedchans_<?php echo $gkey?>').change(function() {
-    var span = <?php echo $key?>;
-    var endchan = $(this).val();
-    var totalchan = <?php echo $span['totchans']?>;
-    var group = <?php echo $gkey?>;
-    update_digital_groups(span,group,endchan);
+<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();?>
+
+<?php } ?>
+$(document).on("change",".digital-used-chans",function(e) {
+	var table = $(this).parents("table");
+	var span = table.data("span");
+	var group = table.data("group-id");
+	var usedchans = $(this).val();
+	update_digital_groups(span,group,Number(usedchans));
 });
-
-<?php } ?>
-
-<?php } ?>
 $(function(){
 	$('.modules-sortable').sortable();
     <?php
@@ -331,17 +328,17 @@ $(function(){
                 text: "<?php echo _('MFC/R2 Settings') ?>",
                 id: 'button_mfc_r2_span<?php echo $key?>',
                 click: function() {
-                    if ($('input[name=mfcr2_active]').val() === "0") {
-                        $('input[name=mfcr2_active]').val('1');
+                    if ($('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val() === "0") {
+                        $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('1');
                         $('#button_mfc_r2_span<?php echo $key?>').text('General Settings');
                         $('#button_mfc_r2_defs_<?php echo $key ?>').show();
                     }
                     else {
-                        $('input[name=mfcr2_active]').val('0');
+                        $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('0');
                         $('#button_mfc_r2_span<?php echo $key?>').text('MFC/R2 Settings');
                         $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
                     }
-                    mfcr2_toggle();
+                    mfcr2_toggle(<?php echo $key?>);
                 }
             },
             "<?php echo _('Save')?>": function() {
@@ -361,10 +358,10 @@ $(function(){
             },
         },
         open: function() {
-    	    mfcr2_toggle();
+    	    	mfcr2_toggle(<?php echo $key?>);
             $('#button_mfc_r2_defs_<?php echo $key ?>').hide();
-            $('input[name=mfcr2_active]').val('0');
-            if ("<?php echo $span['signalling']?>" != 'mfc_r2') {
+            $('#digital-settings-<?php echo $key?> input[name=mfcr2_active]').val('0');
+            if ($("#editspan_<?php echo $key ?>_signalling").val() != 'mfcr2') {
                 $('#button_mfc_r2_span<?php echo $key?>').hide();
                 $("#editspan_<?php echo $key?>_switchtype_tr").show();
             }
@@ -377,13 +374,13 @@ $(function(){
         }
     });
     $("#editspan_<?php echo $key?>_signalling").change(function() {
-        if($( this ).val().substring(0,3) == 'bri' || <?php echo $span['totchans']?> != 3 || $( this ).val().substring(0,3) == 'pri') {
+        if($( this ).val().substring(0,3) == 'bri' || <?php echo isset($span['totchans'])?$span['totchans']:'0'?> != 3 || $( this ).val().substring(0,3) == 'pri') {
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeIn('slow')
             $("#editspan_<?php echo $key?>_switchtype").val('euroisdn')
         } else {
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow')
         }
-        if ($(this).val() == 'mfc_r2') {
+        if ($(this).val() == 'mfcr2') {
             $('#button_mfc_r2_span<?php echo $key?>').show();
             $("#editspan_<?php echo $key?>_fac").val('CAS/HDB3');
             $("#editspan_<?php echo $key?>_switchtype_tr").fadeOut('slow');

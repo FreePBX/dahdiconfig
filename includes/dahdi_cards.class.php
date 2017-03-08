@@ -110,6 +110,7 @@ class dahdi_cards {
 		$check[] = $amp_conf['DAHDIMODULESLOC'];
 		$check[] = $amp_conf['DAHDISYSTEMLOC'];
 		$check[] = $amp_conf['DAHDIMODPROBELOC'];
+		$this->mockhw = $amp_conf['DAHDIMOCKHW'];
 		global $db;
 		$nt = notifications::create($db);
 		foreach($check as $list) {
@@ -173,6 +174,9 @@ class dahdi_cards {
 	}
 
 	public function get_all_modules() {
+		if($this->mockhw){
+			return $this->get_all_modules_mock();
+		}
 		global $amp_conf;
 		if(!file_exists($amp_conf['DAHDIMODULESLOC']) || !is_readable($amp_conf['DAHDIMODULESLOC'])) {
 			return array();
@@ -196,55 +200,130 @@ class dahdi_cards {
 		return $modules;
 	}
 
+	public function updateDigitalGroup($span, $updatedGroup, $groups) {
+		if(empty($this->spans[$span])) {
+			throw new \Exception("Invalid Span!");
+		}
+		$spanData = $this->spans[$span];
+		$updatedGroup = json_decode($updatedGroup,true);
+		$groups = json_decode($groups,true);
+		uasort($groups, function($a,$b){
+			if ($a['endchan'] == $b['endchan']) {
+				return 0;
+			}
+			return ($a['endchan'] < $b['endchan']) ? -1 : 1;
+		});
+
+		$finalGroups = array();
+		$lastgroup = 0;
+		$groupint = 0;
+		foreach($groups as $id => $group) {
+			if($id == $updatedGroup['groupid']) {
+				$group['usedchans'] = $updatedGroup['usedchans'];
+			}
+			$out = $this->new_calc_bchan_fxx($span,$spanData['signalling'],$group['startchan'],$group['usedchans']);
+			$out['group'] = $group['group'];
+			$out['context'] = 'from-digital';
+			$finalGroups[] = $out;
+			if($group['group'] !== 's') {
+				$groupint = $group['group'];
+			}
+		}
+		$lastGroup = end($finalGroups);
+		if(($spanData['max_ch'] == $lastGroup['reservedchan']) && ($lastGroup['endchan'] + 1) == $lastGroup['reservedchan']) {
+			//do nothing
+		} elseif($lastGroup['endchan'] < $spanData['max_ch']) {
+			$out = $this->new_calc_bchan_fxx($span,$spanData['signalling'],($lastGroup['endchan']+1));
+			$out['group'] = $groupint + 1;
+			$out['context'] = 'from-digital';
+			$finalGroups[] = $out;
+		}
+		return $finalGroups;
+	}
+
+	public function new_calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
+		if(empty($this->spans[$num])) {
+			throw new \Exception("Invalid Span!");
+		}
+		$span = $this->spans[$num];
+
+		$reservedchan = $span['reserved_ch'];
+
+		$startchan = !is_null($startchan) ? $startchan : $span['min_ch'];
+		if($startchan < $span['min_ch'] || $startchan > $span['max_ch']) {
+			throw new \Exception("Start channel is less than minimum channel!");
+		}
+		if($startchan == $reservedchan) {
+			$startchan++;
+		}
+
+		if(is_null($usedchans)) {
+			$endchan = $span['max_ch'];
+		} else {
+			$endchan = $usedchans + $startchan;
+			if($endchan < $reservedchan) {
+				$endchan--;
+			}
+		}
+
+		if($endchan > $span['max_ch'] || $endchan < $span['min_ch']) {
+			throw new \Exception("Exceded number of channels!");
+		}
+
+		$fxx = '';
+		$usedchans = 0;
+		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
+		$sig = !empty($signalling) ? $signalling : $span['signalling'];
+		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri' || substr($sig,0,5) == 'mfcr2') {
+			for($i=$startchan;$i<=$endchan;$i++) {
+				if($i == $reservedchan) {
+					continue;
+				}
+				switch($i) {
+					case $startchan:
+						$fxx = $startchan;
+					break;
+					case $reservedchan - 1:
+						$fxx .= "-".$i;
+					break;
+					case $reservedchan + 1:
+						$fxx .= ($reservedchan != $startchan) ? ",".$i : $i;
+					break;
+					case $endchan:
+						$fxx .= ($reservedchan != $i) ? "-".$i : '';
+					break;
+				}
+				$usedchans++;
+			}
+			$fxx = rtrim($fxx, ',');
+		} else {
+			if($endchan == $reservedchan) {
+				$endchan--;
+			}
+			$fxx = $startchan . "-" . $endchan;
+			$usedchans = ($endchan - $startchan) + 1;
+		}
+
+		if($endchan == $reservedchan) {
+			$endchan--;
+		}
+
+		return array(
+			"fxx" => $fxx,
+			"startchan" => (int)$startchan,
+			"endchan" => (int)$endchan,
+			"usedchans" => (int)$usedchans,
+			"reservedchan" => (int)$reservedchan
+		);
+	}
+
 	/**
 	 * Calc Bchan Fxx
 	 *
 	 * Calculates the bchan and fxx strings for a given span
 	 */
 	public function calc_bchan_fxx($num,$signalling=NULL,$startchan=NULL,$usedchans=NULL) {
-		$span = $this->spans[$num];
-
-		$y = !empty($startchan) ? $startchan : $span['min_ch'];
-		$x = !empty($usedchans) ? ($y + $usedchans) -1 : ($y + $span['totchans'])-1;
-		$r = $span['reserved_ch'];
-		$u = !empty($usedchans) ? $usedchans - 1 : ($y + $span['totchans']);
-
-		$x = (((($y < $r) && ($x > $r)) || ($r == ($span['min_ch']+$u))) && ($u+1 < $span['totchans'])) ? $x+1 : $x;
-
-		$x = ($x <= $span['max_ch']) ? $x : $span['max_ch'];
-
-		$span['signalling'] = !empty($span['signalling']) ? $span['signalling'] : 'pri_net';
-		$sig = !empty($signalling) ? $signalling : $span['signalling'];
-		if(substr($sig,0,3) == 'pri' || substr($sig,0,3) == 'bri') {
-			$o = "";
-			for($i=$y;$i<=$x;$i++) {
-				switch($i) {
-					case $y:
-					$o .= ($r != $i) ? $i : '';
-					break;
-					case $r - 1:
-					$o .= "-".$i;
-					break;
-					case $r + 1:
-					$o .= ($r != $y) ? ",".$i : $i;
-					break;
-					case $x:
-					$o .= ($r != $i) ? "-".$i : '';
-					break;
-				}
-			}
-		} else {
-			if($x == $r) {
-				$o = $y;
-			} else {
-				$o = $y . "-" . $x;
-			}
-		}
-		return array(
-			'fxx' => $o,
-			'endchan' => ($x == $r) ? $y : $x,
-			'startchan' => $y
-		);
+		return $this->new_calc_bchan_fxx($num,$signalling,$startchan,$usedchans);
 	}
 
 	/**
@@ -452,12 +531,31 @@ class dahdi_cards {
 	}
 
 	/**
+	 * Update the span definitions
+	 * @method set_spans
+	 * @param  Array    $spans Array of span information
+	 */
+	public function set_spans($spans) {
+		$this->spans = $spans;
+	}
+
+	/**
 	 * Get Span
 	 *
 	 * Get a digital span and all its info
 	 */
 	public function get_span($num) {
 		return $this->spans[$num];
+	}
+
+	/**
+	 * Set single span data
+	 * @method set_span
+	 * @param  integer   $num  The span number
+	 * @param  array   $data Array of data
+	 */
+	public function set_span($num, $data) {
+		$this->spans[$num] = $data;
 	}
 
 	/**
@@ -830,21 +928,34 @@ class dahdi_cards {
 		return true;
 	}
 
-	/**
-	 * Read DAHDi Scan
-	 *
-	 * Read all the information given in the DAHDi Scan script
-	 */
-	public function read_dahdi_scan() {
+	public function execute_dahdi_scan() {
 		if(!file_exists('/usr/sbin/dahdi_scan')) {
 			return false;
 		}
 		if(!is_executable('/usr/sbin/dahdi_scan')) {
 			throw new \Exception(_("dahdi_scan exists but can not be run as this user!"));
 		}
-		exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
+		if($this->mockhw){
+				$dahdi_scan_output = $this->dahdi_scan_mock();
+				$return_var = '0';
+		}else{
+			exec('/usr/sbin/dahdi_scan 2>/dev/null',$dahdi_scan_output,$return_var);
+		}
 		if($return_var != '0') {
 			return false;
+		}
+		return $dahdi_scan_output;
+	}
+
+	/**
+	 * Read DAHDi Scan
+	 *
+	 * Read all the information given in the DAHDi Scan script
+	 */
+	public function read_dahdi_scan() {
+		$dahdi_scan_output = $this->execute_dahdi_scan();
+		if($dahdi_scan_output === false) {
+			return;
 		}
 		unset($this->fxo_ports);
 		unset($this->fxs_ports);
@@ -1140,7 +1251,7 @@ class dahdi_cards {
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';
 		$this->spans[$num]['additional_groups'] = !empty($editspan['additional_groups']) ? $editspan['additional_groups'] : array();
 
-		if ($editspan['signalling'] == "mfc_r2") {
+		if ($editspan['signalling'] == "mfcr2") {
 		    $this->spans[$num]['mfcr2_variant'] 				= $editspan['mfcr2_variant'] ? $editspan['mfcr2_variant'] : 'ITU';
 		    $this->spans[$num]['mfcr2_max_ani'] 				= $editspan['mfcr2_max_ani'] ? $editspan['mfcr2_max_ani'] : 10;
 		    $this->spans[$num]['mfcr2_max_dnis'] 				= $editspan['mfcr2_max_dnis'] ? $editspan['mfcr2_max_dnis'] : 4;
@@ -1343,7 +1454,7 @@ class dahdi_cards {
 
 		global $db;
 		$nt =& notifications::create($db);
-		if ( ! is_writable($file)) {
+		if ((file_exists($file) && !is_writable($file)) || (!file_exists($file) && !is_writable(dirname($file)))) {
 			$nt->add_error('dahdiconfig', 'SYSTEMCONF', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s"),$file), "", false, true);
 			return false;
 		} else {
@@ -1374,19 +1485,25 @@ class dahdi_cards {
 			if ( substr($span['signalling'],0,3) != 'pri' && substr($span['signalling'],0,3) != 'bri' && substr($span['signalling'],0,3) != 'gsm') {
 				if (substr($span['signalling'],0,2) == 'fx') {
 					$fx = str_replace('_','',$span['signalling']);
-				} else if ($span['signalling'] == 'mfc_r2') {
-					$fx = 'cas';
+				} else if ($span['signalling'] == 'mfcr2') {
+					$fx = 'mfcr2';
 				} else {
 					$fx = 'e&m';
 				}
 				$data = $span['additional_groups'];
 				if (!empty($data)) {
 					foreach($data as $s){
-						if (strtolower($s['group'] == 's')){
+						if (strtolower($s['group'] === 's')){
 							continue;
 						}
-						if ($span['signalling'] == 'mfc_r2') {
-							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].':1101,';
+						if ($span['signalling'] == 'mfcr2') {
+							$chans = explode(',', $s['fxx']);
+							foreach($chans as $chan){
+									if(!empty($fxx[$fx])){
+										$fxx[$fx] .= ',';
+									}
+									$fxx[$fx] .= $chan;
+							}
 						} else {
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 						}
@@ -1406,7 +1523,12 @@ class dahdi_cards {
 			$this->spans[$num]['dahdichanstring'] = $chan;
 		}
 		foreach ($fxx as $e=>$val) {
-			$output[]  = "$e={$val}";
+			if($e == "mfcr2") {
+				$output[]  = "cas={$val}:1101";
+			} else {
+				$output[]  = "$e={$val}";
+			}
+
 			$output[]  = 'echocanceller='.$amp_conf['DAHDIECHOCAN'].','.str_replace(":1101", "", $val);
 		}
 
@@ -1476,7 +1598,7 @@ class dahdi_cards {
 		$output[] = "defaultzone={$this->systemsettings['tone_region']}";
 
 		foreach($this->get_all_systemsettings() as $k => $v) {
-			if(!in_array($k,$this->original_system)){
+			if(!is_array($this->original_system) || (is_array($this->original_system) && !in_array($k,$this->original_system))){
 				if(empty($k)||empty($v)){continue;}
 				$output[] = $k."=".$v;
 			}
@@ -1706,5 +1828,12 @@ class dahdi_cards {
 		}
 
 		return true;
+	}
+	//Mocks
+	private function get_all_modules_mock(){
+		return json_decode('{"wct4xxp":{"status":true,"type":"sys"},"wcte43x":{"status":true,"type":"sys"},"wcte12xp":{"status":true,"type":"sys"},"wcte13xp":{"status":true,"type":"sys"},"wct1xxp":{"status":true,"type":"sys"},"wcte11xp":{"status":true,"type":"sys"},"wctdm24xxp":{"status":true,"type":"sys"},"wcaxx":{"status":true,"type":"sys"},"wcfxo":{"status":true,"type":"sys"},"wctdm":{"status":true,"type":"sys"},"wcb4xxp":{"status":true,"type":"sys"},"wctc4xxp":{"status":true,"type":"sys"},"xpp_usb":{"status":true,"type":"sys"},"opvxd115":{"status":false,"type":"sys"},"opvxa24xx":{"status":false,"type":"sys"},"opvxa1200":{"status":false,"type":"sys"},"zaphfc":{"status":false,"type":"sys"},"tor3e":{"status":false,"type":"sys"},"r1t1":{"status":true,"type":"sys"},"rxt1":{"status":true,"type":"sys"},"rcbfx":{"status":true,"type":"sys"}}',true);
+	}
+	private function dahdi_scan_mock(){
+		return json_decode('["[1]","active=yes","alarms=RED","description=wanpipe1 card 0","name=WPT1\/0","manufacturer=Sangoma Technologies","devicetype=B601","location=SLOT=1, BUS=7","basechan=1","totchans=24","irq=0","type=digital-T1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=B8ZS,AMI","framing_opts=ESF,D4","coding=B8ZS","framing=ESF","[2]","active=yes","alarms=OK","description=wrtdm Board 1","name=WRTDM\/0","manufacturer=Sangoma Technologies","devicetype=B601","location=SLOT=1, BUS=7","basechan=25","totchans=24","irq=0","type=analog","port=25,FXO","port=26,FXO","port=27,FXO","port=28,FXO","port=29,FXS","port=30,none","port=31,none","port=32,none","port=33,none","port=34,none","port=35,none","port=36,none","port=37,none","port=38,none","port=39,none","port=40,none","port=41,none","port=42,none","port=43,none","port=44,none","port=45,none","port=46,none","port=47,none","port=48,none","[3]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 1","name=TE4\/0\/1","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=49","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[4]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 2","name=TE4\/0\/2","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=80","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[5]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 3","name=TE4\/0\/3","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=111","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[6]","active=yes","alarms=UNCONFIGURED","description=T4XXP (PCI) Card 0 Span 4","name=TE4\/0\/4","manufacturer=Digium","devicetype=Wildcard TE420 (5th Gen)","location=Board ID Switch 0","basechan=142","totchans=31","irq=0","type=digital-E1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=AMI,HDB3","framing_opts=CCS,CRC4","coding=","framing=CAS","[7]","active=yes","alarms=UNCONFIGURED","description=Wildcard TE122 Card 0","name=WCT1\/0","manufacturer=Digium","devicetype=Wildcard TE122","location=PCI Bus 07 Slot 03","basechan=173","totchans=24","irq=0","type=digital-T1","syncsrc=0","lbo=0 db (CSU)\/0-133 feet (DSX-1)","coding_opts=B8ZS,AMI","framing_opts=ESF,D4","coding=","framing=CAS"]',true);
 	}
 }

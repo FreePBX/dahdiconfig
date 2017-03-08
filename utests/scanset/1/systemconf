@@ -1,0 +1,15 @@
+span=3,0,0,CAS,HDB3
+span=8,0,0,CAS,HDB3
+span=9,0,0,CAS,HDB3
+cas=1-15,17-30:1101
+echocanceller=oslec,1-15,17-30
+bchan=49-63,65-79,32-46,48-62
+dchan=64
+hardhdlc=47
+fxsks=25-28
+echocanceller=oslec,25-28
+fxoks=29
+echocanceller=oslec,29
+loadzone=us
+defaultzone=us
+tone_region=us

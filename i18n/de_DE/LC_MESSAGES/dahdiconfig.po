@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-03-07 02:21+0200\n"
+"PO-Revision-Date: 2017-03-19 19:34+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/de_DE/>\n"
@@ -1340,15 +1340,15 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:23
 msgid "New Zealand"
-msgstr ""
+msgstr "Neuseeland"
 
 #: views/dahdi_advanced_settings.php:106 views/dahdi_modprobe_settings.php:89
 msgid "Newzealand"
-msgstr ""
+msgstr "Neuseeland"
 
 #: views/dahdi_advanced_settings.php:107 views/dahdi_modprobe_settings.php:90
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigeria"
 
 #: views/dahdi_global_settings.php:48 views/dahdi_global_settings.php:71
 #: views/dahdi_global_settings.php:82 views/dahdi_global_settings.php:93
@@ -1363,11 +1363,11 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
 #: views/sangoma.php:46 views/sangoma.php:56
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: functions.inc.php:498
 msgid "No Available Groups or Channels"
-msgstr ""
+msgstr "Keine Gruppen oder Kanäle verfügbar"
 
 #: functions.inc.php:567
 msgid "No Unused DAHDi Channels Available"
@@ -1376,7 +1376,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:193 views/dahdi_advanced_settings.php:216
 #: views/dahdi_modprobe_settings.php:204 views/dahdi_modprobe_settings.php:236
 msgid "None"
-msgstr ""
+msgstr "keine"
 
 #: views/dahdi_modprobe_settings.php:226
 msgid ""
@@ -1406,11 +1406,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:21 views/dahdi_advanced_settings.php:108
 #: views/dahdi_modprobe_settings.php:91
 msgid "Norway"
-msgstr ""
+msgstr "Norwegen"
 
 #: views/dahdi_global_settings.php:21
 msgid "Norwegian"
-msgstr ""
+msgstr "Norwegisch"
 
 #: views/dahdi_global_settings.php:150
 msgid ""
@@ -1437,7 +1437,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:109 views/dahdi_modprobe_settings.php:92
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 #: views/dahdi_global_settings.php:43
 msgid ""
@@ -1460,7 +1460,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
-msgstr ""
+msgstr "Ausgehend"
 
 #: views/dahdi_digital_settings.php:80
 msgid "PRI - CPE"
@@ -1472,20 +1472,20 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:110 views/dahdi_modprobe_settings.php:93
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 #: views/dahdi_advanced_settings.php:156 views/dahdi_modprobe_settings.php:151
 msgid "Peak (89v)"
-msgstr ""
+msgstr "Spitze (89v)"
 
 #: views/dahdi_advanced_settings.php:111 views/dahdi_modprobe_settings.php:94
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 #: views/dahdi_advanced_settings.php:52 views/dahdi_advanced_settings.php:112
 #: views/dahdi_mfcr2_settings.php:25 views/dahdi_modprobe_settings.php:95
 msgid "Philippines"
-msgstr ""
+msgstr "Philippinen"
 
 #: page.dahdi.php:20
 #, php-format
@@ -1516,7 +1516,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:36 views/dahdi_advanced_settings.php:113
 #: views/dahdi_modprobe_settings.php:96
 msgid "Poland"
-msgstr ""
+msgstr "Polen"
 
 #: views/sangoma.php:79
 msgid "Polarity CID Timeout"
@@ -1537,25 +1537,25 @@ msgstr ""
 #: views/dahdi_analog_signalling_form.php:11
 #, php-format
 msgid "Port %s"
-msgstr ""
+msgstr "Anschluss %s"
 
 #: views/dahdi_analog_settings.php:12
 #, php-format
 msgid "Port %s Settings"
-msgstr ""
+msgstr "Anschluss %s Einstellungen"
 
 #: views/dahdi_analog_hardware.php:6
 msgid "Ports"
-msgstr ""
+msgstr "Anschlüsse"
 
 #: views/dahdi_advanced_settings.php:38 views/dahdi_advanced_settings.php:114
 #: views/dahdi_modprobe_settings.php:97
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: views/dahdi_global_settings.php:32
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugiesisch"
 
 #: views/dahdi_digital_settings.php:114
 msgid "Q.SIG"

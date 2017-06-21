@@ -10,42 +10,45 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-01-23 10:56-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-06-21 09:58+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
 msgid "%s Ports"
-msgstr ""
+msgstr "Các cổng giao tiếp %s"
 
 #: views/dahdi_digital_settings.php:142
 msgid "-15db (CSU)"
-msgstr ""
+msgstr "-15db (CSU/bộ truyền và nhận tín hiệu trên các đường truyền WAN)"
 
 #: views/dahdi_digital_settings.php:143
 msgid "-22.5db (CSU)"
-msgstr ""
+msgstr "-22.5db (CSU/bộ truyền và nhận tín hiệu trên các đường truyền WAN)"
 
 #: views/dahdi_digital_settings.php:141
 msgid "-7.5db (CSU)"
-msgstr ""
+msgstr "-7.5db (CSU/bộ truyền và nhận tín hiệu trên các đường truyền WAN)"
 
 #: install.php:569
 msgid "..Done"
-msgstr ""
+msgstr "..Đã xong"
 
 #: views/dahdi_digital_settings.php:136
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
-msgstr ""
+msgstr "0 db (CSU)/0-133 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:137
 msgid "133-266 feet (DSX-1)"
-msgstr ""
+msgstr "133-266 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:138
 msgid "266-399 feet (DSX-1)"
@@ -71,6 +74,8 @@ msgid ""
 "A group ID number to associate this analog device with when referencing it "
 "elswhere using g<num>"
 msgstr ""
+"Một nhóm số ID liên kết thiết bị analog này với khi tham chiếu nó tới nơi "
+"đang sử dụng khác g<num>"
 
 #: views/dahdi_advanced_settings.php:136 views/dahdi_modprobe_settings.php:121
 msgid "A-law Override"
@@ -86,111 +91,116 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
-msgstr ""
+msgstr "Thao tác"
 
 #: install.php:605
 msgid "Add type column"
-msgstr ""
+msgstr "Thêm kiểu cột"
 
 #: install.php:621
 msgid "Adding txgain and rxgain column to analog table"
-msgstr ""
+msgstr "Đang thêm cột  txgain and rxgain đến bảng analoge"
 
 #: views/dahdi_mfcr2_settings.php:299
 msgid "Advanced Protocol Configuration File"
-msgstr ""
+msgstr "Tệp cấu hình giao thức nâng cao"
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Các cài đặt nâng cao"
 
 #: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:15
 msgid "Alarms"
-msgstr ""
+msgstr "Các cảnh báo"
 
 #: views/dahdi_mfcr2_settings.php:173
 msgid "Allow Collect Calls"
-msgstr ""
+msgstr "Cho phép thu thập các cuộc gọi"
 
 #: dahdiconfig.i18n.php:12
 msgid "Allow PRI Discrete Channels"
 msgstr ""
+"Cho phép PRI ( Primary Rate Interface-Giao điện trung kế tỉ lệ chính) phân "
+"lập các kênh"
 
 #: views/dahdi_global_settings.php:112
 msgid "Also enables call parking (overrides the \"canpark\" parameter)"
-msgstr ""
+msgstr "Kích hoạt tiếp nhận cuộc gọi tự động ( ghi đè  thông số \"canpark\")"
 
 #: views/dahdi_analog_settings.php:1
 #, php-format
 msgid "Analog %s"
-msgstr ""
+msgstr "%s Analog"
 
 #: views/dahdi_analog_signalling_form.php:1
 #, php-format
 msgid "Analog %s Ports"
-msgstr ""
+msgstr "Công giao tiếp %s Analog"
 
 #: functions.inc.php:304
 #, php-format
 msgid "Analog Channel %s"
-msgstr ""
+msgstr "Kênh analog %s"
 
 #: page.dahdi.php:57
 msgid "Analog Hardware"
-msgstr ""
+msgstr "Phần cứng Analog"
 
 #: views/dahdi_global_settings.php:184
 msgid "Answer Immediately"
-msgstr ""
+msgstr "Trả lời ngay"
 
 #: views/dahdi_modprobe_settings.php:28
 msgid "Any"
-msgstr ""
+msgstr "Bất cứ"
 
 #: views/dahdi_advanced_settings.php:147 views/dahdi_modprobe_settings.php:138
 msgid "Apply Opermode to FXO Modules"
-msgstr ""
+msgstr "áp dụng chế độ Opermode lên các mô đun FOX"
 
 #: views/dahdi_advanced_settings.php:148 views/dahdi_modprobe_settings.php:139
 msgid "Apply Opermode to FXS and FXO Modules"
-msgstr ""
+msgstr "Áp dụng Opermode vào các mô-đun FXS và FXO"
 
 #: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
+"Bạn có chắc chắn muôn khởi động lại mà không nhấn 'Apply Config' ( Áp dụng "
+"cấu hình)?"
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
 msgid "Argentina"
-msgstr ""
+msgstr "Quốc gia Ac- gen-ti-na"
 
 #: views/dahdi_global_settings.php:36
 msgid "Argentine Spanish"
-msgstr ""
+msgstr "Quốc gia Ac-gen-ti-na Tây Ban Nha"
 
 #: views/dahdi_advanced_settings.php:14 views/dahdi_advanced_settings.php:62
 #: views/dahdi_modprobe_settings.php:45
 msgid "Australia"
-msgstr ""
+msgstr "Quốc gia Úc"
 
 #: views/dahdi_global_settings.php:14
 msgid "Australian"
-msgstr ""
+msgstr "Người Úc"
 
 #: views/dahdi_advanced_settings.php:22 views/dahdi_advanced_settings.php:63
 #: views/dahdi_modprobe_settings.php:46
 msgid "Austria"
-msgstr ""
+msgstr "Quốc gia Áo"
 
 #: views/dahdi_modprobe_settings.php:278
 msgid "Auto"
-msgstr ""
+msgstr "Tự động"
 
 #: functions.inc.php:479
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
 msgstr ""
+"Nhóm DAHDI khả dụng và Các kênh được cấu hình trong Mô đun cấu hình DAHDI"
 
 #: views/dahdi_digital_settings.php:97
 msgid "BRI PTMP - CPE"

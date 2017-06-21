@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-21 15:59+0200\n"
+"PO-Revision-Date: 2017-06-21 16:08+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -406,60 +406,60 @@ msgstr "Tiếng Columbia"
 
 #: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
 msgid "Connectivity"
-msgstr ""
+msgstr "Khả năng kết nối"
 
 #: views/dahdi_analog_settings.php:36
 #: views/dahdi_analog_signalling_form.php:19
 msgid "Context"
-msgstr ""
+msgstr "Ngữ cảnh"
 
 #: views/sangoma.php:41
 msgid "Control hardware DTMF"
-msgstr ""
+msgstr "Điều khiển phần cứng DTMF"
 
 #: install.php:375
 msgid "Create Configured Locations Table"
-msgstr ""
+msgstr "Tạo bảng vị trí được cấu hình"
 
 #: install.php:21
 msgid "Creating Dahdi Advanced Settings Table"
-msgstr ""
+msgstr "Đang tạo bảng các cài đặt nâng cao Dahdi"
 
 #: install.php:355
 msgid "Creating Dahdi Analog Table"
-msgstr ""
+msgstr "Đang tạo bảng Analog Dahdi"
 
 #: install.php:596
 msgid "Creating dahdi modules Table"
-msgstr ""
+msgstr "Đang tạo bảng các mô đun dahdi"
 
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
-msgstr ""
+msgstr "Quốc gia Croatia"
 
 #: views/dahdi_advanced_settings.php:73 views/dahdi_modprobe_settings.php:56
 msgid "Cyrpus"
-msgstr ""
+msgstr "Cộng hòa Síp"
 
 #: views/dahdi_advanced_settings.php:74 views/dahdi_modprobe_settings.php:57
 msgid "Czech"
-msgstr ""
+msgstr "Cộng hòa Séc"
 
 #: views/dahdi_advanced_settings.php:45 views/dahdi_mfcr2_settings.php:19
 msgid "Czech Republic"
-msgstr ""
+msgstr "Cộng hòa Séc"
 
 #: views/dahdi_digital_hardware.php:9
 msgid "D-Channel"
-msgstr ""
+msgstr "Kênh D"
 
 #: views/dahdi_digital_settings.php:34
 msgid "D4/AMI"
-msgstr ""
+msgstr "D4/AMI"
 
 #: page.dahdi.php:49
 msgid "DAHDI Configuration"
-msgstr ""
+msgstr "Cấu hình DAHDI"
 
 #: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"

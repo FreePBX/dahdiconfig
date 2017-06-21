@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-21 11:01+0200\n"
+"PO-Revision-Date: 2017-06-21 15:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -44,23 +44,23 @@ msgstr "..Đã xong"
 
 #: views/dahdi_digital_settings.php:136
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
-msgstr "0 db (CSU)/0-133 feet (DSX-1)"
+msgstr "Phối hợp trở kháng đường dây:0 db (CSU)/0-133 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:137
 msgid "133-266 feet (DSX-1)"
-msgstr "133-266 feet (DSX-1)"
+msgstr "Thông số kĩ thuật: 133-266 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:138
 msgid "266-399 feet (DSX-1)"
-msgstr ""
+msgstr "Thông số kĩ thuật: : 266-399 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:139
 msgid "399-533 feet (DSX-1)"
-msgstr ""
+msgstr "Thông số kĩ thuật: 399-533 feet (DSX-1)"
 
 #: views/dahdi_digital_settings.php:140
 msgid "533-655 feet (DSX-1)"
-msgstr ""
+msgstr "Thông số kĩ thuật:  533-655 feet (DSX-1)"
 
 #: views/dahdi_mfcr2_settings.php:301
 msgid ""
@@ -83,11 +83,11 @@ msgstr ""
 
 #: views/dahdi_digital_settings.php:110
 msgid "AT&amp;T 4ESS"
-msgstr ""
+msgstr "Hãng điện thoại AT&T; Hệ thống chuyển mạch điện tử 4ESS"
 
 #: views/dahdi_mfcr2_settings.php:227
 msgid "Accept on Offer"
-msgstr ""
+msgstr "Chấp nhận một đề nghị"
 
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
@@ -271,11 +271,11 @@ msgid ""
 msgstr ""
 "Brazil sử dụng một nhóm các bên gọi điện thoại đặc biệt để thu thập các cuộc "
 "gọi (llamadas por cobrar) <br /> thay vì sử dụng nhà điều hành (như ở Mexico)"
-". Thông số R2 tại Braxin cho biết một âm thanh GB đặc biệt nên được sử dụng "
+". Thông số giao thức R2 tại Braxin cho biết nên sử dụng một tông GB đặc biệt "
 "để từ chối thu thập cuộc gọi. Nếu bạn muốn CHO PHÉP thu thập các cuộc gọi "
-"thì chỉ định 'Có', nếu bạn muốn CHẶN việc thu thập các cuộc gọi thì nói "
-"'Không'. Chặn cuộc gọi được mặc định. <br /> (xem 'mfcr2_double_answer') <br "
-"/> <strong> Mặc định: </ strong>no"
+"thì chỉ định 'Có', nếu bạn muốn CHẶN việc thu thập các cuộc gọi thì chỉ định "
+"'Không'. Chặn cuộc gọi được mặc định. <br />(see also 'mfcr2_double_answer')<"
+"br /> <strong>Default:</strong>no"
 
 #: views/dahdi_mfcr2_settings.php:265
 msgid ""
@@ -288,6 +288,14 @@ msgid ""
 "be sent to hangup the call indicating that the line should be released "
 "immediately.<br /> <strong>Default:</strong>no"
 msgstr ""
+"Brazil sử dụng tín hiệu đặc biệt để buộc giải phóng các đường dây ( hangup-"
+"bị treo) khỏi viễn cảnh lạc hậu. <br />Khi mfcr2_forced_release=no, Tín hiệu "
+"phản hồi thông thường sẽ được gửi trên đường dây bị treo, điều này là OK  "
+"đối với hầu hết các biến thể mfcr nơi mà trung tâm sẽ rời khỏi đường dây "
+"trong vòng ít giây (30, 60).  <br /> Thỉnh thoảng điều này không là điều "
+"mong muốn. <br /> <br /> Khi mfcr2_forced_release=yes, một tín hiệu khác sẽ "
+"được gửi tới đường dây hangup , cuộc gọi sẽ chỉ ra rằng đường dây cần được "
+"giải phóng ngay lập tức.<br /> <strong>Default:</strong>no"
 
 #: views/dahdi_global_settings.php:27
 msgid "Brazilian"
@@ -312,89 +320,89 @@ msgstr ""
 
 #: views/dahdi_digital_settings.php:39
 msgid "CAS/HDB3"
-msgstr ""
+msgstr "CAS/HDB3"
 
 #: views/dahdi_digital_settings.php:30
 msgid "CCS/AMI"
-msgstr ""
+msgstr "CCS/AMI"
 
 #: views/dahdi_digital_settings.php:37
 msgid "CCS/HDB3"
-msgstr ""
+msgstr "CCS/HDB3"
 
 #: views/dahdi_digital_settings.php:38
 msgid "CCS/HDB3/CRC4"
-msgstr ""
+msgstr "CCS/HDB3/CRC4"
 
 #: views/dahdi_mfcr2_settings.php:99
 msgid "Call Logging Directory"
-msgstr ""
+msgstr "Danh sách nhật ký cuộc gọi"
 
 #: views/dahdi_mfcr2_settings.php:113
 msgid "Call Logging Enable"
-msgstr ""
+msgstr "Bật nhật ký cuộc gọi"
 
 #: views/dahdi_mfcr2_settings.php:79
 msgid "Caller Category to Send"
-msgstr ""
+msgstr "Phân loại người gọi để gửi"
 
 #: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
-msgstr ""
+msgstr "Quốc gia Canada"
 
 #: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
 #: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #: functions.inc.php:546
 msgid "Channel"
-msgstr ""
+msgstr "Kênh"
 
 #: views/dahdi_digital_hardware.php:8
 msgid "Channels Used/Total"
-msgstr ""
+msgstr "Các kênh đã sử dụng/ tổng"
 
 #: views/dahdi_mfcr2_settings.php:281
 msgid "Charge Calls"
-msgstr ""
+msgstr "Phí các cuộc gọi"
 
 #: install.php:73
 msgid "Checking tables..."
-msgstr ""
+msgstr "Đang kiểm tra các bảng..."
 
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
-msgstr ""
+msgstr "Quốc gia Chile"
 
 #: views/dahdi_advanced_settings.php:46 views/dahdi_advanced_settings.php:70
 #: views/dahdi_mfcr2_settings.php:18 views/dahdi_modprobe_settings.php:53
 msgid "China"
-msgstr ""
+msgstr "Trung Quốc"
 
 #: views/dahdi_global_settings.php:35
 msgid "Chinese"
-msgstr ""
+msgstr "Tiếng Trung quốc"
 
 #: functions.inc.php:383
 msgid "Choose"
-msgstr ""
+msgstr "Chọn"
 
 #: functions.inc.php:547
 #, php-format
 msgid "Choose the FXS channel for this %s"
-msgstr ""
+msgstr "Chọn kênh FXS cho %s này"
 
 #: views/dahdi_mfcr2_settings.php:20
 msgid "Colombia"
-msgstr ""
+msgstr "Quốc gia Colombia"
 
 #: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
 msgid "Columbia"
-msgstr ""
+msgstr "Tiếng Columbia"
 
 #: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
 msgid "Connectivity"

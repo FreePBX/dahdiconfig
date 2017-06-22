@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-22 09:38+0200\n"
+"PO-Revision-Date: 2017-06-22 15:01+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -546,8 +546,9 @@ msgstr ""
 "lỗi."
 
 #: views/dahdi_modprobe_settings.php:271
+#, fuzzy
 msgid "Default Line Mode"
-msgstr ""
+msgstr "Chế độ Line mặc định"
 
 #: install.php:534
 msgid "Deleting old dahdi module data from database (its been migrated)"

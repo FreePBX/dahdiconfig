@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-21 21:23+0200\n"
+"PO-Revision-Date: 2017-06-22 09:38+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -484,10 +484,12 @@ msgid ""
 "DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' "
 "button below"
 msgstr ""
+"DAHi dường như đang không hoạt động. Kích vò nút dưới đây 'Restart DAHDi & "
+"Asterisk'"
 
 #: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
-msgstr ""
+msgstr "Vị trí thực thi được của DAHi"
 
 #: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
 #, php-format
@@ -496,11 +498,11 @@ msgstr "DAHDi đã thất bại:%s"
 
 #: dahdiconfig.i18n.php:40
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
-msgstr ""
+msgstr "Vị trí tệp cấu hình DAHDi ModProbe.d ((modprobe.d/dahdi.conf)"
 
 #: views/dahdi_modules_settings.php:3
 msgid "DAHDi Module Load/Order"
-msgstr ""
+msgstr "Mô đun DAHDi Tải/ Order"
 
 #: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location"
@@ -537,6 +539,11 @@ msgid ""
 "setting this to true will allow each channel to be configured. This can be "
 "useful when troubleshooting a PRI and trying to isolate a bad B Channel."
 msgstr ""
+"Việc cấu hình trung kế DAHDi thông thường được thực hiện bằng cách sử dụng "
+"các nhóm cho cấu hình PRI. Nếu việc cấu hình các trung kế đến các kênh xác "
+"định là cần thiết thì cài đặt về True sẽ cho phép mỗi kênh được cấu hình. "
+"Điều này sẽ giúp ích khi khắc phục sự cố hoặc cố gắng cô lập một kênh B bị "
+"lỗi."
 
 #: views/dahdi_modprobe_settings.php:271
 msgid "Default Line Mode"
@@ -545,6 +552,7 @@ msgstr ""
 #: install.php:534
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
+"Đang xóa dữ liệu mô đun dahdi cũ khỏi cơ sở dữ liệu ( nó đã được di chuyển)"
 
 #: views/dahdi_advanced_settings.php:44 views/dahdi_advanced_settings.php:75
 #: views/dahdi_modprobe_settings.php:58
@@ -554,18 +562,20 @@ msgstr "Quốc gia Đan Mạch"
 #: install.php:638
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
-msgstr ""
+msgstr "Mô đun Dahdi mới được phát hiện: wcaxx, Đang thêm vào %s"
 
 #: install.php:633
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
-msgstr ""
+msgstr "Mô đun Dahdi mới được phát hiện: wcte43x, Đang thêm vào %s"
 
 #: views/dahdi_mfcr2_settings.php:115
 msgid ""
 "Determine whether or not to drop call files into mfcr2_logdir. (see tooltip "
 "under Call Loggin Directory. <br /> Default: no"
 msgstr ""
+"Quyết định có nên hay không thả tệp cuộc gọi vào  mfcr2_logdir. (see tooltip "
+"under Call Loggin Directory. <br /> Default: no"
 
 #: views/dahdi_mfcr2_settings.php:63
 msgid ""
@@ -624,11 +634,11 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:277
 msgid "E1"
-msgstr ""
+msgstr "E1"
 
 #: views/dahdi_digital_settings.php:33
 msgid "ESF/B8ZS"
-msgstr ""
+msgstr "ESF/B8ZS"
 
 #: views/dahdi_modprobe_settings.php:258
 msgid "Echo Canc. NLP Max Suppression"
@@ -653,15 +663,15 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:76 views/dahdi_mfcr2_settings.php:21
 #: views/dahdi_modprobe_settings.php:59
 msgid "Ecuador"
-msgstr ""
+msgstr "Quốc gia Ecuador"
 
 #: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
 msgid "Edit"
-msgstr ""
+msgstr "Chỉnh sửa"
 
 #: views/dahdi_advanced_settings.php:77 views/dahdi_modprobe_settings.php:60
 msgid "Egypt"
-msgstr ""
+msgstr "Quốc gia Hi Lạp"
 
 #: views/dahdi_advanced_settings.php:78 views/dahdi_modprobe_settings.php:61
 msgid "El Salvador"
@@ -669,15 +679,15 @@ msgstr ""
 
 #: page.dahdi.php:242
 msgid "Enable"
-msgstr ""
+msgstr "Kích hoạt"
 
 #: views/dahdi_global_settings.php:43
 msgid "Enable Busy Detect"
-msgstr ""
+msgstr "Kích hoạt tính năng phát hiện bận"
 
 #: views/dahdi_global_settings.php:127
 msgid "Enable Call Forwarding"
-msgstr ""
+msgstr "Kích hoạt tính năng chuyênt tiếp cuộc gọi"
 
 #: views/dahdi_global_settings.php:138
 msgid "Enable Call Return"
@@ -685,11 +695,11 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:77
 msgid "Enable Call Waiting"
-msgstr ""
+msgstr "Kích hoạt tính năng cuộc gọi chờ"
 
 #: views/sangoma.php:52
 msgid "Enable DTMF CID"
-msgstr ""
+msgstr "Kích hoạt DTMF CID"
 
 #: views/dahdi_global_settings.php:161
 msgid "Enable EC when bridged"
@@ -721,7 +731,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:13
 msgid "English"
-msgstr ""
+msgstr "Tiếng Anh"
 
 #: views/dahdi_advanced_settings.php:39
 msgid "Estonia"
@@ -749,7 +759,7 @@ msgstr ""
 
 #: page.dahdi.php:160
 msgid "FXO Settings"
-msgstr ""
+msgstr "Các cài đặt FXO"
 
 #: views/dahdi_digital_settings.php:88
 msgid "FXOKS"
@@ -765,7 +775,7 @@ msgstr ""
 
 #: page.dahdi.php:163
 msgid "FXS Settings"
-msgstr ""
+msgstr "Các cài đặt FXS"
 
 #: views/dahdi_digital_settings.php:91
 msgid "FXSKS"
@@ -793,26 +803,26 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:196
 msgid "Fax Detection"
-msgstr ""
+msgstr "Phát hiện fax"
 
 #: includes/dahdi_cards.class.php:139
 #, php-format
 msgid "File %s does not exist."
-msgstr ""
+msgstr "Tệp %s không tồn tại."
 
 #: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "File %s is not owned by %s"
-msgstr ""
+msgstr "Tệp %s không thuộc sở hữu của %s"
 
 #: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
 #: views/dahdi_modprobe_settings.php:63
 msgid "Finland"
-msgstr ""
+msgstr "Quốc gia Phần Lan"
 
 #: views/dahdi_global_settings.php:18
 msgid "Finnish"
-msgstr ""
+msgstr "Tiếng Phần Lan"
 
 #: views/dahdi_global_settings.php:110
 msgid "For FXS ports (either direct analog or over T1/E1)"
@@ -820,32 +830,37 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:114
 msgid "For digital ports using ISDN PRI protocols"
-msgstr ""
+msgstr "Đối với các cổng kỹ thuật số đang sử dụng giao thức ÍDN PRI"
 
 #: views/dahdi_global_settings.php:196
 msgid "For fax detection"
-msgstr ""
+msgstr "Đối với việc phát hiện fax"
 
 #: page.dahdi.php:43
 msgid ""
 "For your changes to take effect, click the 'Restart DAHDi & Asterisk' button "
 "below"
 msgstr ""
+"Để thay đổi có hiệu lực, kích vào nút \"Restart DAHDi & Asterisk \" ( khởi "
+"động lại DAHDi & Asterisk) dưới đây"
 
 #: page.dahdi.php:42
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system"
-msgstr ""
+msgstr "Để các thay đổi phần cứng có hiệu lực, bạn phải khởi động lại hệ thống"
 
 #: page.dahdi.php:41
 msgid ""
 "For your hardware changes to take effect, you need to reboot your system! "
 "<br/> or <br/>Press the 'Restart DAHDi & Asterisk' button below"
 msgstr ""
+"Để các thay đổi phần cứng có hiệu lực, bạn phải khởi động lại hệ thống! <br/>"
+" or <br/> nhấn vào nút sau \"Restart DAHDi & Asterisk\" ( Khởi động lại DAHi "
+"& Asterisk)"
 
 #: views/dahdi_mfcr2_settings.php:263
 msgid "Forced Release"
-msgstr ""
+msgstr "Giải phóng bắt buộc"
 
 #: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:24
 msgid "Framing/Coding"
@@ -854,11 +869,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:15 views/dahdi_advanced_settings.php:81
 #: views/dahdi_modprobe_settings.php:64
 msgid "France"
-msgstr ""
+msgstr "Nước Pháp"
 
 #: views/dahdi_global_settings.php:15
 msgid "French"
-msgstr ""
+msgstr "Tiếng Pháp"
 
 #: views/dahdi_advanced_settings.php:180 views/dahdi_modprobe_settings.php:187
 msgid "Full Wave"
@@ -866,7 +881,7 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:29
 msgid "G723.1"
-msgstr ""
+msgstr "G723.1"
 
 #: views/dahdi_modprobe_settings.php:30
 msgid "G729"
@@ -874,7 +889,7 @@ msgstr ""
 
 #: views/dahdi_digital_settings.php:10
 msgid "General Settings"
-msgstr ""
+msgstr "Các cài đặt chung"
 
 #: views/dahdi_global_settings.php:161
 msgid ""
@@ -885,12 +900,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:17
 msgid "German"
-msgstr ""
+msgstr "Nước Đức"
 
 #: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
-msgstr ""
+msgstr "Tiếng Đức"
 
 #: views/dahdi_mfcr2_settings.php:61
 msgid "Get ANI Before DNIS"
@@ -898,7 +913,7 @@ msgstr ""
 
 #: page.dahdi.php:82 page.dahdi.php:120 views/dahdi_global_settings.php:3
 msgid "Global Settings"
-msgstr ""
+msgstr "Các cài đặt toàn cầu"
 
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
@@ -912,7 +927,7 @@ msgstr ""
 #: views/dahdi_analog_settings.php:29
 #: views/dahdi_analog_signalling_form.php:16
 msgid "Group"
-msgstr ""
+msgstr "Nhóm"
 
 #: functions.inc.php:300 functions.inc.php:319
 #, php-format
@@ -944,7 +959,7 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:68
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hồng Kông"
 
 #: views/dahdi_advanced_settings.php:85
 msgid "Hongkong"
@@ -970,12 +985,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:28
 msgid "Hungarian"
-msgstr ""
+msgstr "Tiếng Hungary"
 
 #: views/dahdi_advanced_settings.php:34 views/dahdi_advanced_settings.php:86
 #: views/dahdi_modprobe_settings.php:69
 msgid "Hungary"
-msgstr ""
+msgstr "Quốc gia Hungary"
 
 #: views/dahdi_advanced_settings.php:87 views/dahdi_modprobe_settings.php:70
 msgid "Iceland"
@@ -992,7 +1007,7 @@ msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:209
 msgid "Immediate Accept"
-msgstr ""
+msgstr "Chấp nhận ngay lập tức"
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "In Any mode it'll run 92 channels of either codec."
@@ -1000,11 +1015,11 @@ msgstr ""
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "In G.723.1 mode it'll run 92 channels"
-msgstr ""
+msgstr "Trong chế độ G.723.1 nó sẽ chạy 92 kênh"
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "In G.729 mode it'll run 120 channels"
-msgstr ""
+msgstr "Trong chế độ G.729 nó sẽ chạy 120 kênh"
 
 #: views/dahdi_global_settings.php:174
 msgid ""
@@ -1025,25 +1040,25 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:201
 msgid "Incoming"
-msgstr ""
+msgstr "Đến"
 
 #: views/dahdi_advanced_settings.php:41 views/dahdi_advanced_settings.php:88
 #: views/dahdi_modprobe_settings.php:71
 msgid "India"
-msgstr ""
+msgstr "Ấn Độ"
 
 #: views/dahdi_advanced_settings.php:89 views/dahdi_mfcr2_settings.php:22
 #: views/dahdi_modprobe_settings.php:72
 msgid "Indonesia"
-msgstr ""
+msgstr "In đô nê si a"
 
 #: install.php:530
 msgid "Inserting Old Data from Dahdi Advanced Table"
-msgstr ""
+msgstr "Đang chèn dữ liệu cũ từ bảng nâng cao Dahdi"
 
 #: views/dahdi_mfcr2_settings.php:23
 msgid "International Telecommunication Union"
-msgstr ""
+msgstr "Hiệp hội viễn thông quốc tế"
 
 #: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
 msgid "Ireland"
@@ -1061,24 +1076,26 @@ msgstr ""
 #: page.dahdi.php:177
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
+"Nhiệm vụ của bạn là sao lưu tất cả các tệp liên quan trong máy tính của mình "
+"!"
 
 #: views/dahdi_global_settings.php:22
 msgid "Italian"
-msgstr ""
+msgstr "Tiếng Ý"
 
 #: views/dahdi_advanced_settings.php:24 views/dahdi_advanced_settings.php:92
 #: views/dahdi_modprobe_settings.php:75
 msgid "Italy"
-msgstr ""
+msgstr "Nước Ý"
 
 #: views/dahdi_advanced_settings.php:20 views/dahdi_advanced_settings.php:93
 #: views/dahdi_modprobe_settings.php:76
 msgid "Japan"
-msgstr ""
+msgstr "Nước Nhật"
 
 #: views/dahdi_global_settings.php:20
 msgid "Japanese"
-msgstr ""
+msgstr "Tiếng Nhật"
 
 #: views/dahdi_advanced_settings.php:94 views/dahdi_modprobe_settings.php:77
 msgid "Jordan"
@@ -1134,7 +1151,7 @@ msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:131
 msgid "Log Levels"
-msgstr ""
+msgstr "Các cấp nhật ký"
 
 #: views/dahdi_mfcr2_settings.php:101
 msgid ""

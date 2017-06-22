@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-21 16:08+0200\n"
+"PO-Revision-Date: 2017-06-21 21:23+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -463,21 +463,21 @@ msgstr "Cấu hình DAHDI"
 
 #: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
-msgstr ""
+msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu hình Dahdi]!"
 
 #: functions.inc.php:461 functions.inc.php:494
 msgid "DAHDI Trunks"
-msgstr ""
+msgstr "Các trung kế DAHDI"
 
 #: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:8
 msgid "DAHDi Config"
-msgstr ""
+msgstr "Cấu hình DAHDi"
 
 #: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
 #: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
 #: dahdiconfig.i18n.php:50 dahdiconfig.i18n.php:56
 msgid "DAHDi Configuration Module"
-msgstr ""
+msgstr "Mô đun cấu hình DAHDi"
 
 #: page.dahdi.php:11
 msgid ""
@@ -492,7 +492,7 @@ msgstr ""
 #: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
 #, php-format
 msgid "DAHDi Failed: %s"
-msgstr ""
+msgstr "DAHDi đã thất bại:%s"
 
 #: dahdiconfig.i18n.php:40
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
@@ -504,23 +504,23 @@ msgstr ""
 
 #: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location"
-msgstr ""
+msgstr "Vị trí các mô đun DAHDi"
 
 #: dahdiconfig.i18n.php:28
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
-msgstr ""
+msgstr "Vị trí  các mô đun DAHDi (/etc/dahdi/ các mô đun)"
 
 #: Dahdiconfig.class.php:128
 msgid "DAHDi Started"
-msgstr ""
+msgstr "Đã khởi động DAHDi"
 
 #: Dahdiconfig.class.php:177
 msgid "DAHDi Stopped"
-msgstr ""
+msgstr "Đã dừng DAHDi"
 
 #: dahdiconfig.i18n.php:52
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
-msgstr ""
+msgstr "Vị trí tệp cấu hình hệ thống DAHDi (dahdi/system.conf)"
 
 #: page.dahdi.php:166
 msgid "DAHDi Write Disabled Disclaimer"
@@ -528,7 +528,7 @@ msgstr ""
 
 #: page.dahdi.php:167
 msgid "DAHDi is DISABLED for writing"
-msgstr ""
+msgstr "DAHDi bị vô hiệu để ghi"
 
 #: dahdiconfig.i18n.php:16
 msgid ""
@@ -549,7 +549,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:44 views/dahdi_advanced_settings.php:75
 #: views/dahdi_modprobe_settings.php:58
 msgid "Denmark"
-msgstr ""
+msgstr "Quốc gia Đan Mạch"
 
 #: install.php:638
 #, php-format
@@ -575,20 +575,20 @@ msgstr ""
 
 #: functions.inc.php:535
 msgid "Device Options"
-msgstr ""
+msgstr "Các lựa chọn thiết bị"
 
 #: functions.inc.php:338
 #, php-format
 msgid "Digital Channel %s"
-msgstr ""
+msgstr "Kênh kỹ thuật số %s"
 
 #: page.dahdi.php:56
 msgid "Digital Hardware"
-msgstr ""
+msgstr "Phần cứng kỹ thuật số"
 
 #: page.dahdi.php:247
 msgid "Disable"
-msgstr ""
+msgstr "Vô hiệu"
 
 #: dahdiconfig.i18n.php:30
 msgid "Disable DAHDi Configuration Writes"
@@ -600,7 +600,7 @@ msgstr ""
 
 #: install.php:352
 msgid "Done"
-msgstr ""
+msgstr "Đã xong"
 
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
@@ -608,7 +608,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:16
 msgid "Dutch"
-msgstr ""
+msgstr "Quốc gia Hà Lan"
 
 #: views/dahdi_digital_settings.php:84
 msgid "E &amp; M"

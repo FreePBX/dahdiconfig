@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-22 15:01+0200\n"
+"PO-Revision-Date: 2017-06-22 21:50+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -68,6 +68,10 @@ msgid ""
 "tone definitions used in the protocol! <br /> This parameter is commented by "
 "default because YOU DON'T NEED IT UNLESS YOU REALLY UNDERSTAND MFC/R2!"
 msgstr ""
+"<Strong>CẢNH BÁO:</ strong>Chỉ dành cho người dùng có kinh nghiệm vì nó chỉ "
+"cho phép ban tùy chỉnh độ rõ của tông âm thanh được sử dụng trong giao thức!<"
+"br />Thông số này được chú thích mặc định vì BẠN KHÔNG CẦN NÓ TRỪ KHI BẠN "
+"THỰC SỰ HIỂU VỀ  MFC/R2!"
 
 #: views/dahdi_analog_settings.php:29
 msgid ""
@@ -249,7 +253,7 @@ msgstr "Vương quốc Bỉ"
 
 #: views/dahdi_advanced_settings.php:152 views/dahdi_modprobe_settings.php:145
 msgid "Boostringer"
-msgstr ""
+msgstr "Tăng biên độ của nhạc chuông"
 
 #: views/dahdi_global_settings.php:203
 msgid "Both"
@@ -526,7 +530,7 @@ msgstr "Vị trí tệp cấu hình hệ thống DAHDi (dahdi/system.conf)"
 
 #: page.dahdi.php:166
 msgid "DAHDi Write Disabled Disclaimer"
-msgstr ""
+msgstr "Từ chối vô hiệu tính năng ghi DAHDi"
 
 #: page.dahdi.php:167
 msgid "DAHDi is DISABLED for writing"
@@ -546,9 +550,8 @@ msgstr ""
 "lỗi."
 
 #: views/dahdi_modprobe_settings.php:271
-#, fuzzy
 msgid "Default Line Mode"
-msgstr "Chế độ Line mặc định"
+msgstr "Chế độ đi dây mặc định"
 
 #: install.php:534
 msgid "Deleting old dahdi module data from database (its been migrated)"
@@ -583,6 +586,9 @@ msgid ""
 "Determine whether or not to get the ANI before getting DNIS.  Some telcos "
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
+"Quyết định liệu có nên nhận ANI trước khi nhận DNIS hay không. Một số công "
+"ty viễn thông yêu cầu ANI trước tiên, còn một số yếu tố khác không quan tâm.<"
+"br /> <strong>Default:</strong>no"
 
 #: functions.inc.php:535
 msgid "Device Options"
@@ -603,11 +609,11 @@ msgstr "Vô hiệu"
 
 #: dahdiconfig.i18n.php:30
 msgid "Disable DAHDi Configuration Writes"
-msgstr ""
+msgstr "Vô hiệu các bản ghi cấu hình DAHDi"
 
 #: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
-msgstr ""
+msgstr "Không được quên khởi động lại Dahdi & Asterisk sau khi hoàn thành"
 
 #: install.php:352
 msgid "Done"
@@ -615,23 +621,23 @@ msgstr "Đã xong"
 
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
-msgstr ""
+msgstr "Trả lời kép"
 
 #: views/dahdi_global_settings.php:16
 msgid "Dutch"
-msgstr "Quốc gia Hà Lan"
+msgstr "Nước Hà Lan"
 
 #: views/dahdi_digital_settings.php:84
 msgid "E &amp; M"
-msgstr ""
+msgstr "E &amp; M"
 
 #: views/dahdi_digital_settings.php:85
 msgid "E &amp; M -- Wink"
-msgstr ""
+msgstr "E &amp; M -- Wink"
 
 #: views/dahdi_digital_settings.php:86
 msgid "E &amp; M -- fead(DTMF)"
-msgstr ""
+msgstr "E &amp; M -- fead(DTMF)"
 
 #: views/dahdi_modprobe_settings.php:277
 msgid "E1"
@@ -664,7 +670,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:76 views/dahdi_mfcr2_settings.php:21
 #: views/dahdi_modprobe_settings.php:59
 msgid "Ecuador"
-msgstr "Quốc gia Ecuador"
+msgstr "Nước Ecuador"
 
 #: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
 msgid "Edit"
@@ -672,11 +678,11 @@ msgstr "Chỉnh sửa"
 
 #: views/dahdi_advanced_settings.php:77 views/dahdi_modprobe_settings.php:60
 msgid "Egypt"
-msgstr "Quốc gia Hi Lạp"
+msgstr "Nước Ai Cập"
 
 #: views/dahdi_advanced_settings.php:78 views/dahdi_modprobe_settings.php:61
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
 #: page.dahdi.php:242
 msgid "Enable"
@@ -688,15 +694,15 @@ msgstr "Kích hoạt tính năng phát hiện bận"
 
 #: views/dahdi_global_settings.php:127
 msgid "Enable Call Forwarding"
-msgstr "Kích hoạt tính năng chuyênt tiếp cuộc gọi"
+msgstr "Kích hoạt tính năng chuyển tiếp cuộc gọi"
 
 #: views/dahdi_global_settings.php:138
 msgid "Enable Call Return"
-msgstr ""
+msgstr "Kích hoạt  tính năng trở lại cuộc gọi  (Call Return)"
 
 #: views/dahdi_global_settings.php:77
 msgid "Enable Call Waiting"
-msgstr "Kích hoạt tính năng cuộc gọi chờ"
+msgstr "Kích hoạt tính năng cuộc gọi chờ ( Call Waiting)"
 
 #: views/sangoma.php:52
 msgid "Enable DTMF CID"
@@ -704,11 +710,11 @@ msgstr "Kích hoạt DTMF CID"
 
 #: views/dahdi_global_settings.php:161
 msgid "Enable EC when bridged"
-msgstr ""
+msgstr "Kích hoạt EC khi bắc cầu"
 
 #: views/dahdi_global_settings.php:149
 msgid "Enable Echo Canceling"
-msgstr ""
+msgstr "Kích hoạt tính năng triệt tiếng vọng ( Echo Canceling)"
 
 #: views/dahdi_global_settings.php:172
 msgid "Enable Echo Training"
@@ -716,19 +722,19 @@ msgstr ""
 
 #: views/sangoma.php:7
 msgid "Enable Sangoma Cards"
-msgstr ""
+msgstr "Kích hoạt các card Sangoma"
 
 #: views/dahdi_global_settings.php:99
 msgid "Enable Three Way Calling"
-msgstr ""
+msgstr "Kích hoạt tính năng đàm thoại tay ba (Three Way Calling)"
 
 #: views/dahdi_global_settings.php:110
 msgid "Enable Transfer"
-msgstr ""
+msgstr "Kích hoạt tính năng truyền ( Transfer)"
 
 #: views/dahdi_global_settings.php:149
 msgid "Enable echo cancellation"
-msgstr ""
+msgstr "Kích hoạt tính năng triệt tiếng vọng"
 
 #: views/dahdi_global_settings.php:13
 msgid "English"
@@ -736,27 +742,27 @@ msgstr "Tiếng Anh"
 
 #: views/dahdi_advanced_settings.php:39
 msgid "Estonia"
-msgstr ""
+msgstr "Nước Estonia"
 
 #: views/dahdi_global_settings.php:33
 msgid "Estonian"
-msgstr ""
+msgstr "Tiếng Estonia"
 
 #: views/dahdi_digital_settings.php:112
 msgid "EuroISDN"
-msgstr ""
+msgstr "EuroISDN"
 
 #: views/dahdi_advanced_settings.php:79
 msgid "FCC"
-msgstr ""
+msgstr "FCC"
 
 #: views/dahdi_modprobe_settings.php:205
 msgid "FSK"
-msgstr ""
+msgstr "FSK"
 
 #: views/dahdi_advanced_settings.php:187 views/dahdi_modprobe_settings.php:196
 msgid "FSK - Performs Frequency Shift Key detection"
-msgstr ""
+msgstr "FSK - Thực hiện việc phát hiện điều chế số theo tần số tín hiệu ( FSK)"
 
 #: page.dahdi.php:160
 msgid "FXO Settings"
@@ -764,15 +770,15 @@ msgstr "Các cài đặt FXO"
 
 #: views/dahdi_digital_settings.php:88
 msgid "FXOKS"
-msgstr ""
+msgstr "FXOKS"
 
 #: views/dahdi_digital_settings.php:89
 msgid "FXOLS"
-msgstr ""
+msgstr "FXOLS"
 
 #: views/dahdi_advanced_settings.php:144 views/dahdi_modprobe_settings.php:133
 msgid "FXS Honor Mode"
-msgstr ""
+msgstr "Tuy chọn FXS Honor Mode"
 
 #: page.dahdi.php:163
 msgid "FXS Settings"
@@ -780,27 +786,27 @@ msgstr "Các cài đặt FXS"
 
 #: views/dahdi_digital_settings.php:91
 msgid "FXSKS"
-msgstr ""
+msgstr "FXSKS"
 
 #: views/dahdi_digital_settings.php:92
 msgid "FXSLS"
-msgstr ""
+msgstr "FXSLS"
 
 #: views/dahdi_advanced_settings.php:164 views/dahdi_modprobe_settings.php:163
 msgid "Fast Ringer (25hz)"
-msgstr ""
+msgstr "Tăng tốc độc chuông- Fast Ringer (25hz)"
 
 #: views/dahdi_advanced_settings.php:172 views/dahdi_modprobe_settings.php:175
 msgid "Fast Ringer to 50v Peak"
-msgstr ""
+msgstr "Tăng tốc độ chuông đật đỉnh 50v"
 
 #: views/dahdi_advanced_settings.php:160
 msgid "Fastringer"
-msgstr ""
+msgstr "Tăng tốc độ chuông (Fastringer)"
 
 #: views/dahdi_modprobe_settings.php:157
 msgid "Fastringer:"
-msgstr ""
+msgstr "Tăng tốc độ chuông (Fastringer):"
 
 #: views/dahdi_global_settings.php:196
 msgid "Fax Detection"
@@ -819,7 +825,7 @@ msgstr "Tệp %s không thuộc sở hữu của %s"
 #: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
 #: views/dahdi_modprobe_settings.php:63
 msgid "Finland"
-msgstr "Quốc gia Phần Lan"
+msgstr "Nước Phần Lan"
 
 #: views/dahdi_global_settings.php:18
 msgid "Finnish"
@@ -831,7 +837,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:114
 msgid "For digital ports using ISDN PRI protocols"
-msgstr "Đối với các cổng kỹ thuật số đang sử dụng giao thức ÍDN PRI"
+msgstr "Đối với các cổng kỹ thuật số đang sử dụng giao thức ISDN PRI"
 
 #: views/dahdi_global_settings.php:196
 msgid "For fax detection"

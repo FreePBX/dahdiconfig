@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-22 21:50+0200\n"
+"PO-Revision-Date: 2017-06-25 19:55+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -833,7 +833,7 @@ msgstr "Tiếng Phần Lan"
 
 #: views/dahdi_global_settings.php:110
 msgid "For FXS ports (either direct analog or over T1/E1)"
-msgstr ""
+msgstr "Đói với các cổng giao tiếp FXS (analog trực tiếp hoặc qua T1/E1)"
 
 #: views/dahdi_global_settings.php:114
 msgid "For digital ports using ISDN PRI protocols"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-25 19:55+0200\n"
+"PO-Revision-Date: 2017-06-26 09:42+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -661,11 +661,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:228
 msgid "Echo Cancel NLP Max Suppression"
-msgstr ""
+msgstr "Ngăn chặn tối đa NLP của Triệt tiếng vọng"
 
 #: views/dahdi_advanced_settings.php:224
 msgid "Echo Cancel NLP Threshold"
-msgstr ""
+msgstr "Ngưỡng NLP của Triệt tiếng vọng"
 
 #: views/dahdi_advanced_settings.php:76 views/dahdi_mfcr2_settings.php:21
 #: views/dahdi_modprobe_settings.php:59
@@ -718,7 +718,7 @@ msgstr "Kích hoạt tính năng triệt tiếng vọng ( Echo Canceling)"
 
 #: views/dahdi_global_settings.php:172
 msgid "Enable Echo Training"
-msgstr ""
+msgstr "Kích hoạt Echo Training"
 
 #: views/sangoma.php:7
 msgid "Enable Sangoma Cards"
@@ -871,7 +871,7 @@ msgstr "Giải phóng bắt buộc"
 
 #: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:24
 msgid "Framing/Coding"
-msgstr ""
+msgstr "Lập khung/ Đọc mã"
 
 #: views/dahdi_advanced_settings.php:15 views/dahdi_advanced_settings.php:81
 #: views/dahdi_modprobe_settings.php:64
@@ -884,7 +884,7 @@ msgstr "Tiếng Pháp"
 
 #: views/dahdi_advanced_settings.php:180 views/dahdi_modprobe_settings.php:187
 msgid "Full Wave"
-msgstr ""
+msgstr "Toàn sóng"
 
 #: views/dahdi_modprobe_settings.php:29
 msgid "G723.1"
@@ -892,7 +892,7 @@ msgstr "G723.1"
 
 #: views/dahdi_modprobe_settings.php:30
 msgid "G729"
-msgstr ""
+msgstr "G729"
 
 #: views/dahdi_digital_settings.php:10
 msgid "General Settings"
@@ -904,6 +904,10 @@ msgid ""
 "the circuit path is entirely TDM.  You may, however, change this behavior by "
 "enabling the echo canceler during pure TDM bridging below"
 msgstr ""
+"Thông thường, việc triệt tiếng vọng không cần thiết khi một mạch đường dẫn "
+"hoàn toàn là TDM ( Time Division Multiplexing Ghép kênh phân chia theo thời)"
+". Tuy nhiên, bạn có thể thay đổi trạng thái này bằng cách kích hoạt bộ hủy "
+"tiếng vọng trong quá trình kết nối TDM thuần túy dưới đây"
 
 #: views/dahdi_global_settings.php:17
 msgid "German"
@@ -1034,6 +1038,10 @@ msgid ""
 "an echo problem, it is worth checking to see if your echo is better with the "
 "option set to yes or no.  Use whatever setting gives the best results"
 msgstr ""
+"Trong nhiều trường hợp, lựa chọn này có thể tạo ra những tiếng vọng tệ hơn! "
+"Nếu bạn đang cố gắng để giải quyết một sự cố về tiếng vọng, hãy kiểm tra "
+"liệu tiếng vang có thể tốt hơn với lựa chọn yes hoặc no không. Sử dụng bất "
+"cứ cài đặt nào để đem lại những kết quả tốt hơn"
 
 #: views/dahdi_global_settings.php:172
 msgid ""
@@ -1445,6 +1453,9 @@ msgid ""
 "setting. Under most circumstances, choos- ing None will cause some residual "
 "echo"
 msgstr ""
+"None- Cài đặt này sẽ vô hiệu quá trình xử lý NLP và đây không phải là một "
+"cài đặt được khuyến nghị sử dụng. Trong hầu hết nhiều trường hợp, việc lựa "
+"chọn None sẽ làm sót lại một số tiếng vọng"
 
 #: views/dahdi_advanced_settings.php:208
 msgid ""
@@ -1452,6 +1463,9 @@ msgid ""
 "setting. Under most circumstances, choos- ing None will cause some residual "
 "echo."
 msgstr ""
+"None- Cài đặt này sẽ vô hiệu quá trình xử lý NLP và đây không phải là một "
+"cài đặt được khuyến nghị sử dụng. Trong hầu hết nhiều trường hợp, việc lựa "
+"chọn None sẽ làm sót lại một số tiếng vọng."
 
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
 #: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
@@ -1481,10 +1495,17 @@ msgid ""
 "modules, they take precedence over the software echo canceler compiled into "
 "DAHDI automatically"
 msgstr ""
+"Với cài đặt None- nếu các card DAHDI của bạn có phần cứng của các bộ triệt "
+"tiếng vọng, thì cài đặt này chỉ bật hoặc tắt chúng. Không có cài đặt đặc "
+"biệt nào được yêu cầu cho phần cứng của các bộ triệt tiếng vọng; khi có mặt "
+"và được kích hoạt trong các mô đun kernel, chúng sẽ được ưu tiên hơn phần "
+"mềm của bộ triệt tiếng vọng đã biên lập tự động trong DAHDI"
 
 #: views/dahdi_global_settings.php:176
 msgid "Note that these parameters do not apply to hardware echo cancellers"
 msgstr ""
+"Lưu ý rằng các thông số nay sẽ không áp dụng cho phần cứng của các bộ triệt "
+"tiếng vọng"
 
 #: views/dahdi_global_settings.php:185
 msgid ""
@@ -1632,6 +1653,10 @@ msgid ""
 "the echo reflection. For users in normal environments, Random Noise may be "
 "acceptable"
 msgstr ""
+"Random Noise ( Tiếng ồn ngẫu nhiên)- Cài đặt này sẽ khiến NLP thêm vào các "
+"tiếng ồn ngẫu nhiên để che đi các phản xạ của tiếng vọng. Đối với những "
+"người dùng trong các môi trường bình thường, Random Noise có thể chấp nhận "
+"được"
 
 #: views/dahdi_advanced_settings.php:210
 msgid ""
@@ -1639,6 +1664,10 @@ msgid ""
 "the echo reflection. For users in normal environments, Random Noise may be "
 "acceptable."
 msgstr ""
+"Random Noise ( Tiếng ồn ngẫu nhiên)- Cài đặt này sẽ khiến NLP thêm vào các "
+"tiếng ồn ngẫu nhiên để che đi các phản xạ của tiếng vọng. Đối với những "
+"người dùng trong các môi trường bình thường, Random Noise có thể chấp nhận "
+"được."
 
 #: views/dahdi_global_settings.php:209
 msgid "Receive Gain"
@@ -1964,6 +1993,13 @@ msgid ""
 "in loud environments, Suppression NLP may be the best option. This is the "
 "default setting for the Echo Cancellation NLP Type option"
 msgstr ""
+"Suppression NLP ( Khử NLP) - Cài đặt này sẽ làm cho NLP khử đi những phản xạ "
+"tiếng vọng bằng cách giảm độ lớn âm lượng của tiếng vọng. Việc khử này có "
+"thể được sử dụng kết hợp với tùy chọn Echo cancellation NLP Max Suppression ("
+" Triệt tiếng ồn khử tối đa NLP ). Đối với người dùng trong môi trường có âm "
+"thanh lớn, Suppression NLP sẽ là tùy chọn tốt nhất. Cài đặt này là cài đặt "
+"mặc định trong tùy chọn Echo Cancellation NLP Type ( Kiểu triệt tiếng vọng "
+"NLP)"
 
 #: views/dahdi_advanced_settings.php:212
 msgid ""
@@ -1973,6 +2009,13 @@ msgid ""
 "in loud environments, Suppression NLP may be the best option. This is the "
 "default setting for the Echo Cancellation NLP Type option."
 msgstr ""
+"Suppression NLP ( Khử NLP) - Cài đặt này sẽ làm cho NLP khử đi những phản xạ "
+"tiếng vọng bằng cách giảm độ lớn âm lượng của tiếng vọng. Việc khử này có "
+"thể được sử dụng kết hợp với tùy chọn Echo cancellation NLP Max Suppression ("
+" Triệt tiếng ồn khử tối đa NLP ). Đối với người dùng trong môi trường có âm "
+"thanh lớn, Suppression NLP sẽ là tùy chọn tốt nhất. Cài đặt này là cài đặt "
+"mặc định trong tùy chọn Echo Cancellation NLP Type ( Kiểu triệt tiếng vọng "
+"NLP)."
 
 #: views/dahdi_advanced_settings.php:29 views/dahdi_advanced_settings.php:124
 #: views/dahdi_modprobe_settings.php:107

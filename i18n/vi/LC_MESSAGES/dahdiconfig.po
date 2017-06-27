@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-26 21:53+0200\n"
+"PO-Revision-Date: 2017-06-26 22:13+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -1021,6 +1021,11 @@ msgid ""
 "will be needed to hangup a channel, but lowers the probability that you will "
 "get random hangups"
 msgstr ""
+"Nếu kích hoạt busydetect ( phát hiện bận), thì có thể xác định được số lượn "
+"các âm bận để đợi trước khi dập máy. Mặc định là 3, nhưng để an toàn hơn có "
+"thể cài đặt là 6 thậm chí là 8. Lưu ý răng nếu số lượng hồi chuông nhiều hơn "
+"thì sẽ cần nhiều thời gian để dập máy một kênh, nhưng sẽ làm giảm khả năng "
+"bạn nhận được các hangup ( cúp máy) ngẫu nhiên"
 
 #: views/dahdi_mfcr2_settings.php:209
 msgid "Immediate Accept"
@@ -1028,7 +1033,7 @@ msgstr "Chấp nhận ngay lập tức"
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "In Any mode it'll run 92 channels of either codec."
-msgstr ""
+msgstr "Trong bất kỳ chế độ nào, 92 kênh của một trong hai Codec sẽ được chạy."
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "In G.723.1 mode it'll run 92 channels"

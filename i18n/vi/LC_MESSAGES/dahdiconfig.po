@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-26 10:35+0200\n"
+"PO-Revision-Date: 2017-06-26 21:53+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -649,15 +649,15 @@ msgstr "ESF/B8ZS"
 
 #: views/dahdi_modprobe_settings.php:258
 msgid "Echo Canc. NLP Max Suppression"
-msgstr ""
+msgstr "Triệt Echo. Khử tối đa NLP"
 
 #: views/dahdi_modprobe_settings.php:246
 msgid "Echo Canc. NLP Threshold"
-msgstr ""
+msgstr "Triệt Echo. Ngưỡng NLP"
 
 #: views/dahdi_advanced_settings.php:206 views/dahdi_modprobe_settings.php:224
 msgid "Echo Canc. NLP Type"
-msgstr ""
+msgstr "Triệt Echo. Kiểu NLP"
 
 #: views/dahdi_advanced_settings.php:228
 msgid "Echo Cancel NLP Max Suppression"
@@ -920,7 +920,7 @@ msgstr "Tiếng Đức"
 
 #: views/dahdi_mfcr2_settings.php:61
 msgid "Get ANI Before DNIS"
-msgstr ""
+msgstr "Nhận ANI trước DNIS"
 
 #: page.dahdi.php:82 page.dahdi.php:120 views/dahdi_global_settings.php:3
 msgid "Global Settings"
@@ -929,11 +929,11 @@ msgstr "Các cài đặt toàn cầu"
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
 msgid "Greece"
-msgstr ""
+msgstr "Nước Hi Lạp"
 
 #: views/dahdi_global_settings.php:23
 msgid "Greek"
-msgstr ""
+msgstr "Tiếng Hi Lạp"
 
 #: views/dahdi_analog_settings.php:29
 #: views/dahdi_analog_signalling_form.php:16
@@ -943,30 +943,30 @@ msgstr "Nhóm"
 #: functions.inc.php:300 functions.inc.php:319
 #, php-format
 msgid "Group %s Ascending"
-msgstr ""
+msgstr "Nhóm %s tăng dần"
 
 #: functions.inc.php:301 functions.inc.php:320
 #, php-format
 msgid "Group %s Descending"
-msgstr ""
+msgstr "Nhóm %s giảm dần"
 
 #: functions.inc.php:302 functions.inc.php:321
 #, php-format
 msgid "Group %s Round Robin Ascending"
-msgstr ""
+msgstr "Nhóm %s Reoun robin tăng dần"
 
 #: functions.inc.php:303 functions.inc.php:322
 #, php-format
 msgid "Group %s Round Robin Descending"
-msgstr ""
+msgstr "Nhóm %s Round Robin giảm dần"
 
 #: views/dahdi_advanced_settings.php:84 views/dahdi_modprobe_settings.php:67
 msgid "Guam"
-msgstr ""
+msgstr "Nước Guam"
 
 #: views/dahdi_global_settings.php:34
 msgid "Hindi"
-msgstr ""
+msgstr "Tiếng Hindi"
 
 #: views/dahdi_modprobe_settings.php:68
 msgid "Hong Kong"
@@ -974,11 +974,11 @@ msgstr "Hồng Kông"
 
 #: views/dahdi_advanced_settings.php:85
 msgid "Hongkong"
-msgstr ""
+msgstr "Hồng Kông"
 
 #: views/dahdi_advanced_settings.php:219 views/dahdi_modprobe_settings.php:239
 msgid "Hoth Noise"
-msgstr ""
+msgstr "Tiếng ồn Hoth"
 
 #: views/dahdi_modprobe_settings.php:229
 msgid ""
@@ -986,6 +986,9 @@ msgid ""
 "with a frequency spectrum similar to voice. For users in normal "
 "environments, Hoth Noise may be acceptable"
 msgstr ""
+"Hoth Noise- Cài đặt này sẽ làm NLP thêm tiếng ồn Gaussian cấp thấp với tần "
+"số tượng tự như giọng nói. Đối với người dùng trong các môi trường bình "
+"thường, Hoth Noise có thể chấp nhận được"
 
 #: views/dahdi_advanced_settings.php:211
 msgid ""
@@ -993,6 +996,9 @@ msgid ""
 "with a frequency spectrum similar to voice. For users in normal "
 "environments, Hoth Noise may be acceptable."
 msgstr ""
+"Hoth Noise- Cài đặt này sẽ làm NLP thêm tiếng ồn Gaussian cấp thấp với tần "
+"số tượng tự như giọng nói. Đối với người dùng trong các môi trường bình "
+"thường, Hoth Noise có thể chấp nhận được."
 
 #: views/dahdi_global_settings.php:28
 msgid "Hungarian"
@@ -1005,7 +1011,7 @@ msgstr "Quốc gia Hungary"
 
 #: views/dahdi_advanced_settings.php:87 views/dahdi_modprobe_settings.php:70
 msgid "Iceland"
-msgstr ""
+msgstr "Nước Ai xơ len"
 
 #: views/dahdi_global_settings.php:54
 msgid ""

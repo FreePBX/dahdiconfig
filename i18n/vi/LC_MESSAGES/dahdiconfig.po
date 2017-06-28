@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-26 22:13+0200\n"
+"PO-Revision-Date: 2017-06-27 21:13+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -1088,16 +1088,16 @@ msgstr "Hiệp hội viễn thông quốc tế"
 
 #: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
 msgid "Ireland"
-msgstr ""
+msgstr "Ai xơ len"
 
 #: views/dahdi_advanced_settings.php:32 views/dahdi_advanced_settings.php:91
 #: views/dahdi_modprobe_settings.php:74
 msgid "Israel"
-msgstr ""
+msgstr "Nước Israel"
 
 #: views/dahdi_global_settings.php:26
 msgid "Israeli Hebrew"
-msgstr ""
+msgstr "Tiếng Do Thái"
 
 #: page.dahdi.php:177
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
@@ -1125,16 +1125,16 @@ msgstr "Tiếng Nhật"
 
 #: views/dahdi_advanced_settings.php:94 views/dahdi_modprobe_settings.php:77
 msgid "Jordan"
-msgstr ""
+msgstr "Nước Jordan"
 
 #: views/dahdi_advanced_settings.php:95 views/dahdi_modprobe_settings.php:78
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Nước Kazakhstan"
 
 #: views/dahdi_analog_settings.php:23
 #: views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
-msgstr ""
+msgstr "Kewl Start"
 
 #: views/dahdi_analog_settings.php:17
 msgid ""
@@ -1146,34 +1146,40 @@ msgid ""
 "the loop for about 250 ms, within 6 seconds after the far-end party "
 "disconnects."
 msgstr ""
+"Kewl Start - Thuật ngữ để chỉ một máy nhánh của loop start signaling (FXO và "
+"FXS)  giám sát mất kết nối thông qua việc sử dụng khoảng chuyển mạch hở (OSI)"
+". Bên cạnh các hoạt động bởi loop start, CO (văn phòng trung tâm) báo hiệu "
+"đến điểm cuối (người dùng) rằng bên nghe máy từ xa đã cúp máy. Công tắc CO "
+"sẽ loại bỏ điện áp pin ra khỏi loop trong khoảng 250 ms, trong vòng 6 giây "
+"sau khi phóa bên người dùng từ xa ngắt kết nối."
 
 #: views/dahdi_advanced_settings.php:96 views/dahdi_modprobe_settings.php:79
 msgid "Kuwait"
-msgstr ""
+msgstr "Nước Cô oét"
 
 #: views/dahdi_advanced_settings.php:97 views/dahdi_modprobe_settings.php:80
 msgid "Latvia"
-msgstr ""
+msgstr "Nước Latvia"
 
 #: views/dahdi_advanced_settings.php:98 views/dahdi_modprobe_settings.php:81
 msgid "Lebanon"
-msgstr ""
+msgstr "Nước Lebanon"
 
 #: views/sangoma.php:19
 msgid "Line Mode"
-msgstr ""
+msgstr "Chế độ đường dây"
 
 #: views/dahdi_advanced_settings.php:35
 msgid "Lithuania"
-msgstr ""
+msgstr "Nước Lithuania"
 
 #: views/dahdi_global_settings.php:29
 msgid "Lithuanian"
-msgstr ""
+msgstr "Tiếng Lithuania"
 
 #: dahdiconfig.i18n.php:22
 msgid "Location of the DAHDi Executable"
-msgstr ""
+msgstr "Vị trí của thực thi DAHDi"
 
 #: views/dahdi_mfcr2_settings.php:131
 msgid "Log Levels"
@@ -1187,11 +1193,16 @@ msgid ""
 "to your MFC/R2 call logs will be /var/log/asterisk/mfcr2/span1 (the "
 "directory will be automatically created if not present already)"
 msgstr ""
+"Nhật ký lưu trữ tại danh bạ nhật ký Asterisk được xác định trong "
+"asterisk.conf plus mfcr2/<bạn đặt ở đây bất kỳ cái gì>. Nếu bạn chỉ định "
+"'span1'  ở đây và asterisk.con có một danh bạ nhật ký /var/log/asterisk sau "
+"đó đường dẫn đầy đủ tới các nhật ký cuộc gọi MFC/R2 của bạn sẽ là "
+"/var/log/asterisk/mfcr2/span1( Danh bạ sẽ được tạo tự động nếu nó chưa có)"
 
 #: views/dahdi_analog_settings.php:24
 #: views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
-msgstr ""
+msgstr "Loop Start"
 
 #: views/dahdi_analog_settings.php:18
 msgid ""
@@ -1207,31 +1218,31 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:168 views/dahdi_modprobe_settings.php:169
 msgid "Lowpower"
-msgstr ""
+msgstr "Điện (pin) yếu"
 
 #: views/dahdi_digital_settings.php:111
 msgid "Lucent 5ESS"
-msgstr ""
+msgstr "Lucent 5ESS"
 
 #: views/dahdi_advanced_settings.php:99 views/dahdi_modprobe_settings.php:82
 msgid "Luxembourg"
-msgstr ""
+msgstr "Nước Luxembourg"
 
 #: views/dahdi_mfcr2_settings.php:145
 msgid "MF Timeout"
-msgstr ""
+msgstr "Thời gian chờ MF"
 
 #: views/dahdi_digital_settings.php:82
 msgid "MFC/R2"
-msgstr ""
+msgstr "Báo hiệu MFC/R2"
 
 #: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
-msgstr ""
+msgstr "Cài đặt báo hiệu MFC/R2"
 
 #: views/dahdi_mfcr2_settings.php:7
 msgid "MFC/R2 Variant"
-msgstr ""
+msgstr "Biến MFC/R2"
 
 #: views/dahdi_mfcr2_settings.php:133
 msgid ""
@@ -1265,53 +1276,57 @@ msgid ""
 "MFC/R2 variant, this depends on the OpenR2 supported variants. A list of "
 "values can be found by executing the openr2 command `r2test -l`"
 msgstr ""
+"Biến MFC/R2, phụ thuộc vào các biến hỗ trợ OpenR2. Một danh sách các giá trị "
+"có thể được tìm thấy bằng cách thực hiện lệnh openr2 `r2test -l`"
 
 #: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
 msgid "MWI Mode"
-msgstr ""
+msgstr "Chế độ MWI"
 
 #: views/dahdi_advanced_settings.php:100 views/dahdi_modprobe_settings.php:83
 msgid "Macao"
-msgstr ""
+msgstr "Macao"
 
 #: page.dahdi.php:70
 msgid ""
 "Make sure to hit 'Apply Config' if you've made any changed before Restarting "
 "DAHDi & Asterisk"
 msgstr ""
+"Đảm bảo nhấn vào ''Apply Config' nếu bạn vừa thay đổi bất cứ điều gì trước "
+"khi khởi động lại DAHDi & Asterisk"
 
 #: views/dahdi_advanced_settings.php:48 views/dahdi_advanced_settings.php:101
 #: views/dahdi_modprobe_settings.php:84
 msgid "Malaysia"
-msgstr ""
+msgstr "Nước Malaysia"
 
 #: views/dahdi_advanced_settings.php:102 views/dahdi_modprobe_settings.php:85
 msgid "Malta"
-msgstr ""
+msgstr "Nước Malta"
 
 #: views/sangoma.php:35
 msgid "Master"
-msgstr ""
+msgstr "Chủ"
 
 #: views/dahdi_mfcr2_settings.php:33
 msgid "Max ANI"
-msgstr ""
+msgstr "ANI tối đa"
 
 #: views/dahdi_mfcr2_settings.php:47
 msgid "Max DNIS"
-msgstr ""
+msgstr "DNIS tối đa"
 
 #: views/dahdi_mfcr2_settings.php:35
 msgid "Max amount of ANI to ask for<br /> <strong>Default:</strong>10"
-msgstr ""
+msgstr "Số lượng tối đa của ANI yêu cầu cho <br /> <strong>Default:</strong>10"
 
 #: views/dahdi_mfcr2_settings.php:49
 msgid "Max amount of DNIS to ask for<br /> <strong>Default:</strong>4"
-msgstr ""
+msgstr "Số lượng tối đa của DNIS yêu cầu cho <br /> <strong>Default:</strong>4"
 
 #: views/dahdi_mfcr2_settings.php:159
 msgid "Metering Pulse Time Out"
-msgstr ""
+msgstr "Đo thời gian chờ xung"
 
 #: views/dahdi_mfcr2_settings.php:161
 msgid ""
@@ -1332,48 +1347,48 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
 #: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
 msgid "Mexico"
-msgstr ""
+msgstr "Nước Mexico"
 
 #: install.php:514
 msgid "Migrating Old Data from Dahdi Advanced Table"
-msgstr ""
+msgstr "Di chuyển dữ liệu cũ ra khỏi bảng nâng cao Dahdi"
 
 #: install.php:588
 #, php-format
 msgid "Migrating module %s from serialized data to json"
-msgstr ""
+msgstr "Di chuyển mô đun %s từ khỏi dữ liệu thứ tự đến json"
 
 #: dahdiconfig.i18n.php:36
 msgid "ModProbe.d Configuration File Location"
-msgstr ""
+msgstr "Vị trí tệp cấu hình ModProbe.d"
 
 #: views/dahdi_modprobe_settings.php:23
 msgid "Mode"
-msgstr ""
+msgstr "Chế độ"
 
 #: page.dahdi.php:84 page.dahdi.php:126 views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
-msgstr ""
+msgstr "Cài đặt Modprobe"
 
 #: views/dahdi_advanced_settings.php:7 views/dahdi_modprobe_settings.php:9
 msgid "Module Name"
-msgstr ""
+msgstr "Tên mô đun"
 
 #: page.dahdi.php:85 page.dahdi.php:129
 msgid "Module Settings"
-msgstr ""
+msgstr "Cài đặt mô đun"
 
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
-msgstr ""
+msgstr "Nước Morocco"
 
 #: install.php:575
 msgid "Moving/Adding dchannel column"
-msgstr ""
+msgstr "Di chuyển/ Thêm các cột kênh d"
 
 #: views/dahdi_advanced_settings.php:217 views/dahdi_modprobe_settings.php:237
 msgid "Mute"
-msgstr ""
+msgstr "Im lặng"
 
 #: views/dahdi_modprobe_settings.php:227
 msgid ""
@@ -1381,6 +1396,9 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable"
 msgstr ""
+"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh khi người "
+"được kết nối với Asterisk đang nói. Đối với những người dùng trong môi "
+"trường im lặng, Im lặng ( Mute) có thể chấp nhận được"
 
 #: views/dahdi_advanced_settings.php:209
 msgid ""
@@ -1388,47 +1406,50 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable."
 msgstr ""
+"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh khi người "
+"được kết nối với Asterisk đang nói. Đối với những người dùng trong môi "
+"trường im lặng, Im lặng ( Mute) có thể chấp nhận được."
 
 #: views/dahdi_modprobe_settings.php:206
 msgid "NEON"
-msgstr ""
+msgstr "NEON"
 
 #: views/dahdi_modprobe_settings.php:197
 msgid "NEON - Performs Neon MWI detection"
-msgstr ""
+msgstr "NEON- Thực hiện việc phát hiện MWI"
 
 #: views/dahdi_advanced_settings.php:188
 msgid "NEON - Performs Neon MWI detection."
-msgstr ""
+msgstr "NEON- Thực hiện việc phát hiện MWI."
 
 #: views/dahdi_digital_settings.php:108
 msgid "National ISDN 2 (<?php echo ('default')?>)"
-msgstr ""
+msgstr "ISDN 2 quốc gia (<?php echo ('mặc định')?>)"
 
 #: views/dahdi_modprobe_settings.php:216
 msgid "Neon MWI Off Limit"
-msgstr ""
+msgstr "Giới hạn Tắt MWI Neon"
 
 #: views/dahdi_modprobe_settings.php:214
 msgid "Neon MWI Voltage Level"
-msgstr ""
+msgstr "Cấp biến áp MWI Neon"
 
 #: views/dahdi_advanced_settings.php:16 views/dahdi_advanced_settings.php:105
 #: views/dahdi_modprobe_settings.php:88
 msgid "Netherlands"
-msgstr ""
+msgstr "Hà Lan"
 
 #: views/dahdi_advanced_settings.php:23
 msgid "New Zealand"
-msgstr ""
+msgstr "Nước Niu Di Lân"
 
 #: views/dahdi_advanced_settings.php:106 views/dahdi_modprobe_settings.php:89
 msgid "Newzealand"
-msgstr ""
+msgstr "Nước Niu Di Lân"
 
 #: views/dahdi_advanced_settings.php:107 views/dahdi_modprobe_settings.php:90
 msgid "Nigeria"
-msgstr ""
+msgstr "Nước Nigeria"
 
 #: views/dahdi_global_settings.php:48 views/dahdi_global_settings.php:71
 #: views/dahdi_global_settings.php:82 views/dahdi_global_settings.php:93
@@ -1443,20 +1464,20 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
 #: views/sangoma.php:46 views/sangoma.php:56
 msgid "No"
-msgstr ""
+msgstr "Không"
 
 #: functions.inc.php:498
 msgid "No Available Groups or Channels"
-msgstr ""
+msgstr "Không có nhóm hay kênh nào khả dụng"
 
 #: functions.inc.php:567
 msgid "No Unused DAHDi Channels Available"
-msgstr ""
+msgstr "Không có kênh DAHDi kgar dụng nào không sử dụng"
 
 #: views/dahdi_advanced_settings.php:193 views/dahdi_advanced_settings.php:216
 #: views/dahdi_modprobe_settings.php:204 views/dahdi_modprobe_settings.php:236
 msgid "None"
-msgstr ""
+msgstr "None (Không có)"
 
 #: views/dahdi_modprobe_settings.php:226
 msgid ""
@@ -1483,7 +1504,7 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
 #: views/sangoma.php:34
 msgid "Normal"
-msgstr ""
+msgstr "Thông thường"
 
 #: views/dahdi_digital_settings.php:109
 msgid "Nortel DMS100"

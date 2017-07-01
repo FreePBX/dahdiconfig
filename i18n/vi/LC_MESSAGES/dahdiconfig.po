@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-06-27 21:13+0200\n"
+"PO-Revision-Date: 2017-06-30 20:44+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -1270,6 +1270,11 @@ msgid ""
 "malfunctioning. <br />If you experience protocol error due to MF timeout try "
 "incrementing this value in 500ms steps<br /> <strong>Default:</strong>-1"
 msgstr ""
+"MFC / R2 giá trị tính bằng mili giây cho thời gian chờ MF. <br /> Bất kỳ giá "
+"trị âm nào có nghĩa là 'mặc định', khuyến cáo không sử dụng giá trị nhỏ hơn "
+"500ms vì có thể gây hỏng hóc. <br /> Nếu bạn gặp lỗi về giao thức do thời "
+"gian chờ MF cố gắng tăng giá trị này lên lần lượt theo mức 500ms trên 1 lần <"
+"br /><strong>Mặc định:</ strong>-1"
 
 #: views/dahdi_mfcr2_settings.php:9
 msgid ""
@@ -1343,6 +1348,19 @@ msgid ""
 "just comment out this value or put a -1. <br /> Any negative value means "
 "'default'.<br /> <strong>Default:</strong>-1"
 msgstr ""
+"Một số nhà cung cấp dịch vụ viễn thông sẽ gửi các xung đo đối với các biến "
+"R2 trong suốt một cuộc gọi diễn ra để tính toán chi phí cho mục đích thanh "
+"toán, tuy nhiên các xung này sử dụng cùng một tín hiệu được sử dụng để chỉ "
+"thị việc ngắt cuộc gọi. <br /> Do đó, thời gian chờ đôi khi cần thiết để "
+"phân biệt giữa <strong> real</ strong> hangup và xung thanh toán không nên "
+"kéo dài quá 500ms. <br /> Nếu bạn để rớt cuộc gọi vài phút sau khi cuộc gọi "
+"được thiết lập, hãy thử đặt một giá trị của một số mili giây (ms) ở đây. "
+"Không khuyến cáo đặt các giá trị lớn hơn 500ms. <br /> Hãy cẩn thận khi lựa "
+"chọn giao thức mfcr2_variant để đặt một giá trị được đề xuất cho bộ đếm thời "
+"gian này. <br /> Chỉ nên sử dụng tham số này khi bạn thực sự muốn ghi đè lên "
+"mặc định, nếu không thì chỉ cần ghi chú giá trị này hoặc đặt là  -1. <br /> "
+"Bất kỳ giá trị âm nào cũng có nghĩa là 'mặc định'. <br /><strong>Default:</ "
+"strong>-1"
 
 #: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
 #: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
@@ -1508,16 +1526,16 @@ msgstr "Thông thường"
 
 #: views/dahdi_digital_settings.php:109
 msgid "Nortel DMS100"
-msgstr ""
+msgstr "Nortel DMS100"
 
 #: views/dahdi_advanced_settings.php:21 views/dahdi_advanced_settings.php:108
 #: views/dahdi_modprobe_settings.php:91
 msgid "Norway"
-msgstr ""
+msgstr "Nước Na uy"
 
 #: views/dahdi_global_settings.php:21
 msgid "Norwegian"
-msgstr ""
+msgstr "Tiếng Na uy"
 
 #: views/dahdi_global_settings.php:150
 msgid ""
@@ -1544,14 +1562,16 @@ msgid ""
 "Note: If yes the dialplan execution will always start at extension 's' "
 "priority 1 regardless of the dialed number!"
 msgstr ""
+"Lưu ý: Nếu Yes thì việc thực hiện kế hoạch cuộc gọi sẽ luôn luôn khởi động "
+"tại máy nhánh 's' trước 1 bất kể số đã gọi nào!"
 
 #: views/dahdi_digital_settings.php:113
 msgid "Old National ISDN 1"
-msgstr ""
+msgstr "ISDN 1 quốc gia cũ"
 
 #: views/dahdi_advanced_settings.php:109 views/dahdi_modprobe_settings.php:92
 msgid "Oman"
-msgstr ""
+msgstr "Quốc gia Oman"
 
 #: views/dahdi_global_settings.php:43
 msgid ""
@@ -1559,10 +1579,13 @@ msgid ""
 "etc) it can be useful to perform busy detection either in an effort to "
 "detect hangup or for detecting busies"
 msgstr ""
+"Các giao diện trung kế (FXS) và các giao diện E&M ( E&M, Wink, Feature Group "
+"D etc)  có thể có ích trong việc phát hiện các cuộc gọi bận và cả phát hiện "
+"các cuộc gọi cúp máy"
 
 #: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
 msgid "Opermode"
-msgstr ""
+msgstr "Opermode"
 
 #: views/dahdi_global_settings.php:240
 msgid "Other Global Dahdi Settings"

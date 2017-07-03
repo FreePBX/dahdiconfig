@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-07-03 11:28+0200\n"
+"PO-Revision-Date: 2017-07-03 15:55+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -2266,36 +2266,43 @@ msgid ""
 "The values are in db (decibels). A positive number increases the volume "
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
+"Các giá trị bằng đơn vị db (đề xi ben). Một số dương sẽ tăng mức âm lượng ở "
+"một kênh, và một giá trị âm sẽ làm giảm mức âm lượng"
 
 #: functions.inc.php:506
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
 msgstr ""
+"Không có nhóm DAHDI hay kênh khả dụng được cấu hình. Kiểm tra mô đun DAHDI "
+"để cấu hình bất kỳ card nào chưa sử dụng"
 
 #: views/dahdi_modprobe_settings.php:4 views/sangoma.php:2
 #, php-format
 msgid "This edits all settings in %s"
-msgstr ""
+msgstr "Điều này sẽ chỉnh sửa tất cả các cài đặt trong %s"
 
 #: views/dahdi_global_settings.php:4
 msgid "This edits all settings in chan_dahdi.conf"
-msgstr ""
+msgstr "Điều này sẽ chỉnh sửa tất cả các cài đặt trong chan_dahdi.conf"
 
 #: views/dahdi_modules_settings.php:4
 #, php-format
 msgid "This edits order and loading of DAHDi modules in %s"
-msgstr ""
+msgstr "Điều này sẽ chỉnh sửa các lệnh và tải của các mô đun DAHDI trong %s"
 
 #: views/dahdi_global_settings.php:43
 msgid "This enables listening for the beep-beep busy pattern"
-msgstr ""
+msgstr "Điều này sẽ kích hoạt tính năng nghe các chuỗi bíp bíp báo bận"
 
 #: views/dahdi_mfcr2_settings.php:211
 msgid ""
 "This feature allows to skip the use of Group B/II signals and go directly to "
 "the accepted state for incoming calls.<br /> <strong>Default:</strong>no"
 msgstr ""
+"Tính năng này cho phép bỏ qua việc sử dụng tín hiệu nhóm B/II và tới thẳng "
+"các trạng thái được chấp nhận cho các cuộc gọi đến.<br /> "
+"<strong>Default:</strong>no"
 
 #: views/dahdi_mfcr2_settings.php:193
 msgid ""
@@ -2307,16 +2314,25 @@ msgid ""
 "by answer->clear back->answer (sort of a flash) (see also "
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
+"Tính năng này có liên quan nhưng độc lập với mfcr2_ cho phép thu thập cuộc "
+"gọi <br /> Một số PBX cần một quy trình trả lời kép để thu thập các cuộc "
+"gọi, nếu bạn gặp sự cố khi ngăn chặn việc thu thập cuộc gọi bằng tín hiệu "
+"nhóm B (mfcr2_allow_collect_calls = no) thì bạn nên thử với "
+"mfcr2_double_answer = yes, Điều này sẽ khiến mỗi tín hiệu trả lời sẽ bị thay "
+"đổi bởi answer->clear back->answer (sort of flash- một thuật toán sắp xếp "
+"tại chỗ) (xem 'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 
 #: Dahdiconfig.class.php:243
 msgid "This is not available on your system"
-msgstr ""
+msgstr "Điều này không khả dụng trong hệ thống"
 
 #: page.dahdi.php:187
 msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
 msgstr ""
+"Tin nhắn này sẽ xuất hiện lại mỗi khi bạn tải mô đun khi nó đang trong trạng "
+"thái vô hiệu ghi để tránh gây nhầm lẫn"
 
 #: page.dahdi.php:181
 msgid ""
@@ -2324,6 +2340,9 @@ msgid ""
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
 "consequences."
 msgstr ""
+"Không bao giờ sử dụng mô đun này cùng với \"dahdi_genconfig\". Sử dụng \""
+"dahdi_genconfig\" và mô đun này cùng lúc sẽ tạo ra những hậu quả không mong "
+"muốn."
 
 #: views/dahdi_modprobe_settings.php:246
 msgid ""
@@ -2359,6 +2378,7 @@ msgstr ""
 msgid ""
 "This option allows you to specify the type signaling for this analog device."
 msgstr ""
+"Tùy chọn này cho phép bạn xác định kiểu tín hiệu đối với các thiết bị analog."
 
 #: views/dahdi_modprobe_settings.php:258
 msgid ""
@@ -2370,6 +2390,13 @@ msgid ""
 "Cancellation NLP Threshold option, will nearly mute the residual echo. The "
 "default setting is 24 dB"
 msgstr ""
+"Tùy chọn này, chỉ hoạt động khi tùy chọn kiểu NLP của Triệt  Echo được cài "
+"đặt là  Suppression NLP ( Khử NLP), xác định lượng dB tối đa mà NLP cần để "
+"làm suy giảm echo còn lại (chỉ VPMADT032). Với số thấp hơn thì NLP sẽ cung "
+"cấp suppression ít hơn (Các echo còn lại sẽ lớn hơn). Với số cao hơn, đặc "
+"biệt là những số đang tiếp cận hoặc tương đương với tùy chọn Echo "
+"Cancellation NLP Threshold ( Ngưỡng NLP triệt Echo) thì các echo còn lại sẽ "
+"dường như bị tắt luôn. Cài đặt mặc định là 24 dB"
 
 #: views/dahdi_advanced_settings.php:228
 msgid ""
@@ -2381,6 +2408,13 @@ msgid ""
 "Cancellation NLP Threshold option, will nearly mute the residual echo. The "
 "default setting is 24 dB."
 msgstr ""
+"Tùy chọn này, chỉ hoạt động khi tùy chọn kiểu NLP của Triệt  Echo được cài "
+"đặt là  Suppression NLP ( Khử NLP), xác định lượng dB tối đa mà NLP cần để "
+"làm suy giảm echo còn lại (chỉ VPMADT032). Với số thấp hơn thì NLP sẽ cung "
+"cấp suppression ít hơn (Các echo còn lại sẽ lớn hơn). Với số cao hơn, đặc "
+"biệt là những số đang tiếp cận hoặc tương đương với tùy chọn Echo "
+"Cancellation NLP Threshold ( Ngưỡng NLP triệt Echo) thì các echo còn lại sẽ "
+"dường như bị tắt luôn. Cài đặt mặc định là 24 dB."
 
 #: views/dahdi_global_settings.php:116
 msgid ""
@@ -2388,10 +2422,13 @@ msgid ""
 "\" setting must also be enabled to allow sending the transfer to the ISDN "
 "switch, since it sent in a FACILITY message"
 msgstr ""
+"Cài đặt này sẽ kích hoạt cả hai cổng giao tiếp liên quan, và cài đặt \""
+"facilityenable\"  phải được kích hoạt để cho phép việc gửi các truyền tải "
+"tới bộ chuyển mạch ISDN, vì nó đã được gửi trong một tin nhắn FACILITY"
 
 #: page.dahdi.php:491
 msgid "This will reload the page"
-msgstr ""
+msgstr "Điều này sẽ tải lại trang"
 
 #: views/dahdi_mfcr2_settings.php:283
 msgid ""
@@ -2407,53 +2444,53 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:11
 msgid "Tone Region"
-msgstr ""
+msgstr "Vùng nhạc"
 
 #: views/dahdi_global_settings.php:217
 msgid "Transmit Gain"
-msgstr ""
+msgstr "Tăng cường truyền tải"
 
 #: views/dahdi_analog_hardware.php:5
 msgid "Type"
-msgstr ""
+msgstr "Kiểu"
 
 #: views/dahdi_advanced_settings.php:130 views/dahdi_modprobe_settings.php:113
 msgid "UAE"
-msgstr ""
+msgstr "Các tiểu vương quốc Ả Rập thống nhất"
 
 #: views/dahdi_advanced_settings.php:131 views/dahdi_modprobe_settings.php:114
 msgid "UK"
-msgstr ""
+msgstr "Vương quốc Anh (UK)"
 
 #: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1769
 #, php-format
 msgid "Unable to write to %s"
-msgstr ""
+msgstr "Không thể ghi tới %s"
 
 #: views/dahdi_advanced_settings.php:17
 msgid "United Kingdom"
-msgstr ""
+msgstr "Vương quốc Anh ( United Kingdom)"
 
 #: views/dahdi_advanced_settings.php:25
 msgid "United States Circa 1950 / North America"
-msgstr ""
+msgstr "Nước Mỹ vào khoảng 1950/ Bắc Mỹ"
 
 #: views/dahdi_advanced_settings.php:13 views/dahdi_advanced_settings.php:60
 #: views/dahdi_modprobe_settings.php:43
 msgid "United States/North America"
-msgstr ""
+msgstr "Nước Mỹ/ Bắc Mỹ"
 
 #: views/dahdi_global_settings.php:66
 msgid "Use Caller ID"
-msgstr ""
+msgstr "Sử dụng Caller ID"
 
 #: views/dahdi_global_settings.php:88
 msgid "Use Caller ID Presentation"
-msgstr ""
+msgstr "Sử dụng hiện Caller ID"
 
 #: dahdiconfig.i18n.php:54
 msgid "Use mock hardware instead of real hardware"
-msgstr ""
+msgstr "Sử dụng phần cứng mô phỏng thay cho phần cứng thực"
 
 #: views/dahdi_mfcr2_settings.php:81
 msgid ""

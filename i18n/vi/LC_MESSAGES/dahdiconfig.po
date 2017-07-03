@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-07-03 15:55+0200\n"
+"PO-Revision-Date: 2017-07-03 17:11+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -698,7 +698,7 @@ msgstr "Kích hoạt tính năng chuyển tiếp cuộc gọi"
 
 #: views/dahdi_global_settings.php:138
 msgid "Enable Call Return"
-msgstr "Kích hoạt  tính năng trở lại cuộc gọi  (Call Return)"
+msgstr "Kích hoạt  tính năng gọi lại (Call Return)"
 
 #: views/dahdi_global_settings.php:77
 msgid "Enable Call Waiting"
@@ -2112,7 +2112,7 @@ msgstr "Đang khởi động DAHI cho các card Digium"
 
 #: Dahdiconfig.class.php:108
 msgid "Starting Wanrouter for Sangoma Cards"
-msgstr "Đang khởi động Wanrouter cho các card Sangoma"
+msgstr "Đang khởi động Wanrouter ( bộ định tuyến mạng WAN) cho các card Sangoma"
 
 #: Dahdiconfig.class.php:175
 msgid "Stopping DAHDi for Digium Cards"
@@ -2120,7 +2120,7 @@ msgstr "Đang dừng DAHi cho các card Digium"
 
 #: Dahdiconfig.class.php:162
 msgid "Stopping Wanrouter for Sangoma Cards"
-msgstr "Đang dừng Wanrouter đối với các card Sangoma"
+msgstr "Đang dừng Wanrouter (( bộ định tuyến mạng WAN) đối với các card Sangoma"
 
 #: views/dahdi_global_settings.php:127
 msgid "Support call forward variable"
@@ -2501,33 +2501,41 @@ msgid ""
 "value received from the far end.<br /> <strong>Default:</"
 "strong>national_subscriber"
 msgstr ""
+"Thông thường national_subscriber (thuê bao quốc gia) hoạt động tốt. Bạn có "
+"thể thay đổi cài đặt này từ kế hoạch quay số bằng cách cài đặt biến "
+"MFCR2_CATEGORY ( nhớ là cần cài đặt _MFCR2_CATEGORY từ các kênh gốc). <br />"
+"MFCR2_CATEGORY cũng sẽ là một biến khả dụng tại ngữ canhe tròn các cuộc gọi "
+"đến được cài đặt về giá trị nhận được từ phía xa.<br /> "
+"<strong>Default:</strong>national_subscriber"
 
 #: views/dahdi_advanced_settings.php:51 views/dahdi_mfcr2_settings.php:26
 msgid "Venezuela"
-msgstr ""
+msgstr "Nước Venezuela"
 
 #: views/dahdi_global_settings.php:174
 msgid "WARNING"
-msgstr ""
+msgstr "CẢNH BÁO"
 
 #: page.dahdi.php:169
 msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"
 msgstr ""
+"CẢNH BÁO: Khi mô đun này được \"kích hoạt\" cho việc ghi thì nó sẽ ghi đè "
+"lên các tệp sau:"
 
 #: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
 #, php-format
 msgid "Wanrouter Failed: %s"
-msgstr ""
+msgstr "Wanrouter ( bộ định tuyến mạng WAN) bị lỗi: %s"
 
 #: Dahdiconfig.class.php:110
 msgid "Wanrouter Started"
-msgstr ""
+msgstr "Wanrouter (bộ định tuyến mạng WAN) đã khởi động"
 
 #: Dahdiconfig.class.php:164
 msgid "Wanrouter Stopped"
-msgstr ""
+msgstr "Wanrouter (bộ định tuyến mạng WAN) đã dừng"
 
 #: views/dahdi_global_settings.php:77
 msgid ""
@@ -2536,30 +2544,38 @@ msgid ""
 "hook-flash to switch between callers. The Dial() app will not return the "
 "\"BUSY\" result for extensions."
 msgstr ""
+"Có nên hoạt tính năng chờ cuộc gọi trong các máy nhánh nội bộ hay không. Thì "
+"với cài đặt về \"yes\", các máy nhánh bận sẽ nghe nhạc chờ cuộc gọ, và có "
+"thể sử dụng hook-flas để chuyển qua lại giữa những người gọi. Ứng dụng Dial ("
+"quay số) sẽ không trả về kết quả \"BUSY\" cho các máy nhanh."
 
 #: views/dahdi_global_settings.php:138
 msgid ""
 "Whether or not to support Call Return (*69, if your dialplan doesn't catch "
 "this first)"
 msgstr ""
+"Có nên hỗ trợ Call Return ( Gọi lại) (*69, nếu kế hoạch quay số của bạn "
+"không có được điều này trước tiên)"
 
 #: views/dahdi_global_settings.php:66
 msgid "Whether or not to use caller ID"
-msgstr ""
+msgstr "Có nên sử dụng Caller ID"
 
 #: views/dahdi_global_settings.php:88
 msgid ""
 "Whether or not to use the caller ID presentation for the outgoing call that "
 "the calling switch is sending"
 msgstr ""
+"Có nên sử dụng hiện caller ID cho các cuộc gọi đi mà chuyển đổi cuộc gọi "
+"đang được gửi đến"
 
 #: Dahdiconfig.class.php:75
 msgid "Writing out default Sangoma conf"
-msgstr ""
+msgstr "Ghi ra mặc định  Sangoma conf"
 
 #: views/dahdi_advanced_settings.php:132 views/dahdi_modprobe_settings.php:115
 msgid "Yemen"
-msgstr ""
+msgstr "Nước Yemen"
 
 #: views/dahdi_global_settings.php:47 views/dahdi_global_settings.php:70
 #: views/dahdi_global_settings.php:81 views/dahdi_global_settings.php:92
@@ -2573,13 +2589,15 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
 #: views/sangoma.php:12 views/sangoma.php:45 views/sangoma.php:57
 msgid "Yes"
-msgstr ""
+msgstr "Có"
 
 #: page.dahdi.php:29
 msgid ""
 "You have new hardware! Please configure your new hardware using the edit "
 "button(s)"
 msgstr ""
+"Bạn có một phần cứng mới! Vui lòng cấu hình phần cứng này bằng cách sử dụng "
+"các nút chỉnh sửa"
 
 #: views/dahdi_mfcr2_settings.php:229
 msgid ""
@@ -2599,56 +2617,56 @@ msgstr ""
 
 #: install.php:612
 msgid "add additional column"
-msgstr ""
+msgstr "Thêm một cột bổ sung"
 
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
-msgstr ""
+msgstr "alaw"
 
 #: views/dahdi_mfcr2_settings.php:92
 msgid "collect_call"
-msgstr ""
+msgstr "Thu thập cuộc gọi"
 
 #: includes/dahdi_cards.class.php:936
 msgid "dahdi_scan exists but can not be run as this user!"
-msgstr ""
+msgstr "dahdi_scan tồn tại nhưng không thể chạy được như người dùng này!"
 
 #: views/dahdi_modprobe_settings.php:62
 msgid "fcc"
-msgstr ""
+msgstr "fcc"
 
 #: views/dahdi_digital_settings.php:196
 msgid "gsm"
-msgstr ""
+msgstr "gsm"
 
 #: views/dahdi_mfcr2_settings.php:91
 msgid "international_priority_subscriber"
-msgstr ""
+msgstr "Thuê bao_ưu tiên_quốc tế"
 
 #: views/dahdi_mfcr2_settings.php:90
 msgid "international_subscriber"
-msgstr ""
+msgstr "Thuê bao_quốc tế"
 
 #: views/dahdi_mfcr2_settings.php:89
 msgid "national_priority_subscriber"
-msgstr ""
+msgstr "Thuê bao_ưu tiên_quốc gia"
 
 #: views/dahdi_mfcr2_settings.php:88
 msgid "national_subscriber"
-msgstr ""
+msgstr "Thuê bao_quốc gia"
 
 #: views/dahdi_modprobe_settings.php:195
 msgid "none - Performs no detection"
-msgstr ""
+msgstr "Không có- Việc phát hiện không được tiến hành"
 
 #: views/dahdi_advanced_settings.php:186
 msgid "none - Performs no detection "
-msgstr ""
+msgstr "Không có - Việc phát hiện không được tiến hành "
 
 #: dahdiconfig.i18n.php:46
 msgid "software EC to use in system.conf"
-msgstr ""
+msgstr "Phần mềm EC sử dụng trong system.conf"
 
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
-msgstr ""
+msgstr "ulaw"

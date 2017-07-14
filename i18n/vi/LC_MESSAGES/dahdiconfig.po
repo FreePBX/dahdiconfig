@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-01-23 10:56-0800\n"
-"PO-Revision-Date: 2017-07-03 17:11+0200\n"
+"PO-Revision-Date: 2017-07-14 10:25+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dahdiconfig/vi/>\n"
@@ -1445,9 +1445,9 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable"
 msgstr ""
-"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh khi người "
+"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh vào khi người "
 "được kết nối với Asterisk đang nói. Đối với những người dùng trong môi "
-"trường im lặng, Im lặng ( Mute) có thể chấp nhận được"
+"trường im lặng, Chế độ Im lặng ( Mute) có thể chấp nhận được"
 
 #: views/dahdi_advanced_settings.php:209
 msgid ""
@@ -1455,9 +1455,9 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable."
 msgstr ""
-"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh khi người "
+"Im lăng ( Mute) - Cài đặt này sẽ làm NLP tắt các dòng âm thanh vào khi người "
 "được kết nối với Asterisk đang nói. Đối với những người dùng trong môi "
-"trường im lặng, Im lặng ( Mute) có thể chấp nhận được."
+"trường im lặng, chế độ Im lặng ( Mute) có thể chấp nhận được."
 
 #: views/dahdi_modprobe_settings.php:206
 msgid "NEON"
@@ -2235,7 +2235,7 @@ msgstr ""
 
 #: views/dahdi_analog_settings.php:36
 msgid "The context to use for inbound calls to this analog device"
-msgstr "Ngữ cảnh sử dụng cho các cuộc gọi đến tới thiết bị analog này"
+msgstr "Ngữ cảnh sử dụng cho các cuộc gọi vào tới thiết bị analog này"
 
 #: views/dahdi_modprobe_settings.php:271
 msgid ""

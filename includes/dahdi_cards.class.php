@@ -1434,6 +1434,7 @@ class dahdi_cards {
 			if (DB::IsError($result)) {
 				die_freepbx($result->getDebugInfo());
 			}
+			unset($inserts);
 		}
 	}
 

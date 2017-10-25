@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-23 10:56-0800\n"
+"POT-Creation-Date: 2017-10-25 16:51-0400\n"
 "PO-Revision-Date: 2015-02-25 14:20+1000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -112,7 +112,7 @@ msgstr "告警"
 msgid "Allow Collect Calls"
 msgstr ""
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:10
 msgid "Allow PRI Discrete Channels"
 msgstr "允许PRI独立设置通道"
 
@@ -272,7 +272,7 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:26
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Columbia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:6
 msgid "Connectivity"
 msgstr "连接"
 
@@ -433,9 +433,7 @@ msgstr "DAHDI中继"
 msgid "DAHDi Config"
 msgstr "DAHDI 配置"
 
-#: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
-#: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
-#: dahdiconfig.i18n.php:50 dahdiconfig.i18n.php:56
+#: dahdiconfig.i18n.php:12
 msgid "DAHDi Configuration Module"
 msgstr "DAHDI配置模块"
 
@@ -445,7 +443,7 @@ msgid ""
 "button below"
 msgstr ""
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:16
 msgid "DAHDi Executable Location"
 msgstr ""
 
@@ -454,7 +452,7 @@ msgstr ""
 msgid "DAHDi Failed: %s"
 msgstr ""
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:30
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -462,11 +460,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:20
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:22
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
@@ -478,7 +476,7 @@ msgstr ""
 msgid "DAHDi Stopped"
 msgstr ""
 
-#: dahdiconfig.i18n.php:52
+#: dahdiconfig.i18n.php:38
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
@@ -490,7 +488,7 @@ msgstr ""
 msgid "DAHDi is DISABLED for writing"
 msgstr ""
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:14
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -553,7 +551,7 @@ msgstr "数字语音板卡"
 msgid "Disable"
 msgstr ""
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:24
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
@@ -1091,7 +1089,7 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:18
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -1263,7 +1261,7 @@ msgstr ""
 msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:28
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1492,7 +1490,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1769
+#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1685,11 +1683,11 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:42
+#: dahdiconfig.i18n.php:32
 msgid "Software EC"
 msgstr ""
 
-#: dahdiconfig.i18n.php:58
+#: dahdiconfig.i18n.php:42
 msgid ""
 "Some development environments can not host DAHDI hardware so this mode uses "
 "mock files to acomplish the tasks."
@@ -1931,7 +1929,7 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
-#: dahdiconfig.i18n.php:48
+#: dahdiconfig.i18n.php:36
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -2141,7 +2139,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1458 includes/dahdi_cards.class.php:1769
+#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2167,7 +2165,7 @@ msgstr ""
 msgid "Use Caller ID Presentation"
 msgstr ""
 
-#: dahdiconfig.i18n.php:54
+#: dahdiconfig.i18n.php:40
 msgid "Use mock hardware instead of real hardware"
 msgstr ""
 
@@ -2324,7 +2322,7 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
-#: dahdiconfig.i18n.php:46
+#: dahdiconfig.i18n.php:34
 msgid "software EC to use in system.conf"
 msgstr ""
 

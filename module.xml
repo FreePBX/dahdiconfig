@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.12</version>
+	<version>13.0.33.13</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.33.13* FREEPBX-15880 Bug in function write_spans()
 		*13.0.33.12* FREEPBX-13940 DAHDI Trunks NO CHANGE missing
 		*13.0.33.11* Cosmetic issues in Sangoma config screen
 		*13.0.33.10* Add bits to end of string not middle

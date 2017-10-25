@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-20 05:30+0000\n"
+"POT-Creation-Date: 2017-10-25 13:52-0700\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:554
+#: install.php:569
 msgid "..Done"
 msgstr "..Завершено"
 
@@ -89,11 +89,11 @@ msgstr ""
 msgid "Action"
 msgstr "Действие"
 
-#: install.php:590
+#: install.php:605
 msgid "Add type column"
 msgstr "Добавить тип колонки"
 
-#: install.php:606
+#: install.php:621
 msgid "Adding txgain and rxgain column to analog table"
 msgstr "Добавление  колонок txgain и rxgain  в аналоговую таблицу"
 
@@ -113,7 +113,7 @@ msgstr "Предупреждения"
 msgid "Allow Collect Calls"
 msgstr ""
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:10
 msgid "Allow PRI Discrete Channels"
 msgstr "Разрешить разделять каналы PRI"
 
@@ -156,7 +156,7 @@ msgstr "Применить Opermode для модулей FXO"
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Применить Opermode для модулей FXS и FXO"
 
-#: assets/js/main.js:449
+#: assets/js/main.js:481
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr "Австрия"
 msgid "Auto"
 msgstr "Авто"
 
-#: functions.inc.php:481
+#: functions.inc.php:482
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -276,7 +276,7 @@ msgstr "Болгария"
 msgid "Busy Detect Count"
 msgstr "Количество  обнаруженных состояний \"Занято\""
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:26
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -314,14 +314,14 @@ msgstr ""
 msgid "Canada"
 msgstr "Канада"
 
-#: page.dahdi.php:290 page.dahdi.php:309 page.dahdi.php:359 page.dahdi.php:416
-#: page.dahdi.php:439 page.dahdi.php:458 page.dahdi.php:503
+#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
+#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
 msgstr "Отмена"
 
-#: functions.inc.php:550
+#: functions.inc.php:549
 msgid "Channel"
 msgstr "Канал"
 
@@ -351,11 +351,11 @@ msgstr "Китай"
 msgid "Chinese"
 msgstr "Китайский"
 
-#: functions.inc.php:385
+#: functions.inc.php:386
 msgid "Choose"
 msgstr "Выбор"
 
-#: functions.inc.php:551
+#: functions.inc.php:550
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Выбрать канал FXS для %s"
@@ -368,14 +368,17 @@ msgstr ""
 msgid "Columbia"
 msgstr "Колумбия"
 
-#: dahdiconfig.i18n.php:6 dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:6
 msgid "Connectivity"
 msgstr "Подключения"
 
-#: views/dahdi_analog_settings.php:36
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Контекст"
+
+#: views/sangoma.php:41
+msgid "Control hardware DTMF"
+msgstr ""
 
 #: install.php:375
 msgid "Create Configured Locations Table"
@@ -389,7 +392,7 @@ msgstr "Создать таблицу расширенных настроек Da
 msgid "Creating Dahdi Analog Table"
 msgstr "Создать аналоговую таблицу Dahdi"
 
-#: install.php:581
+#: install.php:596
 msgid "Creating dahdi modules Table"
 msgstr "Создание таблицы dahdi-модулей"
 
@@ -421,12 +424,12 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr "Конфигурация DAHDI"
 
-#: Dahdiconfig.class.php:95 Dahdiconfig.class.php:151
+#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI НЕ НАЙДЕН [Советуем де-инсталлировать модуль конфигурации DAHDI]!"
 
-#: functions.inc.php:463 functions.inc.php:496
+#: functions.inc.php:464 functions.inc.php:497
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
@@ -434,9 +437,7 @@ msgstr "Транки DAHDi"
 msgid "DAHDi Config"
 msgstr "Конфигурация DAHDi"
 
-#: dahdiconfig.i18n.php:14 dahdiconfig.i18n.php:20 dahdiconfig.i18n.php:26
-#: dahdiconfig.i18n.php:32 dahdiconfig.i18n.php:38 dahdiconfig.i18n.php:44
-#: dahdiconfig.i18n.php:50
+#: dahdiconfig.i18n.php:12
 msgid "DAHDi Configuration Module"
 msgstr "Модуль конфигурации DAHDi"
 
@@ -446,16 +447,16 @@ msgid ""
 "button below"
 msgstr ""
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:16
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:133 Dahdiconfig.class.php:182
+#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Ошибка DAHDi: %s"
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:30
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -463,23 +464,23 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr "Модуль DAHDi Загрузить/Порядок"
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:20
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:22
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:131
+#: Dahdiconfig.class.php:128
 msgid "DAHDi Started"
 msgstr "DAHDi стартовал"
 
-#: Dahdiconfig.class.php:180
+#: Dahdiconfig.class.php:177
 msgid "DAHDi Stopped"
 msgstr "DAHDi остановлен"
 
-#: dahdiconfig.i18n.php:52
+#: dahdiconfig.i18n.php:38
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
@@ -491,7 +492,7 @@ msgstr "Отказ от запрета записи DAHDi"
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi  заблокирован для записи"
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:14
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -508,7 +509,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Режим линии по умолчанию"
 
-#: install.php:519
+#: install.php:534
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr "Удаление данных старого модуля DAHDi из базы данных(он переносится)"
 
@@ -517,12 +518,12 @@ msgstr "Удаление данных старого модуля DAHDi из б�
 msgid "Denmark"
 msgstr "Дания"
 
-#: install.php:623
+#: install.php:638
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Обнаружен новый модуль DAHDi: wcaxx, Добавление к %s"
 
-#: install.php:618
+#: install.php:633
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Обнаружен новый модуль DAHDi: wcte43x, Добавление к %s"
@@ -539,7 +540,7 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:539
+#: functions.inc.php:538
 msgid "Device Options"
 msgstr "Опции устройства"
 
@@ -552,15 +553,15 @@ msgstr "Цифровой Канал %s"
 msgid "Digital Hardware"
 msgstr "Цифровое оборудование"
 
-#: page.dahdi.php:250
+#: page.dahdi.php:247
 msgid "Disable"
 msgstr "Выключить"
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:24
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
-#: assets/js/main.js:443
+#: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr ""
 
@@ -633,7 +634,7 @@ msgstr "Египет"
 msgid "El Salvador"
 msgstr "Сальвадор"
 
-#: page.dahdi.php:245
+#: page.dahdi.php:242
 msgid "Enable"
 msgstr "Включить"
 
@@ -653,7 +654,7 @@ msgstr "Включить Возврат Вызова"
 msgid "Enable Call Waiting"
 msgstr "Включить ожидание вызова"
 
-#: views/sangoma.php:51
+#: views/sangoma.php:52
 msgid "Enable DTMF CID"
 msgstr ""
 
@@ -668,6 +669,10 @@ msgstr "Включить эхоподавление"
 #: views/dahdi_global_settings.php:172
 msgid "Enable Echo Training"
 msgstr "Включить обучение эхо"
+
+#: views/sangoma.php:7
+msgid "Enable Sangoma Cards"
+msgstr ""
 
 #: views/dahdi_global_settings.php:99
 msgid "Enable Three Way Calling"
@@ -757,12 +762,12 @@ msgstr "Быстрый сигнал вызова:"
 msgid "Fax Detection"
 msgstr "Детектировать факс"
 
-#: includes/dahdi_cards.class.php:138
+#: includes/dahdi_cards.class.php:139
 #, php-format
 msgid "File %s does not exist."
 msgstr ""
 
-#: includes/dahdi_cards.class.php:130
+#: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "%s не является владельцем файла %s"
@@ -874,8 +879,7 @@ msgstr "Греция"
 msgid "Greek"
 msgstr "Греческий"
 
-#: views/dahdi_analog_settings.php:29
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Группа"
 
@@ -1023,7 +1027,7 @@ msgstr "Индия"
 msgid "Indonesia"
 msgstr "Индонезия"
 
-#: install.php:515
+#: install.php:530
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr "Добавление старых данных из Расширенной таблицы DAHDi"
 
@@ -1076,8 +1080,7 @@ msgstr "Иордания"
 msgid "Kazakhstan"
 msgstr "Казахстан"
 
-#: views/dahdi_analog_settings.php:23
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "Крутой старт"
 
@@ -1111,6 +1114,10 @@ msgstr "Латвия"
 msgid "Lebanon"
 msgstr "Ливан"
 
+#: views/sangoma.php:19
+msgid "Line Mode"
+msgstr ""
+
 #: views/dahdi_advanced_settings.php:35
 msgid "Lithuania"
 msgstr "Литва"
@@ -1119,7 +1126,7 @@ msgstr "Литва"
 msgid "Lithuanian"
 msgstr "Литовский"
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:18
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -1136,8 +1143,7 @@ msgid ""
 "directory will be automatically created if not present already)"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:24
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Старт Петли"
 
@@ -1180,7 +1186,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:331 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1244,7 +1250,7 @@ msgstr "Малайзия"
 msgid "Malta"
 msgstr "Мальта"
 
-#: views/sangoma.php:34
+#: views/sangoma.php:35
 msgid "Master"
 msgstr ""
 
@@ -1289,16 +1295,16 @@ msgstr ""
 msgid "Mexico"
 msgstr "Мексика"
 
-#: install.php:499
+#: install.php:514
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr "Перенос старых данных из расширенной таблицы DAHDi"
 
-#: install.php:573
+#: install.php:588
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr "Перенос модуля %s из \tсериализованных данных в json"
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:28
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1322,7 +1328,7 @@ msgstr "Настройки модуля"
 msgid "Morocco"
 msgstr "Марокко"
 
-#: install.php:560
+#: install.php:575
 msgid "Moving/Adding dchannel column"
 msgstr "Перемещение/Добавление колонки dchannel"
 
@@ -1401,16 +1407,16 @@ msgstr "Нигерия"
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:45 views/sangoma.php:55
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
+#: views/sangoma.php:56
 msgid "No"
 msgstr "Нет"
 
-#: functions.inc.php:500
+#: functions.inc.php:501
 msgid "No Available Groups or Channels"
 msgstr "Нет доступных групп или каналов"
 
-#: functions.inc.php:571
+#: functions.inc.php:570
 msgid "No Unused DAHDi Channels Available"
 msgstr "Нет больше незадействованных каналов DAHDi"
 
@@ -1442,7 +1448,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
 #: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
 #: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
-#: views/sangoma.php:33
+#: views/sangoma.php:34
 msgid "Normal"
 msgstr "Нормальный"
 
@@ -1551,7 +1557,7 @@ msgstr "Филиппины"
 msgid "Please Delete the System Generated %s"
 msgstr "Пожалуйста удалите сгенерированные системой %s"
 
-#: includes/dahdi_cards.class.php:1347 includes/dahdi_cards.class.php:1647
+#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Пожалуйста измените права для %s"
@@ -1564,13 +1570,13 @@ msgstr ""
 "Пожалуйста выберите Вашу  или соседнюю страну для тона линии по умолчанию "
 "(Напр: тон при наборе, сигнал при занятости, тон вызова и т.д.)"
 
-#: includes/dahdi_cards.class.php:130
+#: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 "Пожалуйста запустите %s, затем вернитесь в модуль конфигурирования DAHDi"
 
-#: includes/dahdi_cards.class.php:138
+#: includes/dahdi_cards.class.php:139
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
@@ -1580,15 +1586,15 @@ msgstr ""
 msgid "Poland"
 msgstr "Польша"
 
-#: views/sangoma.php:78
+#: views/sangoma.php:79
 msgid "Polarity CID Timeout"
 msgstr ""
 
-#: views/sangoma.php:70
+#: views/sangoma.php:71
 msgid "Polarity CID Timer"
 msgstr ""
 
-#: views/sangoma.php:62
+#: views/sangoma.php:63
 msgid "Polarity Threshold"
 msgstr ""
 
@@ -1655,15 +1661,15 @@ msgstr "Усиление приёма"
 msgid "Reload Asterisk DAHDi Module"
 msgstr ""
 
-#: assets/js/main.js:432
+#: assets/js/main.js:464
 msgid "Reloading..."
 msgstr ""
 
-#: install.php:548
+#: install.php:563
 msgid "Replacing.."
 msgstr "Перемещение.."
 
-#: page.dahdi.php:493
+#: page.dahdi.php:490
 msgid "Reset File To Defaults"
 msgstr "Сбросить файл в значения по умолчанию"
 
@@ -1671,11 +1677,11 @@ msgstr "Сбросить файл в значения по умолчанию"
 msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:572
+#: page.dahdi.php:569
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
-#: assets/js/main.js:454
+#: assets/js/main.js:486
 msgid "Restarting..."
 msgstr ""
 
@@ -1686,10 +1692,6 @@ msgstr "Обнаружение сигнала вызова"
 #: views/dahdi_advanced_settings.php:115 views/dahdi_modprobe_settings.php:98
 msgid "Romania"
 msgstr "Румыния"
-
-#: views/sangoma.php:7
-msgid "Run Wanpipe In DAHDI/DIGIUM Mode"
-msgstr ""
 
 #: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
@@ -1711,8 +1713,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr "Саудовская Аравия"
 
-#: page.dahdi.php:284 page.dahdi.php:303 page.dahdi.php:347 page.dahdi.php:409
-#: page.dahdi.php:433 page.dahdi.php:452 page.dahdi.php:471 page.dahdi.php:516
+#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
+#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1722,12 +1724,12 @@ msgstr "Сохранить"
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: page.dahdi.php:324
+#: page.dahdi.php:321
 msgid "Set Defaults"
 msgstr ""
 
-#: views/sangoma.php:29 views/sangoma.php:40
-msgid "Set wanpipe port clocking"
+#: views/sangoma.php:30
+msgid "Set port clocking"
 msgstr ""
 
 #: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
@@ -1757,8 +1759,14 @@ msgstr "Словакия"
 msgid "Slovenia"
 msgstr "Словения"
 
-#: dahdiconfig.i18n.php:42
+#: dahdiconfig.i18n.php:32
 msgid "Software EC"
+msgstr ""
+
+#: dahdiconfig.i18n.php:42
+msgid ""
+"Some development environments can not host DAHDI hardware so this mode uses "
+"mock files to acomplish the tasks."
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
@@ -1991,19 +1999,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Стандартный"
 
-#: Dahdiconfig.class.php:129
+#: Dahdiconfig.class.php:126
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Запуск DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:111
+#: Dahdiconfig.class.php:108
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Запуск Wanrouter-а для плат Sangoma"
 
-#: Dahdiconfig.class.php:178
+#: Dahdiconfig.class.php:175
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Останов DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:165
+#: Dahdiconfig.class.php:162
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Останов Wanrouter-a для плат Sangoma"
 
@@ -2075,7 +2083,7 @@ msgstr "Швейцария"
 msgid "Syria"
 msgstr "Сирия"
 
-#: dahdiconfig.i18n.php:48
+#: dahdiconfig.i18n.php:36
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -2086,10 +2094,6 @@ msgstr "Системные настройки"
 #: views/dahdi_modprobe_settings.php:276
 msgid "T1"
 msgstr "T1"
-
-#: views/sangoma.php:18
-msgid "T1/Mode"
-msgstr ""
 
 #: views/dahdi_advanced_settings.php:128 views/dahdi_modprobe_settings.php:111
 msgid "TBR21"
@@ -2152,7 +2156,7 @@ msgstr ""
 "Значения в Дб (децибелах). Положительно значение увеличивает уровень в "
 "канале, отрицательное- уменьшает"
 
-#: functions.inc.php:508
+#: functions.inc.php:509
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -2195,7 +2199,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:246
+#: Dahdiconfig.class.php:243
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2301,7 +2305,7 @@ msgstr ""
 "передачу перевода вызова на ISDN - коммутатор,пока он передаётся в сообщении "
 "FACILITY"
 
-#: page.dahdi.php:494
+#: page.dahdi.php:491
 msgid "This will reload the page"
 msgstr "Это перезагрузит страницу"
 
@@ -2337,7 +2341,7 @@ msgstr "ОАЭ"
 msgid "UK"
 msgstr "Великобритания"
 
-#: includes/dahdi_cards.class.php:1347 includes/dahdi_cards.class.php:1647
+#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Невозможно записать в %s"
@@ -2362,6 +2366,10 @@ msgstr "Использовать CallerID"
 #: views/dahdi_global_settings.php:88
 msgid "Use Caller ID Presentation"
 msgstr "Использовать представление CallerID"
+
+#: dahdiconfig.i18n.php:40
+msgid "Use mock hardware instead of real hardware"
+msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:81
 msgid ""
@@ -2389,16 +2397,16 @@ msgstr ""
 "ПРЕДУПРЕЖДЕНИЕ:Когда это модуль \"доступен\"  для записи он ПЕРЕЗАПИШЕТ  "
 "следующие файлы:"
 
-#: Dahdiconfig.class.php:115 Dahdiconfig.class.php:169
+#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Ошибка Wanrouter:%s"
 
-#: Dahdiconfig.class.php:113
+#: Dahdiconfig.class.php:110
 msgid "Wanrouter Started"
 msgstr "Wanrouter запущен"
 
-#: Dahdiconfig.class.php:167
+#: Dahdiconfig.class.php:164
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter остановлен"
 
@@ -2434,7 +2442,7 @@ msgstr ""
 "Указывает использовать ли представление значение идентификатора вызывающего "
 "абонента при исходящем вызове,который отправляет вызывающий коммутатор"
 
-#: Dahdiconfig.class.php:78
+#: Dahdiconfig.class.php:75
 msgid "Writing out default Sangoma conf"
 msgstr ""
 
@@ -2452,7 +2460,7 @@ msgstr "Йемен"
 #: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
 #: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
 #: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
-#: views/sangoma.php:12 views/sangoma.php:44 views/sangoma.php:56
+#: views/sangoma.php:12 views/sangoma.php:45 views/sangoma.php:57
 msgid "Yes"
 msgstr "Да"
 
@@ -2478,7 +2486,7 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:597
+#: install.php:612
 msgid "add additional column"
 msgstr "добавить дополнительный столбец"
 
@@ -2490,7 +2498,7 @@ msgstr "alaw-алгоритм"
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:843
+#: includes/dahdi_cards.class.php:936
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 
@@ -2526,7 +2534,7 @@ msgstr "Отсутствует- обнаружение не выполняетс
 msgid "none - Performs no detection "
 msgstr "Отсутствует-обнаружение не выполняется "
 
-#: dahdiconfig.i18n.php:46
+#: dahdiconfig.i18n.php:34
 msgid "software EC to use in system.conf"
 msgstr ""
 

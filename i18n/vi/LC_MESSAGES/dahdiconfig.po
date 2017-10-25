@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 16:51-0400\n"
+"POT-Creation-Date: 2017-10-25 13:52-0700\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
 "dahdiconfig/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -141,7 +141,7 @@ msgstr "%s Analog"
 msgid "Analog %s Ports"
 msgstr "Công giao tiếp %s Analog"
 
-#: functions.inc.php:304
+#: functions.inc.php:307
 #, php-format
 msgid "Analog Channel %s"
 msgstr "Kênh analog %s"
@@ -199,7 +199,7 @@ msgstr "Quốc gia Áo"
 msgid "Auto"
 msgstr "Tự động"
 
-#: functions.inc.php:479
+#: functions.inc.php:482
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -361,7 +361,7 @@ msgstr "Quốc gia Canada"
 msgid "Cancel"
 msgstr "Hủy"
 
-#: functions.inc.php:546
+#: functions.inc.php:549
 msgid "Channel"
 msgstr "Kênh"
 
@@ -391,11 +391,11 @@ msgstr "Trung Quốc"
 msgid "Chinese"
 msgstr "Tiếng Trung quốc"
 
-#: functions.inc.php:383
+#: functions.inc.php:386
 msgid "Choose"
 msgstr "Chọn"
 
-#: functions.inc.php:547
+#: functions.inc.php:550
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Chọn kênh FXS cho %s này"
@@ -412,8 +412,7 @@ msgstr "Tiếng Columbia"
 msgid "Connectivity"
 msgstr "Khả năng kết nối"
 
-#: views/dahdi_analog_settings.php:36
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Ngữ cảnh"
 
@@ -469,7 +468,7 @@ msgstr "Cấu hình DAHDI"
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu hình Dahdi]!"
 
-#: functions.inc.php:461 functions.inc.php:494
+#: functions.inc.php:464 functions.inc.php:497
 msgid "DAHDI Trunks"
 msgstr "Các trung kế DAHDI"
 
@@ -588,11 +587,11 @@ msgstr ""
 "ty viễn thông yêu cầu ANI trước tiên, còn một số yếu tố khác không quan tâm."
 "<br /> <strong>Default:</strong>no"
 
-#: functions.inc.php:535
+#: functions.inc.php:538
 msgid "Device Options"
 msgstr "Các lựa chọn thiết bị"
 
-#: functions.inc.php:338
+#: functions.inc.php:341
 #, php-format
 msgid "Digital Channel %s"
 msgstr "Kênh kỹ thuật số %s"
@@ -933,27 +932,26 @@ msgstr "Nước Hi Lạp"
 msgid "Greek"
 msgstr "Tiếng Hi Lạp"
 
-#: views/dahdi_analog_settings.php:29
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Nhóm"
 
-#: functions.inc.php:300 functions.inc.php:319
+#: functions.inc.php:303 functions.inc.php:322
 #, php-format
 msgid "Group %s Ascending"
 msgstr "Nhóm %s tăng dần"
 
-#: functions.inc.php:301 functions.inc.php:320
+#: functions.inc.php:304 functions.inc.php:323
 #, php-format
 msgid "Group %s Descending"
 msgstr "Nhóm %s giảm dần"
 
-#: functions.inc.php:302 functions.inc.php:321
+#: functions.inc.php:305 functions.inc.php:324
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr "Nhóm %s Reoun robin tăng dần"
 
-#: functions.inc.php:303 functions.inc.php:322
+#: functions.inc.php:306 functions.inc.php:325
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr "Nhóm %s Round Robin giảm dần"
@@ -1135,8 +1133,7 @@ msgstr "Nước Jordan"
 msgid "Kazakhstan"
 msgstr "Nước Kazakhstan"
 
-#: views/dahdi_analog_settings.php:23
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "Kewl Start"
 
@@ -1203,8 +1200,7 @@ msgstr ""
 "dẫn đầy đủ tới các nhật ký cuộc gọi MFC/R2 của bạn sẽ là /var/log/asterisk/"
 "mfcr2/span1( Danh bạ sẽ được tạo tự động nếu nó chưa có)"
 
-#: views/dahdi_analog_settings.php:24
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Loop Start"
 
@@ -1508,16 +1504,16 @@ msgstr "Nước Nigeria"
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:46 views/sangoma.php:56
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
+#: views/sangoma.php:56
 msgid "No"
 msgstr "Không"
 
-#: functions.inc.php:498
+#: functions.inc.php:501
 msgid "No Available Groups or Channels"
 msgstr "Không có nhóm hay kênh nào khả dụng"
 
-#: functions.inc.php:567
+#: functions.inc.php:570
 msgid "No Unused DAHDi Channels Available"
 msgstr "Không có kênh DAHDi kgar dụng nào không sử dụng"
 
@@ -2269,7 +2265,7 @@ msgstr ""
 "Các giá trị bằng đơn vị db (đề xi ben). Một số dương sẽ tăng mức âm lượng ở "
 "một kênh, và một giá trị âm sẽ làm giảm mức âm lượng"
 
-#: functions.inc.php:506
+#: functions.inc.php:509
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"

@@ -22,12 +22,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	public function uninstall() {
 
 	}
-	public function backup(){
 
-	}
-	public function restore($backup){
-
-	}
 	public function doConfigPageInit($page){}
 
 	/**

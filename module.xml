@@ -3,18 +3,17 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>14.0.1.1</version>
+	<version>15.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
-	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*14.0.1.1* FREEPBX-15880 Bug in function write_spans()
-		*14.0.1* Initial Release for FreePBX 14
+		*15.0.1* Backup 15
 	</changelog>
 	<supported>
-		<version>14.0</version>
+		<version>15.0</version>
 	</supported>
 	<depends>
 		<version>14.0.1alpha30</version>
@@ -22,6 +21,105 @@
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>
+    <database>
+        <table name="dahdi_advanced_modules">
+            <field name="id" type="integer" unsigned="true" primarykey="true" autoincrement="true"/>
+            <field name="module_name" type="string" length="100" notnull="false"/>
+            <field name="settings" type="blob" notnull="false"/>
+            <key name="module_name" type="unique">
+                <column name="module_name"/>
+            </key>
+        </table>
+        <table name="dahdi_modules">
+            <field name="module_name" type="string" length="100" notnull="false"/>
+            <field name="settings" type="blob" notnull="false"/>
+            <key name="module_name" type="unique">
+                <column name="module_name"/>
+            </key>
+        </table>
+        <table name="dahdi_advanced">
+            <field name="keyword" type="string" length="50" primarykey="true"/>
+            <field name="val" type="string" length="255" notnull="false"/>
+            <field name="default_val" type="string" length="255" notnull="false"/>
+            <field name="type" type="string" length="50" default="chandahdi" notnull="false"/>
+            <field name="additional" type="boolean" default="1" notnull="false"/>
+        </table>
+        <table name="dahdi_spans">
+            <field name="id" type="integer" primarykey="true" autoincrement="true"/>
+            <field name="span" type="integer"/>
+            <field name="active" type="boolean" default="1" notnull="false"/>
+            <field name="alarms" type="string" length="15" notnull="false"/>
+            <field name="basechan" type="integer" notnull="false"/>
+            <field name="coding" type="string" length="10" notnull="false"/>
+            <field name="coding_opts" type="string" length="255" notnull="false"/>
+            <field name="context" type="string" length="255" notnull="false"/>
+            <field name="definedchans" type="integer" notnull="false"/>
+            <field name="description" type="string" length="255" notnull="false"/>
+            <field name="devicetype" type="string" length="255" notnull="false"/>
+            <field name="framing" type="string" length="10" notnull="false"/>
+            <field name="framing_opts" type="string" length="255" notnull="false"/>
+            <field name="group" type="integer" notnull="false"/>
+            <field name="irq" type="string" length="10" notnull="false"/>
+            <field name="lbo" type="integer" notnull="false"/>
+            <field name="location" type="string" length="255" notnull="false"/>
+            <field name="name" type="string" length="25" notnull="false"/>
+            <field name="manufacturer" type="string" length="25" default="Digium"/>
+            <field name="max_ch" type="integer" notnull="false"/>
+            <field name="min_ch" type="integer" notnull="false"/>
+            <field name="pridialplan" type="string" length="25" notnull="false"/>
+            <field name="prilocaldialplan" type="string" length="25" notnull="false"/>
+            <field name="reserved_ch" type="integer" notnull="false"/>
+            <field name="signalling" type="string" length="50" notnull="false"/>
+            <field name="spantype" type="string" length="10" notnull="false"/>
+            <field name="switchtype" type="string" length="50" notnull="false"/>
+            <field name="syncsrc" type="integer" notnull="false"/>
+            <field name="timing" type="integer" notnull="false"/>
+            <field name="totchans" type="integer" notnull="false"/>
+            <field name="type" type="string" length="25" notnull="false"/>
+            <field name="priexclusive" type="string" length="3"/>
+            <field name="additional_groups" type="blob" notnull="false"/>
+            <field name="txgain" type="string" length="10" default="0.0"/>
+            <field name="rxgain" type="string" length="10" default="0.0"/>
+            <field name="mfcr2_variant" type="string" length="3" default="ITU"/>
+            <field name="mfcr2_get_ani_first" type="string" length="3" default="no"/>
+            <field name="mfcr2_max_ani" type="smallint" default="10"/>
+            <field name="mfcr2_max_dnis" type="smallint" default="4"/>
+            <field name="mfcr2_category" type="string" length="50" default="national_subscriber"/>
+            <field name="mfcr2_call_files" type="string" length="3" default="yes"/>
+            <field name="mfcr2_skip_category" type="string" length="3" default="no"/>
+            <field name="mfcr2_logdir" type="string" length="10" notnull="false"/>
+            <field name="mfcr2_logging" type="string" length="10" notnull="false"/>
+            <field name="mfcr2_mfback_timeout" type="decimal"/>
+            <field name="mfcr2_mfback_pulse_timeout" type="decimal"/>
+            <field name="mfcr2_metering_pulse_timeout" type="decimal"/>
+            <field name="mfcr2_allow_collect_calls" type="string" length="3" default="no"/>
+            <field name="mfcr2_double_answer" type="string" length="3" default="no"/>
+            <field name="mfcr2_immediate_accept" type="string" length="3" default="no"/>
+            <field name="mfcr2_forced_release" type="string" length="3" default="no"/>
+            <field name="mfcr2_charge_calls" type="string" length="3" default="yes"/>
+            <field name="mfcr2_accept_on_offer" type="string" length="3" default="yes"/>
+            <field name="mfcr2_skip_catefory" type="string" length="3" default="no"/>
+            <field name="mfcr2_advanced_protocol_file" type="string" length="100" notnull="false"/>
+        </table>
+        <table name="dahdi_analog">
+            <field name="port" type="integer" notnull="false"/>
+            <field name="type" type="string" notnull="false"/>
+            <field name="signalling" type="string" notnull="false"/>
+            <field name="group" type="string" length="10" notnull="false"/>
+            <field name="context" type="string" length="255" notnull="false"/>
+            <field name="txgain" type="string" length="10" default="0.0"/>
+            <field name="rxgain" type="string" length="10" default="0.0"/>
+            <key name="port" type="unique">
+            <column name="port"/>
+            </key>
+        </table>
+        <table name="dahdi_configured_locations">
+            <field name="location" type="string" length="50" notnull="false"/>
+            <field name="device" type="string" length="50" notnull="false"/>
+            <field name="basechan" type="integer" notnull="false"/>
+            <field name="type" type="string" length="25" notnull="false"/>
+        </table>
+    </database>
 	<hooks>
 		<framework class="Start" namespace="FreePBX\Console\Command">
 			<method callingMethod="preAsteriskHooks" class="Dahdiconfig" namespace="FreePBX\modules">startFreepbx</method>
@@ -34,6 +132,4 @@
 			<method callingMethod="fwcChownFiles" class="Dahdiconfig" namespace="FreePBX\modules">chownFreepbx</method>
 		</framework>
 	</hooks>
-	<location>legacy</location>
-	<md5sum>legacy</md5sum>
 </module>

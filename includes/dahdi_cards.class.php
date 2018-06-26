@@ -14,7 +14,8 @@ class dahdi_cards {
 		'opermode_checkbox'=>FALSE,
 		'opermode'=>'USA',
 		'alawoverride_checkbox'=>FALSE,
-		'alawoverride'=>0,
+        'alawoverride'=>0,
+        
 		'fxs_honor_mode_checkbox'=>FALSE,
 		'fxs_honor_mode'=>0,
 		'boostringer_checkbox'=>FALSE,

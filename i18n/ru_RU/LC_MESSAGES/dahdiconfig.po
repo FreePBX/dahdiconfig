@@ -7,11 +7,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 16:51-0400\n"
+"POT-Creation-Date: 2017-10-25 13:52-0700\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
 "dahdiconfig/ru_RU/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -130,7 +131,7 @@ msgstr "Аналоговый %s"
 msgid "Analog %s Ports"
 msgstr "Аналоговый Порт %s"
 
-#: functions.inc.php:304
+#: functions.inc.php:307
 #, php-format
 msgid "Analog Channel %s"
 msgstr "Аналоговый канал %s"
@@ -186,7 +187,7 @@ msgstr "Австрия"
 msgid "Auto"
 msgstr "Авто"
 
-#: functions.inc.php:479
+#: functions.inc.php:482
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -320,7 +321,7 @@ msgstr "Канада"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: functions.inc.php:546
+#: functions.inc.php:549
 msgid "Channel"
 msgstr "Канал"
 
@@ -350,11 +351,11 @@ msgstr "Китай"
 msgid "Chinese"
 msgstr "Китайский"
 
-#: functions.inc.php:383
+#: functions.inc.php:386
 msgid "Choose"
 msgstr "Выбор"
 
-#: functions.inc.php:547
+#: functions.inc.php:550
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Выбрать канал FXS для %s"
@@ -371,8 +372,7 @@ msgstr "Колумбия"
 msgid "Connectivity"
 msgstr "Подключения"
 
-#: views/dahdi_analog_settings.php:36
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Контекст"
 
@@ -429,7 +429,7 @@ msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI НЕ НАЙДЕН [Советуем де-инсталлировать модуль конфигурации DAHDI]!"
 
-#: functions.inc.php:461 functions.inc.php:494
+#: functions.inc.php:464 functions.inc.php:497
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
@@ -540,11 +540,11 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:538
 msgid "Device Options"
 msgstr "Опции устройства"
 
-#: functions.inc.php:338
+#: functions.inc.php:341
 #, php-format
 msgid "Digital Channel %s"
 msgstr "Цифровой Канал %s"
@@ -879,27 +879,26 @@ msgstr "Греция"
 msgid "Greek"
 msgstr "Греческий"
 
-#: views/dahdi_analog_settings.php:29
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Группа"
 
-#: functions.inc.php:300 functions.inc.php:319
+#: functions.inc.php:303 functions.inc.php:322
 #, php-format
 msgid "Group %s Ascending"
 msgstr "Группа %s По возрастанию"
 
-#: functions.inc.php:301 functions.inc.php:320
+#: functions.inc.php:304 functions.inc.php:323
 #, php-format
 msgid "Group %s Descending"
 msgstr "Группа %s По убыванию"
 
-#: functions.inc.php:302 functions.inc.php:321
+#: functions.inc.php:305 functions.inc.php:324
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr "Группа %s по круговому возрастанию"
 
-#: functions.inc.php:303 functions.inc.php:322
+#: functions.inc.php:306 functions.inc.php:325
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr "Группа %s по круговому убыванию"
@@ -1081,8 +1080,7 @@ msgstr "Иордания"
 msgid "Kazakhstan"
 msgstr "Казахстан"
 
-#: views/dahdi_analog_settings.php:23
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "Крутой старт"
 
@@ -1145,8 +1143,7 @@ msgid ""
 "directory will be automatically created if not present already)"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:24
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Старт Петли"
 
@@ -1410,16 +1407,16 @@ msgstr "Нигерия"
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:46 views/sangoma.php:56
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
+#: views/sangoma.php:56
 msgid "No"
 msgstr "Нет"
 
-#: functions.inc.php:498
+#: functions.inc.php:501
 msgid "No Available Groups or Channels"
 msgstr "Нет доступных групп или каналов"
 
-#: functions.inc.php:567
+#: functions.inc.php:570
 msgid "No Unused DAHDi Channels Available"
 msgstr "Нет больше незадействованных каналов DAHDi"
 
@@ -2159,7 +2156,7 @@ msgstr ""
 "Значения в Дб (децибелах). Положительно значение увеличивает уровень в "
 "канале, отрицательное- уменьшает"
 
-#: functions.inc.php:506
+#: functions.inc.php:509
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"

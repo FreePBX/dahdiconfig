@@ -38,8 +38,11 @@ class dahdiconfig_conf {
 		switch($file) {
 			case 'chan_dahdi.conf':
 				if(!file_exists('/etc/asterisk/chan_dahdi.conf.old')) {
-					//Quick Backup http://www.freepbx.org/trac/ticket/4558
-					rename('/etc/asterisk/chan_dahdi.conf','/etc/asterisk/chan_dahdi.conf.old');
+					// A new install won't have a chan_dahdi.conf
+					if (file_exists('/etc/asterisk/chan_dahdi.conf')) {
+						// Quick Backup http://www.freepbx.org/trac/ticket/4558
+						rename('/etc/asterisk/chan_dahdi.conf','/etc/asterisk/chan_dahdi.conf.old');
+					}
 				}
 				$output = array();
 				$output[] = "[general]";

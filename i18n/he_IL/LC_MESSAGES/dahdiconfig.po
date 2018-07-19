@@ -20,10 +20,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 16:51-0400\n"
+"POT-Creation-Date: 2017-10-25 13:52-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -140,7 +141,7 @@ msgstr ""
 msgid "Analog %s Ports"
 msgstr ""
 
-#: functions.inc.php:304
+#: functions.inc.php:307
 #, php-format
 msgid "Analog Channel %s"
 msgstr ""
@@ -196,7 +197,7 @@ msgstr ""
 msgid "Auto"
 msgstr ""
 
-#: functions.inc.php:479
+#: functions.inc.php:482
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -327,7 +328,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: functions.inc.php:546
+#: functions.inc.php:549
 msgid "Channel"
 msgstr ""
 
@@ -357,11 +358,11 @@ msgstr ""
 msgid "Chinese"
 msgstr ""
 
-#: functions.inc.php:383
+#: functions.inc.php:386
 msgid "Choose"
 msgstr ""
 
-#: functions.inc.php:547
+#: functions.inc.php:550
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr ""
@@ -378,8 +379,7 @@ msgstr ""
 msgid "Connectivity"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:36
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr ""
 
@@ -435,7 +435,7 @@ msgstr ""
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:461 functions.inc.php:494
+#: functions.inc.php:464 functions.inc.php:497
 msgid "DAHDI Trunks"
 msgstr ""
 
@@ -541,11 +541,11 @@ msgid ""
 "require ANI first some others do not care.<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: functions.inc.php:535
+#: functions.inc.php:538
 msgid "Device Options"
 msgstr ""
 
-#: functions.inc.php:338
+#: functions.inc.php:341
 #, php-format
 msgid "Digital Channel %s"
 msgstr ""
@@ -877,27 +877,26 @@ msgstr ""
 msgid "Greek"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:29
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:300 functions.inc.php:319
+#: functions.inc.php:303 functions.inc.php:322
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:301 functions.inc.php:320
+#: functions.inc.php:304 functions.inc.php:323
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:302 functions.inc.php:321
+#: functions.inc.php:305 functions.inc.php:324
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:303 functions.inc.php:322
+#: functions.inc.php:306 functions.inc.php:325
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
@@ -1056,8 +1055,7 @@ msgstr ""
 msgid "Kazakhstan"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:23
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr ""
 
@@ -1113,8 +1111,7 @@ msgid ""
 "directory will be automatically created if not present already)"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:24
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr ""
 
@@ -1365,16 +1362,16 @@ msgstr ""
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:46 views/sangoma.php:56
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
+#: views/sangoma.php:56
 msgid "No"
 msgstr ""
 
-#: functions.inc.php:498
+#: functions.inc.php:501
 msgid "No Available Groups or Channels"
 msgstr ""
 
-#: functions.inc.php:567
+#: functions.inc.php:570
 msgid "No Unused DAHDi Channels Available"
 msgstr ""
 
@@ -1997,7 +1994,7 @@ msgid ""
 "level on a channel, and a negative value decreases volume level"
 msgstr ""
 
-#: functions.inc.php:506
+#: functions.inc.php:509
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-19 18:04-0400\n"
-"PO-Revision-Date: 2018-07-18 19:13+0000\n"
+"PO-Revision-Date: 2018-07-28 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
 "Language: de_DE\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
@@ -232,7 +232,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:203
 msgid "Both"
-msgstr "beide"
+msgstr "Beide"
 
 #: views/dahdi_advanced_settings.php:33 views/dahdi_advanced_settings.php:66
 #: views/dahdi_mfcr2_settings.php:17 views/dahdi_modprobe_settings.php:49
@@ -376,7 +376,7 @@ msgstr "Kontext"
 
 #: views/sangoma.php:41
 msgid "Control hardware DTMF"
-msgstr ""
+msgstr "Hardware-MFV steuern"
 
 #: install.php:375
 msgid "Create Configured Locations Table"
@@ -559,7 +559,7 @@ msgstr ""
 
 #: install.php:352
 msgid "Done"
-msgstr ""
+msgstr "Erledigt"
 
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
@@ -616,7 +616,7 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 #: views/dahdi_advanced_settings.php:77 views/dahdi_modprobe_settings.php:60
 msgid "Egypt"
@@ -628,7 +628,7 @@ msgstr ""
 
 #: page.dahdi.php:242
 msgid "Enable"
-msgstr ""
+msgstr "Aktivieren"
 
 #: views/dahdi_global_settings.php:43
 msgid "Enable Busy Detect"
@@ -648,7 +648,7 @@ msgstr ""
 
 #: views/sangoma.php:52
 msgid "Enable DTMF CID"
-msgstr ""
+msgstr "MFV-Anruferkennung aktivieren"
 
 #: views/dahdi_global_settings.php:161
 msgid "Enable EC when bridged"
@@ -870,7 +870,7 @@ msgstr ""
 
 #: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #: functions.inc.php:303 functions.inc.php:322
 #, php-format

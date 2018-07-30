@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-19 18:04-0400\n"
-"PO-Revision-Date: 2018-07-28 09:00+0000\n"
+"PO-Revision-Date: 2018-07-31 16:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
 "Language: de_DE\n"
@@ -844,12 +844,12 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:17
 msgid "German"
-msgstr ""
+msgstr "Deutsch"
 
 #: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 #: views/dahdi_mfcr2_settings.php:61
 msgid "Get ANI Before DNIS"
@@ -857,16 +857,16 @@ msgstr ""
 
 #: page.dahdi.php:82 page.dahdi.php:120 views/dahdi_global_settings.php:3
 msgid "Global Settings"
-msgstr ""
+msgstr "Globale Einstellungen"
 
 #: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
 msgid "Greece"
-msgstr ""
+msgstr "Griechenland"
 
 #: views/dahdi_global_settings.php:23
 msgid "Greek"
-msgstr ""
+msgstr "Griechisch"
 
 #: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
@@ -894,19 +894,19 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:84 views/dahdi_modprobe_settings.php:67
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 #: views/dahdi_global_settings.php:34
 msgid "Hindi"
-msgstr ""
+msgstr "Hindi"
 
 #: views/dahdi_modprobe_settings.php:68
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hongkong"
 
 #: views/dahdi_advanced_settings.php:85
 msgid "Hongkong"
-msgstr ""
+msgstr "Hongkong"
 
 #: views/dahdi_advanced_settings.php:219 views/dahdi_modprobe_settings.php:239
 msgid "Hoth Noise"
@@ -928,16 +928,16 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:28
 msgid "Hungarian"
-msgstr ""
+msgstr "Ungarisch"
 
 #: views/dahdi_advanced_settings.php:34 views/dahdi_advanced_settings.php:86
 #: views/dahdi_modprobe_settings.php:69
 msgid "Hungary"
-msgstr ""
+msgstr "Ungarn"
 
 #: views/dahdi_advanced_settings.php:87 views/dahdi_modprobe_settings.php:70
 msgid "Iceland"
-msgstr ""
+msgstr "Island"
 
 #: views/dahdi_global_settings.php:54
 msgid ""
@@ -988,12 +988,12 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:41 views/dahdi_advanced_settings.php:88
 #: views/dahdi_modprobe_settings.php:71
 msgid "India"
-msgstr ""
+msgstr "Indien"
 
 #: views/dahdi_advanced_settings.php:89 views/dahdi_mfcr2_settings.php:22
 #: views/dahdi_modprobe_settings.php:72
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesien"
 
 #: install.php:530
 msgid "Inserting Old Data from Dahdi Advanced Table"
@@ -1005,16 +1005,16 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
 msgid "Ireland"
-msgstr ""
+msgstr "Irland"
 
 #: views/dahdi_advanced_settings.php:32 views/dahdi_advanced_settings.php:91
 #: views/dahdi_modprobe_settings.php:74
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 #: views/dahdi_global_settings.php:26
 msgid "Israeli Hebrew"
-msgstr ""
+msgstr "Israelisch-Hebräisch"
 
 #: page.dahdi.php:177
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
@@ -1022,29 +1022,29 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:22
 msgid "Italian"
-msgstr ""
+msgstr "Italienisch"
 
 #: views/dahdi_advanced_settings.php:24 views/dahdi_advanced_settings.php:92
 #: views/dahdi_modprobe_settings.php:75
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 #: views/dahdi_advanced_settings.php:20 views/dahdi_advanced_settings.php:93
 #: views/dahdi_modprobe_settings.php:76
 msgid "Japan"
-msgstr ""
+msgstr "Japan"
 
 #: views/dahdi_global_settings.php:20
 msgid "Japanese"
-msgstr ""
+msgstr "Japanisch"
 
 #: views/dahdi_advanced_settings.php:94 views/dahdi_modprobe_settings.php:77
 msgid "Jordan"
-msgstr ""
+msgstr "Jordanisch"
 
 #: views/dahdi_advanced_settings.php:95 views/dahdi_modprobe_settings.php:78
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kasachstan"
 
 #: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
@@ -1063,27 +1063,27 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:96 views/dahdi_modprobe_settings.php:79
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
 #: views/dahdi_advanced_settings.php:97 views/dahdi_modprobe_settings.php:80
 msgid "Latvia"
-msgstr ""
+msgstr "Lettland"
 
 #: views/dahdi_advanced_settings.php:98 views/dahdi_modprobe_settings.php:81
 msgid "Lebanon"
-msgstr ""
+msgstr "Libanon"
 
 #: views/sangoma.php:19
 msgid "Line Mode"
-msgstr ""
+msgstr "Leitungsmodus"
 
 #: views/dahdi_advanced_settings.php:35
 msgid "Lithuania"
-msgstr ""
+msgstr "Littauen"
 
 #: views/dahdi_global_settings.php:29
 msgid "Lithuanian"
-msgstr ""
+msgstr "Littauisch"
 
 #: dahdiconfig.i18n.php:18
 msgid "Location of the DAHDi Executable"
@@ -1128,7 +1128,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:99 views/dahdi_modprobe_settings.php:82
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxemburg"
 
 #: views/dahdi_mfcr2_settings.php:145
 msgid "MF Timeout"
@@ -1610,19 +1610,19 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:115 views/dahdi_modprobe_settings.php:98
 msgid "Romania"
-msgstr ""
+msgstr "Rumänien"
 
 #: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
-msgstr ""
+msgstr "Russland"
 
 #: views/dahdi_global_settings.php:37
 msgid "Russian"
-msgstr ""
+msgstr "Russisch"
 
 #: views/dahdi_advanced_settings.php:53
 msgid "Russian Federation"
-msgstr ""
+msgstr "Russische Föderation"
 
 #: views/sangoma.php:1
 msgid "Sangoma Settings"
@@ -1630,18 +1630,18 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:117 views/dahdi_modprobe_settings.php:100
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Saudi-Arabien"
 
 #: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
 #: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: views/dahdi_global_settings.php:9
 msgid "Select Language"
-msgstr ""
+msgstr "Sprache auswählen"
 
 #: page.dahdi.php:321
 msgid "Set Defaults"
@@ -1658,11 +1658,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:31 views/dahdi_advanced_settings.php:118
 #: views/dahdi_modprobe_settings.php:101
 msgid "Singapore"
-msgstr ""
+msgstr "Singapur"
 
 #: views/dahdi_mfcr2_settings.php:245
 msgid "Skip Category"
-msgstr ""
+msgstr "Kategorie überspringen"
 
 #: views/dahdi_mfcr2_settings.php:247
 msgid ""
@@ -1672,11 +1672,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:119 views/dahdi_modprobe_settings.php:102
 msgid "Slovakia"
-msgstr ""
+msgstr "Slowakei"
 
 #: views/dahdi_advanced_settings.php:120 views/dahdi_modprobe_settings.php:103
 msgid "Slovenia"
-msgstr ""
+msgstr "Slowenien"
 
 #: dahdiconfig.i18n.php:32
 msgid "Software EC"
@@ -1691,11 +1691,11 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
 msgid "South Africa"
-msgstr ""
+msgstr "Südafrika"
 
 #: views/dahdi_global_settings.php:31
 msgid "South African"
-msgstr ""
+msgstr "Südafrikanisch"
 
 #: views/dahdi_advanced_settings.php:122 views/dahdi_modprobe_settings.php:105
 msgid "South Korea"
@@ -1704,15 +1704,15 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:19 views/dahdi_advanced_settings.php:123
 #: views/dahdi_modprobe_settings.php:106
 msgid "Spain"
-msgstr ""
+msgstr "Spanien"
 
 #: views/dahdi_digital_hardware.php:5
 msgid "Span"
-msgstr ""
+msgstr "Spanne"
 
 #: views/dahdi_global_settings.php:19
 msgid "Spanish"
-msgstr ""
+msgstr "Spanisch"
 
 #: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
 msgid ""

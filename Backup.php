@@ -1,9 +1,11 @@
 <?php
 namespace FreePBX\modules\Dahdiconfig;
 use FreePBX\modules\Backup as Base;
+use Symfony\Component\Filesystem\Filesystem;
 use SplFileInfo;
 class Backup Extends Base\BackupBase{
 	public function runBackup($id,$transaction){
+		$fs = new Filesystem();
 		$this->dirs = [];
 		/** Everything is dynamic so ummm so we simply save the advanced settings ¯\_(ツ)_/¯ */
 		$this->addConfigs($this->getAdvanced());
@@ -14,7 +16,7 @@ class Backup Extends Base\BackupBase{
 			'/etc/wanpipe/wanrouter.rc',
 		];
 		foreach ($fileList as $file) {
-			if(file_exists($file)){
+			if($fs->exists($file)){
 				$fObj = new SplFileInfo($file);
 				if(!$fObj->isReadable()){
 					continue;

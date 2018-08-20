@@ -72,7 +72,7 @@ class Restore Extends Base\RestoreBase{
 					if(is_file('/etc/wanpipe/' . $fileinfo->getFilename())){
 						copy('/etc/wanpipe/' . $fileinfo->getFilename(), '/etc/dahdi/' . $fileinfo . getFilename().'.'.$time);
 					}
-					copy($filename,'/etc/dahdi/'.$fileinfo=>getFilename());
+					copy($filename,'/etc/dahdi/'.$fileinfo->getFilename());
 				}
 			}
 		}

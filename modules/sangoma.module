@@ -89,7 +89,8 @@ class dahdi_sangoma {
 						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMER']."\n";
 						$output .= "WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT=".$settings['WANPIPE_GLOBAL_FAKE_POLARITY_CIDTIMEOUT']."\n";
 					}
-					if(!file_put_contents($file, $output)) {
+					$dirname = dirname($file);
+					if(!is_dir($dirname) || !is_writable($file) || !file_put_contents($file, $output)) {
 						$nt->add_error('dahdiconfig', 'SANGOMA', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
 						return;
 					}

@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 16:51-0400\n"
+"POT-Creation-Date: 2018-08-20 14:44-0400\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
 "dahdiconfig/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -412,8 +412,7 @@ msgstr "Tiếng Columbia"
 msgid "Connectivity"
 msgstr "Khả năng kết nối"
 
-#: views/dahdi_analog_settings.php:36
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Ngữ cảnh"
 
@@ -933,8 +932,7 @@ msgstr "Nước Hi Lạp"
 msgid "Greek"
 msgstr "Tiếng Hi Lạp"
 
-#: views/dahdi_analog_settings.php:29
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Nhóm"
 
@@ -1135,8 +1133,7 @@ msgstr "Nước Jordan"
 msgid "Kazakhstan"
 msgstr "Nước Kazakhstan"
 
-#: views/dahdi_analog_settings.php:23
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "Kewl Start"
 
@@ -1203,8 +1200,7 @@ msgstr ""
 "dẫn đầy đủ tới các nhật ký cuộc gọi MFC/R2 của bạn sẽ là /var/log/asterisk/"
 "mfcr2/span1( Danh bạ sẽ được tạo tự động nếu nó chưa có)"
 
-#: views/dahdi_analog_settings.php:24
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Loop Start"
 
@@ -1508,8 +1504,8 @@ msgstr "Nước Nigeria"
 #: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
 #: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
 #: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11
-#: views/sangoma.php:46 views/sangoma.php:56
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
+#: views/sangoma.php:56
 msgid "No"
 msgstr "Không"
 

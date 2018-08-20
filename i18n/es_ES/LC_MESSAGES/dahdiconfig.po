@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 18:04-0400\n"
+"POT-Creation-Date: 2018-08-20 14:51-0400\n"
 "PO-Revision-Date: 2018-07-18 19:19+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
@@ -37,7 +37,7 @@ msgstr "-22.5db (CSU)"
 msgid "-7.5db (CSU)"
 msgstr "-7.5db (CSU)"
 
-#: install.php:569
+#: install.php:238
 msgid "..Done"
 msgstr "..Hecho"
 
@@ -95,14 +95,6 @@ msgstr "Aceptar en la oferta"
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
 msgstr "Acción"
-
-#: install.php:605
-msgid "Add type column"
-msgstr "Agregar columna type"
-
-#: install.php:621
-msgid "Adding txgain and rxgain column to analog table"
-msgstr "Agregando columna txgain y rxgain a la tabla analoga"
 
 #: views/dahdi_mfcr2_settings.php:299
 msgid "Advanced Protocol Configuration File"
@@ -361,10 +353,6 @@ msgstr "Canales Usados/Total"
 msgid "Charge Calls"
 msgstr "Cobrar Llamadas"
 
-#: install.php:73
-msgid "Checking tables..."
-msgstr "Comprobando tablas..."
-
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
@@ -408,22 +396,6 @@ msgstr "Contexto"
 msgid "Control hardware DTMF"
 msgstr "Control hardware DTMF"
 
-#: install.php:375
-msgid "Create Configured Locations Table"
-msgstr "Crear Tabla de Localidades Configuradas"
-
-#: install.php:21
-msgid "Creating Dahdi Advanced Settings Table"
-msgstr "Creando Tabla de Configuración Avanzada Dahdi"
-
-#: install.php:355
-msgid "Creating Dahdi Analog Table"
-msgstr "Crear Tabla Analógica Dahdi"
-
-#: install.php:596
-msgid "Creating dahdi modules Table"
-msgstr "Creando Tabla módulos Dahdi"
-
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
 msgstr "Croacia"
@@ -452,7 +424,7 @@ msgstr "D4/AMI"
 msgid "DAHDI Configuration"
 msgstr "Configuracion DAHDI"
 
-#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:143
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
@@ -482,7 +454,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
-#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
+#: Dahdiconfig.class.php:125 Dahdiconfig.class.php:174
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
@@ -504,11 +476,11 @@ msgstr "Localidad Módulos DAHDI"
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
-#: Dahdiconfig.class.php:128
+#: Dahdiconfig.class.php:123
 msgid "DAHDi Started"
 msgstr "DAHDI Iniciado"
 
-#: Dahdiconfig.class.php:177
+#: Dahdiconfig.class.php:172
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
@@ -541,7 +513,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Modo Línea por defecto"
 
-#: install.php:534
+#: install.php:203
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
 
@@ -550,12 +522,12 @@ msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
 msgid "Denmark"
 msgstr "Dinamarca"
 
-#: install.php:638
+#: install.php:253
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcaxx. Anexando a %s"
 
-#: install.php:633
+#: install.php:248
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcte43x. Anexando a %s"
@@ -601,10 +573,6 @@ msgstr "Deshabilitar Escrituras Configuración DAHDI"
 #: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr "No olvide reiniciar Dahdi y Asterisk después de completar"
-
-#: install.php:352
-msgid "Done"
-msgstr "Hecho"
 
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
@@ -799,12 +767,12 @@ msgstr "Fastringer:"
 msgid "Fax Detection"
 msgstr "Detección Fax"
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "File %s does not exist."
 msgstr "Archivo %s no existe."
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Archivo %s no es propiedad de %s"
@@ -1070,7 +1038,7 @@ msgstr "India"
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: install.php:530
+#: install.php:199
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr "Inserción de datos antiguos de Dahdi Tabla avanzada"
 
@@ -1389,14 +1357,9 @@ msgstr ""
 msgid "Mexico"
 msgstr "México"
 
-#: install.php:514
+#: install.php:183
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
-
-#: install.php:588
-#, php-format
-msgid "Migrating module %s from serialized data to json"
-msgstr "Migrando Modulo %s desde datos serializados a json"
 
 #: dahdiconfig.i18n.php:28
 msgid "ModProbe.d Configuration File Location"
@@ -1421,10 +1384,6 @@ msgstr "Configuración de Módulos"
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
 msgstr "Morocco"
-
-#: install.php:575
-msgid "Moving/Adding dchannel column"
-msgstr "Mover/Agregar columna dchannel"
 
 #: views/dahdi_advanced_settings.php:217 views/dahdi_modprobe_settings.php:237
 msgid "Mute"
@@ -1652,7 +1611,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1665,13 +1624,13 @@ msgstr ""
 "Por favor, elija su país o su país más cercano para los tonos por defecto "
 "(Ej: tono de llamada, tono de ocupado, tono de timbre, etc.)"
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 "Por favor corra \"%s\", entonces retroceda el modulo de configuración DAHDI"
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr "Ejecute 'touch %s' y luego '%s' para crear este archivo."
@@ -1760,7 +1719,7 @@ msgstr "Recargar Modulo Asterisk DAHDI"
 msgid "Reloading..."
 msgstr "Recargando..."
 
-#: install.php:563
+#: install.php:232
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
@@ -2106,19 +2065,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Estándar"
 
-#: Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:121
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Iniciando DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:103
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Iniciando Wanrouter para tarjetas Sangoma"
 
-#: Dahdiconfig.class.php:175
+#: Dahdiconfig.class.php:170
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Deteniendo DAHDI para tarjetas Digium"
 
-#: Dahdiconfig.class.php:162
+#: Dahdiconfig.class.php:157
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Deteniendo Wanrouter para tarjetas Sangoma"
 
@@ -2323,7 +2282,7 @@ msgstr ""
 "contestación-> clear back-> contestación (como un flash) (ver también "
 "'mfcr2_allow_collect_calls') <br/> <strong> Por defecto: </strong> no"
 
-#: Dahdiconfig.class.php:243
+#: Dahdiconfig.class.php:238
 msgid "This is not available on your system"
 msgstr "No esta disponible en su sistema"
 
@@ -2475,7 +2434,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2537,16 +2496,16 @@ msgstr ""
 "CUIDADO: cuando este  módulo esta \"habilitado\" para escritura, el "
 "SOBREESCRIBIRA los siguientes archivos:"
 
-#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
+#: Dahdiconfig.class.php:107 Dahdiconfig.class.php:161
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Error Wanrouter: %s"
 
-#: Dahdiconfig.class.php:110
+#: Dahdiconfig.class.php:105
 msgid "Wanrouter Started"
 msgstr "Wanrouter Iniciado"
 
-#: Dahdiconfig.class.php:164
+#: Dahdiconfig.class.php:159
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter Detenido"
 
@@ -2582,7 +2541,7 @@ msgstr ""
 "Usar o no presentación de ID de llamada para la llamada saliente que el "
 "conmutador esta enviando"
 
-#: Dahdiconfig.class.php:75
+#: Dahdiconfig.class.php:70
 msgid "Writing out default Sangoma conf"
 msgstr "Escribiendo Sangoma conf predeterminado"
 
@@ -2642,10 +2601,6 @@ msgstr ""
 "DAHDIAcceptR2Call o implícitamente a través de la aplicación Answer (). <br/"
 "> <strong> Por defecto: </strong> yes"
 
-#: install.php:612
-msgid "add additional column"
-msgstr "agregar columna adicional"
-
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
 msgstr "a-law"
@@ -2654,7 +2609,7 @@ msgstr "a-law"
 msgid "collect_call"
 msgstr "collect_call"
 
-#: includes/dahdi_cards.class.php:936
+#: includes/dahdi_cards.class.php:937
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "¡Dahdi_scan existe pero no puede ser ejecutado como este usuario!"
 
@@ -2697,6 +2652,39 @@ msgstr "CE Por software a usar en system.conf"
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
+
+#~ msgid "Add type column"
+#~ msgstr "Agregar columna type"
+
+#~ msgid "Adding txgain and rxgain column to analog table"
+#~ msgstr "Agregando columna txgain y rxgain a la tabla analoga"
+
+#~ msgid "Checking tables..."
+#~ msgstr "Comprobando tablas..."
+
+#~ msgid "Create Configured Locations Table"
+#~ msgstr "Crear Tabla de Localidades Configuradas"
+
+#~ msgid "Creating Dahdi Advanced Settings Table"
+#~ msgstr "Creando Tabla de Configuración Avanzada Dahdi"
+
+#~ msgid "Creating Dahdi Analog Table"
+#~ msgstr "Crear Tabla Analógica Dahdi"
+
+#~ msgid "Creating dahdi modules Table"
+#~ msgstr "Creando Tabla módulos Dahdi"
+
+#~ msgid "Done"
+#~ msgstr "Hecho"
+
+#~ msgid "Migrating module %s from serialized data to json"
+#~ msgstr "Migrando Modulo %s desde datos serializados a json"
+
+#~ msgid "Moving/Adding dchannel column"
+#~ msgstr "Mover/Agregar columna dchannel"
+
+#~ msgid "add additional column"
+#~ msgstr "agregar columna adicional"
 
 #~ msgid "Signaling Mode"
 #~ msgstr "Modo de señalización"

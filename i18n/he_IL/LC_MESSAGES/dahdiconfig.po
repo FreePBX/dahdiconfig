@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 13:52-0700\n"
+"POT-Creation-Date: 2018-08-20 14:51-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:569
+#: install.php:238
 msgid "..Done"
 msgstr ""
 
@@ -97,14 +97,6 @@ msgstr ""
 
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
-msgstr ""
-
-#: install.php:605
-msgid "Add type column"
-msgstr ""
-
-#: install.php:621
-msgid "Adding txgain and rxgain column to analog table"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:299
@@ -340,10 +332,6 @@ msgstr ""
 msgid "Charge Calls"
 msgstr ""
 
-#: install.php:73
-msgid "Checking tables..."
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
@@ -387,22 +375,6 @@ msgstr ""
 msgid "Control hardware DTMF"
 msgstr ""
 
-#: install.php:375
-msgid "Create Configured Locations Table"
-msgstr ""
-
-#: install.php:21
-msgid "Creating Dahdi Advanced Settings Table"
-msgstr ""
-
-#: install.php:355
-msgid "Creating Dahdi Analog Table"
-msgstr ""
-
-#: install.php:596
-msgid "Creating dahdi modules Table"
-msgstr ""
-
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
 msgstr ""
@@ -431,7 +403,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:143
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -457,7 +429,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
+#: Dahdiconfig.class.php:125 Dahdiconfig.class.php:174
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -478,11 +450,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:128
+#: Dahdiconfig.class.php:123
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:177
+#: Dahdiconfig.class.php:172
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -510,7 +482,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr ""
 
-#: install.php:534
+#: install.php:203
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 
@@ -519,12 +491,12 @@ msgstr ""
 msgid "Denmark"
 msgstr ""
 
-#: install.php:638
+#: install.php:253
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr ""
 
-#: install.php:633
+#: install.php:248
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
@@ -564,10 +536,6 @@ msgstr ""
 
 #: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
-msgstr ""
-
-#: install.php:352
-msgid "Done"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:191
@@ -763,12 +731,12 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "File %s does not exist."
 msgstr ""
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr ""
@@ -1004,7 +972,7 @@ msgstr ""
 msgid "Indonesia"
 msgstr ""
 
-#: install.php:530
+#: install.php:199
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr ""
 
@@ -1256,13 +1224,8 @@ msgstr ""
 msgid "Mexico"
 msgstr ""
 
-#: install.php:514
+#: install.php:183
 msgid "Migrating Old Data from Dahdi Advanced Table"
-msgstr ""
-
-#: install.php:588
-#, php-format
-msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
 #: dahdiconfig.i18n.php:28
@@ -1287,10 +1250,6 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
-msgstr ""
-
-#: install.php:575
-msgid "Moving/Adding dchannel column"
 msgstr ""
 
 #: views/dahdi_advanced_settings.php:217 views/dahdi_modprobe_settings.php:237
@@ -1494,7 +1453,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1505,12 +1464,12 @@ msgid ""
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
@@ -1593,7 +1552,7 @@ msgstr ""
 msgid "Reloading..."
 msgstr ""
 
-#: install.php:563
+#: install.php:232
 msgid "Replacing.."
 msgstr ""
 
@@ -1861,19 +1820,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:121
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:103
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:175
+#: Dahdiconfig.class.php:170
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:162
+#: Dahdiconfig.class.php:157
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2035,7 +1994,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:243
+#: Dahdiconfig.class.php:238
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2143,7 +2102,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2197,16 +2156,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
+#: Dahdiconfig.class.php:107 Dahdiconfig.class.php:161
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:110
+#: Dahdiconfig.class.php:105
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:164
+#: Dahdiconfig.class.php:159
 msgid "Wanrouter Stopped"
 msgstr ""
 
@@ -2234,7 +2193,7 @@ msgid ""
 "the calling switch is sending"
 msgstr ""
 
-#: Dahdiconfig.class.php:75
+#: Dahdiconfig.class.php:70
 msgid "Writing out default Sangoma conf"
 msgstr ""
 
@@ -2278,10 +2237,6 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:612
-msgid "add additional column"
-msgstr ""
-
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
 msgstr ""
@@ -2290,7 +2245,7 @@ msgstr ""
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:936
+#: includes/dahdi_cards.class.php:937
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 13:52-0700\n"
+"POT-Creation-Date: 2018-08-20 14:51-0400\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,7 +38,7 @@ msgstr "-22.5db (CSU/bộ truyền và nhận tín hiệu trên các đường t
 msgid "-7.5db (CSU)"
 msgstr "-7.5db (CSU/bộ truyền và nhận tín hiệu trên các đường truyền WAN)"
 
-#: install.php:569
+#: install.php:238
 msgid "..Done"
 msgstr "..Đã xong"
 
@@ -96,14 +96,6 @@ msgstr "Chấp nhận một đề nghị"
 #: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
 msgstr "Thao tác"
-
-#: install.php:605
-msgid "Add type column"
-msgstr "Thêm kiểu cột"
-
-#: install.php:621
-msgid "Adding txgain and rxgain column to analog table"
-msgstr "Đang thêm cột  txgain and rxgain đến bảng analoge"
 
 #: views/dahdi_mfcr2_settings.php:299
 msgid "Advanced Protocol Configuration File"
@@ -373,10 +365,6 @@ msgstr "Các kênh đã sử dụng/ tổng"
 msgid "Charge Calls"
 msgstr "Phí các cuộc gọi"
 
-#: install.php:73
-msgid "Checking tables..."
-msgstr "Đang kiểm tra các bảng..."
-
 #: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
@@ -420,22 +408,6 @@ msgstr "Ngữ cảnh"
 msgid "Control hardware DTMF"
 msgstr "Điều khiển phần cứng DTMF"
 
-#: install.php:375
-msgid "Create Configured Locations Table"
-msgstr "Tạo bảng vị trí được cấu hình"
-
-#: install.php:21
-msgid "Creating Dahdi Advanced Settings Table"
-msgstr "Đang tạo bảng các cài đặt nâng cao Dahdi"
-
-#: install.php:355
-msgid "Creating Dahdi Analog Table"
-msgstr "Đang tạo bảng Analog Dahdi"
-
-#: install.php:596
-msgid "Creating dahdi modules Table"
-msgstr "Đang tạo bảng các mô đun dahdi"
-
 #: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
 msgstr "Quốc gia Croatia"
@@ -464,7 +436,7 @@ msgstr "D4/AMI"
 msgid "DAHDI Configuration"
 msgstr "Cấu hình DAHDI"
 
-#: Dahdiconfig.class.php:92 Dahdiconfig.class.php:148
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:143
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu hình Dahdi]!"
 
@@ -492,7 +464,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Vị trí thực thi được của DAHi"
 
-#: Dahdiconfig.class.php:130 Dahdiconfig.class.php:179
+#: Dahdiconfig.class.php:125 Dahdiconfig.class.php:174
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "DAHDi đã thất bại:%s"
@@ -513,11 +485,11 @@ msgstr "Vị trí các mô đun DAHDi"
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Vị trí  các mô đun DAHDi (/etc/dahdi/ các mô đun)"
 
-#: Dahdiconfig.class.php:128
+#: Dahdiconfig.class.php:123
 msgid "DAHDi Started"
 msgstr "Đã khởi động DAHDi"
 
-#: Dahdiconfig.class.php:177
+#: Dahdiconfig.class.php:172
 msgid "DAHDi Stopped"
 msgstr "Đã dừng DAHDi"
 
@@ -550,7 +522,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Chế độ đi dây mặc định"
 
-#: install.php:534
+#: install.php:203
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 "Đang xóa dữ liệu mô đun dahdi cũ khỏi cơ sở dữ liệu ( nó đã được di chuyển)"
@@ -560,12 +532,12 @@ msgstr ""
 msgid "Denmark"
 msgstr "Quốc gia Đan Mạch"
 
-#: install.php:638
+#: install.php:253
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Mô đun Dahdi mới được phát hiện: wcaxx, Đang thêm vào %s"
 
-#: install.php:633
+#: install.php:248
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Mô đun Dahdi mới được phát hiện: wcte43x, Đang thêm vào %s"
@@ -611,10 +583,6 @@ msgstr "Vô hiệu các bản ghi cấu hình DAHDi"
 #: assets/js/main.js:475
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr "Không được quên khởi động lại Dahdi & Asterisk sau khi hoàn thành"
-
-#: install.php:352
-msgid "Done"
-msgstr "Đã xong"
 
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
@@ -809,12 +777,12 @@ msgstr "Tăng tốc độ chuông (Fastringer):"
 msgid "Fax Detection"
 msgstr "Phát hiện fax"
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "File %s does not exist."
 msgstr "Tệp %s không tồn tại."
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Tệp %s không thuộc sở hữu của %s"
@@ -1080,7 +1048,7 @@ msgstr "Ấn Độ"
 msgid "Indonesia"
 msgstr "In đô nê si a"
 
-#: install.php:530
+#: install.php:199
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr "Đang chèn dữ liệu cũ từ bảng nâng cao Dahdi"
 
@@ -1392,14 +1360,9 @@ msgstr ""
 msgid "Mexico"
 msgstr "Nước Mexico"
 
-#: install.php:514
+#: install.php:183
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr "Di chuyển dữ liệu cũ ra khỏi bảng nâng cao Dahdi"
-
-#: install.php:588
-#, php-format
-msgid "Migrating module %s from serialized data to json"
-msgstr "Di chuyển mô đun %s từ khỏi dữ liệu thứ tự đến json"
 
 #: dahdiconfig.i18n.php:28
 msgid "ModProbe.d Configuration File Location"
@@ -1424,10 +1387,6 @@ msgstr "Cài đặt mô đun"
 #: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
 msgstr "Nước Morocco"
-
-#: install.php:575
-msgid "Moving/Adding dchannel column"
-msgstr "Di chuyển/ Thêm các cột kênh d"
 
 #: views/dahdi_advanced_settings.php:217 views/dahdi_modprobe_settings.php:237
 msgid "Mute"
@@ -1654,7 +1613,7 @@ msgstr "Tiếng Philipin"
 msgid "Please Delete the System Generated %s"
 msgstr "Vui lòng xóa hệ thống đã tạo %s"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Vui lòng thay đổi quyền trên %s"
@@ -1667,12 +1626,12 @@ msgstr ""
 "Vui lòng chọn nước của bạn hoặc nước láng giềng gần nhất đối với mặc định "
 "chuông  ( vi dụ âm gọi, âm báo bận, âm chuông, vv)"
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:132
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr "Vui lòng chạy '%s', sau đó trở lại vào mô đun cấu hình DAHDi"
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:140
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr "Vui lòng chạy 'touch %s'  và tiếp theo là '%s'  để tạo tệp này."
@@ -1763,7 +1722,7 @@ msgstr "Tải lại Mô đun DAHDi Asterisk"
 msgid "Reloading..."
 msgstr "Đang tải lai..."
 
-#: install.php:563
+#: install.php:232
 msgid "Replacing.."
 msgstr "Đang thay thế.."
 
@@ -2100,20 +2059,20 @@ msgstr ""
 msgid "Standard"
 msgstr "Tiêu chuẩn"
 
-#: Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:121
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Đang khởi động DAHI cho các card Digium"
 
-#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:103
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 "Đang khởi động Wanrouter ( bộ định tuyến mạng WAN) cho các card Sangoma"
 
-#: Dahdiconfig.class.php:175
+#: Dahdiconfig.class.php:170
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Đang dừng DAHi cho các card Digium"
 
-#: Dahdiconfig.class.php:162
+#: Dahdiconfig.class.php:157
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 "Đang dừng Wanrouter (( bộ định tuyến mạng WAN) đối với các card Sangoma"
@@ -2318,7 +2277,7 @@ msgstr ""
 "đổi bởi answer->clear back->answer (sort of flash- một thuật toán sắp xếp "
 "tại chỗ) (xem 'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 
-#: Dahdiconfig.class.php:243
+#: Dahdiconfig.class.php:238
 msgid "This is not available on your system"
 msgstr "Điều này không khả dụng trong hệ thống"
 
@@ -2458,7 +2417,7 @@ msgstr "Các tiểu vương quốc Ả Rập thống nhất"
 msgid "UK"
 msgstr "Vương quốc Anh (UK)"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Không thể ghi tới %s"
@@ -2520,16 +2479,16 @@ msgstr ""
 "CẢNH BÁO: Khi mô đun này được \"kích hoạt\" cho việc ghi thì nó sẽ ghi đè "
 "lên các tệp sau:"
 
-#: Dahdiconfig.class.php:112 Dahdiconfig.class.php:166
+#: Dahdiconfig.class.php:107 Dahdiconfig.class.php:161
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Wanrouter ( bộ định tuyến mạng WAN) bị lỗi: %s"
 
-#: Dahdiconfig.class.php:110
+#: Dahdiconfig.class.php:105
 msgid "Wanrouter Started"
 msgstr "Wanrouter (bộ định tuyến mạng WAN) đã khởi động"
 
-#: Dahdiconfig.class.php:164
+#: Dahdiconfig.class.php:159
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter (bộ định tuyến mạng WAN) đã dừng"
 
@@ -2565,7 +2524,7 @@ msgstr ""
 "Có nên sử dụng hiện caller ID cho các cuộc gọi đi mà chuyển đổi cuộc gọi "
 "đang được gửi đến"
 
-#: Dahdiconfig.class.php:75
+#: Dahdiconfig.class.php:70
 msgid "Writing out default Sangoma conf"
 msgstr "Ghi ra mặc định  Sangoma conf"
 
@@ -2611,10 +2570,6 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:612
-msgid "add additional column"
-msgstr "Thêm một cột bổ sung"
-
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
 msgstr "alaw"
@@ -2623,7 +2578,7 @@ msgstr "alaw"
 msgid "collect_call"
 msgstr "Thu thập cuộc gọi"
 
-#: includes/dahdi_cards.class.php:936
+#: includes/dahdi_cards.class.php:937
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "dahdi_scan tồn tại nhưng không thể chạy được như người dùng này!"
 
@@ -2666,3 +2621,36 @@ msgstr "Phần mềm EC sử dụng trong system.conf"
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "ulaw"
+
+#~ msgid "Add type column"
+#~ msgstr "Thêm kiểu cột"
+
+#~ msgid "Adding txgain and rxgain column to analog table"
+#~ msgstr "Đang thêm cột  txgain and rxgain đến bảng analoge"
+
+#~ msgid "Checking tables..."
+#~ msgstr "Đang kiểm tra các bảng..."
+
+#~ msgid "Create Configured Locations Table"
+#~ msgstr "Tạo bảng vị trí được cấu hình"
+
+#~ msgid "Creating Dahdi Advanced Settings Table"
+#~ msgstr "Đang tạo bảng các cài đặt nâng cao Dahdi"
+
+#~ msgid "Creating Dahdi Analog Table"
+#~ msgstr "Đang tạo bảng Analog Dahdi"
+
+#~ msgid "Creating dahdi modules Table"
+#~ msgstr "Đang tạo bảng các mô đun dahdi"
+
+#~ msgid "Done"
+#~ msgstr "Đã xong"
+
+#~ msgid "Migrating module %s from serialized data to json"
+#~ msgstr "Di chuyển mô đun %s từ khỏi dữ liệu thứ tự đến json"
+
+#~ msgid "Moving/Adding dchannel column"
+#~ msgstr "Di chuyển/ Thêm các cột kênh d"
+
+#~ msgid "add additional column"
+#~ msgstr "Thêm một cột bổ sung"

@@ -91,6 +91,7 @@ class dahdi_sangoma {
 					}
 					$dirname = dirname($file);
 					if(!is_dir($dirname) || !is_writable($file) || !file_put_contents($file, $output)) {
+						$nt = notifications::create($db);
 						$nt->add_error('dahdiconfig', 'SANGOMA', sprintf(_('Unable to write to %s'),$file), sprintf(_("Please change permissions on %s or disable Sangoma DIGIUM mode"),$file), "", false, true);
 						return;
 					}

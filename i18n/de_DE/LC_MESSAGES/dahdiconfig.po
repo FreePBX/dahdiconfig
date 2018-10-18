@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-19 18:04-0400\n"
-"PO-Revision-Date: 2018-10-17 14:00+0000\n"
+"PO-Revision-Date: 2018-10-19 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
 "Language: de_DE\n"
@@ -752,26 +752,26 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:196
 msgid "Fax Detection"
-msgstr ""
+msgstr "Faxerkennung"
 
 #: includes/dahdi_cards.class.php:139
 #, php-format
 msgid "File %s does not exist."
-msgstr ""
+msgstr "Die Datei %s existiert nicht."
 
 #: includes/dahdi_cards.class.php:131
 #, php-format
 msgid "File %s is not owned by %s"
-msgstr ""
+msgstr "Die Datei %s ist nicht im Besitz von %s"
 
 #: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
 #: views/dahdi_modprobe_settings.php:63
 msgid "Finland"
-msgstr ""
+msgstr "Finnland"
 
 #: views/dahdi_global_settings.php:18
 msgid "Finnish"
-msgstr ""
+msgstr "Finnisch"
 
 #: views/dahdi_global_settings.php:110
 msgid "For FXS ports (either direct analog or over T1/E1)"
@@ -1369,7 +1369,7 @@ msgstr ""
 #: views/dahdi_advanced_settings.php:193 views/dahdi_advanced_settings.php:216
 #: views/dahdi_modprobe_settings.php:204 views/dahdi_modprobe_settings.php:236
 msgid "None"
-msgstr "keine"
+msgstr "Kein*e"
 
 #: views/dahdi_modprobe_settings.php:226
 msgid ""

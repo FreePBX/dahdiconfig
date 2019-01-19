@@ -52,6 +52,48 @@
 		            </td>
 		        </tr>
 		        <?php } ?> <!-- if $analog_type end -->
+
+
+				<?php
+				$port_custom_settings = $port['custom'];
+        		// If there are no custom settings yet, initialize as
+        		// array of empty strings so we always have at least one
+        		// blank custom setting in the form (the first one)
+        		if (count($port_custom_settings) == 0) {
+        			$port_custom_settings = array('' => '');
+        		}
+
+        		$id = 0;
+        		foreach ($port_custom_settings as $key => $val) {
+        			?>
+					<tr id="dh_analog_<?php echo $p; ?>_custom_<?php echo $id; ?>">
+					    <td>
+					        <?php
+					        if ($id == 0) {
+						        echo _('Other Port Settings') . ":";
+					        }
+					        ?>
+					    </td>
+					    <td>
+					        <a href="#" onclick="dh_analog_delete_field(<?php echo $p; ?>, <?php echo $id; ?>)"><img height="10px" src="images/trash.png"></a>
+					        <input type="hidden" name="dh_analog_<?php echo $p; ?>_custom_ids[]" value="<?php echo $id; ?>" />
+					        <input type="hidden" id="dh_analog_<?php echo $p; ?>_origsetting_key_<?php echo $id; ?>" name="dh_analog_<?php echo $p; ?>_origsetting_key_<?php echo $id; ?>" value="<?php echo $key?>" />
+					        <input id="dh_analog_<?php echo $p; ?>_setting_key_<?php echo $id; ?>" name="dh_analog_<?php echo $p; ?>_setting_key_<?php echo $id; ?>" value="<?php echo $key?>" /> =
+					        <input id="dh_analog_<?php echo $p; ?>_setting_val_<?php echo $id; ?>" name="dh_analog_<?php echo $p; ?>_setting_val_<?php echo $id; ?>" value="<?php echo $val?>" /> <br />
+					    </td>
+					</tr>
+	        		<?php
+	        		$id++;
+        		}
+
+        		?>
+				<tr id="dh_analog_add_to_<?php echo $p; ?>"> <!-- last row -->
+				    <td>
+				    </td>
+				    <td>
+				        <a style="cursor: pointer;" onclick="dh_analog_add_field(<?php echo $p; ?>, <?php echo $a?>)"><img src="assets/dahdiconfig/images/add.png"></a>
+				    </td>
+				</tr>
 		        <!--
 				<a href="#" class="info">Receive Gain<span>The values are in db (decibels). A positive number increases the volume level on a channel, and a negative value decreases volume level.</span></a></label>
 		        <input type="text" name="editspan_<?php echo $key?>_rxgain" id="editspan_<?php echo $key?>_rxgain" value="<?php echo $span['rxgain']; ?>">

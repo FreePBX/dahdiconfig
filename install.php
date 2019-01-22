@@ -371,6 +371,41 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_analog"')) {
 	$db->query($sql);
 }
 
+outn(_("Checking dahdi_analog_custom table..."));
+$table = \FreePBX::Database()->migrate("dahdi_analog_custom");
+$cols = array (
+  'dahdi_analog_port' =>
+  array (
+    'type' => 'integer',
+  ),
+  'keyword' =>
+  array (
+    'type' => 'string',
+    'length' => 50,
+  ),
+  'val' =>
+  array (
+    'type' => 'string',
+    'length' => 255,
+    'notnull' => false,
+  ),
+);
+
+$indexes = array (
+  'idx' =>
+  array (
+    'type' => 'unique',
+    'cols' =>
+    array (
+      0 => 'dahdi_analog_port',
+      1 => 'keyword',
+    ),
+  ),
+);
+$table->modify($cols, $indexes);
+unset($table);
+out(_("Done"));
+
 if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
 	out(_('Create Configured Locations Table'));
 	$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (

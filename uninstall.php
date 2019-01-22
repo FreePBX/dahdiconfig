@@ -5,7 +5,7 @@ global $db;
 global $asterisk_conf;
 
 out('Remove all dahdi tables');
-$tables = array('dahdi_advanced', 'dahdi_configured_locations', 'dahdi_spans', 'dahdi_scans', 'dahdi_analog', 'dahdi_advanced_modules', 'dahdi_modules');
+$tables = array('dahdi_advanced', 'dahdi_configured_locations', 'dahdi_spans', 'dahdi_scans', 'dahdi_analog', 'dahdi_analog_custom', 'dahdi_advanced_modules', 'dahdi_modules');
 foreach ($tables as $table) {
 	$sql = "DROP TABLE IF EXISTS {$table}";
 	$result = $db->query($sql);

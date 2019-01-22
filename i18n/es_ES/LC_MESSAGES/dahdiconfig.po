@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:51-0400\n"
+"POT-Creation-Date: 2019-01-22 17:32-0500\n"
 "PO-Revision-Date: 2018-07-18 19:19+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
@@ -37,7 +37,7 @@ msgstr "-22.5db (CSU)"
 msgid "-7.5db (CSU)"
 msgstr "-7.5db (CSU)"
 
-#: install.php:238
+#: install.php:209
 msgid "..Done"
 msgstr "..Hecho"
 
@@ -72,7 +72,7 @@ msgstr ""
 "parámetro se comenta de forma predeterminada porque NO LO NECESITAS A MENOS "
 "QUE ENTIENDAS REALMENTE MFC / R2!"
 
-#: views/dahdi_analog_settings.php:29
+#: views/dahdi_analog_settings.php:35
 msgid ""
 "A group ID number to associate this analog device with when referencing it "
 "elswhere using g<num>"
@@ -130,7 +130,7 @@ msgstr "Análogo %s"
 msgid "Analog %s Ports"
 msgstr "Puertos %s Análogos"
 
-#: functions.inc.php:307
+#: functions.inc.php:312
 #, php-format
 msgid "Analog Channel %s"
 msgstr "Canales %s Análogos"
@@ -155,7 +155,7 @@ msgstr "Aplicar Openmode a módulos FXO"
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Aplicar Openmode a módulos FXS y FXO"
 
-#: assets/js/main.js:481
+#: assets/js/main.js:542
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 "¿Está seguro de que desea reiniciar sin pulsar 'Aplicar configuración'?"
@@ -187,7 +187,7 @@ msgstr "Austria"
 msgid "Auto"
 msgstr "Automatico"
 
-#: functions.inc.php:482
+#: functions.inc.php:487
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -341,7 +341,7 @@ msgstr "Canadá"
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: functions.inc.php:549
+#: functions.inc.php:554
 msgid "Channel"
 msgstr "Canal"
 
@@ -367,11 +367,11 @@ msgstr "China"
 msgid "Chinese"
 msgstr "Chino"
 
-#: functions.inc.php:386
+#: functions.inc.php:391
 msgid "Choose"
 msgstr "Escoger"
 
-#: functions.inc.php:550
+#: functions.inc.php:555
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Seleccione el Canal FXS para este %s"
@@ -388,7 +388,7 @@ msgstr "Colombia"
 msgid "Connectivity"
 msgstr "Conexiones"
 
-#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:46 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Contexto"
 
@@ -430,7 +430,7 @@ msgstr ""
 "DAHDI NO ENCONTRADO [Se sugiere Desinstalación del Módulo de configuración "
 "Dahdi]!"
 
-#: functions.inc.php:464 functions.inc.php:497
+#: functions.inc.php:469 functions.inc.php:502
 msgid "DAHDI Trunks"
 msgstr "Líneas DAHDI"
 
@@ -513,21 +513,17 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Modo Línea por defecto"
 
-#: install.php:203
-msgid "Deleting old dahdi module data from database (its been migrated)"
-msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
-
 #: views/dahdi_advanced_settings.php:44 views/dahdi_advanced_settings.php:75
 #: views/dahdi_modprobe_settings.php:58
 msgid "Denmark"
 msgstr "Dinamarca"
 
-#: install.php:253
+#: install.php:222
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcaxx. Anexando a %s"
 
-#: install.php:248
+#: install.php:217
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Detectado nuevo modulo Dahdi: wcte43x. Anexando a %s"
@@ -549,11 +545,11 @@ msgstr ""
 "requieren ANI primero otras no les importa. <br/> <strong> Por defecto: </"
 "strong> no"
 
-#: functions.inc.php:538
+#: functions.inc.php:543
 msgid "Device Options"
 msgstr "Opciones Dispositivo"
 
-#: functions.inc.php:341
+#: functions.inc.php:346
 #, php-format
 msgid "Digital Channel %s"
 msgstr "Canal digital %s"
@@ -570,7 +566,7 @@ msgstr "inhabilitar"
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
-#: assets/js/main.js:475
+#: assets/js/main.js:536
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr "No olvide reiniciar Dahdi y Asterisk después de completar"
 
@@ -890,26 +886,26 @@ msgstr "Grecia"
 msgid "Greek"
 msgstr "Greek"
 
-#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:34 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Grupo"
 
-#: functions.inc.php:303 functions.inc.php:322
+#: functions.inc.php:308 functions.inc.php:327
 #, php-format
 msgid "Group %s Ascending"
 msgstr "Grupo %s Ascendente"
 
-#: functions.inc.php:304 functions.inc.php:323
+#: functions.inc.php:309 functions.inc.php:328
 #, php-format
 msgid "Group %s Descending"
 msgstr "Grupo %s Descendente"
 
-#: functions.inc.php:305 functions.inc.php:324
+#: functions.inc.php:310 functions.inc.php:329
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr "Grupo %s Round Robin Ascendente"
 
-#: functions.inc.php:306 functions.inc.php:325
+#: functions.inc.php:311 functions.inc.php:330
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr "Grupo %s Round Robin Descendente"
@@ -1038,10 +1034,6 @@ msgstr "India"
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: install.php:199
-msgid "Inserting Old Data from Dahdi Advanced Table"
-msgstr "Inserción de datos antiguos de Dahdi Tabla avanzada"
-
 #: views/dahdi_mfcr2_settings.php:23
 msgid "International Telecommunication Union"
 msgstr "Unión Internacional de Telecomunicaciones (ITU)"
@@ -1091,11 +1083,11 @@ msgstr "Jordania"
 msgid "Kazakhstan"
 msgstr "Kazakhstan"
 
-#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:27 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "\"Kewl Start\""
 
-#: views/dahdi_analog_settings.php:17
+#: views/dahdi_analog_settings.php:19
 msgid ""
 "Kewl Start - Coined term for an extension of loop start (FXO and FXS) "
 "signaling which adds disconnect supervision through the use of an open "
@@ -1160,11 +1152,11 @@ msgstr ""
 "R2 será /var/log/asterisk/mfcr2/span1 (el directorio será automáticamente "
 "Creado si no está presente ya)"
 
-#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:28 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Loop Start"
 
-#: views/dahdi_analog_settings.php:18
+#: views/dahdi_analog_settings.php:20
 msgid ""
 "Loop Start - When idle, or on-hook, the loop potential is held a nominal 48V "
 "DC, provided by the telephone exchange or a foreign exchange station (FXS) "
@@ -1357,10 +1349,6 @@ msgstr ""
 msgid "Mexico"
 msgstr "México"
 
-#: install.php:183
-msgid "Migrating Old Data from Dahdi Advanced Table"
-msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
-
 #: dahdiconfig.i18n.php:28
 msgid "ModProbe.d Configuration File Location"
 msgstr "Localidad del Archivo de Configuración ModProbe.d"
@@ -1465,11 +1453,11 @@ msgstr "Nigeria"
 msgid "No"
 msgstr "NO"
 
-#: functions.inc.php:501
+#: functions.inc.php:506
 msgid "No Available Groups or Channels"
 msgstr "No hay Grupos o Canales Disponibles"
 
-#: functions.inc.php:570
+#: functions.inc.php:575
 msgid "No Unused DAHDi Channels Available"
 msgstr "No hay Canales DAHDi Disponibles NO utilizados"
 
@@ -1577,6 +1565,10 @@ msgstr "Otras configuraciones Globales Dahdi"
 msgid "Other Modprobe Settings"
 msgstr "Otras Configuraciones Modprobe"
 
+#: views/dahdi_analog_settings.php:73
+msgid "Other Port Settings"
+msgstr ""
+
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
 msgstr "Saliente"
@@ -1611,7 +1603,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
+#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1715,11 +1707,11 @@ msgstr "Ganancia Recibida"
 msgid "Reload Asterisk DAHDi Module"
 msgstr "Recargar Modulo Asterisk DAHDI"
 
-#: assets/js/main.js:464
+#: assets/js/main.js:525
 msgid "Reloading..."
 msgstr "Recargando..."
 
-#: install.php:232
+#: install.php:198
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
@@ -1735,7 +1727,7 @@ msgstr "Reiniciar DAHDI & Asterisk"
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr "Reiniciando DAHDI & Asterisk. Por favor espere..."
 
-#: assets/js/main.js:486
+#: assets/js/main.js:547
 msgid "Restarting..."
 msgstr "Reiniciando..."
 
@@ -1786,7 +1778,7 @@ msgstr "Establecer Predeterminados"
 msgid "Set port clocking"
 msgstr "Establecer Puerto de reloj"
 
-#: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
+#: views/dahdi_analog_settings.php:16 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
 msgstr "Señalización"
 
@@ -2192,7 +2184,7 @@ msgstr ""
 "troncales/tarjetas sorpresivamente dejan de funcionar debido a que la "
 "configuración ha cambiado."
 
-#: views/dahdi_analog_settings.php:36
+#: views/dahdi_analog_settings.php:47
 msgid "The context to use for inbound calls to this analog device"
 msgstr "El contexto a usar en llamadas entrantes para este dispositivo análogo"
 
@@ -2228,7 +2220,7 @@ msgstr ""
 "Los valores están en dB (decibelios). Un número positivo aumenta el nivel de "
 "volumen en un canal, y un valor negativo disminuye el nivel de volumen"
 
-#: functions.inc.php:509
+#: functions.inc.php:514
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -2336,7 +2328,7 @@ msgstr ""
 "aplicar a las reflexiones de audio post-cancelación de eco recibidas de "
 "conexiones analógicas (sólo VPMADT032). Hay varias opciones"
 
-#: views/dahdi_analog_settings.php:15
+#: views/dahdi_analog_settings.php:17
 msgid ""
 "This option allows you to specify the type signaling for this analog device."
 msgstr ""
@@ -2434,7 +2426,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1460 includes/dahdi_cards.class.php:1771
+#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2609,7 +2601,7 @@ msgstr "a-law"
 msgid "collect_call"
 msgstr "collect_call"
 
-#: includes/dahdi_cards.class.php:937
+#: includes/dahdi_cards.class.php:954
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "¡Dahdi_scan existe pero no puede ser ejecutado como este usuario!"
 
@@ -2652,6 +2644,15 @@ msgstr "CE Por software a usar en system.conf"
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
+
+#~ msgid "Deleting old dahdi module data from database (its been migrated)"
+#~ msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"
+
+#~ msgid "Inserting Old Data from Dahdi Advanced Table"
+#~ msgstr "Inserción de datos antiguos de Dahdi Tabla avanzada"
+
+#~ msgid "Migrating Old Data from Dahdi Advanced Table"
+#~ msgstr "Migrando Datos viejos de la tabla Avanzada de DAHDI"
 
 #~ msgid "Add type column"
 #~ msgstr "Agregar columna type"

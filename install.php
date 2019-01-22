@@ -46,59 +46,11 @@ $entries = array(
 foreach ($entries as $entry=>$default_val) {
     $sql = "INSERT INTO dahdi_advanced (keyword, default_val) VALUES ('{$entry}', '{$default_val}')";
 
-	$result = $db->query($sql);
-	if (DB::IsError($result)) {
-		die_freepbx($result->getDebugInfo());
-	}
-	unset($result);
-} else {
-	$sql = "ALTER TABLE `dahdi_analog` CHANGE COLUMN `group` `group` VARCHAR(10) NULL DEFAULT NULL ;";
-	$db->query($sql);
-}
-
-outn(_("Checking dahdi_analog_custom table..."));
-$table = \FreePBX::Database()->migrate("dahdi_analog_custom");
-$cols = array (
-  'dahdi_analog_port' =>
-  array (
-    'type' => 'integer',
-  ),
-  'keyword' =>
-  array (
-    'type' => 'string',
-    'length' => 50,
-  ),
-  'val' =>
-  array (
-    'type' => 'string',
-    'length' => 255,
-    'notnull' => false,
-  ),
-);
-
-$indexes = array (
-  'idx' =>
-  array (
-    'type' => 'unique',
-    'cols' =>
-    array (
-      0 => 'dahdi_analog_port',
-      1 => 'keyword',
-    ),
-  ),
-);
-$table->modify($cols, $indexes);
-unset($table);
-out(_("Done"));
-
-if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
-	out(_('Create Configured Locations Table'));
-	$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (
-		`location` VARCHAR(50),
-		`device` VARCHAR(50),
-		`basechan` INT,
-		`type` VARCHAR(25)
-	);";
+    $result = $db->query($sql);
+    if (DB::IsError($result)) {
+        unset($result);
+        continue;
+    }
 
     unset($result);
 }
@@ -216,46 +168,12 @@ $set['description'] = 'software EC to use in system.conf';
 $set['type'] = CONF_TYPE_TEXT;
 $freepbx_conf->define_conf_setting('DAHDIECHOCAN',$set,true);
 
-if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
-	out("Creating Dahdi Advanced Modules Table");
-    $sql = "CREATE TABLE IF NOT EXISTS dahdi_advanced_modules (
-        `id` INT UNSIGNED NOT NULL PRIMARY KEY auto_increment,
-    	`module_name` VARCHAR(100) UNIQUE,
-    	`settings` BLOB
-    );";
-    $result = $db->query($sql);
-    if (DB::IsError($result)) {
-    	die_freepbx($result->getDebugInfo());
-    }
+$sql = "SELECT * FROM dahdi_advanced";
+$sth = \FreePBX::Database()->prepare($sql);
+$sth->execute();
+$advanced = $sth->fetchAll();
 
-	out(_("Migrating Old Data from Dahdi Advanced Table"));
-    $sql = 'SELECT * FROM dahdi_advanced';
-    $oldadv = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
-
-    $settings = array();
-    foreach($oldadv as $data) {
-        $settings[$data['keyword']] = isset($data['val']) ? $data['val'] : $data['default_val'];
-        if (strpos($data['keyword'], 'checkbox')) {
-            $settings[$data['keyword']] = $settings[$data['keyword']] == 1 ? TRUE : FALSE;
-    	}
-    }
-
-    $module_name = $settings['module_name'];
-    unset($settings['module_name']);
-    unset($settings[$module_name]);
-
-	out(_("Inserting Old Data from Dahdi Advanced Table"));
-    $sql = "INSERT IGNORE INTO dahdi_advanced_modules (module_name, settings) VALUES ('".$db->escapeSimple($module_name)."', '".$db->escapeSimple(serialize($settings))."')";
-    sql($sql);
-
-	out(_("Deleting old dahdi module data from database (its been migrated)"));
-	foreach ($entries as $entry=>$default_val) {
-	    if($entry != 'tone_region') {
-	        $sql = "DELETE FROM dahdi_advanced WHERE keyword = '".$entry."'";
-	        sql($sql);
-	    }
-	}
-
+if(empty($advanced)) {
 	$globalsettings = array(		// global array of values
 		'tone_region'=>'us',
 	    'language'=>'en',
@@ -278,15 +196,18 @@ if(!$db->getAll('SHOW TABLES LIKE "dahdi_advanced_modules"')) {
 	    );
 
 	outn(_('Replacing..'));
+	$sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES (:key, :value)";
+	$sth = \FreePBX::Database()->prepare($sql);
+
 	foreach($globalsettings as $k => $v) {
 		outn('..'.$k.'..');
-	    $sql = "REPLACE INTO dahdi_advanced (default_val, keyword) VALUES ('".$db->escapeSimple($v)."', '".$db->escapeSimple($k)."')";
-	    sql($sql);
+		$sth->execute([
+			":key" => $k,
+			":value" => $v
+		]);
 	}
 	out(_('..Done'));
 }
-
-
 
 $mod_loc = $freepbx_conf->get_conf_setting('DAHDIMODULESLOC');
 

@@ -10,7 +10,7 @@
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*15.0.3* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig 
+		*15.0.3* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig
 		*15.0.2* Packaging of ver 15.0.2
 		*15.0.1* Backup 15
 	</changelog>
@@ -24,6 +24,15 @@
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>
 	</menuitems>
     <database>
+      <table name="dahdi_analog_custom">
+            <field name="dahdi_analog_port" type="integer"/>
+            <field name="keyword" type="string" length="50"/>
+            <field name="val" type="string" length="255" notnull="false"/>
+            <key name="idx" type="unique">
+            <column name="dahdi_analog_port"/>
+            <column name="keyword"/>
+            </key>
+        </table>
         <table name="dahdi_advanced_modules">
             <field name="id" type="integer" unsigned="true" primarykey="true" autoincrement="true"/>
             <field name="module_name" type="string" length="100" notnull="false"/>

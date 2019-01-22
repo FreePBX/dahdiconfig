@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-25 13:52-0700\n"
+"POT-Creation-Date: 2019-01-22 17:09-0500\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,7 +38,7 @@ msgstr "-22.5db (CSU/bộ truyền và nhận tín hiệu trên các đường t
 msgid "-7.5db (CSU)"
 msgstr "-7.5db (CSU/bộ truyền và nhận tín hiệu trên các đường truyền WAN)"
 
-#: install.php:569
+#: install.php:604
 msgid "..Done"
 msgstr "..Đã xong"
 
@@ -73,7 +73,7 @@ msgstr ""
 "<br />Thông số này được chú thích mặc định vì BẠN KHÔNG CẦN NÓ TRỪ KHI BẠN "
 "THỰC SỰ HIỂU VỀ  MFC/R2!"
 
-#: views/dahdi_analog_settings.php:29
+#: views/dahdi_analog_settings.php:35
 msgid ""
 "A group ID number to associate this analog device with when referencing it "
 "elswhere using g<num>"
@@ -97,11 +97,11 @@ msgstr "Chấp nhận một đề nghị"
 msgid "Action"
 msgstr "Thao tác"
 
-#: install.php:605
+#: install.php:640
 msgid "Add type column"
 msgstr "Thêm kiểu cột"
 
-#: install.php:621
+#: install.php:656
 msgid "Adding txgain and rxgain column to analog table"
 msgstr "Đang thêm cột  txgain and rxgain đến bảng analoge"
 
@@ -141,7 +141,7 @@ msgstr "%s Analog"
 msgid "Analog %s Ports"
 msgstr "Công giao tiếp %s Analog"
 
-#: functions.inc.php:307
+#: functions.inc.php:312
 #, php-format
 msgid "Analog Channel %s"
 msgstr "Kênh analog %s"
@@ -166,7 +166,7 @@ msgstr "áp dụng chế độ Opermode lên các mô đun FOX"
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr "Áp dụng Opermode vào các mô-đun FXS và FXO"
 
-#: assets/js/main.js:481
+#: assets/js/main.js:542
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 "Bạn có chắc chắn muôn khởi động lại mà không nhấn 'Apply Config' ( Áp dụng "
@@ -199,7 +199,7 @@ msgstr "Quốc gia Áo"
 msgid "Auto"
 msgstr "Tự động"
 
-#: functions.inc.php:482
+#: functions.inc.php:487
 msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
@@ -361,7 +361,7 @@ msgstr "Quốc gia Canada"
 msgid "Cancel"
 msgstr "Hủy"
 
-#: functions.inc.php:549
+#: functions.inc.php:554
 msgid "Channel"
 msgstr "Kênh"
 
@@ -372,6 +372,10 @@ msgstr "Các kênh đã sử dụng/ tổng"
 #: views/dahdi_mfcr2_settings.php:281
 msgid "Charge Calls"
 msgstr "Phí các cuộc gọi"
+
+#: install.php:374
+msgid "Checking dahdi_analog_custom table..."
+msgstr ""
 
 #: install.php:73
 msgid "Checking tables..."
@@ -391,11 +395,11 @@ msgstr "Trung Quốc"
 msgid "Chinese"
 msgstr "Tiếng Trung quốc"
 
-#: functions.inc.php:386
+#: functions.inc.php:391
 msgid "Choose"
 msgstr "Chọn"
 
-#: functions.inc.php:550
+#: functions.inc.php:555
 #, php-format
 msgid "Choose the FXS channel for this %s"
 msgstr "Chọn kênh FXS cho %s này"
@@ -412,7 +416,7 @@ msgstr "Tiếng Columbia"
 msgid "Connectivity"
 msgstr "Khả năng kết nối"
 
-#: views/dahdi_analog_settings.php:36 views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:46 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Ngữ cảnh"
 
@@ -420,7 +424,7 @@ msgstr "Ngữ cảnh"
 msgid "Control hardware DTMF"
 msgstr "Điều khiển phần cứng DTMF"
 
-#: install.php:375
+#: install.php:410
 msgid "Create Configured Locations Table"
 msgstr "Tạo bảng vị trí được cấu hình"
 
@@ -432,7 +436,7 @@ msgstr "Đang tạo bảng các cài đặt nâng cao Dahdi"
 msgid "Creating Dahdi Analog Table"
 msgstr "Đang tạo bảng Analog Dahdi"
 
-#: install.php:596
+#: install.php:631
 msgid "Creating dahdi modules Table"
 msgstr "Đang tạo bảng các mô đun dahdi"
 
@@ -468,7 +472,7 @@ msgstr "Cấu hình DAHDI"
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu hình Dahdi]!"
 
-#: functions.inc.php:464 functions.inc.php:497
+#: functions.inc.php:469 functions.inc.php:502
 msgid "DAHDI Trunks"
 msgstr "Các trung kế DAHDI"
 
@@ -550,7 +554,7 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr "Chế độ đi dây mặc định"
 
-#: install.php:534
+#: install.php:569
 msgid "Deleting old dahdi module data from database (its been migrated)"
 msgstr ""
 "Đang xóa dữ liệu mô đun dahdi cũ khỏi cơ sở dữ liệu ( nó đã được di chuyển)"
@@ -560,12 +564,12 @@ msgstr ""
 msgid "Denmark"
 msgstr "Quốc gia Đan Mạch"
 
-#: install.php:638
+#: install.php:673
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr "Mô đun Dahdi mới được phát hiện: wcaxx, Đang thêm vào %s"
 
-#: install.php:633
+#: install.php:668
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr "Mô đun Dahdi mới được phát hiện: wcte43x, Đang thêm vào %s"
@@ -587,11 +591,11 @@ msgstr ""
 "ty viễn thông yêu cầu ANI trước tiên, còn một số yếu tố khác không quan tâm."
 "<br /> <strong>Default:</strong>no"
 
-#: functions.inc.php:538
+#: functions.inc.php:543
 msgid "Device Options"
 msgstr "Các lựa chọn thiết bị"
 
-#: functions.inc.php:341
+#: functions.inc.php:346
 #, php-format
 msgid "Digital Channel %s"
 msgstr "Kênh kỹ thuật số %s"
@@ -608,11 +612,11 @@ msgstr "Vô hiệu"
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Vô hiệu các bản ghi cấu hình DAHDi"
 
-#: assets/js/main.js:475
+#: assets/js/main.js:536
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr "Không được quên khởi động lại Dahdi & Asterisk sau khi hoàn thành"
 
-#: install.php:352
+#: install.php:352 install.php:407
 msgid "Done"
 msgstr "Đã xong"
 
@@ -932,26 +936,26 @@ msgstr "Nước Hi Lạp"
 msgid "Greek"
 msgstr "Tiếng Hi Lạp"
 
-#: views/dahdi_analog_settings.php:29 views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:34 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr "Nhóm"
 
-#: functions.inc.php:303 functions.inc.php:322
+#: functions.inc.php:308 functions.inc.php:327
 #, php-format
 msgid "Group %s Ascending"
 msgstr "Nhóm %s tăng dần"
 
-#: functions.inc.php:304 functions.inc.php:323
+#: functions.inc.php:309 functions.inc.php:328
 #, php-format
 msgid "Group %s Descending"
 msgstr "Nhóm %s giảm dần"
 
-#: functions.inc.php:305 functions.inc.php:324
+#: functions.inc.php:310 functions.inc.php:329
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr "Nhóm %s Reoun robin tăng dần"
 
-#: functions.inc.php:306 functions.inc.php:325
+#: functions.inc.php:311 functions.inc.php:330
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr "Nhóm %s Round Robin giảm dần"
@@ -1080,7 +1084,7 @@ msgstr "Ấn Độ"
 msgid "Indonesia"
 msgstr "In đô nê si a"
 
-#: install.php:530
+#: install.php:565
 msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr "Đang chèn dữ liệu cũ từ bảng nâng cao Dahdi"
 
@@ -1133,11 +1137,11 @@ msgstr "Nước Jordan"
 msgid "Kazakhstan"
 msgstr "Nước Kazakhstan"
 
-#: views/dahdi_analog_settings.php:23 views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:27 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr "Kewl Start"
 
-#: views/dahdi_analog_settings.php:17
+#: views/dahdi_analog_settings.php:19
 msgid ""
 "Kewl Start - Coined term for an extension of loop start (FXO and FXS) "
 "signaling which adds disconnect supervision through the use of an open "
@@ -1200,11 +1204,11 @@ msgstr ""
 "dẫn đầy đủ tới các nhật ký cuộc gọi MFC/R2 của bạn sẽ là /var/log/asterisk/"
 "mfcr2/span1( Danh bạ sẽ được tạo tự động nếu nó chưa có)"
 
-#: views/dahdi_analog_settings.php:24 views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:28 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr "Loop Start"
 
-#: views/dahdi_analog_settings.php:18
+#: views/dahdi_analog_settings.php:20
 msgid ""
 "Loop Start - When idle, or on-hook, the loop potential is held a nominal 48V "
 "DC, provided by the telephone exchange or a foreign exchange station (FXS) "
@@ -1392,11 +1396,11 @@ msgstr ""
 msgid "Mexico"
 msgstr "Nước Mexico"
 
-#: install.php:514
+#: install.php:549
 msgid "Migrating Old Data from Dahdi Advanced Table"
 msgstr "Di chuyển dữ liệu cũ ra khỏi bảng nâng cao Dahdi"
 
-#: install.php:588
+#: install.php:623
 #, php-format
 msgid "Migrating module %s from serialized data to json"
 msgstr "Di chuyển mô đun %s từ khỏi dữ liệu thứ tự đến json"
@@ -1425,7 +1429,7 @@ msgstr "Cài đặt mô đun"
 msgid "Morocco"
 msgstr "Nước Morocco"
 
-#: install.php:575
+#: install.php:610
 msgid "Moving/Adding dchannel column"
 msgstr "Di chuyển/ Thêm các cột kênh d"
 
@@ -1509,11 +1513,11 @@ msgstr "Nước Nigeria"
 msgid "No"
 msgstr "Không"
 
-#: functions.inc.php:501
+#: functions.inc.php:506
 msgid "No Available Groups or Channels"
 msgstr "Không có nhóm hay kênh nào khả dụng"
 
-#: functions.inc.php:570
+#: functions.inc.php:575
 msgid "No Unused DAHDi Channels Available"
 msgstr "Không có kênh DAHDi kgar dụng nào không sử dụng"
 
@@ -1620,6 +1624,10 @@ msgstr "Các cài đặt Dahdi toàn cầu khác"
 msgid "Other Modprobe Settings"
 msgstr "Các cài đặt Modprobe khác"
 
+#: views/dahdi_analog_settings.php:73
+msgid "Other Port Settings"
+msgstr ""
+
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
 msgstr "Đi ra"
@@ -1654,7 +1662,7 @@ msgstr "Tiếng Philipin"
 msgid "Please Delete the System Generated %s"
 msgstr "Vui lòng xóa hệ thống đã tạo %s"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1492 includes/dahdi_cards.class.php:1803
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Vui lòng thay đổi quyền trên %s"
@@ -1759,11 +1767,11 @@ msgstr "Tăng cường tiếp nhận"
 msgid "Reload Asterisk DAHDi Module"
 msgstr "Tải lại Mô đun DAHDi Asterisk"
 
-#: assets/js/main.js:464
+#: assets/js/main.js:525
 msgid "Reloading..."
 msgstr "Đang tải lai..."
 
-#: install.php:563
+#: install.php:598
 msgid "Replacing.."
 msgstr "Đang thay thế.."
 
@@ -1779,7 +1787,7 @@ msgstr "Khởi động lại DAHDi & Asterisk"
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr "Đang khởi động lại DAHDi & Asterisk. Vui lòng chờ..."
 
-#: assets/js/main.js:486
+#: assets/js/main.js:547
 msgid "Restarting..."
 msgstr "Đang khởi động lại..."
 
@@ -1830,7 +1838,7 @@ msgstr "Cài đặt mặc định"
 msgid "Set port clocking"
 msgstr "Cài đặt port clocking"
 
-#: views/dahdi_analog_settings.php:15 views/dahdi_digital_hardware.php:10
+#: views/dahdi_analog_settings.php:16 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
 msgstr "Báo hiệu"
 
@@ -2229,7 +2237,7 @@ msgstr ""
 "Team %s không chịu trách nhiệm nếu bạn kích hoạt mô đun này và trung kế/ các "
 "card bị dừng hoạt động đột ngột bởi các cấu hình của bạn vừa bị thay đổi."
 
-#: views/dahdi_analog_settings.php:36
+#: views/dahdi_analog_settings.php:47
 msgid "The context to use for inbound calls to this analog device"
 msgstr "Ngữ cảnh sử dụng cho các cuộc gọi vào tới thiết bị analog này"
 
@@ -2265,7 +2273,7 @@ msgstr ""
 "Các giá trị bằng đơn vị db (đề xi ben). Một số dương sẽ tăng mức âm lượng ở "
 "một kênh, và một giá trị âm sẽ làm giảm mức âm lượng"
 
-#: functions.inc.php:509
+#: functions.inc.php:514
 msgid ""
 "There are no DAHDI Groups or Channels available to be configured. Check the "
 "DAHDI module to configure any un-used cards"
@@ -2370,7 +2378,7 @@ msgstr ""
 "xử lý phi tuyến) khi bạn muốn áp dụng các phản xạ âm thanh triệt tiếng vọng "
 "nhận được từ các kết nối analog (chỉ mỗi VPMADT032). Có một số tuỳ chọn"
 
-#: views/dahdi_analog_settings.php:15
+#: views/dahdi_analog_settings.php:17
 msgid ""
 "This option allows you to specify the type signaling for this analog device."
 msgstr ""
@@ -2458,7 +2466,7 @@ msgstr "Các tiểu vương quốc Ả Rập thống nhất"
 msgid "UK"
 msgstr "Vương quốc Anh (UK)"
 
-#: includes/dahdi_cards.class.php:1459 includes/dahdi_cards.class.php:1770
+#: includes/dahdi_cards.class.php:1492 includes/dahdi_cards.class.php:1803
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Không thể ghi tới %s"
@@ -2611,7 +2619,7 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:612
+#: install.php:647
 msgid "add additional column"
 msgstr "Thêm một cột bổ sung"
 
@@ -2623,7 +2631,7 @@ msgstr "alaw"
 msgid "collect_call"
 msgstr "Thu thập cuộc gọi"
 
-#: includes/dahdi_cards.class.php:936
+#: includes/dahdi_cards.class.php:953
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "dahdi_scan tồn tại nhưng không thể chạy được như người dùng này!"
 

@@ -144,10 +144,15 @@ class dahdiconfig_conf {
 					$output[] = "";
 					$output[] = "signalling=".(($port['type']=='fxo')?'fxs':'fxo')."_{$port['signalling']}";
 					$output[] = "context={$port['context']}";
-					if(!empty($port['txgain']) && $port['txgain'] != '0.0')
-					$output[] = "txgain={$port['txgain']}";
-					if(!empty($port['rxgain']) && $port['rxgain'] != '0.0')
-					$output[] = "rxgain={$port['rxgain']}";
+					// if(!empty($port['txgain']) && $port['txgain'] != '0.0')  // Unused old code
+					// $output[] = "txgain={$port['txgain']}";                  // Unused old code
+					// if(!empty($port['rxgain']) && $port['rxgain'] != '0.0')  // Unused old code
+					// $output[] = "rxgain={$port['rxgain']}";                  // Unused old code
+					if (is_array($port['custom'])) {
+						foreach($port['custom'] as $keyword => $val) {
+							$output[] = $keyword . "=" . $val;
+						}
+					}
 					$output[] = isset($port['group']) ? "group={$port['group']}" : "group=0";
 					$output[] = "channel=>{$num}";
 				}

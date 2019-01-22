@@ -594,6 +594,7 @@ class dahdi_cards {
 		$this->read_dahdi_globalsettings();
 		$this->read_dahdi_systemsettings();
 		$this->read_dahdi_analog();
+		$this->read_dahdi_analog_custom();
 		$this->read_dahdi_spans();
 	}
 
@@ -717,6 +718,22 @@ class dahdi_cards {
 			} else {
 				$this->ports_signalling['ks'][] = $res['port'];
 			}
+		}
+	}
+
+	public function read_dahdi_analog_custom() {
+		global $db;
+
+		$sql = 'SELECT * FROM dahdi_analog_custom';
+
+		$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
+		if (DB::IsError($results)) {
+			die_freepbx($results->getDebugInfo());
+			return false;
+		}
+
+		foreach($results as $res) {
+			$this->analog_ports[$res['dahdi_analog_port']]['custom'][$res['keyword']] = $res['val'];
 		}
 	}
 
@@ -1164,6 +1181,22 @@ class dahdi_cards {
 		$this->analog_ports[$num]['context'] = $port['context'];
 
 		needreload();
+	}
+
+	public function update_dahdi_analog_custom($params) {
+		global $db;
+		foreach ($params as $span => $custom_settings) {
+			foreach($custom_settings as $keyword => $val) {
+				if (isset($val) && ($val != "")) {
+					$sql = "REPLACE INTO dahdi_analog_custom (dahdi_analog_port, keyword, val) VALUES ('"
+					       . $db->escapeSimple($span) .    "', '"
+					       . $db->escapeSimple($keyword) . "', '"
+					       . $db->escapeSimple($val) .     "')";
+					sql($sql);
+					needreload();
+				}
+			}
+		}
 	}
 
 	/**

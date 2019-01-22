@@ -335,6 +335,67 @@ function update_digital_groups(span,groupid,usedchans) {
 		*/
 }
 /* End Span Group Automation */
+
+/* Custom settings for Analog Ports */
+/* Delete Custom Analog Setting */
+function dh_analog_delete_field(port, id) {
+    var tr = $('#dh_analog_' + port + '_custom_' + id);
+
+    var origsetting_key_elt = $("#dh_analog_" + port + "_origsetting_key_" + id);
+    var setting_key_elt =     $("#dh_analog_" + port + "_setting_key_" + id);
+    var setting_val_elt =     $("#dh_analog_" + port + "_setting_val_" + id);
+
+    function isEmpty(str) {
+        // Form field with white spaces must also be considered empty
+        return (origsetting_key_elt.val().replace(/\s+/, '').length == 0) ? true : false;
+    }
+
+    if (isEmpty(origsetting_key_elt.val())) {
+        setting_key_elt.val('');
+        setting_val_elt.val('');
+        if (id != 0) {
+            tr.remove();
+        }
+    } else {
+        $.getJSON("config.php?quietmode=1&handler=file&module=dahdiconfig&file=ajax.html.php",
+            {type: 'analogcustomsettingsremove', origkeyword: origsetting_key_elt.val(), analogport: port}, function(z) {
+                setting_key_elt.val('');
+                setting_val_elt.val('');
+                if (id != 0) {
+                    tr.remove();
+                }
+        });
+    }
+}
+/* End Delete Analog Custom Setting */
+/* Add Analog Custom Setting */
+var max_dh_analog = {};
+
+function dh_analog_add_field(port, start) {
+    if (max_dh_analog[port] === undefined) {
+        max_dh_analog[port] = 0;
+    }
+
+    var id = (start < max_dh_analog[port]) ? max_dh_analog[port] : start;
+
+    html = '<tr id="dh_analog_' + port + '_custom_' + id + '">                                                                                                       \
+                <td>                                                                                                                                                 \
+                </td>                                                                                                                                                \
+                <td>                                                                                                                                                 \
+                    <a href="#" onclick="dh_analog_delete_field(' + port + ', ' + id + ')"><img height="10px" src="images/trash.png"></a>                            \
+                    <input type="hidden" name="dh_analog_' + port + '_custom_ids[]" value="' + id + '" />                                                            \
+                    <input type="hidden" id="dh_analog_' + port + '_origsetting_key_' + id + '" name="dh_analog_' + port + '_origsetting_key_' + id + '" value="" /> \
+                    <input id="dh_analog_' + port + '_setting_key_' + id + '" name="dh_analog_' + port + '_setting_key_' + id + '" value="" /> =                     \
+                    <input id="dh_analog_' + port + '_setting_val_' + id + '" name="dh_analog_' + port + '_setting_val_' + id + '" value="" /> <br />                \
+                </td>                                                                                                                                                \
+            </tr>'
+
+    $("#dh_analog_add_to_" + port).before(html);
+    max_dh_analog[port] = id + 1;
+}
+/* End Add Analog Custom Setting */
+/* End Custom settings for Analog Ports */
+
 /* Custom settings for Global Settings */
 /* Delete Custom Setting */
 function dh_global_delete_field(id) {

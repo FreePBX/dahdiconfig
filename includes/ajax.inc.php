@@ -205,6 +205,17 @@ EOF;
 				}
 				needreload();
 				break;
+		case "analogcustomsettingsremove":
+				if(!empty($_REQUEST['origkeyword'])) {
+					$sql = "DELETE FROM `dahdi_analog_custom` WHERE `keyword` ='" . $db->escapeSimple($_REQUEST['origkeyword'])
+					       . "' AND dahdi_analog_port='" . $db->escapeSimple($_REQUEST['analogport']) . "'";
+					sql($sql);
+					$json = array("status" => true);
+				} else {
+					$json = array("status" => false);
+				}
+				needreload();
+				break;
 		case "globalsettingsremove":
 				if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global)) {
 						$sql = "DELETE FROM `dahdi_advanced` WHERE `keyword` ='".$db->escapeSimple($_REQUEST['origkeyword'])."' AND type='chandahdi'";
@@ -260,22 +271,35 @@ EOF;
 				needreload();
 				break;
 		case "analog":
-				$type = $_GET['ports'];
-
+			$type = $_GET['ports'];
 			$spans = ($type == 'fxo') ? $dahdi_cards->get_fxo_ports() : $dahdi_cards->get_fxs_ports();
+			$analog_custom_settings = array();
+
 			foreach ($spans as $span) {
 				$port = array();
 				$port['signalling'] = $_POST[$type."_port_{$span}"];
 				$port['group'] = ($_POST[$type."_port_{$span}_group"])?$_POST[$type."_port_{$span}_group"]:0;
 				$port['context'] = $_POST[$type."_port_{$span}_context"];
-			$port['rxgain'] = !empty($_POST[$type."_port_{$span}_rxgain"]) ? $_POST[$type."_port_{$span}_rxgain"] : '';
-			$port['txgain'] = !empty($_POST[$type."_port_{$span}_txgain"]) ? $_POST[$type."_port_{$span}_txgain"] : '';
+				// $port['rxgain'] = !empty($_POST[$type."_port_{$span}_rxgain"]) ? $_POST[$type."_port_{$span}_rxgain"] : ''; // Unused old code
+				// $port['txgain'] = !empty($_POST[$type."_port_{$span}_txgain"]) ? $_POST[$type."_port_{$span}_txgain"] : ''; // Unused old code
 				$dahdi_cards->set_analog_signalling($span, $port);
 				unset($port);
+
+				// Custom Analog Settings for the span / port
+				$custom_ids = $_POST['dh_analog_' . $span . '_custom_ids'];
+				if (!is_array($custom_ids)) {
+					continue;
+				}
+				foreach ($custom_ids as $id) {
+					$custom_setting_key = $_POST['dh_analog_' . $span . '_setting_key_' . $id];
+					$custom_setting_val = $_POST['dh_analog_' . $span . '_setting_val_' . $id];
+					$analog_custom_settings[$span][$custom_setting_key] = $custom_setting_val;
+				}
 			}
 
-
 			$dahdi_cards->write_analog_signalling();
+			$dahdi_cards->update_dahdi_analog_custom($analog_custom_settings);
+			unset($analog_custom_settings);
 			$json = array("status" => true);
 				break;
 		case "calcbchanfxx":

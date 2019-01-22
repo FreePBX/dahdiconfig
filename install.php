@@ -46,11 +46,59 @@ $entries = array(
 foreach ($entries as $entry=>$default_val) {
     $sql = "INSERT INTO dahdi_advanced (keyword, default_val) VALUES ('{$entry}', '{$default_val}')";
 
-    $result = $db->query($sql);
-    if (DB::IsError($result)) {
-        unset($result);
-        continue;
-    }
+	$result = $db->query($sql);
+	if (DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	unset($result);
+} else {
+	$sql = "ALTER TABLE `dahdi_analog` CHANGE COLUMN `group` `group` VARCHAR(10) NULL DEFAULT NULL ;";
+	$db->query($sql);
+}
+
+outn(_("Checking dahdi_analog_custom table..."));
+$table = \FreePBX::Database()->migrate("dahdi_analog_custom");
+$cols = array (
+  'dahdi_analog_port' =>
+  array (
+    'type' => 'integer',
+  ),
+  'keyword' =>
+  array (
+    'type' => 'string',
+    'length' => 50,
+  ),
+  'val' =>
+  array (
+    'type' => 'string',
+    'length' => 255,
+    'notnull' => false,
+  ),
+);
+
+$indexes = array (
+  'idx' =>
+  array (
+    'type' => 'unique',
+    'cols' =>
+    array (
+      0 => 'dahdi_analog_port',
+      1 => 'keyword',
+    ),
+  ),
+);
+$table->modify($cols, $indexes);
+unset($table);
+out(_("Done"));
+
+if(!$db->getAll('SHOW TABLES LIKE "dahdi_configured_locations"')) {
+	out(_('Create Configured Locations Table'));
+	$sql = "CREATE TABLE IF NOT EXISTS dahdi_configured_locations (
+		`location` VARCHAR(50),
+		`device` VARCHAR(50),
+		`basechan` INT,
+		`type` VARCHAR(25)
+	);";
 
     unset($result);
 }

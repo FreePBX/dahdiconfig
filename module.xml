@@ -3,14 +3,15 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>15.0.5</version>
+	<version>15.0.5.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*15.0.5* fixing legacy restore 
+		*15.0.5.1* Add Advanced settings
+		*15.0.5* fixing legacy restore
 		*15.0.4* FREEPBX-18895
 		*15.0.3* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig
 		*15.0.2* Packaging of ver 15.0.2

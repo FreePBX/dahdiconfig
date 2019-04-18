@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 17:09-0500\n"
-"PO-Revision-Date: 2019-01-12 15:00+0000\n"
+"PO-Revision-Date: 2019-04-19 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
 "Language: de_DE\n"
@@ -43,23 +43,23 @@ msgstr "..Erledigt"
 
 #: views/dahdi_digital_settings.php:136
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
-msgstr ""
+msgstr "0 db (CSU)/0-40,5m (DSX-1)"
 
 #: views/dahdi_digital_settings.php:137
 msgid "133-266 feet (DSX-1)"
-msgstr ""
+msgstr "40,5 -81m (DSX-1)"
 
 #: views/dahdi_digital_settings.php:138
 msgid "266-399 feet (DSX-1)"
-msgstr ""
+msgstr "81-121,6m (DSX-1)"
 
 #: views/dahdi_digital_settings.php:139
 msgid "399-533 feet (DSX-1)"
-msgstr ""
+msgstr "121,6-162,5m (DSX-1)"
 
 #: views/dahdi_digital_settings.php:140
 msgid "533-655 feet (DSX-1)"
-msgstr ""
+msgstr "162,5-199,6m (DSX-1)"
 
 #: views/dahdi_mfcr2_settings.php:301
 msgid ""
@@ -67,6 +67,10 @@ msgid ""
 "tone definitions used in the protocol! <br /> This parameter is commented by "
 "default because YOU DON'T NEED IT UNLESS YOU REALLY UNDERSTAND MFC/R2!"
 msgstr ""
+"<strong>WARNUNG:</strong>Nur für fortgeschrittene Benutzer, da sie hier "
+"benutzerdefinierte Tondefinitionen für das Protokoll anlegen können!<br /> "
+"Dieser Parameter ist standardmäßig auskommentiert, denn SIE BENÖTIGEN IHN "
+"NICHT, SOFERN SIE MFC/R2 WIKRLICH VERSTEHEN!"
 
 #: views/dahdi_analog_settings.php:35
 msgid ""
@@ -76,11 +80,11 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:136 views/dahdi_modprobe_settings.php:121
 msgid "A-law Override"
-msgstr ""
+msgstr "A-law-Überbrückung"
 
 #: views/dahdi_digital_settings.php:110
 msgid "AT&amp;T 4ESS"
-msgstr ""
+msgstr "AT&amp;1T 4ESS"
 
 #: views/dahdi_mfcr2_settings.php:227
 msgid "Accept on Offer"
@@ -92,11 +96,11 @@ msgstr "Aktion"
 
 #: install.php:640
 msgid "Add type column"
-msgstr "Spalte Typ hinzufügen"
+msgstr "Typ-Spalte hinzufügen"
 
 #: install.php:656
 msgid "Adding txgain and rxgain column to analog table"
-msgstr ""
+msgstr "Füge „txgain“ und „rxgain“ zur „analog“-Tabelle hinzu"
 
 #: views/dahdi_mfcr2_settings.php:299
 msgid "Advanced Protocol Configuration File"
@@ -135,7 +139,7 @@ msgstr ""
 #: functions.inc.php:312
 #, php-format
 msgid "Analog Channel %s"
-msgstr ""
+msgstr "Analoger Kanal %s"
 
 #: page.dahdi.php:57
 msgid "Analog Hardware"
@@ -143,11 +147,11 @@ msgstr "Analoge Hardware"
 
 #: views/dahdi_global_settings.php:184
 msgid "Answer Immediately"
-msgstr ""
+msgstr "Sofort antworten"
 
 #: views/dahdi_modprobe_settings.php:28
 msgid "Any"
-msgstr ""
+msgstr "Beliebig"
 
 #: views/dahdi_advanced_settings.php:147 views/dahdi_modprobe_settings.php:138
 msgid "Apply Opermode to FXO Modules"
@@ -160,6 +164,8 @@ msgstr ""
 #: assets/js/main.js:542
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
+"Sind Sie sicher, dass Sie neustarten wollen, ohne „Konfiguration übernehmen“ "
+"anzuklicken?"
 
 #: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
 #: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
@@ -193,10 +199,12 @@ msgid ""
 "Available DAHDI Groups and Channels configued in the DAHDI Configuration "
 "Module"
 msgstr ""
+"Verfügbare DAHDI-Gruppen und -Kanäle, die im DAHDI-Konfigurationsmodul "
+"eingerichtet wurden"
 
 #: views/dahdi_digital_settings.php:97
 msgid "BRI PTMP - CPE"
-msgstr ""
+msgstr "BRI PTMP - CPE"
 
 #: views/dahdi_digital_settings.php:96
 msgid "BRI PTMP - Net"
@@ -220,6 +228,9 @@ msgid ""
 "default. You can enable it in this window or you can later enable it under "
 "Advanced Settings"
 msgstr ""
+"Auf Grund der Einstellungen für dieses Modul ist die Möglichkeit, Dateien zu "
+"ändern standardmäßig deaktiviert. Sie können sie in diesem Fenster oder "
+"später unter „Erweiterte Einstellungen“ aktivieren"
 
 #: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48

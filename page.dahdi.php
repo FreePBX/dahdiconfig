@@ -194,7 +194,9 @@ var dgps = new Array();
 var spandata = new Array();
 
 var modprobesettings = {}
-<?php foreach($dahdi_cards->read_all_dahdi_modprobe() as $list) { ?>
+<?php
+$dahdicardprobe =$dahdi_cards->read_all_dahdi_modprobe();
+foreach($dahdicardprobe as $list) { ?>
 modprobesettings['<?php echo $list['module_name'] ?>'] = {}
 modprobesettings['<?php echo $list['module_name'] ?>']['dbsettings'] = <?php echo $list['settings'] ?>
 

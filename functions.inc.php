@@ -17,7 +17,7 @@ global $db;
 class dahdiconfig_conf {
 	public $cards;
 
-	public function construct() {
+	public function __construct() {
 		$this->cards = new dahdi_cards();
 		//TODO remove
 		global $amp_conf;

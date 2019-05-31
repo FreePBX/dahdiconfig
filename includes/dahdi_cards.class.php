@@ -672,7 +672,7 @@ class dahdi_cards {
 		if($settings) {
 			return $settings;
 		} else {
-			return FALSE;
+			return array();
 		}
 	}
 

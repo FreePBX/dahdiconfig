@@ -3,13 +3,14 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.15</version>
+	<version>13.0.33.16</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
+		*13.0.33.16* Fixing FREEPBX-20009 whoops error 
 		*13.0.33.15* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig 
 		*13.0.33.14* Packaging of ver 13.0.33.14
 		*13.0.33.13* FREEPBX-15880 Bug in function write_spans()

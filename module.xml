@@ -3,25 +3,17 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>15.0.5.4</version>
+	<version>16.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<changelog>
-		*15.0.5.4* Fixing FREEPBX-20009 whoops error 
-		*15.0.5.3* bump 
-		*15.0.5.2* FREEPBX-18676 Configuration File Link removed(http://freepbx.org/configuration_files) 
-		*15.0.5.1* Add Advanced settings
-		*15.0.5* fixing legacy restore
-		*15.0.4* FREEPBX-18895
-		*15.0.3* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig
-		*15.0.2* Packaging of ver 15.0.2
-		*15.0.1* Backup 15
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 	<depends>
 		<version>14.0.1alpha30</version>

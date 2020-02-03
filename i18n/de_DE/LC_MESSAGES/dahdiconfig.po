@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 17:09-0500\n"
-"PO-Revision-Date: 2019-08-07 14:00+0000\n"
-"Last-Translator: hammer125 <auswertung@mariner.at>\n"
+"PO-Revision-Date: 2020-02-05 10:00+0000\n"
+"Last-Translator: florian alberts <alberts@ar-systems.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
@@ -1196,6 +1196,25 @@ msgid ""
 "you specify 'all' here, nothing will be logged so logger.conf has the last "
 "word on what is going to be logged"
 msgstr ""
+"Gültige MFC / R2-Protokollierungswerte sind: Alle, Fehler, Warnung, Debug, "
+"Hinweis, cas, mf, Stapel, nichts <br/> Fehler, Warnung, Debug und Hinweis "
+"sind selbsterklärend. <br/> 'cas' dient zur Protokollierung von ABCD CAS tx "
+"und rx. <br/> 'mf' dient zur Protokollierung der Mehrfrequenztöne. <br/> "
+"'stack' dient zur sehr ausführlichen Ausgabe des Kanal- und "
+"Kontextaufrufstapels. Nur nützlich, wenn Sie einen Absturz debuggen oder "
+"erfahren möchten, wie die Bibliothek funktioniert. Die Stack-Protokollierung "
+"wird nur aktiviert, wenn die openr2-Bibliothek mit -DOR2_TRACE_STACKS "
+"kompiliert wurde. <br/> Sie können Werte wie <strong> `loglevel = error, "
+"debug, mf` </strong> verwechseln, um nur Fehler-, Debug- und "
+"Mehrfrequenznachrichten zu protokollieren. <br/> 'all' ist ein besonderer "
+"Wert für Alle Aktivitäten protokollieren <br/> 'nichts' ist ein "
+"Bereinigungswert, falls Sie keine Aktivitäten für einen Kanal oder eine "
+"Gruppe von Kanälen protokollieren möchten <br/> BEACHTEN SIE, dass die Ebene "
+"der protokollierten Ausgabe AUCH davon abhängt Der Wert, den Sie in "
+"logger.conf haben. Wenn Sie die Ausgabe in logger.conf deaktivieren, spielt "
+"es keine Rolle, dass Sie hier 'all' angeben. Es wird nichts protokolliert, "
+"sodass logger.conf das letzte Wort darüber enthält, was protokolliert werden "
+"soll"
 
 #: views/dahdi_mfcr2_settings.php:147
 msgid ""
@@ -1273,6 +1292,21 @@ msgid ""
 "just comment out this value or put a -1. <br /> Any negative value means "
 "'default'.<br /> <strong>Default:</strong>-1"
 msgstr ""
+"Einige Telekommunikationsunternehmen senden während eines Anrufs "
+"Gebührenimpulse für einige R2-Varianten, vermutlich zu Abrechnungszwecken, "
+"um die Kosten anzuzeigen. Diese Impulse verwenden jedoch dasselbe Signal, "
+"das zum Anzeigen des Auflegens eines Anrufs verwendet wird. <br/> Daher ist "
+"manchmal eine Zeitüberschreitung erforderlich, um zwischen einem <strong> "
+"echten </strong> Auflegen und einem Abrechnungsimpuls zu unterscheiden, der "
+"nicht länger als 500 ms dauern sollte. <br/> Wenn der Anruf einige Minuten "
+"nach dem Herstellen abgebrochen wird, versuchen Sie, hier einen Wert von "
+"einigen ms festzulegen. Werte über 500 ms werden nicht empfohlen. <br/> "
+"BEACHTEN SIE, dass durch die Auswahl des richtigen Protokollparameters "
+"mfcr2_variant implizit ein guter empfohlener Wert für diesen Timer "
+"festgelegt wird. <br/> Verwenden Sie diesen Parameter nur, wenn Sie * "
+"wirklich * den Standardwert überschreiben möchten, andernfalls diesen Wert "
+"nur auskommentieren oder setzen möchten a -1. <br/> Jeder negative Wert "
+"bedeutet \"Standard\". <br/> <strong> Standard: </strong> -1"
 
 #: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
 #: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
@@ -1326,6 +1360,10 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable"
 msgstr ""
+"Stummschalten - Diese Einstellung bewirkt, dass der NLP eingehende "
+"Audiostreams stummschaltet, während ein mit Asterisk verbundener Benutzer "
+"spricht. Für Benutzer in ruhigen Umgebungen kann die Stummschaltung "
+"akzeptabel sein"
 
 #: views/dahdi_advanced_settings.php:209
 msgid ""
@@ -1333,6 +1371,10 @@ msgid ""
 "user connected to Asterisk is speaking. For users in quiet environments, "
 "Mute may be acceptable."
 msgstr ""
+"Stummschalten - Diese Einstellung bewirkt, dass der NLP eingehende "
+"Audiostreams stummschaltet, während ein mit Asterisk verbundener Benutzer "
+"spricht. Für Benutzer in ruhigen Umgebungen kann die Stummschaltung "
+"akzeptabel sein."
 
 #: views/dahdi_modprobe_settings.php:206
 msgid "NEON"
@@ -1445,10 +1487,16 @@ msgid ""
 "modules, they take precedence over the software echo canceler compiled into "
 "DAHDI automatically"
 msgstr ""
+"Wenn eine Ihrer DAHDI-Karten über Hardware-Echounterdrücker verfügt, werden "
+"diese durch diese Einstellung nur ein- und ausgeschaltet. Für Hardware-"
+"Echounterdrücker sind keine speziellen Einstellungen erforderlich. Wenn "
+"vorhanden und in ihren Kernel-Modulen aktiviert, haben sie Vorrang vor dem "
+"automatisch in DAHDI kompilierten Software-Echokompensator"
 
 #: views/dahdi_global_settings.php:176
 msgid "Note that these parameters do not apply to hardware echo cancellers"
 msgstr ""
+"Beachten Sie, dass diese Parameter nicht für Hardware-Echounterdrücker gelten"
 
 #: views/dahdi_global_settings.php:185
 msgid ""
@@ -1600,6 +1648,9 @@ msgid ""
 "the echo reflection. For users in normal environments, Random Noise may be "
 "acceptable"
 msgstr ""
+"Zufälliges Rauschen - Diese Einstellung bewirkt, dass der NLP zufälliges "
+"Rauschen einspeist, um die Echoreflexion zu maskieren. Für Benutzer in "
+"normalen Umgebungen kann Random Noise akzeptabel sein"
 
 #: views/dahdi_advanced_settings.php:210
 msgid ""
@@ -1607,10 +1658,13 @@ msgid ""
 "the echo reflection. For users in normal environments, Random Noise may be "
 "acceptable."
 msgstr ""
+"Zufälliges Rauschen - Diese Einstellung bewirkt, dass der NLP zufälliges "
+"Rauschen einspeist, um die Echoreflexion zu maskieren. Für Benutzer in "
+"normalen Umgebungen kann Random Noise akzeptabel sein."
 
 #: views/dahdi_global_settings.php:209
 msgid "Receive Gain"
-msgstr ""
+msgstr "Gewinn erhalten"
 
 #: page.dahdi.php:74
 msgid "Reload Asterisk DAHDi Module"
@@ -1618,11 +1672,11 @@ msgstr ""
 
 #: assets/js/main.js:525
 msgid "Reloading..."
-msgstr ""
+msgstr "Neuladen..."
 
 #: install.php:598
 msgid "Replacing.."
-msgstr ""
+msgstr "Ersetzen .."
 
 #: page.dahdi.php:490
 msgid "Reset File To Defaults"
@@ -1638,7 +1692,7 @@ msgstr ""
 
 #: assets/js/main.js:547
 msgid "Restarting..."
-msgstr ""
+msgstr "Neustart ..."
 
 #: views/dahdi_advanced_settings.php:176 views/dahdi_modprobe_settings.php:181
 msgid "Ring Detect"
@@ -1762,6 +1816,16 @@ msgid ""
 "Switzerland, and the United Kingdom. If no choice is specified, the default "
 "is FCC"
 msgstr ""
+"Geben Sie die für die analogen Leitungseigenschaften der einzelnen Länder "
+"vordefinierte Geschwindigkeit für das Auflegen des Hörers, die "
+"Klingelimpedanz, die Klingelschwelle, die Strombegrenzung, die Einstellung "
+"der Klingel- / Ringspannung, den minimalen Betriebsschleifenstrom und die "
+"Wechselstromimpedanz an. Wählen Sie das Land aus, in dem Ihr Asterisk-Server "
+"betrieben wird. FCC entspricht den USA. TBR21 entspricht Österreich, "
+"Belgien, Dänemark, Finnland, Frankreich, Deutschland, Griechenland, Island, "
+"Irland, Italien, Luxemburg, den Niederlanden, Norwegen, Portugal, Spanien, "
+"Schweden, der Schweiz und dem Vereinigten Königreich. Wenn keine Auswahl "
+"angegeben ist, lautet die Standardeinstellung FCC"
 
 #: views/dahdi_modprobe_settings.php:121
 msgid ""
@@ -1770,6 +1834,11 @@ msgid ""
 "otherwise known, should be assumed to be alaw. If no choice is specified, "
 "the default is ulaw. Confirm the scheme which will be best for operation"
 msgstr ""
+"Geben Sie das Audiokomprimierungsschema (Codec) an, das für analoge "
+"Leitungen verwendet werden soll. Nordamerikanische Benutzer sollten ulaw "
+"wählen. Alle anderen Länder sollten, sofern nichts anderes bekannt ist, alaw "
+"wählen. Wenn keine Auswahl angegeben ist, ist der Standardwert ulaw. "
+"Bestätigen Sie das Schema, das für den Betrieb am besten geeignet ist"
 
 #: views/dahdi_advanced_settings.php:136
 msgid ""
@@ -1778,6 +1847,11 @@ msgid ""
 "otherwise known, should be assumed to be alaw. If no choice is specified, "
 "the default is ulaw. Confirm the scheme which will be best for operation."
 msgstr ""
+"Geben Sie das Audiokomprimierungsschema (Codec) an, das für analoge "
+"Leitungen verwendet werden soll. Nordamerikanische Benutzer sollten ulaw "
+"wählen. Alle anderen Länder sollten, sofern nichts anderes bekannt ist, alaw "
+"wählen. Wenn keine Auswahl angegeben ist, ist der Standardwert ulaw. "
+"Bestätigen Sie das Schema, das für den Betrieb am besten geeignet ist."
 
 #: views/dahdi_modprobe_settings.php:9
 msgid "Specify the kernel module used by the installed analog hardware"
@@ -1789,7 +1863,7 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:9
 msgid "Specify the language"
-msgstr ""
+msgstr "Geben Sie die Sprache an"
 
 #: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
 msgid ""
@@ -1797,6 +1871,9 @@ msgid ""
 "ports. If no choice is specified, the default is none. The following options "
 "are available"
 msgstr ""
+"Geben Sie die Art der Erkennung von wartenden Nachrichten an, die an FXO-"
+"Ports durchgeführt werden soll. Wenn keine Auswahl angegeben ist, lautet der "
+"Standardwert none. Die folgenden Optionen stehen zur Verfügung"
 
 #: views/dahdi_modprobe_settings.php:145
 msgid ""
@@ -1804,6 +1881,10 @@ msgid ""
 "ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is "
 "specified, the default is normal"
 msgstr ""
+"Geben Sie die Spannung an, die zum Klingeln eines analogen Telefons "
+"verwendet wird. Normal setzt die Rufspannung auf 40 V und Peak setzt die "
+"Spannung auf 89 V. Wenn keine Auswahl angegeben ist, ist die "
+"Standardeinstellung normal"
 
 #: views/dahdi_advanced_settings.php:152
 msgid ""
@@ -1811,6 +1892,10 @@ msgid ""
 "ring voltage to 40V, and Peak will set the voltage to 89V. If no choice is "
 "specified, the default is normal."
 msgstr ""
+"Geben Sie die Spannung an, die zum Klingeln eines analogen Telefons "
+"verwendet wird. Normal setzt die Rufspannung auf 40 V und Peak setzt die "
+"Spannung auf 89 V. Wenn keine Auswahl angegeben ist, ist die "
+"Standardeinstellung normal."
 
 #: views/dahdi_global_settings.php:184
 msgid ""
@@ -1824,6 +1909,11 @@ msgid ""
 "(commonly used in conjunction with the Low Power option) increases the "
 "ringing speed to 25Hz. If no choice is specified, the default is normal"
 msgstr ""
+"Geben Sie an, ob der schnelle Rufton angewendet werden soll. Durch "
+"Einstellen des schnellen Klingeltons (25 Hz) (normalerweise in Verbindung "
+"mit der Option „Niedriger Stromverbrauch“ verwendet) wird die "
+"Klingelgeschwindigkeit auf 25 Hz erhöht. Wenn keine Auswahl angegeben ist, "
+"ist die Standardeinstellung normal"
 
 #: views/dahdi_advanced_settings.php:160
 msgid ""
@@ -1831,6 +1921,11 @@ msgid ""
 "(commonly used in conjunction with the Low Power option) increases the "
 "ringing speed to 25Hz. If no choice is specified, the default is normal."
 msgstr ""
+"Geben Sie an, ob der schnelle Rufton angewendet werden soll. Durch "
+"Einstellen des schnellen Klingeltons (25 Hz) (normalerweise in Verbindung "
+"mit der Option „Niedriger Stromverbrauch“ verwendet) wird die "
+"Klingelgeschwindigkeit auf 25 Hz erhöht. Wenn keine Auswahl angegeben ist, "
+"ist die Standardeinstellung normal."
 
 #: views/dahdi_modprobe_settings.php:169
 msgid ""
@@ -1839,6 +1934,10 @@ msgid ""
 "during Fast Ringer operation to 50V. If no choice is specified, the default "
 "is normal"
 msgstr ""
+"Geben Sie an, ob der Low-Power-Betrieb angewendet werden soll. Durch "
+"Einstellen von Fast Ringer auf 50 V Spitze in Verbindung mit der Option Fast "
+"Ringer wird die Spitzenspannung während des Fast Ringer-Betriebs auf 50 V "
+"erhöht. Wenn keine Auswahl angegeben ist, ist die Standardeinstellung normal"
 
 #: views/dahdi_advanced_settings.php:168
 msgid ""
@@ -1847,6 +1946,10 @@ msgid ""
 "during Fast Ringer operation to 50V. If no choice is specified, the default "
 "is normal."
 msgstr ""
+"Geben Sie an, ob der Low-Power-Betrieb angewendet werden soll. Durch "
+"Einstellen von Fast Ringer auf 50 V Spitze in Verbindung mit der Option Fast "
+"Ringer wird die Spitzenspannung während des Fast Ringer-Betriebs auf 50 V "
+"erhöht. Wenn keine Auswahl angegeben ist, ist die Standardeinstellung normal."
 
 #: views/dahdi_modprobe_settings.php:181
 msgid ""
@@ -1858,6 +1961,14 @@ msgid ""
 "is transmitted from the provider, then select Full Wave. If no choice is "
 "specified, the default is standard"
 msgstr ""
+"Geben Sie an, ob die normale Ruftonerkennung oder eine Vollwellenerkennung "
+"angewendet werden soll, um eine falsche Ruftonerkennung für Leitungen zu "
+"verhindern, bei denen die Anruferkennung vor dem ersten Rufton gesendet und "
+"die Polarität umgekehrt wird (wie im Vereinigten Königreich). Wenn Sie "
+"Probleme mit der Erkennung der CallerID von analogen Dienstanbietern haben "
+"oder Leitungen haben, die eine Umpolung aufweisen, bevor die CallerID vom "
+"Anbieter übertragen wird, wählen Sie Full Wave. Wenn keine Auswahl angegeben "
+"ist, ist die Standardeinstellung Standard"
 
 #: views/dahdi_advanced_settings.php:176
 msgid ""
@@ -1869,6 +1980,14 @@ msgid ""
 "is transmitted from the provider, then select Full Wave. If no choice is "
 "specified, the default is standard."
 msgstr ""
+"Geben Sie an, ob die normale Ruftonerkennung oder eine Vollwellenerkennung "
+"angewendet werden soll, um eine falsche Ruftonerkennung für Leitungen zu "
+"verhindern, bei denen die Anruferkennung vor dem ersten Rufton gesendet und "
+"die Polarität umgekehrt wird (wie im Vereinigten Königreich). Wenn Sie "
+"Probleme mit der Erkennung der CallerID von analogen Dienstanbietern haben "
+"oder Leitungen haben, die eine Umpolung aufweisen, bevor die CallerID vom "
+"Anbieter übertragen wird, wählen Sie Full Wave. Wenn keine Auswahl angegeben "
+"ist, ist die Standardeinstellung Standard."
 
 #: views/dahdi_modprobe_settings.php:133
 msgid ""
@@ -1932,6 +2051,12 @@ msgid ""
 "in loud environments, Suppression NLP may be the best option. This is the "
 "default setting for the Echo Cancellation NLP Type option"
 msgstr ""
+"NLP unterdrücken - Diese Einstellung bewirkt, dass der NLP Echoreflexionen "
+"unterdrückt, indem er die Amplitude seiner Lautstärke verringert. Die "
+"Unterdrückung kann in Kombination mit der Option Echo Cancellation NLP Max "
+"Suppression verwendet werden. Für Benutzer in lauten Umgebungen ist die NLP-"
+"Unterdrückung möglicherweise die beste Option. Dies ist die "
+"Standardeinstellung für die Option Echo Cancellation NLP Type"
 
 #: views/dahdi_advanced_settings.php:212
 msgid ""
@@ -1941,24 +2066,30 @@ msgid ""
 "in loud environments, Suppression NLP may be the best option. This is the "
 "default setting for the Echo Cancellation NLP Type option."
 msgstr ""
+"NLP unterdrücken - Diese Einstellung bewirkt, dass der NLP Echoreflexionen "
+"unterdrückt, indem er die Amplitude seiner Lautstärke verringert. Die "
+"Unterdrückung kann in Kombination mit der Option Echo Cancellation NLP Max "
+"Suppression verwendet werden. Für Benutzer in lauten Umgebungen ist die NLP-"
+"Unterdrückung möglicherweise die beste Option. Dies ist die "
+"Standardeinstellung für die Option Echo Cancellation NLP Type."
 
 #: views/dahdi_advanced_settings.php:29 views/dahdi_advanced_settings.php:124
 #: views/dahdi_modprobe_settings.php:107
 msgid "Sweden"
-msgstr ""
+msgstr "Schweden"
 
 #: views/dahdi_global_settings.php:25
 msgid "Swedish"
-msgstr ""
+msgstr "Schwedisch"
 
 #: views/dahdi_advanced_settings.php:43 views/dahdi_advanced_settings.php:125
 #: views/dahdi_modprobe_settings.php:108
 msgid "Switzerland"
-msgstr ""
+msgstr "Schweiz"
 
 #: views/dahdi_advanced_settings.php:126 views/dahdi_modprobe_settings.php:109
 msgid "Syria"
-msgstr ""
+msgstr "Syrien"
 
 #: dahdiconfig.i18n.php:36
 msgid "System Configuration File Location"
@@ -1966,29 +2097,29 @@ msgstr ""
 
 #: page.dahdi.php:83 page.dahdi.php:123
 msgid "System Settings"
-msgstr ""
+msgstr "Systemeinstellungen"
 
 #: views/dahdi_modprobe_settings.php:276
 msgid "T1"
-msgstr ""
+msgstr "T1"
 
 #: views/dahdi_advanced_settings.php:128 views/dahdi_modprobe_settings.php:111
 msgid "TBR21"
-msgstr ""
+msgstr "TBR21"
 
 #: views/dahdi_advanced_settings.php:27 views/dahdi_advanced_settings.php:127
 #: views/dahdi_modprobe_settings.php:110
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 #: views/dahdi_global_settings.php:24
 msgid "Taiwanese"
-msgstr ""
+msgstr "Taiwanesisch"
 
 #: views/dahdi_advanced_settings.php:49 views/dahdi_advanced_settings.php:129
 #: views/dahdi_modprobe_settings.php:112
 msgid "Thailand"
-msgstr ""
+msgstr "Thailand"
 
 #: page.dahdi.php:178
 #, php-format
@@ -2000,6 +2131,8 @@ msgstr ""
 #: views/dahdi_analog_settings.php:47
 msgid "The context to use for inbound calls to this analog device"
 msgstr ""
+"Der Kontext, der für eingehende Anrufe an dieses analoge Gerät verwendet "
+"werden soll"
 
 #: views/dahdi_modprobe_settings.php:271
 msgid ""
@@ -2014,6 +2147,18 @@ msgid ""
 "access its jumper(s).  In this case, the \"default_linemode\" option can be "
 "passed when the card's device driver is loaded"
 msgstr ""
+"Die empfohlene Methode zum Festlegen des Leitungsmodus auf Ihren Digium 1-, "
+"2- und 4-Port-Digitaltelefoniekarten besteht darin, die Steckbrücken auf der "
+"Karte für jeden Bereich der Karte auf T1- oder E1-Modus festzulegen. Wenn "
+"der Jumper ausgeschaltet ist, ist die Spanne für den T1-Modus bereit. Wenn "
+"der Jumper aktiviert ist, ist die Spanne für den E1-Modus bereit. Weitere "
+"Informationen zu den Jumpern finden Sie im Benutzerhandbuch für digitale "
+"Einzel-, Doppel- oder Quad-Span-Karten. <br/> Manchmal wurde jedoch eine "
+"Karte in einem Server installiert, ohne zuvor die Jumper richtig eingestellt "
+"zu haben Es kann unpraktisch sein, die Karte aus dem Server zu entfernen, um "
+"auf die Steckbrücken zuzugreifen. In diesem Fall kann die Option \""
+"default_linemode\" übergeben werden, wenn der Gerätetreiber der Karte "
+"geladen wird"
 
 #: views/dahdi_global_settings.php:209 views/dahdi_global_settings.php:217
 msgid ""
@@ -2115,6 +2260,14 @@ msgid ""
 "Cancellation NLP Threshold option, will nearly mute the residual echo. The "
 "default setting is 24 dB"
 msgstr ""
+"Diese Option ist nur funktionsfähig, wenn die Option NLP-Typ für "
+"Echokompensation auf NLP-Unterdrückung eingestellt ist. Sie gibt den "
+"maximalen dB-Wert an, den der NLP für die Dämpfung des Restechos verwenden "
+"soll (nur VPMADT032). Niedrigere Werte bedeuten, dass der NLP weniger "
+"Unterdrückung bietet (das Restecho wird lauter). Bei höheren Werten, "
+"insbesondere bei Werten, die sich der NLP-Schwellenwertoption für die "
+"Echokompensation nähern oder dieser entsprechen, wird das Restecho nahezu "
+"stummgeschaltet. Die Standardeinstellung ist 24 dB"
 
 #: views/dahdi_advanced_settings.php:228
 msgid ""
@@ -2126,6 +2279,14 @@ msgid ""
 "Cancellation NLP Threshold option, will nearly mute the residual echo. The "
 "default setting is 24 dB."
 msgstr ""
+"Diese Option ist nur funktionsfähig, wenn die Option NLP-Typ für "
+"Echokompensation auf NLP-Unterdrückung eingestellt ist. Sie gibt den "
+"maximalen dB-Wert an, den der NLP für die Dämpfung des Restechos verwenden "
+"soll (nur VPMADT032). Niedrigere Werte bedeuten, dass der NLP weniger "
+"Unterdrückung bietet (das Restecho wird lauter). Bei höheren Werten, "
+"insbesondere bei Werten, die sich der NLP-Schwellenwertoption für die "
+"Echokompensation nähern oder dieser entsprechen, wird das Restecho nahezu "
+"stummgeschaltet. Die Standardeinstellung ist 24 dB."
 
 #: views/dahdi_global_settings.php:116
 msgid ""
@@ -2304,6 +2465,20 @@ msgid ""
 "accept the call with DAHDIAcceptR2Call or implicitly through the Answer() "
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
+"Wahrscheinlich benötigen Sie diese Funktion nicht. Standard ist ja. <br/> "
+"Wenn dies auf yes gesetzt ist, werden alle angebotenen Anrufe (eingehende "
+"Anrufe), für die DNIS gültig ist (in der extensions.conf vorhanden) und die "
+"Anrufüberprüfung bestehen, mit einem Ton der Gruppe B angenommen (entweder "
+"Anruf mit Gebühr oder nicht, abhängig von mfcr2_charge_calls). <br/> Wenn "
+"diese Option auf \"Nein\" gesetzt ist, wird der Anruf bei Angebot NICHT "
+"angenommen und der Anruf wird in der extensions.conf ausgeführt, ohne dass "
+"er angenommen wird, bis der Kanal beantwortet wird (entweder mit Answer () "
+"oder einer anderen Anwendung, die zur Beantwortung des Kanals führt). <br/> "
+"Dies kann auf \"Nein\" gesetzt werden, wenn Ihre Telekommunikation oder "
+"Telefonanlage die Ursache für das Auflegen genau einstellen muss. <br/> Wenn "
+"diese Option auf \"Nein\" gesetzt ist, müssen Sie den Anruf explizit mit "
+"DAHDIAcceptR2Call oder implizit über die Anwendung Answer () annehmen. <br/> "
+"<strong> Standard: </strong> yes"
 
 #: install.php:647
 msgid "add additional column"

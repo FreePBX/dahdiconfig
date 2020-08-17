@@ -9,6 +9,8 @@
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
+	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
+  	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
 	<changelog>
 		*13.0.33.16* Fixing FREEPBX-20009 whoops error 
 		*13.0.33.15* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig 

@@ -3,13 +3,16 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>14.0.1.6</version>
+	<version>14.0.1.7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
+	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
+  	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
 	<changelog>
+		*14.0.1.7* Packaging of ver 14.0.1.7
 		*14.0.1.6* Fixing FREEPBX-20009 whoops error 
 		*14.0.1.5* FREEPBX-18676 Configuration File Link removed(http://freepbx.org/configuration_files) 
 		*14.0.1.4* Feature/FREEPBX-18895 dahdi analog custom settings 

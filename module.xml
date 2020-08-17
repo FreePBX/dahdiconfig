@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>13.0.33.16</version>
+	<version>13.0.33.17</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
   	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
 	<changelog>
+		*13.0.33.17* Packaging of ver 13.0.33.17
 		*13.0.33.16* Fixing FREEPBX-20009 whoops error 
 		*13.0.33.15* Fixing FREEPBX-18218 Whoops error on apply config in dahdiconfig 
 		*13.0.33.14* Packaging of ver 13.0.33.14

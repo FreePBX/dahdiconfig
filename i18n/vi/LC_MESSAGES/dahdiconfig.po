@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:44-0400\n"
+"POT-Creation-Date: 2020-08-17 02:48+0000\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -121,7 +121,7 @@ msgstr "Các cảnh báo"
 msgid "Allow Collect Calls"
 msgstr "Cho phép thu thập các cuộc gọi"
 
-#: dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:12
 msgid "Allow PRI Discrete Channels"
 msgstr ""
 "Cho phép PRI ( Primary Rate Interface-Giao điện tốc độ chính) phân lập các "
@@ -314,7 +314,7 @@ msgstr "Quốc gia Bungari"
 msgid "Busy Detect Count"
 msgstr "Đếm phát hiện bận"
 
-#: dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:28
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -472,11 +472,11 @@ msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu 
 msgid "DAHDI Trunks"
 msgstr "Các trung kế DAHDI"
 
-#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:8
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:10
 msgid "DAHDi Config"
 msgstr "Cấu hình DAHDi"
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:14
 msgid "DAHDi Configuration Module"
 msgstr "Mô đun cấu hình DAHDi"
 
@@ -488,7 +488,7 @@ msgstr ""
 "DAHi dường như đang không hoạt động. Kích vò nút dưới đây 'Restart DAHDi & "
 "Asterisk'"
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
 msgstr "Vị trí thực thi được của DAHi"
 
@@ -497,7 +497,7 @@ msgstr "Vị trí thực thi được của DAHi"
 msgid "DAHDi Failed: %s"
 msgstr "DAHDi đã thất bại:%s"
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:32
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr "Vị trí tệp cấu hình DAHDi ModProbe.d ((modprobe.d/dahdi.conf)"
 
@@ -505,11 +505,11 @@ msgstr "Vị trí tệp cấu hình DAHDi ModProbe.d ((modprobe.d/dahdi.conf)"
 msgid "DAHDi Module Load/Order"
 msgstr "Mô đun DAHDi Tải/ Order"
 
-#: dahdiconfig.i18n.php:20
+#: dahdiconfig.i18n.php:22
 msgid "DAHDi Modules Location"
 msgstr "Vị trí các mô đun DAHDi"
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Vị trí  các mô đun DAHDi (/etc/dahdi/ các mô đun)"
 
@@ -521,7 +521,7 @@ msgstr "Đã khởi động DAHDi"
 msgid "DAHDi Stopped"
 msgstr "Đã dừng DAHDi"
 
-#: dahdiconfig.i18n.php:38
+#: dahdiconfig.i18n.php:40
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr "Vị trí tệp cấu hình hệ thống DAHDi (dahdi/system.conf)"
 
@@ -533,7 +533,7 @@ msgstr "Từ chối vô hiệu tính năng ghi DAHDi"
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi bị vô hiệu để ghi"
 
-#: dahdiconfig.i18n.php:14
+#: dahdiconfig.i18n.php:16
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -604,7 +604,7 @@ msgstr "Phần cứng kỹ thuật số"
 msgid "Disable"
 msgstr "Vô hiệu"
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:26
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Vô hiệu các bản ghi cấu hình DAHDi"
 
@@ -1178,7 +1178,7 @@ msgstr "Nước Lithuania"
 msgid "Lithuanian"
 msgstr "Tiếng Lithuania"
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:20
 msgid "Location of the DAHDi Executable"
 msgstr "Vị trí của thực thi DAHDi"
 
@@ -1401,7 +1401,7 @@ msgstr "Di chuyển dữ liệu cũ ra khỏi bảng nâng cao Dahdi"
 msgid "Migrating module %s from serialized data to json"
 msgstr "Di chuyển mô đun %s từ khỏi dữ liệu thứ tự đến json"
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:30
 msgid "ModProbe.d Configuration File Location"
 msgstr "Vị trí tệp cấu hình ModProbe.d"
 
@@ -1859,11 +1859,11 @@ msgstr "Nước Slovakia"
 msgid "Slovenia"
 msgstr "Tiếng Slovakia"
 
-#: dahdiconfig.i18n.php:32
+#: dahdiconfig.i18n.php:34
 msgid "Software EC"
 msgstr "Phần mềm EC"
 
-#: dahdiconfig.i18n.php:42
+#: dahdiconfig.i18n.php:44
 msgid ""
 "Some development environments can not host DAHDI hardware so this mode uses "
 "mock files to acomplish the tasks."
@@ -2190,7 +2190,7 @@ msgstr "Thụy Sĩ"
 msgid "Syria"
 msgstr "Nước Syria"
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:38
 msgid "System Configuration File Location"
 msgstr "Vị trí tệp cấu hình hệ thống"
 
@@ -2228,6 +2228,11 @@ msgid ""
 msgstr ""
 "Team %s không chịu trách nhiệm nếu bạn kích hoạt mô đun này và trung kế/ các "
 "card bị dừng hoạt động đột ngột bởi các cấu hình của bạn vừa bị thay đổi."
+
+#: dahdiconfig.i18n.php:8
+msgid ""
+"The DAHDI module is designed to let you manage and configure your PSTN cards."
+msgstr ""
 
 #: views/dahdi_analog_settings.php:36
 msgid "The context to use for inbound calls to this analog device"
@@ -2484,7 +2489,7 @@ msgstr "Sử dụng Caller ID"
 msgid "Use Caller ID Presentation"
 msgstr "Sử dụng hiện Caller ID"
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:42
 msgid "Use mock hardware instead of real hardware"
 msgstr "Sử dụng phần cứng mô phỏng thay cho phần cứng thực"
 
@@ -2659,7 +2664,7 @@ msgstr "Không có- Việc phát hiện không được tiến hành"
 msgid "none - Performs no detection "
 msgstr "Không có - Việc phát hiện không được tiến hành "
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:36
 msgid "software EC to use in system.conf"
 msgstr "Phần mềm EC sử dụng trong system.conf"
 

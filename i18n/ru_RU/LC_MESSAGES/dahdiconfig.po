@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 14:44-0400\n"
+"POT-Creation-Date: 2020-08-17 02:48+0000\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -113,7 +113,7 @@ msgstr "Предупреждения"
 msgid "Allow Collect Calls"
 msgstr ""
 
-#: dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:12
 msgid "Allow PRI Discrete Channels"
 msgstr "Разрешить разделять каналы PRI"
 
@@ -276,7 +276,7 @@ msgstr "Болгария"
 msgid "Busy Detect Count"
 msgstr "Количество  обнаруженных состояний \"Занято\""
 
-#: dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:28
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -433,11 +433,11 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr "Транки DAHDi"
 
-#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:8
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:10
 msgid "DAHDi Config"
 msgstr "Конфигурация DAHDi"
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:14
 msgid "DAHDi Configuration Module"
 msgstr "Модуль конфигурации DAHDi"
 
@@ -447,7 +447,7 @@ msgid ""
 "button below"
 msgstr ""
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
 msgstr ""
 
@@ -456,7 +456,7 @@ msgstr ""
 msgid "DAHDi Failed: %s"
 msgstr "Ошибка DAHDi: %s"
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:32
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -464,11 +464,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr "Модуль DAHDi Загрузить/Порядок"
 
-#: dahdiconfig.i18n.php:20
+#: dahdiconfig.i18n.php:22
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
@@ -480,7 +480,7 @@ msgstr "DAHDi стартовал"
 msgid "DAHDi Stopped"
 msgstr "DAHDi остановлен"
 
-#: dahdiconfig.i18n.php:38
+#: dahdiconfig.i18n.php:40
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
@@ -492,7 +492,7 @@ msgstr "Отказ от запрета записи DAHDi"
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi  заблокирован для записи"
 
-#: dahdiconfig.i18n.php:14
+#: dahdiconfig.i18n.php:16
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -557,7 +557,7 @@ msgstr "Цифровое оборудование"
 msgid "Disable"
 msgstr "Выключить"
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:26
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
@@ -1126,7 +1126,7 @@ msgstr "Литва"
 msgid "Lithuanian"
 msgstr "Литовский"
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:20
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -1304,7 +1304,7 @@ msgstr "Перенос старых данных из расширенной т�
 msgid "Migrating module %s from serialized data to json"
 msgstr "Перенос модуля %s из \tсериализованных данных в json"
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:30
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1759,11 +1759,11 @@ msgstr "Словакия"
 msgid "Slovenia"
 msgstr "Словения"
 
-#: dahdiconfig.i18n.php:32
+#: dahdiconfig.i18n.php:34
 msgid "Software EC"
 msgstr ""
 
-#: dahdiconfig.i18n.php:42
+#: dahdiconfig.i18n.php:44
 msgid ""
 "Some development environments can not host DAHDI hardware so this mode uses "
 "mock files to acomplish the tasks."
@@ -2083,7 +2083,7 @@ msgstr "Швейцария"
 msgid "Syria"
 msgstr "Сирия"
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:38
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -2121,6 +2121,11 @@ msgid ""
 msgstr ""
 "Команда %s не несёт ответственности если вы активируете этот модуль  и ваши "
 "транки/платы вдруг перестанут работать вследствие изменения конфигурации."
+
+#: dahdiconfig.i18n.php:8
+msgid ""
+"The DAHDI module is designed to let you manage and configure your PSTN cards."
+msgstr ""
 
 #: views/dahdi_analog_settings.php:36
 msgid "The context to use for inbound calls to this analog device"
@@ -2367,7 +2372,7 @@ msgstr "Использовать CallerID"
 msgid "Use Caller ID Presentation"
 msgstr "Использовать представление CallerID"
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:42
 msgid "Use mock hardware instead of real hardware"
 msgstr ""
 
@@ -2534,7 +2539,7 @@ msgstr "Отсутствует- обнаружение не выполняетс
 msgid "none - Performs no detection "
 msgstr "Отсутствует-обнаружение не выполняется "
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:36
 msgid "software EC to use in system.conf"
 msgstr ""
 

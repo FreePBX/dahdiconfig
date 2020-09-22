@@ -59,7 +59,7 @@
         		// If there are no custom settings yet, initialize as
         		// array of empty strings so we always have at least one
         		// blank custom setting in the form (the first one)
-        		if (count($port_custom_settings) == 0) {
+        		if (!is_array($port_custom_settings) || count($port_custom_settings) == 0) {
         			$port_custom_settings = array('' => '');
         		}
 

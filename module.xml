@@ -3,15 +3,16 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>15.0.5.6</version>
+	<version>15.0.5.7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
-  	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
+  	<more-info>https://wiki.freepbx.org/display/FPG/DAHDI+Configs</more-info>
 	<changelog>
+		*15.0.5.7* Packaging of ver 15.0.5.7
 		*15.0.5.6* fixing FREEPBX-21885 Adding check to avoid whoops error 
 		*15.0.5.5* Packaging of ver 15.0.5.5
 		*15.0.5.4* Fixing FREEPBX-20009 whoops error 

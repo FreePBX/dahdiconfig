@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 02:50+0000\n"
+"POT-Creation-Date: 2021-12-01 02:35+0000\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -396,7 +396,7 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr "Конфигурация DAHDI"
 
-#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:143
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:144
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 "DAHDI НЕ НАЙДЕН [Советуем де-инсталлировать модуль конфигурации DAHDI]!"
@@ -423,7 +423,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:125 Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:126 Dahdiconfig.class.php:175
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "Ошибка DAHDi: %s"
@@ -444,11 +444,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:123
+#: Dahdiconfig.class.php:124
 msgid "DAHDi Started"
 msgstr "DAHDi стартовал"
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:173
 msgid "DAHDi Stopped"
 msgstr "DAHDi остановлен"
 
@@ -1950,19 +1950,19 @@ msgstr ""
 msgid "Standard"
 msgstr "Стандартный"
 
-#: Dahdiconfig.class.php:121
+#: Dahdiconfig.class.php:122
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Запуск DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:103
+#: Dahdiconfig.class.php:104
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr "Запуск Wanrouter-а для плат Sangoma"
 
-#: Dahdiconfig.class.php:170
+#: Dahdiconfig.class.php:171
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Останов DAHDi для плат Digium"
 
-#: Dahdiconfig.class.php:157
+#: Dahdiconfig.class.php:158
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr "Останов Wanrouter-a для плат Sangoma"
 
@@ -2155,7 +2155,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:238
+#: Dahdiconfig.class.php:239
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2353,16 +2353,16 @@ msgstr ""
 "ПРЕДУПРЕЖДЕНИЕ:Когда это модуль \"доступен\"  для записи он ПЕРЕЗАПИШЕТ  "
 "следующие файлы:"
 
-#: Dahdiconfig.class.php:107 Dahdiconfig.class.php:161
+#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:162
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Ошибка Wanrouter:%s"
 
-#: Dahdiconfig.class.php:105
+#: Dahdiconfig.class.php:106
 msgid "Wanrouter Started"
 msgstr "Wanrouter запущен"
 
-#: Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:160
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter остановлен"
 

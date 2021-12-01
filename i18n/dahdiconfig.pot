@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dahdiconfig
-# Copyright (C) 2008-2020 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2021 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-25 05:11+0000\n"
+"POT-Creation-Date: 2021-12-01 02:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -424,7 +424,7 @@ msgid "DAHDI Configuration"
 msgstr ""
 
 #: Dahdiconfig.class.php:87
-#: Dahdiconfig.class.php:143
+#: Dahdiconfig.class.php:144
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
@@ -452,8 +452,8 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:125
-#: Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:175
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -474,11 +474,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:123
+#: Dahdiconfig.class.php:124
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:173
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -1943,19 +1943,19 @@ msgstr ""
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:121
+#: Dahdiconfig.class.php:122
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:103
+#: Dahdiconfig.class.php:104
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:170
+#: Dahdiconfig.class.php:171
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:157
+#: Dahdiconfig.class.php:158
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2132,7 +2132,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:238
+#: Dahdiconfig.class.php:239
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2300,17 +2300,17 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:107
-#: Dahdiconfig.class.php:161
+#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:162
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:105
+#: Dahdiconfig.class.php:106
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:160
 msgid "Wanrouter Stopped"
 msgstr ""
 

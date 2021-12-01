@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 02:50+0000\n"
+"POT-Creation-Date: 2021-12-01 02:35+0000\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -436,7 +436,7 @@ msgstr "D4/AMI"
 msgid "DAHDI Configuration"
 msgstr "Cấu hình DAHDI"
 
-#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:143
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:144
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr "KHÔNG TÌM THẤY DAHDI [ Đề nghị gỡ cài đặt mô đun cấu hình Dahdi]!"
 
@@ -464,7 +464,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr "Vị trí thực thi được của DAHi"
 
-#: Dahdiconfig.class.php:125 Dahdiconfig.class.php:174
+#: Dahdiconfig.class.php:126 Dahdiconfig.class.php:175
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr "DAHDi đã thất bại:%s"
@@ -485,11 +485,11 @@ msgstr "Vị trí các mô đun DAHDi"
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Vị trí  các mô đun DAHDi (/etc/dahdi/ các mô đun)"
 
-#: Dahdiconfig.class.php:123
+#: Dahdiconfig.class.php:124
 msgid "DAHDi Started"
 msgstr "Đã khởi động DAHDi"
 
-#: Dahdiconfig.class.php:172
+#: Dahdiconfig.class.php:173
 msgid "DAHDi Stopped"
 msgstr "Đã dừng DAHDi"
 
@@ -2050,20 +2050,20 @@ msgstr ""
 msgid "Standard"
 msgstr "Tiêu chuẩn"
 
-#: Dahdiconfig.class.php:121
+#: Dahdiconfig.class.php:122
 msgid "Starting DAHDi for Digium Cards"
 msgstr "Đang khởi động DAHI cho các card Digium"
 
-#: Dahdiconfig.class.php:103
+#: Dahdiconfig.class.php:104
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 "Đang khởi động Wanrouter ( bộ định tuyến mạng WAN) cho các card Sangoma"
 
-#: Dahdiconfig.class.php:170
+#: Dahdiconfig.class.php:171
 msgid "Stopping DAHDi for Digium Cards"
 msgstr "Đang dừng DAHi cho các card Digium"
 
-#: Dahdiconfig.class.php:157
+#: Dahdiconfig.class.php:158
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 "Đang dừng Wanrouter (( bộ định tuyến mạng WAN) đối với các card Sangoma"
@@ -2273,7 +2273,7 @@ msgstr ""
 "đổi bởi answer->clear back->answer (sort of flash- một thuật toán sắp xếp "
 "tại chỗ) (xem 'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 
-#: Dahdiconfig.class.php:238
+#: Dahdiconfig.class.php:239
 msgid "This is not available on your system"
 msgstr "Điều này không khả dụng trong hệ thống"
 
@@ -2475,16 +2475,16 @@ msgstr ""
 "CẢNH BÁO: Khi mô đun này được \"kích hoạt\" cho việc ghi thì nó sẽ ghi đè "
 "lên các tệp sau:"
 
-#: Dahdiconfig.class.php:107 Dahdiconfig.class.php:161
+#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:162
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr "Wanrouter ( bộ định tuyến mạng WAN) bị lỗi: %s"
 
-#: Dahdiconfig.class.php:105
+#: Dahdiconfig.class.php:106
 msgid "Wanrouter Started"
 msgstr "Wanrouter (bộ định tuyến mạng WAN) đã khởi động"
 
-#: Dahdiconfig.class.php:159
+#: Dahdiconfig.class.php:160
 msgid "Wanrouter Stopped"
 msgstr "Wanrouter (bộ định tuyến mạng WAN) đã dừng"
 

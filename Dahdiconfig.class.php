@@ -100,6 +100,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 				$wanrouterLocation = trim($wanrouterLocation);
 				$process = new Process($wanrouterLocation.' start');
 				try {
+					$process->setTimeout(180); //Setting timeout to 180sec
 					$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
 					$process->mustRun();
 					$output->writeln(_("Wanrouter Started"));

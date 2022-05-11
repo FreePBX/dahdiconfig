@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-01 02:36+0000\n"
+"POT-Creation-Date: 2022-05-11 12:47+0000\n"
 "PO-Revision-Date: 2015-02-21 11:20+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Allow Collect Calls"
 msgstr ""
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:4
 msgid "Allow PRI Discrete Channels"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Busy Detect Count"
 msgstr ""
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:20
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -355,10 +355,6 @@ msgstr ""
 msgid "Columbia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:6
-msgid "Connectivity"
-msgstr "接続"
-
 #: views/dahdi_analog_settings.php:46 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "コンテキスト"
@@ -403,11 +399,7 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr ""
 
-#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:10
-msgid "DAHDi Config"
-msgstr "DAHDi設定"
-
-#: dahdiconfig.i18n.php:14
+#: dahdiconfig.i18n.php:6
 msgid "DAHDi Configuration Module"
 msgstr ""
 
@@ -417,7 +409,7 @@ msgid ""
 "button below"
 msgstr ""
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:10
 msgid "DAHDi Executable Location"
 msgstr ""
 
@@ -426,7 +418,7 @@ msgstr ""
 msgid "DAHDi Failed: %s"
 msgstr ""
 
-#: dahdiconfig.i18n.php:32
+#: dahdiconfig.i18n.php:24
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 
@@ -434,11 +426,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr ""
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:14
 msgid "DAHDi Modules Location"
 msgstr ""
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:16
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
@@ -450,7 +442,7 @@ msgstr ""
 msgid "DAHDi Stopped"
 msgstr ""
 
-#: dahdiconfig.i18n.php:40
+#: dahdiconfig.i18n.php:32
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
@@ -462,7 +454,7 @@ msgstr ""
 msgid "DAHDi is DISABLED for writing"
 msgstr ""
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:8
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -518,7 +510,7 @@ msgstr "デジタルハードウェア"
 msgid "Disable"
 msgstr ""
 
-#: dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:18
 msgid "Disable DAHDi Configuration Writes"
 msgstr ""
 
@@ -1046,7 +1038,7 @@ msgstr ""
 msgid "Lithuanian"
 msgstr ""
 
-#: dahdiconfig.i18n.php:20
+#: dahdiconfig.i18n.php:12
 msgid "Location of the DAHDi Executable"
 msgstr ""
 
@@ -1208,7 +1200,7 @@ msgstr ""
 msgid "Mexico"
 msgstr ""
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:22
 msgid "ModProbe.d Configuration File Location"
 msgstr ""
 
@@ -1630,11 +1622,11 @@ msgstr ""
 msgid "Slovenia"
 msgstr ""
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:26
 msgid "Software EC"
 msgstr ""
 
-#: dahdiconfig.i18n.php:44
+#: dahdiconfig.i18n.php:36
 msgid ""
 "Some development environments can not host DAHDI hardware so this mode uses "
 "mock files to acomplish the tasks."
@@ -1876,7 +1868,7 @@ msgstr ""
 msgid "Syria"
 msgstr ""
 
-#: dahdiconfig.i18n.php:38
+#: dahdiconfig.i18n.php:30
 msgid "System Configuration File Location"
 msgstr ""
 
@@ -1911,11 +1903,6 @@ msgstr ""
 msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
 "trunks/cards suddenly stop working because your configurations have changed."
-msgstr ""
-
-#: dahdiconfig.i18n.php:8
-msgid ""
-"The DAHDI module is designed to let you manage and configure your PSTN cards."
 msgstr ""
 
 #: views/dahdi_analog_settings.php:47
@@ -2117,7 +2104,7 @@ msgstr ""
 msgid "Use Caller ID Presentation"
 msgstr ""
 
-#: dahdiconfig.i18n.php:42
+#: dahdiconfig.i18n.php:34
 msgid "Use mock hardware instead of real hardware"
 msgstr ""
 
@@ -2270,13 +2257,19 @@ msgstr ""
 msgid "none - Performs no detection "
 msgstr ""
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:28
 msgid "software EC to use in system.conf"
 msgstr ""
 
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr ""
+
+#~ msgid "Connectivity"
+#~ msgstr "接続"
+
+#~ msgid "DAHDi Config"
+#~ msgstr "DAHDi設定"
 
 #~ msgid "Creating Dahdi Advanced Settings Table"
 #~ msgstr "DAHDi用の高度な設定のテーブルを作成中"

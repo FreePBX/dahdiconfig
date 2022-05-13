@@ -52,9 +52,9 @@ if ($dahdi_cards->hdwr_changes()) {
 			<div class="col-sm-9">
 				<div class="fpbx-container">
 					<div class="display no-border">
-            <ul class="nav nav-tabs" role="tablist">
-              <li data-name="digital_hardware" class="change-tab active"><a href="#digital_hardware" aria-controls="digital_hardware" role="tab" data-toggle="tab"><?php echo _("Digital Hardware")?></a></li>
-              <li data-name="analog_hardware" class="change-tab"><a href="#analog_hardware" aria-controls="analog_hardware" role="tab" data-toggle="tab"><?php echo _("Analog Hardware")?></a></li>
+            <ul class="nav nav-tabs pb-0" role="tablist">
+              <li data-name="digital_hardware" class="change-tab"><a class="active nav-link" href="#digital_hardware" aria-controls="digital_hardware" role="tab" data-toggle="tab"><?php echo _("Digital Hardware")?></a></li>
+              <li data-name="analog_hardware" class="change-tab"><a class='nav-link' href="#analog_hardware" aria-controls="analog_hardware" role="tab" data-toggle="tab"><?php echo _("Analog Hardware")?></a></li>
             </ul>
             <div class="tab-content display">
               <div id="digital_hardware" class="tab-pane active">

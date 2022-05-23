@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>16.0.7</version>
+	<version>17.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,16 +12,10 @@
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
   	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
 	<changelog>
-		*16.0.7* Packaging of ver 16.0.7
-		*16.0.6* FREEI-4793 
-		*16.0.5* Fixing FREEI-1521 Increasing timeout for wanrouter start process 
-		*16.0.4* Packaging of ver 16.0.4
-		*16.0.3* fixing FREEPBX-21885 Adding check to avoid whoops error 
-		*16.0.2* Packaging of ver 16.0.2
-		*16.0.1alpha* 16.0.1 alpha release
+		17.0.1alpha* 17.0.1 alpha release
 	</changelog>
 	<supported>
-		<version>16.0</version>
+		<version>17.0</version>
 	</supported>
 	<depends>
 		<version>14.0.1alpha30</version>

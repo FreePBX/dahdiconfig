@@ -10,15 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-17 02:49+0000\n"
-"PO-Revision-Date: 2018-07-18 19:19+0000\n"
-"Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
-"Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
+"PO-Revision-Date: 2023-02-10 19:06+0000\n"
+"Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"dahdiconfig/es/>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
@@ -363,7 +364,7 @@ msgstr "Cobrar Llamadas"
 
 #: install.php:374
 msgid "Checking dahdi_analog_custom table..."
-msgstr ""
+msgstr "Verificando la tabla dahdi_analog_custom..."
 
 #: install.php:73
 msgid "Checking tables..."
@@ -1624,7 +1625,7 @@ msgstr "Otras Configuraciones Modprobe"
 
 #: views/dahdi_analog_settings.php:73
 msgid "Other Port Settings"
-msgstr ""
+msgstr "Otros Ajustes de Puerto"
 
 #: views/dahdi_global_settings.php:202
 msgid "Outgoing"
@@ -2245,6 +2246,8 @@ msgstr ""
 msgid ""
 "The DAHDI module is designed to let you manage and configure your PSTN cards."
 msgstr ""
+"El módulo DAHDI está diseñado para permitirte administrar y configurar tus "
+"tarjetas PSTN."
 
 #: views/dahdi_analog_settings.php:47
 msgid "The context to use for inbound calls to this analog device"

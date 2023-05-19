@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>16.0.8</version>
+	<version>16.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
   	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
 	<changelog>
+		*16.0.9* FREEI-51 dahdi configs backup restore of tables 
 		*16.0.8* Reverting Bootstrap and dependent libs fixes 
 		*16.0.7* Packaging of ver 16.0.7
 		*16.0.6* FREEI-4793 

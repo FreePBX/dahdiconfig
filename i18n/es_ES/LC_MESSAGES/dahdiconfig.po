@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-11 12:47+0000\n"
+"POT-Creation-Date: 2023-05-19 07:22+0000\n"
 "PO-Revision-Date: 2018-07-18 19:19+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
@@ -19,6 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.19.1\n"
+
+#: Restore.php:29
+msgid " Restoring Data from SQL file"
+msgstr ""
 
 #: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
@@ -112,7 +116,7 @@ msgstr "Alarmas"
 msgid "Allow Collect Calls"
 msgstr "Permitir Llamadas con cobro"
 
-#: dahdiconfig.i18n.php:4
+#: dahdiconfig.i18n.php:12
 msgid "Allow PRI Discrete Channels"
 msgstr "Permitir canales PRI discretos"
 
@@ -294,7 +298,7 @@ msgstr "Bulgaria"
 msgid "Busy Detect Count"
 msgstr "Conteo de detección Ocupado"
 
-#: dahdiconfig.i18n.php:20
+#: dahdiconfig.i18n.php:28
 msgid ""
 "By default the DAHDi configuration module will NOT write out any data to "
 "protect any current configuration settings"
@@ -384,6 +388,10 @@ msgstr "Colombia"
 msgid "Columbia"
 msgstr "Colombia"
 
+#: dahdiconfig.i18n.php:6
+msgid "Connectivity"
+msgstr "Conexiones"
+
 #: views/dahdi_analog_settings.php:46 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr "Contexto"
@@ -430,7 +438,11 @@ msgstr ""
 msgid "DAHDI Trunks"
 msgstr "Líneas DAHDI"
 
-#: dahdiconfig.i18n.php:6
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:10
+msgid "DAHDi Config"
+msgstr "Config Hardware DAHDi"
+
+#: dahdiconfig.i18n.php:14
 msgid "DAHDi Configuration Module"
 msgstr "Módulo Configuración DAHDi"
 
@@ -442,7 +454,7 @@ msgstr ""
 "DAHDi Parece que no se está ejecutando. Haga clic en el botón \"Restart "
 "DAHDi & Asterisk/Reiniciar DAHDI & Asterisk\""
 
-#: dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:18
 msgid "DAHDi Executable Location"
 msgstr "Localidad Ejecutable DAHDI"
 
@@ -451,7 +463,7 @@ msgstr "Localidad Ejecutable DAHDI"
 msgid "DAHDi Failed: %s"
 msgstr "Dahdi Error: %s"
 
-#: dahdiconfig.i18n.php:24
+#: dahdiconfig.i18n.php:32
 msgid "DAHDi ModProbe.d Configuration File Location (modprobe.d/dahdi.conf)"
 msgstr ""
 "DAHDI ModProbe.d Localidad Archivo de Configuración (modprobe.d/dahdi.conf)"
@@ -460,11 +472,11 @@ msgstr ""
 msgid "DAHDi Module Load/Order"
 msgstr "Modulo DAHDI load/order"
 
-#: dahdiconfig.i18n.php:14
+#: dahdiconfig.i18n.php:22
 msgid "DAHDi Modules Location"
 msgstr "Localidad Módulos DAHDI"
 
-#: dahdiconfig.i18n.php:16
+#: dahdiconfig.i18n.php:24
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr "Localidad Modulos DAHDI (/etc/dahdi/modules)"
 
@@ -476,7 +488,7 @@ msgstr "DAHDI Iniciado"
 msgid "DAHDi Stopped"
 msgstr "DAHDI Se detuvo"
 
-#: dahdiconfig.i18n.php:32
+#: dahdiconfig.i18n.php:40
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
 
@@ -488,7 +500,7 @@ msgstr "DAHDi renuncia acerca de discapacitados de escritura"
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi está DESHABILITADA para la escritura"
 
-#: dahdiconfig.i18n.php:8
+#: dahdiconfig.i18n.php:16
 msgid ""
 "DAHDi trunk configuration is normally done using groups for PRI "
 "configuration. If there is a need to configure trunks to specific channels, "
@@ -554,7 +566,7 @@ msgstr "Hardware digital"
 msgid "Disable"
 msgstr "inhabilitar"
 
-#: dahdiconfig.i18n.php:18
+#: dahdiconfig.i18n.php:26
 msgid "Disable DAHDi Configuration Writes"
 msgstr "Deshabilitar Escrituras Configuración DAHDI"
 
@@ -1121,7 +1133,7 @@ msgstr "Lithuania"
 msgid "Lithuanian"
 msgstr "Lithuanian"
 
-#: dahdiconfig.i18n.php:12
+#: dahdiconfig.i18n.php:20
 msgid "Location of the DAHDi Executable"
 msgstr "Localidad del Ejecutable DAHDI"
 
@@ -1341,7 +1353,7 @@ msgstr ""
 msgid "Mexico"
 msgstr "México"
 
-#: dahdiconfig.i18n.php:22
+#: dahdiconfig.i18n.php:30
 msgid "ModProbe.d Configuration File Location"
 msgstr "Localidad del Archivo de Configuración ModProbe.d"
 
@@ -1800,11 +1812,11 @@ msgstr "Slovakia"
 msgid "Slovenia"
 msgstr "Slovenia"
 
-#: dahdiconfig.i18n.php:26
+#: dahdiconfig.i18n.php:34
 msgid "Software EC"
 msgstr "Software CE"
 
-#: dahdiconfig.i18n.php:36
+#: dahdiconfig.i18n.php:44
 msgid ""
 "Some development environments can not host DAHDI hardware so this mode uses "
 "mock files to acomplish the tasks."
@@ -2136,7 +2148,7 @@ msgstr "Switzerland"
 msgid "Syria"
 msgstr "Syria"
 
-#: dahdiconfig.i18n.php:30
+#: dahdiconfig.i18n.php:38
 msgid "System Configuration File Location"
 msgstr "Localización del Archivo de Configuración del Sistema"
 
@@ -2175,6 +2187,11 @@ msgstr ""
 "EL grupo %s NO se hace responsable si usted habilita este modulo y sus "
 "troncales/tarjetas sorpresivamente dejan de funcionar debido a que la "
 "configuración ha cambiado."
+
+#: dahdiconfig.i18n.php:8
+msgid ""
+"The DAHDI module is designed to let you manage and configure your PSTN cards."
+msgstr ""
 
 #: views/dahdi_analog_settings.php:47
 msgid "The context to use for inbound calls to this analog device"
@@ -2444,7 +2461,7 @@ msgstr "Use ID de llamada"
 msgid "Use Caller ID Presentation"
 msgstr "Use Presentación de ID de Llamada"
 
-#: dahdiconfig.i18n.php:34
+#: dahdiconfig.i18n.php:42
 msgid "Use mock hardware instead of real hardware"
 msgstr "Usar hardware simulado en lugar de hardware real"
 
@@ -2629,19 +2646,13 @@ msgstr "ninguno - no hace detección"
 msgid "none - Performs no detection "
 msgstr "ninguno - no hace detección "
 
-#: dahdiconfig.i18n.php:28
+#: dahdiconfig.i18n.php:36
 msgid "software EC to use in system.conf"
 msgstr "CE Por software a usar en system.conf"
 
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr "u-law"
-
-#~ msgid "Connectivity"
-#~ msgstr "Conexiones"
-
-#~ msgid "DAHDi Config"
-#~ msgstr "Config Hardware DAHDi"
 
 #~ msgid "Deleting old dahdi module data from database (its been migrated)"
 #~ msgstr "Eliminando viejo modulo dahdi de la base de datos (ha sido migrado)"

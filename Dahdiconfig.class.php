@@ -45,7 +45,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	 * @return boolean True if hardware exists, false if not
 	 */
 	public function sangomaHardwareExists() {
-		$process = new Process('lspci -n -d 1923:');
+		$process = new Process(['lspci', '-n', '-d', '1923:']);
 		try {
 			$process->mustRun();
 			$out = $process->getOutput();
@@ -98,7 +98,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 			if(!$this->wanrouterRunning()) {
 				$wanrouterLocation = fpbx_which("wanrouter");
 				$wanrouterLocation = trim($wanrouterLocation);
-				$process = new Process($wanrouterLocation.' start');
+				$process = new Process([$wanrouterLocation,'start']);
 				try {
 					$process->setTimeout(180); //Setting timeout to 180sec
 					$output->writeln(_("Starting Wanrouter for Sangoma Cards"));
@@ -114,10 +114,10 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 			$output->writeln("<comment>Wanrouter: No valid Sangoma Hardware found, if you have no Sangoma cards this is OK</comment>");
 		}
 
-		$process = new Process($dahdiexec.' status');
+		$process = new Process([$dahdiexec, 'status']);
 		$process->run();
 		if($process->getExitCode() == 3) {
-			$process = new Process($dahdiexec.' start');
+			$process = new Process([$dahdiexec, 'start']);
 			try {
 				$output->writeln(_("Starting DAHDi for Digium Cards"));
 				$process->mustRun();
@@ -153,7 +153,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		if($this->sangomaHardwareExists()) {
 			$wanrouterLocation = fpbx_which("wanrouter");
 			$wanrouterLocation = trim($wanrouterLocation);
-			$process = new Process($wanrouterLocation.' stop');
+			$process = new Process([$wanrouterLocation, 'stop']);
 			try {
 				$output->writeln(_("Stopping Wanrouter for Sangoma Cards"));
 				$process->mustRun();
@@ -166,7 +166,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		}
 
 
-		$process = new Process($dahdiexec.' stop');
+		$process = new Process([$dahdiexec, 'stop']);
 		try {
 			$output->writeln(_("Stopping DAHDi for Digium Cards"));
 			$process->mustRun();

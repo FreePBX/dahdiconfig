@@ -405,7 +405,7 @@ function dahdiconfig_configpageinit($dispnum) {
 				$extdisplay = $_REQUEST['extdisplay'];
 				$trunknum = ltrim($extdisplay,'OUT_');
 				$trunk_details = core_trunks_getDetails($trunknum);
-				$tech = $trunk_details['tech'];
+				$tech = (!empty($trunk_details)) ? $trunk_details['tech'] : '';
 				if ($tech != 'dahdi') {
 					return true;
 				}

@@ -374,7 +374,7 @@ function dahdiconfig_configpageinit($dispnum) {
 			// if tech_hardware set, this is an initial extension/device creation
 			// otherwise, determine if the target extension/device is DAHDI
 			//
-			if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic' && trim($_REQUEST['extdisplay']) === "") {
+			if (isset($_REQUEST['tech_hardware']) && $_REQUEST['tech_hardware'] == 'dahdi_generic' && _trim($_REQUEST['extdisplay']) === "") {
 				$extdisplay = '';
 			} else {
 				if (!isset($_REQUEST['extdisplay']) || $_REQUEST['extdisplay'] == '') {
@@ -395,7 +395,7 @@ function dahdiconfig_configpageinit($dispnum) {
 			$currentcomponent->setoptlistopts('dahdi_channel_select', 'sort', false);
 		break;
 		case 'trunks':
-			if (isset($_REQUEST['tech']) && strtolower($_REQUEST['tech']) == 'dahdi' && trim($_REQUEST['extdisplay']) === "") {
+			if (isset($_REQUEST['tech']) && strtolower($_REQUEST['tech']) == 'dahdi' && _trim($_REQUEST['extdisplay']) === "") {
 				$extdisplay = '';
 				$_REQUEST['dahdi_current_channel'] = '';
 			} else {
@@ -610,7 +610,7 @@ function dahdiconfig_getinfo($info=null) {
 		switch ($info) {
 			case "version":
 			if(preg_match('/DAHDI Version:(.*)Echo Canceller:/i',$o['data'],$matches)) {
-				$dahdi_version = trim($matches[1]);
+				$dahdi_version = _trim($matches[1]);
 			} else {
 				$dahdi_version = 9999;
 			}

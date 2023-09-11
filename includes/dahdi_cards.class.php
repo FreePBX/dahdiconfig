@@ -4,6 +4,7 @@
 *
 * This class contains all the functions necessary to manage DAHDi hardware.
 */
+#[\AllowDynamicProperties]
 class dahdi_cards {
 	private $analog_ports = array();	// stores all analog port info
 	private $systemsettings = array(

@@ -7,7 +7,7 @@ global $amp_conf;
 $brand = $amp_conf['DASHBOARD_FREEPBX_BRAND']?$amp_conf['DASHBOARD_FREEPBX_BRAND']:'FreePBX';
 
 //Check to make sure dahdi is running. Display an error if it's not
-if(!preg_match('/\d/i',$dahdi_info[1])) {
+if(!preg_match('/\d/i',($dahdi_info[1] ?? ''))) {
     $dahdi_message = _("DAHDi Doesn't appear to be running. Click the 'Restart DAHDi & Asterisk' button below");
     include('views/dahdi_message_box.php');
     $dahdi_info[1] = '';

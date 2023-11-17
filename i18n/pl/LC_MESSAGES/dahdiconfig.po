@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-17 02:49+0000\n"
-"PO-Revision-Date: 2023-11-11 13:01+0000\n"
+"PO-Revision-Date: 2023-11-18 13:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "dahdiconfig/pl/>\n"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: views/dahdi_advanced_settings.php:1
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Ustawienia zaawansowane"
 
 #: views/dahdi_digital_hardware.php:6
 #: views/dahdi_digital_settings.php:15

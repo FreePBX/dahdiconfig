@@ -1539,6 +1539,9 @@ class dahdi_cards {
 									$fxx[$fx] .= $chan;
 							}
 						} else {
+							if(!empty($fxx[$fx])){
+								$fxx[$fx] .= ',';
+							}
 							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
 						}
 					}

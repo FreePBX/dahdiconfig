@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 07:22+0000\n"
+"POT-Creation-Date: 2024-03-12 02:29-0400\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -730,12 +730,12 @@ msgstr "Быстрый сигнал вызова:"
 msgid "Fax Detection"
 msgstr "Детектировать факс"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "File %s does not exist."
 msgstr ""
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "%s не является владельцем файла %s"
@@ -1512,7 +1512,7 @@ msgstr "Филиппины"
 msgid "Please Delete the System Generated %s"
 msgstr "Пожалуйста удалите сгенерированные системой %s"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Пожалуйста измените права для %s"
@@ -1525,13 +1525,13 @@ msgstr ""
 "Пожалуйста выберите Вашу  или соседнюю страну для тона линии по умолчанию "
 "(Напр: тон при наборе, сигнал при занятости, тон вызова и т.д.)"
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 "Пожалуйста запустите %s, затем вернитесь в модуль конфигурирования DAHDi"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
@@ -2256,9 +2256,9 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+"This setting must be enabled on both ports involved, and the "
+"\"facilityenable\" setting must also be enabled to allow sending the "
+"transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 "Эта установка должна быть включена на обеих используемых портах, и установка "
 "\"facilityenable\" должна так же быть включена для того,чтобы позволить "
@@ -2301,7 +2301,7 @@ msgstr "ОАЭ"
 msgid "UK"
 msgstr "Великобритания"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Невозможно записать в %s"
@@ -2377,9 +2377,9 @@ msgid ""
 "hook-flash to switch between callers. The Dial() app will not return the "
 "\"BUSY\" result for extensions."
 msgstr ""
-"Включить ли  ожидание вызова на внутреннем номере . Если установить в \"да"
-"\", то занятые внутренние номера будут слышать тон \"ожидание вызова\", и "
-"возможно кратковременным нажатием рычага переключаться между вызывающими. "
+"Включить ли  ожидание вызова на внутреннем номере . Если установить в "
+"\"да\", то занятые внутренние номера будут слышать тон \"ожидание вызова\", "
+"и возможно кратковременным нажатием рычага переключаться между вызывающими. "
 "Приложение Dial() не будет возвращать значение \"Занято\"."
 
 #: views/dahdi_global_settings.php:138
@@ -2454,7 +2454,7 @@ msgstr "alaw-алгоритм"
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:954
+#: includes/dahdi_cards.class.php:955
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

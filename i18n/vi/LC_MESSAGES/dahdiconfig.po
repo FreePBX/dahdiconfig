@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 07:22+0000\n"
+"POT-Creation-Date: 2024-03-12 02:29-0400\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -776,12 +776,12 @@ msgstr "Tăng tốc độ chuông (Fastringer):"
 msgid "Fax Detection"
 msgstr "Phát hiện fax"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "File %s does not exist."
 msgstr "Tệp %s không tồn tại."
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Tệp %s không thuộc sở hữu của %s"
@@ -1608,7 +1608,7 @@ msgstr "Tiếng Philipin"
 msgid "Please Delete the System Generated %s"
 msgstr "Vui lòng xóa hệ thống đã tạo %s"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Vui lòng thay đổi quyền trên %s"
@@ -1621,12 +1621,12 @@ msgstr ""
 "Vui lòng chọn nước của bạn hoặc nước láng giềng gần nhất đối với mặc định "
 "chuông  ( vi dụ âm gọi, âm báo bận, âm chuông, vv)"
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr "Vui lòng chạy '%s', sau đó trở lại vào mô đun cấu hình DAHDi"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr "Vui lòng chạy 'touch %s'  và tiếp theo là '%s'  để tạo tệp này."
@@ -2373,9 +2373,9 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+"This setting must be enabled on both ports involved, and the "
+"\"facilityenable\" setting must also be enabled to allow sending the "
+"transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 "Cài đặt này sẽ kích hoạt cả hai cổng giao tiếp liên quan, và cài đặt "
 "\"facilityenable\"  phải được kích hoạt để cho phép việc gửi các truyền tải "
@@ -2417,7 +2417,7 @@ msgstr "Các tiểu vương quốc Ả Rập thống nhất"
 msgid "UK"
 msgstr "Vương quốc Anh (UK)"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Không thể ghi tới %s"
@@ -2578,7 +2578,7 @@ msgstr "alaw"
 msgid "collect_call"
 msgstr "Thu thập cuộc gọi"
 
-#: includes/dahdi_cards.class.php:954
+#: includes/dahdi_cards.class.php:955
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "dahdi_scan tồn tại nhưng không thể chạy được như người dùng này!"
 

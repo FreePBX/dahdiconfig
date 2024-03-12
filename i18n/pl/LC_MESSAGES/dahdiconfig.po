@@ -9,21 +9,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 02:49+0000\n"
+"POT-Creation-Date: 2024-03-12 02:29-0400\n"
 "PO-Revision-Date: 2023-11-18 13:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "dahdiconfig/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: views/dahdi_analog_hardware.php:16
-#: views/dahdi_analog_hardware.php:33
+#: Restore.php:29
+msgid " Restoring Data from SQL file"
+msgstr ""
+
+#: views/dahdi_analog_hardware.php:16 views/dahdi_analog_hardware.php:33
 #, php-format
 msgid "%s Ports"
 msgstr ""
@@ -40,7 +43,7 @@ msgstr ""
 msgid "-7.5db (CSU)"
 msgstr ""
 
-#: install.php:604
+#: install.php:209
 msgid "..Done"
 msgstr ""
 
@@ -77,8 +80,7 @@ msgid ""
 "elswhere using g<num>"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:136
-#: views/dahdi_modprobe_settings.php:121
+#: views/dahdi_advanced_settings.php:136 views/dahdi_modprobe_settings.php:121
 msgid "A-law Override"
 msgstr ""
 
@@ -90,17 +92,8 @@ msgstr ""
 msgid "Accept on Offer"
 msgstr ""
 
-#: views/dahdi_analog_hardware.php:7
-#: views/dahdi_digital_hardware.php:11
+#: views/dahdi_analog_hardware.php:7 views/dahdi_digital_hardware.php:11
 msgid "Action"
-msgstr ""
-
-#: install.php:640
-msgid "Add type column"
-msgstr ""
-
-#: install.php:656
-msgid "Adding txgain and rxgain column to analog table"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:299
@@ -111,8 +104,7 @@ msgstr ""
 msgid "Advanced Settings"
 msgstr "Ustawienia zaawansowane"
 
-#: views/dahdi_digital_hardware.php:6
-#: views/dahdi_digital_settings.php:15
+#: views/dahdi_digital_hardware.php:6 views/dahdi_digital_settings.php:15
 msgid "Alarms"
 msgstr ""
 
@@ -155,13 +147,11 @@ msgstr ""
 msgid "Any"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:147
-#: views/dahdi_modprobe_settings.php:138
+#: views/dahdi_advanced_settings.php:147 views/dahdi_modprobe_settings.php:138
 msgid "Apply Opermode to FXO Modules"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:148
-#: views/dahdi_modprobe_settings.php:139
+#: views/dahdi_advanced_settings.php:148 views/dahdi_modprobe_settings.php:139
 msgid "Apply Opermode to FXS and FXO Modules"
 msgstr ""
 
@@ -169,10 +159,8 @@ msgstr ""
 msgid "Are you sure you want to Restart without hitting 'Apply Config'?"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:47
-#: views/dahdi_advanced_settings.php:61
-#: views/dahdi_mfcr2_settings.php:16
-#: views/dahdi_modprobe_settings.php:44
+#: views/dahdi_advanced_settings.php:47 views/dahdi_advanced_settings.php:61
+#: views/dahdi_mfcr2_settings.php:16 views/dahdi_modprobe_settings.php:44
 msgid "Argentina"
 msgstr ""
 
@@ -180,8 +168,7 @@ msgstr ""
 msgid "Argentine Spanish"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:14
-#: views/dahdi_advanced_settings.php:62
+#: views/dahdi_advanced_settings.php:14 views/dahdi_advanced_settings.php:62
 #: views/dahdi_modprobe_settings.php:45
 msgid "Australia"
 msgstr ""
@@ -190,8 +177,7 @@ msgstr ""
 msgid "Australian"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:22
-#: views/dahdi_advanced_settings.php:63
+#: views/dahdi_advanced_settings.php:22 views/dahdi_advanced_settings.php:63
 #: views/dahdi_modprobe_settings.php:46
 msgid "Austria"
 msgstr ""
@@ -222,8 +208,7 @@ msgstr ""
 msgid "BRI PTP - Net"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:64
-#: views/dahdi_modprobe_settings.php:47
+#: views/dahdi_advanced_settings.php:64 views/dahdi_modprobe_settings.php:47
 msgid "Bahrain"
 msgstr ""
 
@@ -234,14 +219,12 @@ msgid ""
 "Advanced Settings"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:30
-#: views/dahdi_advanced_settings.php:65
+#: views/dahdi_advanced_settings.php:30 views/dahdi_advanced_settings.php:65
 #: views/dahdi_modprobe_settings.php:48
 msgid "Belgium"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:152
-#: views/dahdi_modprobe_settings.php:145
+#: views/dahdi_advanced_settings.php:152 views/dahdi_modprobe_settings.php:145
 msgid "Boostringer"
 msgstr ""
 
@@ -249,10 +232,8 @@ msgstr ""
 msgid "Both"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:33
-#: views/dahdi_advanced_settings.php:66
-#: views/dahdi_mfcr2_settings.php:17
-#: views/dahdi_modprobe_settings.php:49
+#: views/dahdi_advanced_settings.php:33 views/dahdi_advanced_settings.php:66
+#: views/dahdi_mfcr2_settings.php:17 views/dahdi_modprobe_settings.php:49
 msgid "Brazil"
 msgstr ""
 
@@ -282,8 +263,7 @@ msgstr ""
 msgid "Brazilian"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:50
-#: views/dahdi_advanced_settings.php:67
+#: views/dahdi_advanced_settings.php:50 views/dahdi_advanced_settings.php:67
 #: views/dahdi_modprobe_settings.php:50
 msgid "Bulgaria"
 msgstr ""
@@ -326,18 +306,12 @@ msgstr ""
 msgid "Caller Category to Send"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:68
-#: views/dahdi_modprobe_settings.php:51
+#: views/dahdi_advanced_settings.php:68 views/dahdi_modprobe_settings.php:51
 msgid "Canada"
 msgstr ""
 
-#: page.dahdi.php:287
-#: page.dahdi.php:306
-#: page.dahdi.php:356
-#: page.dahdi.php:413
-#: page.dahdi.php:436
-#: page.dahdi.php:455
-#: page.dahdi.php:500
+#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
+#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -355,24 +329,13 @@ msgstr ""
 msgid "Charge Calls"
 msgstr ""
 
-#: install.php:374
-msgid "Checking dahdi_analog_custom table..."
-msgstr ""
-
-#: install.php:73
-msgid "Checking tables..."
-msgstr ""
-
-#: views/dahdi_advanced_settings.php:28
-#: views/dahdi_advanced_settings.php:69
+#: views/dahdi_advanced_settings.php:28 views/dahdi_advanced_settings.php:69
 #: views/dahdi_modprobe_settings.php:52
 msgid "Chile"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:46
-#: views/dahdi_advanced_settings.php:70
-#: views/dahdi_mfcr2_settings.php:18
-#: views/dahdi_modprobe_settings.php:53
+#: views/dahdi_advanced_settings.php:46 views/dahdi_advanced_settings.php:70
+#: views/dahdi_mfcr2_settings.php:18 views/dahdi_modprobe_settings.php:53
 msgid "China"
 msgstr ""
 
@@ -393,8 +356,7 @@ msgstr ""
 msgid "Colombia"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:71
-#: views/dahdi_modprobe_settings.php:54
+#: views/dahdi_advanced_settings.php:71 views/dahdi_modprobe_settings.php:54
 msgid "Columbia"
 msgstr ""
 
@@ -402,8 +364,7 @@ msgstr ""
 msgid "Connectivity"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:46
-#: views/dahdi_analog_signalling_form.php:19
+#: views/dahdi_analog_settings.php:46 views/dahdi_analog_signalling_form.php:19
 msgid "Context"
 msgstr ""
 
@@ -411,39 +372,19 @@ msgstr ""
 msgid "Control hardware DTMF"
 msgstr ""
 
-#: install.php:410
-msgid "Create Configured Locations Table"
-msgstr ""
-
-#: install.php:21
-msgid "Creating Dahdi Advanced Settings Table"
-msgstr ""
-
-#: install.php:355
-msgid "Creating Dahdi Analog Table"
-msgstr ""
-
-#: install.php:631
-msgid "Creating dahdi modules Table"
-msgstr ""
-
-#: views/dahdi_advanced_settings.php:72
-#: views/dahdi_modprobe_settings.php:55
+#: views/dahdi_advanced_settings.php:72 views/dahdi_modprobe_settings.php:55
 msgid "Croatia"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:73
-#: views/dahdi_modprobe_settings.php:56
+#: views/dahdi_advanced_settings.php:73 views/dahdi_modprobe_settings.php:56
 msgid "Cyrpus"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:74
-#: views/dahdi_modprobe_settings.php:57
+#: views/dahdi_advanced_settings.php:74 views/dahdi_modprobe_settings.php:57
 msgid "Czech"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:45
-#: views/dahdi_mfcr2_settings.php:19
+#: views/dahdi_advanced_settings.php:45 views/dahdi_mfcr2_settings.php:19
 msgid "Czech Republic"
 msgstr ""
 
@@ -459,18 +400,15 @@ msgstr ""
 msgid "DAHDI Configuration"
 msgstr ""
 
-#: Dahdiconfig.class.php:92
-#: Dahdiconfig.class.php:148
+#: Dahdiconfig.class.php:87 Dahdiconfig.class.php:144
 msgid "DAHDI NOT FOUND [Suggest Uninstalling the Dahdi Configuration Module]!"
 msgstr ""
 
-#: functions.inc.php:469
-#: functions.inc.php:502
+#: functions.inc.php:469 functions.inc.php:502
 msgid "DAHDI Trunks"
 msgstr ""
 
-#: dahdiconfig.i18n.php:4
-#: dahdiconfig.i18n.php:10
+#: dahdiconfig.i18n.php:4 dahdiconfig.i18n.php:10
 msgid "DAHDi Config"
 msgstr ""
 
@@ -488,8 +426,7 @@ msgstr ""
 msgid "DAHDi Executable Location"
 msgstr ""
 
-#: Dahdiconfig.class.php:130
-#: Dahdiconfig.class.php:179
+#: Dahdiconfig.class.php:126 Dahdiconfig.class.php:175
 #, php-format
 msgid "DAHDi Failed: %s"
 msgstr ""
@@ -510,11 +447,11 @@ msgstr ""
 msgid "DAHDi Modules Location (/etc/dahdi/modules)"
 msgstr ""
 
-#: Dahdiconfig.class.php:128
+#: Dahdiconfig.class.php:124
 msgid "DAHDi Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:177
+#: Dahdiconfig.class.php:173
 msgid "DAHDi Stopped"
 msgstr ""
 
@@ -542,22 +479,17 @@ msgstr ""
 msgid "Default Line Mode"
 msgstr ""
 
-#: install.php:569
-msgid "Deleting old dahdi module data from database (its been migrated)"
-msgstr ""
-
-#: views/dahdi_advanced_settings.php:44
-#: views/dahdi_advanced_settings.php:75
+#: views/dahdi_advanced_settings.php:44 views/dahdi_advanced_settings.php:75
 #: views/dahdi_modprobe_settings.php:58
 msgid "Denmark"
 msgstr ""
 
-#: install.php:673
+#: install.php:222
 #, php-format
 msgid "Detected new Dahdi Module: wcaxx, Appending to %s"
 msgstr ""
 
-#: install.php:668
+#: install.php:217
 #, php-format
 msgid "Detected new Dahdi Module: wcte43x, Appending to %s"
 msgstr ""
@@ -599,11 +531,6 @@ msgstr ""
 msgid "Don't forget to Restart Dahdi & Asterisk after this completes"
 msgstr ""
 
-#: install.php:352
-#: install.php:407
-msgid "Done"
-msgstr "Zrobione"
-
 #: views/dahdi_mfcr2_settings.php:191
 msgid "Double Answer"
 msgstr ""
@@ -640,8 +567,7 @@ msgstr ""
 msgid "Echo Canc. NLP Threshold"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:206
-#: views/dahdi_modprobe_settings.php:224
+#: views/dahdi_advanced_settings.php:206 views/dahdi_modprobe_settings.php:224
 msgid "Echo Canc. NLP Type"
 msgstr ""
 
@@ -653,24 +579,20 @@ msgstr ""
 msgid "Echo Cancel NLP Threshold"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:76
-#: views/dahdi_mfcr2_settings.php:21
+#: views/dahdi_advanced_settings.php:76 views/dahdi_mfcr2_settings.php:21
 #: views/dahdi_modprobe_settings.php:59
 msgid "Ecuador"
 msgstr ""
 
-#: views/dahdi_analog_hardware.php:30
-#: views/dahdi_analog_hardware.php:35
+#: views/dahdi_analog_hardware.php:30 views/dahdi_analog_hardware.php:35
 msgid "Edit"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:77
-#: views/dahdi_modprobe_settings.php:60
+#: views/dahdi_advanced_settings.php:77 views/dahdi_modprobe_settings.php:60
 msgid "Egypt"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:78
-#: views/dahdi_modprobe_settings.php:61
+#: views/dahdi_advanced_settings.php:78 views/dahdi_modprobe_settings.php:61
 msgid "El Salvador"
 msgstr ""
 
@@ -750,8 +672,7 @@ msgstr ""
 msgid "FSK"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:187
-#: views/dahdi_modprobe_settings.php:196
+#: views/dahdi_advanced_settings.php:187 views/dahdi_modprobe_settings.php:196
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr ""
 
@@ -767,8 +688,7 @@ msgstr ""
 msgid "FXOLS"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:144
-#: views/dahdi_modprobe_settings.php:133
+#: views/dahdi_advanced_settings.php:144 views/dahdi_modprobe_settings.php:133
 msgid "FXS Honor Mode"
 msgstr ""
 
@@ -784,13 +704,11 @@ msgstr ""
 msgid "FXSLS"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:164
-#: views/dahdi_modprobe_settings.php:163
+#: views/dahdi_advanced_settings.php:164 views/dahdi_modprobe_settings.php:163
 msgid "Fast Ringer (25hz)"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:172
-#: views/dahdi_modprobe_settings.php:175
+#: views/dahdi_advanced_settings.php:172 views/dahdi_modprobe_settings.php:175
 msgid "Fast Ringer to 50v Peak"
 msgstr ""
 
@@ -806,18 +724,17 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "File %s does not exist."
 msgstr ""
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:18
-#: views/dahdi_advanced_settings.php:80
+#: views/dahdi_advanced_settings.php:18 views/dahdi_advanced_settings.php:80
 #: views/dahdi_modprobe_settings.php:63
 msgid "Finland"
 msgstr ""
@@ -859,13 +776,11 @@ msgstr ""
 msgid "Forced Release"
 msgstr ""
 
-#: views/dahdi_digital_hardware.php:7
-#: views/dahdi_digital_settings.php:24
+#: views/dahdi_digital_hardware.php:7 views/dahdi_digital_settings.php:24
 msgid "Framing/Coding"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:15
-#: views/dahdi_advanced_settings.php:81
+#: views/dahdi_advanced_settings.php:15 views/dahdi_advanced_settings.php:81
 #: views/dahdi_modprobe_settings.php:64
 msgid "France"
 msgstr ""
@@ -874,8 +789,7 @@ msgstr ""
 msgid "French"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:180
-#: views/dahdi_modprobe_settings.php:187
+#: views/dahdi_advanced_settings.php:180 views/dahdi_modprobe_settings.php:187
 msgid "Full Wave"
 msgstr ""
 
@@ -902,8 +816,7 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:42
-#: views/dahdi_advanced_settings.php:82
+#: views/dahdi_advanced_settings.php:42 views/dahdi_advanced_settings.php:82
 #: views/dahdi_modprobe_settings.php:65
 msgid "Germany"
 msgstr ""
@@ -912,14 +825,11 @@ msgstr ""
 msgid "Get ANI Before DNIS"
 msgstr ""
 
-#: page.dahdi.php:82
-#: page.dahdi.php:120
-#: views/dahdi_global_settings.php:3
+#: page.dahdi.php:82 page.dahdi.php:120 views/dahdi_global_settings.php:3
 msgid "Global Settings"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:26
-#: views/dahdi_advanced_settings.php:83
+#: views/dahdi_advanced_settings.php:26 views/dahdi_advanced_settings.php:83
 #: views/dahdi_modprobe_settings.php:66
 msgid "Greece"
 msgstr ""
@@ -928,37 +838,31 @@ msgstr ""
 msgid "Greek"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:34
-#: views/dahdi_analog_signalling_form.php:16
+#: views/dahdi_analog_settings.php:34 views/dahdi_analog_signalling_form.php:16
 msgid "Group"
 msgstr ""
 
-#: functions.inc.php:308
-#: functions.inc.php:327
+#: functions.inc.php:308 functions.inc.php:327
 #, php-format
 msgid "Group %s Ascending"
 msgstr ""
 
-#: functions.inc.php:309
-#: functions.inc.php:328
+#: functions.inc.php:309 functions.inc.php:328
 #, php-format
 msgid "Group %s Descending"
 msgstr ""
 
-#: functions.inc.php:310
-#: functions.inc.php:329
+#: functions.inc.php:310 functions.inc.php:329
 #, php-format
 msgid "Group %s Round Robin Ascending"
 msgstr ""
 
-#: functions.inc.php:311
-#: functions.inc.php:330
+#: functions.inc.php:311 functions.inc.php:330
 #, php-format
 msgid "Group %s Round Robin Descending"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:84
-#: views/dahdi_modprobe_settings.php:67
+#: views/dahdi_advanced_settings.php:84 views/dahdi_modprobe_settings.php:67
 msgid "Guam"
 msgstr ""
 
@@ -974,8 +878,7 @@ msgstr ""
 msgid "Hongkong"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:219
-#: views/dahdi_modprobe_settings.php:239
+#: views/dahdi_advanced_settings.php:219 views/dahdi_modprobe_settings.php:239
 msgid "Hoth Noise"
 msgstr ""
 
@@ -997,14 +900,12 @@ msgstr ""
 msgid "Hungarian"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:34
-#: views/dahdi_advanced_settings.php:86
+#: views/dahdi_advanced_settings.php:34 views/dahdi_advanced_settings.php:86
 #: views/dahdi_modprobe_settings.php:69
 msgid "Hungary"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:87
-#: views/dahdi_modprobe_settings.php:70
+#: views/dahdi_advanced_settings.php:87 views/dahdi_modprobe_settings.php:70
 msgid "Iceland"
 msgstr ""
 
@@ -1054,33 +955,25 @@ msgstr ""
 msgid "Incoming"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:41
-#: views/dahdi_advanced_settings.php:88
+#: views/dahdi_advanced_settings.php:41 views/dahdi_advanced_settings.php:88
 #: views/dahdi_modprobe_settings.php:71
 msgid "India"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:89
-#: views/dahdi_mfcr2_settings.php:22
+#: views/dahdi_advanced_settings.php:89 views/dahdi_mfcr2_settings.php:22
 #: views/dahdi_modprobe_settings.php:72
 msgid "Indonesia"
-msgstr ""
-
-#: install.php:565
-msgid "Inserting Old Data from Dahdi Advanced Table"
 msgstr ""
 
 #: views/dahdi_mfcr2_settings.php:23
 msgid "International Telecommunication Union"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:90
-#: views/dahdi_modprobe_settings.php:73
+#: views/dahdi_advanced_settings.php:90 views/dahdi_modprobe_settings.php:73
 msgid "Ireland"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:32
-#: views/dahdi_advanced_settings.php:91
+#: views/dahdi_advanced_settings.php:32 views/dahdi_advanced_settings.php:91
 #: views/dahdi_modprobe_settings.php:74
 msgid "Israel"
 msgstr ""
@@ -1097,14 +990,12 @@ msgstr ""
 msgid "Italian"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:24
-#: views/dahdi_advanced_settings.php:92
+#: views/dahdi_advanced_settings.php:24 views/dahdi_advanced_settings.php:92
 #: views/dahdi_modprobe_settings.php:75
 msgid "Italy"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:20
-#: views/dahdi_advanced_settings.php:93
+#: views/dahdi_advanced_settings.php:20 views/dahdi_advanced_settings.php:93
 #: views/dahdi_modprobe_settings.php:76
 msgid "Japan"
 msgstr ""
@@ -1113,18 +1004,15 @@ msgstr ""
 msgid "Japanese"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:94
-#: views/dahdi_modprobe_settings.php:77
+#: views/dahdi_advanced_settings.php:94 views/dahdi_modprobe_settings.php:77
 msgid "Jordan"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:95
-#: views/dahdi_modprobe_settings.php:78
+#: views/dahdi_advanced_settings.php:95 views/dahdi_modprobe_settings.php:78
 msgid "Kazakhstan"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:27
-#: views/dahdi_analog_signalling_form.php:13
+#: views/dahdi_analog_settings.php:27 views/dahdi_analog_signalling_form.php:13
 msgid "Kewl Start"
 msgstr ""
 
@@ -1139,18 +1027,15 @@ msgid ""
 "disconnects."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:96
-#: views/dahdi_modprobe_settings.php:79
+#: views/dahdi_advanced_settings.php:96 views/dahdi_modprobe_settings.php:79
 msgid "Kuwait"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:97
-#: views/dahdi_modprobe_settings.php:80
+#: views/dahdi_advanced_settings.php:97 views/dahdi_modprobe_settings.php:80
 msgid "Latvia"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:98
-#: views/dahdi_modprobe_settings.php:81
+#: views/dahdi_advanced_settings.php:98 views/dahdi_modprobe_settings.php:81
 msgid "Lebanon"
 msgstr ""
 
@@ -1183,8 +1068,7 @@ msgid ""
 "directory will be automatically created if not present already)"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:28
-#: views/dahdi_analog_signalling_form.php:14
+#: views/dahdi_analog_settings.php:28 views/dahdi_analog_signalling_form.php:14
 msgid "Loop Start"
 msgstr ""
 
@@ -1200,8 +1084,7 @@ msgid ""
 "telephone exchange resets the line to an idle state."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:168
-#: views/dahdi_modprobe_settings.php:169
+#: views/dahdi_advanced_settings.php:168 views/dahdi_modprobe_settings.php:169
 msgid "Lowpower"
 msgstr ""
 
@@ -1209,8 +1092,7 @@ msgstr ""
 msgid "Lucent 5ESS"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:99
-#: views/dahdi_modprobe_settings.php:82
+#: views/dahdi_advanced_settings.php:99 views/dahdi_modprobe_settings.php:82
 msgid "Luxembourg"
 msgstr ""
 
@@ -1222,8 +1104,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:328
-#: views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1264,13 +1145,11 @@ msgid ""
 "values can be found by executing the openr2 command `r2test -l`"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:184
-#: views/dahdi_modprobe_settings.php:193
+#: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
 msgid "MWI Mode"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:100
-#: views/dahdi_modprobe_settings.php:83
+#: views/dahdi_advanced_settings.php:100 views/dahdi_modprobe_settings.php:83
 msgid "Macao"
 msgstr ""
 
@@ -1280,14 +1159,12 @@ msgid ""
 "DAHDi & Asterisk"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:48
-#: views/dahdi_advanced_settings.php:101
+#: views/dahdi_advanced_settings.php:48 views/dahdi_advanced_settings.php:101
 #: views/dahdi_modprobe_settings.php:84
 msgid "Malaysia"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:102
-#: views/dahdi_modprobe_settings.php:85
+#: views/dahdi_advanced_settings.php:102 views/dahdi_modprobe_settings.php:85
 msgid "Malta"
 msgstr ""
 
@@ -1331,20 +1208,9 @@ msgid ""
 "'default'.<br /> <strong>Default:</strong>-1"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:40
-#: views/dahdi_advanced_settings.php:103
-#: views/dahdi_mfcr2_settings.php:24
-#: views/dahdi_modprobe_settings.php:86
+#: views/dahdi_advanced_settings.php:40 views/dahdi_advanced_settings.php:103
+#: views/dahdi_mfcr2_settings.php:24 views/dahdi_modprobe_settings.php:86
 msgid "Mexico"
-msgstr ""
-
-#: install.php:549
-msgid "Migrating Old Data from Dahdi Advanced Table"
-msgstr ""
-
-#: install.php:623
-#, php-format
-msgid "Migrating module %s from serialized data to json"
 msgstr ""
 
 #: dahdiconfig.i18n.php:30
@@ -1355,33 +1221,23 @@ msgstr ""
 msgid "Mode"
 msgstr ""
 
-#: page.dahdi.php:84
-#: page.dahdi.php:126
-#: views/dahdi_modprobe_settings.php:3
+#: page.dahdi.php:84 page.dahdi.php:126 views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:7
-#: views/dahdi_modprobe_settings.php:9
+#: views/dahdi_advanced_settings.php:7 views/dahdi_modprobe_settings.php:9
 msgid "Module Name"
 msgstr ""
 
-#: page.dahdi.php:85
-#: page.dahdi.php:129
+#: page.dahdi.php:85 page.dahdi.php:129
 msgid "Module Settings"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:104
-#: views/dahdi_modprobe_settings.php:87
+#: views/dahdi_advanced_settings.php:104 views/dahdi_modprobe_settings.php:87
 msgid "Morocco"
 msgstr ""
 
-#: install.php:610
-msgid "Moving/Adding dchannel column"
-msgstr ""
-
-#: views/dahdi_advanced_settings.php:217
-#: views/dahdi_modprobe_settings.php:237
+#: views/dahdi_advanced_settings.php:217 views/dahdi_modprobe_settings.php:237
 msgid "Mute"
 msgstr ""
 
@@ -1423,8 +1279,7 @@ msgstr ""
 msgid "Neon MWI Voltage Level"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:16
-#: views/dahdi_advanced_settings.php:105
+#: views/dahdi_advanced_settings.php:16 views/dahdi_advanced_settings.php:105
 #: views/dahdi_modprobe_settings.php:88
 msgid "Netherlands"
 msgstr ""
@@ -1433,39 +1288,25 @@ msgstr ""
 msgid "New Zealand"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:106
-#: views/dahdi_modprobe_settings.php:89
+#: views/dahdi_advanced_settings.php:106 views/dahdi_modprobe_settings.php:89
 msgid "Newzealand"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:107
-#: views/dahdi_modprobe_settings.php:90
+#: views/dahdi_advanced_settings.php:107 views/dahdi_modprobe_settings.php:90
 msgid "Nigeria"
 msgstr ""
 
-#: views/dahdi_global_settings.php:48
-#: views/dahdi_global_settings.php:71
-#: views/dahdi_global_settings.php:82
-#: views/dahdi_global_settings.php:93
-#: views/dahdi_global_settings.php:104
-#: views/dahdi_global_settings.php:121
-#: views/dahdi_global_settings.php:132
-#: views/dahdi_global_settings.php:143
-#: views/dahdi_global_settings.php:155
-#: views/dahdi_global_settings.php:166
-#: views/dahdi_global_settings.php:190
-#: views/dahdi_global_settings.php:200
-#: views/dahdi_mfcr2_settings.php:71
-#: views/dahdi_mfcr2_settings.php:123
-#: views/dahdi_mfcr2_settings.php:183
-#: views/dahdi_mfcr2_settings.php:201
-#: views/dahdi_mfcr2_settings.php:219
-#: views/dahdi_mfcr2_settings.php:237
-#: views/dahdi_mfcr2_settings.php:255
-#: views/dahdi_mfcr2_settings.php:273
-#: views/dahdi_mfcr2_settings.php:291
-#: views/sangoma.php:11
-#: views/sangoma.php:46
+#: views/dahdi_global_settings.php:48 views/dahdi_global_settings.php:71
+#: views/dahdi_global_settings.php:82 views/dahdi_global_settings.php:93
+#: views/dahdi_global_settings.php:104 views/dahdi_global_settings.php:121
+#: views/dahdi_global_settings.php:132 views/dahdi_global_settings.php:143
+#: views/dahdi_global_settings.php:155 views/dahdi_global_settings.php:166
+#: views/dahdi_global_settings.php:190 views/dahdi_global_settings.php:200
+#: views/dahdi_mfcr2_settings.php:71 views/dahdi_mfcr2_settings.php:123
+#: views/dahdi_mfcr2_settings.php:183 views/dahdi_mfcr2_settings.php:201
+#: views/dahdi_mfcr2_settings.php:219 views/dahdi_mfcr2_settings.php:237
+#: views/dahdi_mfcr2_settings.php:255 views/dahdi_mfcr2_settings.php:273
+#: views/dahdi_mfcr2_settings.php:291 views/sangoma.php:11 views/sangoma.php:46
 #: views/sangoma.php:56
 msgid "No"
 msgstr ""
@@ -1478,10 +1319,8 @@ msgstr ""
 msgid "No Unused DAHDi Channels Available"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:193
-#: views/dahdi_advanced_settings.php:216
-#: views/dahdi_modprobe_settings.php:204
-#: views/dahdi_modprobe_settings.php:236
+#: views/dahdi_advanced_settings.php:193 views/dahdi_advanced_settings.php:216
+#: views/dahdi_modprobe_settings.php:204 views/dahdi_modprobe_settings.php:236
 msgid "None"
 msgstr ""
 
@@ -1499,12 +1338,9 @@ msgid ""
 "echo."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:155
-#: views/dahdi_advanced_settings.php:163
-#: views/dahdi_advanced_settings.php:171
-#: views/dahdi_modprobe_settings.php:150
-#: views/dahdi_modprobe_settings.php:162
-#: views/dahdi_modprobe_settings.php:174
+#: views/dahdi_advanced_settings.php:155 views/dahdi_advanced_settings.php:163
+#: views/dahdi_advanced_settings.php:171 views/dahdi_modprobe_settings.php:150
+#: views/dahdi_modprobe_settings.php:162 views/dahdi_modprobe_settings.php:174
 #: views/sangoma.php:34
 msgid "Normal"
 msgstr ""
@@ -1513,8 +1349,7 @@ msgstr ""
 msgid "Nortel DMS100"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:21
-#: views/dahdi_advanced_settings.php:108
+#: views/dahdi_advanced_settings.php:21 views/dahdi_advanced_settings.php:108
 #: views/dahdi_modprobe_settings.php:91
 msgid "Norway"
 msgstr ""
@@ -1546,8 +1381,7 @@ msgstr ""
 msgid "Old National ISDN 1"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:109
-#: views/dahdi_modprobe_settings.php:92
+#: views/dahdi_advanced_settings.php:109 views/dahdi_modprobe_settings.php:92
 msgid "Oman"
 msgstr ""
 
@@ -1558,8 +1392,7 @@ msgid ""
 "detect hangup or for detecting busies"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:57
-#: views/dahdi_modprobe_settings.php:38
+#: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
 msgid "Opermode"
 msgstr ""
 
@@ -1587,25 +1420,20 @@ msgstr ""
 msgid "PRI - Net"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:110
-#: views/dahdi_modprobe_settings.php:93
+#: views/dahdi_advanced_settings.php:110 views/dahdi_modprobe_settings.php:93
 msgid "Pakistan"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:156
-#: views/dahdi_modprobe_settings.php:151
+#: views/dahdi_advanced_settings.php:156 views/dahdi_modprobe_settings.php:151
 msgid "Peak (89v)"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:111
-#: views/dahdi_modprobe_settings.php:94
+#: views/dahdi_advanced_settings.php:111 views/dahdi_modprobe_settings.php:94
 msgid "Peru"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:52
-#: views/dahdi_advanced_settings.php:112
-#: views/dahdi_mfcr2_settings.php:25
-#: views/dahdi_modprobe_settings.php:95
+#: views/dahdi_advanced_settings.php:52 views/dahdi_advanced_settings.php:112
+#: views/dahdi_mfcr2_settings.php:25 views/dahdi_modprobe_settings.php:95
 msgid "Philippines"
 msgstr ""
 
@@ -1614,8 +1442,7 @@ msgstr ""
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1492
-#: includes/dahdi_cards.class.php:1803
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1626,18 +1453,17 @@ msgid ""
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:131
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:139
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:36
-#: views/dahdi_advanced_settings.php:113
+#: views/dahdi_advanced_settings.php:36 views/dahdi_advanced_settings.php:113
 #: views/dahdi_modprobe_settings.php:96
 msgid "Poland"
 msgstr ""
@@ -1672,8 +1498,7 @@ msgstr ""
 msgid "Ports"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:38
-#: views/dahdi_advanced_settings.php:114
+#: views/dahdi_advanced_settings.php:38 views/dahdi_advanced_settings.php:114
 #: views/dahdi_modprobe_settings.php:97
 msgid "Portugal"
 msgstr ""
@@ -1686,8 +1511,7 @@ msgstr ""
 msgid "Q.SIG"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:218
-#: views/dahdi_modprobe_settings.php:238
+#: views/dahdi_advanced_settings.php:218 views/dahdi_modprobe_settings.php:238
 msgid "Random Noise"
 msgstr ""
 
@@ -1717,7 +1541,7 @@ msgstr ""
 msgid "Reloading..."
 msgstr ""
 
-#: install.php:598
+#: install.php:198
 msgid "Replacing.."
 msgstr ""
 
@@ -1737,18 +1561,15 @@ msgstr ""
 msgid "Restarting..."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:176
-#: views/dahdi_modprobe_settings.php:181
+#: views/dahdi_advanced_settings.php:176 views/dahdi_modprobe_settings.php:181
 msgid "Ring Detect"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:115
-#: views/dahdi_modprobe_settings.php:98
+#: views/dahdi_advanced_settings.php:115 views/dahdi_modprobe_settings.php:98
 msgid "Romania"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:116
-#: views/dahdi_modprobe_settings.php:99
+#: views/dahdi_advanced_settings.php:116 views/dahdi_modprobe_settings.php:99
 msgid "Russia"
 msgstr ""
 
@@ -1764,19 +1585,12 @@ msgstr ""
 msgid "Sangoma Settings"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:117
-#: views/dahdi_modprobe_settings.php:100
+#: views/dahdi_advanced_settings.php:117 views/dahdi_modprobe_settings.php:100
 msgid "Saudi Arabia"
 msgstr ""
 
-#: page.dahdi.php:281
-#: page.dahdi.php:300
-#: page.dahdi.php:344
-#: page.dahdi.php:406
-#: page.dahdi.php:430
-#: page.dahdi.php:449
-#: page.dahdi.php:468
-#: page.dahdi.php:513
+#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
+#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1794,13 +1608,11 @@ msgstr ""
 msgid "Set port clocking"
 msgstr ""
 
-#: views/dahdi_analog_settings.php:16
-#: views/dahdi_digital_hardware.php:10
+#: views/dahdi_analog_settings.php:16 views/dahdi_digital_hardware.php:10
 msgid "Signaling"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:31
-#: views/dahdi_advanced_settings.php:118
+#: views/dahdi_advanced_settings.php:31 views/dahdi_advanced_settings.php:118
 #: views/dahdi_modprobe_settings.php:101
 msgid "Singapore"
 msgstr ""
@@ -1815,13 +1627,11 @@ msgid ""
 "1.2.0 to use this feature<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:119
-#: views/dahdi_modprobe_settings.php:102
+#: views/dahdi_advanced_settings.php:119 views/dahdi_modprobe_settings.php:102
 msgid "Slovakia"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:120
-#: views/dahdi_modprobe_settings.php:103
+#: views/dahdi_advanced_settings.php:120 views/dahdi_modprobe_settings.php:103
 msgid "Slovenia"
 msgstr ""
 
@@ -1835,8 +1645,7 @@ msgid ""
 "mock files to acomplish the tasks."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:37
-#: views/dahdi_advanced_settings.php:121
+#: views/dahdi_advanced_settings.php:37 views/dahdi_advanced_settings.php:121
 #: views/dahdi_modprobe_settings.php:104
 msgid "South Africa"
 msgstr ""
@@ -1845,13 +1654,11 @@ msgstr ""
 msgid "South African"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:122
-#: views/dahdi_modprobe_settings.php:105
+#: views/dahdi_advanced_settings.php:122 views/dahdi_modprobe_settings.php:105
 msgid "South Korea"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:19
-#: views/dahdi_advanced_settings.php:123
+#: views/dahdi_advanced_settings.php:19 views/dahdi_advanced_settings.php:123
 #: views/dahdi_modprobe_settings.php:106
 msgid "Spain"
 msgstr ""
@@ -1864,8 +1671,7 @@ msgstr ""
 msgid "Spanish"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:57
-#: views/dahdi_modprobe_settings.php:38
+#: views/dahdi_advanced_settings.php:57 views/dahdi_modprobe_settings.php:38
 msgid ""
 "Specify the On Hook Speed, Ringer Impedance, Ringer Threshold, Current "
 "limiting, Tip/Ring voltage adjustment, Minimum Operational Loop current, and "
@@ -1906,8 +1712,7 @@ msgstr ""
 msgid "Specify the language"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:184
-#: views/dahdi_modprobe_settings.php:193
+#: views/dahdi_advanced_settings.php:184 views/dahdi_modprobe_settings.php:193
 msgid ""
 "Specify the type of Message Waiting Indicator detection to be done on FXO "
 "ports. If no choice is specified, the default is none. The following options "
@@ -2000,24 +1805,23 @@ msgid ""
 "opermode to fxo modules only."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:179
-#: views/dahdi_modprobe_settings.php:186
+#: views/dahdi_advanced_settings.php:179 views/dahdi_modprobe_settings.php:186
 msgid "Standard"
 msgstr ""
 
-#: Dahdiconfig.class.php:126
+#: Dahdiconfig.class.php:122
 msgid "Starting DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:108
+#: Dahdiconfig.class.php:104
 msgid "Starting Wanrouter for Sangoma Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:175
+#: Dahdiconfig.class.php:171
 msgid "Stopping DAHDi for Digium Cards"
 msgstr ""
 
-#: Dahdiconfig.class.php:162
+#: Dahdiconfig.class.php:158
 msgid "Stopping Wanrouter for Sangoma Cards"
 msgstr ""
 
@@ -2037,8 +1841,7 @@ msgstr ""
 msgid "Support three-way calling"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:220
-#: views/dahdi_modprobe_settings.php:240
+#: views/dahdi_advanced_settings.php:220 views/dahdi_modprobe_settings.php:240
 msgid "Suppression NLP (default)"
 msgstr ""
 
@@ -2060,8 +1863,7 @@ msgid ""
 "default setting for the Echo Cancellation NLP Type option."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:29
-#: views/dahdi_advanced_settings.php:124
+#: views/dahdi_advanced_settings.php:29 views/dahdi_advanced_settings.php:124
 #: views/dahdi_modprobe_settings.php:107
 msgid "Sweden"
 msgstr ""
@@ -2070,14 +1872,12 @@ msgstr ""
 msgid "Swedish"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:43
-#: views/dahdi_advanced_settings.php:125
+#: views/dahdi_advanced_settings.php:43 views/dahdi_advanced_settings.php:125
 #: views/dahdi_modprobe_settings.php:108
 msgid "Switzerland"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:126
-#: views/dahdi_modprobe_settings.php:109
+#: views/dahdi_advanced_settings.php:126 views/dahdi_modprobe_settings.php:109
 msgid "Syria"
 msgstr ""
 
@@ -2085,8 +1885,7 @@ msgstr ""
 msgid "System Configuration File Location"
 msgstr ""
 
-#: page.dahdi.php:83
-#: page.dahdi.php:123
+#: page.dahdi.php:83 page.dahdi.php:123
 msgid "System Settings"
 msgstr ""
 
@@ -2094,13 +1893,11 @@ msgstr ""
 msgid "T1"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:128
-#: views/dahdi_modprobe_settings.php:111
+#: views/dahdi_advanced_settings.php:128 views/dahdi_modprobe_settings.php:111
 msgid "TBR21"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:27
-#: views/dahdi_advanced_settings.php:127
+#: views/dahdi_advanced_settings.php:27 views/dahdi_advanced_settings.php:127
 #: views/dahdi_modprobe_settings.php:110
 msgid "Taiwan"
 msgstr ""
@@ -2109,8 +1906,7 @@ msgstr ""
 msgid "Taiwanese"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:49
-#: views/dahdi_advanced_settings.php:129
+#: views/dahdi_advanced_settings.php:49 views/dahdi_advanced_settings.php:129
 #: views/dahdi_modprobe_settings.php:112
 msgid "Thailand"
 msgstr ""
@@ -2145,8 +1941,7 @@ msgid ""
 "passed when the card's device driver is loaded"
 msgstr ""
 
-#: views/dahdi_global_settings.php:209
-#: views/dahdi_global_settings.php:217
+#: views/dahdi_global_settings.php:209 views/dahdi_global_settings.php:217
 msgid ""
 "The values are in db (decibels). A positive number increases the volume "
 "level on a channel, and a negative value decreases volume level"
@@ -2158,8 +1953,7 @@ msgid ""
 "DAHDI module to configure any un-used cards"
 msgstr ""
 
-#: views/dahdi_modprobe_settings.php:4
-#: views/sangoma.php:2
+#: views/dahdi_modprobe_settings.php:4 views/sangoma.php:2
 #, php-format
 msgid "This edits all settings in %s"
 msgstr ""
@@ -2194,7 +1988,7 @@ msgid ""
 "'mfcr2_allow_collect_calls')<br /> <strong>Default:</strong>no"
 msgstr ""
 
-#: Dahdiconfig.class.php:243
+#: Dahdiconfig.class.php:239
 msgid "This is not available on your system"
 msgstr ""
 
@@ -2225,8 +2019,7 @@ msgid ""
 "when the NLP will engage (VPMADT032 only). The default setting is 24 dB."
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:206
-#: views/dahdi_modprobe_settings.php:224
+#: views/dahdi_advanced_settings.php:206 views/dahdi_modprobe_settings.php:224
 msgid ""
 "This option allows you to specify the type of Non Linear Processor you want "
 "applied to the post echo-cancelled audio reflections received from analog "
@@ -2262,9 +2055,9 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+"This setting must be enabled on both ports involved, and the "
+"\"facilityenable\" setting must also be enabled to allow sending the "
+"transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 
 #: page.dahdi.php:491
@@ -2295,18 +2088,15 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:130
-#: views/dahdi_modprobe_settings.php:113
+#: views/dahdi_advanced_settings.php:130 views/dahdi_modprobe_settings.php:113
 msgid "UAE"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:131
-#: views/dahdi_modprobe_settings.php:114
+#: views/dahdi_advanced_settings.php:131 views/dahdi_modprobe_settings.php:114
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1492
-#: includes/dahdi_cards.class.php:1803
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2319,8 +2109,7 @@ msgstr ""
 msgid "United States Circa 1950 / North America"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:13
-#: views/dahdi_advanced_settings.php:60
+#: views/dahdi_advanced_settings.php:13 views/dahdi_advanced_settings.php:60
 #: views/dahdi_modprobe_settings.php:43
 msgid "United States/North America"
 msgstr ""
@@ -2347,8 +2136,7 @@ msgid ""
 "strong>national_subscriber"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:51
-#: views/dahdi_mfcr2_settings.php:26
+#: views/dahdi_advanced_settings.php:51 views/dahdi_mfcr2_settings.php:26
 msgid "Venezuela"
 msgstr ""
 
@@ -2362,17 +2150,16 @@ msgid ""
 "following files:"
 msgstr ""
 
-#: Dahdiconfig.class.php:112
-#: Dahdiconfig.class.php:166
+#: Dahdiconfig.class.php:108 Dahdiconfig.class.php:162
 #, php-format
 msgid "Wanrouter Failed: %s"
 msgstr ""
 
-#: Dahdiconfig.class.php:110
+#: Dahdiconfig.class.php:106
 msgid "Wanrouter Started"
 msgstr ""
 
-#: Dahdiconfig.class.php:164
+#: Dahdiconfig.class.php:160
 msgid "Wanrouter Stopped"
 msgstr ""
 
@@ -2400,38 +2187,25 @@ msgid ""
 "the calling switch is sending"
 msgstr ""
 
-#: Dahdiconfig.class.php:75
+#: Dahdiconfig.class.php:70
 msgid "Writing out default Sangoma conf"
 msgstr ""
 
-#: views/dahdi_advanced_settings.php:132
-#: views/dahdi_modprobe_settings.php:115
+#: views/dahdi_advanced_settings.php:132 views/dahdi_modprobe_settings.php:115
 msgid "Yemen"
 msgstr ""
 
-#: views/dahdi_global_settings.php:47
-#: views/dahdi_global_settings.php:70
-#: views/dahdi_global_settings.php:81
-#: views/dahdi_global_settings.php:92
-#: views/dahdi_global_settings.php:103
-#: views/dahdi_global_settings.php:120
-#: views/dahdi_global_settings.php:131
-#: views/dahdi_global_settings.php:142
-#: views/dahdi_global_settings.php:154
-#: views/dahdi_global_settings.php:165
-#: views/dahdi_global_settings.php:189
-#: views/dahdi_mfcr2_settings.php:72
-#: views/dahdi_mfcr2_settings.php:124
-#: views/dahdi_mfcr2_settings.php:184
-#: views/dahdi_mfcr2_settings.php:202
-#: views/dahdi_mfcr2_settings.php:220
-#: views/dahdi_mfcr2_settings.php:238
-#: views/dahdi_mfcr2_settings.php:256
-#: views/dahdi_mfcr2_settings.php:274
-#: views/dahdi_mfcr2_settings.php:292
-#: views/sangoma.php:12
-#: views/sangoma.php:45
-#: views/sangoma.php:57
+#: views/dahdi_global_settings.php:47 views/dahdi_global_settings.php:70
+#: views/dahdi_global_settings.php:81 views/dahdi_global_settings.php:92
+#: views/dahdi_global_settings.php:103 views/dahdi_global_settings.php:120
+#: views/dahdi_global_settings.php:131 views/dahdi_global_settings.php:142
+#: views/dahdi_global_settings.php:154 views/dahdi_global_settings.php:165
+#: views/dahdi_global_settings.php:189 views/dahdi_mfcr2_settings.php:72
+#: views/dahdi_mfcr2_settings.php:124 views/dahdi_mfcr2_settings.php:184
+#: views/dahdi_mfcr2_settings.php:202 views/dahdi_mfcr2_settings.php:220
+#: views/dahdi_mfcr2_settings.php:238 views/dahdi_mfcr2_settings.php:256
+#: views/dahdi_mfcr2_settings.php:274 views/dahdi_mfcr2_settings.php:292
+#: views/sangoma.php:12 views/sangoma.php:45 views/sangoma.php:57
 msgid "Yes"
 msgstr ""
 
@@ -2457,10 +2231,6 @@ msgid ""
 "application.<br /> <strong>Default:</strong>yes"
 msgstr ""
 
-#: install.php:647
-msgid "add additional column"
-msgstr ""
-
 #: views/dahdi_modprobe_settings.php:127
 msgid "alaw"
 msgstr ""
@@ -2469,7 +2239,7 @@ msgstr ""
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:953
+#: includes/dahdi_cards.class.php:955
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 
@@ -2512,3 +2282,6 @@ msgstr ""
 #: views/dahdi_modprobe_settings.php:126
 msgid "ulaw"
 msgstr ""
+
+#~ msgid "Done"
+#~ msgstr "Zrobione"

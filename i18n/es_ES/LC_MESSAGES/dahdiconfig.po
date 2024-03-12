@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 07:22+0000\n"
+"POT-Creation-Date: 2024-03-12 02:29-0400\n"
 "PO-Revision-Date: 2018-07-18 19:19+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
@@ -767,12 +767,12 @@ msgstr "Fastringer:"
 msgid "Fax Detection"
 msgstr "Detección Fax"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "File %s does not exist."
 msgstr "Archivo %s no existe."
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr "Archivo %s no es propiedad de %s"
@@ -1607,7 +1607,7 @@ msgstr "Philippines"
 msgid "Please Delete the System Generated %s"
 msgstr "Por Favor Elimine el %s Generado por el Sistema"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Por favor cambie permisos en %s"
@@ -1620,13 +1620,13 @@ msgstr ""
 "Por favor, elija su país o su país más cercano para los tonos por defecto "
 "(Ej: tono de llamada, tono de ocupado, tono de timbre, etc.)"
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 "Por favor corra \"%s\", entonces retroceda el modulo de configuración DAHDI"
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr "Ejecute 'touch %s' y luego '%s' para crear este archivo."
@@ -2382,9 +2382,9 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+"This setting must be enabled on both ports involved, and the "
+"\"facilityenable\" setting must also be enabled to allow sending the "
+"transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 "Este ajuste debe estar habilitado en ambos puertos implicados, y el ajuste "
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
@@ -2435,7 +2435,7 @@ msgstr "UAE"
 msgid "UK"
 msgstr "UK"
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Unable to write to %s"
 msgstr "No se pudo escribir a %s"
@@ -2610,7 +2610,7 @@ msgstr "a-law"
 msgid "collect_call"
 msgstr "collect_call"
 
-#: includes/dahdi_cards.class.php:954
+#: includes/dahdi_cards.class.php:955
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "¡Dahdi_scan existe pero no puede ser ejecutado como este usuario!"
 

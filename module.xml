@@ -10,15 +10,15 @@
 	<candisable>yes</candisable>
 	<canuninstall>yes</canuninstall>
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
-  	<more-info>https://wiki.freepbx.org/display/F2/DAHDI+Configs</more-info>
+  	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/25952375/DAHDI+Configs</more-info>
 	<changelog>
-		17.0.1alpha* 17.0.1 alpha release
+		17.0.1* 17.0.1  release
 	</changelog>
 	<supported>
 		<version>17.0</version>
 	</supported>
 	<depends>
-		<version>14.0.1alpha30</version>
+		<version>17.0.1</version>
 	</depends>
 	<menuitems>
 		<dahdi needsenginedb="yes">DAHDi Config</dahdi>

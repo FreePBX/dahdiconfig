@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 07:22+0000\n"
+"POT-Creation-Date: 2024-03-12 02:29-0400\n"
 "PO-Revision-Date: 2018-07-31 16:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dahdiconfig/de/>\n"
@@ -722,12 +722,12 @@ msgstr ""
 msgid "Fax Detection"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "File %s does not exist."
 msgstr ""
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "File %s is not owned by %s"
 msgstr ""
@@ -1440,7 +1440,7 @@ msgstr "Philippinen"
 msgid "Please Delete the System Generated %s"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Please change permissions on %s"
 msgstr ""
@@ -1451,12 +1451,12 @@ msgid ""
 "Tones (Ex: dialtone, busy tone, ring tone etc.)"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:132
+#: includes/dahdi_cards.class.php:133
 #, php-format
 msgid "Please run '%s', then go back into the DAHDi Config Module"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:140
+#: includes/dahdi_cards.class.php:141
 #, php-format
 msgid "Please run 'touch %s' and then '%s' to create this file."
 msgstr ""
@@ -2053,9 +2053,9 @@ msgstr ""
 
 #: views/dahdi_global_settings.php:116
 msgid ""
-"This setting must be enabled on both ports involved, and the \"facilityenable"
-"\" setting must also be enabled to allow sending the transfer to the ISDN "
-"switch, since it sent in a FACILITY message"
+"This setting must be enabled on both ports involved, and the "
+"\"facilityenable\" setting must also be enabled to allow sending the "
+"transfer to the ISDN switch, since it sent in a FACILITY message"
 msgstr ""
 
 #: page.dahdi.php:491
@@ -2094,7 +2094,7 @@ msgstr ""
 msgid "UK"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:1493 includes/dahdi_cards.class.php:1804
+#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
 #, php-format
 msgid "Unable to write to %s"
 msgstr ""
@@ -2237,7 +2237,7 @@ msgstr ""
 msgid "collect_call"
 msgstr ""
 
-#: includes/dahdi_cards.class.php:954
+#: includes/dahdi_cards.class.php:955
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr ""
 

@@ -33,7 +33,7 @@ class Restore Extends Base\RestoreBase{
 		$dbname = $amp_conf['AMPDBNAME'];
 		$mysql = fpbx_which('mysql');
 		$restore = "{$mysql} -u{$dbuser} -p{$dbpass} {$dbname} < {$dumpfile}";
-		$sql = new Process($restore);
-		$sql->mustRun();
+		$process = \freepbx_get_process_obj($restore);
+		$process->mustRun();
 	}
 }

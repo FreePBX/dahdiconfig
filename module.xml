@@ -100,9 +100,9 @@
             <field name="mfcr2_skip_category" type="string" length="3" default="no"/>
             <field name="mfcr2_logdir" type="string" length="10" notnull="false"/>
             <field name="mfcr2_logging" type="string" length="10" notnull="false"/>
-            <field name="mfcr2_mfback_timeout" type="decimal"/>
-            <field name="mfcr2_mfback_pulse_timeout" type="decimal"/>
-            <field name="mfcr2_metering_pulse_timeout" type="decimal"/>
+            <field name="mfcr2_mfback_timeout" type="decimal" default="0" />
+            <field name="mfcr2_mfback_pulse_timeout" type="decimal" default="0" />
+            <field name="mfcr2_metering_pulse_timeout" type="decimal" default="0" />
             <field name="mfcr2_allow_collect_calls" type="string" length="3" default="no"/>
             <field name="mfcr2_double_answer" type="string" length="3" default="no"/>
             <field name="mfcr2_immediate_accept" type="string" length="3" default="no"/>

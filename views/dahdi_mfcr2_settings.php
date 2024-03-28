@@ -13,17 +13,17 @@
         </td>
         <td>
            	<select id="editspan_<?php echo $key?>_mfcr2_variant" name="editspan_<?php echo $key?>_mfcr2_variant">
-	    		<option value="AR"	<?php echo set_default($span['mfcr2_variant'], 'AR') ?>><?php echo _('Argentina')?></option>
-	    		<option value="BR"  <?php echo set_default($span['mfcr2_variant'], 'BR') ?>><?php echo _('Brazil')?></option>
-	    		<option value="CN"	<?php echo set_default($span['mfcr2_variant'], 'CN') ?>><?php echo _('China')?></option>
-	    		<option value="CZ"	<?php echo set_default($span['mfcr2_variant'], 'CZ') ?>><?php echo _('Czech Republic')?></option>
-	    		<option value="CO"	<?php echo set_default($span['mfcr2_variant'], 'CO') ?>><?php echo _('Colombia')?></option>
-	    		<option value="EC"	<?php echo set_default($span['mfcr2_variant'], 'EC') ?>><?php echo _('Ecuador')?></option>
-	    		<option value="ID"	<?php echo set_default($span['mfcr2_variant'], 'ID') ?>><?php echo _('Indonesia')?></option>
-	    		<option value="ITU"	<?php echo set_default($span['mfcr2_variant'], 'ITU')?>><?php echo _('International Telecommunication Union')?></option>
-	    		<option value="MX"	<?php echo set_default($span['mfcr2_variant'], 'MX') ?>><?php echo _('Mexico')?></option>
-	    		<option value="PH"	<?php echo set_default($span['mfcr2_variant'], 'PH') ?>><?php echo _('Philippines')?></option>
-	    		<option value="VE"	<?php echo set_default($span['mfcr2_variant'], 'VE') ?>><?php echo _('Venezuela')?></option>
+	    		<option value="AR"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'AR') ?>><?php echo _('Argentina')?></option>
+	    		<option value="BR"  <?php echo set_default($span['mfcr2_variant'] ?? '', 'BR') ?>><?php echo _('Brazil')?></option>
+	    		<option value="CN"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'CN') ?>><?php echo _('China')?></option>
+	    		<option value="CZ"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'CZ') ?>><?php echo _('Czech Republic')?></option>
+	    		<option value="CO"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'CO') ?>><?php echo _('Colombia')?></option>
+	    		<option value="EC"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'EC') ?>><?php echo _('Ecuador')?></option>
+	    		<option value="ID"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'ID') ?>><?php echo _('Indonesia')?></option>
+	    		<option value="ITU"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'ITU')?>><?php echo _('International Telecommunication Union')?></option>
+	    		<option value="MX"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'MX') ?>><?php echo _('Mexico')?></option>
+	    		<option value="PH"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'PH') ?>><?php echo _('Philippines')?></option>
+	    		<option value="VE"	<?php echo set_default($span['mfcr2_variant'] ?? '', 'VE') ?>><?php echo _('Venezuela')?></option>
         	</select>
         </td>
     </tr>
@@ -38,7 +38,7 @@
     		</label>
     	</td>
     	<td>
-    	    <input type="text" id="editspan_<?php echo $key?>_mfcr2_max_ani" name="editspan_<?php echo $key?>_mfcr2_max_ani" size="3" value="<?php echo $span['mfcr2_max_ani'] ?>" />
+    	    <input type="text" id="editspan_<?php echo $key?>_mfcr2_max_ani" name="editspan_<?php echo $key?>_mfcr2_max_ani" size="3" value="<?php echo $span['mfcr2_max_ani'] ?? ''; ?>" />
         </td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@
     		</label>
     	</td>
     	<td>
-    	    <input type="text" id="editspan_<?php echo $key?>_mfcr2_max_dnis" name="editspan_<?php echo $key?>_mfcr2_max_dnis" size="3" value="<?php echo $span['mfcr2_max_dnis'] ?>" />
+    	    <input type="text" id="editspan_<?php echo $key?>_mfcr2_max_dnis" name="editspan_<?php echo $key?>_mfcr2_max_dnis" size="3" value="<?php echo $span['mfcr2_max_dnis'] ?? ''; ?>" />
         </td>
     </tr>
     <tr>
@@ -67,9 +67,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_get_ani_first" name="editspan_<?php echo $key?>_mfcr2_get_ani_first">
-                <option value="" <?php echo set_default($span['mfcr2_get_ani_first'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_get_ani_first'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_get_ani_first'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_get_ani_first'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_get_ani_first'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_get_ani_first'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -85,11 +85,11 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_category" name="editspan_<?php echo $key?>_mfcr2_category">
-                <option value="national_subscriber" <?php echo set_default($span['mfcr2_category'],'national_subscriber'); ?>><?php echo _('national_subscriber') ?></option>
-                <option value="national_priority_subscriber" <?php echo set_default($span['mfcr2_category'],'national_priority_subscriber'); ?>><?php echo _('national_priority_subscriber')?></option>
-                <option value="international_subscriber" <?php echo set_default($span['mfcr2_category'],'international_subscriber'); ?>><?php echo _('international_subscriber')?></option>
-                <option value="international_priority_subscriber" <?php echo set_default($span['mfcr2_category'],'international_priority_subscriber'); ?>><?php echo _('international_priority_subscriber')?></option>
-                <option value="collect_call" <?php echo set_default($span['mfcr2_category'],'collect_call'); ?>><?php echo _('collect_call')?></option>
+                <option value="national_subscriber" <?php echo set_default($span['mfcr2_category'] ?? '','national_subscriber'); ?>><?php echo _('national_subscriber') ?></option>
+                <option value="national_priority_subscriber" <?php echo set_default($span['mfcr2_category'] ?? '','national_priority_subscriber'); ?>><?php echo _('national_priority_subscriber')?></option>
+                <option value="international_subscriber" <?php echo set_default($span['mfcr2_category'] ?? '','international_subscriber'); ?>><?php echo _('international_subscriber')?></option>
+                <option value="international_priority_subscriber" <?php echo set_default($span['mfcr2_category'] ?? '','international_priority_subscriber'); ?>><?php echo _('international_priority_subscriber')?></option>
+                <option value="collect_call" <?php echo set_default($span['mfcr2_category'] ?? '','collect_call'); ?>><?php echo _('collect_call')?></option>
             </select>
     	</td>
     </tr>
@@ -104,7 +104,7 @@
             </label>
         </td>
         <td>
-            <input type="text" id="editspan_<?php echo $key?>_mfcr2_logdir" name="editspan_<?php echo $key?>_mfcr2_logdir" value="<?php echo $span['mfcr2_logdir'] ?>" />
+            <input type="text" id="editspan_<?php echo $key?>_mfcr2_logdir" name="editspan_<?php echo $key?>_mfcr2_logdir" value="<?php echo $span['mfcr2_logdir'] ?? ''; ?>" />
         </td>
     </tr>
     <tr>
@@ -119,9 +119,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_call_files" name="editspan_<?php echo $key?>_mfcr2_call_files">
-                <option value="" <?php echo set_default($span['mfcr2_call_files'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_call_files'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_call_files'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_call_files'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_call_files'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_call_files'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -136,7 +136,7 @@
 			</label>
     	</td>
     	<td>
-			<input type="text" id="editspan_<?php echo $key?>_mfcr2_logging" name="editspan_<?php echo $key?>_mfcr2_logging" value="<?php echo $span['mfcr2_logging'] ?>" />
+			<input type="text" id="editspan_<?php echo $key?>_mfcr2_logging" name="editspan_<?php echo $key?>_mfcr2_logging" value="<?php echo $span['mfcr2_logging'] ?? ''; ?>" />
     	</td>
     </tr>
     <tr>
@@ -150,7 +150,7 @@
 			</label>
     	</td>
     	<td>
-			<input type="text" id="editspan_<?php echo $key?>_mfcr2_mfback_timeout" name="editspan_<?php echo $key?>_mfcr2_mfback_timeout" size="3" value="<?php echo $span['mfcr2_mfback_timeout'] ?>" />
+			<input type="text" id="editspan_<?php echo $key?>_mfcr2_mfback_timeout" name="editspan_<?php echo $key?>_mfcr2_mfback_timeout" size="3" value="<?php echo $span['mfcr2_mfback_timeout'] ?? ''; ?>" />
     	</td>
     </tr>
     <tr>
@@ -164,7 +164,7 @@
 			</label>
     	</td>
     	<td>
-			<input type="text" id="editspan_<?php echo $key?>_mfcr2_metering_pulse_timeout" name="editspan_<?php echo $key?>_mfcr2_metering_pulse_timeout" size="3" value="<?php echo $span['mfcr2_metering_pulse_timeout'] ?>" />
+			<input type="text" id="editspan_<?php echo $key?>_mfcr2_metering_pulse_timeout" name="editspan_<?php echo $key?>_mfcr2_metering_pulse_timeout" size="3" value="<?php echo $span['mfcr2_metering_pulse_timeout'] ?? ''; ?>" />
     	</td>
     </tr>
     <tr>
@@ -179,9 +179,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_allow_collect_calls" name="editspan_<?php echo $key?>_mfcr2_allow_collect_calls">
-                <option value="" <?php echo set_default($span['mfcr2_allow_collect_calls'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_allow_collect_calls'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_allow_collect_calls'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_allow_collect_calls'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_allow_collect_calls'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_allow_collect_calls'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -197,9 +197,9 @@
         </td>
         <td>
             <select id="editspan_<?php echo $key?>_mfcr2_double_answer" name="editspan_<?php echo $key?>_mfcr2_double_answer">
-                <option value="" <?php echo set_default($span['mfcr2_double_answer'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_double_answer'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_double_answer'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_double_answer'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_double_answer'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_double_answer'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
         </td>
     </tr>
@@ -215,9 +215,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_immediate_accept" name="editspan_<?php echo $key?>_mfcr2_immediate_accept">
-                <option value="" <?php echo set_default($span['mfcr2_immediate_accept'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_immediate_accept'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_immediate_accept'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_immediate_accept'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_immediate_accept'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_immediate_accept'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -233,9 +233,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_accept_on_offer" name="editspan_<?php echo $key?>_mfcr2_accept_on_offer">
-                <option value="" <?php echo set_default($span['mfcr2_accept_on_offer'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_accept_on_offer'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_accept_on_offer'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_accept_on_offer'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_accept_on_offer'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_accept_on_offer'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -251,9 +251,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_skip_category" name="editspan_<?php echo $key?>_mfcr2_skip_category">
-                <option value="" <?php echo set_default($span['mfcr2_skip_category'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_skip_category'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_skip_category'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_skip_category'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_skip_category'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_skip_category'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -269,9 +269,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_forced_release" name="editspan_<?php echo $key?>_mfcr2_forced_release">
-                <option value="" <?php echo set_default($span['mfcr2_forced_release'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_forced_release'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_forced_release'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_forced_release'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_forced_release'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_forced_release'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -287,9 +287,9 @@
     	</td>
     	<td>
 			<select id="editspan_<?php echo $key?>_mfcr2_charge_calls" name="editspan_<?php echo $key?>_mfcr2_charge_calls">
-                <option value="" <?php echo set_default($span['mfcr2_charge_calls'],''); ?>></option>
-                <option value="no" <?php echo set_default($span['mfcr2_charge_calls'],'no'); ?>><?php echo _('No')?></option>
-                <option value="yes" <?php echo set_default($span['mfcr2_charge_calls'],'yes'); ?>><?php echo _('Yes')?></option>
+                <option value="" <?php echo set_default($span['mfcr2_charge_calls'] ?? '',''); ?>></option>
+                <option value="no" <?php echo set_default($span['mfcr2_charge_calls'] ?? '','no'); ?>><?php echo _('No')?></option>
+                <option value="yes" <?php echo set_default($span['mfcr2_charge_calls'] ?? '','yes'); ?>><?php echo _('Yes')?></option>
             </select>
     	</td>
     </tr>
@@ -304,7 +304,7 @@
 			</label>
     	</td>
     	<td>
-			<input type="text" id="editspan_<?php echo $key?>_mfcr2_advanced_protocol_file" name="editspan_<?php echo $key?>_mfcr2_advanced_protocol_file" value="<?php echo $span['mfcr2_advanced_protocol_file'] ?>" />
+			<input type="text" id="editspan_<?php echo $key?>_mfcr2_advanced_protocol_file" name="editspan_<?php echo $key?>_mfcr2_advanced_protocol_file" value="<?php echo $span['mfcr2_advanced_protocol_file'] ?? ''; ?>" />
     	</td>
     </tr>
 </table>

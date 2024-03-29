@@ -249,8 +249,9 @@ class dahdi_cards {
 		}
 		$span = $this->spans[$num];
 
-		$reservedchan = $span['reserved_ch'];
-
+		$reservedchan = $span['reserved_ch'] ?? '';
+		$span['min_ch'] = $span['min_ch'] ?? '';
+		$span['max_ch'] = $span['max_ch'] ?? '';
 		$startchan = !is_null($startchan) ? $startchan : $span['min_ch'];
 		if($startchan < $span['min_ch'] || $startchan > $span['max_ch']) {
 			throw new \Exception("Start channel is less than minimum channel!");
@@ -770,9 +771,9 @@ class dahdi_cards {
 				$this->spans[$span['span']]['additional_groups'] = array(0 => array(
 					"group" => 0,
 					"context" => 'from-digital',
-					"usedchans" => $this->spans[$span['span']]['totchans'],
-					"startchan" => $this->spans[$span['span']]['min_ch'],
-					"endchan" => $this->spans[$span['span']]['max_ch'],
+					"usedchans" => $this->spans[$span['span']]['totchans'] ?? '',
+					"startchan" => $this->spans[$span['span']]['min_ch'] ?? '',
+					"endchan" => $this->spans[$span['span']]['max_ch'] ?? '',
 					"fxx" => $o['fxx']
 				));
 			}
@@ -1435,7 +1436,6 @@ class dahdi_cards {
 
 		$flds = array('span', 'manufacturer', 'framing', 'definedchans', 'coding', 'signalling', 'switchtype', 'syncsrc', 'lbo', 'pridialplan', 'prilocaldialplan', 'group', 'context', 'reserved_ch', 'priexclusive','additional_groups','type','txgain','rxgain', 'mfcr2_variant', 'mfcr2_get_ani_first', 'mfcr2_max_ani', 'mfcr2_max_dnis', 'mfcr2_category', 'mfcr2_call_files', 'mfcr2_logdir', 'mfcr2_logging', 'mfcr2_mfback_timeout', 'mfcr2_metering_pulse_timeout', 'mfcr2_allow_collect_calls', 'mfcr2_double_answer', 'mfcr2_immediate_accept', 'mfcr2_forced_release', 'mfcr2_charge_calls', 'mfcr2_accept_on_offer', 'mfcr2_skip_category', 'mfcr2_advanced_protocol_file');
 
-		$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 
 		$inserts = array();
 		foreach ($this->spans as $key=>$span) {
@@ -1454,7 +1454,7 @@ class dahdi_cards {
 					default:
 						// If the variable is undefined, this is a bug.
 						if (!isset($span[$fld])) {
-							$values[] = "''";
+							unset($flds[$fld]);
 							// throw new \Exception("Error reading $fld from span $key - ".json_encode($this->spans));
 						} else {
 							$values[] = "'{$span[$fld]}'";
@@ -1462,7 +1462,7 @@ class dahdi_cards {
 					break;
 				}
 			}
-
+			$sql = 'INSERT INTO dahdi_spans (`'.implode('`, `',$flds).'`) VALUES ';
 			$inserts[] = '('.implode(', ',$values).')';
 			unset($values);
 			$result = $db->query($sql.implode(', ', $inserts));

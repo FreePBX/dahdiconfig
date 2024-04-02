@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-12 02:29-0400\n"
+"POT-Creation-Date: 2024-04-02 00:28-0400\n"
 "PO-Revision-Date: 2017-07-20 10:59+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -2578,7 +2578,7 @@ msgstr "alaw"
 msgid "collect_call"
 msgstr "Thu thập cuộc gọi"
 
-#: includes/dahdi_cards.class.php:955
+#: includes/dahdi_cards.class.php:956
 msgid "dahdi_scan exists but can not be run as this user!"
 msgstr "dahdi_scan tồn tại nhưng không thể chạy được như người dùng này!"
 

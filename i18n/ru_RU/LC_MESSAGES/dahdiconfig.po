@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-02 00:28-0400\n"
+"POT-Creation-Date: 2024-04-08 05:20-0400\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -1512,7 +1512,7 @@ msgstr "Филиппины"
 msgid "Please Delete the System Generated %s"
 msgstr "Пожалуйста удалите сгенерированные системой %s"
 
-#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
+#: includes/dahdi_cards.class.php:1497 includes/dahdi_cards.class.php:1808
 #, php-format
 msgid "Please change permissions on %s"
 msgstr "Пожалуйста измените права для %s"
@@ -2301,7 +2301,7 @@ msgstr "ОАЭ"
 msgid "UK"
 msgstr "Великобритания"
 
-#: includes/dahdi_cards.class.php:1494 includes/dahdi_cards.class.php:1805
+#: includes/dahdi_cards.class.php:1497 includes/dahdi_cards.class.php:1808
 #, php-format
 msgid "Unable to write to %s"
 msgstr "Невозможно записать в %s"

@@ -87,7 +87,7 @@
             <field name="timing" type="integer" notnull="false"/>
             <field name="totchans" type="integer" notnull="false"/>
             <field name="type" type="string" length="25" notnull="false"/>
-            <field name="priexclusive" type="string" length="3"/>
+            <field name="priexclusive" type="string" length="3" notnull="false"/>
             <field name="additional_groups" type="blob" notnull="false"/>
             <field name="txgain" type="string" length="10" default="0.0"/>
             <field name="rxgain" type="string" length="10" default="0.0"/>

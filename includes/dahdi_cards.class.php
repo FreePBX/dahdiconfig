@@ -1454,7 +1454,10 @@ class dahdi_cards {
 					default:
 						// If the variable is undefined, this is a bug.
 						if (!isset($span[$fld])) {
-							unset($flds[$fld]);
+							$fldkey = array_search($fld, $flds);
+							if ($fldkey !== false) {
+								unset($flds[$fldkey]);
+							}
 							// throw new \Exception("Error reading $fld from span $key - ".json_encode($this->spans));
 						} else {
 							$values[] = "'{$span[$fld]}'";

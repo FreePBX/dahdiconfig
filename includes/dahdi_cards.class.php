@@ -1279,9 +1279,9 @@ class dahdi_cards {
 		$this->spans[$num]['lbo'] = $editspan['lbo'];
 		$this->spans[$num]['pridialplan'] = $editspan['pridialplan'];
 		$this->spans[$num]['prilocaldialplan'] = $editspan['prilocaldialplan'];
-		$this->spans[$num]['group'] = $editspan['group'];
-		$this->spans[$num]['context'] = $editspan['context'];
-		$this->spans[$num]['reserved_ch'] = $editspan['reserved_ch'];
+		$this->spans[$num]['group'] = $editspan['group'] ?? null;
+		$this->spans[$num]['context'] = $editspan['context'] ?? null;
+		$this->spans[$num]['reserved_ch'] = $editspan['reserved_ch'] ?? null;
 		$this->spans[$num]['priexclusive'] = $editspan['priexclusive'];
 		$this->spans[$num]['rxgain'] = !empty($editspan['rxgain']) ? $editspan['rxgain'] : '0.0';
 		$this->spans[$num]['txgain'] = !empty($editspan['txgain']) ? $editspan['txgain'] : '0.0';

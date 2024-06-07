@@ -148,7 +148,7 @@ class dahdiconfig_conf {
 					// $output[] = "txgain={$port['txgain']}";                  // Unused old code
 					// if(!empty($port['rxgain']) && $port['rxgain'] != '0.0')  // Unused old code
 					// $output[] = "rxgain={$port['rxgain']}";                  // Unused old code
-					if (is_array($port['custom'])) {
+					if (isset($port['custom']) && is_array($port['custom'])) {
 						foreach($port['custom'] as $keyword => $val) {
 							$output[] = $keyword . "=" . $val;
 						}

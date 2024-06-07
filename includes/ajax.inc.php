@@ -277,22 +277,22 @@ EOF;
 
 			foreach ($spans as $span) {
 				$port = array();
-				$port['signalling'] = $_POST[$type."_port_{$span}"];
+				$port['signalling'] = $_POST[$type."_port_{$span}"] ?? '';
 				$port['group'] = ($_POST[$type."_port_{$span}_group"])?$_POST[$type."_port_{$span}_group"]:0;
-				$port['context'] = $_POST[$type."_port_{$span}_context"];
+				$port['context'] = $_POST[$type."_port_{$span}_context"] ?? '';
 				// $port['rxgain'] = !empty($_POST[$type."_port_{$span}_rxgain"]) ? $_POST[$type."_port_{$span}_rxgain"] : ''; // Unused old code
 				// $port['txgain'] = !empty($_POST[$type."_port_{$span}_txgain"]) ? $_POST[$type."_port_{$span}_txgain"] : ''; // Unused old code
 				$dahdi_cards->set_analog_signalling($span, $port);
 				unset($port);
 
 				// Custom Analog Settings for the span / port
-				$custom_ids = $_POST['dh_analog_' . $span . '_custom_ids'];
+				$custom_ids = $_POST['dh_analog_' . $span . '_custom_ids'] ?? '';
 				if (!is_array($custom_ids)) {
 					continue;
 				}
 				foreach ($custom_ids as $id) {
-					$custom_setting_key = $_POST['dh_analog_' . $span . '_setting_key_' . $id];
-					$custom_setting_val = $_POST['dh_analog_' . $span . '_setting_val_' . $id];
+					$custom_setting_key = $_POST['dh_analog_' . $span . '_setting_key_' . $id] ?? '';
+					$custom_setting_val = $_POST['dh_analog_' . $span . '_setting_val_' . $id] ?? '';
 					$analog_custom_settings[$span][$custom_setting_key] = $custom_setting_val;
 				}
 			}

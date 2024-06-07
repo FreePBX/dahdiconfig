@@ -283,9 +283,9 @@ function _dahdiconfig_gsort($a, $b) {
 	$gn_a = substr($a,1);
 	$gn_b = substr($b,1);
 	if ($gn_a == $gn_b) {
-		return ($b > $a);
+		return ($b > $a)? -1 : 1;
 	} else {
-		return ($gn_a > $gn_b);
+		return ($gn_a > $gn_b) ? 1 : -1;
 	}
 }
 
@@ -349,7 +349,7 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
 	}
 	uksort($avail_group,'_dahdiconfig_gsort');
 	ksort($analog_chan);
-	if ($amp_conf['DAHDISHOWDIGITALCHANS']) {
+	if (isset($amp_conf['DAHDISHOWDIGITALCHANS']) && $amp_conf['DAHDISHOWDIGITALCHANS']) {
 		ksort($digital_chan);
 		$avail_identifiers = $avail_group + $analog_chan + $digital_chan;
 	} else {

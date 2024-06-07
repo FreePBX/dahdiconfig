@@ -506,7 +506,7 @@ class dahdi_cards {
 	 * with the given port number
 	 */
 	public function get_port($num) {
-		return $this->analog_ports[$num];
+		return $this->analog_ports[$num] ?? '';
 	}
 
 	/**

@@ -1541,13 +1541,21 @@ class dahdi_cards {
 									if(!empty($fxx[$fx])){
 										$fxx[$fx] .= ',';
 									}
-									$fxx[$fx] .= $chan;
+									if (array_key_exists($fx, $fxx)) {
+										$fxx[$fx] .= $chan;
+									} else {
+										$fxx[$fx] = $chan;
+									}
 							}
 						} else {
 							if(!empty($fxx[$fx])){
 								$fxx[$fx] .= ',';
 							}
-							$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+							if (array_key_exists($fx, $fxx)) {
+								$fxx[$fx] .= $s['startchan'].'-'.$s['endchan'].',';
+							} else {
+								$fxx[$fx]= $s['startchan'].'-'.$s['endchan'].',';
+							}
 						}
 					}
 					if(!empty($fxx[$fx])) {

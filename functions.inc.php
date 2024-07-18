@@ -98,7 +98,7 @@ class dahdiconfig_conf {
 							if ($span['mfcr2_category']) {$output[] = "mfcr2_category={$span['mfcr2_category']}";}
 							if ($span['mfcr2_logdir']) {$output[] = "mfcr2_logdir={$span['mfcr2_logdir']}";}
 							if ($span['mfcr2_call_files']) {$output[] = "mfcr2_call_files={$span['mfcr2_call_files']}";}
-							if ($span['mfcr2_logging']) {$output[] = "mfcr2_logging={$span['mfcr2_logging']}";}
+							if (isset($span['mfcr2_logging'])) {$output[] = "mfcr2_logging={$span['mfcr2_logging']}";}
 							$output[] = $span['mfcr2_mfback_timeout'] ? "mfcr2_mfback_timeout={$span['mfcr2_mfback_timeout']}" : '-1';
 							$output[] = $span['mfcr2_metering_pulse_timeout'] ? "mfcr2_metering_pulse_timeout={$span['mfcr2_metering_pulse_timeout']}" : '-1';
 							if ($span['mfcr2_allow_collect_calls']) {$output[] = "mfcr2_allow_collect_calls={$span['mfcr2_allow_collect_calls']}";}

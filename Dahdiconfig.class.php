@@ -68,7 +68,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 			$dahdi_cards = new \dahdi_cards();
 			if(isset($dahdi_cards->modules['sangoma']) && is_object($dahdi_cards->modules['sangoma'])) {
 				$output->writeln("<info>"._("Writing out default Sangoma conf")."</info>");
-				$dahdi_cards->modules['sangoma']->generateConf($file,true);
+				$dahdi_cards->modules['sangoma']->generateConf($globalFile,true);
 			}
 		}
 	}

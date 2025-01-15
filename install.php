@@ -56,7 +56,8 @@ foreach ($entries as $entry=>$default_val) {
 }
 
 
-$freepbx_conf =& freepbx_conf::create();
+$freepbxConfCreate = freepbx_conf::create();
+$freepbx_conf =& $freepbxConfCreate;
 
 // DAHDISHOWDIGITALCHANS in Advanced Settings of FreePBX
 //

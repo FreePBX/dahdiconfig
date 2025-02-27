@@ -303,8 +303,8 @@ function dahdiconfig_get_unused_trunk_options($current_identifier='') {
 	//
 	foreach ($analog_ports as $port) {
 		$port_details = $dahdi_cards->get_port($port);
-		$grp = $port_details['group'];
-		$chan = (string) $port_details['port'];
+		$grp = (!empty($port_details['group']) ? $port_details['group'] : '');
+		$chan = (!empty($port_details['port']) ? (string) $port_details['port'] : '');
 		$avail_group["g$grp"] = array('identifier' => "g$grp",'name' => sprintf(_("Group %s Ascending"),$grp),'alarms' => '','selected'  => ($current_identifier == "g$grp"));
 		$avail_group["G$grp"] = array('identifier' => "G$grp",'name' => sprintf(_("Group %s Descending"),$grp),'alarms' => '','selected' => ($current_identifier == "G$grp"));
 		$avail_group["r$grp"] = array('identifier' => "r$grp",'name' => sprintf(_("Group %s Round Robin Ascending"),$grp),'alarms' => '','selected'  => ($current_identifier == "r$grp"));

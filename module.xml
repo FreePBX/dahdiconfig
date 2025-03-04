@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>17.0.1.14</version>
+	<version>17.0.1.15</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,7 +12,7 @@
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
   	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/25952375/DAHDI+Configs</more-info>
 	<changelog>
-		17.0.1.11* 17.0.1.11  release
+		17.0.1.15* 17.0.1.15  fixing undefined variable errors 
 	</changelog>
 	<supported>
 		<version>17.0</version>

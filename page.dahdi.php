@@ -150,8 +150,15 @@ if ($dahdi_cards->hdwr_changes()) {
             $span['pridialplan'] = !empty($span['pridialplan']) ? $span['pridialplan'] : '';
             $span['prilocaldialplan'] = !empty($span['prilocaldialplan']) ? $span['prilocaldialplan'] : '';
             $span['priexclusive'] = !empty($span['priexclusive']) ? $span['priexclusive'] : '';
-			$span['txgain'] = !empty($span['txgain']) ? $span['txgain'] : '0.0';
-			$span['rxgain'] = !empty($span['rxgain']) ? $span['rxgain'] : '0.0';
+            $span['txgain'] = !empty($span['txgain']) ? $span['txgain'] : '0.0';
+            $span['rxgain'] = !empty($span['rxgain']) ? $span['rxgain'] : '0.0';
+            $span['reserved_ch'] = !empty($span['reserved_ch']) ? $span['reserved_ch'] : '';
+            $span['alarms'] = !empty($span['alarms']) ? $span['alarms'] : '';
+            $span['totchans'] = !empty($span['totchans']) ? $span['totchans'] : 0;
+            $span['definedchans'] = !empty($span['definedchans']) ? $span['definedchans'] : 0;
+            $span['spantype'] = !empty($span['spantype']) ? $span['spantype'] : '';
+            $span['location'] = !empty($span['location']) ? $span['location'] : '';
+            $span['syncsrc'] = !empty($span['syncsrc']) ? $span['syncsrc'] : '';
             ?>
         <div id="digital-settings-<?php echo $key;?>" title="Span: <?php echo $span['description'] ?? ''; ?>" style="display: none;" class="span-container">
             <?php require dirname(__FILE__).'/views/dahdi_digital_settings.php'; ?>
@@ -218,7 +225,7 @@ $('#editspan_<?php echo $key?>_signalling').change(function() {
     }
 });
 
-<?php $groups = is_array($span['additional_groups']) ? $span['additional_groups'] : array();?>
+<?php $groups = !empty($span['additional_groups']) && is_array($span['additional_groups']) ? $span['additional_groups'] : array();?>
 
 <?php } ?>
 $(document).on("change",".digital-used-chans",function(e) {

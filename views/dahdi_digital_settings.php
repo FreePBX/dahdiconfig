@@ -121,9 +121,10 @@
                 </td>
                 <td>
                     <select id="editspan_<?php echo $key?>_syncsrc" name="editspan_<?php echo $key?>_syncsrc">
-                    <?php for($i=0; $i<=$dahdi_cards->get_span_count($span['location']); $i++): ?>
+                    <?php if(!empty($span['location'])) {
+                        for($i=0; $i<=$dahdi_cards->get_span_count($span['location']); $i++): ?>
                         <option value="<?php echo $i?>" <?php echo set_default($span['syncsrc'],$i); ?>><?php echo $i?></option>
-                    <?php endfor; ?>
+                    <?php endfor; }?>
                     </select>
                 </td>
             </tr>
@@ -219,7 +220,7 @@
         <h2><?php echo ('Group Settings')?> (<a style="cursor:pointer;" onclick="reset_digital_groups(<?php echo $key;?>,<?php echo $span['totchans']-1?>);"><?php echo ('Reset Groups')?></a>)</h2>
         <hr>
 				<div class="digital-groups">
-        <?php $groups = is_array($span['additional_groups'])?$span['additional_groups']:array();
+        <?php $groups = !empty($span['additional_groups']) && is_array($span['additional_groups'])?$span['additional_groups']:array();
 						end($groups);
 						$lastKey = key($groups);
 						reset($groups);

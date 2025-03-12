@@ -3,7 +3,7 @@
 	<repo>extended</repo>
 	<category>Connectivity</category>
 	<name>DAHDi Config</name>
-	<version>17.0.1.15</version>
+	<version>17.0.1.16</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -12,7 +12,8 @@
 	<description>The DAHDI module is designed to let you manage and configure your PSTN cards.</description>
   	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/25952375/DAHDI+Configs</more-info>
 	<changelog>
-		17.0.1.15* 17.0.1.15  fixing undefined variable errors 
+		*17.0.1.16* FREEI-1815 Whoops Error Undefined array key 
+		17.0.1.15* 17.0.1.15  fixing undefined variable errors
 	</changelog>
 	<supported>
 		<version>17.0</version>
@@ -100,9 +101,9 @@
             <field name="mfcr2_skip_category" type="string" length="3" default="no"/>
             <field name="mfcr2_logdir" type="string" length="10" notnull="false"/>
             <field name="mfcr2_logging" type="string" length="10" notnull="false"/>
-            <field name="mfcr2_mfback_timeout" type="decimal" default="0" />
-            <field name="mfcr2_mfback_pulse_timeout" type="decimal" default="0" />
-            <field name="mfcr2_metering_pulse_timeout" type="decimal" default="0" />
+            <field name="mfcr2_mfback_timeout" type="decimal" default="0"/>
+            <field name="mfcr2_mfback_pulse_timeout" type="decimal" default="0"/>
+            <field name="mfcr2_metering_pulse_timeout" type="decimal" default="0"/>
             <field name="mfcr2_allow_collect_calls" type="string" length="3" default="no"/>
             <field name="mfcr2_double_answer" type="string" length="3" default="no"/>
             <field name="mfcr2_immediate_accept" type="string" length="3" default="no"/>

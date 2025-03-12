@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 02:57-0400\n"
+"POT-Creation-Date: 2025-03-12 06:52-0400\n"
 "PO-Revision-Date: 2016-04-15 12:21+0000\n"
 "Last-Translator: Weblate Admin <admin@postmet.com>\n"
 "Language-Team: Russian <https://weblate.postmet.com/projects/freepbx13/"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "%s Ports"
 msgstr "%s Порты"
 
-#: views/dahdi_digital_settings.php:142
+#: views/dahdi_digital_settings.php:143
 msgid "-15db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:143
+#: views/dahdi_digital_settings.php:144
 msgid "-22.5db (CSU)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:141
+#: views/dahdi_digital_settings.php:142
 msgid "-7.5db (CSU)"
 msgstr ""
 
@@ -42,23 +42,23 @@ msgstr ""
 msgid "..Done"
 msgstr "..Завершено"
 
-#: views/dahdi_digital_settings.php:136
+#: views/dahdi_digital_settings.php:137
 msgid "0 db (CSU)/0-133 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:137
+#: views/dahdi_digital_settings.php:138
 msgid "133-266 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:138
+#: views/dahdi_digital_settings.php:139
 msgid "266-399 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:139
+#: views/dahdi_digital_settings.php:140
 msgid "399-533 feet (DSX-1)"
 msgstr ""
 
-#: views/dahdi_digital_settings.php:140
+#: views/dahdi_digital_settings.php:141
 msgid "533-655 feet (DSX-1)"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Bahrain"
 msgstr "Бахрейн"
 
-#: page.dahdi.php:184
+#: page.dahdi.php:191
 msgid ""
 "Because of this the module's configuration file write ability is disabled by "
 "default. You can enable it in this window or you can later enable it under "
@@ -310,8 +310,8 @@ msgstr ""
 msgid "Canada"
 msgstr "Канада"
 
-#: page.dahdi.php:287 page.dahdi.php:306 page.dahdi.php:356 page.dahdi.php:413
-#: page.dahdi.php:436 page.dahdi.php:455 page.dahdi.php:500
+#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:363 page.dahdi.php:420
+#: page.dahdi.php:443 page.dahdi.php:462 page.dahdi.php:507
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -460,11 +460,11 @@ msgstr "DAHDi остановлен"
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr ""
 
-#: page.dahdi.php:166
+#: page.dahdi.php:173
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr "Отказ от запрета записи DAHDi"
 
-#: page.dahdi.php:167
+#: page.dahdi.php:174
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi  заблокирован для записи"
 
@@ -525,7 +525,7 @@ msgstr "Цифровой Канал %s"
 msgid "Digital Hardware"
 msgstr "Цифровое оборудование"
 
-#: page.dahdi.php:247
+#: page.dahdi.php:254
 msgid "Disable"
 msgstr "Выключить"
 
@@ -602,7 +602,7 @@ msgstr "Египет"
 msgid "El Salvador"
 msgstr "Сальвадор"
 
-#: page.dahdi.php:242
+#: page.dahdi.php:249
 msgid "Enable"
 msgstr "Включить"
 
@@ -682,7 +682,7 @@ msgstr "FSK"
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr "FSK- Выполнять частотную манипуляцию"
 
-#: page.dahdi.php:160
+#: page.dahdi.php:167
 msgid "FXO Settings"
 msgstr "Настройки  FXO"
 
@@ -698,7 +698,7 @@ msgstr ""
 msgid "FXS Honor Mode"
 msgstr "Honor режим FXS"
 
-#: page.dahdi.php:163
+#: page.dahdi.php:170
 msgid "FXS Settings"
 msgstr "Настройки FXS"
 
@@ -1012,7 +1012,7 @@ msgstr "Израиль"
 msgid "Israeli Hebrew"
 msgstr "Иврит"
 
-#: page.dahdi.php:177
+#: page.dahdi.php:184
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
 "Это ВАША обязанность делать резервные копии всех важных файлов в вашей "
@@ -1150,7 +1150,7 @@ msgstr ""
 msgid "MFC/R2"
 msgstr ""
 
-#: page.dahdi.php:328 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:335 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr ""
 
@@ -1624,7 +1624,7 @@ msgstr ""
 msgid "Replacing.."
 msgstr "Перемещение.."
 
-#: page.dahdi.php:490
+#: page.dahdi.php:497
 msgid "Reset File To Defaults"
 msgstr "Сбросить файл в значения по умолчанию"
 
@@ -1632,7 +1632,7 @@ msgstr "Сбросить файл в значения по умолчанию"
 msgid "Restart DAHDi & Asterisk"
 msgstr ""
 
-#: page.dahdi.php:569
+#: page.dahdi.php:576
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr ""
 
@@ -1668,8 +1668,8 @@ msgstr ""
 msgid "Saudi Arabia"
 msgstr "Саудовская Аравия"
 
-#: page.dahdi.php:281 page.dahdi.php:300 page.dahdi.php:344 page.dahdi.php:406
-#: page.dahdi.php:430 page.dahdi.php:449 page.dahdi.php:468 page.dahdi.php:513
+#: page.dahdi.php:288 page.dahdi.php:307 page.dahdi.php:351 page.dahdi.php:413
+#: page.dahdi.php:437 page.dahdi.php:456 page.dahdi.php:475 page.dahdi.php:520
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1679,7 +1679,7 @@ msgstr "Сохранить"
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: page.dahdi.php:321
+#: page.dahdi.php:328
 msgid "Set Defaults"
 msgstr ""
 
@@ -2068,7 +2068,7 @@ msgstr "Тайваньский"
 msgid "Thailand"
 msgstr "Тайланд"
 
-#: page.dahdi.php:178
+#: page.dahdi.php:185
 #, php-format
 msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
@@ -2163,7 +2163,7 @@ msgstr ""
 msgid "This is not available on your system"
 msgstr ""
 
-#: page.dahdi.php:187
+#: page.dahdi.php:194
 msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
@@ -2171,7 +2171,7 @@ msgstr ""
 "Это сообщение будет появляться заново всякий раз когда вы загружаете модуль, "
 "находящийся в режиме запрета записи чтобы не вызывать путаницы"
 
-#: page.dahdi.php:181
+#: page.dahdi.php:188
 msgid ""
 "This module should never be used alongside \"dahdi_genconfig\". Using "
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
@@ -2265,7 +2265,7 @@ msgstr ""
 "передачу перевода вызова на ISDN - коммутатор,пока он передаётся в сообщении "
 "FACILITY"
 
-#: page.dahdi.php:491
+#: page.dahdi.php:498
 msgid "This will reload the page"
 msgstr "Это перезагрузит страницу"
 
@@ -2349,7 +2349,7 @@ msgstr "Венесуэла"
 msgid "WARNING"
 msgstr "ПРЕДУПРЕЖДЕНИЕ"
 
-#: page.dahdi.php:169
+#: page.dahdi.php:176
 msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"
@@ -2462,7 +2462,7 @@ msgstr ""
 msgid "fcc"
 msgstr "класс сервисного кода"
 
-#: views/dahdi_digital_settings.php:196
+#: views/dahdi_digital_settings.php:197
 msgid "gsm"
 msgstr ""
 

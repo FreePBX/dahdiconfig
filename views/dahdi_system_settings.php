@@ -61,7 +61,7 @@
         $dh_s_key = '';
         $dh_s_val = '';
         foreach($ss as $key => $value) {
-            if(!in_array($key,$dahdi_cards->original_system) && !strpos($key, 'checkbox')) {
+            if(!in_array($key,$dahdi_cards->original_system) && strpos($key, 'checkbox') === false) {
                 $dh_s_key = $key;
                 $dh_s_val = $value;
                 unset($ss[$key]);

@@ -10,6 +10,10 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 	private $message = '';
 	private $lookupCache = array();
 	private $contactsCache = array();
+	/** @var object|null FreePBX database connection. */
+	private $db;
+	/** @var object|null FreePBX service container. */
+	private $freepbx;
 
 	public function __construct($freepbx = null) {
 		$this->db = $freepbx->Database;
@@ -226,7 +230,7 @@ class Dahdiconfig extends \FreePBX_Helpers implements \BMO {
 		}
 	}
 	public function ajaxHandler(){
-		switch ($_REQUEST['command']) {
+		switch ($_REQUEST['command'] ?? '') {
 			case 'checkrestart':
 				return array("started" => !$this->getConfig("restarting"));
 			break;

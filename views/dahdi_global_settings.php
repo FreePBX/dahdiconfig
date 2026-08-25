@@ -226,7 +226,7 @@
 		$dh_key = '';
 		$dh_val = '';
 		foreach($gs as $key => $value) {
-				if(!in_array($key,$dahdi_cards->original_global) && !strpos($key, 'checkbox')) {
+				if(!in_array($key,$dahdi_cards->original_global) && strpos($key, 'checkbox') === false) {
 						$dh_key = $key;
 						$dh_val = $value;
 						unset($gs[$key]);

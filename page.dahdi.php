@@ -1,7 +1,7 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
-$dahdi_info = dahdiconfig_getinfo();
+$dahdi_info = dahdiconfig_getinfo() ?: array();
 $dahdi_ge_260 = version_compare(dahdiconfig_getinfo('version'),'2.6.0','ge');
 global $amp_conf;
 $brand = $amp_conf['DASHBOARD_FREEPBX_BRAND']?$amp_conf['DASHBOARD_FREEPBX_BRAND']:'FreePBX';
@@ -34,7 +34,9 @@ if ($dahdi_cards->hdwr_changes()) {
         file_put_contents($amp_conf['ASTETCDIR'].'/chan_dahdi_groups.conf', '');
         exec('asterisk -rx "module unload chan_dahdi.so"');
         exec('asterisk -rx "module load chan_dahdi.so"');
-        $astman->send_request('Command', array('Command' => 'dahdi restart'));
+        if(is_object($astman)) {
+            $astman->send_request('Command', array('Command' => 'dahdi restart'));
+        }
     }
 }
 ?>
@@ -53,8 +55,8 @@ if ($dahdi_cards->hdwr_changes()) {
 				<div class="fpbx-container">
 					<div class="display no-border">
             <ul class="nav nav-tabs" role="tablist">
-              <li data-name="digital_hardware" class="change-tab active"><a href="#digital_hardware" aria-controls="digital_hardware" role="tab" data-toggle="tab"><?php echo _("Digital Hardware")?></a></li>
-              <li data-name="analog_hardware" class="change-tab"><a href="#analog_hardware" aria-controls="analog_hardware" role="tab" data-toggle="tab"><?php echo _("Analog Hardware")?></a></li>
+              <li data-name="digital_hardware" class="change-tab active"><a class="active" href="#digital_hardware" aria-controls="digital_hardware" role="tab" data-toggle="tab" data-bs-toggle="tab"><?php echo _("Digital Hardware")?></a></li>
+              <li data-name="analog_hardware" class="change-tab"><a href="#analog_hardware" aria-controls="analog_hardware" role="tab" data-toggle="tab" data-bs-toggle="tab"><?php echo _("Analog Hardware")?></a></li>
             </ul>
             <div class="tab-content display">
               <div id="digital_hardware" class="tab-pane active">

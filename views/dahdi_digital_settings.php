@@ -98,7 +98,7 @@
                     </select>
                 </td>
             </tr>
-            <?php $display = (substr($span['signalling'],0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'],0,3) == 'pri') ? 'show' : 'none'; ?>
+            <?php $display = (substr($span['signalling'] ?? '',0,3) == 'bri' || $span['totchans'] != 3 || substr($span['signalling'] ?? '',0,3) == 'pri') ? 'show' : 'none'; ?>
                 <tr id="editspan_<?php echo $key?>_switchtype_tr" style="display:<?php echo $display?>;">
                     <td style="width:10px;">
                         <label for="editspan_<?php echo $key?>_switchtype"><?php echo ('Switchtype')?>:</label>

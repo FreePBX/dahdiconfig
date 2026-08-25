@@ -4,8 +4,19 @@
 *
 * This class contains all the functions necessary to manage DAHDi hardware.
 */
-#[\AllowDynamicProperties]
 class dahdi_cards {
+	/** @var bool|int|string Hardware mocking flag from FreePBX configuration. */
+	public $mockhw = false;
+
+	/** @var string[] Built-in chan_dahdi setting names used by the views and AJAX handlers. */
+	public $original_global = array();
+
+	/** @var string[] Built-in modprobe setting names used by the AJAX handlers. */
+	public $original_modprobe = array();
+
+	/** @var string[] Built-in system setting names used by the views and AJAX handlers. */
+	public $original_system = array();
+
 	private $analog_ports = array();	// stores all analog port info
 	private $systemsettings = array(
 		'tone_region' => 'us'
@@ -89,6 +100,9 @@ class dahdi_cards {
 	private $spancount = array();		// Per location
 	private $spans = array();		// The current spans
 	private $system_conf;			// /etc/dahdi/system.conf
+	/** @var string|false Contents read from /etc/dahdi/system.conf. */
+	private $systemsettings_conf = false;
+	private $has_echo_can = FALSE;
 	private $header;    //config file header
 	public $modules = array();
 
@@ -518,7 +532,7 @@ class dahdi_cards {
 	 * @return array
 	 */
 	public function get_span_count($loc) {
-		return $this->spancount[$loc];
+		return $this->spancount[$loc] ?? 0;
 	}
 
 	/**
@@ -548,7 +562,7 @@ class dahdi_cards {
 	 * Get a digital span and all its info
 	 */
 	public function get_span($num) {
-		return $this->spans[$num];
+		return $this->spans[$num] ?? null;
 	}
 
 	/**
@@ -859,8 +873,8 @@ class dahdi_cards {
 				break;
 				case 'span=':
 					$info = explode('=', $line);
-					list($num, $timing, $lbo, $framing, $coding) = explode(',', $info[1]);
-					$spaninfo = explode(',', $info[1]);
+					$spaninfo = array_pad(explode(',', $info[1] ?? ''), 5, '');
+					list($num, $timing, $lbo, $framing, $coding) = $spaninfo;
 					$yellow = isset($spaninfo[5]) ? $spaninfo[5] : '';
 					$this->spans[$num]['timing'] = $timing;
 					$this->spans[$num]['lbo'] = $lbo;
@@ -981,6 +995,7 @@ class dahdi_cards {
 		unset($this->fxs_ports);
 		$this->fxo_ports = array();
 		$this->fxs_ports = array();
+		$cxts = array();
 
 		foreach ($dahdi_scan_output as $line) {
 			if ($line == '') {
@@ -991,13 +1006,20 @@ class dahdi_cards {
 				continue;
 			}
 
-			list($var, $val) = explode('=', $line);
+			$parts = explode('=', $line, 2);
+			if(count($parts) !== 2) {
+				continue;
+			}
+			list($var, $val) = $parts;
+			if(isset($cxt)) {
+				$cxts[$cxt][$var] = $val;
+			}
 
-			if ($var == 'port' && strpos($val, 'FXO')) {
+			if ($var == 'port' && strpos($val, 'FXO') !== false) {
 				$num = explode(',',$val);
 				$num = $num[0];
 				$this->fxo_ports[] = $num;
-			} else if ($var == 'port' && strpos($val, 'FXS')) {
+			} else if ($var == 'port' && strpos($val, 'FXS') !== false) {
 				$num = explode(',',$val);
 				$num = $num[0];
 				$this->fxs_ports[] = $num;
@@ -1015,7 +1037,7 @@ class dahdi_cards {
 		}
 
 		/* If there is a DAHDI_Dummy then there is no hardware to parse */
-		if (isset($cxts)) foreach ($cxts as $cxt) {
+		foreach ($cxts as $cxt) {
 			if ((!array_key_exists('description', $cxt)) || (strpos($cxt['description'],'DAHDI_DUMMY') === false)) {
 				continue;
 			}
@@ -1749,6 +1771,7 @@ class dahdi_cards {
 		//We do it the digium way, we assume the comments for each module are above that module
 		$lines = explode("\n",$contents);
 		$groups = array();
+		$ngroups = array();
 		$i = 0;
 		foreach($lines as $key => $line) {
 			$line = trim($line); //trim away all whitespace surrounding each line
@@ -1756,7 +1779,7 @@ class dahdi_cards {
 			//If the line below is completely emtpy
 			//or if our line has no whitespaces and the next line starts with a comment
 			//then we assume we are about to start a new group
-			if(empty($line) || (preg_match('/\s/', $line) && preg_match('/^#/', $lines[$key+1])))
+			if(empty($line) || (preg_match('/\s/', $line) && isset($lines[$key+1]) && preg_match('/^#/', $lines[$key+1])))
 			$i++;
 
 			if(!empty($line)) {

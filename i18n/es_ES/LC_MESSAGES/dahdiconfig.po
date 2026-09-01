@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 06:52-0400\n"
+"POT-Creation-Date: 2026-09-01 02:54-0400\n"
 "PO-Revision-Date: 2018-07-18 19:19+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dahdiconfig/es/>\n"
@@ -219,7 +219,7 @@ msgstr "BRI PTP - Net"
 msgid "Bahrain"
 msgstr "Bahrein"
 
-#: page.dahdi.php:191
+#: page.dahdi.php:173
 msgid ""
 "Because of this the module's configuration file write ability is disabled by "
 "default. You can enable it in this window or you can later enable it under "
@@ -338,8 +338,8 @@ msgstr "Categoría de Llamante a enviar"
 msgid "Canada"
 msgstr "Canadá"
 
-#: page.dahdi.php:294 page.dahdi.php:313 page.dahdi.php:363 page.dahdi.php:420
-#: page.dahdi.php:443 page.dahdi.php:462 page.dahdi.php:507
+#: page.dahdi.php:276 page.dahdi.php:295 page.dahdi.php:345 page.dahdi.php:402
+#: page.dahdi.php:425 page.dahdi.php:444 page.dahdi.php:489
 #: views/dahdi_advanced_settings.php:233
 #: views/dahdi_analog_signalling_form.php:26
 msgid "Cancel"
@@ -492,11 +492,11 @@ msgstr "DAHDI Se detuvo"
 msgid "DAHDi System Configuration File Location (dahdi/system.conf)"
 msgstr "Archivo Configuración DAHDI (dahdi/system.conf)"
 
-#: page.dahdi.php:173
+#: page.dahdi.php:155
 msgid "DAHDi Write Disabled Disclaimer"
 msgstr "DAHDi renuncia acerca de discapacitados de escritura"
 
-#: page.dahdi.php:174
+#: page.dahdi.php:156
 msgid "DAHDi is DISABLED for writing"
 msgstr "DAHDi está DESHABILITADA para la escritura"
 
@@ -562,7 +562,7 @@ msgstr "Canal digital %s"
 msgid "Digital Hardware"
 msgstr "Hardware digital"
 
-#: page.dahdi.php:254
+#: page.dahdi.php:236
 msgid "Disable"
 msgstr "inhabilitar"
 
@@ -639,7 +639,7 @@ msgstr "Egypt"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: page.dahdi.php:249
+#: page.dahdi.php:231
 msgid "Enable"
 msgstr "Habilitar"
 
@@ -719,7 +719,7 @@ msgstr "FSK"
 msgid "FSK - Performs Frequency Shift Key detection"
 msgstr "FSK- Ejecutar detección FSK"
 
-#: page.dahdi.php:167
+#: page.dahdi.php:149
 msgid "FXO Settings"
 msgstr "Configuración FXO"
 
@@ -735,7 +735,7 @@ msgstr "FXOLS"
 msgid "FXS Honor Mode"
 msgstr "FXS Modo Honor"
 
-#: page.dahdi.php:170
+#: page.dahdi.php:152
 msgid "FXS Settings"
 msgstr "Configuración FXS"
 
@@ -877,7 +877,7 @@ msgstr "Alemania"
 msgid "Get ANI Before DNIS"
 msgstr "Obtener ANI antes de DNIS"
 
-#: page.dahdi.php:82 page.dahdi.php:120 views/dahdi_global_settings.php:3
+#: page.dahdi.php:82 page.dahdi.php:102 views/dahdi_global_settings.php:3
 msgid "Global Settings"
 msgstr "Configuración Global"
 
@@ -1055,7 +1055,7 @@ msgstr "Israel"
 msgid "Israeli Hebrew"
 msgstr "Israeli Hebrew"
 
-#: page.dahdi.php:184
+#: page.dahdi.php:166
 msgid "It is YOUR responsibility to backup all relevant files on your system!"
 msgstr ""
 "Es SU responsabilidad mantener respaldo de todos los archivos relevantes de "
@@ -1201,7 +1201,7 @@ msgstr "MF Timeout"
 msgid "MFC/R2"
 msgstr "MFC/R2"
 
-#: page.dahdi.php:335 views/dahdi_mfcr2_settings.php:1
+#: page.dahdi.php:317 views/dahdi_mfcr2_settings.php:1
 msgid "MFC/R2 Settings"
 msgstr "Configuración MFC/R2"
 
@@ -1361,7 +1361,7 @@ msgstr "Localidad del Archivo de Configuración ModProbe.d"
 msgid "Mode"
 msgstr "Modo"
 
-#: page.dahdi.php:84 page.dahdi.php:126 views/dahdi_modprobe_settings.php:3
+#: page.dahdi.php:84 page.dahdi.php:108 views/dahdi_modprobe_settings.php:3
 msgid "Modprobe Settings"
 msgstr "Configuración Modprobe"
 
@@ -1369,7 +1369,7 @@ msgstr "Configuración Modprobe"
 msgid "Module Name"
 msgstr "Nombre de Modulo"
 
-#: page.dahdi.php:85 page.dahdi.php:129
+#: page.dahdi.php:85 page.dahdi.php:111
 msgid "Module Settings"
 msgstr "Configuración de Módulos"
 
@@ -1719,7 +1719,7 @@ msgstr "Recargando..."
 msgid "Replacing.."
 msgstr "Reemplazando.."
 
-#: page.dahdi.php:497
+#: page.dahdi.php:479
 msgid "Reset File To Defaults"
 msgstr "Restaurar Archivo a Valores por defecto"
 
@@ -1727,7 +1727,7 @@ msgstr "Restaurar Archivo a Valores por defecto"
 msgid "Restart DAHDi & Asterisk"
 msgstr "Reiniciar DAHDI & Asterisk"
 
-#: page.dahdi.php:576
+#: page.dahdi.php:558
 msgid "Restarting DAHDi and Asterisk. Please wait..."
 msgstr "Reiniciando DAHDI & Asterisk. Por favor espere..."
 
@@ -1763,8 +1763,8 @@ msgstr "Configuración Sangoma"
 msgid "Saudi Arabia"
 msgstr "Saudi Arabia"
 
-#: page.dahdi.php:288 page.dahdi.php:307 page.dahdi.php:351 page.dahdi.php:413
-#: page.dahdi.php:437 page.dahdi.php:456 page.dahdi.php:475 page.dahdi.php:520
+#: page.dahdi.php:270 page.dahdi.php:289 page.dahdi.php:333 page.dahdi.php:395
+#: page.dahdi.php:419 page.dahdi.php:438 page.dahdi.php:457 page.dahdi.php:502
 #: views/dahdi_advanced_settings.php:234
 #: views/dahdi_analog_signalling_form.php:27
 msgid "Save"
@@ -1774,7 +1774,7 @@ msgstr "Salvar"
 msgid "Select Language"
 msgstr "Seleccione Idioma"
 
-#: page.dahdi.php:328
+#: page.dahdi.php:310
 msgid "Set Defaults"
 msgstr "Establecer Predeterminados"
 
@@ -2152,7 +2152,7 @@ msgstr "Syria"
 msgid "System Configuration File Location"
 msgstr "Localización del Archivo de Configuración del Sistema"
 
-#: page.dahdi.php:83 page.dahdi.php:123
+#: page.dahdi.php:83 page.dahdi.php:105
 msgid "System Settings"
 msgstr "Configuraciones del Sistema"
 
@@ -2178,7 +2178,7 @@ msgstr "Taiwanese"
 msgid "Thailand"
 msgstr "Thailand"
 
-#: page.dahdi.php:185
+#: page.dahdi.php:167
 #, php-format
 msgid ""
 "The %s team can NOT be held responsible if you enable this module and your "
@@ -2287,7 +2287,7 @@ msgstr ""
 msgid "This is not available on your system"
 msgstr "No esta disponible en su sistema"
 
-#: page.dahdi.php:194
+#: page.dahdi.php:176
 msgid ""
 "This message will re-appear everytime you load the module while it is in a "
 "disabled write state so as to not cause any confusion"
@@ -2295,7 +2295,7 @@ msgstr ""
 "Este mensaje re-aparecerá cada vez que usted cargue el modulo mientras este "
 "en modo de escritura deshabilitado, de manera de no causar ninguna confusión"
 
-#: page.dahdi.php:188
+#: page.dahdi.php:170
 msgid ""
 "This module should never be used alongside \"dahdi_genconfig\". Using "
 "\"dahdi_genconfig\" and this module at the same time can have unexpected "
@@ -2390,7 +2390,7 @@ msgstr ""
 "\"facilityenable\" también debe estar habilitada para permitir el envío de "
 "la transferencia al switch ISDN, ya que envía en un mensaje FACILIDAD"
 
-#: page.dahdi.php:498
+#: page.dahdi.php:480
 msgid "This will reload the page"
 msgstr "Esto recargará la página"
 
@@ -2489,7 +2489,7 @@ msgstr "Venezuela"
 msgid "WARNING"
 msgstr "ADVERTENCIA"
 
-#: page.dahdi.php:176
+#: page.dahdi.php:158
 msgid ""
 "WARNING: When this module is \"enabled\" for writing it WILL overwrite the "
 "following files:"

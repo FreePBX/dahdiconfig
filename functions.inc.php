@@ -171,17 +171,17 @@ function dahdi_config2array ($config) {
 }
 
 function dahdi_chans2array($chans=null) {
-	if (!$chans || $chans = '') {
+	if (!$chans || $chans === '') {
 		return array();
 	}
 
 	$chanarray = array();
 
-	if (strpos($chans,',') && strpos($chans,'-')) {
+	if (strpos($chans,',') !== false && strpos($chans,'-') !== false) {
 		$segs = explode(',',$chans);
 		foreach ($segs as $seg) {
-			if (strpos($chans,'-')) {
-				list($start, $end) = explode('-',$chans);
+			if (strpos($seg,'-') !== false) {
+				list($start, $end) = explode('-',$seg);
 				for($i=$start;$i<=$end;$i++) {
 					$chanarray[] = $i;
 				}
@@ -190,9 +190,9 @@ function dahdi_chans2array($chans=null) {
 
 			$chanarray[] = $seg;
 		}
-	} else if (strpos($chans,',')) {
+	} else if (strpos($chans,',') !== false) {
 		$chanarray = explode(',',$chans);
-	} else if (strpos($chans,'-')) {
+	} else if (strpos($chans,'-') !== false) {
 		list($start,$end) = explode('-',$chans);
 		for($i=$start; $i<=$end; $i++) {
 			$chanarray[] = $i;

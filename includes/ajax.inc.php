@@ -1,9 +1,12 @@
 <?php
 require dirname(__FILE__).'/../functions.inc.php';
+global $db;
+
 $dahdi_cards = new dahdi_cards();
+$json = array("status" => false);
 
 
-switch($_REQUEST['type']) {
+switch($_REQUEST['type'] ?? '') {
 	case "digitalgroupsupdate":
 		$groups = $dahdi_cards->updateDigitalGroup($_REQUEST['span'], $_REQUEST['group'], $_REQUEST['groups']);
 		$html = '';
@@ -24,13 +27,13 @@ switch($_REQUEST['type']) {
 			}
 
 			$html .= <<<EOF
-			<table width="100%" id="editspan_{$span}_group_settings_${id}" style="text-align:left;" border="0" cellspacing="0" data-span="{$span}" data-group-id="{$id}">
+			<table width="100%" id="editspan_{$span}_group_settings_{$id}" style="text-align:left;" border="0" cellspacing="0" data-span="{$span}" data-group-id="{$id}">
 					<tr>
 							<td style="width:10px;">
 									<label>Group: </label>
 							</td>
 							<td>
-								<input type="text" id="editspan_{$span}_group_${id}" name="editspan_{$span}_group_${id}" size="2" value="{$group['group']}" />
+								<input type="text" id="editspan_{$span}_group_{$id}" name="editspan_{$span}_group_{$id}" size="2" value="{$group['group']}" />
 							</td>
 					</tr>
 					<tr>
@@ -38,7 +41,7 @@ switch($_REQUEST['type']) {
 									<label>Context: </label>
 							</td>
 							<td>
-								<input type="text" id="editspan_{$span}_context_${id}" name="editspan_{$span}_context_${id}" value="$context" />
+								<input type="text" id="editspan_{$span}_context_{$id}" name="editspan_{$span}_context_{$id}" value="$context" />
 							</td>
 					</tr>
 					<tr>
@@ -46,11 +49,11 @@ switch($_REQUEST['type']) {
 									<label>Used Channels: </label>
 							</td>
 							<td>
-									<select id="editspan_{$span}_definedchans_${id}" class="digital-used-chans" name="editspan_{$span}_definedchans_${id}">
+									<select id="editspan_{$span}_definedchans_{$id}" class="digital-used-chans" name="editspan_{$span}_definedchans_{$id}">
 											$opts
 								</select>
-								From: <span id="editspan_{$span}_from_${id}">{$group['fxx']}</span>
-								Reserved: <span id="editspan_{$span}_reserved_${id}">{$group['reservedchan']}</span>
+								From: <span id="editspan_{$span}_from_{$id}">{$group['fxx']}</span>
+								Reserved: <span id="editspan_{$span}_reserved_{$id}">{$group['reservedchan']}</span>
 							</td>
 					</tr>
 			</table>
@@ -139,7 +142,7 @@ EOF;
 								$modprobe[$key] = $settings[$key];
 						}
 
-						foreach($settings['mp_setting_add'] as $i) {
+						foreach(($settings['mp_setting_add'] ?? array()) as $i) {
 								if(!empty($settings['mp_setting_key_'.$i]) && !in_array($settings['mp_setting_key_'.$i],$dahdi_cards->original_modprobe)) {
 										$k = $settings['mp_setting_key_'.$i];
 										$modprobe['additionals'][$k] = isset($settings['mp_setting_value_'.$i]) ? $settings['mp_setting_value_'.$i] : '';
@@ -154,7 +157,7 @@ EOF;
 		case "systemsettingssubmit":
 				foreach ($dahdi_cards->get_all_systemsettings() as $k=>$v) {
 					if ( ! isset($_POST[$k])) {
-					if (strpos($k, 'checkbox')) {
+					if (strpos($k, 'checkbox') !== false) {
 						$ss[$k] = FALSE;
 					} else {
 						$ss[$k] = TRUE;
@@ -163,7 +166,7 @@ EOF;
 				}
 				$ss[$k] = $_POST[$k];
 			}
-				foreach($_POST['dh_system_add'] as $i) {
+				foreach(($_POST['dh_system_add'] ?? array()) as $i) {
 						if(!empty($_POST['dh_system_setting_key_'.$i]) && !in_array($_POST['dh_system_setting_key_'.$i],$dahdi_cards->original_system)) {
 								$k = $_POST['dh_system_setting_key_'.$i];
 								$ss[$k] = isset($_POST['dh_system_setting_value_'.$i]) ? $_POST['dh_system_setting_value_'.$i] : '';
@@ -176,7 +179,7 @@ EOF;
 		case "globalsettingssubmit":
 				foreach ($dahdi_cards->get_all_globalsettings() as $k=>$v) {
 					if ( ! isset($_POST[$k])) {
-					if (strpos($k, 'checkbox')) {
+					if (strpos($k, 'checkbox') !== false) {
 						$gs[$k] = FALSE;
 					} else {
 						$gs[$k] = TRUE;
@@ -185,7 +188,7 @@ EOF;
 				}
 				$gs[$k] = $_POST[$k];
 			}
-				foreach($_POST['dh_global_add'] as $i) {
+				foreach(($_POST['dh_global_add'] ?? array()) as $i) {
 						if(!empty($_POST['dh_global_setting_key_'.$i]) && !in_array($_POST['dh_global_setting_key_'.$i],$dahdi_cards->original_global)) {
 								$k = $_POST['dh_global_setting_key_'.$i];
 								$gs[$k] = isset($_POST['dh_global_setting_value_'.$i]) ? $_POST['dh_global_setting_value_'.$i] : '';
@@ -228,7 +231,7 @@ EOF;
 				break;
 		case "mpsettingsremove":
 				$mp = $dahdi_cards->get_all_modprobe($_REQUEST['mod']);
-				if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global) && in_array($_REQUEST['origkeyword'],$mp['additionals'])) {
+				if(!empty($_REQUEST['origkeyword']) && !in_array($_REQUEST['origkeyword'],$dahdi_cards->original_global) && array_key_exists($_REQUEST['origkeyword'], $mp['additionals'] ?? array())) {
 						unset($mp['additionals'][$_REQUEST['origkeyword']]);
 						$dahdi_cards->update_dahdi_modprobe($mp);
 						$json = array("status" => true);
@@ -278,7 +281,7 @@ EOF;
 			foreach ($spans as $span) {
 				$port = array();
 				$port['signalling'] = $_POST[$type."_port_{$span}"] ?? '';
-				$port['group'] = ($_POST[$type."_port_{$span}_group"])?$_POST[$type."_port_{$span}_group"]:0;
+				$port['group'] = !empty($_POST[$type."_port_{$span}_group"]) ? $_POST[$type."_port_{$span}_group"] : 0;
 				$port['context'] = $_POST[$type."_port_{$span}_context"] ?? '';
 				// $port['rxgain'] = !empty($_POST[$type."_port_{$span}_rxgain"]) ? $_POST[$type."_port_{$span}_rxgain"] : ''; // Unused old code
 				// $port['txgain'] = !empty($_POST[$type."_port_{$span}_txgain"]) ? $_POST[$type."_port_{$span}_txgain"] : ''; // Unused old code
@@ -335,13 +338,13 @@ EOF;
 
 				$o = $dahdi_cards->calc_bchan_fxx($_REQUEST['span'],NULL,$s,$c);
 				$html = <<<EOF
-				<table width="100%" id="editspan_{$span['span']}_group_settings_${groupc}" style="text-align:left;" border="0" cellspacing="0">
+				<table width="100%" id="editspan_{$span['span']}_group_settings_{$groupc}" style="text-align:left;" border="0" cellspacing="0">
 						<tr>
 								<td style="width:10px;">
 										<label>Group: </label>
 								</td>
 								<td>
-									<input type="text" id="editspan_{$span['span']}_group_${groupc}" name="editspan_{$span['span']}_group_${groupc}" size="2" value="{$group_num}" />
+									<input type="text" id="editspan_{$span['span']}_group_{$groupc}" name="editspan_{$span['span']}_group_{$groupc}" size="2" value="{$group_num}" />
 								</td>
 						</tr>
 						<tr>
@@ -349,7 +352,7 @@ EOF;
 										<label>Context: </label>
 								</td>
 								<td>
-									<input type="text" id="editspan_{$span['span']}_context_${groupc}" name="editspan_{$span['span']}_context_${groupc}" value="$context" />
+									<input type="text" id="editspan_{$span['span']}_context_{$groupc}" name="editspan_{$span['span']}_context_{$groupc}" value="$context" />
 								</td>
 						</tr>
 						<tr>
@@ -357,11 +360,11 @@ EOF;
 										<label>Used Channels: </label>
 								</td>
 								<td>
-										<select id="editspan_{$span['span']}_definedchans_${groupc}" name="editspan_{$span['span']}_definedchans_${groupc}">
+										<select id="editspan_{$span['span']}_definedchans_{$groupc}" name="editspan_{$span['span']}_definedchans_{$groupc}">
 												$opts
 									</select>
-									From: <span id="editspan_{$span['span']}_from_${groupc}">{$o['fxx']}</span>
-									Reserved: <span id="editspan_{$span['span']}_reserved_${groupc}">{$span['reserved_ch']}</span>
+									From: <span id="editspan_{$span['span']}_from_{$groupc}">{$o['fxx']}</span>
+									Reserved: <span id="editspan_{$span['span']}_reserved_{$groupc}">{$span['reserved_ch']}</span>
 								</td>
 						</tr>
 				</table>

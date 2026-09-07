@@ -21,5 +21,5 @@
 		</ul>
 		<a style="cursor: pointer;" onclick="mods_add_field()"><img src="assets/dahdiconfig/images/add.png"></a>
 	</div>
-	<input type="hidden" id="mods_add_id" value"<?php echo $mod_id + 1?>">
+	<input type="hidden" id="mods_add_id" value="<?php echo $mod_id + 1?>">
 </form>
